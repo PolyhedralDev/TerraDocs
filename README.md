@@ -1,4 +1,4 @@
-# Terra Wiki
+# Terra Docs
 
 Documentation for [Terra](https://github.com/PolyhedralDev/Terra/).
 

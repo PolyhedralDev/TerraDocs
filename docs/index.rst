@@ -1,4 +1,4 @@
-Welcome to the Terra Wiki!
+Welcome to the Terra Docs!
 ==========================
 
 Terra is a modern world generation modding platform, primarily for Minecraft. Terra allows complete customization of
