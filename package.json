@@ -1,0 +1,23 @@
+{
+  "name": "terrawiki",
+  "version": "0.1.0",
+  "description": "Terra documentation",
+  "scripts": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PolyhedralDev/TerraWiki.git"
+  },
+  "author": "Terra Contributors",
+  "license": "CC-BY-SA-4.0",
+  "bugs": {
+    "url": "https://github.com/PolyhedralDev/TerraWiki/issues"
+  },
+  "homepage": "https://github.com/PolyhedralDev/TerraWiki#readme",
+  "dependencies": {
+    "browser-sync": "^2.27.7",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "plugin-error": "^1.0.1"
+  }
+}
