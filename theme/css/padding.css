@@ -1,0 +1,17 @@
+/*
+Modifies left and right padding to be more reasonable
+ */
+
+.sidebar-drawer {
+    width: unset
+}
+
+.content {
+    width: unset;
+}
+
+
+.toc-drawer {
+    right: -35em;
+    width: 35em;
+}
