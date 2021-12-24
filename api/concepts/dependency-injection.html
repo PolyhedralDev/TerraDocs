@@ -5,7 +5,7 @@
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Logging With SLF4J" href="logging.html" /><link rel="prev" title="API Concepts" href="index.html" />
 
-    <meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
         <title>Dependency Injection - Terra documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
@@ -216,6 +216,22 @@
 <p>Terra uses a simple annotation-based dependency injection framework to provide instances of important API objects
 to addons. The dependency injection framework reduces boilerplate by allowing addons to choose which objects they
 need to have access to.</p>
+<section id="injecting-to-a-field">
+<h2>Injecting to a Field<a class="headerlink" href="#injecting-to-a-field" title="Permalink to this headline">¶</a></h2>
+<p>To inject to a field, simply make the field non-final and non-static, and annotate it @:javadoc:<cite>Inject</cite>.</p>
+<section id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
+<span class="kd">private</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
+
+<span class="nd">@Inject</span>
+<span class="kd">private</span> <span class="n">BaseAddon</span> <span class="n">addon</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>This example demonstrates injecting the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> and <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instances. This is a very common
+scenario, as both of these objects are required for <a class="reference internal" href="events.html#handling-events"><span class="std std-ref">handling events</span></a></p>
+</section>
+</section>
 <section id="dependency-injection-in-all-addons">
 <h2>Dependency Injection in all Addons<a class="headerlink" href="#dependency-injection-in-all-addons" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance is injected into all addons.</p>
@@ -233,18 +249,6 @@ multiple entry points, hence the ability to inject the addon instance into entry
 </li>
 <li><p>A <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/Logger.html">Logger</a> instance specific to the entry point</p></li>
 </ul>
-</section>
-<section id="example">
-<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
-<span class="kd">private</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
-
-<span class="nd">@Inject</span>
-<span class="kd">private</span> <span class="n">BaseAddon</span> <span class="n">addon</span><span class="p">;</span>
-</pre></div>
-</div>
-<p>This example demonstrates injecting the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> and <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instances. This is a very common
-scenario, as both of these objects are required for <a class="reference internal" href="events.html#handling-events"><span class="std std-ref">handling events</span></a></p>
 </section>
 </section>
 
@@ -300,9 +304,12 @@ scenario, as both of these objects are required for <a class="reference internal
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Dependency Injection</a><ul>
+<li><a class="reference internal" href="#injecting-to-a-field">Injecting to a Field</a><ul>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#dependency-injection-in-all-addons">Dependency Injection in all Addons</a></li>
 <li><a class="reference internal" href="#dependency-injection-in-the-manifest-addon-loader">Dependency Injection in the Manifest Addon Loader</a></li>
-<li><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
 </ul>
