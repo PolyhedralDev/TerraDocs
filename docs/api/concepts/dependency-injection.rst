@@ -17,7 +17,7 @@ need to have access to.
 Injecting to a Field
 ====================
 
-To inject to a field, simply make the field non-final and non-static, and annotate it @:javadoc:`Inject`.
+To inject to a field, simply make the field non-final and non-static, and annotate it :javadoc:`Inject`.
 
 Example
 -------
