@@ -67,6 +67,8 @@ html_css_files = [
 # JDLinker config
 javadoc_links = {
     'https://docs.oracle.com/en/java/javase/17/docs/api/java.base/': ['java'],
+    'https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/': ['com.dfsek.terra'],
+    'https://ci.codemc.io/job/PolyhedralDev/job/Tectonic/javadoc/': ['com.dfsek.tectonic'],
 }
 
 # The master toctree document.

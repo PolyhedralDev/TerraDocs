@@ -9,20 +9,13 @@ In fact, all of Terra's default config schemas are implemented by addons_.
 Addons
 ======
 
-Addons are extensions to Terra.
+Addons are extensions to Terra. On its own, Terra is just an API with some platform implementations, addons and
+configurations are required to implement any functionality. Addons create the config schemas which configurations
+then use to implement functionality.
 
-Bootstrap Addons
-----------------
+Sometimes, an addon may directly implement something rather than delegating it
+to a config, though generally configuration is encouraged.
 
-Bootstrap addons are the only type of addons Terra can load by itself. The bootstrap addon loader is minimal,
-depending on the JAR Manifest to locate a single entry point. Bootstrap addons are meant to implement other types
-of addon loaders, and should not be used to interface with the whole Terra API.
-
-The Manifest Addon Loader
--------------------------
-
-One of Terra's core addons is the ``manifest-addon-loader`` addon. It loads addons from JAR files, gathering entry
-points and metadata from a YAML manifest, ``terra.addon.yml``, at the addon root.
 
 .. _addons: https://github.com/PolyhedralDev/Terra/tree/ver/6.0.0/common/addons
 
@@ -31,4 +24,4 @@ points and metadata from a YAML manifest, ``terra.addon.yml``, at the addon root
     :maxdepth: 2
     :titlesonly:
 
-    intro
+    intro/index
