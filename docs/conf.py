@@ -63,6 +63,7 @@ html_static_path = [
 html_css_files = [
     'css/padding.css',
     'css/headings.css',
+    'css/admonitions.css'
 ]
 
 # JDLinker config
