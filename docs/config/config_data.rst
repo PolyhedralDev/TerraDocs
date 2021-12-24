@@ -37,9 +37,19 @@ YAML and define our top level object. For our type let's use something
 called an ``Integer``. Integers represent whole numbers and as such, are
 written as whole numbers like so:
 
-.. code:: yaml
+.. tab-set::
 
-   42
+   .. tab-item:: YAML
+
+      .. code:: yaml
+         
+         42
+
+   .. tab-item:: JSON
+
+      .. code:: json
+
+         42
 
 We have now created a config that defines an ``Integer`` as the top
 level object, which represents the number ``42``, simple right?
@@ -48,9 +58,19 @@ Another numerical type that is slightly different from integers is a
 ``Float``. The difference between integers and floats is that floats can
 represent numbers that contain decimals:
 
-.. code:: yaml
+.. tab-set::
 
-   3.14159
+   .. tab-item:: YAML
+
+      .. code:: yaml
+
+         3.14159
+
+   .. tab-item:: JSON
+
+      .. code:: json
+
+         3.14159
 
 In many cases, we need to distinguish between integers and floats, as it
 may not be logical to have numbers with decimals for whatever we're
@@ -61,9 +81,19 @@ integers.
 
 We can also represent data like text using a type called a ``String``:
 
-.. code:: yaml
+.. tab-set::
 
-   This is a config of type string.
+   .. tab-item:: YAML
+
+      .. code:: yaml
+
+         This is a config of type string.
+
+   .. tab-item:: JSON
+
+      .. code:: json
+
+         "This is a config of type string."
 
 Strings are useful for specifying the names of things, and are used
 everywhere - for example we would need need to use strings to specify
@@ -73,9 +103,23 @@ In some cases you may want to specify a ``String`` where it might be
 interpreted as another type like ``Integer``. To explicitly specify an
 object is a ``String``, you can wrap it quotes like so:
 
-.. code:: yaml
+.. tab-set::
 
-   "42"
+   .. tab-item:: YAML
+
+      .. code:: yaml
+
+         "42"
+
+   .. tab-item:: JSON
+
+      .. code:: JSON
+
+         "42"
+
+      .. note::
+
+         In JSON, strings *must* be explicitly wrapped in quotes.
 
 Maps
 ----
@@ -89,24 +133,47 @@ A map is a *collection of objects*, referred to individually as
 another unique object called a **key**. A key and a value together are
 called a **key-value pair**.
 
-In YAML, a map is typically defined by writing the key object (almost
-always a string), proceeded immediately by a colon and a space ``:``
-which is finally proceeded by the value object. Here we will make a new
-config where the *top level object* is of type ``Map``, and both the
-*key* and *value* are of type ``String``:
+Here we will make a new config where the *top level object* is of type
+``Map``, and both the *key* and *value* are of type ``String``:
 
-.. code:: yaml
+.. tab-set::
 
-   this is a key: this is a value
+   .. tab-item:: YAML
+
+      .. code:: yaml
+
+         this is a key: this is a value
+
+   .. tab-item:: JSON
+
+      .. code:: json
+
+         {
+            "this is a key": "this is a value"
+         } 
 
 Since maps are *collections* of objects, we can list multiple key value
 pairs within the map like so:
 
-.. code:: yaml
+.. tab-set::
 
-   string: Here is some text.
-   pi: 3.14159
-   meaning-of-life: 42
+   .. tab-item:: YAML
+
+      .. code:: yaml
+
+         string: Here is some text.
+         pi: 3.14159
+         meaning-of-life: 42
+
+   .. tab-item:: JSON
+
+      .. code:: json
+
+         {
+            "string": "Here is some text.",
+            "pi": 3.14159,
+            "meaning-of-life": 42
+         }
 
 This is useful because as explained above, configs only contain *one*
 top level object. By using maps, we are capable of defining more than
@@ -125,15 +192,28 @@ is instead identified by It's position in the list. Because of this,
 Another thing to note is generally, every item contained within a list
 will be of the same type.
 
-In YAML, lists are denoted by prefixing objects with a dash and space
-``-`` of the same indentation. Here is a config where the *top level
-object* is a ``List``, which contains multiple ``String``\ s:
+Here is a config where the *top level object* is a ``List``, which
+contains multiple ``String``\ s:
 
-.. code:: yaml
+.. tab-set::
 
-   - A string
-   - Another string
-   - The final string
+   .. tab-item:: YAML
+
+      .. code:: yaml
+
+         - A string
+         - Another string
+         - The final string
+
+   .. tab-item:: JSON
+
+      .. code:: json
+
+         [
+            "A string",
+            "Another string",
+            "The final string"
+         ]
 
 Nesting Objects
 ===============
@@ -141,36 +221,67 @@ Nesting Objects
 Because values in maps and items in lists can be of any type, It's
 possible to nest maps in maps, lists in lists, lists in maps, and so on.
 
-For simple data types like integers and strings it is clear which key
-corresponds to which value, as they are typically contained on the same
-line, but maps and lists may span multiple lines, so we need a way of
-defining which objects are defined under which keys and items. In YAML,
-we can specify this kind of relationship via *indentation* - which is
-simply how many spaces come before the key one a line. We conventionally
-use two spaces to indicate 'one level' of indentation in YAML configs.
-
 Here is an example of a ``Map`` contained within the value of another
 ``Map`` (which is the top level object):
 
-.. code:: yaml
+.. tab-set::
 
-   parent-key:
-     child-key: value
-     sibling-key: another value
+   .. tab-item:: YAML
 
-You can see that the map containing ``child-key`` and ``sibling-key`` is
-indented by two spaces, and is defined under the ``parent-key`` key,
-signifying that it belongs to that key.
+      For simple data types like integers and strings it is clear which key
+      corresponds to which value, as they are typically contained on the same
+      line, but maps and lists may span multiple lines, so we need a way of
+      defining which objects are defined under which keys and items. In YAML,
+      we can specify this kind of relationship via *indentation* - which is
+      simply how many spaces come before the key one a line. We conventionally
+      use two spaces to indicate 'one level' of indentation in YAML configs.
+
+      .. code:: yaml
+
+         parent-key:
+            child-key: value
+            sibling-key: another value
+
+      You can see that the map containing ``child-key`` and ``sibling-key`` is
+      indented by two spaces, and is defined under the ``parent-key`` key,
+      signifying that it belongs to that key.
+
+   .. tab-item:: JSON
+
+      .. code:: json
+
+         {
+            "parent-key": {
+               "child-key": "value",
+               "sibling-key": "another value"
+            }
+         }
 
 And here is a ``Map`` (the top level object) containing a ``List`` of
 ``String``\ s:
 
-.. code:: yaml
+.. tab-set::
 
-   list of strings:
-     - item 1
-     - item 2
-     - item 3
+   .. tab-item:: YAML
+
+      .. code:: yaml
+
+         list of strings:
+           - item 1
+           - item 2
+           - item 3
+
+   .. tab-item:: JSON
+
+      .. code:: json
+         
+         {
+            "list of strings": [
+               "item 1",
+               "item 2",
+               "item 3"
+            ]
+         }
 
 Combining Everything
 ====================
@@ -179,25 +290,62 @@ We can combine these different types to represent complex data
 structures, here is an example representing a shopping list, and some
 appointments using everything we have covered thus far:
 
-.. code:: yaml
+.. tab-set::
 
-   shopping-list:
-     - item: 1L Milk
-       amount: 2
-       cost-per-item: 2.0
-     - item: Carton of Eggs
-       amount: 1
-       cost-per-item: 4.5
+   .. tab-item:: YAML
 
-   appointments:
-     - name: Haircut Appointment
-       date: 24.04.22
-       start-time: 9:45
-       end-time: 10:15
-     - name: Doctor Appointment
-       date: 13.05.22
-       start-time: 3:15
-       end-time: 4:15
+      .. code:: yaml
+
+         shopping-list:
+           - item: 1L Milk
+             amount: 2
+             cost-per-item: 2.0
+           - item: Carton of Eggs
+             amount: 1
+             cost-per-item: 4.5
+
+         appointments:
+           - name: Haircut Appointment
+             date: 24.04.22
+             start-time: 9:45
+             end-time: 10:15
+           - name: Doctor Appointment
+             date: 13.05.22
+             start-time: 3:15
+             end-time: 4:15
+
+   .. tab-item:: JSON
+      
+      .. code:: json
+
+         {
+            "shopping-list": [
+               {
+                  "item": "1L Milk",
+                  "amount": 2,
+                  "cost-per-item": 2
+               },
+               {
+                  "item": "Carton of Eggs",
+                  "amount": 1,
+                  "cost-per-item": 4.5
+               }
+            ],
+            "appointments": [
+               {
+                  "name": "Haircut Appointment",
+                  "date": "24.04.22",
+                  "start-time": 585,
+                  "end-time": 615
+               },
+               {
+                  "name": "Doctor Appointment",
+                  "date": "13.05.22",
+                  "start-time": 195,
+                  "end-time": 255
+               }
+            ]
+         }
 
 In this example, our top level object is of type ``Map``, which contains
 two keys ``shopping-list`` and ``appointments``. The value of both keys

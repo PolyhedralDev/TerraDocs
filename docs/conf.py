@@ -30,6 +30,7 @@ author = 'Terra Contributors'
 extensions = [
     'jdlinker',
     'm2r2',
+    'sphinx_design'
 ]
 
 source_suffix = [
@@ -63,7 +64,8 @@ html_static_path = [
 html_css_files = [
     'css/padding.css',
     'css/headings.css',
-    'css/admonitions.css'
+    'css/admonitions.css',
+    'css/tabs.css'
 ]
 
 # JDLinker config

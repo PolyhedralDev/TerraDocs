@@ -3,3 +3,4 @@ sphinx-intl==2.0.1
 sphinx-JDLinker==2.0.1
 furo==2021.11.23
 m2r2==0.3.2
+sphinx-design==0.0.13
