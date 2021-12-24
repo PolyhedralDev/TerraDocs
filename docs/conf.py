@@ -30,7 +30,8 @@ author = 'Terra Contributors'
 extensions = [
     'jdlinker',
     'm2r2',
-    'sphinx_design'
+    'sphinx_design',
+    'sphinx.ext.githubpages',
 ]
 
 source_suffix = [
