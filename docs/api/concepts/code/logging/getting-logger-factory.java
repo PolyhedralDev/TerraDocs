@@ -1,0 +1,1 @@
+private static final Logger logger = LoggerFactory.getLogger(MyClass.class); // MyClass should be the class you're getting a logger for.

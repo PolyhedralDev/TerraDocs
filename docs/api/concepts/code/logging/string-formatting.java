@@ -1,0 +1,1 @@
+logger.info("Got {} {} from grocery store", amount, food);

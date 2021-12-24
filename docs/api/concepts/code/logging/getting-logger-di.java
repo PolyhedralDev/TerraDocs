@@ -1,0 +1,2 @@
+@Inject
+private Logger logger;

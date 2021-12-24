@@ -25,3 +25,4 @@ to a config, though generally configuration is encouraged.
     :titlesonly:
 
     intro/index
+    concepts/index

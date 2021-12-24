@@ -1,0 +1,1 @@
+logger.info("Got " + amount + " " + food + " from grocery store.");
