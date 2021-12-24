@@ -75,5 +75,9 @@ javadoc_links = {
     'https://ci.codemc.io/job/PolyhedralDev/job/Tectonic/javadoc/': ['com.dfsek.tectonic'],
 }
 
+# Syntax Highlighting Color
+pygments_style = 'stata-dark'
+pygments_dark_style = 'stata-dark'
+
 # The master toctree document.
 master_doc = 'index'
