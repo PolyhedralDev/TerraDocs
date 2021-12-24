@@ -14,7 +14,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Install all dependencies
-        run: pip install -r requirements.txt
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
 
       - name: Build
         run: sphinx-build -W -d build/doctrees docs build/html
