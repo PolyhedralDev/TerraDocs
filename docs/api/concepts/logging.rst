@@ -52,28 +52,13 @@ Logging Levels
 SLF4J supports several logging levels. The logging level shows how important a message is, and most logging frameworks
 support hiding messages below a certain level.
 
-Debug
-.....
-
-The debug level is the "finest" level. It is usually hidden by default, as it is meant for verbose logging that
-would only need to be seen for debugging.
-
-Info
-....
-
-The info level is for informative messages that would be useful for users to see. Info-level messages should not be
-verbose; they are generally used for coarse-grain information about the state of the program.
-
-Warn
-....
-
-The warning level is for informative messages that indicate something unexpected happened, such as Deprecated API usage.
-
-Error
-.....
-
-The error level is for situations where the program has encountered an error that it can recover from, but prevents
-it from functioning normally.
+- The ``DEBUG`` level is the "finest" level. It is usually hidden by default, as it is meant for verbose logging that
+  would only need to be seen for debugging.
+- The ``INFO`` level is for informative messages that would be useful for users to see. Info-level messages should not be
+  verbose; they are generally used for coarse-grain information about the state of the program.
+- The ``WARNING`` level is for informative messages that indicate something unexpected happened, such as Deprecated API usage.
+- The ``ERROR`` level is for situations where the program has encountered an error that it can recover from, but prevents
+  it from functioning normally.
 
 String Formatting in SLF4J
 --------------------------
