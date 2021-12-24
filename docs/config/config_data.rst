@@ -7,6 +7,8 @@ inside config files. Because Terra configs are able to be written in
 multiple languages, we use our own standardized set of terms to
 reference things that may be named differently between languages.
 
+.. note::
+
    If you are already familiar with data structures and
    data-serialization languages, feel free to skim over this section and
    skip forward to the next section.
@@ -26,15 +28,20 @@ The main concept to understand is that of **data types** or simply
 Typically when writing configs the data type will be inferred, but in
 many cases you need to explicitly tell Terra what type you want to use.
 
-A piece of data that defined in a config is something we will call an
+A piece of data defined in a config is something we will call an
 **object**. All objects can be categorized by having a type, which is
 determined by how it is defined in the config. Config files always
 define a single object, which is what we will call the **top level
 object**.
 
+Integers
+--------
+
 To put this information to use, let's create create a new config file in
 YAML and define our top level object. For our type let's use something
-called an ``Integer``. Integers represent whole numbers and as such, are
+called an ``Integer``.
+
+Integers represent whole numbers and as such, are
 written as whole numbers like so:
 
 .. tab-set::
@@ -53,6 +60,9 @@ written as whole numbers like so:
 
 We have now created a config that defines an ``Integer`` as the top
 level object, which represents the number ``42``, simple right?
+
+Floats
+------
 
 Another numerical type that is slightly different from integers is a
 ``Float``. The difference between integers and floats is that floats can
@@ -74,10 +84,13 @@ represent numbers that contain decimals:
 
 In many cases, we need to distinguish between integers and floats, as it
 may not be logical to have numbers with decimals for whatever we're
-configuring, so having two separate types allows for preventing these
+configuring, having two separate types allows for preventing these
 situations. Typically config parameters that require integers will not
 accept a float, but parameters that require a float will accept
 integers.
+
+Strings
+-------
 
 We can also represent data like text using a type called a ``String``:
 
