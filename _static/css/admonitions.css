@@ -1,0 +1,55 @@
+/*
+Styles admonitions
+ */
+
+.admonition {
+    border-left: none;
+}
+
+.admonition-title {
+    background: none !important;
+} 
+
+.caution {
+    background-color: var(--color-admonition-title-background--caution);
+}
+
+.warning {
+    background-color: var(--color-admonition-title-background--warning);
+}
+
+.danger {
+    background-color: var(--color-admonition-title-background--danger);
+}
+
+.attention {
+    background-color: var(--color-admonition-title-background--attention);
+}
+
+.error {
+    background-color: var(--color-admonition-title-background--error);
+}
+
+.hint {
+    background-color: var(--color-admonition-title-background--hint);
+}
+
+.tip {
+    background-color: var(--color-admonition-title-background--tip);
+}
+
+.important {
+    background-color: var(--color-admonition-title-background--important);
+}
+
+.note {
+    background-color: var(--color-admonition-title-background--note);
+}
+
+.seealso {
+    background-color: var(--color-admonition-title-background--seealso);
+}
+
+.admonition-todo {
+    background-color: var(--color-admonition-title-background--admonition-todo);
+}

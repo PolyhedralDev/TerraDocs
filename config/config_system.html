@@ -1,0 +1,529 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Terra API" href="../api/index.html" /><link rel="prev" title="Defining Data in Configs" href="config_data.html" />
+
+    <meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
+        <title>The Config System - Terra documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/padding.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/headings.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/tabs.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Terra  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Terra  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../install/index.html">Terra Installation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install/fabric_client.html">Installing Terra on a Fabric Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/fabric_server.html">Installing Terra on a Fabric Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/bukkit.html">Installing Terra on a Bukkit Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Configuration</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="config_files.html">Config Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_data.html">Defining Data in Configs</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">The Config System</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/intro/loading.html">Terra Addon Loading</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/concepts/dependency-injection.html">Dependency Injection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/concepts/logging.html">Logging With SLF4J</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/concepts/events.html">Handling Events</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="the-config-system">
+<h1>The Config System<a class="headerlink" href="#the-config-system" title="Permalink to this headline">¶</a></h1>
+<p>In this section we will cover:</p>
+<ul class="simple">
+<li><p>How Terra defines how configs must be structured.</p></li>
+<li><p>How these structured configs are interpreted and utilized by Terra.</p></li>
+<li><p>How we can write configs that abide by these prescribed structures.</p></li>
+</ul>
+<section id="templates">
+<h2>Templates<a class="headerlink" href="#templates" title="Permalink to this headline">¶</a></h2>
+<p>Most configurations follow what we will call a <strong>template</strong>. Templates
+can be thought of as <em>special versions of maps</em> which specify rules on
+how the contained key-value pairs must be structured. Many different
+templates are defined by Terra and can each be regarded as their own
+types, just like strings and integers.</p>
+<section id="parameters">
+<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<p>One of the main components of any given template is It’s specification
+of <strong>parameters</strong>. Parameters are what makes our data useful, as just
+about all world generation behavior in Terra is determined by
+parameters.</p>
+<p>The specification of a parameter inside a template involves:</p>
+<ul class="simple">
+<li><p>What the name of the parameter is (which is also how it is referenced
+inside a template).</p></li>
+<li><p>Whether the parameter is optional or required.</p></li>
+<li><p>What the types can the parameter be set to.</p></li>
+</ul>
+<p>To set parameters within a template, we use the <em>key</em> to denote <strong>which
+parameter</strong> we want to set, and the <em>value</em> to <strong>what the parameter
+should be set to</strong>. For example, here are a couple parameters specified
+within a Terra config pack manifest that provides some basic information
+about the pack:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">COOL_CONFIG_PACK</span>
+<span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
+<span class="nt">author</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Anon Y. Mous</span>
+</pre></div>
+</div>
+<p>Parameters may also be nested under multiple maps within a template. For
+example in the below config, the top level object may abide by a
+template and specify a parameter that is nested, which we can see has
+the value <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">parameter</span> <span class="pre">value</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="p">:</span>
+  <span class="nt">nested</span><span class="p">:</span>
+    <span class="nt">parameter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">a parameter value</span>
+</pre></div>
+</div>
+<p>When referring to parameters within templates, we use a combination of
+the parent key(s) separated by dots <code class="docutils literal notranslate"><span class="pre">.</span></code> to identify the desired
+parameter. Using the above config, we would refer to the specified
+parameter as <code class="docutils literal notranslate"><span class="pre">a.nested.parameter</span></code>.</p>
+<p>Some parameter conventions to keep in mind:</p>
+<ul class="simple">
+<li><p>The parent key object(s) of a parameter will always be of type
+string, where all characters are lowercase, and dashes <code class="docutils literal notranslate"><span class="pre">-</span></code> are used
+in place of spaces.</p></li>
+<li><p>The <em>type</em> of the <em>value object</em> is considered the <em>parameter’s
+type</em>.</p></li>
+</ul>
+</section>
+<section id="working-with-templates">
+<h3>Working With Templates<a class="headerlink" href="#working-with-templates" title="Permalink to this headline">¶</a></h3>
+<p>For the sake of explanation, let’s invent a new template to work with
+called <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code>. The <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code> type specifies:</p>
+<ul class="simple">
+<li><p>A required parameter called <code class="docutils literal notranslate"><span class="pre">color</span></code> that must be of type <code class="docutils literal notranslate"><span class="pre">string</span></code></p></li>
+<li><p>A required parameter called <code class="docutils literal notranslate"><span class="pre">legs</span></code> that must be of type
+<code class="docutils literal notranslate"><span class="pre">integer</span></code>.</p></li>
+</ul>
+<p>We can then write a new config using our new type assuming our top level
+object is of type <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grey</span>
+<span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+</pre></div>
+</div>
+<p>Because <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code> contains these parameter specifications, if
+we write a config that does not abide by them, then Terra will fail to
+load the config. For example, the following config would not load
+because 1. <code class="docutils literal notranslate"><span class="pre">color</span></code> has not been specified and is a required parameter,
+and 2. <code class="docutils literal notranslate"><span class="pre">legs</span></code> is not of the required type integer:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">two</span>
+</pre></div>
+</div>
+<p>If we were to <em>document</em> <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code>, it may look like this:</p>
+<blockquote>
+<div><p><strong>AnimalTemplate</strong></p>
+<p>Defines the attributes of an animal.</p>
+<p>REQUIRED KEYS</p>
+<p><code class="docutils literal notranslate"><span class="pre">color</span></code> - String</p>
+<ul class="simple">
+<li><p>The color of the animal.</p></li>
+</ul>
+<p><code class="docutils literal notranslate"><span class="pre">legs</span></code> Integer</p>
+<ul class="simple">
+<li><p>How many legs the animal has.</p></li>
+</ul>
+</div></blockquote>
+<p>Great, now that we have a template to describe an animal, let’s create a
+new template that describes a zoo of animals:</p>
+<blockquote>
+<div><p><strong>ZooTemplate</strong></p>
+<p>Defines a zoo of animals.</p>
+<p>REQUIRED KEYS</p>
+<p><code class="docutils literal notranslate"><span class="pre">animals</span></code> - Map of Strings to AnimalTemplates</p>
+<ul class="simple">
+<li><p>A collection of animals.</p></li>
+</ul>
+<dl class="simple">
+<dt>OPTIONAL KEYS</dt><dd><dl class="field-list simple">
+<dt class="field-odd">name</dt>
+<dd class="field-odd"><p>optional-keys</p>
+</dd>
+</dl>
+</dd>
+</dl>
+<p><code class="docutils literal notranslate"><span class="pre">description</span></code> - String</p>
+<ul class="simple">
+<li><p>A description of the zoo and It’s animals.</p></li>
+</ul>
+</div></blockquote>
+<p>The interesting thing to note here with <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code> is we have now
+treated <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code> as the required value type of the <code class="docutils literal notranslate"><span class="pre">animals</span></code>
+parameter. This ability to utilize templates like any other type allows
+for highly complex config specs, and is one of the key features of
+Terra’s config system.</p>
+<p>We can now use <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code>s within our new <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code> and
+create a config able to be read and interpreted by the config loader
+like so:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A zoo of Australian animals.</span>
+<span class="nt">animals</span><span class="p">:</span>
+  <span class="nt">koala</span><span class="p">:</span>
+    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grey</span>
+    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+  <span class="nt">kangaroo</span><span class="p">:</span>
+    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">brown</span>
+    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="config-types">
+<h2>Config Types<a class="headerlink" href="#config-types" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have covered what templates are, what they do, and how we
+write configs according to them, we have run into an issue: how does
+Terra know which template the config should use in the first place? For
+top level objects, there isn’t a template It’s contained in to specify
+the type, so what tells Terra to use <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code> instead of any
+other template?</p>
+</section>
+<section id="choosing-templates">
+<h2>Choosing Templates<a class="headerlink" href="#choosing-templates" title="Permalink to this headline">¶</a></h2>
+<p>This is where the <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter comes in handy. The <code class="docutils literal notranslate"><span class="pre">type</span></code>
+parameter is a standardized way of specifying the template a <code class="docutils literal notranslate"><span class="pre">Map</span></code>
+will follow, and is available for use in places where multiple templates
+may be applicable.</p>
+<section id="registries">
+<h3>Registries<a class="headerlink" href="#registries" title="Permalink to this headline">¶</a></h3>
+<p>In order to tell Terra we want our config to use <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code>, we
+must set the <code class="docutils literal notranslate"><span class="pre">type</span></code> to something called a <strong>registry key</strong>. Registry
+keys allow us to use things in a <strong>registry</strong>.</p>
+<p>A registry can be thought of as an internal <code class="docutils literal notranslate"><span class="pre">Map</span></code> that Terra uses to
+store similar things. Because of this, we can also think of registry
+keys as working the same way as <code class="docutils literal notranslate"><span class="pre">Map</span></code> keys. Many registries exist in
+Terra and all have different purposes; <strong>registry entries</strong> can be
+created both by Terra (typically using addons), and by configuration
+files, depending on use.</p>
+<p>In this instance, we will be working with the <strong>config registry</strong>. The
+config registry contains a bunch of templates like our <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code>,
+which are <em>registered</em> internally by Terra. The purpose of the config
+registry is to allow us to specify a config’s template using the
+<code class="docutils literal notranslate"><span class="pre">type</span></code> key.</p>
+<p>Let’s assume that <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code> has been registered under the name /
+registry key <code class="docutils literal notranslate"><span class="pre">ZOO</span></code> by Terra. Now what we can do is simply set the
+<code class="docutils literal notranslate"><span class="pre">type</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">ZOO</span></code> in our config from above, signifying to
+Terra that our config top level object will be of type <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ZOO</span>
+<span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A zoo of Australian animals.</span>
+<span class="nt">animals</span><span class="p">:</span>
+  <span class="nt">koala</span><span class="p">:</span>
+    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grey</span>
+    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+  <span class="nt">kangaroo</span><span class="p">:</span>
+    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">brown</span>
+    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+</pre></div>
+</div>
+<p>And with that, we have now <em>designed a new</em> <strong>config type</strong> that Terra
+is capable of interpreting.</p>
+<section id="registering-configs">
+<h4>Registering Configs<a class="headerlink" href="#registering-configs" title="Permalink to this headline">¶</a></h4>
+<p>Great! Now we are able to easily create new zoos just by making new
+config files for each one, but we have run into another issue: how would
+each zoo be kept track of? How would we be able to reference specific
+zoos in other configs? Perhaps we could put all of our zoo configs
+inside a single <code class="docutils literal notranslate"><span class="pre">Map</span></code> and keep everything inside one config file, and
+use the key name to refer to each individual zoo - but that could get
+cumbersome. What if we wanted to make hundreds of zoos, how would we
+keep them all organized?</p>
+<p>To solve this issue, we can make use of registries. Let’s introduce a
+new registry called the <strong>zoo registry</strong>. As a config developer, you
+won’t need to worry about creating registries, as they are provided by
+addons and the API, so we can assume the zoo registry is created by one
+of our installed addons. New registry entries inside our new zoo
+registry can be made by simply creating <code class="docutils literal notranslate"><span class="pre">ZOO</span></code> configs, and we can let
+Terra handle the registration of each config automatically.</p>
+<p>To do this we will also need a way of choosing a <em>registry key</em> for each
+zoo we want to make. We want control over the registry key, so what we
+can do is introduce a new parameter in <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code> called <code class="docutils literal notranslate"><span class="pre">id</span></code>.
+What <code class="docutils literal notranslate"><span class="pre">id</span></code> does is simply sets the <em>registry key</em> of configs when they
+are automatically registered by Terra, allowing us to access all of our
+<code class="docutils literal notranslate"><span class="pre">ZOO</span></code> configs from anywhere via the <em>zoo registry</em>.</p>
+<p>And with this, here is what our final config looks like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AUSTRALIAN_ZOO</span>
+<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ZOO</span>
+<span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A zoo of Australian animals.</span>
+<span class="nt">animals</span><span class="p">:</span>
+  <span class="nt">koala</span><span class="p">:</span>
+    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grey</span>
+    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+  <span class="nt">kangaroo</span><span class="p">:</span>
+    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">brown</span>
+    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+</pre></div>
+</div>
+<p>Now in any other config that requires a zoo, we can specify our
+<code class="docutils literal notranslate"><span class="pre">AUSTRALIAN_ZOO</span></code> and it will automatically be grabbed from the zoo
+registry for use.</p>
+</section>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../api/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Terra API</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="config_data.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Defining Data in Configs</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Terra Contributors |
+          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            | <a class="muted-link" href="../_sources/config/config_system.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">The Config System</a><ul>
+<li><a class="reference internal" href="#templates">Templates</a><ul>
+<li><a class="reference internal" href="#parameters">Parameters</a></li>
+<li><a class="reference internal" href="#working-with-templates">Working With Templates</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#config-types">Config Types</a></li>
+<li><a class="reference internal" href="#choosing-templates">Choosing Templates</a><ul>
+<li><a class="reference internal" href="#registries">Registries</a><ul>
+<li><a class="reference internal" href="#registering-configs">Registering Configs</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    </body>
+</html>

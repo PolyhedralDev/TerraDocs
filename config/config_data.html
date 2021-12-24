@@ -1,0 +1,695 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="The Config System" href="config_system.html" /><link rel="prev" title="Config Files" href="config_files.html" />
+
+    <meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
+        <title>Defining Data in Configs - Terra documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/padding.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/headings.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/tabs.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Terra  documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Terra  documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../install/index.html">Terra Installation</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../install/fabric_client.html">Installing Terra on a Fabric Client</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/fabric_server.html">Installing Terra on a Fabric Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../install/bukkit.html">Installing Terra on a Bukkit Server</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Configuration</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="config_files.html">Config Files</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Defining Data in Configs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="config_system.html">The Config System</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/intro/loading.html">Terra Addon Loading</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/concepts/dependency-injection.html">Dependency Injection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/concepts/logging.html">Logging With SLF4J</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/concepts/events.html">Handling Events</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="defining-data-in-configs">
+<h1>Defining Data in Configs<a class="headerlink" href="#defining-data-in-configs" title="Permalink to this headline">¶</a></h1>
+<p>In this section, we will cover the basic ways data is stored and written
+inside config files. Because Terra configs are able to be written in
+multiple languages, we use our own standardized set of terms to
+reference things that may be named differently between languages.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you are already familiar with data structures and
+data-serialization languages, feel free to skim over this section and
+skip forward to the next section.</p>
+</div>
+<section id="types">
+<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<p>The main concept to understand is that of <strong>data types</strong> or simply
+<strong>types</strong>. Types tell us:</p>
+<ul class="simple">
+<li><p>How data should be defined</p></li>
+<li><p>What is expected of that data to contain</p></li>
+<li><p>How that data will be used</p></li>
+</ul>
+<p>Typically when writing configs the data type will be inferred, but in
+many cases you need to explicitly tell Terra what type you want to use.</p>
+<p>A piece of data defined in a config is something we will call an
+<strong>object</strong>. All objects can be categorized by having a type, which is
+determined by how it is defined in the config. Config files always
+define a single object, which is what we will call the <strong>top level
+object</strong>.</p>
+<section id="integers">
+<h3>Integers<a class="headerlink" href="#integers" title="Permalink to this headline">¶</a></h3>
+<p>To put this information to use, let’s create create a new config file in
+YAML and define our top level object. For our type let’s use something
+called an <code class="docutils literal notranslate"><span class="pre">Integer</span></code>.</p>
+<p>Integers represent whole numbers and as such, are
+written as whole numbers like so:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="bd2d47d1-8bce-46c6-a61d-8e14e71d8d29" name="48a28314-11b2-4fd9-90ab-6d026c3e79e2" type="radio"/>
+<label class="sd-tab-label" for="bd2d47d1-8bce-46c6-a61d-8e14e71d8d29">
+YAML</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">42</span>
+</pre></div>
+</div>
+</div>
+<input id="f0c69860-5b87-4a2d-a9a7-6bdb8490050c" name="48a28314-11b2-4fd9-90ab-6d026c3e79e2" type="radio"/>
+<label class="sd-tab-label" for="f0c69860-5b87-4a2d-a9a7-6bdb8490050c">
+JSON</label><div class="sd-tab-content docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have now created a config that defines an <code class="docutils literal notranslate"><span class="pre">Integer</span></code> as the top
+level object, which represents the number <code class="docutils literal notranslate"><span class="pre">42</span></code>, simple right?</p>
+</section>
+<section id="floats">
+<h3>Floats<a class="headerlink" href="#floats" title="Permalink to this headline">¶</a></h3>
+<p>Another numerical type that is slightly different from integers is a
+<code class="docutils literal notranslate"><span class="pre">Float</span></code>. The difference between integers and floats is that floats can
+represent numbers that contain decimals:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="c22584cd-3918-465b-99a6-9e5da2d10301" name="d204d6b8-fb1a-4aba-9f15-2a1ac265c8f8" type="radio"/>
+<label class="sd-tab-label" for="c22584cd-3918-465b-99a6-9e5da2d10301">
+YAML</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">3.14159</span>
+</pre></div>
+</div>
+</div>
+<input id="59e80d62-82d9-440a-88aa-8b8325e9903b" name="d204d6b8-fb1a-4aba-9f15-2a1ac265c8f8" type="radio"/>
+<label class="sd-tab-label" for="59e80d62-82d9-440a-88aa-8b8325e9903b">
+JSON</label><div class="sd-tab-content docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="mf">3.14159</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In many cases, we need to distinguish between integers and floats, as it
+may not be logical to have numbers with decimals for whatever we’re
+configuring, having two separate types allows for preventing these
+situations. Typically config parameters that require integers will not
+accept a float, but parameters that require a float will accept
+integers.</p>
+</section>
+<section id="strings">
+<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
+<p>We can also represent data like text using a type called a <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="2fabe269-7272-4121-acb4-88da43a249c5" name="74004063-e728-407e-8657-cff90620946b" type="radio"/>
+<label class="sd-tab-label" for="2fabe269-7272-4121-acb4-88da43a249c5">
+YAML</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">This is a config of type string.</span>
+</pre></div>
+</div>
+</div>
+<input id="f9613e87-2a0f-4ac4-8ada-ae09a7e02d3b" name="74004063-e728-407e-8657-cff90620946b" type="radio"/>
+<label class="sd-tab-label" for="f9613e87-2a0f-4ac4-8ada-ae09a7e02d3b">
+JSON</label><div class="sd-tab-content docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">"This is a config of type string."</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Strings are useful for specifying the names of things, and are used
+everywhere - for example we would need need to use strings to specify
+what block IDs we want to use for the blocks in a biome.</p>
+<p>In some cases you may want to specify a <code class="docutils literal notranslate"><span class="pre">String</span></code> where it might be
+interpreted as another type like <code class="docutils literal notranslate"><span class="pre">Integer</span></code>. To explicitly specify an
+object is a <code class="docutils literal notranslate"><span class="pre">String</span></code>, you can wrap it quotes like so:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="b039383c-90b4-4c92-ac3d-1b9186b535e5" name="f412dbcf-0a6b-4733-ba23-4f5b3af95d84" type="radio"/>
+<label class="sd-tab-label" for="b039383c-90b4-4c92-ac3d-1b9186b535e5">
+YAML</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">"42"</span>
+</pre></div>
+</div>
+</div>
+<input id="ae1b97bc-1ff7-46a4-82a7-2b1bd90e81fb" name="f412dbcf-0a6b-4733-ba23-4f5b3af95d84" type="radio"/>
+<label class="sd-tab-label" for="ae1b97bc-1ff7-46a4-82a7-2b1bd90e81fb">
+JSON</label><div class="sd-tab-content docutils">
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="s2">"42"</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In JSON, strings <em>must</em> be explicitly wrapped in quotes.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="maps">
+<h3>Maps<a class="headerlink" href="#maps" title="Permalink to this headline">¶</a></h3>
+<p>By themselves, integers, floats, and strings aren’t too useful, until we
+start assigning labels to them. We can do that using a type called a
+<code class="docutils literal notranslate"><span class="pre">Map</span></code>.</p>
+<p>A map is a <em>collection of objects</em>, referred to individually as
+<strong>values</strong>, where each <strong>value</strong> in the collection is identified by
+another unique object called a <strong>key</strong>. A key and a value together are
+called a <strong>key-value pair</strong>.</p>
+<p>Here we will make a new config where the <em>top level object</em> is of type
+<code class="docutils literal notranslate"><span class="pre">Map</span></code>, and both the <em>key</em> and <em>value</em> are of type <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="2e7c51fa-f209-4a4e-90f5-9183ce405d89" name="b49550af-cc20-4858-81f5-565246b22c21" type="radio"/>
+<label class="sd-tab-label" for="2e7c51fa-f209-4a4e-90f5-9183ce405d89">
+YAML</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">this is a key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">this is a value</span>
+</pre></div>
+</div>
+</div>
+<input id="0cd53570-aeb5-4479-b941-e694b1b5dfda" name="b49550af-cc20-4858-81f5-565246b22c21" type="radio"/>
+<label class="sd-tab-label" for="0cd53570-aeb5-4479-b941-e694b1b5dfda">
+JSON</label><div class="sd-tab-content docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">"this is a key"</span><span class="p">:</span> <span class="s2">"this is a value"</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Since maps are <em>collections</em> of objects, we can list multiple key value
+pairs within the map like so:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="444ef6d3-9b84-4870-b025-69d57d008fd8" name="f8d2cd76-90cf-4521-9ef8-be89d12a8871" type="radio"/>
+<label class="sd-tab-label" for="444ef6d3-9b84-4870-b025-69d57d008fd8">
+YAML</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">string</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Here is some text.</span>
+<span class="nt">pi</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.14159</span>
+<span class="nt">meaning-of-life</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">42</span>
+</pre></div>
+</div>
+</div>
+<input id="2bdc5b8c-f858-4cff-bf62-217c8c7886c2" name="f8d2cd76-90cf-4521-9ef8-be89d12a8871" type="radio"/>
+<label class="sd-tab-label" for="2bdc5b8c-f858-4cff-bf62-217c8c7886c2">
+JSON</label><div class="sd-tab-content docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">"string"</span><span class="p">:</span> <span class="s2">"Here is some text."</span><span class="p">,</span>
+   <span class="nt">"pi"</span><span class="p">:</span> <span class="mf">3.14159</span><span class="p">,</span>
+   <span class="nt">"meaning-of-life"</span><span class="p">:</span> <span class="mi">42</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is useful because as explained above, configs only contain <em>one</em>
+top level object. By using maps, we are capable of defining more than
+one object within a config, as well as being able to identify what each
+of those objects are using keys.</p>
+</section>
+<section id="lists">
+<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<p>In addition to maps, we can also use a type called a <code class="docutils literal notranslate"><span class="pre">List</span></code> to
+indicate a collection of data. Lists differ from maps in that each
+object (called an <strong>item</strong>) in a list is not assigned a unique key, but
+is instead identified by It’s position in the list. Because of this,
+<em>the order in which you define each object is significant</em>, unlike maps.</p>
+<p>Another thing to note is generally, every item contained within a list
+will be of the same type.</p>
+<p>Here is a config where the <em>top level object</em> is a <code class="docutils literal notranslate"><span class="pre">List</span></code>, which
+contains multiple <code class="docutils literal notranslate"><span class="pre">String</span></code>s:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="85f51eb2-3856-4273-a3bf-50c82ef89b2e" name="6b839401-7590-47b6-a282-9ea515e62e58" type="radio"/>
+<label class="sd-tab-label" for="85f51eb2-3856-4273-a3bf-50c82ef89b2e">
+YAML</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">A string</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Another string</span>
+<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">The final string</span>
+</pre></div>
+</div>
+</div>
+<input id="a44529e2-1fb8-46a0-bc15-b183fe02fb3f" name="6b839401-7590-47b6-a282-9ea515e62e58" type="radio"/>
+<label class="sd-tab-label" for="a44529e2-1fb8-46a0-bc15-b183fe02fb3f">
+JSON</label><div class="sd-tab-content docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
+   <span class="s2">"A string"</span><span class="p">,</span>
+   <span class="s2">"Another string"</span><span class="p">,</span>
+   <span class="s2">"The final string"</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="nesting-objects">
+<h2>Nesting Objects<a class="headerlink" href="#nesting-objects" title="Permalink to this headline">¶</a></h2>
+<p>Because values in maps and items in lists can be of any type, It’s
+possible to nest maps in maps, lists in lists, lists in maps, and so on.</p>
+<p>Here is an example of a <code class="docutils literal notranslate"><span class="pre">Map</span></code> contained within the value of another
+<code class="docutils literal notranslate"><span class="pre">Map</span></code> (which is the top level object):</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="3a7fecea-a33d-432d-bbcd-9d8abba58455" name="1b9e74ba-12cc-45ee-88bf-329adbedf6ec" type="radio"/>
+<label class="sd-tab-label" for="3a7fecea-a33d-432d-bbcd-9d8abba58455">
+YAML</label><div class="sd-tab-content docutils">
+<p>For simple data types like integers and strings it is clear which key
+corresponds to which value, as they are typically contained on the same
+line, but maps and lists may span multiple lines, so we need a way of
+defining which objects are defined under which keys and items. In YAML,
+we can specify this kind of relationship via <em>indentation</em> - which is
+simply how many spaces come before the key one a line. We conventionally
+use two spaces to indicate ‘one level’ of indentation in YAML configs.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parent-key</span><span class="p">:</span>
+   <span class="nt">child-key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">value</span>
+   <span class="nt">sibling-key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">another value</span>
+</pre></div>
+</div>
+<p>You can see that the map containing <code class="docutils literal notranslate"><span class="pre">child-key</span></code> and <code class="docutils literal notranslate"><span class="pre">sibling-key</span></code> is
+indented by two spaces, and is defined under the <code class="docutils literal notranslate"><span class="pre">parent-key</span></code> key,
+signifying that it belongs to that key.</p>
+</div>
+<input id="5a6e9754-651f-4a34-9411-2fd6667021db" name="1b9e74ba-12cc-45ee-88bf-329adbedf6ec" type="radio"/>
+<label class="sd-tab-label" for="5a6e9754-651f-4a34-9411-2fd6667021db">
+JSON</label><div class="sd-tab-content docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">"parent-key"</span><span class="p">:</span> <span class="p">{</span>
+      <span class="nt">"child-key"</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
+      <span class="nt">"sibling-key"</span><span class="p">:</span> <span class="s2">"another value"</span>
+   <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>And here is a <code class="docutils literal notranslate"><span class="pre">Map</span></code> (the top level object) containing a <code class="docutils literal notranslate"><span class="pre">List</span></code> of
+<code class="docutils literal notranslate"><span class="pre">String</span></code>s:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="8b9e38f0-a8cb-4b39-a0c2-3c6dd999601e" name="5b39dc11-f703-4f63-8ee7-848f4888edae" type="radio"/>
+<label class="sd-tab-label" for="8b9e38f0-a8cb-4b39-a0c2-3c6dd999601e">
+YAML</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">list of strings</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item 1</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item 2</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item 3</span>
+</pre></div>
+</div>
+</div>
+<input id="8fce9722-99bc-4194-a185-48437ec5b3d0" name="5b39dc11-f703-4f63-8ee7-848f4888edae" type="radio"/>
+<label class="sd-tab-label" for="8fce9722-99bc-4194-a185-48437ec5b3d0">
+JSON</label><div class="sd-tab-content docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">"list of strings"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="s2">"item 1"</span><span class="p">,</span>
+      <span class="s2">"item 2"</span><span class="p">,</span>
+      <span class="s2">"item 3"</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="combining-everything">
+<h2>Combining Everything<a class="headerlink" href="#combining-everything" title="Permalink to this headline">¶</a></h2>
+<p>We can combine these different types to represent complex data
+structures, here is an example representing a shopping list, and some
+appointments using everything we have covered thus far:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="e9354502-db30-47b0-abe7-b1f5258e6e04" name="5041defe-d65a-43a7-ad15-94d702412973" type="radio"/>
+<label class="sd-tab-label" for="e9354502-db30-47b0-abe7-b1f5258e6e04">
+YAML</label><div class="sd-tab-content docutils">
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">shopping-list</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1L Milk</span>
+    <span class="nt">amount</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+    <span class="nt">cost-per-item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+  <span class="p p-Indicator">-</span> <span class="nt">item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Carton of Eggs</span>
+    <span class="nt">amount</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+    <span class="nt">cost-per-item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4.5</span>
+
+<span class="nt">appointments</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Haircut Appointment</span>
+    <span class="nt">date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">24.04.22</span>
+    <span class="nt">start-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9:45</span>
+    <span class="nt">end-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10:15</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Doctor Appointment</span>
+    <span class="nt">date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">13.05.22</span>
+    <span class="nt">start-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3:15</span>
+    <span class="nt">end-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4:15</span>
+</pre></div>
+</div>
+</div>
+<input id="c67aa9e4-0dd1-4b33-a12e-659e489ce786" name="5041defe-d65a-43a7-ad15-94d702412973" type="radio"/>
+<label class="sd-tab-label" for="c67aa9e4-0dd1-4b33-a12e-659e489ce786">
+JSON</label><div class="sd-tab-content docutils">
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nt">"shopping-list"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="nt">"item"</span><span class="p">:</span> <span class="s2">"1L Milk"</span><span class="p">,</span>
+         <span class="nt">"amount"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+         <span class="nt">"cost-per-item"</span><span class="p">:</span> <span class="mi">2</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="nt">"item"</span><span class="p">:</span> <span class="s2">"Carton of Eggs"</span><span class="p">,</span>
+         <span class="nt">"amount"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+         <span class="nt">"cost-per-item"</span><span class="p">:</span> <span class="mf">4.5</span>
+      <span class="p">}</span>
+   <span class="p">],</span>
+   <span class="nt">"appointments"</span><span class="p">:</span> <span class="p">[</span>
+      <span class="p">{</span>
+         <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"Haircut Appointment"</span><span class="p">,</span>
+         <span class="nt">"date"</span><span class="p">:</span> <span class="s2">"24.04.22"</span><span class="p">,</span>
+         <span class="nt">"start-time"</span><span class="p">:</span> <span class="mi">585</span><span class="p">,</span>
+         <span class="nt">"end-time"</span><span class="p">:</span> <span class="mi">615</span>
+      <span class="p">},</span>
+      <span class="p">{</span>
+         <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"Doctor Appointment"</span><span class="p">,</span>
+         <span class="nt">"date"</span><span class="p">:</span> <span class="s2">"13.05.22"</span><span class="p">,</span>
+         <span class="nt">"start-time"</span><span class="p">:</span> <span class="mi">195</span><span class="p">,</span>
+         <span class="nt">"end-time"</span><span class="p">:</span> <span class="mi">255</span>
+      <span class="p">}</span>
+   <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>In this example, our top level object is of type <code class="docutils literal notranslate"><span class="pre">Map</span></code>, which contains
+two keys <code class="docutils literal notranslate"><span class="pre">shopping-list</span></code> and <code class="docutils literal notranslate"><span class="pre">appointments</span></code>. The value of both keys
+are of type <code class="docutils literal notranslate"><span class="pre">List</span></code>, where each <em>item</em> in each list contains a <code class="docutils literal notranslate"><span class="pre">Map</span></code>.</p>
+</section>
+<section id="language-specific-syntax">
+<h2>Language Specific Syntax<a class="headerlink" href="#language-specific-syntax" title="Permalink to this headline">¶</a></h2>
+<p>Some data-serialization languages support alternative syntax for
+representing the same thing, for example in YAML you can represent maps
+and lists using curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> and square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>
+respectively, where objects are separated by commas <code class="docutils literal notranslate"><span class="pre">,</span></code> instead. This
+can be useful for when you don’t necessarily want to separate objects by
+lines and indentation:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">curly-brace-map</span><span class="p">:</span> <span class="p p-Indicator">{</span>
+  <span class="s">"key-1"</span><span class="p p-Indicator">:</span> <span class="s">"value-1"</span><span class="p p-Indicator">,</span>
+  <span class="s">"key-2"</span><span class="p p-Indicator">:</span> <span class="s">"value-2"</span>
+<span class="p p-Indicator">}</span>
+
+<span class="nt">square-bracket-list</span><span class="p">:</span> <span class="p p-Indicator">[</span>
+  <span class="nv">item-1</span><span class="p p-Indicator">,</span>
+  <span class="nv">item-2</span><span class="p p-Indicator">,</span>
+  <span class="nv">item-3</span>
+<span class="p p-Indicator">]</span>
+
+<span class="nt">single-line-map</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="s">"key-1"</span><span class="p p-Indicator">:</span> <span class="s">"value-1"</span><span class="p p-Indicator">,</span> <span class="s">"key-2"</span><span class="p p-Indicator">:</span> <span class="s">"value-2"</span> <span class="p p-Indicator">}</span>
+
+<span class="nt">single-line-list</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">item-1</span><span class="p p-Indicator">,</span> <span class="nv">item-2</span><span class="p p-Indicator">,</span> <span class="nv">item-3</span> <span class="p p-Indicator">]</span>
+
+<span class="nt">empty-map</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
+
+<span class="nt">empty-list</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
+</pre></div>
+</div>
+<p>YAML also provides additional systems like <strong>anchors</strong>, which allow for
+easily re-using data within a config and is useful for when you might
+want to write the same thing multiple times in a config:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">some-list-of-data</span><span class="p">:</span> <span class="nl">&amp;the-data-anchor</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item-1</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item-2</span>
+
+<span class="nt">somewhere-where-data-is-reused</span><span class="p">:</span> <span class="nv">*the-data-anchor</span>
+</pre></div>
+</div>
+<p>When parsed by the YAML language addon, the value of
+<code class="docutils literal notranslate"><span class="pre">somewhere-where-the-data-is-reused</span></code> will be the same as the list
+defined under <code class="docutils literal notranslate"><span class="pre">some-list-of-data</span></code>.</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="config_system.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">The Config System</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="config_files.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Config Files</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Terra Contributors |
+          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            | <a class="muted-link" href="../_sources/config/config_data.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Defining Data in Configs</a><ul>
+<li><a class="reference internal" href="#types">Types</a><ul>
+<li><a class="reference internal" href="#integers">Integers</a></li>
+<li><a class="reference internal" href="#floats">Floats</a></li>
+<li><a class="reference internal" href="#strings">Strings</a></li>
+<li><a class="reference internal" href="#maps">Maps</a></li>
+<li><a class="reference internal" href="#lists">Lists</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#nesting-objects">Nesting Objects</a></li>
+<li><a class="reference internal" href="#combining-everything">Combining Everything</a></li>
+<li><a class="reference internal" href="#language-specific-syntax">Language Specific Syntax</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/furo.js"></script>
+    <script src="../_static/design-tabs.js"></script>
+    </body>
+</html>

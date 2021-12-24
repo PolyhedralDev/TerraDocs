@@ -1,0 +1,11 @@
+/*
+Modifies sphinx design tabs
+ */
+
+:root {
+    --sd-fontsize-tabs-label: 0.7rem
+}
+
+.sd-tab-content {
+    box-shadow: none;
+}
