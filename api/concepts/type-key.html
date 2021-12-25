@@ -231,7 +231,11 @@ runtime.</p>
 <section id="the-solution">
 <h2>The Solution<a class="headerlink" href="#the-solution" title="Permalink to this headline">¶</a></h2>
 <p>Terra includes an abstract class called <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/util/reflection/TypeKey.html">TypeKey</a> to solve this problem. All APIs which accept a <code class="docutils literal notranslate"><span class="pre">Class</span></code>
-instance also accept a <code class="docutils literal notranslate"><span class="pre">TypeKey</span></code>. To acquire a <code class="docutils literal notranslate"><span class="pre">TypeKey</span></code> instance for your type, simply create an inner class
+instance also accept a <code class="docutils literal notranslate"><span class="pre">TypeKey</span></code>.</p>
+</section>
+<section id="getting-a-typekey">
+<h2>Getting a TypeKey<a class="headerlink" href="#getting-a-typekey" title="Permalink to this headline">¶</a></h2>
+<p>To acquire a <code class="docutils literal notranslate"><span class="pre">TypeKey</span></code> instance for your type, simply create an anonymous inner class
 which extends <code class="docutils literal notranslate"><span class="pre">TypeKey</span></code> with a generic type matching yours. In our <code class="docutils literal notranslate"><span class="pre">SomeObject&lt;SomeOtherThing&gt;</span></code> example, that would
 look like:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TypeKey</span><span class="o">&lt;</span><span class="n">SomeObject</span><span class="o">&lt;</span><span class="n">SomeOtherThing</span><span class="o">&gt;&gt;</span> <span class="n">SOME_OBJECT_SOME_OTHER_THING_KEY</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TypeKey</span><span class="o">&lt;&gt;</span><span class="p">()</span> <span class="p">{</span> <span class="p">};</span>
@@ -242,6 +246,14 @@ look like:</p>
 <p>Notice that the <code class="docutils literal notranslate"><span class="pre">TypeKey</span></code> is <code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">final</span></code>. This is to reduce boilerplate by moving the key declaration to
 the top of the class, and to reduce unneeded instantiation.</p>
 </div>
+<section id="getting-a-typekey-from-a-class-instance">
+<h3>Getting a TypeKey from a Class instance<a class="headerlink" href="#getting-a-typekey-from-a-class-instance" title="Permalink to this headline">¶</a></h3>
+<p>To further reduce boilerplate, you can get a TypeKey directly from a <a class="reference external" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html">Class</a> instance by using the
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/util/reflection/TypeKey.html#of-java.lang.Class-">TypeKey#of(Class)</a> method. This is useful if you need a TypeKey for a non-generic type.</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">TypeKey</span><span class="o">&lt;</span><span class="n">Something</span><span class="o">&gt;</span> <span class="o">=</span> <span class="n">TypeKey</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">Something</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -291,6 +303,10 @@ the top of the class, and to reduce unneeded instantiation.</p>
 <li><a class="reference internal" href="#">Type Keys</a><ul>
 <li><a class="reference internal" href="#the-issue">The Issue</a></li>
 <li><a class="reference internal" href="#the-solution">The Solution</a></li>
+<li><a class="reference internal" href="#getting-a-typekey">Getting a TypeKey</a><ul>
+<li><a class="reference internal" href="#getting-a-typekey-from-a-class-instance">Getting a TypeKey from a Class instance</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
