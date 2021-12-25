@@ -12,3 +12,4 @@ Introduction to the Terra API
     development-environment
     creating-simple-addon
     adding-structure
+    registering-config-type
