@@ -14,3 +14,4 @@ API Concepts
     events
     type-key
     registries
+    tectonic
