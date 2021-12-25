@@ -12,3 +12,4 @@ API Concepts
     dependency-injection
     logging
     events
+    type-key
