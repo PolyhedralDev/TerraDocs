@@ -12,7 +12,7 @@ A registry can be thought of as a map_ of *Registry Keys* to *Entries*. Registri
 of object, grouping them together. Registries *uniquely identify* their entries, only one entry can exist per key.
 
 
-
+TODO
 
 
 .. _map: https://en.wikipedia.org/wiki/Associative_array
