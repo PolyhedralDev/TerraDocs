@@ -5,7 +5,13 @@
     <dependency>
         <groupId>com.dfsek.terra</groupId>
         <artifactId>api</artifactId>
-        <version>VERSION</version>
+        <version>API_VERSION</version>
+        <scope>provided</scope>
+    </dependency>
+    <dependency>
+        <groupId>com.dfsek.terra</groupId>
+        <artifactId>manifest-addon-loader</artifactId>
+        <version>LOADER_VERSION</version>
         <scope>provided</scope>
     </dependency>
 </dependencies>
