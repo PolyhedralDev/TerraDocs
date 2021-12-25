@@ -3,15 +3,29 @@ Modifies left and right padding to be more reasonable
  */
 
 .sidebar-drawer {
-    width: unset
+    width: 15em
 }
 
 .content {
-    width: unset;
+    width: calc(100% - 21em);
 }
 
+.main {
+    width: calc(100vw - 36em)
+}
+
+@media (max-width: 1060px) {
+    .main {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1300px) {
+    .content {
+        width: calc(100% - 6em);
+    }
+}
 
 .toc-drawer {
-    right: -35em;
-    width: 35em;
+    width: 15em;
 }
