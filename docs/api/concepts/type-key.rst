@@ -25,7 +25,12 @@ The Solution
 ============
 
 Terra includes an abstract class called :javadoc:`TypeKey` to solve this problem. All APIs which accept a ``Class``
-instance also accept a ``TypeKey``. To acquire a ``TypeKey`` instance for your type, simply create an inner class
+instance also accept a ``TypeKey``.
+
+Getting a TypeKey
+=================
+
+To acquire a ``TypeKey`` instance for your type, simply create an anonymous inner class
 which extends ``TypeKey`` with a generic type matching yours. In our ``SomeObject<SomeOtherThing>`` example, that would
 look like:
 
@@ -35,5 +40,14 @@ look like:
 .. note::
     Notice that the ``TypeKey`` is ``static final``. This is to reduce boilerplate by moving the key declaration to
     the top of the class, and to reduce unneeded instantiation.
+
+Getting a TypeKey from a Class instance
+---------------------------------------
+
+To further reduce boilerplate, you can get a TypeKey directly from a :javadoc:`Class` instance by using the
+:javadoc:`TypeKey#of(Class)` method. This is useful if you need a TypeKey for a non-generic type.
+
+.. literalinclude:: code/type-key/type-key-of.java
+    :language: java
 
 .. _type erasure: https://www.baeldung.com/java-type-erasure

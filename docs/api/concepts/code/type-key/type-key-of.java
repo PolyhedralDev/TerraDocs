@@ -1,0 +1,1 @@
+TypeKey<Something> = TypeKey.of(Something.class);
