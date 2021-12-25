@@ -1,0 +1,11 @@
+<!-- pom.xml -->
+
+<dependencies>
+    <!-- Other dependencies -->
+    <dependency>
+        <groupId>com.dfsek.terra</groupId>
+        <artifactId>api</artifactId>
+        <version>VERSION</version>
+        <scope>provided</scope>
+    </dependency>
+</dependencies>

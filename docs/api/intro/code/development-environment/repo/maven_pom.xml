@@ -1,0 +1,10 @@
+<!-- pom.xml -->
+
+<repositories>
+    <!-- Other repositories -->
+    <repository>
+        <id>CodeMC</id>
+        <name>CodeMC Maven Repository</name>
+        <url>https://repo.codemc.io/repository/maven-public/</url>
+    </repository>
+</repositories>
