@@ -13,3 +13,4 @@ API Concepts
     logging
     events
     type-key
+    registries
