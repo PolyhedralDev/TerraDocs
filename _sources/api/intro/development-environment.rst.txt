@@ -78,7 +78,7 @@ Dependency Configuration
 ------------------------
 
 Now that you've configured the repository to acquire the Terra artifact from, you must specify dependency on the Terra
-API:
+API, and the Manifest Addon Loader:
 
 .. tab-set::
 
@@ -101,7 +101,7 @@ API:
             :language: xml
 
 .. note::
-    Replace ``VERSION`` with the latest Terra version!
+    Replace ``API_VERSION`` and ``LOADER_VERSION`` with the latest Terra API & Manifest Addon Loader versions!
 
 
 Refresh the Project
@@ -119,3 +119,27 @@ Refresh the Project
         2. Right click and select ``Refresh`` (Or press ``F5``)
 
 You now have set up a Terra project and are ready to start developing an addon!
+
+
+Full Example Build File
+=======================
+
+.. tab-set::
+
+    .. tab-item:: Gradle (Groovy DSL)
+        :sync: gradle_groovy
+
+        .. literalinclude:: code/development-environment/build.gradle
+            :language: groovy
+
+    .. tab-item:: Gradle (Kotlin DSL)
+        :sync: gradle_kotlin
+
+        .. literalinclude:: code/development-environment/build.gradle.kts
+            :language: kotlin
+
+    .. tab-item:: Maven
+        :sync: maven
+
+        .. literalinclude:: code/development-environment/pom.xml
+            :language: xml
