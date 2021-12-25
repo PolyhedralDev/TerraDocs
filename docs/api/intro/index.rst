@@ -11,3 +11,4 @@ Introduction to the Terra API
     loading
     development-environment
     creating-simple-addon
+    adding-structure
