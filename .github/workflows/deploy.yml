@@ -19,7 +19,9 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build
-        run: sphinx-build -W -d build/doctrees docs build/html
+        run: |
+          sphinx-build -W -d build/doctrees docs build/html
+          echo terra.polydev.org > build/html/CNAME
     
       - name: Push
         uses: s0/git-publish-subdir-action@develop
