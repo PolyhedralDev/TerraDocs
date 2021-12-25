@@ -40,8 +40,8 @@ The Manifest Addon Loader injects additional types into its entry points, to sim
 
 - The :javadoc:`Platform` instance
 - The :javadoc:`BaseAddon` instance
-    (In Manifest Addons, the :javadoc:`BaseAddon` instance is separate from the entry points, as the addon can have
-    multiple entry points, hence the ability to inject the addon instance into entry points)
+  (In Manifest Addons, the :javadoc:`BaseAddon` instance is separate from the entry points, as the addon can have
+  multiple entry points, hence the ability to inject the addon instance into entry points)
 - A :javadoc:`Logger` instance specific to the entry point
 
 
