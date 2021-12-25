@@ -14,7 +14,7 @@ Modifies left and right padding to be more reasonable
     width: calc(100vw - 36em)
 }
 
-@media (max-width: 1060px) {
+@media (max-width: 1073px) {
     .main {
         width: 100%;
     }
