@@ -9,3 +9,7 @@ Introduction to the Terra API
     :titlesonly:
 
     loading
+    development-environment
+    creating-simple-addon
+    adding-structure
+    registering-config-type
