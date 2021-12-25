@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Terra Addon Loading" href="loading.html" /><link rel="prev" title="Terra API" href="../index.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Dependency Injection" href="dependency-injection.html" /><link rel="prev" title="API Concepts" href="index.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
-        <title>Introduction to the Terra API - Terra documentation</title>
+        <title>Manifest Addons - Terra documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
@@ -173,16 +173,16 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Introduction to the Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="loading.html">Terra Addon Loading</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/loading.html">Terra Addon Loading</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/manifest-addon.html">Manifest Addons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/dependency-injection.html">Dependency Injection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/logging.html">Logging With SLF4J</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/events.html">Handling Events</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/type-key.html">Type Keys</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">API Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Manifest Addons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dependency-injection.html">Dependency Injection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html">Logging With SLF4J</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events.html">Handling Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type-key.html">Type Keys</a></li>
 </ul>
 </li>
 </ul>
@@ -213,13 +213,11 @@
           </label>
         </div>
         <article role="main">
-          <section id="introduction-to-the-terra-api">
-<h1>Introduction to the Terra API<a class="headerlink" href="#introduction-to-the-terra-api" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="loading.html">Terra Addon Loading</a></li>
-</ul>
-</div>
+          <section id="manifest-addons">
+<h1>Manifest Addons<a class="headerlink" href="#manifest-addons" title="Permalink to this headline">¶</a></h1>
+<p>The Manifest Addon Loader is one of the two default bootstrap addons in Terra. The other is the bootstrap addon
+loader itself. Any addon that is not itself a bootstrap addon should not use the bootstrap addon loader, so most
+addons will want to use the Manifest Addon Loader, as it is included by default.</p>
 </section>
 
         </article>
@@ -227,23 +225,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="loading.html">
+          <a class="next-page" href="dependency-injection.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Terra Addon Loading</div>
+                <div class="title">Dependency Injection</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../index.html">
+          <a class="prev-page" href="index.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Terra API</div>
+                <div class="title">API Concepts</div>
                 
               </div>
             </a>
@@ -253,7 +251,7 @@
               Copyright &#169; 2021, Terra Contributors |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/api/intro/index.rst.txt"
+            | <a class="muted-link" href="../../_sources/api/concepts/manifest-addon.rst.txt"
                rel="nofollow">
               Show Source
             </a>

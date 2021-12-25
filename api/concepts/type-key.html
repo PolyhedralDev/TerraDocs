@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Terra Addon Loading" href="loading.html" /><link rel="prev" title="Terra API" href="../index.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Handling Events" href="events.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
-        <title>Introduction to the Terra API - Terra documentation</title>
+        <title>Type Keys - Terra documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
@@ -139,7 +139,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -173,16 +173,16 @@
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Introduction to the Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="loading.html">Terra Addon Loading</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../intro/loading.html">Terra Addon Loading</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/manifest-addon.html">Manifest Addons</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/dependency-injection.html">Dependency Injection</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/logging.html">Logging With SLF4J</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/events.html">Handling Events</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/type-key.html">Type Keys</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">API Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="manifest-addon.html">Manifest Addons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="dependency-injection.html">Dependency Injection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html">Logging With SLF4J</a></li>
+<li class="toctree-l3"><a class="reference internal" href="events.html">Handling Events</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Type Keys</a></li>
 </ul>
 </li>
 </ul>
@@ -207,19 +207,42 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="introduction-to-the-terra-api">
-<h1>Introduction to the Terra API<a class="headerlink" href="#introduction-to-the-terra-api" title="Permalink to this headline">¶</a></h1>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="loading.html">Terra Addon Loading</a></li>
+          <section id="type-keys">
+<h1>Type Keys<a class="headerlink" href="#type-keys" title="Permalink to this headline">¶</a></h1>
+<p>Many places in the Terra API make use of generics and Java’s <a class="reference external" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html">Class</a> class for type-safe reflective type
+handling. This approach generally works quite well.</p>
+<section id="the-issue">
+<h2>The Issue<a class="headerlink" href="#the-issue" title="Permalink to this headline">¶</a></h2>
+<p>What if you want a registry that registers instances of <code class="docutils literal notranslate"><span class="pre">SomeObject&lt;SomeOtherThing&gt;</span></code>? Due to <a class="reference external" href="https://www.baeldung.com/java-type-erasure">type erasure</a>, this is
+not immediately possible. You cannot access <code class="docutils literal notranslate"><span class="pre">SomeObject&lt;SomeOtherThing&gt;.class</span></code>, as it simply does not exist at
+runtime.</p>
+<p>A naive solution is to simply use <code class="docutils literal notranslate"><span class="pre">SomeObject.class</span></code>. This is not ideal for two reasons:</p>
+<ul class="simple">
+<li><p>It breaks type safety. <code class="docutils literal notranslate"><span class="pre">SomeObject</span></code> now has no generic type.</p></li>
+<li><p>It will overwrite or be overwritten by anything else that attempts to register any generic type of <code class="docutils literal notranslate"><span class="pre">SomeObject</span></code>.</p></li>
 </ul>
+</section>
+<section id="the-solution">
+<h2>The Solution<a class="headerlink" href="#the-solution" title="Permalink to this headline">¶</a></h2>
+<p>Terra includes an abstract class called <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/util/reflection/TypeKey.html">TypeKey</a> to solve this problem. All APIs which accept a <code class="docutils literal notranslate"><span class="pre">Class</span></code>
+instance also accept a <code class="docutils literal notranslate"><span class="pre">TypeKey</span></code>. To acquire a <code class="docutils literal notranslate"><span class="pre">TypeKey</span></code> instance for your type, simply create an inner class
+which extends <code class="docutils literal notranslate"><span class="pre">TypeKey</span></code> with a generic type matching yours. In our <code class="docutils literal notranslate"><span class="pre">SomeObject&lt;SomeOtherThing&gt;</span></code> example, that would
+look like:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">TypeKey</span><span class="o">&lt;</span><span class="n">SomeObject</span><span class="o">&lt;</span><span class="n">SomeOtherThing</span><span class="o">&gt;&gt;</span> <span class="n">SOME_OBJECT_SOME_OTHER_THING_KEY</span> <span class="o">=</span> <span class="k">new</span> <span class="n">TypeKey</span><span class="o">&lt;&gt;</span><span class="p">()</span> <span class="p">{</span> <span class="p">};</span>
+</pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Notice that the <code class="docutils literal notranslate"><span class="pre">TypeKey</span></code> is <code class="docutils literal notranslate"><span class="pre">static</span> <span class="pre">final</span></code>. This is to reduce boilerplate by moving the key declaration to
+the top of the class, and to reduce unneeded instantiation.</p>
+</div>
+</section>
 </section>
 
         </article>
@@ -227,23 +250,15 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="loading.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Terra Addon Loading</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../index.html">
+          
+          <a class="prev-page" href="events.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Terra API</div>
+                <div class="title">Handling Events</div>
                 
               </div>
             </a>
@@ -253,7 +268,7 @@
               Copyright &#169; 2021, Terra Contributors |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/api/intro/index.rst.txt"
+            | <a class="muted-link" href="../../_sources/api/concepts/type-key.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -261,8 +276,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Type Keys</a><ul>
+<li><a class="reference internal" href="#the-issue">The Issue</a></li>
+<li><a class="reference internal" href="#the-solution">The Solution</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

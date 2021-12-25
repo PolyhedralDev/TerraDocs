@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Logging With SLF4J" href="logging.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Type Keys" href="type-key.html" /><link rel="prev" title="Logging With SLF4J" href="logging.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
         <title>Handling Events - Terra documentation</title>
@@ -139,7 +139,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -178,9 +178,11 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">API Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="manifest-addon.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging With SLF4J</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Handling Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type-key.html">Type Keys</a></li>
 </ul>
 </li>
 </ul>
@@ -205,7 +207,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -213,6 +215,76 @@
         <article role="main">
           <section id="handling-events">
 <span id="id1"></span><h1>Handling Events<a class="headerlink" href="#handling-events" title="Permalink to this headline">¶</a></h1>
+<p>Interfacing with the Terra API is primarily done through events.</p>
+<section id="the-event-manager">
+<h2>The Event Manager<a class="headerlink" href="#the-event-manager" title="Permalink to this headline">¶</a></h2>
+<p>The base for working with events in Terra is the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/EventManager.html">EventManager</a>. The Event Manager contains methods to:</p>
+<ul class="simple">
+<li><p>Call events (<code class="docutils literal notranslate"><span class="pre">#callEvent</span></code>)</p></li>
+<li><p>Register event handlers (<code class="docutils literal notranslate"><span class="pre">#registerHandler</span></code>)</p></li>
+<li><p>Access event handlers (<code class="docutils literal notranslate"><span class="pre">#getHandler</span></code>)</p></li>
+</ul>
+<section id="accessing-the-event-manager">
+<h3>Accessing the Event Manager<a class="headerlink" href="#accessing-the-event-manager" title="Permalink to this headline">¶</a></h3>
+<p>The Event Manager is accessed through the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To access the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance in your addon, use <a class="reference internal" href="dependency-injection.html#dependency-injection"><span class="std std-ref">dependency injection</span></a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>You’ll generally want to register event listeners in your addon’s entry point(s).</p>
+</div>
+</section>
+</section>
+<section id="event-handlers">
+<h2>Event Handlers<a class="headerlink" href="#event-handlers" title="Permalink to this headline">¶</a></h2>
+<p>Event handlers provide API to register event listeners. Terra provides a single event handler by default, the
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/FunctionalEventHandler.html">FunctionalEventHandler</a>. Addons are able to register custom event handlers if they wish to use different
+APIs to register events, for example, annotated methods.</p>
+<section id="accessing-an-event-handler">
+<h3>Accessing an Event Handler<a class="headerlink" href="#accessing-an-event-handler" title="Permalink to this headline">¶</a></h3>
+<p>To access an event handler, simply pass its Class instance into <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/EventManager.html#getHandler-java.lang.Class-">EventManager#getHandler(Class)</a>.</p>
+<p>Here’s an example for accessing the default <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/FunctionalEventHandler.html">FunctionalEventHandler</a>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
+        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="the-functional-event-handler">
+<h3>The Functional Event Handler<a class="headerlink" href="#the-functional-event-handler" title="Permalink to this headline">¶</a></h3>
+<p>The Functional Event Handler is the default Event Handler provided by Terra. Most addons will want to use this event
+handler. This handler provides a functional-style API for registering events using Java’s <a class="reference external" href="https://www.w3schools.com/java/java_lambda.asp">lambda expressions</a>.</p>
+<section id="registering-a-listener">
+<h4>Registering a Listener<a class="headerlink" href="#registering-a-listener" title="Permalink to this headline">¶</a></h4>
+<p>When registering an event listener with the Functional Event Handler, invoke the
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/FunctionalEventHandler.html#register-com.dfsek.terra.api.addon.BaseAddon-java.lang.Class-">FunctionalEventHandler#register(BaseAddon, Class)</a> method. This will return an instance of
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/EventContext.html">EventContext</a> which you can use to build your listener.</p>
+</section>
+<section id="adding-an-action-to-the-listener">
+<h4>Adding an Action to the Listener<a class="headerlink" href="#adding-an-action-to-the-listener" title="Permalink to this headline">¶</a></h4>
+<p>To add actions to your event listener, append <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/EventContext.html#then-java.util.functions.Consumer-">EventContext#then(Consumer)</a> calls. these operations will
+execute consecutively, with the consumer accepting the event instance.</p>
+</section>
+<section id="example">
+<h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>                        <span class="c1">// Get the event manager.</span>
+        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span> <span class="c1">// Get the functional event handler.</span>
+        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">SomeEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>         <span class="c1">// Register a listener for SomeEvent, to our addon.</span>
+        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">someEventInstance</span> <span class="o">-&gt;</span> <span class="p">{</span>              <span class="c1">// Perform an action when the event is fired.</span>
+            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Handling Some Event!"</span><span class="p">);</span>
+            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Event says: {}"</span><span class="p">,</span> <span class="n">someEventInstance</span><span class="p">.</span><span class="na">getSomething</span><span class="p">());</span>
+        <span class="p">})</span>
+</pre></div>
+</div>
+<p>This example registers a listener for <code class="docutils literal notranslate"><span class="pre">SomeEvent</span></code>. When the event is called, the result of the event instance’s
+<code class="docutils literal notranslate"><span class="pre">#getSomething()</span></code> is logged.</p>
+</section>
+</section>
+</section>
 </section>
 
         </article>
@@ -220,7 +292,15 @@
       <footer>
         
         <div class="related-pages">
-          
+          <a class="next-page" href="type-key.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Type Keys</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
           <a class="prev-page" href="logging.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
@@ -246,8 +326,40 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Handling Events</a><ul>
+<li><a class="reference internal" href="#the-event-manager">The Event Manager</a><ul>
+<li><a class="reference internal" href="#accessing-the-event-manager">Accessing the Event Manager</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#event-handlers">Event Handlers</a><ul>
+<li><a class="reference internal" href="#accessing-an-event-handler">Accessing an Event Handler</a></li>
+<li><a class="reference internal" href="#the-functional-event-handler">The Functional Event Handler</a><ul>
+<li><a class="reference internal" href="#registering-a-listener">Registering a Listener</a></li>
+<li><a class="reference internal" href="#adding-an-action-to-the-listener">Adding an Action to the Listener</a></li>
+<li><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

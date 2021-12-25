@@ -178,9 +178,11 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../api/concepts/manifest-addon.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/concepts/logging.html">Logging With SLF4J</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../api/concepts/events.html">Handling Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../api/concepts/type-key.html">Type Keys</a></li>
 </ul>
 </li>
 </ul>
@@ -247,15 +249,15 @@ called an <code class="docutils literal notranslate"><span class="pre">Integer</
 <p>Integers represent whole numbers and as such, are
 written as whole numbers like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4edfa258-4ac5-4442-a703-9550ea0e8a6a" name="9750fb52-02b6-4cfe-8d13-f28c819cc39a" type="radio"/>
-<label class="sd-tab-label" for="4edfa258-4ac5-4442-a703-9550ea0e8a6a">
+<input checked="checked" id="b373b8a3-f2a2-4b5b-ae6d-3728b0ffea02" name="26ee7d4e-541e-4365-a9d6-4c7ccf40a2c4" type="radio"/>
+<label class="sd-tab-label" for="b373b8a3-f2a2-4b5b-ae6d-3728b0ffea02">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">42</span>
 </pre></div>
 </div>
 </div>
-<input id="5f039dfd-9475-459d-9e71-09ae0cb320c2" name="9750fb52-02b6-4cfe-8d13-f28c819cc39a" type="radio"/>
-<label class="sd-tab-label" for="5f039dfd-9475-459d-9e71-09ae0cb320c2">
+<input id="044b996b-86cb-4f57-a5e2-21b56a76d6b9" name="26ee7d4e-541e-4365-a9d6-4c7ccf40a2c4" type="radio"/>
+<label class="sd-tab-label" for="044b996b-86cb-4f57-a5e2-21b56a76d6b9">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span>
 </pre></div>
@@ -271,15 +273,15 @@ level object, which represents the number <code class="docutils literal notransl
 <code class="docutils literal notranslate"><span class="pre">Float</span></code>. The difference between integers and floats is that floats can
 represent numbers that contain decimals:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8f4c7a05-5e2d-4c1e-818c-03f02065d8d0" name="e9e1a33e-c9b7-41b9-a155-71edcb1086a2" type="radio"/>
-<label class="sd-tab-label" for="8f4c7a05-5e2d-4c1e-818c-03f02065d8d0">
+<input checked="checked" id="de826558-3ca4-4e26-aac4-ce69c3e04b04" name="db173dd8-db2c-4470-9605-fc326b325f47" type="radio"/>
+<label class="sd-tab-label" for="de826558-3ca4-4e26-aac4-ce69c3e04b04">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">3.14159</span>
 </pre></div>
 </div>
 </div>
-<input id="e3de8bd1-59cc-4127-9e03-3b5fb3ede19b" name="e9e1a33e-c9b7-41b9-a155-71edcb1086a2" type="radio"/>
-<label class="sd-tab-label" for="e3de8bd1-59cc-4127-9e03-3b5fb3ede19b">
+<input id="934c35b4-6d47-40bc-9969-7988c31070dd" name="db173dd8-db2c-4470-9605-fc326b325f47" type="radio"/>
+<label class="sd-tab-label" for="934c35b4-6d47-40bc-9969-7988c31070dd">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="mf">3.14159</span>
 </pre></div>
@@ -297,15 +299,15 @@ integers.</p>
 <h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
 <p>We can also represent data like text using a type called a <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="51ca96e7-16a7-44b2-9cff-45858644f464" name="2f2fd620-e93d-4711-a126-caa50269f5ad" type="radio"/>
-<label class="sd-tab-label" for="51ca96e7-16a7-44b2-9cff-45858644f464">
+<input checked="checked" id="ca6808c0-6e60-452a-80e6-c3e7d28b5250" name="f21cea50-7493-4f7f-abaa-ae04e3645dae" type="radio"/>
+<label class="sd-tab-label" for="ca6808c0-6e60-452a-80e6-c3e7d28b5250">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">This is a config of type string.</span>
 </pre></div>
 </div>
 </div>
-<input id="a107e3d1-32f4-4bb6-9eb5-d3f4abc60d6d" name="2f2fd620-e93d-4711-a126-caa50269f5ad" type="radio"/>
-<label class="sd-tab-label" for="a107e3d1-32f4-4bb6-9eb5-d3f4abc60d6d">
+<input id="e7c272e6-3469-4761-aae0-9e8ec66ad3ae" name="f21cea50-7493-4f7f-abaa-ae04e3645dae" type="radio"/>
+<label class="sd-tab-label" for="e7c272e6-3469-4761-aae0-9e8ec66ad3ae">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">"This is a config of type string."</span>
 </pre></div>
@@ -319,15 +321,15 @@ what block IDs we want to use for the blocks in a biome.</p>
 interpreted as another type like <code class="docutils literal notranslate"><span class="pre">Integer</span></code>. To explicitly specify an
 object is a <code class="docutils literal notranslate"><span class="pre">String</span></code>, you can wrap it quotes like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="689f0793-6db6-486e-92a6-37d1c800d5db" name="ae20ef91-8c38-464b-9342-4831d42f466c" type="radio"/>
-<label class="sd-tab-label" for="689f0793-6db6-486e-92a6-37d1c800d5db">
+<input checked="checked" id="7b0633c0-235c-497b-9388-dcad95bb7bbd" name="6ae5f0e6-587b-4c8d-8195-a5f30c011981" type="radio"/>
+<label class="sd-tab-label" for="7b0633c0-235c-497b-9388-dcad95bb7bbd">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">"42"</span>
 </pre></div>
 </div>
 </div>
-<input id="3e4c04e1-e454-49ce-b52c-7c26278f0388" name="ae20ef91-8c38-464b-9342-4831d42f466c" type="radio"/>
-<label class="sd-tab-label" for="3e4c04e1-e454-49ce-b52c-7c26278f0388">
+<input id="3ce3b29a-8b7f-4dfb-8544-0488456069b3" name="6ae5f0e6-587b-4c8d-8195-a5f30c011981" type="radio"/>
+<label class="sd-tab-label" for="3ce3b29a-8b7f-4dfb-8544-0488456069b3">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="s2">"42"</span>
 </pre></div>
@@ -351,15 +353,15 @@ called a <strong>key-value pair</strong>.</p>
 <p>Here we will make a new config where the <em>top level object</em> is of type
 <code class="docutils literal notranslate"><span class="pre">Map</span></code>, and both the <em>key</em> and <em>value</em> are of type <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8b659c1a-b931-4df7-933d-3a987e53d7f9" name="7220e937-73e6-4963-9634-6249b86c5dc8" type="radio"/>
-<label class="sd-tab-label" for="8b659c1a-b931-4df7-933d-3a987e53d7f9">
+<input checked="checked" id="8fb03a71-8a01-47af-ac90-bbae9f8d7bad" name="3c01fbb5-2a09-4dcc-bf98-f8030896486e" type="radio"/>
+<label class="sd-tab-label" for="8fb03a71-8a01-47af-ac90-bbae9f8d7bad">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">this is a key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">this is a value</span>
 </pre></div>
 </div>
 </div>
-<input id="c20161f6-aaec-4045-b32d-53e4cee08648" name="7220e937-73e6-4963-9634-6249b86c5dc8" type="radio"/>
-<label class="sd-tab-label" for="c20161f6-aaec-4045-b32d-53e4cee08648">
+<input id="bbfae1a5-ba52-4824-9727-d59f27dcb265" name="3c01fbb5-2a09-4dcc-bf98-f8030896486e" type="radio"/>
+<label class="sd-tab-label" for="bbfae1a5-ba52-4824-9727-d59f27dcb265">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">"this is a key"</span><span class="p">:</span> <span class="s2">"this is a value"</span>
@@ -371,8 +373,8 @@ JSON</label><div class="sd-tab-content docutils">
 <p>Since maps are <em>collections</em> of objects, we can list multiple key value
 pairs within the map like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9f3934bc-f91d-4b1f-8e88-84c5db4d132d" name="04fbd4f4-d5f4-476e-a388-4cd662c2c639" type="radio"/>
-<label class="sd-tab-label" for="9f3934bc-f91d-4b1f-8e88-84c5db4d132d">
+<input checked="checked" id="f824e90d-445c-4325-8b7f-523ed81d1226" name="5d3271dc-2675-41be-8531-5862fbf23115" type="radio"/>
+<label class="sd-tab-label" for="f824e90d-445c-4325-8b7f-523ed81d1226">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">string</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Here is some text.</span>
 <span class="nt">pi</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.14159</span>
@@ -380,8 +382,8 @@ YAML</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="9ca69922-b1f2-4a8b-ab0d-ff5cb2789ecf" name="04fbd4f4-d5f4-476e-a388-4cd662c2c639" type="radio"/>
-<label class="sd-tab-label" for="9ca69922-b1f2-4a8b-ab0d-ff5cb2789ecf">
+<input id="2946466b-e589-47ae-a3dd-17fc71314bd7" name="5d3271dc-2675-41be-8531-5862fbf23115" type="radio"/>
+<label class="sd-tab-label" for="2946466b-e589-47ae-a3dd-17fc71314bd7">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">"string"</span><span class="p">:</span> <span class="s2">"Here is some text."</span><span class="p">,</span>
@@ -409,8 +411,8 @@ will be of the same type.</p>
 <p>Here is a config where the <em>top level object</em> is a <code class="docutils literal notranslate"><span class="pre">List</span></code>, which
 contains multiple <code class="docutils literal notranslate"><span class="pre">String</span></code>s:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="737177c2-ba8e-473d-b5bd-c6675eeab27b" name="a192784d-816b-49cc-8aed-ffab0061b95f" type="radio"/>
-<label class="sd-tab-label" for="737177c2-ba8e-473d-b5bd-c6675eeab27b">
+<input checked="checked" id="45d6630d-380b-4c4c-b2ca-c61de2adc3b3" name="03461701-b206-4d65-8f31-1820837312b4" type="radio"/>
+<label class="sd-tab-label" for="45d6630d-380b-4c4c-b2ca-c61de2adc3b3">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">A string</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Another string</span>
@@ -418,8 +420,8 @@ YAML</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="b9ab0436-6536-48fd-8e23-ea00233074f8" name="a192784d-816b-49cc-8aed-ffab0061b95f" type="radio"/>
-<label class="sd-tab-label" for="b9ab0436-6536-48fd-8e23-ea00233074f8">
+<input id="6538d619-a372-4915-ad2d-01e8adee74ce" name="03461701-b206-4d65-8f31-1820837312b4" type="radio"/>
+<label class="sd-tab-label" for="6538d619-a372-4915-ad2d-01e8adee74ce">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
    <span class="s2">"A string"</span><span class="p">,</span>
@@ -439,8 +441,8 @@ possible to nest maps in maps, lists in lists, lists in maps, and so on.</p>
 <p>Here is an example of a <code class="docutils literal notranslate"><span class="pre">Map</span></code> contained within the value of another
 <code class="docutils literal notranslate"><span class="pre">Map</span></code> (which is the top level object):</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="073ced45-ed74-4ccc-bd20-d8209b07520b" name="538f6d25-7184-46ad-9893-9f6d35de3406" type="radio"/>
-<label class="sd-tab-label" for="073ced45-ed74-4ccc-bd20-d8209b07520b">
+<input checked="checked" id="ef4f161f-2e02-4344-9d1f-1ff35bb0f68b" name="b6c8e3e4-59d8-48e7-b182-4b5e1b98a00a" type="radio"/>
+<label class="sd-tab-label" for="ef4f161f-2e02-4344-9d1f-1ff35bb0f68b">
 YAML</label><div class="sd-tab-content docutils">
 <p>For simple data types like integers and strings it is clear which key
 corresponds to which value, as they are typically contained on the same
@@ -458,8 +460,8 @@ use two spaces to indicate ‘one level’ of indentation in YAML configs.</p>
 indented by two spaces, and is defined under the <code class="docutils literal notranslate"><span class="pre">parent-key</span></code> key,
 signifying that it belongs to that key.</p>
 </div>
-<input id="a6fcb6a6-e212-46cf-8530-8a8be72f8fc6" name="538f6d25-7184-46ad-9893-9f6d35de3406" type="radio"/>
-<label class="sd-tab-label" for="a6fcb6a6-e212-46cf-8530-8a8be72f8fc6">
+<input id="109bb837-ba45-4d96-b8b1-eb09abe1eb71" name="b6c8e3e4-59d8-48e7-b182-4b5e1b98a00a" type="radio"/>
+<label class="sd-tab-label" for="109bb837-ba45-4d96-b8b1-eb09abe1eb71">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">"parent-key"</span><span class="p">:</span> <span class="p">{</span>
@@ -474,8 +476,8 @@ JSON</label><div class="sd-tab-content docutils">
 <p>And here is a <code class="docutils literal notranslate"><span class="pre">Map</span></code> (the top level object) containing a <code class="docutils literal notranslate"><span class="pre">List</span></code> of
 <code class="docutils literal notranslate"><span class="pre">String</span></code>s:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1d07e212-c66d-4be3-8e1b-9420d3aff2d7" name="776e526f-a31e-4c39-bf63-2516b02d9c47" type="radio"/>
-<label class="sd-tab-label" for="1d07e212-c66d-4be3-8e1b-9420d3aff2d7">
+<input checked="checked" id="40f0acc5-4138-44b5-a13b-c5ce744d42b1" name="defa95f6-5f8a-49c4-8f9c-0f727d93fb38" type="radio"/>
+<label class="sd-tab-label" for="40f0acc5-4138-44b5-a13b-c5ce744d42b1">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">list of strings</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item 1</span>
@@ -484,8 +486,8 @@ YAML</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="418fe393-0994-4db0-a46e-745523a59ba7" name="776e526f-a31e-4c39-bf63-2516b02d9c47" type="radio"/>
-<label class="sd-tab-label" for="418fe393-0994-4db0-a46e-745523a59ba7">
+<input id="f7819fd0-f103-4f04-8ee0-1af3aea3e66a" name="defa95f6-5f8a-49c4-8f9c-0f727d93fb38" type="radio"/>
+<label class="sd-tab-label" for="f7819fd0-f103-4f04-8ee0-1af3aea3e66a">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">"list of strings"</span><span class="p">:</span> <span class="p">[</span>
@@ -505,8 +507,8 @@ JSON</label><div class="sd-tab-content docutils">
 structures, here is an example representing a shopping list, and some
 appointments using everything we have covered thus far:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1f563d8d-e5e1-427d-aa04-1cdf5adbc7a3" name="a91d984c-5ebc-404c-8bcc-bc20c3562619" type="radio"/>
-<label class="sd-tab-label" for="1f563d8d-e5e1-427d-aa04-1cdf5adbc7a3">
+<input checked="checked" id="f3cd9720-e67d-4c5e-86b9-ad4a28d078c5" name="377d0e50-ff00-41ed-9333-9e8b22e227a8" type="radio"/>
+<label class="sd-tab-label" for="f3cd9720-e67d-4c5e-86b9-ad4a28d078c5">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">shopping-list</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1L Milk</span>
@@ -528,8 +530,8 @@ YAML</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="f2a1dcee-acb0-4db5-bc7c-cb6d680bceca" name="a91d984c-5ebc-404c-8bcc-bc20c3562619" type="radio"/>
-<label class="sd-tab-label" for="f2a1dcee-acb0-4db5-bc7c-cb6d680bceca">
+<input id="9992ebc3-8d50-4c74-bb61-266a70497981" name="377d0e50-ff00-41ed-9333-9e8b22e227a8" type="radio"/>
+<label class="sd-tab-label" for="9992ebc3-8d50-4c74-bb61-266a70497981">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">"shopping-list"</span><span class="p">:</span> <span class="p">[</span>

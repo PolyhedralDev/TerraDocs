@@ -32,10 +32,11 @@ a class-specific Logger instance:
 .. literalinclude:: code/logging/getting-logger-factory.java
     :language: java
 
-Notice that the ``Logger`` field is ``private static final``. This is because
+.. note::
+    Notice that the ``Logger`` field is ``private static final``. This is because
 
-- The logger instance is class-specific, not instance-specific
-- Other classes should not be accessing your logger
+    - The logger instance is class-specific, not instance-specific
+    - Other classes should not be accessing your logger
 
 Using a Logger
 ==============

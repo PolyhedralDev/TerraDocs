@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Logging With SLF4J" href="logging.html" /><link rel="prev" title="API Concepts" href="index.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Logging With SLF4J" href="logging.html" /><link rel="prev" title="Manifest Addons" href="manifest-addon.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
         <title>Dependency Injection - Terra documentation</title>
@@ -178,9 +178,11 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">API Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="manifest-addon.html">Manifest Addons</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging With SLF4J</a></li>
 <li class="toctree-l3"><a class="reference internal" href="events.html">Handling Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type-key.html">Type Keys</a></li>
 </ul>
 </li>
 </ul>
@@ -241,12 +243,9 @@ scenario, as both of these objects are required for <a class="reference internal
 <p>The Manifest Addon Loader injects additional types into its entry points, to simplify addon development.</p>
 <ul class="simple">
 <li><p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance</p></li>
-<li><dl class="simple">
-<dt>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance</dt><dd><p>(In Manifest Addons, the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance is separate from the entry points, as the addon can have
-multiple entry points, hence the ability to inject the addon instance into entry points)</p>
-</dd>
-</dl>
-</li>
+<li><p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance
+(In Manifest Addons, the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance is separate from the entry points, as the addon can have
+multiple entry points, hence the ability to inject the addon instance into entry points)</p></li>
 <li><p>A <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/Logger.html">Logger</a> instance specific to the entry point</p></li>
 </ul>
 </section>
@@ -266,14 +265,14 @@ multiple entry points, hence the ability to inject the addon instance into entry
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="index.html">
+          <a class="prev-page" href="manifest-addon.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">API Concepts</div>
+                <div class="title">Manifest Addons</div>
                 
               </div>
             </a>

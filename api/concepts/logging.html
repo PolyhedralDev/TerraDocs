@@ -178,9 +178,11 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">API Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="manifest-addon.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Logging With SLF4J</a></li>
 <li class="toctree-l3"><a class="reference internal" href="events.html">Handling Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="type-key.html">Type Keys</a></li>
 </ul>
 </li>
 </ul>
@@ -234,11 +236,14 @@ a class-specific Logger instance:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">MyClass</span><span class="p">.</span><span class="na">class</span><span class="p">);</span> <span class="c1">// MyClass should be the class you're getting a logger for.</span>
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
 <p>Notice that the <code class="docutils literal notranslate"><span class="pre">Logger</span></code> field is <code class="docutils literal notranslate"><span class="pre">private</span> <span class="pre">static</span> <span class="pre">final</span></code>. This is because</p>
 <ul class="simple">
 <li><p>The logger instance is class-specific, not instance-specific</p></li>
 <li><p>Other classes should not be accessing your logger</p></li>
 </ul>
+</div>
 </section>
 </section>
 <section id="using-a-logger">
