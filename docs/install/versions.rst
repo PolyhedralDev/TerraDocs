@@ -4,6 +4,31 @@ Versions
 
 On this page you can find the latest releases of Terra for each platform & Minecraft version.
 
+**Minecraft Version**
+    The vanilla Minecraft version for the relevant platform.
+
+**Latest Terra Version**
+    The latest Terra version supporting the corresponding Minecraft version.  
+
+**Supported**
+    Whether or not you will receive official support for using the release.
+
+**Maintained**
+    Whether or not new Terra releases will be developed for the corresponding Minecraft version.
+
+**Download**
+    Downloads for the latest Terra version for the corresponding Minecraft version.
+
+**Backwards Compatibility**
+    Some releases of Terra are backwards compatible with older versions of Minecraft, the oldest of which
+    is listed under this column. This however does not guarantee backwards compatibility of config packs
+    shipped with the release.
+
+.. warning::
+
+    \*Releases labelled :bdg-secondary:`In Development` are strictly available for previewing and development only.
+    You should not use any of these releases in production as they may be unstable and subject to changes.
+
 Fabric
 ======
 
@@ -18,6 +43,7 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
         - Supported
         - Maintained
         - Download
+        - Backwards Compatibility
 
     *
         - **1.18**
@@ -25,6 +51,7 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
         - `CodeMC <https://ci.codemc.io/job/PolyhedralDev/job/Terra/>`__
+        - N/A
 
     *
         - **1.17**
@@ -32,6 +59,7 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
         - :bdg-success:`Yes`
         - :bdg-danger:`No`
         - `Modrinth <https://modrinth.com/mod/terra/version/i38N6tkR>`__
+        - N/A
 
     *
         - **1.16.5**
@@ -39,6 +67,7 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
         - :bdg-danger:`No`
         - :bdg-danger:`No`
         - `Modrinth <https://modrinth.com/mod/terra/version/9DWPUHbr>`__
+        - 1.13+
 
 Bukkit
 ======
@@ -54,6 +83,7 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
         - Supported
         - Maintained
         - Download
+        - Backwards Compatibility
 
     *
         - **1.18**
@@ -61,6 +91,7 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
         - `CodeMC <https://ci.codemc.io/job/PolyhedralDev/job/Terra/>`__
+        - N/A
 
     *
         - **1.17**
@@ -68,6 +99,7 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
         - :bdg-success:`Yes`
         - :bdg-danger:`No`
         - `SpigotMC <https://www.spigotmc.org/resources/terra.85151/download?version=404442>`__
+        - N/A
 
     *
         - **1.16.5**
@@ -75,6 +107,7 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
         - :bdg-danger:`No`
         - :bdg-danger:`No`
         - `SpigotMC <https://www.spigotmc.org/resources/terra.85151/download?version=399361>`__
+        - 1.13+
 
 Forge
 =====
@@ -95,11 +128,12 @@ All releases of Forge Terra can be found on Modrinth `here <https://modrinth.com
         - Supported
         - Maintained
         - Download
-    
+        - Backwards Compatibility
+
     *
         - **1.16.5**
         - 5.3.3 :bdg-danger:`Alpha`
         - :bdg-danger:`No`
         - :bdg-danger:`No`
         - `Modrinth <https://modrinth.com/mod/terra/version/DYQWCFn1>`_
-
+        - 1.13+
