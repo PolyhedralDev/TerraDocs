@@ -26,9 +26,7 @@ and `Purpur <https://purpur.pl3x.net>`_.
         If you want to run Terra in a singleplayer environment, or on a small server
         with friends, we recommend using Fabric. Our Fabric implementation is the most
         feature complete, since Fabric gives us freedom to directly interface with the
-        game in ways impossible on other platforms. Fabric also has *many* optimization
-        mods which we make sure to support entirely, which allow your game to run extremely
-        well.
+        game in ways impossible on other platforms.
 
     .. grid-item-card:: Bukkit Server :octicon:`chevron-right`
         :link: bukkit
