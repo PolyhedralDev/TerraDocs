@@ -181,7 +181,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/manifest-addon.html">Manifest Addons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/logging.html">Logging With SLF4J</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/events.html">Handling Events</a></li>
@@ -220,8 +220,10 @@
         <article role="main">
           <section id="terra-addon-loading">
 <h1>Terra Addon Loading<a class="headerlink" href="#terra-addon-loading" title="Permalink to this headline">¶</a></h1>
-<p>This page serves as an explanation of the addon loading process in Terra. The Terra addon loading process can
-be divided into 2 main steps:</p>
+<p>This page serves as an explanation of the addon loading process in Terra. None of the information on this page is
+strictly necessary for developing a Terra addon, so feel free to skim. However, knowing how the addon loading
+process works can be helpful.</p>
+<p>The Terra addon loading process can be divided into 2 main steps:</p>
 <section id="bootstrap-addon-loading">
 <h2>1. Bootstrap Addon Loading<a class="headerlink" href="#bootstrap-addon-loading" title="Permalink to this headline">¶</a></h2>
 <p>The only addons Terra itself is capable of loading are Bootstrap Addons. The bootstrap addon loader is an extremely

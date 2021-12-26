@@ -224,7 +224,7 @@
 loader itself. Any addon that is not itself a bootstrap addon should not use the bootstrap addon loader, so most
 addons will want to use the Manifest Addon Loader, as it is included by default.</p>
 <section id="the-addon-manifest">
-<h2>The Addon Manifest<a class="headerlink" href="#the-addon-manifest" title="Permalink to this headline">¶</a></h2>
+<span id="addon-manifest"></span><h2>The Addon Manifest<a class="headerlink" href="#the-addon-manifest" title="Permalink to this headline">¶</a></h2>
 <p>The addon manifest contains data that the Manifest Addon Loader requires to load the addon. The manifest is a YAML
 file at the root of the JAR called <code class="docutils literal notranslate"><span class="pre">terra.addon.yml</span></code>.</p>
 <p>Here is an example addon manifest:</p>
@@ -347,9 +347,10 @@ an <a class="reference external" href="https://opensource.org/licenses">Open-Sou
 include a link to your license.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>If you don’t know what to put just yet, put <code class="docutils literal notranslate"><span class="pre">ARR</span></code>. ARR stands for All Rights Reserved, which means people aren’t
-allowed to use anything from your addon without your explicit permission. Publishing something as ARR is strongly
-discouraged, so you should look into switching to an OSI license before releasing your addon!</p>
+<p>If you don’t know what license to use just yet, use <code class="docutils literal notranslate"><span class="pre">ARR</span></code> as a placeholder. ARR stands for All Rights Reserved,
+which means people aren’t allowed to use anything from your addon without your explicit permission. Publishing
+something as ARR is strongly discouraged, so you should look into switching to an OSI license before
+releasing your addon!</p>
 </div>
 </section>
 </section>
@@ -359,7 +360,7 @@ discouraged, so you should look into switching to an OSI license before releasin
 are references to classes which implement <code class="docutils literal notranslate"><span class="pre">AddonInitializer</span></code>. These entry points are initialized sequentially
 when the addon initializes.</p>
 <section id="dependency-injection-in-entry-points">
-<h3>Dependency Injection in Entry Points<a class="headerlink" href="#dependency-injection-in-entry-points" title="Permalink to this headline">¶</a></h3>
+<span id="di-in-entry-points"></span><h3>Dependency Injection in Entry Points<a class="headerlink" href="#dependency-injection-in-entry-points" title="Permalink to this headline">¶</a></h3>
 <p>The Manifest Addon Loader injects the following types into entry points:</p>
 <ul class="simple">
 <li><p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance</p></li>
@@ -404,7 +405,7 @@ multiple entry points, hence the ability to inject the addon instance into entry
               Copyright &#169; 2021, Terra Contributors |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/api/concepts/manifest-addon.rst.txt"
+            | <a class="muted-link" href="../../_sources/api/concepts/manifest-addons.rst.txt"
                rel="nofollow">
               Show Source
             </a>

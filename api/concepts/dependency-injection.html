@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Logging With SLF4J" href="logging.html" /><link rel="prev" title="Manifest Addons" href="manifest-addon.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Logging With SLF4J" href="logging.html" /><link rel="prev" title="Manifest Addons" href="manifest-addons.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
         <title>Dependency Injection - Terra documentation</title>
@@ -181,7 +181,7 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">API Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3"><a class="reference internal" href="manifest-addon.html">Manifest Addons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging With SLF4J</a></li>
 <li class="toctree-l3"><a class="reference internal" href="events.html">Handling Events</a></li>
@@ -239,9 +239,10 @@ need to have access to.</p>
 scenario, as both of these objects are required for <a class="reference internal" href="events.html#handling-events"><span class="std std-ref">handling events</span></a></p>
 </section>
 </section>
-<section id="dependency-injection-in-all-addons">
-<h2>Dependency Injection in all Addons<a class="headerlink" href="#dependency-injection-in-all-addons" title="Permalink to this headline">¶</a></h2>
-<p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance is injected into all addons.</p>
+<section id="injected-types">
+<h2>Injected Types<a class="headerlink" href="#injected-types" title="Permalink to this headline">¶</a></h2>
+<p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance is injected into all addons. Bootstrap addons may inject additional types into addons
+they load. See the <a class="reference internal" href="manifest-addons.html#di-in-entry-points"><span class="std std-ref">Dependency Injection in Entry Points</span></a> section for information about injected types in Manifest Addons.</p>
 </section>
 </section>
 
@@ -259,7 +260,7 @@ scenario, as both of these objects are required for <a class="reference internal
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="manifest-addon.html">
+          <a class="prev-page" href="manifest-addons.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
@@ -301,7 +302,7 @@ scenario, as both of these objects are required for <a class="reference internal
 <li><a class="reference internal" href="#example">Example</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#dependency-injection-in-all-addons">Dependency Injection in all Addons</a></li>
+<li><a class="reference internal" href="#injected-types">Injected Types</a></li>
 </ul>
 </li>
 </ul>

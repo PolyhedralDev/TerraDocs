@@ -139,7 +139,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -181,7 +181,7 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../concepts/manifest-addon.html">Manifest Addons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/logging.html">Logging With SLF4J</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/events.html">Handling Events</a></li>
@@ -212,7 +212,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -222,6 +222,121 @@
 <h1>Creating a Simple Addon<a class="headerlink" href="#creating-a-simple-addon" title="Permalink to this headline">¶</a></h1>
 <p>Now that you’ve set up your project, you’re ready to make your first addon! This tutorial will walk you through
 creating a simple “Hello, World!” addon with Terra using the Manifest Addon Loader.</p>
+<section id="creating-the-addon-manifest">
+<h2>Creating the Addon Manifest<a class="headerlink" href="#creating-the-addon-manifest" title="Permalink to this headline">¶</a></h2>
+<p>First, you’ll need to create the addon manifest. The addon manifest contains the data the Manifest Addon Loader
+requires to load your addon. The manifest should be at the root of your JAR, named <code class="docutils literal notranslate"><span class="pre">terra.addon.yml</span></code>.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">schema-version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">contributors</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Terra Contributors</span>
+<span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example-addon</span>
+<span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1.0</span>
+<span class="nt">entrypoints</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="s">"com.example.addon.ExampleEntryPoint"</span>
+<span class="nt">license</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MIT License</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The addon manifest should go in you project’s <em>resources directory</em> (Usually <code class="docutils literal notranslate"><span class="pre">src/main/resources</span></code>).</p>
+</div>
+<p>For your first addon, you can copy/paste this manifest and change it to your liking. Before changing any values, read
+about what they do <a class="reference internal" href="../concepts/manifest-addons.html#addon-manifest"><span class="std std-ref">here</span></a>.</p>
+</section>
+<section id="creating-an-entry-point">
+<h2>Creating an Entry Point<a class="headerlink" href="#creating-an-entry-point" title="Permalink to this headline">¶</a></h2>
+<p>The entry point is where the manifest loader will initialize your addon. Create a new Java class in your project
+with the name defined in the <code class="docutils literal notranslate"><span class="pre">entrypoints</span></code> value in your manifest. If you didn’t change the manifest, that would be
+<code class="docutils literal notranslate"><span class="pre">com.example.addon.ExampleEntryPoint</span></code>. In your new class, implement <code class="docutils literal notranslate"><span class="pre">AddonInitializer</span></code>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleEntryPoint</span> <span class="kd">implements</span> <span class="n">AddonInitializer</span> <span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="adding-functionality-to-your-addon">
+<h2>Adding Functionality to your Addon<a class="headerlink" href="#adding-functionality-to-your-addon" title="Permalink to this headline">¶</a></h2>
+<p>You now have a Terra addon that Terra will be able to load and initialize! If you JAR and install your addon right now,
+though, it won’t do anything but that. That’s because the entry point is empty. Let’s add some functionality to this
+addon!</p>
+<section id="injecting-a-logger">
+<h3>Injecting a Logger<a class="headerlink" href="#injecting-a-logger" title="Permalink to this headline">¶</a></h3>
+<p>Let’s make our addon log a message on initialization. To do that, we’ll need a <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/Logger.html">Logger</a>. There are two ways
+to access a Logger, we’ll be accessing ours via <a class="reference internal" href="../concepts/dependency-injection.html"><span class="doc">dependency injection</span></a>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.inject.annotations.Inject</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleEntryPoint</span> <span class="kd">implements</span> <span class="n">AddonInitializer</span> <span class="p">{</span>
+    <span class="nd">@Inject</span>
+    <span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">logger</span></code> field is now an injection target for a <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/Logger.html">Logger</a>. This means that before our addon initializes,
+it’ll receive a logger.</p>
+</section>
+<section id="using-a-logger">
+<h3>Using a Logger<a class="headerlink" href="#using-a-logger" title="Permalink to this headline">¶</a></h3>
+<p>Now we have a logger, but our addon still doesn’t do anything. Let’s use the logger to log a message to the console
+when the addon initializes!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.inject.annotations.Inject</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleEntryPoint</span> <span class="kd">implements</span> <span class="n">AddonInitializer</span> <span class="p">{</span>
+    <span class="nd">@Inject</span>
+    <span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="compiling-and-installing-your-addon">
+<h2>Compiling and Installing your Addon<a class="headerlink" href="#compiling-and-installing-your-addon" title="Permalink to this headline">¶</a></h2>
+<p>Now you have an addon that logs something to the console on startup. How do you install it?</p>
+<p>To install your addon, first you need to <em>compile</em> it, then <em>archive</em> it. The process is slightly different depending
+on your build system:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="ea01c41b-8f4e-4033-a96d-b26c97df6604" name="1a8044d1-7e32-49d7-b7b8-bf87b6e34d86" type="radio"/>
+<label class="sd-tab-label" for="ea01c41b-8f4e-4033-a96d-b26c97df6604">
+Gradle</label><div class="sd-tab-content docutils">
+<p>Run the <code class="docutils literal notranslate"><span class="pre">:jar</span></code> task. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">build/libs</span></code>.</p>
+</div>
+<input id="f70fda4d-5800-4b6e-90ba-c557dac859f1" name="1a8044d1-7e32-49d7-b7b8-bf87b6e34d86" type="radio"/>
+<label class="sd-tab-label" for="f70fda4d-5800-4b6e-90ba-c557dac859f1">
+Maven</label><div class="sd-tab-content docutils">
+<p>Run the <code class="docutils literal notranslate"><span class="pre">package</span></code> goal. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">target</span></code>.</p>
+</div>
+</div>
+<p>Once you have the JAR, put it in your Terra installation’s <code class="docutils literal notranslate"><span class="pre">addons</span></code> folder. When you start Terra, you should
+see a message logged to the console!</p>
+<img alt="../../_images/init.png" src="../../_images/init.png"/>
+<p>Congratulations! You’ve successfully made your first Terra addon! To implement additional, more advanced functionality
+in this example addon, continue with this introduction guide. If you’re ready to start tinkering with the API on
+your own, check out the <a class="reference internal" href="../concepts/index.html"><span class="doc">API Concepts</span></a> section.</p>
+</section>
 </section>
 
         </article>
@@ -263,8 +378,34 @@ creating a simple “Hello, World!” addon with Terra using the Manifest Addon 
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Creating a Simple Addon</a><ul>
+<li><a class="reference internal" href="#creating-the-addon-manifest">Creating the Addon Manifest</a></li>
+<li><a class="reference internal" href="#creating-an-entry-point">Creating an Entry Point</a></li>
+<li><a class="reference internal" href="#adding-functionality-to-your-addon">Adding Functionality to your Addon</a><ul>
+<li><a class="reference internal" href="#injecting-a-logger">Injecting a Logger</a></li>
+<li><a class="reference internal" href="#using-a-logger">Using a Logger</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#compiling-and-installing-your-addon">Compiling and Installing your Addon</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

@@ -6,8 +6,11 @@ Terra Addon Loading
     com.dfsek.terra.api.addon.bootstrap.BootstrapBaseAddon
     com.dfsek.terra.api.Platform
 
-This page serves as an explanation of the addon loading process in Terra. The Terra addon loading process can
-be divided into 2 main steps:
+This page serves as an explanation of the addon loading process in Terra. None of the information on this page is
+strictly necessary for developing a Terra addon, so feel free to skim. However, knowing how the addon loading
+process works can be helpful.
+
+The Terra addon loading process can be divided into 2 main steps:
 
 1. Bootstrap Addon Loading
 ==========================

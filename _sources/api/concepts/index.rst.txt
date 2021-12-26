@@ -8,7 +8,7 @@ API Concepts
     :maxdepth: 2
     :titlesonly:
 
-    manifest-addon
+    manifest-addons
     dependency-injection
     logging
     events
