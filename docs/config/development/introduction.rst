@@ -181,6 +181,8 @@ modifying an existing pack.
 
     .. grid-item-card:: Creating a Pack From Scratch :octicon:`chevron-right`
         :class-title: sd-text-primary
+        :link-type: doc
+        :link: pack-from-scratch/index
 
         Starting from nothing is a great way to understand what every part of the process
         entails. You will learn how each part of config development connects together to
@@ -190,6 +192,8 @@ modifying an existing pack.
 
     .. grid-item-card:: Modifying an Existing Pack :octicon:`chevron-right`
         :class-title: sd-text-primary
+        :link-type: doc
+        :link: modifying-existing-pack 
 
         Making changes to an existing pack is a more hands off approach where most of the
         heavy lifting has been done for you, great for if you just want to tweak a couple
