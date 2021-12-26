@@ -36,7 +36,7 @@ and `Purpur <https://purpur.pl3x.net>`_.
 
         If you're running a large server for lots of people, you'll probably want to use
         Bukkit, simply because of all the plugins available for large servers. We do not
-        recommend using Bukkit for small servers, for that, use `Fabric <https://fabricmc.net>`.
+        recommend using Bukkit for small servers, for that, use `Fabric <https://fabricmc.net>`_.
 
 .. note::
 
