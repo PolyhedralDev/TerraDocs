@@ -7,6 +7,7 @@ Installation
 
     fabric
     bukkit
+    versions
 
 Terra's platform-agnostic API allows us to seamlessly support many
 Minecraft modding platforms. The currently supported platforms include 
@@ -37,6 +38,10 @@ and `Purpur <https://purpur.pl3x.net>`_.
         If you're running a large server for lots of people, you'll probably want to use
         Bukkit, simply because of all the plugins available for large servers. We do not
         recommend using Bukkit for small servers, for that, use Fabric.
+
+**All Present & Past Releases**
+
+You can find a complete list of all supported, unsupported, and legacy releases of Terra for all platforms :doc:`here <versions>`.
 
 .. note::
 
