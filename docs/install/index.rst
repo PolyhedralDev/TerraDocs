@@ -7,6 +7,7 @@ Installation
 
     fabric
     bukkit
+    versions
 
 Terra's platform-agnostic API allows us to seamlessly support many
 Minecraft modding platforms. The currently supported platforms include 
