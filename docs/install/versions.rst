@@ -34,6 +34,8 @@ Fabric
 
 All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.com/mod/terra/versions>`__.
 
+:doc:`Fabric Installation </install/fabric>` :octicon:`chevron-right`
+
 .. list-table::
     :header-rows: 1
     
@@ -73,6 +75,8 @@ Bukkit
 ======
 
 All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotmc.org/resources/terra.85151/history>`__.
+
+:doc:`Bukkit Installation </install/bukkit>` :octicon:`chevron-right`
 
 .. list-table::
     :header-rows: 1
