@@ -7,7 +7,7 @@ inside config files. Because Terra configs are able to be written in
 multiple languages, we use our own standardized set of terms to
 reference things that may be named differently between languages.
 
-.. note::
+.. tip::
 
    If you are already familiar with data structures and
    data-serialization languages, feel free to skim over this section and
