@@ -38,6 +38,10 @@ and `Purpur <https://purpur.pl3x.net>`_.
         Bukkit, simply because of all the plugins available for large servers. We do not
         recommend using Bukkit for small servers, for that, use Fabric.
 
+**All Present & Past Releases**
+
+You can find a complete list of all supported, unsupported, and legacy releases of Terra for all platforms :doc:`here <versions>`.
+
 .. note::
 
     Lots of people get confused about what the difference is between Bukkit, Spigot, and Paper.
