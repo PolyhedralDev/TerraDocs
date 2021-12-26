@@ -2,10 +2,16 @@
 Terra Documentation
 ===================
 
-**This documentation site is under construction! Sone things may not work currently, we're working to get it up
-and running properly. Want to help? Check out the GitHub Repo for instructions on
-contributing:** https://github.com/PolyhedralDev/TerraDocs
+.. attention::
 
+    This documentation site is under construction! Some things may not work currently, we're working to get it up
+    and running properly. Want to help? Check out the GitHub Repo for instructions on contributing:
+
+    .. button-link:: https://github.com/PolyhedralDev/TerraDocs
+        :color: primary
+        :outline:
+
+        :octicon:`mark-github` TerraDocs
 
 Terra is a modern world generation modding platform, primarily for Minecraft. Terra allows complete customization of
 world generation with an advanced API, tightly integrated with a powerful configuration system.
