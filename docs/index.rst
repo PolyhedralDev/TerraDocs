@@ -37,6 +37,8 @@ world generation with an advanced API, tightly integrated with a powerful config
 
         Several *core addons*, which implement the standard configurations of Terra. Core addons can be thought of as the config 'standard library'.
 
+Contents
+========
 
 .. toctree::
     :maxdepth: 3
