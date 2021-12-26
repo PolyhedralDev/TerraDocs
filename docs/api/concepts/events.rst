@@ -1,8 +1,6 @@
-.. _handling-events:
-
-===============
-Handling Events
-===============
+======
+Events
+======
 
 .. javadoc-import::
     com.dfsek.terra.api.event.functional.FunctionalEventHandler
@@ -53,6 +51,8 @@ Here's an example for accessing the default :javadoc:`FunctionalEventHandler`:
 
 .. literalinclude:: code/event/get-functional-event-handler.java
     :language: java
+
+.. _functional-event-handler:
 
 The Functional Event Handler
 ----------------------------

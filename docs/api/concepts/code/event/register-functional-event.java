@@ -4,4 +4,4 @@ platform.getEventManager()                        // Get the event manager.
         .then(someEventInstance -> {              // Perform an action when the event is fired.
             logger.info("Handling Some Event!");
             logger.info("Event says: {}", someEventInstance.getSomething());
-        })
+        });
