@@ -42,9 +42,6 @@ and `Purpur <https://purpur.pl3x.net>`_.
 
     Lots of people get confused about what the difference is between Bukkit, Spigot, and Paper.
 
-    TL;DR
-    .....
-
     **Bukkit** is an API, a way for developers to interface with and write plugins
     for the Minecraft server.
 
@@ -55,8 +52,7 @@ and `Purpur <https://purpur.pl3x.net>`_.
     **Paper** is a *fork* of Spigot, a project based on Spigot that extends It's functionality. Paper
     adds many performance optimizations to the Minecraft server, and also extends the Bukkit API.
 
-    What does this have to do with Terra?
-    .....................................
+    **What does this have to do with Terra?**
 
     We refer to the entire Bukkit ecosystem (Bukkit API, Spigot, Paper and friends..) as *Bukkit*
     simply because Bukkit is the name of the API. **However** - Terra develops against and tests on
