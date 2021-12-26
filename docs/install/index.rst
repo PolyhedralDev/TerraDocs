@@ -1,6 +1,6 @@
-============
-Installation
-============
+===============
+Getting Started
+===============
 
 .. toctree::
     :hidden:
@@ -41,7 +41,8 @@ and `Purpur <https://purpur.pl3x.net>`_.
 
 **All Present & Past Releases**
 
-You can find a complete list of all supported, unsupported, and legacy releases of Terra for all platforms :doc:`here <versions>`.
+Want to know if Terra will run on your version of Minecraft? You can find a complete list of all
+supported, unsupported, and legacy releases of Terra for all platforms :doc:`here <versions>`.
 
 .. note::
 
