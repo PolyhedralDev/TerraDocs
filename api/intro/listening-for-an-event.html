@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Listening for an Event" href="listening-for-an-event.html" /><link rel="prev" title="Setting up a Development Environment" href="development-environment.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Adding a Structure" href="adding-structure.html" /><link rel="prev" title="Creating a Simple Addon" href="creating-simple-addon.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
-        <title>Creating a Simple Addon - Terra documentation</title>
+        <title>Listening for an Event - Terra documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
@@ -176,8 +176,8 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Introduction to the Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="development-environment.html">Setting up a Development Environment</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Creating a Simple Addon</a></li>
-<li class="toctree-l3"><a class="reference internal" href="listening-for-an-event.html">Listening for an Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="creating-simple-addon.html">Creating a Simple Addon</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Listening for an Event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="adding-structure.html">Adding a Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="registering-config-type.html">Registering a Config Type</a></li>
 </ul>
@@ -220,61 +220,131 @@
           </label>
         </div>
         <article role="main">
-          <section id="creating-a-simple-addon">
-<h1>Creating a Simple Addon<a class="headerlink" href="#creating-a-simple-addon" title="Permalink to this headline">¶</a></h1>
-<p>Now that you’ve set up your project, you’re ready to make your first addon! This tutorial will walk you through
-creating a simple “Hello, World!” addon with Terra using the Manifest Addon Loader.</p>
-<section id="creating-the-addon-manifest">
-<h2>Creating the Addon Manifest<a class="headerlink" href="#creating-the-addon-manifest" title="Permalink to this headline">¶</a></h2>
-<p>First, you’ll need to create the addon manifest. The addon manifest contains the data the Manifest Addon Loader
-requires to load your addon. The manifest should be at the root of your JAR, named <code class="docutils literal notranslate"><span class="pre">terra.addon.yml</span></code>.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">schema-version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="nt">contributors</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Terra Contributors</span>
-<span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example-addon</span>
-<span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1.0</span>
-<span class="nt">entrypoints</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">"com.example.addon.ExampleEntryPoint"</span>
-<span class="nt">license</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MIT License</span>
+          <section id="listening-for-an-event">
+<h1>Listening for an Event<a class="headerlink" href="#listening-for-an-event" title="Permalink to this headline">¶</a></h1>
+<p>Listening for <a class="reference internal" href="../concepts/events.html"><span class="doc">Events</span></a> is essential for interfacing with the Terra API.</p>
+<section id="configpackpreloadevent">
+<h2>ConfigPackPreLoadEvent<a class="headerlink" href="#configpackpreloadevent" title="Permalink to this headline">¶</a></h2>
+<p>In this tutorial, we’ll be listening for <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/events/config/pack/ConfigPackPreLoadEvent.html">ConfigPackPreLoadEvent</a>. As the name suggests, this event
+is fired before the configuration files in a config pack are loaded. Addons may listen to this event to</p>
+<ul class="simple">
+<li><p>Register config loaders</p></li>
+<li><p>Register config types</p></li>
+<li><p>Register objects</p></li>
+</ul>
+<p>For now, we’ll just log a message to the console when the event is fired.</p>
+</section>
+<section id="listening-for-the-event">
+<h2>Listening for the Event<a class="headerlink" href="#listening-for-the-event" title="Permalink to this headline">¶</a></h2>
+<p>To listen for the event, we’ll be using the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/FunctionalEventHandler.html">FunctionalEventHandler</a> API. To learn more about the Functional
+Event Handler, read about it <a class="reference internal" href="../concepts/events.html#functional-event-handler"><span class="std std-ref">here</span></a>.</p>
+<section id="injecting-the-required-objects">
+<h3>Injecting the Required Objects<a class="headerlink" href="#injecting-the-required-objects" title="Permalink to this headline">¶</a></h3>
+<p>To access the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/EventManager.html">EventManager</a>, which we’ll use to access the Functional Event Handler, we need a
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance. We’ll also need our <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance later, so let’s inject that too:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
+<span class="kd">private</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
+
+<span class="nd">@Inject</span>
+<span class="kd">private</span> <span class="n">BaseAddon</span> <span class="n">addon</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>The addon manifest should go in you project’s <em>resources directory</em> (Usually <code class="docutils literal notranslate"><span class="pre">src/main/resources</span></code>).</p>
+<p>If you need a refresher on dependency injection, you can read about it
+<a class="reference internal" href="../concepts/dependency-injection.html"><span class="doc">here</span></a></p>
 </div>
-<p>For your first addon, you can copy/paste this manifest and change it to your liking. Before changing any values, read
-about what they do <a class="reference internal" href="../concepts/manifest-addons.html#addon-manifest"><span class="std std-ref">here</span></a>.</p>
 </section>
-<section id="creating-an-entry-point">
-<h2>Creating an Entry Point<a class="headerlink" href="#creating-an-entry-point" title="Permalink to this headline">¶</a></h2>
-<p>The entry point is where the manifest loader will initialize your addon. Create a new Java class in your project
-with the name defined in the <code class="docutils literal notranslate"><span class="pre">entrypoints</span></code> value in your manifest. If you didn’t change the manifest, that would be
-<code class="docutils literal notranslate"><span class="pre">com.example.addon.ExampleEntryPoint</span></code>. In your new class, implement <code class="docutils literal notranslate"><span class="pre">AddonInitializer</span></code>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon</span><span class="p">;</span>
-
-<span class="kn">import</span> <span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleEntryPoint</span> <span class="kd">implements</span> <span class="n">AddonInitializer</span> <span class="p">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="p">}</span>
-<span class="p">}</span>
+<section id="creating-an-event-context">
+<h3>Creating an Event Context<a class="headerlink" href="#creating-an-event-context" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/EventContext.html">EventContext</a> is used for defining a handler for an event. The event context is a builder-like object
+that you can use to configure properties of your handler. Let’s create an event context for ConfigPackPreLoadEvent:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
+        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+        <span class="p">});</span>
 </pre></div>
 </div>
+<p>If you recompile and install your addon again, you’ll see that… nothing happens.</p>
 </section>
-<section id="adding-functionality-to-your-addon">
-<h2>Adding Functionality to your Addon<a class="headerlink" href="#adding-functionality-to-your-addon" title="Permalink to this headline">¶</a></h2>
-<p>You now have a Terra addon that Terra will be able to load and initialize! If you JAR and install your addon right now,
-though, it won’t do anything but that. That’s because the entry point is empty. Let’s add some functionality to this
-addon!</p>
-<section id="injecting-a-logger">
-<h3>Injecting a Logger<a class="headerlink" href="#injecting-a-logger" title="Permalink to this headline">¶</a></h3>
-<p>Let’s make our addon log a message on initialization. To do that, we’ll need a <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/Logger.html">Logger</a>. There are two ways
-to access a Logger, we’ll be accessing ours via <a class="reference internal" href="../concepts/dependency-injection.html"><span class="doc">dependency injection</span></a>:</p>
+</section>
+<section id="event-scope">
+<h2>Event Scope<a class="headerlink" href="#event-scope" title="Permalink to this headline">¶</a></h2>
+<p>Some events in Terra have <em>scope</em>. This means that they are only fired to addons that meet certain conditions.
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/events/config/pack/ConfigPackPreLoadEvent.html">ConfigPackPreLoadEvent</a> is one of these events.</p>
+<section id="pack-events">
+<h3>Pack Events<a class="headerlink" href="#pack-events" title="Permalink to this headline">¶</a></h3>
+<p>If you look at the class hierarchy of ConfigPackPreLoadEvent, you’ll see it implements the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/events/PackEvent.html">PackEvent</a>
+interface. All events that implement this interface are <em>pack scoped</em>. This means that their handlers are only
+fired if the addon that registered the handler is a dependency of the config pack.</p>
+<p>So, how do you get your event handler to fire?</p>
+</section>
+<section id="pack-dependencies">
+<h3>Pack Dependencies<a class="headerlink" href="#pack-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>In the pack manifest (<code class="docutils literal notranslate"><span class="pre">pack.yml</span></code>) is an <code class="docutils literal notranslate"><span class="pre">addons</span></code> key. These addons are dependencies of the config pack. To recieve
+events fired by this pack, simply add your addon and a version range to this map. Go ahead and modify the default pack
+to add your addon as a dependency:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addons</span><span class="p">:</span>
+  <span class="nt">biome-provider-pipeline</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">biome-provider-single</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">chunk-generator-noise-3d</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">config-biome</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">config-flora</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">config-noise-function</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">config-ore</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">config-palette</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">config-distributors</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">config-locators</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">config-feature</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">structure-terrascript-loader</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">structure-sponge-loader</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">language-yaml</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">generation-stage-feature</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">structure-function-check-noise-3d</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">palette-block-shortcut</span><span class="p">:</span> <span class="s">"0.1.+"</span>
+  <span class="nt">example-addon</span><span class="p">:</span> <span class="s">"0.1.+"</span> <span class="c1"># Our example addon! (Change the ID and version to match yours)</span>
+</pre></div>
+</div>
+<p>Now when you run with your addon again, you should see a message logged to the console with the pack ID when the pack
+loads!</p>
+<img alt="../../_images/init1.png" src="../../_images/init1.png"/>
+</section>
+<section id="global-event-handlers">
+<h3>Global Event Handlers<a class="headerlink" href="#global-event-handlers" title="Permalink to this headline">¶</a></h3>
+<p>Another way is to mark your event handler as <em>global</em>. Using the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/EventContext.html#--">EventContext#global</a> method, you can
+eliminate the pack scope from your event handler. This will cause your handler to be fired regardless of whether
+the pack that fired it depends on your addon. Marking the handler as global would look like this:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
+        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="na">global</span><span class="p">();</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>It is generally a bad idea to mark handlers for scoped events as global! By marking a handler as global, you may
+introduce unexpected behavior, as it is expected that events only reach addons that are dependencies of the event
+source.</p>
+</div>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>You now have a pack-scoped event listener in your addon, which logs when the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/events/config/pack/ConfigPackPreLoadEvent.html">ConfigPackPreLoadEvent</a> is
+fired. Continue to learn how to register objects!</p>
+<p>Our example addon at this stage looks like this:</p>
 <div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon</span><span class="p">;</span>
 
 <span class="kn">import</span> <span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.Platform</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.addon.BaseAddon</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.event.events.config.pack.ConfigPackPreLoadEvent</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.event.functional.FunctionalEventHandler</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">com.dfsek.terra.api.inject.annotations.Inject</span><span class="p">;</span>
 <span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="p">;</span>
 
@@ -282,62 +352,26 @@ to access a Logger, we’ll be accessing ours via <a class="reference internal" 
     <span class="nd">@Inject</span>
     <span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">;</span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
-
-    <span class="p">}</span>
-<span class="p">}</span>
-</pre></div>
-</div>
-<p>The <code class="docutils literal notranslate"><span class="pre">logger</span></code> field is now an injection target for a <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/Logger.html">Logger</a>. This means that before our addon initializes,
-it’ll receive a logger.</p>
-</section>
-<section id="using-a-logger">
-<h3>Using a Logger<a class="headerlink" href="#using-a-logger" title="Permalink to this headline">¶</a></h3>
-<p>Now we have a logger, but our addon still doesn’t do anything. Let’s use the logger to log a message to the console
-when the addon initializes!</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon</span><span class="p">;</span>
-
-<span class="kn">import</span> <span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.inject.annotations.Inject</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="p">;</span>
-
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleEntryPoint</span> <span class="kd">implements</span> <span class="n">AddonInitializer</span> <span class="p">{</span>
     <span class="nd">@Inject</span>
-    <span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
+
+    <span class="nd">@Inject</span>
+    <span class="kd">private</span> <span class="n">BaseAddon</span> <span class="n">addon</span><span class="p">;</span>
 
     <span class="nd">@Override</span>
     <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
         <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
+
+        <span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
+                <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+                <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+                <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
+                    <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+                <span class="p">});</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
 </div>
-</section>
-</section>
-<section id="compiling-and-installing-your-addon">
-<h2>Compiling and Installing your Addon<a class="headerlink" href="#compiling-and-installing-your-addon" title="Permalink to this headline">¶</a></h2>
-<p>Now you have an addon that logs something to the console on startup. How do you install it?</p>
-<p>To install your addon, first you need to <em>compile</em> it, then <em>archive</em> it. The process is slightly different depending
-on your build system:</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="c379972a-3a21-4f30-b11c-83a71a566dd7" name="6fa9823d-e008-4879-b5cc-e2c0d3d20e7c" type="radio"/>
-<label class="sd-tab-label" for="c379972a-3a21-4f30-b11c-83a71a566dd7">
-Gradle</label><div class="sd-tab-content docutils">
-<p>Run the <code class="docutils literal notranslate"><span class="pre">:jar</span></code> task. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">build/libs</span></code>.</p>
-</div>
-<input id="75ea1a28-767f-455d-b649-51b2fcc57cb1" name="6fa9823d-e008-4879-b5cc-e2c0d3d20e7c" type="radio"/>
-<label class="sd-tab-label" for="75ea1a28-767f-455d-b649-51b2fcc57cb1">
-Maven</label><div class="sd-tab-content docutils">
-<p>Run the <code class="docutils literal notranslate"><span class="pre">package</span></code> goal. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">target</span></code>.</p>
-</div>
-</div>
-<p>Once you have the JAR, put it in your Terra installation’s <code class="docutils literal notranslate"><span class="pre">addons</span></code> folder. When you start Terra, you should
-see a message logged to the console!</p>
-<img alt="../../_images/init.png" src="../../_images/init.png"/>
-<p>Congratulations! You’ve successfully made your first Terra addon! To implement additional, more advanced functionality
-in this example addon, continue with this introduction guide. If you’re ready to start tinkering with the API on
-your own, check out the <a class="reference internal" href="../concepts/index.html"><span class="doc">API Concepts</span></a> section.</p>
 </section>
 </section>
 
@@ -346,23 +380,23 @@ your own, check out the <a class="reference internal" href="../concepts/index.ht
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="listening-for-an-event.html">
+          <a class="next-page" href="adding-structure.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Listening for an Event</div>
+                <div class="title">Adding a Structure</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="development-environment.html">
+          <a class="prev-page" href="creating-simple-addon.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Setting up a Development Environment</div>
+                <div class="title">Creating a Simple Addon</div>
                 
               </div>
             </a>
@@ -372,7 +406,7 @@ your own, check out the <a class="reference internal" href="../concepts/index.ht
               Copyright &#169; 2021, Terra Contributors |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/api/intro/creating-simple-addon.rst.txt"
+            | <a class="muted-link" href="../../_sources/api/intro/listening-for-an-event.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -392,15 +426,20 @@ your own, check out the <a class="reference internal" href="../concepts/index.ht
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Creating a Simple Addon</a><ul>
-<li><a class="reference internal" href="#creating-the-addon-manifest">Creating the Addon Manifest</a></li>
-<li><a class="reference internal" href="#creating-an-entry-point">Creating an Entry Point</a></li>
-<li><a class="reference internal" href="#adding-functionality-to-your-addon">Adding Functionality to your Addon</a><ul>
-<li><a class="reference internal" href="#injecting-a-logger">Injecting a Logger</a></li>
-<li><a class="reference internal" href="#using-a-logger">Using a Logger</a></li>
+<li><a class="reference internal" href="#">Listening for an Event</a><ul>
+<li><a class="reference internal" href="#configpackpreloadevent">ConfigPackPreLoadEvent</a></li>
+<li><a class="reference internal" href="#listening-for-the-event">Listening for the Event</a><ul>
+<li><a class="reference internal" href="#injecting-the-required-objects">Injecting the Required Objects</a></li>
+<li><a class="reference internal" href="#creating-an-event-context">Creating an Event Context</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#compiling-and-installing-your-addon">Compiling and Installing your Addon</a></li>
+<li><a class="reference internal" href="#event-scope">Event Scope</a><ul>
+<li><a class="reference internal" href="#pack-events">Pack Events</a></li>
+<li><a class="reference internal" href="#pack-dependencies">Pack Dependencies</a></li>
+<li><a class="reference internal" href="#global-event-handlers">Global Event Handlers</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>

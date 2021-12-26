@@ -6,7 +6,7 @@
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Type Keys" href="type-key.html" /><link rel="prev" title="Logging With SLF4J" href="logging.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
-        <title>Handling Events - Terra documentation</title>
+        <title>Events - Terra documentation</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
@@ -177,6 +177,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../intro/loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../intro/development-environment.html">Setting up a Development Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../intro/listening-for-an-event.html">Listening for an Event</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../intro/adding-structure.html">Adding a Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../intro/registering-config-type.html">Registering a Config Type</a></li>
 </ul>
@@ -185,7 +186,7 @@
 <li class="toctree-l3"><a class="reference internal" href="manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging With SLF4J</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Handling Events</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Events</a></li>
 <li class="toctree-l3"><a class="reference internal" href="type-key.html">Type Keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="registries.html">Registries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tectonic.html">Tectonic</a></li>
@@ -219,8 +220,8 @@
           </label>
         </div>
         <article role="main">
-          <section id="handling-events">
-<span id="id1"></span><h1>Handling Events<a class="headerlink" href="#handling-events" title="Permalink to this headline">¶</a></h1>
+          <section id="events">
+<h1>Events<a class="headerlink" href="#events" title="Permalink to this headline">¶</a></h1>
 <p>Interfacing with the Terra API is primarily done through events.</p>
 <section id="the-event-manager">
 <h2>The Event Manager<a class="headerlink" href="#the-event-manager" title="Permalink to this headline">¶</a></h2>
@@ -261,7 +262,7 @@ APIs to register events, for example, annotated methods.</p>
 </div>
 </section>
 <section id="the-functional-event-handler">
-<h3>The Functional Event Handler<a class="headerlink" href="#the-functional-event-handler" title="Permalink to this headline">¶</a></h3>
+<span id="functional-event-handler"></span><h3>The Functional Event Handler<a class="headerlink" href="#the-functional-event-handler" title="Permalink to this headline">¶</a></h3>
 <p>The Functional Event Handler is the default Event Handler provided by Terra. Most addons will want to use this event
 handler. This handler provides a functional-style API for registering events using Java’s <a class="reference external" href="https://www.w3schools.com/java/java_lambda.asp">lambda expressions</a>.</p>
 <section id="registering-a-listener">
@@ -283,7 +284,7 @@ execute consecutively, with the consumer accepting the event instance.</p>
         <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">someEventInstance</span> <span class="o">-&gt;</span> <span class="p">{</span>              <span class="c1">// Perform an action when the event is fired.</span>
             <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Handling Some Event!"</span><span class="p">);</span>
             <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Event says: {}"</span><span class="p">,</span> <span class="n">someEventInstance</span><span class="p">.</span><span class="na">getSomething</span><span class="p">());</span>
-        <span class="p">})</span>
+        <span class="p">});</span>
 </pre></div>
 </div>
 <p>This example registers a listener for <code class="docutils literal notranslate"><span class="pre">SomeEvent</span></code>. When the event is called, the result of the event instance’s
@@ -344,7 +345,7 @@ execute consecutively, with the consumer accepting the event instance.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Handling Events</a><ul>
+<li><a class="reference internal" href="#">Events</a><ul>
 <li><a class="reference internal" href="#the-event-manager">The Event Manager</a><ul>
 <li><a class="reference internal" href="#accessing-the-event-manager">Accessing the Event Manager</a></li>
 </ul>

@@ -23,7 +23,7 @@ Example
     :language: java
 
 This example demonstrates injecting the :javadoc:`Platform` and :javadoc:`BaseAddon` instances. This is a very common
-scenario, as both of these objects are required for :ref:`handling events<handling-events>`
+scenario, as both of these objects are required for :doc:`handling events<events>`
 
 Injected Types
 ==============
