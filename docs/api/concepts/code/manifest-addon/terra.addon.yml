@@ -1,0 +1,14 @@
+schema-version: 1
+contributors:
+  - Terra contributors
+id: super-cool-addon
+version: 1.0.3
+entrypoints:
+  - "com.example.cool.MySuperCoolEntryPoint"
+depends:
+  cool-addon: "1.2.+"
+website:
+  issues: https://example.com/issues
+  source: https://example.com/
+  docs: https://example.com/wiki
+license: MIT License

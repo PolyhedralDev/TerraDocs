@@ -1,0 +1,8 @@
+schema-version: 1
+contributors:
+  - Terra Contributors
+id: example-addon
+version: 0.1.0
+entrypoints:
+  - "com.dfsek.example.ExampleEntryPoint"
+license: MIT License
