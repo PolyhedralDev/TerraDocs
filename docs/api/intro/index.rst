@@ -12,5 +12,6 @@ addon. If you want a higher-level explanation of API features, see the :doc:`../
     loading
     development-environment
     creating-simple-addon
+    listening-for-an-event
     adding-structure
     registering-config-type
