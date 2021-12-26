@@ -18,7 +18,7 @@ Manifest Addon Loader Entry Point
 ---------------------------------
 
 If you are using a logger in an entry point of a Manifest Addon Loader addon, you can use
-:ref:`dependency injection<dependency-injection>` to obtain a Logger instance:
+:doc:`dependency injection<dependency-injection>` to obtain a Logger instance:
 
 .. literalinclude:: code/logging/getting-logger-di.java
     :language: java

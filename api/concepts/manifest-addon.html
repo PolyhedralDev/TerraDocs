@@ -139,7 +139,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -212,7 +212,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -223,6 +223,154 @@
 <p>The Manifest Addon Loader is one of the two default bootstrap addons in Terra. The other is the bootstrap addon
 loader itself. Any addon that is not itself a bootstrap addon should not use the bootstrap addon loader, so most
 addons will want to use the Manifest Addon Loader, as it is included by default.</p>
+<section id="the-addon-manifest">
+<h2>The Addon Manifest<a class="headerlink" href="#the-addon-manifest" title="Permalink to this headline">¶</a></h2>
+<p>The addon manifest contains data that the Manifest Addon Loader requires to load the addon. The manifest is a YAML
+file at the root of the JAR called <code class="docutils literal notranslate"><span class="pre">terra.addon.yml</span></code>.</p>
+<p>Here is an example addon manifest:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">schema-version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">contributors</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Terra contributors</span>
+<span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">super-cool-addon</span>
+<span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0.3</span>
+<span class="nt">entrypoints</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="s">"com.example.cool.MySuperCoolEntryPoint"</span>
+<span class="nt">depends</span><span class="p">:</span>
+  <span class="nt">cool-addon</span><span class="p">:</span> <span class="s">"1.2.+"</span>
+<span class="nt">website</span><span class="p">:</span>
+  <span class="nt">issues</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://example.com/issues</span>
+  <span class="nt">source</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://example.com/</span>
+  <span class="nt">docs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">https://example.com/wiki</span>
+<span class="nt">license</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MIT License</span>
+</pre></div>
+</div>
+<section id="schema-version">
+<h3>Schema Version<a class="headerlink" href="#schema-version" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">schema-version</span></code> key tells the loader which schema to load this manifest with. The current latest schema
+version is <code class="docutils literal notranslate"><span class="pre">1</span></code>. We try our best to never change the schema version, so your addon manifest should always work,
+but the schema-version is there in case we ever need to.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If we ever release a new schema-version, old schema-versions will continue to load (with warnings) for a few
+versions before being removed.</p>
+</div>
+</section>
+<section id="contributors">
+<h3>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">contributors</span></code> key is a list of people who have contributed to the addon. For now, just put your name!</p>
+</section>
+<section id="id">
+<h3>ID<a class="headerlink" href="#id" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">id</span></code> key is your addon’s ID. This ID is used internally to identify your addon, and as your addon’s registry
+namespace. Make this something concise, but unlikely to conflict with other addons, as <strong>multiple addons cannot have
+the same ID!</strong></p>
+</section>
+<section id="version">
+<h3>Version<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">version</span></code> key lets the loader know the version of your addon. Versioning is important, because if someone
+depends on your addon, they want to be able to guarantee compatibility by specifying the version to depend on!
+Terra, like most software, uses <a class="reference external" href="https://semver.org">Semantic Versioning</a> for its versioning.</p>
+</section>
+<section id="entry-points">
+<h3>Entry Points<a class="headerlink" href="#entry-points" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">entrypoints</span></code> key defines one or more <em>entry points</em> to your addon. Entry points are classes which implement
+<code class="docutils literal notranslate"><span class="pre">AddonInitializer</span></code>. TODO</p>
+</section>
+<section id="dependencies">
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">depends</span></code> key specifies which other addons you <em>depend on</em>. If you depend on an addon:</p>
+<ul class="simple">
+<li><p>That addon initializes before yours.</p></li>
+<li><p>Your addon will fail to load if the dependency is not present.</p></li>
+<li><p>Your addon will fail to load if the dependency is the wrong version.</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">depends</span></code> key is a map of addon IDs to version ranges. Version ranges are a way to determine exactly which
+versions of the dependency your addons support.</p>
+<div class="table-wrapper"><table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Example Version Ranges</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Version Range</p></th>
+<th class="head"><p>Versions Included</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p></td>
+<td><p>Match <em>only</em> version <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">[0.1.0,</span> <span class="pre">1.0.0)</span></code></p></td>
+<td><p>Match everything from version <code class="docutils literal notranslate"><span class="pre">0.1.0</span></code> (inclusive) to <code class="docutils literal notranslate"><span class="pre">1.0.0</span></code> (exclusive)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">0.1.+</span></code></p></td>
+<td><p>Match all versions from <code class="docutils literal notranslate"><span class="pre">0.1.0</span></code> (inclusive) to <code class="docutils literal notranslate"><span class="pre">0.2.0</span></code> (exclusive)</p></td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section id="website">
+<h3>Website<a class="headerlink" href="#website" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">website</span></code> key contains a website configuration. This tells users where to find information about the addon
+online, where to file bugs, where the source code is, etc. The website key is optional.</p>
+<p>There are three sub-keys in the website config:</p>
+<div class="table-wrapper"><table class="colwidths-given docutils align-default" id="id2">
+<caption><span class="caption-text">Website Keys</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<colgroup>
+<col style="width: 25%"/>
+<col style="width: 75%"/>
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">source</span></code></p></td>
+<td><p>Where to find the addon’s source code.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">issues</span></code></p></td>
+<td><p>Where to submit bug reports or make feature requests.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">docs</span></code></p></td>
+<td><p>Where to find documentation about the addon.</p></td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section id="license">
+<h3>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h3>
+<p>The <code class="docutils literal notranslate"><span class="pre">license</span></code> key tells users the license under which the addon is available. We strongly recommend choosing
+an <a class="reference external" href="https://opensource.org/licenses">Open-Source License</a> to keep with the free and open-source spirit of Terra.</p>
+<p>If your license is OSI-approved (MIT, GPLv3, BSD-3, etc.), you can just put the OSI ID in this parameter. Otherwise,
+include a link to your license.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you don’t know what to put just yet, put <code class="docutils literal notranslate"><span class="pre">ARR</span></code>. ARR stands for All Rights Reserved, which means people aren’t
+allowed to use anything from your addon without your explicit permission. Publishing something as ARR is strongly
+discouraged, so you should look into switching to an OSI license before releasing your addon!</p>
+</div>
+</section>
+</section>
+<section id="working-with-entry-points">
+<h2>Working with Entry Points<a class="headerlink" href="#working-with-entry-points" title="Permalink to this headline">¶</a></h2>
+<p>The addon manifest’s <a class="reference internal" href="#entry-points">Entry Points</a> key defines a list of entry points of the addon. These entry points
+are references to classes which implement <code class="docutils literal notranslate"><span class="pre">AddonInitializer</span></code>. These entry points are initialized sequentially
+when the addon initializes.</p>
+<section id="dependency-injection-in-entry-points">
+<h3>Dependency Injection in Entry Points<a class="headerlink" href="#dependency-injection-in-entry-points" title="Permalink to this headline">¶</a></h3>
+<p>The Manifest Addon Loader injects the following types into entry points:</p>
+<ul class="simple">
+<li><p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance</p></li>
+<li><p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance
+(In Manifest Addons, the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance is separate from the entry points, as the addon can have
+multiple entry points, hence the ability to inject the addon instance into entry points)</p></li>
+<li><p>A <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/Logger.html">Logger</a> instance specific to the entry point</p></li>
+</ul>
+<p>Read more about <a class="reference internal" href="dependency-injection.html"><span class="doc">dependency injection</span></a> in the main article.</p>
+</section>
+</section>
 </section>
 
         </article>
@@ -264,8 +412,41 @@ addons will want to use the Manifest Addon Loader, as it is included by default.
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Manifest Addons</a><ul>
+<li><a class="reference internal" href="#the-addon-manifest">The Addon Manifest</a><ul>
+<li><a class="reference internal" href="#schema-version">Schema Version</a></li>
+<li><a class="reference internal" href="#contributors">Contributors</a></li>
+<li><a class="reference internal" href="#id">ID</a></li>
+<li><a class="reference internal" href="#version">Version</a></li>
+<li><a class="reference internal" href="#entry-points">Entry Points</a></li>
+<li><a class="reference internal" href="#dependencies">Dependencies</a></li>
+<li><a class="reference internal" href="#website">Website</a></li>
+<li><a class="reference internal" href="#license">License</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#working-with-entry-points">Working with Entry Points</a><ul>
+<li><a class="reference internal" href="#dependency-injection-in-entry-points">Dependency Injection in Entry Points</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

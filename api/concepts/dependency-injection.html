@@ -219,7 +219,7 @@
         </div>
         <article role="main">
           <section id="dependency-injection">
-<span id="id1"></span><h1>Dependency Injection<a class="headerlink" href="#dependency-injection" title="Permalink to this headline">¶</a></h1>
+<h1>Dependency Injection<a class="headerlink" href="#dependency-injection" title="Permalink to this headline">¶</a></h1>
 <p>Terra uses a simple annotation-based dependency injection framework to provide instances of important API objects
 to addons. The dependency injection framework reduces boilerplate by allowing addons to choose which objects they
 need to have access to.</p>
@@ -242,17 +242,6 @@ scenario, as both of these objects are required for <a class="reference internal
 <section id="dependency-injection-in-all-addons">
 <h2>Dependency Injection in all Addons<a class="headerlink" href="#dependency-injection-in-all-addons" title="Permalink to this headline">¶</a></h2>
 <p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance is injected into all addons.</p>
-</section>
-<section id="dependency-injection-in-the-manifest-addon-loader">
-<h2>Dependency Injection in the Manifest Addon Loader<a class="headerlink" href="#dependency-injection-in-the-manifest-addon-loader" title="Permalink to this headline">¶</a></h2>
-<p>The Manifest Addon Loader injects additional types into its entry points, to simplify addon development.</p>
-<ul class="simple">
-<li><p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance</p></li>
-<li><p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance
-(In Manifest Addons, the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance is separate from the entry points, as the addon can have
-multiple entry points, hence the ability to inject the addon instance into entry points)</p></li>
-<li><p>A <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/Logger.html">Logger</a> instance specific to the entry point</p></li>
-</ul>
 </section>
 </section>
 
@@ -313,7 +302,6 @@ multiple entry points, hence the ability to inject the addon instance into entry
 </ul>
 </li>
 <li><a class="reference internal" href="#dependency-injection-in-all-addons">Dependency Injection in all Addons</a></li>
-<li><a class="reference internal" href="#dependency-injection-in-the-manifest-addon-loader">Dependency Injection in the Manifest Addon Loader</a></li>
 </ul>
 </li>
 </ul>

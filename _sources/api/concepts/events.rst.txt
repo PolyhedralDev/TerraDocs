@@ -33,7 +33,7 @@ The Event Manager is accessed through the :javadoc:`Platform` instance:
     :language: java
 
 .. note::
-    To access the :javadoc:`Platform` instance in your addon, use :ref:`dependency injection<dependency-injection>`.
+    To access the :javadoc:`Platform` instance in your addon, use :doc:`Dependency Injection <dependency-injection>`.
 
 .. note::
     You'll generally want to register event listeners in your addon's entry point(s).
