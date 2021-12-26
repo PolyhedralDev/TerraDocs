@@ -4,5 +4,5 @@ contributors:
 id: example-addon
 version: 0.1.0
 entrypoints:
-  - "com.dfsek.example.ExampleEntryPoint"
+  - "com.example.addon.ExampleEntryPoint"
 license: MIT License
