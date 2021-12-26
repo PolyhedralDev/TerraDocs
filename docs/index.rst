@@ -1,6 +1,6 @@
-==========================
-Welcome to the Terra Docs!
-==========================
+===================
+Terra Documentation
+===================
 
 **This documentation site is under construction! Sone things may not work currently, we're working to get it up
 and running properly. Want to help? Check out the GitHub Repo for instructions on
