@@ -170,14 +170,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../../install/versions.html">Versions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../config/index.html">Config Development</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../config/development/config-files.html">Config Files</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../config/development/config-data.html">Defining Data in Configs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../config/development/config-system.html">The Config System</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../config/index.html">Config Packs</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../config/community-packs.html">Community Packs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../config/development/index.html">Config Development</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/introduction.html">Config Development Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/config-files.html">Config Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/config-data.html">Defining Data in Configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/config-system.html">The Config System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/pack-from-scratch/index.html">Creating a Pack from Scratch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/modifying-existing-pack.html">Modifying an Existing Pack</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Introduction to the Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Introduction to the Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="development-environment.html">Setting up a Development Environment</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Creating a Simple Addon</a></li>
@@ -186,7 +193,7 @@
 <li class="toctree-l3"><a class="reference internal" href="registering-config-type.html">Registering a Config Type</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/logging.html">Logging With SLF4J</a></li>
@@ -325,13 +332,13 @@ when the addon initializes!</p>
 <p>To install your addon, first you need to <em>compile</em> it, then <em>archive</em> it. The process is slightly different depending
 on your build system:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9a914ec0-00ea-4147-9b62-bb82146b46a9" name="15d3f5e0-7fdf-455a-a948-4a836b86ef8e" type="radio"/>
-<label class="sd-tab-label" for="9a914ec0-00ea-4147-9b62-bb82146b46a9">
+<input checked="checked" id="7b704fc4-a318-4d52-b4f4-5fe3d36486e1" name="f1fc64dd-0a6a-4397-88f9-49054aac0ba9" type="radio"/>
+<label class="sd-tab-label" for="7b704fc4-a318-4d52-b4f4-5fe3d36486e1">
 Gradle</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">:jar</span></code> task. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">build/libs</span></code>.</p>
 </div>
-<input id="c4a8fa39-40c9-40c0-8c15-7c39250ec9ed" name="15d3f5e0-7fdf-455a-a948-4a836b86ef8e" type="radio"/>
-<label class="sd-tab-label" for="c4a8fa39-40c9-40c0-8c15-7c39250ec9ed">
+<input id="963f2dc5-de63-454d-bf4f-719e39e8e75a" name="f1fc64dd-0a6a-4397-88f9-49054aac0ba9" type="radio"/>
+<label class="sd-tab-label" for="963f2dc5-de63-454d-bf4f-719e39e8e75a">
 Maven</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">package</span></code> goal. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">target</span></code>.</p>
 </div>

@@ -170,14 +170,21 @@
 <li class="toctree-l2"><a class="reference internal" href="../../install/versions.html">Versions</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Config Development</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="config-files.html">Config Files</a></li>
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Defining Data in Configs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="config-system.html">The Config System</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Config Packs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../community-packs.html">Community Packs</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Config Development</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">Config Development Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-files.html">Config Files</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Defining Data in Configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-system.html">The Config System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pack-from-scratch/index.html">Creating a Pack from Scratch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modifying-existing-pack.html">Modifying an Existing Pack</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../api/intro/loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/intro/development-environment.html">Setting up a Development Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
@@ -186,7 +193,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api/intro/registering-config-type.html">Registering a Config Type</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../api/concepts/manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/concepts/logging.html">Logging With SLF4J</a></li>
@@ -260,15 +267,15 @@ called an <code class="docutils literal notranslate"><span class="pre">Integer</
 <p>Integers represent whole numbers and as such, are
 written as whole numbers like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="292ee785-c8d5-46ff-b76d-ec76dc1243a1" name="a1508985-0b13-4415-8dbc-eb08a91d4477" type="radio"/>
-<label class="sd-tab-label" for="292ee785-c8d5-46ff-b76d-ec76dc1243a1">
+<input checked="checked" id="34a51192-97e5-4404-93e1-927d3c7d96d4" name="ec3ca759-1bdd-4592-b2ef-dfbd02fa496d" type="radio"/>
+<label class="sd-tab-label" for="34a51192-97e5-4404-93e1-927d3c7d96d4">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">42</span>
 </pre></div>
 </div>
 </div>
-<input id="f4507896-569a-41d3-aa11-f509dfd386f1" name="a1508985-0b13-4415-8dbc-eb08a91d4477" type="radio"/>
-<label class="sd-tab-label" for="f4507896-569a-41d3-aa11-f509dfd386f1">
+<input id="bcc87a97-5da7-477d-9993-b4e47bff05cc" name="ec3ca759-1bdd-4592-b2ef-dfbd02fa496d" type="radio"/>
+<label class="sd-tab-label" for="bcc87a97-5da7-477d-9993-b4e47bff05cc">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span>
 </pre></div>
@@ -284,15 +291,15 @@ level object, which represents the number <code class="docutils literal notransl
 <code class="docutils literal notranslate"><span class="pre">Float</span></code>. The difference between integers and floats is that floats can
 represent numbers that contain decimals:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="91166238-bb98-43ba-aa22-06c719bf5b83" name="4a400fea-0ad9-4a90-8295-5ab63920bffe" type="radio"/>
-<label class="sd-tab-label" for="91166238-bb98-43ba-aa22-06c719bf5b83">
+<input checked="checked" id="4b1b98a4-5b2e-425c-b1ea-7e5f5b2dcbc0" name="4c72405a-bd94-45b2-92f8-cb86c68780df" type="radio"/>
+<label class="sd-tab-label" for="4b1b98a4-5b2e-425c-b1ea-7e5f5b2dcbc0">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">3.14159</span>
 </pre></div>
 </div>
 </div>
-<input id="9650319b-27c2-4134-ab54-7ac31e946b27" name="4a400fea-0ad9-4a90-8295-5ab63920bffe" type="radio"/>
-<label class="sd-tab-label" for="9650319b-27c2-4134-ab54-7ac31e946b27">
+<input id="ecb841cd-333f-4b52-8f0f-06fa2dd5fc6e" name="4c72405a-bd94-45b2-92f8-cb86c68780df" type="radio"/>
+<label class="sd-tab-label" for="ecb841cd-333f-4b52-8f0f-06fa2dd5fc6e">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="mf">3.14159</span>
 </pre></div>
@@ -310,15 +317,15 @@ integers.</p>
 <h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
 <p>We can also represent data like text using a type called a <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2b5d8847-f662-4520-a8f6-8dd2eb5497d6" name="eb3d841d-c71d-4f7b-88bc-a8945a6bba52" type="radio"/>
-<label class="sd-tab-label" for="2b5d8847-f662-4520-a8f6-8dd2eb5497d6">
+<input checked="checked" id="cb6f2a44-bb9a-4718-ada7-2c9f8b965e1e" name="b0e4186a-787c-44db-a8e9-a2bd04f3229e" type="radio"/>
+<label class="sd-tab-label" for="cb6f2a44-bb9a-4718-ada7-2c9f8b965e1e">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">This is a config of type string.</span>
 </pre></div>
 </div>
 </div>
-<input id="7d38f817-5cf7-4225-a9b1-5b2bcf733d3d" name="eb3d841d-c71d-4f7b-88bc-a8945a6bba52" type="radio"/>
-<label class="sd-tab-label" for="7d38f817-5cf7-4225-a9b1-5b2bcf733d3d">
+<input id="bbd98f01-4bef-4e77-8aa4-a65d762a4c12" name="b0e4186a-787c-44db-a8e9-a2bd04f3229e" type="radio"/>
+<label class="sd-tab-label" for="bbd98f01-4bef-4e77-8aa4-a65d762a4c12">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">"This is a config of type string."</span>
 </pre></div>
@@ -332,15 +339,15 @@ what block IDs we want to use for the blocks in a biome.</p>
 interpreted as another type like <code class="docutils literal notranslate"><span class="pre">Integer</span></code>. To explicitly specify an
 object is a <code class="docutils literal notranslate"><span class="pre">String</span></code>, you can wrap it quotes like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="bebf31c4-e232-4f0f-8aa9-ddb570a4e370" name="318d7142-d115-4cf0-b727-0f1eb84be398" type="radio"/>
-<label class="sd-tab-label" for="bebf31c4-e232-4f0f-8aa9-ddb570a4e370">
+<input checked="checked" id="4cc43042-d3b1-4d28-8689-875565b150d6" name="29f47c41-3047-4f6e-a1cc-ef109f0a32fd" type="radio"/>
+<label class="sd-tab-label" for="4cc43042-d3b1-4d28-8689-875565b150d6">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">"42"</span>
 </pre></div>
 </div>
 </div>
-<input id="29d05c94-21d8-4879-9eb3-269bd88235e8" name="318d7142-d115-4cf0-b727-0f1eb84be398" type="radio"/>
-<label class="sd-tab-label" for="29d05c94-21d8-4879-9eb3-269bd88235e8">
+<input id="9eac0e21-b79a-48bc-b8e5-15297b60d449" name="29f47c41-3047-4f6e-a1cc-ef109f0a32fd" type="radio"/>
+<label class="sd-tab-label" for="9eac0e21-b79a-48bc-b8e5-15297b60d449">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="s2">"42"</span>
 </pre></div>
@@ -364,15 +371,15 @@ called a <strong>key-value pair</strong>.</p>
 <p>Here we will make a new config where the <em>top level object</em> is of type
 <code class="docutils literal notranslate"><span class="pre">Map</span></code>, and both the <em>key</em> and <em>value</em> are of type <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9281eb85-4d05-4be8-9ed4-129623d47139" name="c3bbf130-47cb-4d90-ad83-be37ff22f06d" type="radio"/>
-<label class="sd-tab-label" for="9281eb85-4d05-4be8-9ed4-129623d47139">
+<input checked="checked" id="754ca1ef-ba74-4a3c-adf7-65c9a2f0cf8c" name="cf8d93ac-52c9-4ce7-8a91-d251d64719b1" type="radio"/>
+<label class="sd-tab-label" for="754ca1ef-ba74-4a3c-adf7-65c9a2f0cf8c">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">this is a key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">this is a value</span>
 </pre></div>
 </div>
 </div>
-<input id="e61f95ea-fa47-48d3-a60d-2294dfa800a0" name="c3bbf130-47cb-4d90-ad83-be37ff22f06d" type="radio"/>
-<label class="sd-tab-label" for="e61f95ea-fa47-48d3-a60d-2294dfa800a0">
+<input id="1b554809-8e27-4a68-a112-8a0f1754b680" name="cf8d93ac-52c9-4ce7-8a91-d251d64719b1" type="radio"/>
+<label class="sd-tab-label" for="1b554809-8e27-4a68-a112-8a0f1754b680">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">"this is a key"</span><span class="p">:</span> <span class="s2">"this is a value"</span>
@@ -384,8 +391,8 @@ JSON</label><div class="sd-tab-content docutils">
 <p>Since maps are <em>collections</em> of objects, we can list multiple key value
 pairs within the map like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="85f43989-fa48-4b93-bcd0-d5f57f75699e" name="83c1c34e-67ba-442a-8ee0-da7cd295c4fb" type="radio"/>
-<label class="sd-tab-label" for="85f43989-fa48-4b93-bcd0-d5f57f75699e">
+<input checked="checked" id="f4a684a2-0bcc-4618-b602-114c9427ecc6" name="c5064337-a60c-4736-a0f0-e13d98b9ede7" type="radio"/>
+<label class="sd-tab-label" for="f4a684a2-0bcc-4618-b602-114c9427ecc6">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">string</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Here is some text.</span>
 <span class="nt">pi</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.14159</span>
@@ -393,8 +400,8 @@ YAML</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="6c2c44f8-6dab-4d1f-bcb1-2cf76d212718" name="83c1c34e-67ba-442a-8ee0-da7cd295c4fb" type="radio"/>
-<label class="sd-tab-label" for="6c2c44f8-6dab-4d1f-bcb1-2cf76d212718">
+<input id="133c7633-9110-4caf-a463-2c4263748c4f" name="c5064337-a60c-4736-a0f0-e13d98b9ede7" type="radio"/>
+<label class="sd-tab-label" for="133c7633-9110-4caf-a463-2c4263748c4f">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">"string"</span><span class="p">:</span> <span class="s2">"Here is some text."</span><span class="p">,</span>
@@ -422,8 +429,8 @@ will be of the same type.</p>
 <p>Here is a config where the <em>top level object</em> is a <code class="docutils literal notranslate"><span class="pre">List</span></code>, which
 contains multiple <code class="docutils literal notranslate"><span class="pre">String</span></code>s:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1b7ba27b-4e70-4514-a7bc-fe514699d906" name="4c871a69-7d64-470b-8261-b00ac162f6c8" type="radio"/>
-<label class="sd-tab-label" for="1b7ba27b-4e70-4514-a7bc-fe514699d906">
+<input checked="checked" id="b481f690-8b09-4a47-8d16-e805fc47c80c" name="8336f177-901a-4c83-85ee-263abd702ae5" type="radio"/>
+<label class="sd-tab-label" for="b481f690-8b09-4a47-8d16-e805fc47c80c">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">A string</span>
 <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Another string</span>
@@ -431,8 +438,8 @@ YAML</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="19895fbc-0fcf-4d57-a68d-517666a55e12" name="4c871a69-7d64-470b-8261-b00ac162f6c8" type="radio"/>
-<label class="sd-tab-label" for="19895fbc-0fcf-4d57-a68d-517666a55e12">
+<input id="cc7bfaeb-9d8a-40c1-9b48-413da43e3bfe" name="8336f177-901a-4c83-85ee-263abd702ae5" type="radio"/>
+<label class="sd-tab-label" for="cc7bfaeb-9d8a-40c1-9b48-413da43e3bfe">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
    <span class="s2">"A string"</span><span class="p">,</span>
@@ -452,8 +459,8 @@ possible to nest maps in maps, lists in lists, lists in maps, and so on.</p>
 <p>Here is an example of a <code class="docutils literal notranslate"><span class="pre">Map</span></code> contained within the value of another
 <code class="docutils literal notranslate"><span class="pre">Map</span></code> (which is the top level object):</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="86dc4272-ade6-4ace-ba0e-b535c9c5e58e" name="2eb08d1e-f1f7-455b-a2db-b0e4fc85eb8d" type="radio"/>
-<label class="sd-tab-label" for="86dc4272-ade6-4ace-ba0e-b535c9c5e58e">
+<input checked="checked" id="4caa9259-7abc-4df8-8ea0-abbaf0cef079" name="b4cf61dc-bffc-4ebb-8a77-7404b3fb725b" type="radio"/>
+<label class="sd-tab-label" for="4caa9259-7abc-4df8-8ea0-abbaf0cef079">
 YAML</label><div class="sd-tab-content docutils">
 <p>For simple data types like integers and strings it is clear which key
 corresponds to which value, as they are typically contained on the same
@@ -471,8 +478,8 @@ use two spaces to indicate ‘one level’ of indentation in YAML configs.</p>
 indented by two spaces, and is defined under the <code class="docutils literal notranslate"><span class="pre">parent-key</span></code> key,
 signifying that it belongs to that key.</p>
 </div>
-<input id="e2c91221-12f0-4918-86dc-03f8adb71cff" name="2eb08d1e-f1f7-455b-a2db-b0e4fc85eb8d" type="radio"/>
-<label class="sd-tab-label" for="e2c91221-12f0-4918-86dc-03f8adb71cff">
+<input id="882e51d3-89d2-4e8d-9974-64bb6d2d2ec6" name="b4cf61dc-bffc-4ebb-8a77-7404b3fb725b" type="radio"/>
+<label class="sd-tab-label" for="882e51d3-89d2-4e8d-9974-64bb6d2d2ec6">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">"parent-key"</span><span class="p">:</span> <span class="p">{</span>
@@ -487,8 +494,8 @@ JSON</label><div class="sd-tab-content docutils">
 <p>And here is a <code class="docutils literal notranslate"><span class="pre">Map</span></code> (the top level object) containing a <code class="docutils literal notranslate"><span class="pre">List</span></code> of
 <code class="docutils literal notranslate"><span class="pre">String</span></code>s:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="febfef2f-be01-469f-b6ca-36d232ace619" name="073dfe0b-7794-4a80-8337-65578ed7d1ce" type="radio"/>
-<label class="sd-tab-label" for="febfef2f-be01-469f-b6ca-36d232ace619">
+<input checked="checked" id="6a579d8b-8f21-4695-bd37-cfc846565cdc" name="52777e28-a327-4203-9c37-de16ed07ed91" type="radio"/>
+<label class="sd-tab-label" for="6a579d8b-8f21-4695-bd37-cfc846565cdc">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">list of strings</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item 1</span>
@@ -497,8 +504,8 @@ YAML</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="64756228-860d-407b-91bd-9bd16a7eee4d" name="073dfe0b-7794-4a80-8337-65578ed7d1ce" type="radio"/>
-<label class="sd-tab-label" for="64756228-860d-407b-91bd-9bd16a7eee4d">
+<input id="88a22a40-c311-40c1-b421-e3a2ed621d4d" name="52777e28-a327-4203-9c37-de16ed07ed91" type="radio"/>
+<label class="sd-tab-label" for="88a22a40-c311-40c1-b421-e3a2ed621d4d">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">"list of strings"</span><span class="p">:</span> <span class="p">[</span>
@@ -518,8 +525,8 @@ JSON</label><div class="sd-tab-content docutils">
 structures, here is an example representing a shopping list, and some
 appointments using everything we have covered thus far:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a6c6b7d8-7b0e-4bb9-8a00-19f16d3e17a3" name="dd63c9fa-d02a-4630-81ef-441bfbc7c804" type="radio"/>
-<label class="sd-tab-label" for="a6c6b7d8-7b0e-4bb9-8a00-19f16d3e17a3">
+<input checked="checked" id="48128a7c-08a8-4026-a03c-1814e89dce4c" name="912bfedb-abec-4422-aff6-19ef518c5d5e" type="radio"/>
+<label class="sd-tab-label" for="48128a7c-08a8-4026-a03c-1814e89dce4c">
 YAML</label><div class="sd-tab-content docutils">
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">shopping-list</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1L Milk</span>
@@ -541,8 +548,8 @@ YAML</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="970bbb39-2b10-4a6f-a10e-50b889dfeee0" name="dd63c9fa-d02a-4630-81ef-441bfbc7c804" type="radio"/>
-<label class="sd-tab-label" for="970bbb39-2b10-4a6f-a10e-50b889dfeee0">
+<input id="4f1561e6-33ce-4d44-8a9f-243eb5e2a33f" name="912bfedb-abec-4422-aff6-19ef518c5d5e" type="radio"/>
+<label class="sd-tab-label" for="4f1561e6-33ce-4d44-8a9f-243eb5e2a33f">
 JSON</label><div class="sd-tab-content docutils">
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
    <span class="nt">"shopping-list"</span><span class="p">:</span> <span class="p">[</span>
