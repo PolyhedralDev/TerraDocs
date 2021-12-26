@@ -116,9 +116,10 @@ If your license is OSI-approved (MIT, GPLv3, BSD-3, etc.), you can just put the 
 include a link to your license.
 
 .. note::
-    If you don't know what to put just yet, put ``ARR``. ARR stands for All Rights Reserved, which means people aren't
-    allowed to use anything from your addon without your explicit permission. Publishing something as ARR is strongly
-    discouraged, so you should look into switching to an OSI license before releasing your addon!
+    If you don't know what license to use just yet, use ``ARR`` as a placeholder. ARR stands for All Rights Reserved,
+    which means people aren't allowed to use anything from your addon without your explicit permission. Publishing
+    something as ARR is strongly discouraged, so you should look into switching to an OSI license before
+    releasing your addon!
 
 Working with Entry Points
 =========================
@@ -126,6 +127,8 @@ Working with Entry Points
 The addon manifest's `Entry Points`_ key defines a list of entry points of the addon. These entry points
 are references to classes which implement ``AddonInitializer``. These entry points are initialized sequentially
 when the addon initializes.
+
+.. _di-in-entry-points:
 
 Dependency Injection in Entry Points
 ------------------------------------

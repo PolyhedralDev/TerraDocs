@@ -25,10 +25,11 @@ Example
 This example demonstrates injecting the :javadoc:`Platform` and :javadoc:`BaseAddon` instances. This is a very common
 scenario, as both of these objects are required for :ref:`handling events<handling-events>`
 
-Dependency Injection in all Addons
-==================================
+Injected Types
+==============
 
-The :javadoc:`Platform` instance is injected into all addons.
+The :javadoc:`Platform` instance is injected into all addons. Bootstrap addons may inject additional types into addons
+they load. See the :ref:`di-in-entry-points` section for information about injected types in Manifest Addons.
 
 
 
