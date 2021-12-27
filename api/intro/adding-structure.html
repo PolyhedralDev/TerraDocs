@@ -139,7 +139,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -225,7 +225,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -233,7 +233,88 @@
         <article role="main">
           <section id="adding-a-structure">
 <h1>Adding a Structure<a class="headerlink" href="#adding-a-structure" title="Permalink to this headline">¶</a></h1>
-<p>TODO</p>
+<p>In this tutorial, we’ll be creating and registering a structure that can generate in the world.</p>
+<section id="structures">
+<h2>Structures<a class="headerlink" href="#structures" title="Permalink to this headline">¶</a></h2>
+<p>The structure interface represents a <em>structure</em> that can generate in the world; a section of blocks
+that generate at a location. Some examples of where structures may be used are:</p>
+<ul class="simple">
+<li><p>Grass</p></li>
+<li><p>Flowers</p></li>
+<li><p>Trees</p></li>
+<li><p>Rocks</p></li>
+</ul>
+<p>Structures are generally used to decorate the world after generation.</p>
+</section>
+<section id="creating-a-structure">
+<h2>Creating a Structure<a class="headerlink" href="#creating-a-structure" title="Permalink to this headline">¶</a></h2>
+<p>To create a structure, create a new class and implement the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/structure/Structure.html">Structure</a> interface. In this tutorial, we’ll
+call our example structure <code class="docutils literal notranslate"><span class="pre">com.example.addon.structure.ExampleStructure</span></code>. You can call yours whatever you want!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon.structure</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.structure.Structure</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.util.Rotation</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.util.vector.Vector3Int</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.world.WritableWorld</span><span class="p">;</span>
+
+<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleStructure</span> <span class="kd">implements</span> <span class="n">Structure</span> <span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span> <span class="n">location</span><span class="p">,</span> <span class="n">WritableWorld</span> <span class="n">world</span><span class="p">,</span> <span class="n">Random</span> <span class="n">random</span><span class="p">,</span> <span class="n">Rotation</span> <span class="n">rotation</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="generating-something">
+<h2>Generating Something<a class="headerlink" href="#generating-something" title="Permalink to this headline">¶</a></h2>
+<p>Right now, our <code class="docutils literal notranslate"><span class="pre">Structure</span></code> implementation won’t generate anything. To generate blocks in the world, we can use one
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/world/WritableWorld.html">WritableWorld</a>’s many <code class="docutils literal notranslate"><span class="pre">#setBlockState</span></code> methods. Let’s generate a tree!</p>
+<section id="getting-a-block-state">
+<h3>Getting a Block State<a class="headerlink" href="#getting-a-block-state" title="Permalink to this headline">¶</a></h3>
+<p>First, we’ll need to get a <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/block/state/BlockState.html">BlockState</a> to generate. To do that, we’ll need the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/handle/WorldHandle.html">WorldHandle</a>,
+which we can get from the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance. Let’s pass the <code class="docutils literal notranslate"><span class="pre">Platform</span></code> into our <code class="docutils literal notranslate"><span class="pre">Structure</span></code>’s
+constructor, and use <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/handle/WorldHandle.html#createBlockState-java.lang.String-">WorldHandle#createBlockState(String)</a> to create a block state!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleStructure</span> <span class="kd">implements</span> <span class="n">Structure</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">ExampleStructure</span><span class="p">(</span><span class="n">Platform</span> <span class="n">platform</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">platform</span> <span class="o">=</span> <span class="n">platform</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span> <span class="n">location</span><span class="p">,</span> <span class="n">WritableWorld</span> <span class="n">world</span><span class="p">,</span> <span class="n">Random</span> <span class="n">random</span><span class="p">,</span> <span class="n">Rotation</span> <span class="n">rotation</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">BlockState</span> <span class="n">oakLog</span> <span class="o">=</span> <span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_log[axis=y]"</span><span class="p">);</span>
+        <span class="n">BlockState</span> <span class="n">oakLeaves</span> <span class="o">=</span> <span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_leaves[persistent=true]"</span><span class="p">);</span>
+
+        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re used to the Bukkit API, Terra’s <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/block/state/BlockState.html">BlockState</a> is roughly equivalent to Bukkit’s <code class="docutils literal notranslate"><span class="pre">BlockData</span></code>.
+We chose the name Block State as it is more accurate to what the object represents, as well as the name
+Minecraft itself uses internally.</p>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you’re implementing a structure in your addon, you’ll definitely want to get your block state <em>once</em> on
+initialization, then use the existing instance in your structure’s <code class="docutils literal notranslate"><span class="pre">#generate</span></code> method.
+We’re getting them in the <code class="docutils literal notranslate"><span class="pre">#generate</span></code> method to make this tutorial simpler.</p>
+<p>It’s generally encouraged to make the block state configurable, as that keeps your addon platform-agnostic,
+but if you’re set on hard-coding your block states, you can:</p>
+<ul class="simple">
+<li><p>Initialize them in the structure’s constructor.</p></li>
+<li><p>Initialize them in your addon’s entry point and pass them to the structure.</p></li>
+<li><p>Use the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/util/generic/Lazy.html">Lazy</a> utility class for lazy initialization.</p></li>
+</ul>
+</div>
+</section>
+</section>
 </section>
 
         </article>
@@ -275,8 +356,32 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Adding a Structure</a><ul>
+<li><a class="reference internal" href="#structures">Structures</a></li>
+<li><a class="reference internal" href="#creating-a-structure">Creating a Structure</a></li>
+<li><a class="reference internal" href="#generating-something">Generating Something</a><ul>
+<li><a class="reference internal" href="#getting-a-block-state">Getting a Block State</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
