@@ -11,6 +11,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/rounded-borders.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/cards.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/code-blocks.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/interpreted-text.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/padding.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/headings.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css" />
@@ -23,17 +27,23 @@
   body {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
   }
   body[data-theme="dark"] {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
     }
   }
@@ -315,42 +325,39 @@ and 2. <code class="docutils literal notranslate"><span class="pre">legs</span><
 </pre></div>
 </div>
 <p>If we were to <em>document</em> <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code>, it may look like this:</p>
-<blockquote>
-<div><p><strong>AnimalTemplate</strong></p>
-<p>Defines the attributes of an animal.</p>
-<p>REQUIRED KEYS</p>
-<p><code class="docutils literal notranslate"><span class="pre">color</span></code> - String</p>
-<ul class="simple">
-<li><p>The color of the animal.</p></li>
-</ul>
-<p><code class="docutils literal notranslate"><span class="pre">legs</span></code> Integer</p>
-<ul class="simple">
-<li><p>How many legs the animal has.</p></li>
-</ul>
-</div></blockquote>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<strong>AnimalTemplate</strong></div>
+<p class="sd-card-text"><em>Defines the attributes of an animal.</em></p>
+<p class="sd-card-text"><cite>REQUIRED</cite></p>
+<dl class="simple">
+<dt><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color</span> <code class="docutils literal notranslate"><span class="pre">String</span></code></dt><dd><p class="sd-card-text">The color of the animal.</p>
+</dd>
+<dt><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">legs</span> <code class="docutils literal notranslate"><span class="pre">Integer</span></code></dt><dd><p class="sd-card-text">How many legs the animal has.</p>
+</dd>
+</dl>
+</div>
+</div>
 <p>Great, now that we have a template to describe an animal, let’s create a
 new template that describes a zoo of animals:</p>
-<blockquote>
-<div><p><strong>ZooTemplate</strong></p>
-<p>Defines a zoo of animals.</p>
-<p>REQUIRED KEYS</p>
-<p><code class="docutils literal notranslate"><span class="pre">animals</span></code> - Map of Strings to AnimalTemplates</p>
-<ul class="simple">
-<li><p>A collection of animals.</p></li>
-</ul>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<strong>ZooTemplate</strong></div>
+<p class="sd-card-text"><em>Defines a zoo of animals.</em></p>
+<p class="sd-card-text"><cite>REQUIRED</cite></p>
 <dl class="simple">
-<dt>OPTIONAL KEYS</dt><dd><dl class="field-list simple">
-<dt class="field-odd">name</dt>
-<dd class="field-odd"><p>optional-keys</p>
+<dt><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">animals</span> <code class="docutils literal notranslate"><span class="pre">Map[String:AnimalTemplate]</span></code></dt><dd><p class="sd-card-text">A collection of animals.</p>
 </dd>
 </dl>
+<p class="sd-card-text"><cite>OPTIONAL</cite></p>
+<dl class="simple">
+<dt><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">description</span> <code class="docutils literal notranslate"><span class="pre">String</span></code></dt><dd><p class="sd-card-text">A description of the zoo and It’s animals.</p>
 </dd>
 </dl>
-<p><code class="docutils literal notranslate"><span class="pre">description</span></code> - String</p>
-<ul class="simple">
-<li><p>A description of the zoo and It’s animals.</p></li>
-</ul>
-</div></blockquote>
+</div>
+</div>
 <p>The interesting thing to note here with <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code> is we have now
 treated <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code> as the required value type of the <code class="docutils literal notranslate"><span class="pre">animals</span></code>
 parameter. This ability to utilize templates like any other type allows
@@ -372,7 +379,7 @@ like so:</p>
 </section>
 </section>
 <section id="config-types">
-<h2>Config Types<a class="headerlink" href="#config-types" title="Permalink to this headline">¶</a></h2>
+<span id="id1"></span><h2>Config Types<a class="headerlink" href="#config-types" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have covered what templates are, what they do, and how we
 write configs according to them, we have run into an issue: how does
 Terra know which template the config should use in the first place? For

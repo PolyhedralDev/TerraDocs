@@ -11,6 +11,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/rounded-borders.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/cards.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/code-blocks.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/interpreted-text.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/padding.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/headings.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css" />
@@ -23,17 +27,23 @@
   body {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
   }
   body[data-theme="dark"] {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
     }
   }
@@ -317,7 +327,7 @@ MultiMC Launcher<div class="sd-summary-down docutils">
 </div>
 </details></section>
 <section id="picking-an-editor">
-<h3>Picking an Editor<a class="headerlink" href="#picking-an-editor" title="Permalink to this headline">¶</a></h3>
+<span id="editor"></span><h3>Picking an Editor<a class="headerlink" href="#picking-an-editor" title="Permalink to this headline">¶</a></h3>
 <p>When developing config packs, an editor will be the main tool you use, so It’s
 important that you use a suitable one for the job. You’re free to use any editor
 you’re comfortable with, but we <em>highly</em> suggest using one with the following
@@ -384,43 +394,38 @@ an external file editor on top of your editor tabs and or instances.</p>
 <p>You will need to know where the Terra directory is located, as this will be where all the files
 relevant to config development go:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2817bb10-e7b1-4df0-b27e-78004d2728a7" name="c63b7799-ff68-4a62-896e-56c55cc4528b" type="radio"/>
-<label class="sd-tab-label" for="2817bb10-e7b1-4df0-b27e-78004d2728a7">
+<input checked="checked" id="b6483c57-beba-4493-9bad-9c088290ad02" name="10f15105-5806-48c7-aad1-dd4c87b071a3" type="radio"/>
+<label class="sd-tab-label" for="b6483c57-beba-4493-9bad-9c088290ad02">
 Fabric</label><div class="sd-tab-content docutils">
-<p><code class="docutils literal notranslate"><span class="pre">/config/Terra/</span></code></p>
+<p><cite>/config/Terra/</cite></p>
 </div>
-<input id="f5077611-1253-4ab0-90a1-5a7d3313a731" name="c63b7799-ff68-4a62-896e-56c55cc4528b" type="radio"/>
-<label class="sd-tab-label" for="f5077611-1253-4ab0-90a1-5a7d3313a731">
+<input id="ffda49b7-4729-401e-ab38-08b0a4bd39dc" name="10f15105-5806-48c7-aad1-dd4c87b071a3" type="radio"/>
+<label class="sd-tab-label" for="ffda49b7-4729-401e-ab38-08b0a4bd39dc">
 Bukkit</label><div class="sd-tab-content docutils">
-<p><code class="docutils literal notranslate"><span class="pre">/plugins/Terra/</span></code></p>
+<p><cite>/plugins/Terra/</cite></p>
 </div>
 </div>
-<p>Within this directory are two subdirectories:</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<section id="subdirectories">
+<h3>Subdirectories<a class="headerlink" href="#subdirectories" title="Permalink to this headline">¶</a></h3>
+<p>Within this directory are two subdirectories that you should know about:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-<code class="docutils literal notranslate"><span class="pre">Terra/packs</span></code></div>
-<p class="sd-card-text">Contains all your installed config packs. By default, Terra will come pre-installed
+<cite>Terra/packs</cite></div>
+<p class="sd-card-text" id="packs-directory">Contains all your installed config packs. By default, Terra will come pre-installed
 with a config pack under the file name <code class="docutils literal notranslate"><span class="pre">default.zip</span></code> inside this directory.</p>
 </div>
 </div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
-<code class="docutils literal notranslate"><span class="pre">Terra/addons</span></code></div>
+<cite>Terra/addons</cite></div>
 <p class="sd-card-text">Contains all your installed addons. Similarly to the default pack, Terra will also
 come pre-installed with a set of <em>Core Addons</em> as explained at the beginning of
 this page.</p>
 </div>
 </div>
-</div>
-</div>
-</div>
+</section>
 </section>
 <section id="beginning-config-development">
 <h2>3. Beginning Config Development<a class="headerlink" href="#beginning-config-development" title="Permalink to this headline">¶</a></h2>
@@ -429,7 +434,7 @@ modifying an existing pack.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
 <div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold sd-text-primary docutils">
 Creating a Pack From Scratch <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></div>
@@ -439,10 +444,10 @@ construct a fully fledged world generator. If you want to make something totally
 unique and personalized for a server or personal project, or just want to learn
 how world generation works, we recommend following this guide.</p>
 </div>
-</div>
+<a class="sd-stretched-link reference internal" href="pack-from-scratch/index.html"><span class="doc"></span></a></div>
 </div>
 <div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold sd-text-primary docutils">
 Modifying an Existing Pack <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></div>
@@ -452,7 +457,7 @@ small details here and there. This guide won’t explain as much as the ‘from 
 guide, so if you’re having difficulties understanding how to make modifications, we
 recommend following that in addition to this guide.</p>
 </div>
-</div>
+<a class="sd-stretched-link reference internal" href="modifying-existing-pack.html"><span class="doc"></span></a></div>
 </div>
 </div>
 </div>
@@ -520,7 +525,10 @@ recommend following that in addition to this guide.</p>
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#locating-the-terra-directory">2. Locating the Terra Directory</a></li>
+<li><a class="reference internal" href="#locating-the-terra-directory">2. Locating the Terra Directory</a><ul>
+<li><a class="reference internal" href="#subdirectories">Subdirectories</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#beginning-config-development">3. Beginning Config Development</a></li>
 </ul>
 </li>

@@ -11,6 +11,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/rounded-borders.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/cards.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/code-blocks.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/interpreted-text.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/padding.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/headings.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css" />
@@ -23,17 +27,23 @@
   body {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
   }
   body[data-theme="dark"] {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
     }
   }
@@ -267,18 +277,24 @@ called an <code class="docutils literal notranslate"><span class="pre">Integer</
 <p>Integers represent whole numbers and as such, are
 written as whole numbers like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="df5ac091-8286-447f-943b-f29f1013993c" name="a14e3cfb-680d-40f7-8ba7-f4a2ffa8b4cb" type="radio"/>
-<label class="sd-tab-label" for="df5ac091-8286-447f-943b-f29f1013993c">
+<input checked="checked" id="15b1917c-63b2-4843-acfe-0b8bb90f6aac" name="4ca9f325-a7ab-4b19-8edb-b7dbc165b05e" type="radio"/>
+<label class="sd-tab-label" for="15b1917c-63b2-4843-acfe-0b8bb90f6aac">
 YAML</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">42</span>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">42</span>
 </pre></div>
 </div>
 </div>
-<input id="7c9db075-4da0-4031-b41f-40817f6be680" name="a14e3cfb-680d-40f7-8ba7-f4a2ffa8b4cb" type="radio"/>
-<label class="sd-tab-label" for="7c9db075-4da0-4031-b41f-40817f6be680">
+</div>
+<input id="ed2953dc-7185-4eb5-b274-fb1fb94ef8d3" name="4ca9f325-a7ab-4b19-8edb-b7dbc165b05e" type="radio"/>
+<label class="sd-tab-label" for="ed2953dc-7185-4eb5-b274-fb1fb94ef8d3">
 JSON</label><div class="sd-tab-content docutils">
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="mi">42</span>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="mi">42</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -291,18 +307,24 @@ level object, which represents the number <code class="docutils literal notransl
 <code class="docutils literal notranslate"><span class="pre">Float</span></code>. The difference between integers and floats is that floats can
 represent numbers that contain decimals:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="10116ba9-ce91-4290-8516-f8198a216b64" name="0da9c8eb-6f3d-4879-b754-617da263fe2c" type="radio"/>
-<label class="sd-tab-label" for="10116ba9-ce91-4290-8516-f8198a216b64">
+<input checked="checked" id="700f27c7-58fb-4e6c-9389-4f0564149fce" name="667f25c8-7170-444b-ba21-115046d72e54" type="radio"/>
+<label class="sd-tab-label" for="700f27c7-58fb-4e6c-9389-4f0564149fce">
 YAML</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">3.14159</span>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">3.14159</span>
 </pre></div>
 </div>
 </div>
-<input id="9f573968-0c87-43ee-8548-96a9e73d659f" name="0da9c8eb-6f3d-4879-b754-617da263fe2c" type="radio"/>
-<label class="sd-tab-label" for="9f573968-0c87-43ee-8548-96a9e73d659f">
+</div>
+<input id="427ed337-ff08-4e63-9bbe-0b95660d8248" name="667f25c8-7170-444b-ba21-115046d72e54" type="radio"/>
+<label class="sd-tab-label" for="427ed337-ff08-4e63-9bbe-0b95660d8248">
 JSON</label><div class="sd-tab-content docutils">
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="mf">3.14159</span>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="mf">3.14159</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -313,22 +335,68 @@ situations. Typically config parameters that require integers will not
 accept a float, but parameters that require a float will accept
 integers.</p>
 </section>
+<section id="booleans">
+<h3>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h3>
+<p>The type <code class="docutils literal notranslate"><span class="pre">Boolean</span></code> defines data that can be in one of two states. This
+is almost always used for cases were you want something to be either
+<em>true</em> or <em>false</em> and is written as such:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="27ec36df-eafb-44ca-914d-009a98094327" name="617ba324-3c93-43d5-8df1-bd8bb5be4a1c" type="radio"/>
+<label class="sd-tab-label" for="27ec36df-eafb-44ca-914d-009a98094327">
+YAML</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">false</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="7109bbe6-d7b3-4472-b926-328ee7617cfe" name="617ba324-3c93-43d5-8df1-bd8bb5be4a1c" type="radio"/>
+<label class="sd-tab-label" for="7109bbe6-d7b3-4472-b926-328ee7617cfe">
+JSON</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kc">true</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kc">false</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
 <section id="strings">
 <h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
-<p>We can also represent data like text using a type called a <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
+<p>We can also represent data like text using a type called <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c76897a5-3234-4635-b09f-5201f753426b" name="458453f4-9eef-45c6-8aaf-7f9b3e2fb2dc" type="radio"/>
-<label class="sd-tab-label" for="c76897a5-3234-4635-b09f-5201f753426b">
+<input checked="checked" id="18255ea5-8763-44b6-b345-692cf64d33d6" name="bcd022fa-bb6e-4fe4-b5eb-c84b665afbba" type="radio"/>
+<label class="sd-tab-label" for="18255ea5-8763-44b6-b345-692cf64d33d6">
 YAML</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">This is a config of type string.</span>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">This is a config of type string.</span>
 </pre></div>
 </div>
 </div>
-<input id="10607dba-f7ba-4a2e-a3fa-b415d2d90a44" name="458453f4-9eef-45c6-8aaf-7f9b3e2fb2dc" type="radio"/>
-<label class="sd-tab-label" for="10607dba-f7ba-4a2e-a3fa-b415d2d90a44">
+</div>
+<input id="5d292595-cd65-47c9-bea3-610859f056e8" name="bcd022fa-bb6e-4fe4-b5eb-c84b665afbba" type="radio"/>
+<label class="sd-tab-label" for="5d292595-cd65-47c9-bea3-610859f056e8">
 JSON</label><div class="sd-tab-content docutils">
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="s2">"This is a config of type string."</span>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="s2">"This is a config of type string."</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -336,25 +404,31 @@ JSON</label><div class="sd-tab-content docutils">
 everywhere - for example we would need need to use strings to specify
 what block IDs we want to use for the blocks in a biome.</p>
 <p>In some cases you may want to specify a <code class="docutils literal notranslate"><span class="pre">String</span></code> where it might be
-interpreted as another type like <code class="docutils literal notranslate"><span class="pre">Integer</span></code>. To explicitly specify an
+interpreted as another type like <code class="docutils literal notranslate"><span class="pre">Boolean</span></code>. To explicitly specify an
 object is a <code class="docutils literal notranslate"><span class="pre">String</span></code>, you can wrap it quotes like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d84516bc-05a4-4010-892b-1eac3a410fb4" name="7e1b218a-bc43-409e-a904-42aab23fc33b" type="radio"/>
-<label class="sd-tab-label" for="d84516bc-05a4-4010-892b-1eac3a410fb4">
+<input checked="checked" id="4efa4c18-f2a3-49b4-a408-17552cabc2b2" name="1b7089df-6c74-4086-ad98-ae788cbc9aab" type="radio"/>
+<label class="sd-tab-label" for="4efa4c18-f2a3-49b4-a408-17552cabc2b2">
 YAML</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="s">"42"</span>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="s">"true"</span>
 </pre></div>
 </div>
 </div>
-<input id="67ffae19-0c73-4258-a177-5b1adaeadc82" name="7e1b218a-bc43-409e-a904-42aab23fc33b" type="radio"/>
-<label class="sd-tab-label" for="67ffae19-0c73-4258-a177-5b1adaeadc82">
+</div>
+<input id="87016c5d-e92d-42fb-9592-4bb257d83c49" name="1b7089df-6c74-4086-ad98-ae788cbc9aab" type="radio"/>
+<label class="sd-tab-label" for="87016c5d-e92d-42fb-9592-4bb257d83c49">
 JSON</label><div class="sd-tab-content docutils">
-<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="s2">"42"</span>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="s2">"true"</span>
 </pre></div>
+</div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>In JSON, strings <em>must</em> be explicitly wrapped in quotes.</p>
+<p>In JSON, strings are always explicitly wrapped in quotes.</p>
 </div>
 </div>
 </div>
@@ -364,51 +438,63 @@ JSON</label><div class="sd-tab-content docutils">
 <p>By themselves, integers, floats, and strings aren’t too useful, until we
 start assigning labels to them. We can do that using a type called a
 <code class="docutils literal notranslate"><span class="pre">Map</span></code>.</p>
-<p>A map is a <em>collection of objects</em>, referred to individually as
+<p id="key-value-pair">A map is a <em>collection of objects</em>, referred to individually as
 <strong>values</strong>, where each <strong>value</strong> in the collection is identified by
 another unique object called a <strong>key</strong>. A key and a value together are
 called a <strong>key-value pair</strong>.</p>
 <p>Here we will make a new config where the <em>top level object</em> is of type
 <code class="docutils literal notranslate"><span class="pre">Map</span></code>, and both the <em>key</em> and <em>value</em> are of type <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="bf245e9e-31e0-4c34-aaa3-57384ea6ee1a" name="deada7a7-44db-4eda-b7a1-729793c7ae8b" type="radio"/>
-<label class="sd-tab-label" for="bf245e9e-31e0-4c34-aaa3-57384ea6ee1a">
+<input checked="checked" id="a004ac40-c6ef-4a67-8b82-8cc4be057441" name="0f5a970d-9eb0-4088-90f1-21b00924cd2a" type="radio"/>
+<label class="sd-tab-label" for="a004ac40-c6ef-4a67-8b82-8cc4be057441">
 YAML</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">this is a key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">this is a value</span>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">this is a key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">this is a value</span>
 </pre></div>
 </div>
 </div>
-<input id="a216dafa-2758-47f7-8fe5-988b5d353265" name="deada7a7-44db-4eda-b7a1-729793c7ae8b" type="radio"/>
-<label class="sd-tab-label" for="a216dafa-2758-47f7-8fe5-988b5d353265">
+</div>
+<input id="33331e9f-94d0-4a49-8a75-23e7dd0db889" name="0f5a970d-9eb0-4088-90f1-21b00924cd2a" type="radio"/>
+<label class="sd-tab-label" for="33331e9f-94d0-4a49-8a75-23e7dd0db889">
 JSON</label><div class="sd-tab-content docutils">
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">"this is a key"</span><span class="p">:</span> <span class="s2">"this is a value"</span>
-<span class="p">}</span>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span>   <span class="nt">"this is a key"</span><span class="p">:</span> <span class="s2">"this is a value"</span>
+<span class="linenos">3</span><span class="p">}</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
 <p>Since maps are <em>collections</em> of objects, we can list multiple key value
 pairs within the map like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="9dcee38a-89fe-4150-8827-c18f29168193" name="625d923f-e865-48c5-a751-8c68104b9222" type="radio"/>
-<label class="sd-tab-label" for="9dcee38a-89fe-4150-8827-c18f29168193">
+<input checked="checked" id="b90dd3c4-6265-4995-a19b-79a5ed8ae95b" name="5ff6d866-d6da-4cce-aaa3-cdea727e6a05" type="radio"/>
+<label class="sd-tab-label" for="b90dd3c4-6265-4995-a19b-79a5ed8ae95b">
 YAML</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">string</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Here is some text.</span>
-<span class="nt">pi</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.14159</span>
-<span class="nt">meaning-of-life</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">42</span>
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">string</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Here is some text.</span>
+<span class="linenos">2</span><span class="nt">pi</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3.14159</span>
+<span class="linenos">3</span><span class="nt">meaning-of-life</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">42</span>
 </pre></div>
 </div>
 </div>
-<input id="2e3130b1-06b1-448d-bb6c-dedbc8b53497" name="625d923f-e865-48c5-a751-8c68104b9222" type="radio"/>
-<label class="sd-tab-label" for="2e3130b1-06b1-448d-bb6c-dedbc8b53497">
+</div>
+<input id="be28c8df-fb1c-445c-a23c-2b0766a6f9cc" name="5ff6d866-d6da-4cce-aaa3-cdea727e6a05" type="radio"/>
+<label class="sd-tab-label" for="be28c8df-fb1c-445c-a23c-2b0766a6f9cc">
 JSON</label><div class="sd-tab-content docutils">
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">"string"</span><span class="p">:</span> <span class="s2">"Here is some text."</span><span class="p">,</span>
-   <span class="nt">"pi"</span><span class="p">:</span> <span class="mf">3.14159</span><span class="p">,</span>
-   <span class="nt">"meaning-of-life"</span><span class="p">:</span> <span class="mi">42</span>
-<span class="p">}</span>
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span>   <span class="nt">"string"</span><span class="p">:</span> <span class="s2">"Here is some text."</span><span class="p">,</span>
+<span class="linenos">3</span>   <span class="nt">"pi"</span><span class="p">:</span> <span class="mf">3.14159</span><span class="p">,</span>
+<span class="linenos">4</span>   <span class="nt">"meaning-of-life"</span><span class="p">:</span> <span class="mi">42</span>
+<span class="linenos">5</span><span class="p">}</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -416,6 +502,62 @@ JSON</label><div class="sd-tab-content docutils">
 top level object. By using maps, we are capable of defining more than
 one object within a config, as well as being able to identify what each
 of those objects are using keys.</p>
+<section id="ordering">
+<span id="map-ordering"></span><h4>Ordering<a class="headerlink" href="#ordering" title="Permalink to this headline">¶</a></h4>
+<p>The ordering of key-value pairs inside a map is not significant, and as
+such you are free to order them however you’d like.</p>
+<p>These two configs are both equivalent:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="cdbf0fec-39ba-4199-ad33-c1fcec340624" name="56e54a0a-3466-4507-981d-8efb584b844f" type="radio"/>
+<label class="sd-tab-label" for="cdbf0fec-39ba-4199-ad33-c1fcec340624">
+YAML</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">a</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1234</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">b</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Some text</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nt">c</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">b</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Some text</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">c</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nt">a</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1234</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="433dfb57-77c6-43c1-97b3-a973bb9b599a" name="56e54a0a-3466-4507-981d-8efb584b844f" type="radio"/>
+<label class="sd-tab-label" for="433dfb57-77c6-43c1-97b3-a973bb9b599a">
+JSON</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id19">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span>   <span class="nt">"a"</span><span class="p">:</span> <span class="mi">1234</span><span class="p">,</span>
+<span class="linenos">3</span>   <span class="nt">"b"</span><span class="p">:</span> <span class="s2">"Some text"</span><span class="p">,</span>
+<span class="linenos">4</span>   <span class="nt">"c"</span><span class="p">:</span> <span class="kc">true</span>
+<span class="linenos">5</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id20">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span>   <span class="nt">"b"</span><span class="p">:</span> <span class="s2">"Some text"</span><span class="p">,</span>
+<span class="linenos">3</span>   <span class="nt">"c"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+<span class="linenos">4</span>   <span class="nt">"a"</span><span class="p">:</span> <span class="mi">1234</span>
+<span class="linenos">5</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
 </section>
 <section id="lists">
 <h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
@@ -429,24 +571,30 @@ will be of the same type.</p>
 <p>Here is a config where the <em>top level object</em> is a <code class="docutils literal notranslate"><span class="pre">List</span></code>, which
 contains multiple <code class="docutils literal notranslate"><span class="pre">String</span></code>s:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="fa47b898-a812-4709-b578-b41cfa988b0f" name="dbceebc2-6c7b-469c-9532-9f71c1d9371f" type="radio"/>
-<label class="sd-tab-label" for="fa47b898-a812-4709-b578-b41cfa988b0f">
+<input checked="checked" id="942c8d98-ee34-418f-81c5-1cc6939b5d30" name="5f00bcd8-1436-42e5-9617-f55f82d78d3b" type="radio"/>
+<label class="sd-tab-label" for="942c8d98-ee34-418f-81c5-1cc6939b5d30">
 YAML</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">A string</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Another string</span>
-<span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">The final string</span>
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">A string</span>
+<span class="linenos">2</span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Another string</span>
+<span class="linenos">3</span><span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">The final string</span>
 </pre></div>
 </div>
 </div>
-<input id="b2ed384e-96e8-45d3-8dc2-e12a98f8e99a" name="dbceebc2-6c7b-469c-9532-9f71c1d9371f" type="radio"/>
-<label class="sd-tab-label" for="b2ed384e-96e8-45d3-8dc2-e12a98f8e99a">
+</div>
+<input id="66d01e8e-b220-4936-8b69-17ca26eec407" name="5f00bcd8-1436-42e5-9617-f55f82d78d3b" type="radio"/>
+<label class="sd-tab-label" for="66d01e8e-b220-4936-8b69-17ca26eec407">
 JSON</label><div class="sd-tab-content docutils">
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">[</span>
-   <span class="s2">"A string"</span><span class="p">,</span>
-   <span class="s2">"Another string"</span><span class="p">,</span>
-   <span class="s2">"The final string"</span>
-<span class="p">]</span>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">[</span>
+<span class="linenos">2</span>   <span class="s2">"A string"</span><span class="p">,</span>
+<span class="linenos">3</span>   <span class="s2">"Another string"</span><span class="p">,</span>
+<span class="linenos">4</span>   <span class="s2">"The final string"</span>
+<span class="linenos">5</span><span class="p">]</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -459,8 +607,8 @@ possible to nest maps in maps, lists in lists, lists in maps, and so on.</p>
 <p>Here is an example of a <code class="docutils literal notranslate"><span class="pre">Map</span></code> contained within the value of another
 <code class="docutils literal notranslate"><span class="pre">Map</span></code> (which is the top level object):</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d3243777-33d8-4350-8de1-c2fe53b6bf2e" name="9f3ced40-a3e8-434a-94ed-5604cd5c0526" type="radio"/>
-<label class="sd-tab-label" for="d3243777-33d8-4350-8de1-c2fe53b6bf2e">
+<input checked="checked" id="0e96b3c3-40ec-4964-9141-50ffe4cd5a22" name="951ef34e-38cf-4a59-89d8-ac1726a5c90d" type="radio"/>
+<label class="sd-tab-label" for="0e96b3c3-40ec-4964-9141-50ffe4cd5a22">
 YAML</label><div class="sd-tab-content docutils">
 <p>For simple data types like integers and strings it is clear which key
 corresponds to which value, as they are typically contained on the same
@@ -469,52 +617,64 @@ defining which objects are defined under which keys and items. In YAML,
 we can specify this kind of relationship via <em>indentation</em> - which is
 simply how many spaces come before the key one a line. We conventionally
 use two spaces to indicate ‘one level’ of indentation in YAML configs.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parent-key</span><span class="p">:</span>
-   <span class="nt">child-key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">value</span>
-   <span class="nt">sibling-key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">another value</span>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">parent-key</span><span class="p">:</span>
+<span class="linenos">2</span>   <span class="nt">child-key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">value</span>
+<span class="linenos">3</span>   <span class="nt">sibling-key</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">another value</span>
 </pre></div>
+</div>
 </div>
 <p>You can see that the map containing <code class="docutils literal notranslate"><span class="pre">child-key</span></code> and <code class="docutils literal notranslate"><span class="pre">sibling-key</span></code> is
 indented by two spaces, and is defined under the <code class="docutils literal notranslate"><span class="pre">parent-key</span></code> key,
 signifying that it belongs to that key.</p>
 </div>
-<input id="e5285af4-2ceb-46fb-ba0a-a0b085f4a049" name="9f3ced40-a3e8-434a-94ed-5604cd5c0526" type="radio"/>
-<label class="sd-tab-label" for="e5285af4-2ceb-46fb-ba0a-a0b085f4a049">
+<input id="8c2c7469-bb7f-4ae1-93b6-6d72ea2a9bdd" name="951ef34e-38cf-4a59-89d8-ac1726a5c90d" type="radio"/>
+<label class="sd-tab-label" for="8c2c7469-bb7f-4ae1-93b6-6d72ea2a9bdd">
 JSON</label><div class="sd-tab-content docutils">
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">"parent-key"</span><span class="p">:</span> <span class="p">{</span>
-      <span class="nt">"child-key"</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
-      <span class="nt">"sibling-key"</span><span class="p">:</span> <span class="s2">"another value"</span>
-   <span class="p">}</span>
-<span class="p">}</span>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span>   <span class="nt">"parent-key"</span><span class="p">:</span> <span class="p">{</span>
+<span class="linenos">3</span>      <span class="nt">"child-key"</span><span class="p">:</span> <span class="s2">"value"</span><span class="p">,</span>
+<span class="linenos">4</span>      <span class="nt">"sibling-key"</span><span class="p">:</span> <span class="s2">"another value"</span>
+<span class="linenos">5</span>   <span class="p">}</span>
+<span class="linenos">6</span><span class="p">}</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
 <p>And here is a <code class="docutils literal notranslate"><span class="pre">Map</span></code> (the top level object) containing a <code class="docutils literal notranslate"><span class="pre">List</span></code> of
 <code class="docutils literal notranslate"><span class="pre">String</span></code>s:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="22c4e7bf-4f88-420b-81a4-ae6189bb803c" name="4ef7cd6c-1fa9-4e88-8a3e-4d78a9e27049" type="radio"/>
-<label class="sd-tab-label" for="22c4e7bf-4f88-420b-81a4-ae6189bb803c">
+<input checked="checked" id="c4b038a6-f92f-46e4-8c97-7f4181b0f0cd" name="e4a228ac-d13c-451c-886c-bdc37d29f2b4" type="radio"/>
+<label class="sd-tab-label" for="c4b038a6-f92f-46e4-8c97-7f4181b0f0cd">
 YAML</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">list of strings</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item 1</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item 2</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item 3</span>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">list of strings</span><span class="p">:</span>
+<span class="linenos">2</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item 1</span>
+<span class="linenos">3</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item 2</span>
+<span class="linenos">4</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item 3</span>
 </pre></div>
 </div>
 </div>
-<input id="4e3b96ee-d07c-4171-ac8c-9015f698f3bc" name="4ef7cd6c-1fa9-4e88-8a3e-4d78a9e27049" type="radio"/>
-<label class="sd-tab-label" for="4e3b96ee-d07c-4171-ac8c-9015f698f3bc">
+</div>
+<input id="35d4b8d0-7274-4d7d-b0d9-2d6cbbf6a7eb" name="e4a228ac-d13c-451c-886c-bdc37d29f2b4" type="radio"/>
+<label class="sd-tab-label" for="35d4b8d0-7274-4d7d-b0d9-2d6cbbf6a7eb">
 JSON</label><div class="sd-tab-content docutils">
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">"list of strings"</span><span class="p">:</span> <span class="p">[</span>
-      <span class="s2">"item 1"</span><span class="p">,</span>
-      <span class="s2">"item 2"</span><span class="p">,</span>
-      <span class="s2">"item 3"</span>
-   <span class="p">]</span>
-<span class="p">}</span>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id26" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span>   <span class="nt">"list of strings"</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos">3</span>      <span class="s2">"item 1"</span><span class="p">,</span>
+<span class="linenos">4</span>      <span class="s2">"item 2"</span><span class="p">,</span>
+<span class="linenos">5</span>      <span class="s2">"item 3"</span>
+<span class="linenos">6</span>   <span class="p">]</span>
+<span class="linenos">7</span><span class="p">}</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -525,61 +685,67 @@ JSON</label><div class="sd-tab-content docutils">
 structures, here is an example representing a shopping list, and some
 appointments using everything we have covered thus far:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d9149812-25b2-400e-9922-5f2192493249" name="51fabe63-dff4-4ceb-90f2-1994d8b9b103" type="radio"/>
-<label class="sd-tab-label" for="d9149812-25b2-400e-9922-5f2192493249">
+<input checked="checked" id="206cc2b5-700d-4ed9-a631-fce09dcbe66e" name="8737a014-06b5-45a0-8af7-8da73ab77e83" type="radio"/>
+<label class="sd-tab-label" for="206cc2b5-700d-4ed9-a631-fce09dcbe66e">
 YAML</label><div class="sd-tab-content docutils">
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">shopping-list</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1L Milk</span>
-    <span class="nt">amount</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
-    <span class="nt">cost-per-item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
-  <span class="p p-Indicator">-</span> <span class="nt">item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Carton of Eggs</span>
-    <span class="nt">amount</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-    <span class="nt">cost-per-item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4.5</span>
-
-<span class="nt">appointments</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Haircut Appointment</span>
-    <span class="nt">date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">24.04.22</span>
-    <span class="nt">start-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9:45</span>
-    <span class="nt">end-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10:15</span>
-  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Doctor Appointment</span>
-    <span class="nt">date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">13.05.22</span>
-    <span class="nt">start-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3:15</span>
-    <span class="nt">end-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4:15</span>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id27" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">shopping-list</span><span class="p">:</span>
+<span class="linenos"> 2</span>  <span class="p p-Indicator">-</span> <span class="nt">item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1L Milk</span>
+<span class="linenos"> 3</span>    <span class="nt">amount</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos"> 4</span>    <span class="nt">cost-per-item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2.0</span>
+<span class="linenos"> 5</span>  <span class="p p-Indicator">-</span> <span class="nt">item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Carton of Eggs</span>
+<span class="linenos"> 6</span>    <span class="nt">amount</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos"> 7</span>    <span class="nt">cost-per-item</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4.5</span>
+<span class="linenos"> 8</span>
+<span class="linenos"> 9</span><span class="nt">appointments</span><span class="p">:</span>
+<span class="linenos">10</span>  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Haircut Appointment</span>
+<span class="linenos">11</span>    <span class="nt">date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">24.04.22</span>
+<span class="linenos">12</span>    <span class="nt">start-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">9:45</span>
+<span class="linenos">13</span>    <span class="nt">end-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">10:15</span>
+<span class="linenos">14</span>  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Doctor Appointment</span>
+<span class="linenos">15</span>    <span class="nt">date</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">13.05.22</span>
+<span class="linenos">16</span>    <span class="nt">start-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">3:15</span>
+<span class="linenos">17</span>    <span class="nt">end-time</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4:15</span>
 </pre></div>
 </div>
 </div>
-<input id="a3e1d390-fabb-4e79-9792-3af74b3b6b64" name="51fabe63-dff4-4ceb-90f2-1994d8b9b103" type="radio"/>
-<label class="sd-tab-label" for="a3e1d390-fabb-4e79-9792-3af74b3b6b64">
+</div>
+<input id="f542f783-d93e-42af-bcea-2ad5febce9d8" name="8737a014-06b5-45a0-8af7-8da73ab77e83" type="radio"/>
+<label class="sd-tab-label" for="f542f783-d93e-42af-bcea-2ad5febce9d8">
 JSON</label><div class="sd-tab-content docutils">
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nt">"shopping-list"</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-         <span class="nt">"item"</span><span class="p">:</span> <span class="s2">"1L Milk"</span><span class="p">,</span>
-         <span class="nt">"amount"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
-         <span class="nt">"cost-per-item"</span><span class="p">:</span> <span class="mi">2</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-         <span class="nt">"item"</span><span class="p">:</span> <span class="s2">"Carton of Eggs"</span><span class="p">,</span>
-         <span class="nt">"amount"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
-         <span class="nt">"cost-per-item"</span><span class="p">:</span> <span class="mf">4.5</span>
-      <span class="p">}</span>
-   <span class="p">],</span>
-   <span class="nt">"appointments"</span><span class="p">:</span> <span class="p">[</span>
-      <span class="p">{</span>
-         <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"Haircut Appointment"</span><span class="p">,</span>
-         <span class="nt">"date"</span><span class="p">:</span> <span class="s2">"24.04.22"</span><span class="p">,</span>
-         <span class="nt">"start-time"</span><span class="p">:</span> <span class="mi">585</span><span class="p">,</span>
-         <span class="nt">"end-time"</span><span class="p">:</span> <span class="mi">615</span>
-      <span class="p">},</span>
-      <span class="p">{</span>
-         <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"Doctor Appointment"</span><span class="p">,</span>
-         <span class="nt">"date"</span><span class="p">:</span> <span class="s2">"13.05.22"</span><span class="p">,</span>
-         <span class="nt">"start-time"</span><span class="p">:</span> <span class="mi">195</span><span class="p">,</span>
-         <span class="nt">"end-time"</span><span class="p">:</span> <span class="mi">255</span>
-      <span class="p">}</span>
-   <span class="p">]</span>
-<span class="p">}</span>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id28" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
+<span class="linenos"> 2</span>   <span class="nt">"shopping-list"</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos"> 3</span>      <span class="p">{</span>
+<span class="linenos"> 4</span>         <span class="nt">"item"</span><span class="p">:</span> <span class="s2">"1L Milk"</span><span class="p">,</span>
+<span class="linenos"> 5</span>         <span class="nt">"amount"</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+<span class="linenos"> 6</span>         <span class="nt">"cost-per-item"</span><span class="p">:</span> <span class="mi">2</span>
+<span class="linenos"> 7</span>      <span class="p">},</span>
+<span class="linenos"> 8</span>      <span class="p">{</span>
+<span class="linenos"> 9</span>         <span class="nt">"item"</span><span class="p">:</span> <span class="s2">"Carton of Eggs"</span><span class="p">,</span>
+<span class="linenos">10</span>         <span class="nt">"amount"</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+<span class="linenos">11</span>         <span class="nt">"cost-per-item"</span><span class="p">:</span> <span class="mf">4.5</span>
+<span class="linenos">12</span>      <span class="p">}</span>
+<span class="linenos">13</span>   <span class="p">],</span>
+<span class="linenos">14</span>   <span class="nt">"appointments"</span><span class="p">:</span> <span class="p">[</span>
+<span class="linenos">15</span>      <span class="p">{</span>
+<span class="linenos">16</span>         <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"Haircut Appointment"</span><span class="p">,</span>
+<span class="linenos">17</span>         <span class="nt">"date"</span><span class="p">:</span> <span class="s2">"24.04.22"</span><span class="p">,</span>
+<span class="linenos">18</span>         <span class="nt">"start-time"</span><span class="p">:</span> <span class="mi">585</span><span class="p">,</span>
+<span class="linenos">19</span>         <span class="nt">"end-time"</span><span class="p">:</span> <span class="mi">615</span>
+<span class="linenos">20</span>      <span class="p">},</span>
+<span class="linenos">21</span>      <span class="p">{</span>
+<span class="linenos">22</span>         <span class="nt">"name"</span><span class="p">:</span> <span class="s2">"Doctor Appointment"</span><span class="p">,</span>
+<span class="linenos">23</span>         <span class="nt">"date"</span><span class="p">:</span> <span class="s2">"13.05.22"</span><span class="p">,</span>
+<span class="linenos">24</span>         <span class="nt">"start-time"</span><span class="p">:</span> <span class="mi">195</span><span class="p">,</span>
+<span class="linenos">25</span>         <span class="nt">"end-time"</span><span class="p">:</span> <span class="mi">255</span>
+<span class="linenos">26</span>      <span class="p">}</span>
+<span class="linenos">27</span>   <span class="p">]</span>
+<span class="linenos">28</span><span class="p">}</span>
 </pre></div>
+</div>
 </div>
 </div>
 </div>
@@ -595,35 +761,41 @@ and lists using curly braces <code class="docutils literal notranslate"><span cl
 respectively, where objects are separated by commas <code class="docutils literal notranslate"><span class="pre">,</span></code> instead. This
 can be useful for when you don’t necessarily want to separate objects by
 lines and indentation:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">curly-brace-map</span><span class="p">:</span> <span class="p p-Indicator">{</span>
-  <span class="s">"key-1"</span><span class="p p-Indicator">:</span> <span class="s">"value-1"</span><span class="p p-Indicator">,</span>
-  <span class="s">"key-2"</span><span class="p p-Indicator">:</span> <span class="s">"value-2"</span>
-<span class="p p-Indicator">}</span>
-
-<span class="nt">square-bracket-list</span><span class="p">:</span> <span class="p p-Indicator">[</span>
-  <span class="nv">item-1</span><span class="p p-Indicator">,</span>
-  <span class="nv">item-2</span><span class="p p-Indicator">,</span>
-  <span class="nv">item-3</span>
-<span class="p p-Indicator">]</span>
-
-<span class="nt">single-line-map</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="s">"key-1"</span><span class="p p-Indicator">:</span> <span class="s">"value-1"</span><span class="p p-Indicator">,</span> <span class="s">"key-2"</span><span class="p p-Indicator">:</span> <span class="s">"value-2"</span> <span class="p p-Indicator">}</span>
-
-<span class="nt">single-line-list</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">item-1</span><span class="p p-Indicator">,</span> <span class="nv">item-2</span><span class="p p-Indicator">,</span> <span class="nv">item-3</span> <span class="p p-Indicator">]</span>
-
-<span class="nt">empty-map</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
-
-<span class="nt">empty-list</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id29" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">curly-brace-map</span><span class="p">:</span> <span class="p p-Indicator">{</span>
+<span class="linenos"> 2</span>  <span class="s">"key-1"</span><span class="p p-Indicator">:</span> <span class="s">"value-1"</span><span class="p p-Indicator">,</span>
+<span class="linenos"> 3</span>  <span class="s">"key-2"</span><span class="p p-Indicator">:</span> <span class="s">"value-2"</span>
+<span class="linenos"> 4</span><span class="p p-Indicator">}</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="nt">square-bracket-list</span><span class="p">:</span> <span class="p p-Indicator">[</span>
+<span class="linenos"> 7</span>  <span class="nv">item-1</span><span class="p p-Indicator">,</span>
+<span class="linenos"> 8</span>  <span class="nv">item-2</span><span class="p p-Indicator">,</span>
+<span class="linenos"> 9</span>  <span class="nv">item-3</span>
+<span class="linenos">10</span><span class="p p-Indicator">]</span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nt">single-line-map</span><span class="p">:</span> <span class="p p-Indicator">{</span> <span class="s">"key-1"</span><span class="p p-Indicator">:</span> <span class="s">"value-1"</span><span class="p p-Indicator">,</span> <span class="s">"key-2"</span><span class="p p-Indicator">:</span> <span class="s">"value-2"</span> <span class="p p-Indicator">}</span>
+<span class="linenos">13</span>
+<span class="linenos">14</span><span class="nt">single-line-list</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">item-1</span><span class="p p-Indicator">,</span> <span class="nv">item-2</span><span class="p p-Indicator">,</span> <span class="nv">item-3</span> <span class="p p-Indicator">]</span>
+<span class="linenos">15</span>
+<span class="linenos">16</span><span class="nt">empty-map</span><span class="p">:</span> <span class="p p-Indicator">{}</span>
+<span class="linenos">17</span>
+<span class="linenos">18</span><span class="nt">empty-list</span><span class="p">:</span> <span class="p p-Indicator">[]</span>
 </pre></div>
+</div>
 </div>
 <p>YAML also provides additional systems like <strong>anchors</strong>, which allow for
 easily re-using data within a config and is useful for when you might
 want to write the same thing multiple times in a config:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">some-list-of-data</span><span class="p">:</span> <span class="nl">&amp;the-data-anchor</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item-1</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item-2</span>
-
-<span class="nt">somewhere-where-data-is-reused</span><span class="p">:</span> <span class="nv">*the-data-anchor</span>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id30" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">some-list-of-data</span><span class="p">:</span> <span class="nl">&amp;the-data-anchor</span>
+<span class="linenos">2</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item-1</span>
+<span class="linenos">3</span>  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">item-2</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nt">somewhere-where-data-is-reused</span><span class="p">:</span> <span class="nv">*the-data-anchor</span>
 </pre></div>
+</div>
 </div>
 <p>When parsed by the YAML language addon, the value of
 <code class="docutils literal notranslate"><span class="pre">somewhere-where-the-data-is-reused</span></code> will be the same as the list
@@ -686,8 +858,12 @@ defined under <code class="docutils literal notranslate"><span class="pre">some-
 <li><a class="reference internal" href="#types">Types</a><ul>
 <li><a class="reference internal" href="#integers">Integers</a></li>
 <li><a class="reference internal" href="#floats">Floats</a></li>
+<li><a class="reference internal" href="#booleans">Booleans</a></li>
 <li><a class="reference internal" href="#strings">Strings</a></li>
-<li><a class="reference internal" href="#maps">Maps</a></li>
+<li><a class="reference internal" href="#maps">Maps</a><ul>
+<li><a class="reference internal" href="#ordering">Ordering</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#lists">Lists</a></li>
 </ul>
 </li>

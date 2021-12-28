@@ -1,0 +1,8 @@
+/*
+Makes the borders of many elements more round
+*/
+.sd-card,
+.highlight,
+.admonition {
+    border-radius: 0.4rem;
+}

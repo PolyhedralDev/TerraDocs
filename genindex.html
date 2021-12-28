@@ -9,6 +9,10 @@
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="_static/css/rounded-borders.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/cards.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/code-blocks.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/interpreted-text.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/padding.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/headings.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/admonitions.css" />
@@ -21,17 +25,23 @@
   body {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
   }
   body[data-theme="dark"] {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
     }
   }

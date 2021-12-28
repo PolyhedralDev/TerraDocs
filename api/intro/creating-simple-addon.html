@@ -11,6 +11,10 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/rounded-borders.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/cards.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/code-blocks.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/interpreted-text.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/padding.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/headings.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css" />
@@ -23,17 +27,23 @@
   body {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
   }
   body[data-theme="dark"] {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
   
     }
   }
@@ -332,13 +342,13 @@ when the addon initializes!</p>
 <p>To install your addon, first you need to <em>compile</em> it, then <em>archive</em> it. The process is slightly different depending
 on your build system:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d92ad193-6c19-47cf-a751-f0df6f0844b6" name="fc7417ce-7c53-44ef-93ef-783e74fcf897" type="radio"/>
-<label class="sd-tab-label" for="d92ad193-6c19-47cf-a751-f0df6f0844b6">
+<input checked="checked" id="77be6a9f-13d9-48fa-9399-e13b06d2281c" name="e305ab6a-726d-4efa-b2d8-be09f9e5634a" type="radio"/>
+<label class="sd-tab-label" for="77be6a9f-13d9-48fa-9399-e13b06d2281c">
 Gradle</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">:jar</span></code> task. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">build/libs</span></code>.</p>
 </div>
-<input id="4b61463b-14d6-4ee3-bcf3-168a33e930e0" name="fc7417ce-7c53-44ef-93ef-783e74fcf897" type="radio"/>
-<label class="sd-tab-label" for="4b61463b-14d6-4ee3-bcf3-168a33e930e0">
+<input id="59c8f0d1-c029-4a90-b26a-66e0142548e2" name="e305ab6a-726d-4efa-b2d8-be09f9e5634a" type="radio"/>
+<label class="sd-tab-label" for="59c8f0d1-c029-4a90-b26a-66e0142548e2">
 Maven</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">package</span></code> goal. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">target</span></code>.</p>
 </div>
