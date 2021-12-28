@@ -24,7 +24,7 @@ In this tutorial, we'll be creating and registering a structure that can generat
 Structures
 ==========
 
-The structure interface represents a *structure* that can generate in the world; a section of blocks
+The Structure interface represents a *structure* that can generate in the world; a section of blocks
 that generate at a location. Some examples of where structures may be used are:
 
 - Grass
@@ -118,7 +118,7 @@ Let's implement ``Keyed`` in our example structure:
 .. literalinclude:: code/adding-structure/keyed.java
     :language: java
 
-When an object implements ``Keyed``, it must return an instance of :javadoc:`RegistryKey`, the key that identifies it.
+When an object implements ``Keyed``, it must provide an instance of :javadoc:`RegistryKey`, the key that identifies it.
 We'll get that instance by putting it in a field set in the constructor.
 
 

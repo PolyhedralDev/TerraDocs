@@ -236,7 +236,7 @@
 <p>In this tutorial, we’ll be creating and registering a structure that can generate in the world.</p>
 <section id="structures">
 <h2>Structures<a class="headerlink" href="#structures" title="Permalink to this headline">¶</a></h2>
-<p>The structure interface represents a <em>structure</em> that can generate in the world; a section of blocks
+<p>The Structure interface represents a <em>structure</em> that can generate in the world; a section of blocks
 that generate at a location. Some examples of where structures may be used are:</p>
 <ul class="simple">
 <li><p>Grass</p></li>
@@ -330,22 +330,22 @@ but if you’re set on hard-coding your block states, you can:</p>
         <span class="n">BlockState</span> <span class="n">oakLog</span> <span class="o">=</span> <span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_log[axis=y]"</span><span class="p">);</span>
         <span class="n">BlockState</span> <span class="n">oakLeaves</span> <span class="o">=</span> <span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_leaves[persistent=true]"</span><span class="p">);</span>
 
-        <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span> <span class="c1">// Trunk will be [5, 8) blocks tall.</span>
+        <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>                               <span class="c1">// Trunk will be [5, 8) blocks tall.</span>
 
         <span class="n">GeometryUtil</span><span class="p">.</span><span class="na">sphere</span><span class="p">(</span>
-                <span class="n">Vector3Int</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="c1">// Generate leaves at the top of the tree</span>
-                <span class="mi">3</span><span class="p">,</span> <span class="c1">// Leaves will be a sphere of radius 3.</span>
-                <span class="n">leafLocation</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="c1">// This consumer is invoked once per coordinate in the sphere.</span>
+                <span class="n">Vector3Int</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>                   <span class="c1">// Generate leaves at the top of the tree</span>
+                <span class="mi">3</span><span class="p">,</span>                                                       <span class="c1">// Leaves will be a sphere of radius 3.</span>
+                <span class="n">leafLocation</span> <span class="o">-&gt;</span> <span class="p">{</span>                                        <span class="c1">// This consumer is invoked once per coordinate in the sphere.</span>
                     <span class="n">world</span><span class="p">.</span><span class="na">setBlockState</span><span class="p">(</span><span class="n">leafLocation</span><span class="p">,</span> <span class="n">oakLeaves</span><span class="p">);</span>
                 <span class="p">}</span>
         <span class="p">);</span>
 
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Iterate over the height.</span>
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>                               <span class="c1">// Iterate over the height.</span>
             <span class="n">Vector3Int</span> <span class="n">trunkLocation</span> <span class="o">=</span> <span class="n">Vector3Int</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Generate a part of the trunk here.</span>
-            <span class="n">world</span><span class="p">.</span><span class="na">setBlockState</span><span class="p">(</span><span class="n">trunkLocation</span><span class="p">,</span> <span class="n">oakLog</span><span class="p">);</span> <span class="c1">// Generate an oak log at the location.</span>
+            <span class="n">world</span><span class="p">.</span><span class="na">setBlockState</span><span class="p">(</span><span class="n">trunkLocation</span><span class="p">,</span> <span class="n">oakLog</span><span class="p">);</span>                  <span class="c1">// Generate an oak log at the location.</span>
         <span class="p">}</span>
 
-        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Our structure generated correctly.</span>
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                                                     <span class="c1">// Our structure generated correctly.</span>
     <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -394,7 +394,7 @@ always be the same as the class it’s implemented in.</p>
 <span class="p">}</span>
 </pre></div>
 </div>
-<p>When an object implements <code class="docutils literal notranslate"><span class="pre">Keyed</span></code>, it must return an instance of <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/RegistryKey.html">RegistryKey</a>, the key that identifies it.
+<p>When an object implements <code class="docutils literal notranslate"><span class="pre">Keyed</span></code>, it must provide an instance of <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/RegistryKey.html">RegistryKey</a>, the key that identifies it.
 We’ll get that instance by putting it in a field set in the constructor.</p>
 </section>
 <section id="creating-a-key">
