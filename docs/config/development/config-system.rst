@@ -104,39 +104,34 @@ and 2. ``legs`` is not of the required type integer:
 
 If we were to *document* ``AnimalTemplate``, it may look like this:
 
-   **AnimalTemplate**
+.. card:: **AnimalTemplate**
+   
+   *Defines the attributes of an animal.*
 
-   Defines the attributes of an animal.
+   `REQUIRED`
 
-   REQUIRED KEYS
+   :bdg-primary:`color` ``String``
+      The color of the animal.
 
-   ``color`` - String
-
-   -  The color of the animal.
-
-   ``legs`` Integer
-
-   -  How many legs the animal has.
+   :bdg-primary:`legs` ``Integer``
+      How many legs the animal has.
 
 Great, now that we have a template to describe an animal, let's create a
 new template that describes a zoo of animals:
 
-   **ZooTemplate**
+.. card:: **ZooTemplate**
 
-   Defines a zoo of animals.
+   *Defines a zoo of animals.*
 
-   REQUIRED KEYS
+   `REQUIRED`
 
-   ``animals`` - Map of Strings to AnimalTemplates
+   :bdg-primary:`animals` ``Map[String:AnimalTemplate]``
+      A collection of animals.
 
-   -  A collection of animals.
+   `OPTIONAL`
 
-   OPTIONAL KEYS
-      :name: optional-keys
-
-   ``description`` - String
-
-   -  A description of the zoo and It's animals.
+   :bdg-primary:`description` ``String``
+      A description of the zoo and It's animals.
 
 The interesting thing to note here with ``ZooTemplate`` is we have now
 treated ``AnimalTemplate`` as the required value type of the ``animals``
