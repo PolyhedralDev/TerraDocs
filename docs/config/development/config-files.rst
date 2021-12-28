@@ -38,6 +38,8 @@ extension ``.yml`` contained inside config packs, which are required
 to abide by the `YAML spec <https://yaml.org/spec/>`__ in order to
 load correctly.
 
+.. _create-config-file:
+
 Creating a Config File
 ======================
 

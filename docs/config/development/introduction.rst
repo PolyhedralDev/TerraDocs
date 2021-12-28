@@ -88,6 +88,8 @@ to find the console on every platform as that is outside the scope of this guide
 
     A window with the console log will now open when you start Minecraft.
 
+.. _editor:
+
 Picking an Editor
 -----------------
 

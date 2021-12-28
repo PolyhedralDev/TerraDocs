@@ -159,6 +159,8 @@ like so:
        color: brown
        legs: 2
 
+.. _config-types:
+
 Config Types
 ============
 

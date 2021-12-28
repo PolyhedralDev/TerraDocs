@@ -141,6 +141,8 @@ By themselves, integers, floats, and strings aren't too useful, until we
 start assigning labels to them. We can do that using a type called a
 ``Map``.
 
+.. _key-value-pair:
+
 A map is a *collection of objects*, referred to individually as
 **values**, where each **value** in the collection is identified by
 another unique object called a **key**. A key and a value together are
