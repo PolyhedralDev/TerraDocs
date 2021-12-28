@@ -97,6 +97,43 @@ situations. Typically config parameters that require integers will not
 accept a float, but parameters that require a float will accept
 integers.
 
+Booleans
+--------
+
+The type ``Boolean`` defines data that can be in one of two states. This
+is almost always used for cases were you want something to be either
+*true* or *false* and is written as such:
+
+.. tab-set::
+
+   .. tab-item:: YAML
+
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
+
+         true
+
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
+
+         false
+
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
+
+         true
+
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
+
+         false
+
 Strings
 -------
 
@@ -125,7 +162,7 @@ everywhere - for example we would need need to use strings to specify
 what block IDs we want to use for the blocks in a biome.
 
 In some cases you may want to specify a ``String`` where it might be
-interpreted as another type like ``Integer``. To explicitly specify an
+interpreted as another type like ``Boolean``. To explicitly specify an
 object is a ``String``, you can wrap it quotes like so:
 
 .. tab-set::
@@ -136,7 +173,7 @@ object is a ``String``, you can wrap it quotes like so:
          :caption: config.yml
          :linenos:
 
-         "42"
+         "true"
 
    .. tab-item:: JSON
 
@@ -144,7 +181,7 @@ object is a ``String``, you can wrap it quotes like so:
          :caption: config.json
          :linenos:
 
-         "42"
+         "true"
 
       .. note::
 
