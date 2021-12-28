@@ -314,6 +314,261 @@ but if you’re set on hard-coding your block states, you can:</p>
 </ul>
 </div>
 </section>
+<section id="generating-blocks">
+<h3>Generating Blocks<a class="headerlink" href="#generating-blocks" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have a block state, let’s place it in the world! To do that, we’ll use the <code class="docutils literal notranslate"><span class="pre">#setBlockState</span></code> methods of
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/world/WritableWorld.html">WritableWorld</a>. Let’s generate a simple tree by generating some leaves, then generating a stick through them:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleStructure</span> <span class="kd">implements</span> <span class="n">Structure</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">ExampleStructure</span><span class="p">(</span><span class="n">Platform</span> <span class="n">platform</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">platform</span> <span class="o">=</span> <span class="n">platform</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span> <span class="n">location</span><span class="p">,</span> <span class="n">WritableWorld</span> <span class="n">world</span><span class="p">,</span> <span class="n">Random</span> <span class="n">random</span><span class="p">,</span> <span class="n">Rotation</span> <span class="n">rotation</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">BlockState</span> <span class="n">oakLog</span> <span class="o">=</span> <span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_log[axis=y]"</span><span class="p">);</span>
+        <span class="n">BlockState</span> <span class="n">oakLeaves</span> <span class="o">=</span> <span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_leaves[persistent=true]"</span><span class="p">);</span>
+
+        <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span> <span class="c1">// Trunk will be [5, 8) blocks tall.</span>
+
+        <span class="n">GeometryUtil</span><span class="p">.</span><span class="na">sphere</span><span class="p">(</span>
+                <span class="n">Vector3Int</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="c1">// Generate leaves at the top of the tree</span>
+                <span class="mi">3</span><span class="p">,</span> <span class="c1">// Leaves will be a sphere of radius 3.</span>
+                <span class="n">leafLocation</span> <span class="o">-&gt;</span> <span class="p">{</span> <span class="c1">// This consumer is invoked once per coordinate in the sphere.</span>
+                    <span class="n">world</span><span class="p">.</span><span class="na">setBlockState</span><span class="p">(</span><span class="n">leafLocation</span><span class="p">,</span> <span class="n">oakLeaves</span><span class="p">);</span>
+                <span class="p">}</span>
+        <span class="p">);</span>
+
+        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span> <span class="c1">// Iterate over the height.</span>
+            <span class="n">Vector3Int</span> <span class="n">trunkLocation</span> <span class="o">=</span> <span class="n">Vector3Int</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Generate a part of the trunk here.</span>
+            <span class="n">world</span><span class="p">.</span><span class="na">setBlockState</span><span class="p">(</span><span class="n">trunkLocation</span><span class="p">,</span> <span class="n">oakLog</span><span class="p">);</span> <span class="c1">// Generate an oak log at the location.</span>
+        <span class="p">}</span>
+
+        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span> <span class="c1">// Our structure generated correctly.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If you’re used to the Bukkit API, you may be looking for Terra’s equivalent to the <code class="docutils literal notranslate"><span class="pre">Location</span></code> class, which
+combines a <code class="docutils literal notranslate"><span class="pre">World</span></code> and a <code class="docutils literal notranslate"><span class="pre">Vector3</span></code>. The Terra API has no such class. Separating the world from the
+position allows for much cleaner integration of more world types.</p>
+<p>The Terra API also lacks an analogous class to Bukkit’s <code class="docutils literal notranslate"><span class="pre">Block</span></code>, for the same reason. Bukkit’s <code class="docutils literal notranslate"><span class="pre">Block</span></code> is
+an even messier combination of a <code class="docutils literal notranslate"><span class="pre">World</span></code>, a <code class="docutils literal notranslate"><span class="pre">Vector3Int</span></code> <em>and</em> a <code class="docutils literal notranslate"><span class="pre">BlockState</span></code>.</p>
+</div>
+</section>
+</section>
+<section id="registering-the-structure">
+<h2>Registering the Structure<a class="headerlink" href="#registering-the-structure" title="Permalink to this headline">¶</a></h2>
+<p>Now that we’ve made our structure, if you compile and install the addon, you’ll see that… nothing happens. That’s
+because we haven’t <em>registered</em> our structure. If we don’t register the structure, Terra doesn’t know it exists.</p>
+<section id="implementing-keyed">
+<h3>Implementing Keyed<a class="headerlink" href="#implementing-keyed" title="Permalink to this headline">¶</a></h3>
+<p>While it’s entirely possible to register things by providing a <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/RegistryKey.html">RegistryKey</a> instance, it’s generally
+cleaner to implement the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/Keyed.html">Keyed</a> interface in the object you want to register. This will become especially
+aparrent when you’re registering many of the same type of object at once. The pattern to implement keyed is generally</p>
+<p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Thing</span> <span class="pre">implements</span> <span class="pre">Keyed&lt;Thing&gt;</span></code>.</p>
+<p>If you’ve worked with <a class="reference external" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html">Comparable</a>, the idea is similar; the type parameter of <code class="docutils literal notranslate"><span class="pre">Keyed</span></code> should almost
+always be the same as the class it’s implemented in.</p>
+<p>Let’s implement <code class="docutils literal notranslate"><span class="pre">Keyed</span></code> in our example structure:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleStructure</span> <span class="kd">implements</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">Keyed</span><span class="o">&lt;</span><span class="n">ExampleStructure</span><span class="o">&gt;</span> <span class="p">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">RegistryKey</span> <span class="n">key</span><span class="p">;</span>
+
+    <span class="kd">public</span> <span class="nf">ExampleStructure</span><span class="p">(</span><span class="n">Platform</span> <span class="n">platform</span><span class="p">,</span> <span class="n">RegistryKey</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">platform</span> <span class="o">=</span> <span class="n">platform</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span> <span class="n">location</span><span class="p">,</span> <span class="n">WritableWorld</span> <span class="n">world</span><span class="p">,</span> <span class="n">Random</span> <span class="n">random</span><span class="p">,</span> <span class="n">Rotation</span> <span class="n">rotation</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">// ... Generation logic</span>
+    <span class="p">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="n">RegistryKey</span> <span class="nf">getRegistryKey</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">key</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>When an object implements <code class="docutils literal notranslate"><span class="pre">Keyed</span></code>, it must return an instance of <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/RegistryKey.html">RegistryKey</a>, the key that identifies it.
+We’ll get that instance by putting it in a field set in the constructor.</p>
+</section>
+<section id="creating-a-key">
+<h3>Creating a Key<a class="headerlink" href="#creating-a-key" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have a <code class="docutils literal notranslate"><span class="pre">Keyed</span></code> structure, let’s register it! Back in our entry point, let’s revisit our
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/events/config/pack/ConfigPackPreLoadEvent.html">ConfigPackPreLoadEvent</a> listener.</p>
+<p>First, let’s create an instance to register. Our structure requires the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance, and a unique
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/RegistryKey.html">RegistryKey</a> instance.</p>
+<ul>
+<li><p>We have the <code class="docutils literal notranslate"><span class="pre">Platform</span></code> instance from dependency injection.</p></li>
+<li><p>We can create a <code class="docutils literal notranslate"><span class="pre">RegistryKey</span></code> instance from any object which implements <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/Namespaced.html">Namespaced</a>. In this case, we
+want to use the namespace of our addon, so let’s use the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance (which we’ve also injected)
+to create a key:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">RegistryKey</span> <span class="n">key</span> <span class="o">=</span> <span class="n">addon</span><span class="p">.</span><span class="na">key</span><span class="p">(</span><span class="s">"EXAMPLE_STRUCTURE"</span><span class="p">);</span> <span class="c1">// Create our registry key</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<p>Now that we have both objects required to instantiate our structure, let’s create an instance:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleEntryPoint</span> <span class="kd">implements</span> <span class="n">AddonInitializer</span> <span class="p">{</span>
+    <span class="nd">@Inject</span>
+    <span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">;</span>
+
+    <span class="nd">@Inject</span>
+    <span class="kd">private</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
+
+    <span class="nd">@Inject</span>
+    <span class="kd">private</span> <span class="n">BaseAddon</span> <span class="n">addon</span><span class="p">;</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
+
+        <span class="n">RegistryKey</span> <span class="n">key</span> <span class="o">=</span> <span class="n">addon</span><span class="p">.</span><span class="na">key</span><span class="p">(</span><span class="s">"EXAMPLE_STRUCTURE"</span><span class="p">);</span>
+
+        <span class="n">ExampleStructure</span> <span class="n">theStructure</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ExampleStructure</span><span class="p">(</span><span class="n">platform</span><span class="p">,</span> <span class="n">key</span><span class="p">);</span>
+
+        <span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
+                <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+                <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+                <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
+                    <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+                <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="registering-the-instance">
+<h3>Registering the Instance<a class="headerlink" href="#registering-the-instance" title="Permalink to this headline">¶</a></h3>
+<p>Now that we have an instance, we can finally register it! To do that, we’ll need a registry. We can get that from the
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/config/ConfigPack.html">ConfigPack</a> provided by <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/events/config/pack/ConfigPackPreLoadEvent.html">ConfigPackPreLoadEvent</a>:</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
+        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+
+            <span class="n">ConfigPack</span> <span class="n">pack</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getPack</span><span class="p">();</span>
+        <span class="p">});</span>
+</pre></div>
+</div>
+<p>We can then get a registry using <code class="docutils literal notranslate"><span class="pre">#getOrCreateRegistry</span></code>. We want the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/structure/Structure.html">Structure</a> registry, so let’s get
+it!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
+        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+
+            <span class="n">ConfigPack</span> <span class="n">pack</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getPack</span><span class="p">();</span>
+            <span class="n">CheckedRegistry</span><span class="o">&lt;</span><span class="n">Structure</span><span class="o">&gt;</span> <span class="n">structureRegistry</span> <span class="o">=</span> <span class="n">pack</span><span class="p">.</span><span class="na">getOrCreateRegistry</span><span class="p">(</span><span class="n">Structure</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+        <span class="p">});</span>
+</pre></div>
+</div>
+<p>Now that we have the structure registry, we can finally register our structure instance with <code class="docutils literal notranslate"><span class="pre">#register</span></code>!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
+        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+
+            <span class="n">ConfigPack</span> <span class="n">pack</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getPack</span><span class="p">();</span>
+            <span class="n">CheckedRegistry</span><span class="o">&lt;</span><span class="n">Structure</span><span class="o">&gt;</span> <span class="n">structureRegistry</span> <span class="o">=</span> <span class="n">pack</span><span class="p">.</span><span class="na">getOrCreateRegistry</span><span class="p">(</span><span class="n">Structure</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+            <span class="n">structureRegistry</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">theStructure</span><span class="p">);</span>
+        <span class="p">});</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="including-the-structure-in-world-generation">
+<h2>Including the Structure in World Generation<a class="headerlink" href="#including-the-structure-in-world-generation" title="Permalink to this headline">¶</a></h2>
+<p>Now that our structure is registered, it can be used in world generation. Let’s add it to a config pack!</p>
+<section id="creating-a-feature">
+<h3>Creating a Feature<a class="headerlink" href="#creating-a-feature" title="Permalink to this headline">¶</a></h3>
+<p>Use this feature config to create a <em>feature</em> that generates your structure:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">EXAMPLE_FEATURE</span>
+<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FEATURE</span>
+
+<span class="nt">distributor</span><span class="p">:</span>
+  <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SAMPLER</span>
+  <span class="nt">sampler</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">POSITIVE_WHITE_NOISE</span>
+  <span class="nt">threshold</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.03</span>
+
+<span class="nt">locator</span><span class="p">:</span>
+  <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PATTERN</span>
+  <span class="nt">range</span><span class="p">:</span>
+    <span class="nt">min</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">64</span>
+    <span class="nt">max</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">150</span>
+  <span class="nt">pattern</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AND</span>
+    <span class="nt">patterns</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MATCH_AIR</span>
+        <span class="nt">offset</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
+      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MATCH</span>
+        <span class="nt">block</span><span class="p">:</span> <span class="s">"minecraft:grass_block"</span>
+        <span class="nt">offset</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+
+<span class="nt">structures</span><span class="p">:</span>
+  <span class="nt">distribution</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CELLULAR</span>
+    <span class="nt">return</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CellValue</span>
+    <span class="nt">frequency</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.03</span>
+  <span class="nt">structures</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">EXAMPLE_STRUCTURE</span> <span class="c1"># Your structure!</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">generation-stage-feature</span></code>, <code class="docutils literal notranslate"><span class="pre">config-feature</span></code>, <code class="docutils literal notranslate"><span class="pre">config-locators</span></code>, and <code class="docutils literal notranslate"><span class="pre">config-distributors</span></code> core addons
+are required for this config! These are all core addons, included by default in Terra, but if you made your
+own pack, be sure to depend on them!</p>
+</div>
+</section>
+<section id="including-the-feature-in-a-biome">
+<h3>Including the Feature in a Biome<a class="headerlink" href="#including-the-feature-in-a-biome" title="Permalink to this headline">¶</a></h3>
+<p>Now, simply include your new feature in a biome by adding it to the <code class="docutils literal notranslate"><span class="pre">features</span></code> key! Here’s an example of adding it
+to the default pack’s <code class="docutils literal notranslate"><span class="pre">PLAINS</span></code> biome:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PLAINS</span>
+<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">BIOME</span>
+<span class="nt">extends</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">EQ_PLAIN</span><span class="p p-Indicator">,</span> <span class="nv">CARVING_LAND</span><span class="p p-Indicator">,</span> <span class="nv">BASE</span> <span class="p p-Indicator">]</span>
+<span class="nt">vanilla</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">minecraft:plains</span>
+<span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$biomes/colors.yml:PLAINS</span>
+
+<span class="nt">tags</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">USE_RIVER</span>
+
+<span class="nt">colors</span><span class="p">:</span>
+  <span class="nt">grass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0x91bd59</span>
+  <span class="nt">foliage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0x77ab2f</span>
+  <span class="nt">water</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0x44aff5</span>
+  <span class="nt">water-fog</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0x44aff5</span>
+
+<span class="nt">palette</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">GRASS</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">255</span>
+  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&lt; meta.yml:palette-bottom</span>
+
+<span class="nt">features</span><span class="p">:</span>
+  <span class="nt">flora</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">GRASS</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">FLOWER_PATCHES</span>
+  <span class="nt">trees</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">SPARSE_OAK_TREES</span>
+    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">EXAMPLE_FEATURE</span> <span class="c1"># Our feature!</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>Now launch your Terra installation, and when you create a new world, you should see your structure generating in the
+biome you chose!</p>
+<img alt="../../_images/generation.png" src="../../_images/generation.png"/>
+<p>You’re now able to create and register objects to Terra’s registries!</p>
 </section>
 </section>
 
@@ -373,8 +628,21 @@ but if you’re set on hard-coding your block states, you can:</p>
 <li><a class="reference internal" href="#creating-a-structure">Creating a Structure</a></li>
 <li><a class="reference internal" href="#generating-something">Generating Something</a><ul>
 <li><a class="reference internal" href="#getting-a-block-state">Getting a Block State</a></li>
+<li><a class="reference internal" href="#generating-blocks">Generating Blocks</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#registering-the-structure">Registering the Structure</a><ul>
+<li><a class="reference internal" href="#implementing-keyed">Implementing Keyed</a></li>
+<li><a class="reference internal" href="#creating-a-key">Creating a Key</a></li>
+<li><a class="reference internal" href="#registering-the-instance">Registering the Instance</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#including-the-structure-in-world-generation">Including the Structure in World Generation</a><ul>
+<li><a class="reference internal" href="#creating-a-feature">Creating a Feature</a></li>
+<li><a class="reference internal" href="#including-the-feature-in-a-biome">Including the Feature in a Biome</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
 </ul>
 </li>
 </ul>
