@@ -2,14 +2,24 @@
 Styles admonitions
  */
 
+:root {
+    --color-admonition-title--important: #ff00ff
+}
+
 .admonition {
     border-left: none;
 }
 
-.admonition-title {
+p.admonition-title {
     background: none !important;
-} 
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: var(--font-stack--monospace);
+*} 
 
+/*
+Use admonition title color for background instead
+*/
 .caution {
     background-color: var(--color-admonition-title-background--caution);
 }
@@ -36,7 +46,10 @@ Styles admonitions
 
 .tip {
     background-color: var(--color-admonition-title-background--tip);
-}
+}/*
+.tip .admonition-title {
+    color: var(--color-admonition-title--tip);
+}*/
 
 .important {
     background-color: var(--color-admonition-title-background--important);
