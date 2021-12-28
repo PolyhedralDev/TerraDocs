@@ -256,6 +256,62 @@ top level object. By using maps, we are capable of defining more than
 one object within a config, as well as being able to identify what each
 of those objects are using keys.
 
+.. _map-ordering:
+
+Ordering 
+........
+
+The ordering of key-value pairs inside a map is not significant, and as
+such you are free to order them however you'd like.
+
+These two configs are both equivalent:
+
+.. tab-set::
+
+   .. tab-item:: YAML
+
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
+
+         a: 1234
+         
+         b: Some text
+         
+         c: true
+
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
+
+         b: Some text
+         
+         c: true
+         
+         a: 1234
+
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
+
+         {
+            "a": 1234,
+            "b": "Some text",
+            "c": true
+         }
+      
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
+
+         {
+            "b": "Some text",
+            "c": true,
+            "a": 1234
+         }
+      
 Lists
 -----
 
