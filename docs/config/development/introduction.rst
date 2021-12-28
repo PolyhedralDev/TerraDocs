@@ -152,26 +152,29 @@ relevant to config development go:
 
     .. tab-item:: Fabric
 
-        ``/config/Terra/``
+        `/config/Terra/`
 
     .. tab-item:: Bukkit
 
-        ``/plugins/Terra/``
+        `/plugins/Terra/`
 
-Within this directory are two subdirectories:
+Subdirectories
+--------------
 
-.. grid:: 2
+Within this directory are two subdirectories that you should know about:
 
-    .. grid-item-card:: ``Terra/packs``
+.. card:: `Terra/packs`
 
-        Contains all your installed config packs. By default, Terra will come pre-installed
-        with a config pack under the file name ``default.zip`` inside this directory.
+    .. _packs-directory:
 
-    .. grid-item-card:: ``Terra/addons``
+    Contains all your installed config packs. By default, Terra will come pre-installed
+    with a config pack under the file name ``default.zip`` inside this directory.
 
-        Contains all your installed addons. Similarly to the default pack, Terra will also
-        come pre-installed with a set of *Core Addons* as explained at the beginning of
-        this page.
+.. card:: `Terra/addons`
+
+    Contains all your installed addons. Similarly to the default pack, Terra will also
+    come pre-installed with a set of *Core Addons* as explained at the beginning of
+    this page.
 
 3. Beginning Config Development
 ===============================
