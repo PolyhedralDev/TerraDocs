@@ -149,7 +149,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -235,7 +235,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -243,6 +243,352 @@
         <article role="main">
           <section id="creating-a-pack-from-scratch">
 <h1>Creating a Pack from Scratch<a class="headerlink" href="#creating-a-pack-from-scratch" title="Permalink to this headline">¶</a></h1>
+<p>This guide will outline the process of creating a new Terra config
+pack from the beginning. If you haven’t already, please read the
+<a class="reference internal" href="../introduction.html"><span class="doc">Config Development Introduction</span></a>
+for more information before continuing.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">If you wish to <strong>modify an existing pack</strong> rather than creating your
+own from scratch, please refer to <a class="reference internal" href="../modifying-existing-pack.html"><span class="doc">this</span></a>
+instead.</p>
+</div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This guide is written for Terra version 6.0.+ and will not be applicable to prior versions!</p>
+</div>
+<section id="setting-up-a-new-pack">
+<h2>Setting up a New Pack<a class="headerlink" href="#setting-up-a-new-pack" title="Permalink to this headline">¶</a></h2>
+<p><cite>PROCEDURE</cite></p>
+<section id="create-your-config-pack-directory">
+<h3>1. Create your config pack directory<a class="headerlink" href="#create-your-config-pack-directory" title="Permalink to this headline">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Navigate to your <a class="reference internal" href="../introduction.html#packs-directory"><span class="std std-ref">packs directory</span></a> and create a new folder inside, the
+name of this folder is up to you to decide. The pack directory will contain all
+your <a class="reference internal" href="../config-files.html"><span class="doc">config files</span></a>.</p>
+</div>
+</div>
+</section>
+<section id="create-a-pack-manifest">
+<h3>2. Create a pack manifest<a class="headerlink" href="#create-a-pack-manifest" title="Permalink to this headline">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">To make a <strong>pack manifest</strong>, <a class="reference internal" href="../config-files.html#create-config-file"><span class="std std-ref">create a new config file</span></a> within
+your pack directory with the file name <code class="docutils literal notranslate"><span class="pre">pack.yml</span></code>.</p>
+<p class="sd-card-text">Pack manifests define pack-wide information that is required for it to load correctly
+- such as who made it, what version the pack is, and what dependencies such as addons
+and Minecraft versions are required for it to function.</p>
+</div>
+</div>
+</section>
+<section id="set-the-pack-id-and-version">
+<h3>3. Set the pack ID and version<a class="headerlink" href="#set-the-pack-id-and-version" title="Permalink to this headline">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Open your pack manifest in your <a class="reference internal" href="../introduction.html#editor"><span class="std std-ref">editor of choice</span></a>.</p>
+<p class="sd-card-text">Within your editor, add the following <strong>parameters</strong> to your pack manifest:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span><span class="w"></span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p class="sd-card-text">A parameter can also be thought of as ‘config options’ - for a more complete explanation of how these work
+you can refer to the <a class="reference internal" href="../config-system.html"><span class="doc">Config System</span></a> page.</p>
+<p class="sd-card-text">You’re free to change these parameters to whatever you’d like, with some restrictions:</p>
+<ul class="simple">
+<li><p class="sd-card-text">The pack <code class="docutils literal notranslate"><span class="pre">id</span></code> must only contain alphanumeric characters (A-Z, 0-9) and dashes or underscores (no spaces).</p></li>
+<li><p class="sd-card-text">Pack <code class="docutils literal notranslate"><span class="pre">id</span></code>s conventionally use all uppercase letters, however this is not a strict requirement.</p></li>
+<li><p class="sd-card-text">The pack <code class="docutils literal notranslate"><span class="pre">version</span></code> must use the format <code class="docutils literal notranslate"><span class="pre">X.Y.Z</span></code>, according to the <a class="reference external" href="https://semver.org/">SemVer</a> spec.</p></li>
+</ul>
+<p class="sd-card-text"><em>Optionally</em>, you can also specify yourself as the author of your pack with the <code class="docutils literal notranslate"><span class="pre">author</span></code> parameter:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span><span class="w"></span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span><span class="w"></span>
+<span class="linenos">4</span>
+<span class="hll"><span class="linenos">5</span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_USERNAME</span><span class="w"> </span><span class="c1"># Optional</span><span class="w"></span>
+</span></pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>As explained <a class="reference internal" href="../config-data.html#map-ordering"><span class="std std-ref">here</span></a>, the order in which parameters are specified does not matter, so
+you are free to define each parameter in whatever order you’d like. In addition, extra blank lines between
+parameters is ignored, the follow examples are all equivalent:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="8ae660ec-1287-416a-9cf6-a8ce45092c07" name="9af2466e-b3a5-4ecb-864b-91f7fae01e68" type="radio"/>
+<label class="sd-tab-label" for="8ae660ec-1287-416a-9cf6-a8ce45092c07">
+Example 1</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span><span class="w"></span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="3756b23d-0afa-48a0-8b62-ac268ae1c947" name="9af2466e-b3a5-4ecb-864b-91f7fae01e68" type="radio"/>
+<label class="sd-tab-label" for="3756b23d-0afa-48a0-8b62-ac268ae1c947">
+Example 2</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span><span class="w"></span>
+<span class="linenos">2</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="d35d8c50-a57b-49f8-8adb-2af38c804f75" name="9af2466e-b3a5-4ecb-864b-91f7fae01e68" type="radio"/>
+<label class="sd-tab-label" for="d35d8c50-a57b-49f8-8adb-2af38c804f75">
+Example 3</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span><span class="w"></span>
+<span class="linenos">2</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="specify-a-config-file-format">
+<h3>4. Specify a config file format<a class="headerlink" href="#specify-a-config-file-format" title="Permalink to this headline">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Terra requires you to specify the file format of config files, as outlined on the
+<a class="reference internal" href="../config-files.html"><span class="doc">Config Files</span></a> page. To do so, we will need to include an
+addon in our pack manifest that has the functionality to parse config files.</p>
+<p class="sd-card-text">In this guide we will be using YAML for our config files, as support for YAML is included by default
+via the <code class="docutils literal notranslate"><span class="pre">language-yaml</span></code> core addon. We can include this via the pack manifest <code class="docutils literal notranslate"><span class="pre">addons</span></code> parameter like so:</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span><span class="w"></span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span><span class="w"></span>
+<span class="linenos">4</span>
+<span class="hll"><span class="linenos">5</span><span class="nt">addons</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="linenos">6</span><span class="w">  </span><span class="nt">language-yaml</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+</span></pre></div>
+</div>
+</div>
+<p class="sd-card-text">Addons defined under the <code class="docutils literal notranslate"><span class="pre">addons</span></code> parameter are specified as <a class="reference internal" href="../config-data.html#key-value-pair"><span class="std std-ref">key-value pairs</span></a> where the key
+specifies the addon name, and the value specifies the required addon version(s).</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">All config files within a config pack must use a file format supported by the language addons specified
+within the pack manifest. The pack manifest itself differs in that it must use a file format supported by
+any <em>installed</em> language addons, though it should be written using a format it specifies.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="specify-the-chunk-generator">
+<h3>5. Specify the chunk generator<a class="headerlink" href="#specify-the-chunk-generator" title="Permalink to this headline">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Chunk generators tell Terra how to generate the base blocks of a chunk (before any decoration is applied) and are
+implemented via addons.</p>
+<p class="sd-card-text">For this guide, we will use the <code class="docutils literal notranslate"><span class="pre">NOISE_3D</span></code> generator which is implemented by the <code class="docutils literal notranslate"><span class="pre">chunk-generator-noise-3d</span></code>
+core addon. We can utilize this by adding <code class="docutils literal notranslate"><span class="pre">chunk-generator-noise-3d</span></code> to the <code class="docutils literal notranslate"><span class="pre">addons</span></code> parameter like so:</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addons</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">language-yaml</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">chunk-generator-noise-3d</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+</span></pre></div>
+</div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">This will be the assumed process you’ll follow when prompted to include an addon!</p>
+</div>
+<p class="sd-card-text">Now that we have a generator available, we can tell the pack to use it via the <code class="docutils literal notranslate"><span class="pre">generator</span></code> parameter like so:</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span><span class="w"></span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span><span class="w"></span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nt">addons</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">6</span><span class="w">  </span><span class="nt">language-yaml</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+<span class="linenos">7</span><span class="w">  </span><span class="nt">chunk-generator-noise-3d</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+<span class="linenos">8</span>
+<span class="hll"><span class="linenos">9</span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NOISE_3D</span><span class="w"></span>
+</span></pre></div>
+</div>
+</div>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">NOISE_3D</span></code> generator also requires being able to define two more additional things called <em>samplers</em>,
+and <em>palettes</em>. To be able to define these we can add the following addons to our pack manifest like so:</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addons</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">language-yaml</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+<span class="w">  </span><span class="nt">chunk-generator-noise-3d</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+<span class="hll"><span class="w">  </span><span class="nt">config-noise-function</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+</span><span class="hll"><span class="w">  </span><span class="nt">palette-block-shortcut</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+</span></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="create-your-first-biome">
+<h3>6. Create your first biome<a class="headerlink" href="#create-your-first-biome" title="Permalink to this headline">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">1. Add the <code class="docutils literal notranslate"><span class="pre">config-biome</span></code> addon as a dependency, using versions <code class="docutils literal notranslate"><span class="pre">0.1.+</span></code>. This will allow us to create new
+biomes via the <code class="docutils literal notranslate"><span class="pre">BIOME</span></code> <a class="reference internal" href="../config-system.html#config-types"><span class="std std-ref">config type</span></a> which is provided by the addon.</p>
+<p class="sd-card-text">2. <a class="reference internal" href="../config-files.html#create-config-file"><span class="std std-ref">Create a new config file</span></a>, this can be named anything but for this guide we will
+use the name <code class="docutils literal notranslate"><span class="pre">first_biome.yml</span></code>.</p>
+<p class="sd-card-text">3. With <code class="docutils literal notranslate"><span class="pre">first_biome.yml</span></code> open in your editor, set the <a class="reference internal" href="../config-system.html#config-types"><span class="std std-ref">config type</span></a> via the <code class="docutils literal notranslate"><span class="pre">type</span></code>
+parameter, and config <code class="docutils literal notranslate"><span class="pre">id</span></code> like so:</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">first_biome.yml</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FIRST_BIOME</span><span class="w"></span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BIOME</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p class="sd-card-text">4. Set the <code class="docutils literal notranslate"><span class="pre">vanilla</span></code> parameter to a vanilla biome ID. We will use <code class="docutils literal notranslate"><span class="pre">minecraft:plains</span></code> in the example but you
+could use any valid vanilla biome ID you want.</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">first_biome.yml</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FIRST_BIOME</span><span class="w"></span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BIOME</span><span class="w"></span>
+<span class="linenos">4</span>
+<span class="hll"><span class="linenos">5</span><span class="nt">vanilla</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minecraft:plains</span><span class="w"></span>
+</span></pre></div>
+</div>
+</div>
+<p class="sd-card-text">Terra uses the <code class="docutils literal notranslate"><span class="pre">vanilla</span></code> parameter to determine how things like mob spawning and grass color is handled, however this is
+may differ based on the platform you’re on.</p>
+</div>
+</div>
+</section>
+<section id="add-the-generator-parameters-to-your-new-biome">
+<h3>7. Add the generator parameters to your new biome<a class="headerlink" href="#add-the-generator-parameters-to-your-new-biome" title="Permalink to this headline">¶</a></h3>
+<p>These parameters will determine how the <code class="docutils literal notranslate"><span class="pre">NOISE_3D</span></code> generator generates terrain within our biome:</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<code class="docutils literal notranslate"><span class="pre">terrain.sampler</span></code> - Shapes the terrain within the biome.</div>
+<p class="sd-card-text">For now, we will use the following config for <code class="docutils literal notranslate"><span class="pre">terrain.sampler</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">first_biome.yml</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FIRST_BIOME</span><span class="w"></span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BIOME</span><span class="w"></span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="nt">vanilla</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minecraft:plains</span><span class="w"></span>
+<span class="linenos"> 6</span>
+<span class="hll"><span class="linenos"> 7</span><span class="nt">terrain</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="linenos"> 8</span><span class="w">  </span><span class="nt">sampler</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="linenos"> 9</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LINEAR_HEIGHTMAP</span><span class="w"></span>
+</span><span class="hll"><span class="linenos">10</span><span class="w">    </span><span class="nt">base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64</span><span class="w"></span>
+</span></pre></div>
+</div>
+</div>
+<p class="sd-card-text">How exactly this works will be explained in a later guide but just know that this will produce flat terrain at the Y-level
+specified by the <code class="docutils literal notranslate"><span class="pre">base</span></code> parameter (for which we will use y=64).</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<code class="docutils literal notranslate"><span class="pre">palette</span></code> - Defines the blocks that make up the terrain in the biome.</div>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">palette</span></code> parameter accepts a <code class="docutils literal notranslate"><span class="pre">List</span></code> of singular key-value pairs, where the key represents a <code class="docutils literal notranslate"><span class="pre">palette</span></code> config and the
+value is an <code class="docutils literal notranslate"><span class="pre">Integer</span></code> that determines the upper Y level the palette will apply to until the next lower palette.</p>
+<p class="sd-card-text">For example, with the following config, <code class="docutils literal notranslate"><span class="pre">Palette</span> <span class="pre">C</span></code> would be used for terrain below y10, <code class="docutils literal notranslate"><span class="pre">Palette</span> <span class="pre">B</span></code> would be used
+between y11 and y30, and terrain above y31 would use <code class="docutils literal notranslate"><span class="pre">Palette</span> <span class="pre">A</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">palette</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Palette A</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">319</span><span class="w"> </span><span class="c1"># From y319 downwards until next palette down (at y30)</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Palette B</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">30</span><span class="w">  </span><span class="c1"># From y30 downwards until next palette down (at y10)</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">Palette C</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10</span><span class="w">  </span><span class="c1"># From y10 downwards</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">palette-block-shortcut</span></code> addon allows us to easily define single block palettes using the format <code class="docutils literal notranslate"><span class="pre">BLOCK:&lt;block</span> <span class="pre">id&gt;</span></code>.
+For our biome config, we will use <code class="docutils literal notranslate"><span class="pre">minecraft:stone</span></code>, and use <code class="docutils literal notranslate"><span class="pre">319</span></code> to specify that terrain from y319 downwards will consist of <code class="docutils literal notranslate"><span class="pre">minecraft:stone</span></code>.</p>
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">first_biome.yml</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FIRST_BIOME</span><span class="w"></span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BIOME</span><span class="w"></span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="nt">vanilla</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minecraft:plains</span><span class="w"></span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="nt">terrain</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nt">sampler</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LINEAR_HEIGHTMAP</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">    </span><span class="nt">base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64</span><span class="w"></span>
+<span class="linenos">11</span>
+<span class="hll"><span class="linenos">12</span><span class="nt">palette</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="linenos">13</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BLOCK:minecraft:stone</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">319</span><span class="w"></span>
+</span></pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="define-a-biome-provider">
+<h3>8. Define a biome provider<a class="headerlink" href="#define-a-biome-provider" title="Permalink to this headline">¶</a></h3>
+<p>For our pack to load, and for <code class="docutils literal notranslate"><span class="pre">FIRST_BIOME</span></code> to generate, we will need to define a <strong>biome provider</strong>.
+Biome providers tell Terra how to place biomes in a world.</p>
+<p>We can define a provider under the <code class="docutils literal notranslate"><span class="pre">biomes</span></code> parameter, but first we will need to add a provider to our pack for use.
+For this guide, we will be using the <code class="docutils literal notranslate"><span class="pre">SINGLE</span></code> biome provider, which will require adding the <code class="docutils literal notranslate"><span class="pre">biome-provider-single</span></code> core addon
+(versions <code class="docutils literal notranslate"><span class="pre">0.1.+</span></code>).</p>
+<p>After you have added <code class="docutils literal notranslate"><span class="pre">biome-provider-single</span></code>, you can add the <code class="docutils literal notranslate"><span class="pre">biomes</span></code> parameter to your pack manifest like so:</p>
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span><span class="w"></span>
+<span class="linenos"> 2</span>
+<span class="linenos"> 3</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span><span class="w"></span>
+<span class="linenos"> 4</span>
+<span class="linenos"> 5</span><span class="nt">addons</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">  </span><span class="nt">language-yaml</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="nt">chunk-generator-noise-3d</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nt">config-noise-function</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="nt">palette-block-shortcut</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">  </span><span class="nt">biome-provider-single</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.+</span><span class="w"></span>
+<span class="linenos">11</span>
+<span class="linenos">12</span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NOISE_3D</span><span class="w"></span>
+<span class="linenos">13</span>
+<span class="hll"><span class="linenos">14</span><span class="nt">biomes</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="linenos">15</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SINGLE</span><span class="w"></span>
+</span><span class="hll"><span class="linenos">16</span><span class="w">  </span><span class="nt">biome</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FIRST_BIOME</span><span class="w"></span>
+</span></pre></div>
+</div>
+</div>
+<p>You can see that the <code class="docutils literal notranslate"><span class="pre">biome</span></code> parameter of the <code class="docutils literal notranslate"><span class="pre">SINGLE</span></code> provider is set to the <code class="docutils literal notranslate"><span class="pre">id</span></code> defined in your first biome config.
+This will make <code class="docutils literal notranslate"><span class="pre">FIRST_BIOME</span></code> generate everywhere in worlds using your pack.</p>
+</section>
+<section id="load-up-your-pack">
+<h3>9. Load up your pack<a class="headerlink" href="#load-up-your-pack" title="Permalink to this headline">¶</a></h3>
+<p>At this stage, your pack should now be capable of generating a world! You can load up your pack by starting your
+development client / server which contains the pack you have just defined. You can confirm that your pack has loaded
+if the pack id (as specified in the pack manifest) appears when using the <code class="docutils literal notranslate"><span class="pre">/packs</span></code> command, or in your console
+when starting the server / client up.</p>
+<p>If for whatever reason your pack does not load, an error message will show up in console explaining why the pack
+has failed to load, please read through any of these errors and try to interpret what you may have done wrong,
+and follow through the previous steps again carefully.</p>
+<p>If you still are unable to load the pack, feel free to provide any relevant errors in our <a class="reference external" href="https://discord.com/invite/PXUEbbF">Discord server</a>.</p>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>Once you have verified your pack has loaded correctly, you can now generate a world with your new pack!</p>
+</section>
 </section>
 
         </article>
@@ -284,8 +630,39 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Creating a Pack from Scratch</a><ul>
+<li><a class="reference internal" href="#setting-up-a-new-pack">Setting up a New Pack</a><ul>
+<li><a class="reference internal" href="#create-your-config-pack-directory">1. Create your config pack directory</a></li>
+<li><a class="reference internal" href="#create-a-pack-manifest">2. Create a pack manifest</a></li>
+<li><a class="reference internal" href="#set-the-pack-id-and-version">3. Set the pack ID and version</a></li>
+<li><a class="reference internal" href="#specify-a-config-file-format">4. Specify a config file format</a></li>
+<li><a class="reference internal" href="#specify-the-chunk-generator">5. Specify the chunk generator</a></li>
+<li><a class="reference internal" href="#create-your-first-biome">6. Create your first biome</a></li>
+<li><a class="reference internal" href="#add-the-generator-parameters-to-your-new-biome">7. Add the generator parameters to your new biome</a></li>
+<li><a class="reference internal" href="#define-a-biome-provider">8. Define a biome provider</a></li>
+<li><a class="reference internal" href="#load-up-your-pack">9. Load up your pack</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

@@ -249,14 +249,14 @@ creating a simple “Hello, World!” addon with Terra using the Manifest Addon 
 <h2>Creating the Addon Manifest<a class="headerlink" href="#creating-the-addon-manifest" title="Permalink to this headline">¶</a></h2>
 <p>First, you’ll need to create the addon manifest. The addon manifest contains the data the Manifest Addon Loader
 requires to load your addon. The manifest should be at the root of your JAR, named <code class="docutils literal notranslate"><span class="pre">terra.addon.yml</span></code>.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">schema-version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="nt">contributors</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">Terra Contributors</span>
-<span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example-addon</span>
-<span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.1.0</span>
-<span class="nt">entrypoints</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="s">"com.example.addon.ExampleEntryPoint"</span>
-<span class="nt">license</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MIT License</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">schema-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="nt">contributors</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra Contributors</span><span class="w"></span>
+<span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example-addon</span><span class="w"></span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span><span class="w"></span>
+<span class="nt">entrypoints</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"com.example.addon.ExampleEntryPoint"</span><span class="w"></span>
+<span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MIT License</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -342,13 +342,13 @@ when the addon initializes!</p>
 <p>To install your addon, first you need to <em>compile</em> it, then <em>archive</em> it. The process is slightly different depending
 on your build system:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c16d1f58-dd4f-47b7-9d5a-f932a1e023d5" name="89b2ab9c-ca16-490f-821a-f0548a813208" type="radio"/>
-<label class="sd-tab-label" for="c16d1f58-dd4f-47b7-9d5a-f932a1e023d5">
+<input checked="checked" id="6b1a35ad-0b71-4155-8198-359f7da1024c" name="5a79d361-23b2-4576-9cd5-3592807329e6" type="radio"/>
+<label class="sd-tab-label" for="6b1a35ad-0b71-4155-8198-359f7da1024c">
 Gradle</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">:jar</span></code> task. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">build/libs</span></code>.</p>
 </div>
-<input id="48d81558-fc6d-4e63-b51c-0b9c9e478d22" name="89b2ab9c-ca16-490f-821a-f0548a813208" type="radio"/>
-<label class="sd-tab-label" for="48d81558-fc6d-4e63-b51c-0b9c9e478d22">
+<input id="ca087df2-b97e-4961-be45-8cd8020b0bac" name="5a79d361-23b2-4576-9cd5-3592807329e6" type="radio"/>
+<label class="sd-tab-label" for="ca087df2-b97e-4961-be45-8cd8020b0bac">
 Maven</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">package</span></code> goal. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">target</span></code>.</p>
 </div>

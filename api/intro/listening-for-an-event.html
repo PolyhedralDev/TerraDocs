@@ -307,25 +307,25 @@ fired if the addon that registered the handler is a dependency of the config pac
 <p>In the pack manifest (<code class="docutils literal notranslate"><span class="pre">pack.yml</span></code>) is an <code class="docutils literal notranslate"><span class="pre">addons</span></code> key. These addons are dependencies of the config pack. To recieve
 events fired by this pack, simply add your addon and a version range to this map. Go ahead and modify the default pack
 to add your addon as a dependency:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addons</span><span class="p">:</span>
-  <span class="nt">biome-provider-pipeline</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">biome-provider-single</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">chunk-generator-noise-3d</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">config-biome</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">config-flora</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">config-noise-function</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">config-ore</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">config-palette</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">config-distributors</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">config-locators</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">config-feature</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">structure-terrascript-loader</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">structure-sponge-loader</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">language-yaml</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">generation-stage-feature</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">structure-function-check-noise-3d</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">palette-block-shortcut</span><span class="p">:</span> <span class="s">"0.1.+"</span>
-  <span class="nt">example-addon</span><span class="p">:</span> <span class="s">"0.1.+"</span> <span class="c1"># Our example addon! (Change the ID and version to match yours)</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">addons</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">biome-provider-pipeline</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">biome-provider-single</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">chunk-generator-noise-3d</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config-biome</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config-flora</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config-noise-function</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config-ore</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config-palette</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config-distributors</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config-locators</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">config-feature</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">structure-terrascript-loader</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">structure-sponge-loader</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">language-yaml</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">generation-stage-feature</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">structure-function-check-noise-3d</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">palette-block-shortcut</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"></span>
+<span class="w">  </span><span class="nt">example-addon</span><span class="p">:</span><span class="w"> </span><span class="s">"0.1.+"</span><span class="w"> </span><span class="c1"># Our example addon! (Change the ID and version to match yours)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now when you run with your addon again, you should see a message logged to the console with the pack ID when the pack

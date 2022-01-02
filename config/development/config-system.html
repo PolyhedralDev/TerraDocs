@@ -257,7 +257,7 @@ how the contained key-value pairs must be structured. Many different
 templates are defined by Terra and can each be regarded as their own
 types, just like strings and integers.</p>
 <section id="parameters">
-<h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
+<span id="id1"></span><h3>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h3>
 <p>One of the main components of any given template is It’s specification
 of <strong>parameters</strong>. Parameters are what makes our data useful, as just
 about all world generation behavior in Terra is determined by
@@ -274,19 +274,67 @@ parameter</strong> we want to set, and the <em>value</em> to <strong>what the pa
 should be set to</strong>. For example, here are a couple parameters specified
 within a Terra config pack manifest that provides some basic information
 about the pack:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">COOL_CONFIG_PACK</span>
-<span class="nt">version</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1.0.0</span>
-<span class="nt">author</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">Anon Y. Mous</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="79d04e5f-efbd-4d34-957c-fe740446439e" name="feb19544-1ee8-4cde-bd17-0948328c7133" type="radio"/>
+<label class="sd-tab-label" for="79d04e5f-efbd-4d34-957c-fe740446439e">
+YAML</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">COOL_CONFIG_PACK</span><span class="w"></span>
+<span class="linenos">2</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.0</span><span class="w"></span>
+<span class="linenos">3</span><span class="nt">author</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Anon Y. Mous</span><span class="w"></span>
 </pre></div>
+</div>
+</div>
+</div>
+<input id="8499e7ce-7e98-4fa7-9938-cad1cefa00d7" name="feb19544-1ee8-4cde-bd17-0948328c7133" type="radio"/>
+<label class="sd-tab-label" for="8499e7ce-7e98-4fa7-9938-cad1cefa00d7">
+JSON</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">pack.json</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"COOL_CONFIG_PACK"</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">   </span><span class="nt">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.0.0"</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">   </span><span class="nt">"author"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Anon Y. Mous"</span><span class="w"></span>
+<span class="linenos">5</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <p>Parameters may also be nested under multiple maps within a template. For
 example in the below config, the top level object may abide by a
 template and specify a parameter that is nested, which we can see has
 the value <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">parameter</span> <span class="pre">value</span></code>.</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">a</span><span class="p">:</span>
-  <span class="nt">nested</span><span class="p">:</span>
-    <span class="nt">parameter</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">a parameter value</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="6f00c7fb-14b7-4521-92ac-474527581079" name="780fa056-7a98-49cc-9f1e-eeeffd2bf262" type="radio"/>
+<label class="sd-tab-label" for="6f00c7fb-14b7-4521-92ac-474527581079">
+YAML</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">a</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">  </span><span class="nt">nested</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">    </span><span class="nt">parameter</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a parameter value</span><span class="w"></span>
 </pre></div>
+</div>
+</div>
+</div>
+<input id="cef8c09d-98e5-467c-9dc1-d7bddcd349ed" name="780fa056-7a98-49cc-9f1e-eeeffd2bf262" type="radio"/>
+<label class="sd-tab-label" for="cef8c09d-98e5-467c-9dc1-d7bddcd349ed">
+JSON</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">   </span><span class="nt">"a"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">      </span><span class="nt">"nested"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">         </span><span class="nt">"parameter"</span><span class="p">:</span><span class="w"> </span><span class="s2">"a parameter value"</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">6</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">7</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <p>When referring to parameters within templates, we use a combination of
 the parent key(s) separated by dots <code class="docutils literal notranslate"><span class="pre">.</span></code> to identify the desired
@@ -312,17 +360,60 @@ called <code class="docutils literal notranslate"><span class="pre">AnimalTempla
 </ul>
 <p>We can then write a new config using our new type assuming our top level
 object is of type <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grey</span>
-<span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="8ade2f92-348d-47da-b115-b4a8372a384a" name="4951e699-de1d-498a-96bc-86d63577dced" type="radio"/>
+<label class="sd-tab-label" for="8ade2f92-348d-47da-b115-b4a8372a384a">
+YAML</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">koala.yml</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grey</span><span class="w"></span>
+<span class="linenos">2</span><span class="nt">legs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
 </pre></div>
+</div>
+</div>
+</div>
+<input id="df3fbe9d-f927-44c8-a023-81e1076d44e6" name="4951e699-de1d-498a-96bc-86d63577dced" type="radio"/>
+<label class="sd-tab-label" for="df3fbe9d-f927-44c8-a023-81e1076d44e6">
+JSON</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">koala.json</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">   </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="nt">"grey"</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">   </span><span class="nt">"legs"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="linenos">4</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <p>Because <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code> contains these parameter specifications, if
 we write a config that does not abide by them, then Terra will fail to
 load the config. For example, the following config would not load
 because 1. <code class="docutils literal notranslate"><span class="pre">color</span></code> has not been specified and is a required parameter,
 and 2. <code class="docutils literal notranslate"><span class="pre">legs</span></code> is not of the required type integer:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">two</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="a13a644a-e939-4f2b-82a5-10eb95647e45" name="b2b6f252-0544-49f9-b8ec-5dff72e68ca0" type="radio"/>
+<label class="sd-tab-label" for="a13a644a-e939-4f2b-82a5-10eb95647e45">
+YAML</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">koala.yml</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">legs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">two</span><span class="w"></span>
 </pre></div>
+</div>
+</div>
+</div>
+<input id="a83246b0-d3e5-4527-a130-e7be649b8da6" name="b2b6f252-0544-49f9-b8ec-5dff72e68ca0" type="radio"/>
+<label class="sd-tab-label" for="a83246b0-d3e5-4527-a130-e7be649b8da6">
+JSON</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">koala.json</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
+<span class="linenos">2</span><span class="w">   </span><span class="nt">"legs"</span><span class="p">:</span><span class="w"> </span><span class="s2">"two"</span><span class="w"></span>
+<span class="linenos">3</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <p>If we were to <em>document</em> <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code>, it may look like this:</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
@@ -366,20 +457,51 @@ Terra’s config system.</p>
 <p>We can now use <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code>s within our new <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code> and
 create a config able to be read and interpreted by the config loader
 like so:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A zoo of Australian animals.</span>
-<span class="nt">animals</span><span class="p">:</span>
-  <span class="nt">koala</span><span class="p">:</span>
-    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grey</span>
-    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
-  <span class="nt">kangaroo</span><span class="p">:</span>
-    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">brown</span>
-    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="18484f6c-698f-4afc-b0c3-d762205a5003" name="96dc7e56-5670-4f69-9538-b5c1379c0962" type="radio"/>
+<label class="sd-tab-label" for="18484f6c-698f-4afc-b0c3-d762205a5003">
+YAML</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">australian_zoo.yml</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A zoo of Australian animals.</span><span class="w"></span>
+<span class="linenos">2</span><span class="nt">animals</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">3</span><span class="w">  </span><span class="nt">koala</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">    </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grey</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">    </span><span class="nt">legs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
+<span class="linenos">6</span><span class="w">  </span><span class="nt">kangaroo</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">7</span><span class="w">    </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">brown</span><span class="w"></span>
+<span class="linenos">8</span><span class="w">    </span><span class="nt">legs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </pre></div>
+</div>
+</div>
+</div>
+<input id="5457a0ad-c1fe-4ae4-b842-256181b7e8e6" name="96dc7e56-5670-4f69-9538-b5c1379c0962" type="radio"/>
+<label class="sd-tab-label" for="5457a0ad-c1fe-4ae4-b842-256181b7e8e6">
+JSON</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id12">
+<div class="code-block-caption"><span class="caption-text">australian_zoo.json</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 2</span><span class="w">   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A zoo of Australian animals."</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="w">   </span><span class="nt">"animals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">      </span><span class="nt">"koala"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">         </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grey"</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">         </span><span class="nt">"legs"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="nt">"kangaroo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">         </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brown"</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">         </span><span class="nt">"legs"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">13</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </section>
 </section>
 <section id="config-types">
-<span id="id1"></span><h2>Config Types<a class="headerlink" href="#config-types" title="Permalink to this headline">¶</a></h2>
+<span id="id2"></span><h2>Config Types<a class="headerlink" href="#config-types" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have covered what templates are, what they do, and how we
 write configs according to them, we have run into an issue: how does
 Terra know which template the config should use in the first place? For
@@ -413,16 +535,48 @@ registry is to allow us to specify a config’s template using the
 registry key <code class="docutils literal notranslate"><span class="pre">ZOO</span></code> by Terra. Now what we can do is simply set the
 <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">ZOO</span></code> in our config from above, signifying to
 Terra that our config top level object will be of type <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ZOO</span>
-<span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A zoo of Australian animals.</span>
-<span class="nt">animals</span><span class="p">:</span>
-  <span class="nt">koala</span><span class="p">:</span>
-    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grey</span>
-    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
-  <span class="nt">kangaroo</span><span class="p">:</span>
-    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">brown</span>
-    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="8e2063c8-17ea-419a-8dd4-62bd404f1dde" name="52fe12f0-807e-4b95-928f-5e3770007380" type="radio"/>
+<label class="sd-tab-label" for="8e2063c8-17ea-419a-8dd4-62bd404f1dde">
+YAML</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id13">
+<div class="code-block-caption"><span class="caption-text">australian_zoo.yml</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos">1</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ZOO</span><span class="w"></span>
+</span><span class="linenos">2</span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A zoo of Australian animals.</span><span class="w"></span>
+<span class="linenos">3</span><span class="nt">animals</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">4</span><span class="w">  </span><span class="nt">koala</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">5</span><span class="w">   </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grey</span><span class="w"></span>
+<span class="linenos">6</span><span class="w">   </span><span class="nt">legs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
+<span class="linenos">7</span><span class="w">  </span><span class="nt">kangaroo</span><span class="p">:</span><span class="w"></span>
+<span class="linenos">8</span><span class="w">   </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">brown</span><span class="w"></span>
+<span class="linenos">9</span><span class="w">   </span><span class="nt">legs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </pre></div>
+</div>
+</div>
+</div>
+<input id="fa3ff40a-b15e-4db8-8ba1-4962c4cbd551" name="52fe12f0-807e-4b95-928f-5e3770007380" type="radio"/>
+<label class="sd-tab-label" for="fa3ff40a-b15e-4db8-8ba1-4962c4cbd551">
+JSON</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id14">
+<div class="code-block-caption"><span class="caption-text">australian_zoo.json</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="linenos"> 2</span><span class="w">   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZOO"</span><span class="p">,</span><span class="w"></span>
+</span><span class="linenos"> 3</span><span class="w">   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A zoo of Australian animals."</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="nt">"animals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">      </span><span class="nt">"koala"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">         </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grey"</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">         </span><span class="nt">"legs"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="nt">"kangaroo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">         </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brown"</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">         </span><span class="nt">"legs"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">14</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <p>And with that, we have now <em>designed a new</em> <strong>config type</strong> that Terra
 is capable of interpreting.</p>
@@ -450,17 +604,50 @@ What <code class="docutils literal notranslate"><span class="pre">id</span></cod
 are automatically registered by Terra, allowing us to access all of our
 <code class="docutils literal notranslate"><span class="pre">ZOO</span></code> configs from anywhere via the <em>zoo registry</em>.</p>
 <p>And with this, here is what our final config looks like:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AUSTRALIAN_ZOO</span>
-<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ZOO</span>
-<span class="nt">description</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">A zoo of Australian animals.</span>
-<span class="nt">animals</span><span class="p">:</span>
-  <span class="nt">koala</span><span class="p">:</span>
-    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">grey</span>
-    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">4</span>
-  <span class="nt">kangaroo</span><span class="p">:</span>
-    <span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">brown</span>
-    <span class="nt">legs</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">2</span>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="8b4ea69c-7c5a-4c70-8260-215790cad709" name="be3355fd-93a1-4d09-9001-2af6bf65a649" type="radio"/>
+<label class="sd-tab-label" for="8b4ea69c-7c5a-4c70-8260-215790cad709">
+YAML</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id15">
+<div class="code-block-caption"><span class="caption-text">australian_zoo.yml</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AUSTRALIAN_ZOO</span><span class="w"></span>
+</span><span class="linenos"> 2</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ZOO</span><span class="w"></span>
+<span class="linenos"> 3</span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A zoo of Australian animals.</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="nt">animals</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="nt">koala</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">   </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grey</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">   </span><span class="nt">legs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nt">kangaroo</span><span class="p">:</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">   </span><span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">brown</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">   </span><span class="nt">legs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </pre></div>
+</div>
+</div>
+</div>
+<input id="a61db1eb-8c75-47e8-b96b-fda68d1a82a2" name="be3355fd-93a1-4d09-9001-2af6bf65a649" type="radio"/>
+<label class="sd-tab-label" for="a61db1eb-8c75-47e8-b96b-fda68d1a82a2">
+JSON</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id16">
+<div class="code-block-caption"><span class="caption-text">australian_zoo.json</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span><span class="w"></span>
+<span class="hll"><span class="linenos"> 2</span><span class="w">   </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AUSTRALIAN_ZOO"</span><span class="p">,</span><span class="w"></span>
+</span><span class="linenos"> 3</span><span class="w">   </span><span class="nt">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ZOO"</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 4</span><span class="w">   </span><span class="nt">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"A zoo of Australian animals."</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 5</span><span class="w">   </span><span class="nt">"animals"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="w">      </span><span class="nt">"koala"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos"> 7</span><span class="w">         </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"grey"</span><span class="p">,</span><span class="w"></span>
+<span class="linenos"> 8</span><span class="w">         </span><span class="nt">"legs"</span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="w">      </span><span class="p">},</span><span class="w"></span>
+<span class="linenos">10</span><span class="w">      </span><span class="nt">"kangaroo"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="linenos">11</span><span class="w">         </span><span class="nt">"color"</span><span class="p">:</span><span class="w"> </span><span class="s2">"brown"</span><span class="p">,</span><span class="w"></span>
+<span class="linenos">12</span><span class="w">         </span><span class="nt">"legs"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<span class="linenos">13</span><span class="w">      </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">14</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
+<span class="linenos">15</span><span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 <p>Now in any other config that requires a zoo, we can specify our
 <code class="docutils literal notranslate"><span class="pre">AUSTRALIAN_ZOO</span></code> and it will automatically be grabbed from the zoo

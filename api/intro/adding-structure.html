@@ -501,35 +501,35 @@ it!</p>
 <section id="creating-a-feature">
 <h3>Creating a Feature<a class="headerlink" href="#creating-a-feature" title="Permalink to this headline">¶</a></h3>
 <p>Use this feature config to create a <em>feature</em> that generates your structure:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">EXAMPLE_FEATURE</span>
-<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">FEATURE</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXAMPLE_FEATURE</span><span class="w"></span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FEATURE</span><span class="w"></span>
 
-<span class="nt">distributor</span><span class="p">:</span>
-  <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SAMPLER</span>
-  <span class="nt">sampler</span><span class="p">:</span>
-    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">POSITIVE_WHITE_NOISE</span>
-  <span class="nt">threshold</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.03</span>
+<span class="nt">distributor</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SAMPLER</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sampler</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSITIVE_WHITE_NOISE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.03</span><span class="w"></span>
 
-<span class="nt">locator</span><span class="p">:</span>
-  <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PATTERN</span>
-  <span class="nt">range</span><span class="p">:</span>
-    <span class="nt">min</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">64</span>
-    <span class="nt">max</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">150</span>
-  <span class="nt">pattern</span><span class="p">:</span>
-    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">AND</span>
-    <span class="nt">patterns</span><span class="p">:</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MATCH_AIR</span>
-        <span class="nt">offset</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">1</span>
-      <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">MATCH</span>
-        <span class="nt">block</span><span class="p">:</span> <span class="s">"minecraft:grass_block"</span>
-        <span class="nt">offset</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0</span>
+<span class="nt">locator</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PATTERN</span><span class="w"></span>
+<span class="w">  </span><span class="nt">range</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64</span><span class="w"></span>
+<span class="w">    </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">150</span><span class="w"></span>
+<span class="w">  </span><span class="nt">pattern</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AND</span><span class="w"></span>
+<span class="w">    </span><span class="nt">patterns</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MATCH_AIR</span><span class="w"></span>
+<span class="w">        </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MATCH</span><span class="w"></span>
+<span class="w">        </span><span class="nt">block</span><span class="p">:</span><span class="w"> </span><span class="s">"minecraft:grass_block"</span><span class="w"></span>
+<span class="w">        </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span><span class="w"></span>
 
-<span class="nt">structures</span><span class="p">:</span>
-  <span class="nt">distribution</span><span class="p">:</span>
-    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CELLULAR</span>
-    <span class="nt">return</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">CellValue</span>
-    <span class="nt">frequency</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0.03</span>
-  <span class="nt">structures</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">EXAMPLE_STRUCTURE</span> <span class="c1"># Your structure!</span>
+<span class="nt">structures</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">distribution</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CELLULAR</span><span class="w"></span>
+<span class="w">    </span><span class="nt">return</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CellValue</span><span class="w"></span>
+<span class="w">    </span><span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.03</span><span class="w"></span>
+<span class="w">  </span><span class="nt">structures</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXAMPLE_STRUCTURE</span><span class="w"> </span><span class="c1"># Your structure!</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -543,32 +543,32 @@ own pack, be sure to depend on them!</p>
 <h3>Including the Feature in a Biome<a class="headerlink" href="#including-the-feature-in-a-biome" title="Permalink to this headline">¶</a></h3>
 <p>Now, simply include your new feature in a biome by adding it to the <code class="docutils literal notranslate"><span class="pre">features</span></code> key! Here’s an example of adding it
 to the default pack’s <code class="docutils literal notranslate"><span class="pre">PLAINS</span></code> biome:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">PLAINS</span>
-<span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">BIOME</span>
-<span class="nt">extends</span><span class="p">:</span> <span class="p p-Indicator">[</span> <span class="nv">EQ_PLAIN</span><span class="p p-Indicator">,</span> <span class="nv">CARVING_LAND</span><span class="p p-Indicator">,</span> <span class="nv">BASE</span> <span class="p p-Indicator">]</span>
-<span class="nt">vanilla</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">minecraft:plains</span>
-<span class="nt">color</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">$biomes/colors.yml:PLAINS</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PLAINS</span><span class="w"></span>
+<span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BIOME</span><span class="w"></span>
+<span class="nt">extends</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">EQ_PLAIN</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">CARVING_LAND</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">BASE</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="nt">vanilla</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minecraft:plains</span><span class="w"></span>
+<span class="nt">color</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$biomes/colors.yml:PLAINS</span><span class="w"></span>
 
-<span class="nt">tags</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">USE_RIVER</span>
+<span class="nt">tags</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">USE_RIVER</span><span class="w"></span>
 
-<span class="nt">colors</span><span class="p">:</span>
-  <span class="nt">grass</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0x91bd59</span>
-  <span class="nt">foliage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0x77ab2f</span>
-  <span class="nt">water</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0x44aff5</span>
-  <span class="nt">water-fog</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">0x44aff5</span>
+<span class="nt">colors</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">grass</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x91bd59</span><span class="w"></span>
+<span class="w">  </span><span class="nt">foliage</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x77ab2f</span><span class="w"></span>
+<span class="w">  </span><span class="nt">water</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x44aff5</span><span class="w"></span>
+<span class="w">  </span><span class="nt">water-fog</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0x44aff5</span><span class="w"></span>
 
-<span class="nt">palette</span><span class="p">:</span>
-  <span class="p p-Indicator">-</span> <span class="nt">GRASS</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">255</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">&lt;&lt; meta.yml:palette-bottom</span>
+<span class="nt">palette</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">GRASS</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">255</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; meta.yml:palette-bottom</span><span class="w"></span>
 
-<span class="nt">features</span><span class="p">:</span>
-  <span class="nt">flora</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">GRASS</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">FLOWER_PATCHES</span>
-  <span class="nt">trees</span><span class="p">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">SPARSE_OAK_TREES</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">EXAMPLE_FEATURE</span> <span class="c1"># Our feature!</span>
+<span class="nt">features</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">flora</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRASS</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FLOWER_PATCHES</span><span class="w"></span>
+<span class="w">  </span><span class="nt">trees</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SPARSE_OAK_TREES</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXAMPLE_FEATURE</span><span class="w"> </span><span class="c1"># Our feature!</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
