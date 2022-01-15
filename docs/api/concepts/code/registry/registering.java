@@ -1,0 +1,1 @@
+pack.getCheckedRegistry(Structure.class).register(myAddon.key("my_structure"), new MyStructure()); // Register a new instance of MyStructure, with a Registry Key "my_addon:my_structure"
