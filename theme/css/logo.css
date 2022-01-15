@@ -1,0 +1,12 @@
+/*
+styles the logo
+ */
+
+.sidebar-brand {
+    flex-direction: row-reverse;
+    align-items: center
+}
+
+.sidebar-logo {
+    width: 4em;
+}
