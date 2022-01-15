@@ -106,7 +106,7 @@ Implementing Keyed
 
 While it's entirely possible to register things by providing a :javadoc:`RegistryKey` instance, it's generally
 cleaner to implement the :javadoc:`Keyed` interface in the object you want to register. This will become especially
-aparrent when you're registering many of the same type of object at once. The pattern to implement keyed is generally
+apparent when you're registering many of the same type of object at once. The pattern to implement keyed is generally
 
 ``class Thing implements Keyed<Thing>``.
 
