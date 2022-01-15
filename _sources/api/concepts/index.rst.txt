@@ -16,3 +16,4 @@ create an addon, see the :doc:`../intro/index` page.
     type-key
     registries
     tectonic
+    cloud

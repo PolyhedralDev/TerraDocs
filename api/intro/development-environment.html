@@ -215,6 +215,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../concepts/type-key.html">Type Keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/registries.html">Registries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/tectonic.html">Tectonic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../concepts/cloud.html">Registering Commands with Cloud</a></li>
 </ul>
 </li>
 </ul>
@@ -289,8 +290,8 @@ use your build system.</p>
 <p>Terra publishes artifacts to the <a class="reference external" href="https://repo.codemc.io/">CodeMC Maven Repository</a>. Configure your build system
 to fetch from it:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d73552cb-e60d-478c-b74a-4332f7cf0e44" name="912462f0-5cfb-44c5-9024-963d88852486" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_groovy" for="d73552cb-e60d-478c-b74a-4332f7cf0e44">
+<input checked="checked" id="edfcad06-d008-4bf2-a9ed-17d21eb0d747" name="2f38b2c5-8d87-4393-8565-3a43a03895b5" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_groovy" for="edfcad06-d008-4bf2-a9ed-17d21eb0d747">
 Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle</span>
 
@@ -303,8 +304,8 @@ Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="a8d93ffc-8f34-42d0-8860-6021db2ac76c" name="912462f0-5cfb-44c5-9024-963d88852486" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="a8d93ffc-8f34-42d0-8860-6021db2ac76c">
+<input id="544f3806-c7fe-441e-8289-e44238d74ad0" name="2f38b2c5-8d87-4393-8565-3a43a03895b5" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="544f3806-c7fe-441e-8289-e44238d74ad0">
 Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle.kts</span>
 
@@ -317,8 +318,8 @@ Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0e2c5ad1-9bb3-4022-be3b-10ad18eb42b1" name="912462f0-5cfb-44c5-9024-963d88852486" type="radio"/>
-<label class="sd-tab-label" data-sync-id="maven" for="0e2c5ad1-9bb3-4022-be3b-10ad18eb42b1">
+<input id="e7c00d5a-4bb5-4a0b-8d55-297ca9327400" name="2f38b2c5-8d87-4393-8565-3a43a03895b5" type="radio"/>
+<label class="sd-tab-label" data-sync-id="maven" for="e7c00d5a-4bb5-4a0b-8d55-297ca9327400">
 Maven</label><div class="sd-tab-content docutils">
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- pom.xml --&gt;</span>
 
@@ -340,8 +341,8 @@ Maven</label><div class="sd-tab-content docutils">
 <p>Now that you’ve configured the repository to acquire the Terra artifact from, you must specify dependency on the Terra
 API, and the Manifest Addon Loader:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d155278d-c5a2-4eb7-b502-3fe9504780d2" name="96bf3fd3-7e8f-44d7-bf36-b145e0b4cd39" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_groovy" for="d155278d-c5a2-4eb7-b502-3fe9504780d2">
+<input checked="checked" id="911597d4-5646-4544-b439-a0c52d8a3140" name="5608640a-6444-4bf1-a15c-3e161f12dbb7" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_groovy" for="911597d4-5646-4544-b439-a0c52d8a3140">
 Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle</span>
 
@@ -353,8 +354,8 @@ Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="e90c13aa-b10d-4549-8e06-3cdf348202c0" name="96bf3fd3-7e8f-44d7-bf36-b145e0b4cd39" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="e90c13aa-b10d-4549-8e06-3cdf348202c0">
+<input id="517a1beb-47ab-46e5-aca0-efd27ac90866" name="5608640a-6444-4bf1-a15c-3e161f12dbb7" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="517a1beb-47ab-46e5-aca0-efd27ac90866">
 Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle.kts</span>
 
@@ -366,8 +367,8 @@ Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="5e4470d2-4057-442c-9bf9-7462948f647e" name="96bf3fd3-7e8f-44d7-bf36-b145e0b4cd39" type="radio"/>
-<label class="sd-tab-label" data-sync-id="maven" for="5e4470d2-4057-442c-9bf9-7462948f647e">
+<input id="a79d4437-e343-4560-b9f8-0e750d2814d0" name="5608640a-6444-4bf1-a15c-3e161f12dbb7" type="radio"/>
+<label class="sd-tab-label" data-sync-id="maven" for="a79d4437-e343-4560-b9f8-0e750d2814d0">
 Maven</label><div class="sd-tab-content docutils">
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- pom.xml --&gt;</span>
 
@@ -398,13 +399,13 @@ Maven</label><div class="sd-tab-content docutils">
 <section id="refresh-the-project">
 <h3>Refresh the Project<a class="headerlink" href="#refresh-the-project" title="Permalink to this headline">¶</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="4d36adf2-9249-4e0b-adfc-78404ec99065" name="dc66d728-bb7f-49b7-a167-2d93c582da8e" type="radio"/>
-<label class="sd-tab-label" for="4d36adf2-9249-4e0b-adfc-78404ec99065">
+<input checked="checked" id="48c51cbd-33a5-47f2-b240-eacf45342264" name="e4d79d55-2e39-4bc8-83e7-1bdba96e23ac" type="radio"/>
+<label class="sd-tab-label" for="48c51cbd-33a5-47f2-b240-eacf45342264">
 IntelliJ</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+O</span></code></p>
 </div>
-<input id="64efff0e-fa95-40b1-8ef7-3c821d7b6534" name="dc66d728-bb7f-49b7-a167-2d93c582da8e" type="radio"/>
-<label class="sd-tab-label" for="64efff0e-fa95-40b1-8ef7-3c821d7b6534">
+<input id="37ff2fc0-cee7-4e74-a283-17d3ac1d6ad8" name="e4d79d55-2e39-4bc8-83e7-1bdba96e23ac" type="radio"/>
+<label class="sd-tab-label" for="37ff2fc0-cee7-4e74-a283-17d3ac1d6ad8">
 Eclipse</label><div class="sd-tab-content docutils">
 <ol class="arabic simple">
 <li><p>Select the project root in the Project Explorer</p></li>
@@ -418,8 +419,8 @@ Eclipse</label><div class="sd-tab-content docutils">
 <section id="full-example-build-file">
 <h2>Full Example Build File<a class="headerlink" href="#full-example-build-file" title="Permalink to this headline">¶</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6e8fd57d-2a76-4cec-91f8-f5a84053db82" name="71e61e59-0c88-4384-8678-94f2350d35d0" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_groovy" for="6e8fd57d-2a76-4cec-91f8-f5a84053db82">
+<input checked="checked" id="f8ec654f-55c9-4514-bb58-f40a4e24fd8b" name="3d58dcc3-b8e8-40d8-a951-e417bb5103db" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_groovy" for="f8ec654f-55c9-4514-bb58-f40a4e24fd8b">
 Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">plugins</span> <span class="o">{</span>
     <span class="n">id</span> <span class="s1">'java'</span>
@@ -449,8 +450,8 @@ Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="ff78a2cb-6bfc-40c3-91ec-562affb00965" name="71e61e59-0c88-4384-8678-94f2350d35d0" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="ff78a2cb-6bfc-40c3-91ec-562affb00965">
+<input id="e2b5bbbc-6a81-42a2-b5f4-c5353518b12f" name="3d58dcc3-b8e8-40d8-a951-e417bb5103db" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="e2b5bbbc-6a81-42a2-b5f4-c5353518b12f">
 Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">plugins</span> <span class="p">{</span>
     <span class="n">java</span>
@@ -480,8 +481,8 @@ Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="ff0f9552-dd72-4d83-9452-255ab61ac7ba" name="71e61e59-0c88-4384-8678-94f2350d35d0" type="radio"/>
-<label class="sd-tab-label" data-sync-id="maven" for="ff0f9552-dd72-4d83-9452-255ab61ac7ba">
+<input id="848edd1f-49f0-4cb1-b5a7-10534407a0f5" name="3d58dcc3-b8e8-40d8-a951-e417bb5103db" type="radio"/>
+<label class="sd-tab-label" data-sync-id="maven" for="848edd1f-49f0-4cb1-b5a7-10534407a0f5">
 Maven</label><div class="sd-tab-content docutils">
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>

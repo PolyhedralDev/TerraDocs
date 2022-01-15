@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Events" href="events.html" /><link rel="prev" title="Dependency Injection" href="dependency-injection.html" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="prev" title="Tectonic" href="tectonic.html" />
 
     <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
-        <title>Logging With SLF4J - Terra Docs</title>
+        <title>Registering Commands with Cloud - Terra Docs</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
@@ -150,7 +150,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -210,12 +210,12 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">API Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dependency-injection.html">Dependency Injection</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Logging With SLF4J</a></li>
+<li class="toctree-l3"><a class="reference internal" href="logging.html">Logging With SLF4J</a></li>
 <li class="toctree-l3"><a class="reference internal" href="events.html">Events</a></li>
 <li class="toctree-l3"><a class="reference internal" href="type-key.html">Type Keys</a></li>
 <li class="toctree-l3"><a class="reference internal" href="registries.html">Registries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tectonic.html">Tectonic</a></li>
-<li class="toctree-l3"><a class="reference internal" href="cloud.html">Registering Commands with Cloud</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Registering Commands with Cloud</a></li>
 </ul>
 </li>
 </ul>
@@ -240,90 +240,15 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="logging-with-slf4j">
-<h1>Logging With SLF4J<a class="headerlink" href="#logging-with-slf4j" title="Permalink to this headline">¶</a></h1>
-<p>Logging is essential for debugging any program. There are many logging frameworks for Java, Terra uses the <a class="reference external" href="https://www.slf4j.org/">SLF4J</a>
-API for logging.</p>
-<section id="obtaining-a-logger">
-<h2>Obtaining a Logger<a class="headerlink" href="#obtaining-a-logger" title="Permalink to this headline">¶</a></h2>
-<p>Logging is done through a <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/Logger.html">Logger</a> instance. There are two main ways to obtain a <code class="docutils literal notranslate"><span class="pre">Logger</span></code> in a Terra addon:</p>
-<section id="manifest-addon-loader-entry-point">
-<h3>Manifest Addon Loader Entry Point<a class="headerlink" href="#manifest-addon-loader-entry-point" title="Permalink to this headline">¶</a></h3>
-<p>If you are using a logger in an entry point of a Manifest Addon Loader addon, you can use
-<a class="reference internal" href="dependency-injection.html"><span class="doc">dependency injection</span></a> to obtain a Logger instance:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
-<span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">;</span>
-</pre></div>
-</div>
-</section>
-<section id="using-loggerfactory">
-<h3>Using LoggerFactory<a class="headerlink" href="#using-loggerfactory" title="Permalink to this headline">¶</a></h3>
-<p>If you’re using a logger from elsewhere in your addon, you can use SLF4J’s <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/LoggerFactory.html">LoggerFactory</a> to obtain
-a class-specific Logger instance:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">MyClass</span><span class="p">.</span><span class="na">class</span><span class="p">);</span> <span class="c1">// MyClass should be the class you're getting a logger for.</span>
-</pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Notice that the <code class="docutils literal notranslate"><span class="pre">Logger</span></code> field is <code class="docutils literal notranslate"><span class="pre">private</span> <span class="pre">static</span> <span class="pre">final</span></code>. This is because</p>
-<ul class="simple">
-<li><p>The logger instance is class-specific, not instance-specific</p></li>
-<li><p>Other classes should not be accessing your logger</p></li>
-</ul>
-</div>
-</section>
-</section>
-<section id="using-a-logger">
-<h2>Using a Logger<a class="headerlink" href="#using-a-logger" title="Permalink to this headline">¶</a></h2>
-<p>Using a logger is very simple. Here is an example that prints a message at 4 log levels:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">.</span><span class="na">debug</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span>
-<span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span>
-<span class="n">logger</span><span class="p">.</span><span class="na">warn</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span>
-<span class="n">logger</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span>
-</pre></div>
-</div>
-<section id="logging-levels">
-<h3>Logging Levels<a class="headerlink" href="#logging-levels" title="Permalink to this headline">¶</a></h3>
-<p>SLF4J supports several logging levels. The logging level shows how important a message is, and most logging frameworks
-support hiding messages below a certain level.</p>
-<ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">DEBUG</span></code> level is the “finest” level. It is usually hidden by default, as it is meant for verbose logging that
-would only need to be seen for debugging.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">INFO</span></code> level is for informative messages that would be useful for users to see. Info-level messages should not be
-verbose; they are generally used for coarse-grain information about the state of the program.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">WARNING</span></code> level is for informative messages that indicate something unexpected happened, such as Deprecated API usage.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">ERROR</span></code> level is for situations where the program has encountered an error that it can recover from, but prevents
-it from functioning normally.</p></li>
-</ul>
-</section>
-<section id="string-formatting-in-slf4j">
-<h3>String Formatting in SLF4J<a class="headerlink" href="#string-formatting-in-slf4j" title="Permalink to this headline">¶</a></h3>
-<p>SLF4J supports string formatting for inserting data into log messages. Here is an example of a logging statement
-you might find in an application:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Got "</span> <span class="o">+</span> <span class="n">amount</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">food</span> <span class="o">+</span> <span class="s">" from grocery store."</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>This logging statement uses string concatenation to insert 2 variables into the message. This is not only more verbose
-code-wise, it also requires the overhead of string concatenation, which will create a performance penalty in hot code.</p>
-<p>SLF4J contains a simple way to solve both of these issues, called string <em>formatting</em>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Got {} {} from grocery store"</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">food</span><span class="p">);</span>
-</pre></div>
-</div>
-<p>In the message, simply put <code class="docutils literal notranslate"><span class="pre">{}</span></code> where the variables should be inserted, then add the variables as method parameters
-in the order they appear in the logging message.</p>
-<p>String formatting has 2 main advantages:</p>
-<ul class="simple">
-<li><p>Less string concatenation boilerplate makes it easier to write and modify the message</p></li>
-<li><p>If the message is not printed (e.g. if it’s a debug message and debugging is disabled), string concatenation is never performed!</p></li>
-</ul>
-</section>
-</section>
+          <section id="registering-commands-with-cloud">
+<h1>Registering Commands with Cloud<a class="headerlink" href="#registering-commands-with-cloud" title="Permalink to this headline">¶</a></h1>
+<p>TODO</p>
 </section>
 
         </article>
@@ -331,23 +256,15 @@ in the order they appear in the logging message.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="events.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">Events</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="dependency-injection.html">
+          
+          <a class="prev-page" href="tectonic.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Dependency Injection</div>
+                <div class="title">Tectonic</div>
                 
               </div>
             </a>
@@ -357,7 +274,7 @@ in the order they appear in the logging message.</p>
               Copyright &#169; 2021, Terra Contributors |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/api/concepts/logging.rst.txt"
+            | <a class="muted-link" href="../../_sources/api/concepts/cloud.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -365,36 +282,8 @@ in the order they appear in the logging message.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Logging With SLF4J</a><ul>
-<li><a class="reference internal" href="#obtaining-a-logger">Obtaining a Logger</a><ul>
-<li><a class="reference internal" href="#manifest-addon-loader-entry-point">Manifest Addon Loader Entry Point</a></li>
-<li><a class="reference internal" href="#using-loggerfactory">Using LoggerFactory</a></li>
-</ul>
-</li>
-<li><a class="reference internal" href="#using-a-logger">Using a Logger</a><ul>
-<li><a class="reference internal" href="#logging-levels">Logging Levels</a></li>
-<li><a class="reference internal" href="#string-formatting-in-slf4j">String Formatting in SLF4J</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

@@ -215,6 +215,7 @@
 <li class="toctree-l3"><a class="reference internal" href="type-key.html">Type Keys</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Registries</a></li>
 <li class="toctree-l3"><a class="reference internal" href="tectonic.html">Tectonic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="cloud.html">Registering Commands with Cloud</a></li>
 </ul>
 </li>
 </ul>
@@ -253,7 +254,63 @@ your addon’s objects exist, and how to identify those objects.</p>
 <h2>What is a Registry<a class="headerlink" href="#what-is-a-registry" title="Permalink to this headline">¶</a></h2>
 <p>A registry can be thought of as a <a class="reference external" href="https://en.wikipedia.org/wiki/Associative_array">map</a> of <em>Registry Keys</em> to <em>Entries</em>. Registries register a particular type
 of object, grouping them together. Registries <em>uniquely identify</em> their entries, only one entry can exist per key.</p>
-<p>TODO</p>
+</section>
+<section id="what-are-registries-used-for">
+<h2>What are Registries Used For?<a class="headerlink" href="#what-are-registries-used-for" title="Permalink to this headline">¶</a></h2>
+<p>In Terra, registries are used for referencing items between addons and config packs. They provide a simple way for
+addons and configs to create and share data between each other with no special compatibility measures required.</p>
+</section>
+<section id="working-with-registries">
+<h2>Working with Registries<a class="headerlink" href="#working-with-registries" title="Permalink to this headline">¶</a></h2>
+<p>Most interactions with the Terra API require working with registries at some point.</p>
+<section id="registry-keys">
+<h3>Registry Keys<a class="headerlink" href="#registry-keys" title="Permalink to this headline">¶</a></h3>
+<p>Registries use <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/RegistryKey.html">RegistryKey</a>s to identify values. Registry Keys consist of a <em>Namespace</em> and an <em>Identifier</em>.</p>
+<p>Registry keys can be created by the <code class="docutils literal notranslate"><span class="pre">RegistryKey#parse</span></code> method, to parse a registry key with the <code class="docutils literal notranslate"><span class="pre">namespace:id</span></code>
+syntax. They can also be created with a namespace and ID with the <code class="docutils literal notranslate"><span class="pre">RegistryKey#of</span></code> method.</p>
+<section id="namespace">
+<h4>Namespace<a class="headerlink" href="#namespace" title="Permalink to this headline">¶</a></h4>
+<p>The namespace is the provider of the value being registered, usually your addon or config pack. Objects which hold a
+namespace implement the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/Namespaced.html">Namespaced</a> interface. Namespaced objects can create registry keys in their namespace
+via the <code class="docutils literal notranslate"><span class="pre">key(String</span> <span class="pre">identifier)</span></code> method.</p>
+</section>
+<section id="identifier">
+<h4>Identifier<a class="headerlink" href="#identifier" title="Permalink to this headline">¶</a></h4>
+<p>The identifier is the name of the value itself. Multiple items with the same identifier may exist, so long as they
+have different namespaces. Items which provide their own identifiers implement <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/StringIdentifiable.html">StringIdentifiable</a>.</p>
+</section>
+<section id="keyed">
+<h4>Keyed<a class="headerlink" href="#keyed" title="Permalink to this headline">¶</a></h4>
+<p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/Keyed.html">Keyed</a> interface is implemented by objects which provide their own Registry Keys.</p>
+</section>
+</section>
+<section id="getting-a-registry">
+<h3>Getting a Registry<a class="headerlink" href="#getting-a-registry" title="Permalink to this headline">¶</a></h3>
+<p>Registries can be retrieved from objects implementing <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/meta/RegistryHolder.html">RegistryHolder</a>. Most commonly, this will be a
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/config/ConfigPack.html">ConfigPack</a>. <code class="docutils literal notranslate"><span class="pre">RegistryHolder</span></code> defines several methods for fetching registries, most commonly you’ll use
+the methods accepting a <a class="reference external" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Class.html">Class</a> instance, and <a class="reference internal" href="type-key.html"><span class="doc">Type Keys</span></a>. There is an unchecked method which
+accepts a raw <code class="docutils literal notranslate"><span class="pre">Type</span></code> instance, its use is generally discouraged.</p>
+<p>Let’s get the Structure registry from a config pack instance!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">pack</span><span class="p">.</span><span class="na">getRegistry</span><span class="p">(</span><span class="n">Structure</span><span class="p">.</span><span class="na">class</span><span class="p">);</span> <span class="c1">// returns the unique registry holding instances of Structure.</span>
+</pre></div>
+</div>
+</section>
+<section id="getting-a-writable-registry">
+<h3>Getting a Writable Registry<a class="headerlink" href="#getting-a-writable-registry" title="Permalink to this headline">¶</a></h3>
+<p>The registry we fetched in the previous example is <em>read-only</em>. It’s useful for <em>retrieving</em> information, but you’ll
+frequently want to register your own objects. For that, we’ll use a <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/CheckedRegistry.html">CheckedRegistry</a>, which can be retrieved
+from a <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/meta/CheckedRegistryHolder.html">CheckedRegistryHolder</a> in the same manner as <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/CheckedRegistry.html">Registry</a> can be retrieved from
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/meta/RegistryHolder.html">RegistryHolder</a>.</p>
+<p>Let’s register something!</p>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">pack</span><span class="p">.</span><span class="na">getCheckedRegistry</span><span class="p">(</span><span class="n">Structure</span><span class="p">.</span><span class="na">class</span><span class="p">).</span><span class="na">register</span><span class="p">(</span><span class="n">myAddon</span><span class="p">.</span><span class="na">key</span><span class="p">(</span><span class="s">"my_structure"</span><span class="p">),</span> <span class="k">new</span> <span class="n">MyStructure</span><span class="p">());</span> <span class="c1">// Register a new instance of MyStructure, with a Registry Key "my_addon:my_structure"</span>
+</pre></div>
+</div>
+</section>
+<section id="creating-a-registry">
+<h3>Creating a Registry<a class="headerlink" href="#creating-a-registry" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, you may wish to create a registry for registering your own objects. Objects which implement
+<a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/meta/RegistryProvider.html">RegistryProvider</a> can create <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/CheckedRegistry.html">CheckedRegistry</a> instances via their <code class="docutils literal notranslate"><span class="pre">#getOrCreateRegistry</span></code> methods.</p>
+</section>
 </section>
 </section>
 
@@ -310,6 +367,19 @@ of object, grouping them together. Registries <em>uniquely identify</em> their e
             <ul>
 <li><a class="reference internal" href="#">Registries</a><ul>
 <li><a class="reference internal" href="#what-is-a-registry">What is a Registry</a></li>
+<li><a class="reference internal" href="#what-are-registries-used-for">What are Registries Used For?</a></li>
+<li><a class="reference internal" href="#working-with-registries">Working with Registries</a><ul>
+<li><a class="reference internal" href="#registry-keys">Registry Keys</a><ul>
+<li><a class="reference internal" href="#namespace">Namespace</a></li>
+<li><a class="reference internal" href="#identifier">Identifier</a></li>
+<li><a class="reference internal" href="#keyed">Keyed</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#getting-a-registry">Getting a Registry</a></li>
+<li><a class="reference internal" href="#getting-a-writable-registry">Getting a Writable Registry</a></li>
+<li><a class="reference internal" href="#creating-a-registry">Creating a Registry</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
