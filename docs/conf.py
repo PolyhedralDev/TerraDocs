@@ -55,6 +55,17 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 html_theme = 'furo'
 
+html_theme_options = {
+    "dark_css_variables": {
+        "color-admonition-title--important": "#ff9100",
+        "color-admonition-title-background--important": "rgba(255,145,0,.1)",
+    },
+    "light_css_variables": {
+        "color-admonition-title--important": "#ff9100",
+        "color-admonition-title-background--important": "rgba(255,145,0,.1)",
+    }
+}
+
 html_favicon = '../theme/favicon.ico'
 
 html_logo = 'img/terra-logo.png'
@@ -68,6 +79,10 @@ html_static_path = [
 ]
 
 html_css_files = [
+    'css/rounded-borders.css',
+    'css/cards.css',
+    'css/code-blocks.css',
+    'css/interpreted-text.css',
     'css/padding.css',
     'css/headings.css',
     'css/admonitions.css',

@@ -48,13 +48,17 @@ written as whole numbers like so:
 
    .. tab-item:: YAML
 
-      .. code:: yaml
-         
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
+
          42
 
    .. tab-item:: JSON
 
-      .. code:: json
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
 
          42
 
@@ -72,13 +76,17 @@ represent numbers that contain decimals:
 
    .. tab-item:: YAML
 
-      .. code:: yaml
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
 
          3.14159
 
    .. tab-item:: JSON
 
-      .. code:: json
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
 
          3.14159
 
@@ -89,22 +97,63 @@ situations. Typically config parameters that require integers will not
 accept a float, but parameters that require a float will accept
 integers.
 
-Strings
--------
+Booleans
+--------
 
-We can also represent data like text using a type called a ``String``:
+The type ``Boolean`` defines data that can be in one of two states. This
+is almost always used for cases were you want something to be either
+*true* or *false* and is written as such:
 
 .. tab-set::
 
    .. tab-item:: YAML
 
-      .. code:: yaml
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
+
+         true
+
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
+
+         false
+
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
+
+         true
+
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
+
+         false
+
+Strings
+-------
+
+We can also represent data like text using a type called ``String``:
+
+.. tab-set::
+
+   .. tab-item:: YAML
+
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
 
          This is a config of type string.
 
    .. tab-item:: JSON
 
-      .. code:: json
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
 
          "This is a config of type string."
 
@@ -113,26 +162,30 @@ everywhere - for example we would need need to use strings to specify
 what block IDs we want to use for the blocks in a biome.
 
 In some cases you may want to specify a ``String`` where it might be
-interpreted as another type like ``Integer``. To explicitly specify an
+interpreted as another type like ``Boolean``. To explicitly specify an
 object is a ``String``, you can wrap it quotes like so:
 
 .. tab-set::
 
    .. tab-item:: YAML
 
-      .. code:: yaml
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
 
-         "42"
+         "true"
 
    .. tab-item:: JSON
 
-      .. code:: JSON
+      .. code-block:: JSON
+         :caption: config.json
+         :linenos:
 
-         "42"
+         "true"
 
       .. note::
 
-         In JSON, strings *must* be explicitly wrapped in quotes.
+         In JSON, strings are always explicitly wrapped in quotes.
 
 Maps
 ----
@@ -140,6 +193,8 @@ Maps
 By themselves, integers, floats, and strings aren't too useful, until we
 start assigning labels to them. We can do that using a type called a
 ``Map``.
+
+.. _key-value-pair:
 
 A map is a *collection of objects*, referred to individually as
 **values**, where each **value** in the collection is identified by
@@ -153,13 +208,17 @@ Here we will make a new config where the *top level object* is of type
 
    .. tab-item:: YAML
 
-      .. code:: yaml
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
 
          this is a key: this is a value
 
    .. tab-item:: JSON
 
-      .. code:: json
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
 
          {
             "this is a key": "this is a value"
@@ -172,7 +231,9 @@ pairs within the map like so:
 
    .. tab-item:: YAML
 
-      .. code:: yaml
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
 
          string: Here is some text.
          pi: 3.14159
@@ -180,7 +241,9 @@ pairs within the map like so:
 
    .. tab-item:: JSON
 
-      .. code:: json
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
 
          {
             "string": "Here is some text.",
@@ -193,6 +256,62 @@ top level object. By using maps, we are capable of defining more than
 one object within a config, as well as being able to identify what each
 of those objects are using keys.
 
+.. _map-ordering:
+
+Ordering 
+........
+
+The ordering of key-value pairs inside a map is not significant, and as
+such you are free to order them however you'd like.
+
+These two configs are both equivalent:
+
+.. tab-set::
+
+   .. tab-item:: YAML
+
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
+
+         a: 1234
+         
+         b: Some text
+         
+         c: true
+
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
+
+         b: Some text
+         
+         c: true
+         
+         a: 1234
+
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
+
+         {
+            "a": 1234,
+            "b": "Some text",
+            "c": true
+         }
+      
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
+
+         {
+            "b": "Some text",
+            "c": true,
+            "a": 1234
+         }
+      
 Lists
 -----
 
@@ -212,7 +331,9 @@ contains multiple ``String``\ s:
 
    .. tab-item:: YAML
 
-      .. code:: yaml
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
 
          - A string
          - Another string
@@ -220,7 +341,9 @@ contains multiple ``String``\ s:
 
    .. tab-item:: JSON
 
-      .. code:: json
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
 
          [
             "A string",
@@ -249,7 +372,9 @@ Here is an example of a ``Map`` contained within the value of another
       simply how many spaces come before the key one a line. We conventionally
       use two spaces to indicate 'one level' of indentation in YAML configs.
 
-      .. code:: yaml
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
 
          parent-key:
             child-key: value
@@ -261,7 +386,9 @@ Here is an example of a ``Map`` contained within the value of another
 
    .. tab-item:: JSON
 
-      .. code:: json
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
 
          {
             "parent-key": {
@@ -277,7 +404,9 @@ And here is a ``Map`` (the top level object) containing a ``List`` of
 
    .. tab-item:: YAML
 
-      .. code:: yaml
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
 
          list of strings:
            - item 1
@@ -286,7 +415,9 @@ And here is a ``Map`` (the top level object) containing a ``List`` of
 
    .. tab-item:: JSON
 
-      .. code:: json
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
          
          {
             "list of strings": [
@@ -307,7 +438,9 @@ appointments using everything we have covered thus far:
 
    .. tab-item:: YAML
 
-      .. code:: yaml
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
 
          shopping-list:
            - item: 1L Milk
@@ -329,7 +462,9 @@ appointments using everything we have covered thus far:
 
    .. tab-item:: JSON
       
-      .. code:: json
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
 
          {
             "shopping-list": [
@@ -374,7 +509,9 @@ respectively, where objects are separated by commas ``,`` instead. This
 can be useful for when you don't necessarily want to separate objects by
 lines and indentation:
 
-.. code:: yaml
+.. code-block:: yaml
+   :caption: config.yml
+   :linenos:
 
    curly-brace-map: {
      "key-1": "value-1",
@@ -399,7 +536,9 @@ YAML also provides additional systems like **anchors**, which allow for
 easily re-using data within a config and is useful for when you might
 want to write the same thing multiple times in a config:
 
-.. code:: yaml
+.. code-block:: yaml
+   :caption: config.yml
+   :linenos:
 
    some-list-of-data: &the-data-anchor
      - item-1

@@ -1,0 +1,10 @@
+/*
+Modifies sphinx design cards
+ */
+
+/*
+Make clickable card borders fade on hover
+*/
+.sd-card-hover {
+    transition: border-color 250ms ease;
+}

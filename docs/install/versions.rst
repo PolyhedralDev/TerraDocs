@@ -69,7 +69,7 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
         - :bdg-danger:`No`
         - :bdg-danger:`No`
         - `Modrinth <https://modrinth.com/mod/terra/version/9DWPUHbr>`__
-        - 1.13+
+        - N/A
 
 Bukkit
 ======
@@ -140,4 +140,4 @@ All releases of Forge Terra can be found on Modrinth `here <https://modrinth.com
         - :bdg-danger:`No`
         - :bdg-danger:`No`
         - `Modrinth <https://modrinth.com/mod/terra/version/DYQWCFn1>`_
-        - 1.13+
+        - N/A

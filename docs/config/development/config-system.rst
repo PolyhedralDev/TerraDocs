@@ -19,6 +19,8 @@ how the contained key-value pairs must be structured. Many different
 templates are defined by Terra and can each be regarded as their own
 types, just like strings and integers.
 
+.. _parameters:
+
 Parameters
 ----------
 
@@ -42,22 +44,60 @@ should be set to**. For example, here are a couple parameters specified
 within a Terra config pack manifest that provides some basic information
 about the pack:
 
-.. code:: yaml
+.. tab-set::
 
-   id: COOL_CONFIG_PACK
-   version: 1.0.0
-   author: Anon Y. Mous
+   .. tab-item:: YAML
+
+      .. code-block:: yaml
+         :caption: pack.yml
+         :linenos:
+
+         id: COOL_CONFIG_PACK
+         version: 1.0.0
+         author: Anon Y. Mous
+   
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: pack.json
+         :linenos:
+
+         {
+            "id": "COOL_CONFIG_PACK",
+            "version": "1.0.0",
+            "author": "Anon Y. Mous"
+         }
 
 Parameters may also be nested under multiple maps within a template. For
 example in the below config, the top level object may abide by a
 template and specify a parameter that is nested, which we can see has
 the value ``a parameter value``.
 
-.. code:: yaml
+.. tab-set::
 
-   a:
-     nested:
-       parameter: a parameter value
+   .. tab-item:: YAML
+
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
+
+         a:
+           nested:
+             parameter: a parameter value
+
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
+
+         {
+            "a": {
+               "nested": {
+                  "parameter": "a parameter value"
+               }
+            }
+         }
 
 When referring to parameters within templates, we use a combination of
 the parent key(s) separated by dots ``.`` to identify the desired
@@ -87,10 +127,27 @@ called ``AnimalTemplate``. The ``AnimalTemplate`` type specifies:
 We can then write a new config using our new type assuming our top level
 object is of type ``AnimalTemplate``:
 
-.. code:: yaml
+.. tab-set::
 
-   color: grey
-   legs: 4
+   .. tab-item:: YAML
+
+      .. code-block:: yaml
+         :caption: koala.yml
+         :linenos:
+
+         color: grey
+         legs: 4
+   
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: koala.json
+         :linenos:
+
+         {
+            "color": "grey"
+            "legs": 4
+         }
 
 Because ``AnimalTemplate`` contains these parameter specifications, if
 we write a config that does not abide by them, then Terra will fail to
@@ -98,45 +155,56 @@ load the config. For example, the following config would not load
 because 1. ``color`` has not been specified and is a required parameter,
 and 2. ``legs`` is not of the required type integer:
 
-.. code:: yaml
+.. tab-set::
 
-   legs: two
+   .. tab-item:: YAML
+
+      .. code-block:: yaml
+         :caption: koala.yml
+         :linenos:
+
+         legs: two
+   
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: koala.json
+         :linenos:
+
+         {
+            "legs": "two"
+         }
 
 If we were to *document* ``AnimalTemplate``, it may look like this:
 
-   **AnimalTemplate**
+.. card:: **AnimalTemplate**
+   
+   *Defines the attributes of an animal.*
 
-   Defines the attributes of an animal.
+   `REQUIRED`
 
-   REQUIRED KEYS
+   :bdg-primary:`color` ``String``
+      The color of the animal.
 
-   ``color`` - String
-
-   -  The color of the animal.
-
-   ``legs`` Integer
-
-   -  How many legs the animal has.
+   :bdg-primary:`legs` ``Integer``
+      How many legs the animal has.
 
 Great, now that we have a template to describe an animal, let's create a
 new template that describes a zoo of animals:
 
-   **ZooTemplate**
+.. card:: **ZooTemplate**
 
-   Defines a zoo of animals.
+   *Defines a zoo of animals.*
 
-   REQUIRED KEYS
+   `REQUIRED`
 
-   ``animals`` - Map of Strings to AnimalTemplates
+   :bdg-primary:`animals` ``Map[String:AnimalTemplate]``
+      A collection of animals.
 
-   -  A collection of animals.
+   `OPTIONAL`
 
-   OPTIONAL KEYS
-      :name: optional-keys
-
-   ``description`` - String
-
-   -  A description of the zoo and It's animals.
+   :bdg-primary:`description` ``String``
+      A description of the zoo and It's animals.
 
 The interesting thing to note here with ``ZooTemplate`` is we have now
 treated ``AnimalTemplate`` as the required value type of the ``animals``
@@ -148,16 +216,44 @@ We can now use ``AnimalTemplate``\ s within our new ``ZooTemplate`` and
 create a config able to be read and interpreted by the config loader
 like so:
 
-.. code:: yaml
+.. tab-set::
 
-   description: A zoo of Australian animals.
-   animals:
-     koala:
-       color: grey
-       legs: 4
-     kangaroo:
-       color: brown
-       legs: 2
+   .. tab-item:: YAML
+      
+      .. code-block:: yaml
+         :caption: australian_zoo.yml
+         :linenos:
+
+         description: A zoo of Australian animals.
+         animals:
+           koala:
+             color: grey
+             legs: 4
+           kangaroo:
+             color: brown
+             legs: 2
+
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: australian_zoo.json
+         :linenos:
+
+         {
+            "description": "A zoo of Australian animals.",
+            "animals": {
+               "koala": {
+                  "color": "grey",
+                  "legs": 4
+               },
+               "kangaroo": {
+                  "color": "brown",
+                  "legs": 2
+               }
+            }
+         }
+
+.. _config-types:
 
 Config Types
 ============
@@ -202,17 +298,46 @@ registry key ``ZOO`` by Terra. Now what we can do is simply set the
 ``type`` parameter to ``ZOO`` in our config from above, signifying to
 Terra that our config top level object will be of type ``ZooTemplate``:
 
-.. code:: yaml
+.. tab-set::
 
-   type: ZOO
-   description: A zoo of Australian animals.
-   animals:
-     koala:
-       color: grey
-       legs: 4
-     kangaroo:
-       color: brown
-       legs: 2
+   .. tab-item:: YAML
+
+      .. code-block:: yaml
+         :caption: australian_zoo.yml
+         :linenos:
+         :emphasize-lines: 1
+               
+         type: ZOO
+         description: A zoo of Australian animals.
+         animals:
+           koala:
+            color: grey
+            legs: 4
+           kangaroo:
+            color: brown
+            legs: 2
+
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: australian_zoo.json
+         :linenos:
+         :emphasize-lines: 2
+
+         {
+            "type": "ZOO",
+            "description": "A zoo of Australian animals.",
+            "animals": {
+               "koala": {
+                  "color": "grey",
+                  "legs": 4
+               },
+               "kangaroo": {
+                  "color": "brown",
+                  "legs": 2
+               }
+            }
+         }
 
 And with that, we have now *designed a new* **config type** that Terra
 is capable of interpreting.
@@ -246,18 +371,48 @@ are automatically registered by Terra, allowing us to access all of our
 
 And with this, here is what our final config looks like:
 
-.. code:: yaml
+.. tab-set::
 
-   id: AUSTRALIAN_ZOO
-   type: ZOO
-   description: A zoo of Australian animals.
-   animals:
-     koala:
-       color: grey
-       legs: 4
-     kangaroo:
-       color: brown
-       legs: 2
+   .. tab-item:: YAML
+
+      .. code-block:: yaml
+         :caption: australian_zoo.yml
+         :linenos:
+         :emphasize-lines: 1
+
+         id: AUSTRALIAN_ZOO               
+         type: ZOO
+         description: A zoo of Australian animals.
+         animals:
+           koala:
+            color: grey
+            legs: 4
+           kangaroo:
+            color: brown
+            legs: 2
+
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: australian_zoo.json
+         :linenos:
+         :emphasize-lines: 2
+
+         {
+            "id": "AUSTRALIAN_ZOO",
+            "type": "ZOO",
+            "description": "A zoo of Australian animals.",
+            "animals": {
+               "koala": {
+                  "color": "grey",
+                  "legs": 4
+               },
+               "kangaroo": {
+                  "color": "brown",
+                  "legs": 2
+               }
+            }
+         }
 
 Now in any other config that requires a zoo, we can specify our
 ``AUSTRALIAN_ZOO`` and it will automatically be grabbed from the zoo

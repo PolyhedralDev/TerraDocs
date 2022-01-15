@@ -1,0 +1,46 @@
+/*
+Style code block captions to better represent file names
+*/
+.code-block-caption {
+    text-align: left;
+}
+
+.code-block-caption + div[class^="highlight"] {
+    margin-top: 0;
+}
+
+.code-block-caption + div[class^="highlight"] .highlight {
+    border-top-left-radius: 0;
+}
+
+.caption-text {
+    display: inline-block;
+    background-color: #232629;
+    color: var(--color-code-foreground);
+    font-family: var(--font-stack--monospace);
+    font-weight: 500;
+    padding: 0.125rem 0.5rem;
+    vertical-align: bottom;
+    margin-bottom: 0.1rem;
+    border-top-left-radius: 0.25rem;
+    border-top-right-radius: 0.25rem;
+}
+
+.highlight * {
+    font-weight: normal !important;
+    font-size: 0.9rem;
+    font-family: monospace;
+    line-height: 1.2rem;
+}
+
+.hll {
+    background-color: #213f4e !important;
+}
+
+/*
+Code syntax highlighting
+Probably a better way of doing this through pygments but this works for now
+*/
+.l, .nv, .s, .s1, .s2, .na { color: rgb(135, 194, 250) !important }
+.kn, .kd { color: #ff7b72 !important }
+.nf, .nt { color: #cd9fff !important }

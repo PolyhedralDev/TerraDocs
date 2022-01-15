@@ -1,0 +1,8 @@
+/*
+Styles rst interpreted text
+*/
+cite {
+    font-family: var(--font-stack--monospace);
+    font-weight: bold;
+    font-style: normal;
+}

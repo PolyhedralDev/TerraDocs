@@ -88,6 +88,8 @@ to find the console on every platform as that is outside the scope of this guide
 
     A window with the console log will now open when you start Minecraft.
 
+.. _editor:
+
 Picking an Editor
 -----------------
 
@@ -150,26 +152,29 @@ relevant to config development go:
 
     .. tab-item:: Fabric
 
-        ``/config/Terra/``
+        `/config/Terra/`
 
     .. tab-item:: Bukkit
 
-        ``/plugins/Terra/``
+        `/plugins/Terra/`
 
-Within this directory are two subdirectories:
+Subdirectories
+--------------
 
-.. grid:: 2
+Within this directory are two subdirectories that you should know about:
 
-    .. grid-item-card:: ``Terra/packs``
+.. card:: `Terra/packs`
 
-        Contains all your installed config packs. By default, Terra will come pre-installed
-        with a config pack under the file name ``default.zip`` inside this directory.
+    .. _packs-directory:
 
-    .. grid-item-card:: ``Terra/addons``
+    Contains all your installed config packs. By default, Terra will come pre-installed
+    with a config pack under the file name ``default.zip`` inside this directory.
 
-        Contains all your installed addons. Similarly to the default pack, Terra will also
-        come pre-installed with a set of *Core Addons* as explained at the beginning of
-        this page.
+.. card:: `Terra/addons`
+
+    Contains all your installed addons. Similarly to the default pack, Terra will also
+    come pre-installed with a set of *Core Addons* as explained at the beginning of
+    this page.
 
 3. Beginning Config Development
 ===============================
@@ -181,6 +186,8 @@ modifying an existing pack.
 
     .. grid-item-card:: Creating a Pack From Scratch :octicon:`chevron-right`
         :class-title: sd-text-primary
+        :link-type: doc
+        :link: pack-from-scratch/index
 
         Starting from nothing is a great way to understand what every part of the process
         entails. You will learn how each part of config development connects together to
@@ -190,6 +197,8 @@ modifying an existing pack.
 
     .. grid-item-card:: Modifying an Existing Pack :octicon:`chevron-right`
         :class-title: sd-text-primary
+        :link-type: doc
+        :link: modifying-existing-pack 
 
         Making changes to an existing pack is a more hands off approach where most of the
         heavy lifting has been done for you, great for if you just want to tweak a couple

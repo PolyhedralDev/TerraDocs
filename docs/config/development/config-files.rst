@@ -38,12 +38,14 @@ extension ``.yml`` contained inside config packs, which are required
 to abide by the `YAML spec <https://yaml.org/spec/>`__ in order to
 load correctly.
 
+.. _create-config-file:
+
 Creating a Config File
 ======================
 
 If you have not installed any other language addons, the assumed process
 of creating a standard config file simply involves creating a new text
-file with the extension ``.yml``.
+file with the extension ``.yml`` within your config pack directory.
 
 Otherwise, when prompted to create a new config file, it is implied that
 you should create a new file using a format supported by your installed
