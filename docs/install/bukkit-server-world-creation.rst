@@ -17,7 +17,7 @@ Bukkit World Creation
 We will be replacing the server's default world with a new one that uses Terra as its generator.
 
 If you would like to use a world manager like Multiverse Core to create a world instead of manually setting it as
-outlined here, please refer to :doc:`Setting a Generator Through a World Manager<worldmanager-bukkit-world-creation>` :octicon:`chevron-right`
+outlined here, please refer to :doc:`Setting a Generator Through a World Manager<worldmanager-bukkit-world-creation>`
 
 Procedure
 ---------
@@ -39,7 +39,9 @@ Procedure
       worlds:
          <LEVEL NAME>:
          generator: Terra:DEFAULT
-   
+
+.. attention:: These lines are **not** present by default, you have to add them yourself!
+
 #. Replace `<LEVEL NAME>` with the server's configured `level-name`. This can be found in the `server.properties` file
    under the 'level-name' key. By default, level-name is set to `world`.
 
@@ -75,8 +77,8 @@ Here is an example with two worlds configured:
    worlds:
      world: 
        generator: Terra:OVERWORLD
-   world_nether: 
-     generator: Terra:NETHER
+     world_nether: 
+       generator: Terra:NETHER
 
 Troubleshooting
 ---------------
