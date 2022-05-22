@@ -37,8 +37,8 @@ Procedure
    .. code-block:: yaml
 
       worlds:
-         <LEVEL NAME>:
-         generator: Terra:DEFAULT
+        <LEVEL NAME>:
+          generator: Terra:DEFAULT
 
 .. attention:: These lines are **not** present by default, you have to add them yourself!
 
@@ -67,8 +67,8 @@ a new generator, you can simply add the world to the `worlds` key like so:
    worlds:
      existing_world_name: 
        generator: Terra:EXAMPLE_PACK_1
-   <NEW WORLD NAME>: 
-     generator: <NEW GENERATOR ID>
+     <NEW WORLD NAME>: 
+       generator: <NEW GENERATOR ID>
 
 Here is an example with two worlds configured:
 
