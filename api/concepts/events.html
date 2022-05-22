@@ -260,7 +260,7 @@
 <section id="accessing-the-event-manager">
 <h3>Accessing the Event Manager<a class="headerlink" href="#accessing-the-event-manager" title="Permalink to this headline">¶</a></h3>
 <p>The Event Manager is accessed through the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">();</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">();</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -282,8 +282,8 @@ APIs to register events, for example, annotated methods.</p>
 <h3>Accessing an Event Handler<a class="headerlink" href="#accessing-an-event-handler" title="Permalink to this headline">¶</a></h3>
 <p>To access an event handler, simply pass its Class instance into <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/EventManager.html#getHandler-java.lang.Class-">EventManager#getHandler(Class)</a>.</p>
 <p>Here’s an example for accessing the default <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/FunctionalEventHandler.html">FunctionalEventHandler</a>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
-        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -304,13 +304,13 @@ execute consecutively, with the consumer accepting the event instance.</p>
 </section>
 <section id="example">
 <h4>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h4>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>                        <span class="c1">// Get the event manager.</span>
-        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span> <span class="c1">// Get the functional event handler.</span>
-        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">SomeEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>         <span class="c1">// Register a listener for SomeEvent, to our addon.</span>
-        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">someEventInstance</span> <span class="o">-&gt;</span> <span class="p">{</span>              <span class="c1">// Perform an action when the event is fired.</span>
-            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Handling Some Event!"</span><span class="p">);</span>
-            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Event says: {}"</span><span class="p">,</span> <span class="n">someEventInstance</span><span class="p">.</span><span class="na">getSomething</span><span class="p">());</span>
-        <span class="p">});</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span><span class="w">                        </span><span class="c1">// Get the event manager.</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"> </span><span class="c1">// Get the functional event handler.</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span><span class="w"> </span><span class="n">SomeEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w">         </span><span class="c1">// Register a listener for SomeEvent, to our addon.</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">someEventInstance</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">              </span><span class="c1">// Perform an action when the event is fired.</span><span class="w"></span>
+<span class="w">            </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Handling Some Event!"</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Event says: {}"</span><span class="p">,</span><span class="w"> </span><span class="n">someEventInstance</span><span class="p">.</span><span class="na">getSomething</span><span class="p">());</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 <p>This example registers a listener for <code class="docutils literal notranslate"><span class="pre">SomeEvent</span></code>. When the event is called, the result of the event instance’s

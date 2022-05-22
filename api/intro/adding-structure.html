@@ -265,21 +265,21 @@ that generate at a location. Some examples of where structures may be used are:<
 <h2>Creating a Structure<a class="headerlink" href="#creating-a-structure" title="Permalink to this headline">¶</a></h2>
 <p>To create a structure, create a new class and implement the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/structure/Structure.html">Structure</a> interface. In this tutorial, we’ll
 call our example structure <code class="docutils literal notranslate"><span class="pre">com.example.addon.structure.ExampleStructure</span></code>. You can call yours whatever you want!</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon.structure</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.addon.structure</span><span class="p">;</span><span class="w"></span>
 
-<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.structure.Structure</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.util.Rotation</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.util.vector.Vector3Int</span><span class="p">;</span>
-<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.world.WritableWorld</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.api.structure.Structure</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.api.util.Rotation</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.api.util.vector.Vector3Int</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.api.world.WritableWorld</span><span class="p">;</span><span class="w"></span>
 
-<span class="kn">import</span> <span class="nn">java.util.Random</span><span class="p">;</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">java.util.Random</span><span class="p">;</span><span class="w"></span>
 
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleStructure</span> <span class="kd">implements</span> <span class="n">Structure</span> <span class="p">{</span>
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span> <span class="n">location</span><span class="p">,</span> <span class="n">WritableWorld</span> <span class="n">world</span><span class="p">,</span> <span class="n">Random</span> <span class="n">random</span><span class="p">,</span> <span class="n">Rotation</span> <span class="n">rotation</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExampleStructure</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Structure</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span><span class="w"> </span><span class="n">location</span><span class="p">,</span><span class="w"> </span><span class="n">WritableWorld</span><span class="w"> </span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="n">Random</span><span class="w"> </span><span class="n">random</span><span class="p">,</span><span class="w"> </span><span class="n">Rotation</span><span class="w"> </span><span class="n">rotation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -292,21 +292,21 @@ call our example structure <code class="docutils literal notranslate"><span clas
 <p>First, we’ll need to get a <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/block/state/BlockState.html">BlockState</a> to generate. To do that, we’ll need the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/handle/WorldHandle.html">WorldHandle</a>,
 which we can get from the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance. Let’s pass the <code class="docutils literal notranslate"><span class="pre">Platform</span></code> into our <code class="docutils literal notranslate"><span class="pre">Structure</span></code>’s
 constructor, and use <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/handle/WorldHandle.html#createBlockState-java.lang.String-">WorldHandle#createBlockState(String)</a> to create a block state!</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleStructure</span> <span class="kd">implements</span> <span class="n">Structure</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExampleStructure</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Structure</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="n">platform</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">ExampleStructure</span><span class="p">(</span><span class="n">Platform</span> <span class="n">platform</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">platform</span> <span class="o">=</span> <span class="n">platform</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ExampleStructure</span><span class="p">(</span><span class="n">Platform</span><span class="w"> </span><span class="n">platform</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">platform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">platform</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span> <span class="n">location</span><span class="p">,</span> <span class="n">WritableWorld</span> <span class="n">world</span><span class="p">,</span> <span class="n">Random</span> <span class="n">random</span><span class="p">,</span> <span class="n">Rotation</span> <span class="n">rotation</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">BlockState</span> <span class="n">oakLog</span> <span class="o">=</span> <span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_log[axis=y]"</span><span class="p">);</span>
-        <span class="n">BlockState</span> <span class="n">oakLeaves</span> <span class="o">=</span> <span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_leaves[persistent=true]"</span><span class="p">);</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span><span class="w"> </span><span class="n">location</span><span class="p">,</span><span class="w"> </span><span class="n">WritableWorld</span><span class="w"> </span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="n">Random</span><span class="w"> </span><span class="n">random</span><span class="p">,</span><span class="w"> </span><span class="n">Rotation</span><span class="w"> </span><span class="n">rotation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">BlockState</span><span class="w"> </span><span class="n">oakLog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_log[axis=y]"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">BlockState</span><span class="w"> </span><span class="n">oakLeaves</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_leaves[persistent=true]"</span><span class="p">);</span><span class="w"></span>
 
-        <span class="k">return</span> <span class="kc">false</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">false</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -333,36 +333,36 @@ but if you’re set on hard-coding your block states, you can:</p>
 <h3>Generating Blocks<a class="headerlink" href="#generating-blocks" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have a block state, let’s place it in the world! To do that, we’ll use the <code class="docutils literal notranslate"><span class="pre">#setBlockState</span></code> methods of
 <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/world/WritableWorld.html">WritableWorld</a>. Let’s generate a simple tree by generating some leaves, then generating a stick through them:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleStructure</span> <span class="kd">implements</span> <span class="n">Structure</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExampleStructure</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Structure</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="n">platform</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">ExampleStructure</span><span class="p">(</span><span class="n">Platform</span> <span class="n">platform</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">platform</span> <span class="o">=</span> <span class="n">platform</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ExampleStructure</span><span class="p">(</span><span class="n">Platform</span><span class="w"> </span><span class="n">platform</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">platform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">platform</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span> <span class="n">location</span><span class="p">,</span> <span class="n">WritableWorld</span> <span class="n">world</span><span class="p">,</span> <span class="n">Random</span> <span class="n">random</span><span class="p">,</span> <span class="n">Rotation</span> <span class="n">rotation</span><span class="p">)</span> <span class="p">{</span>
-        <span class="n">BlockState</span> <span class="n">oakLog</span> <span class="o">=</span> <span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_log[axis=y]"</span><span class="p">);</span>
-        <span class="n">BlockState</span> <span class="n">oakLeaves</span> <span class="o">=</span> <span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_leaves[persistent=true]"</span><span class="p">);</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span><span class="w"> </span><span class="n">location</span><span class="p">,</span><span class="w"> </span><span class="n">WritableWorld</span><span class="w"> </span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="n">Random</span><span class="w"> </span><span class="n">random</span><span class="p">,</span><span class="w"> </span><span class="n">Rotation</span><span class="w"> </span><span class="n">rotation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">BlockState</span><span class="w"> </span><span class="n">oakLog</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_log[axis=y]"</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="n">BlockState</span><span class="w"> </span><span class="n">oakLeaves</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">platform</span><span class="p">.</span><span class="na">getWorldHandle</span><span class="p">().</span><span class="na">createBlockState</span><span class="p">(</span><span class="s">"minecraft:oak_leaves[persistent=true]"</span><span class="p">);</span><span class="w"></span>
 
-        <span class="kt">int</span> <span class="n">height</span> <span class="o">=</span> <span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>                               <span class="c1">// Trunk will be [5, 8) blocks tall.</span>
+<span class="w">        </span><span class="kt">int</span><span class="w"> </span><span class="n">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">random</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="w"> </span><span class="mi">8</span><span class="p">);</span><span class="w">                               </span><span class="c1">// Trunk will be [5, 8) blocks tall.</span><span class="w"></span>
 
-        <span class="n">GeometryUtil</span><span class="p">.</span><span class="na">sphere</span><span class="p">(</span>
-                <span class="n">Vector3Int</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">height</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>                   <span class="c1">// Generate leaves at the top of the tree</span>
-                <span class="mi">3</span><span class="p">,</span>                                                       <span class="c1">// Leaves will be a sphere of radius 3.</span>
-                <span class="n">leafLocation</span> <span class="o">-&gt;</span> <span class="p">{</span>                                        <span class="c1">// This consumer is invoked once per coordinate in the sphere.</span>
-                    <span class="n">world</span><span class="p">.</span><span class="na">setBlockState</span><span class="p">(</span><span class="n">leafLocation</span><span class="p">,</span> <span class="n">oakLeaves</span><span class="p">);</span>
-                <span class="p">}</span>
-        <span class="p">);</span>
+<span class="w">        </span><span class="n">GeometryUtil</span><span class="p">.</span><span class="na">sphere</span><span class="p">(</span><span class="w"></span>
+<span class="w">                </span><span class="n">Vector3Int</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">location</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">height</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">),</span><span class="w">                   </span><span class="c1">// Generate leaves at the top of the tree</span><span class="w"></span>
+<span class="w">                </span><span class="mi">3</span><span class="p">,</span><span class="w">                                                       </span><span class="c1">// Leaves will be a sphere of radius 3.</span><span class="w"></span>
+<span class="w">                </span><span class="n">leafLocation</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w">                                        </span><span class="c1">// This consumer is invoked once per coordinate in the sphere.</span><span class="w"></span>
+<span class="w">                    </span><span class="n">world</span><span class="p">.</span><span class="na">setBlockState</span><span class="p">(</span><span class="n">leafLocation</span><span class="p">,</span><span class="w"> </span><span class="n">oakLeaves</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="p">}</span><span class="w"></span>
+<span class="w">        </span><span class="p">);</span><span class="w"></span>
 
-        <span class="k">for</span> <span class="p">(</span><span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">height</span><span class="p">;</span> <span class="n">y</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>                               <span class="c1">// Iterate over the height.</span>
-            <span class="n">Vector3Int</span> <span class="n">trunkLocation</span> <span class="o">=</span> <span class="n">Vector3Int</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">location</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// Generate a part of the trunk here.</span>
-            <span class="n">world</span><span class="p">.</span><span class="na">setBlockState</span><span class="p">(</span><span class="n">trunkLocation</span><span class="p">,</span> <span class="n">oakLog</span><span class="p">);</span>                  <span class="c1">// Generate an oak log at the location.</span>
-        <span class="p">}</span>
+<span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">height</span><span class="p">;</span><span class="w"> </span><span class="n">y</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">                               </span><span class="c1">// Iterate over the height.</span><span class="w"></span>
+<span class="w">            </span><span class="n">Vector3Int</span><span class="w"> </span><span class="n">trunkLocation</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Vector3Int</span><span class="p">.</span><span class="na">of</span><span class="p">(</span><span class="n">location</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">);</span><span class="w"> </span><span class="c1">// Generate a part of the trunk here.</span><span class="w"></span>
+<span class="w">            </span><span class="n">world</span><span class="p">.</span><span class="na">setBlockState</span><span class="p">(</span><span class="n">trunkLocation</span><span class="p">,</span><span class="w"> </span><span class="n">oakLog</span><span class="p">);</span><span class="w">                  </span><span class="c1">// Generate an oak log at the location.</span><span class="w"></span>
+<span class="w">        </span><span class="p">}</span><span class="w"></span>
 
-        <span class="k">return</span> <span class="kc">true</span><span class="p">;</span>                                                     <span class="c1">// Our structure generated correctly.</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="kc">true</span><span class="p">;</span><span class="w">                                                     </span><span class="c1">// Our structure generated correctly.</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -388,25 +388,25 @@ apparent when you’re registering many of the same type of object at once. The 
 <p>If you’ve worked with <a class="reference external" href="https://docs.oracle.com/en/java/javase/17/docs/api/java.base/java/lang/Comparable.html">Comparable</a>, the idea is similar; the type parameter of <code class="docutils literal notranslate"><span class="pre">Keyed</span></code> should almost
 always be the same as the class it’s implemented in.</p>
 <p>Let’s implement <code class="docutils literal notranslate"><span class="pre">Keyed</span></code> in our example structure:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleStructure</span> <span class="kd">implements</span> <span class="n">Structure</span><span class="p">,</span> <span class="n">Keyed</span><span class="o">&lt;</span><span class="n">ExampleStructure</span><span class="o">&gt;</span> <span class="p">{</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
-    <span class="kd">private</span> <span class="kd">final</span> <span class="n">RegistryKey</span> <span class="n">key</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExampleStructure</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">Structure</span><span class="p">,</span><span class="w"> </span><span class="n">Keyed</span><span class="o">&lt;</span><span class="n">ExampleStructure</span><span class="o">&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="n">platform</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">RegistryKey</span><span class="w"> </span><span class="n">key</span><span class="p">;</span><span class="w"></span>
 
-    <span class="kd">public</span> <span class="nf">ExampleStructure</span><span class="p">(</span><span class="n">Platform</span> <span class="n">platform</span><span class="p">,</span> <span class="n">RegistryKey</span> <span class="n">key</span><span class="p">)</span> <span class="p">{</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">platform</span> <span class="o">=</span> <span class="n">platform</span><span class="p">;</span>
-        <span class="k">this</span><span class="p">.</span><span class="na">key</span> <span class="o">=</span> <span class="n">key</span><span class="p">;</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="nf">ExampleStructure</span><span class="p">(</span><span class="n">Platform</span><span class="w"> </span><span class="n">platform</span><span class="p">,</span><span class="w"> </span><span class="n">RegistryKey</span><span class="w"> </span><span class="n">key</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">platform</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">platform</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">key</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span> <span class="n">location</span><span class="p">,</span> <span class="n">WritableWorld</span> <span class="n">world</span><span class="p">,</span> <span class="n">Random</span> <span class="n">random</span><span class="p">,</span> <span class="n">Rotation</span> <span class="n">rotation</span><span class="p">)</span> <span class="p">{</span>
-        <span class="c1">// ... Generation logic</span>
-    <span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">boolean</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span><span class="n">Vector3Int</span><span class="w"> </span><span class="n">location</span><span class="p">,</span><span class="w"> </span><span class="n">WritableWorld</span><span class="w"> </span><span class="n">world</span><span class="p">,</span><span class="w"> </span><span class="n">Random</span><span class="w"> </span><span class="n">random</span><span class="p">,</span><span class="w"> </span><span class="n">Rotation</span><span class="w"> </span><span class="n">rotation</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="c1">// ... Generation logic</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="n">RegistryKey</span> <span class="nf">getRegistryKey</span><span class="p">()</span> <span class="p">{</span>
-        <span class="k">return</span> <span class="n">key</span><span class="p">;</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="n">RegistryKey</span><span class="w"> </span><span class="nf">getRegistryKey</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="n">key</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>When an object implements <code class="docutils literal notranslate"><span class="pre">Keyed</span></code>, it must provide an instance of <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/RegistryKey.html">RegistryKey</a>, the key that identifies it.
@@ -423,38 +423,38 @@ We’ll get that instance by putting it in a field set in the constructor.</p>
 <li><p>We can create a <code class="docutils literal notranslate"><span class="pre">RegistryKey</span></code> instance from any object which implements <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/registry/key/Namespaced.html">Namespaced</a>. In this case, we
 want to use the namespace of our addon, so let’s use the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance (which we’ve also injected)
 to create a key:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">RegistryKey</span> <span class="n">key</span> <span class="o">=</span> <span class="n">addon</span><span class="p">.</span><span class="na">key</span><span class="p">(</span><span class="s">"EXAMPLE_STRUCTURE"</span><span class="p">);</span> <span class="c1">// Create our registry key</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">RegistryKey</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addon</span><span class="p">.</span><span class="na">key</span><span class="p">(</span><span class="s">"EXAMPLE_STRUCTURE"</span><span class="p">);</span><span class="w"> </span><span class="c1">// Create our registry key</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
 </ul>
 <p>Now that we have both objects required to instantiate our structure, let’s create an instance:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleEntryPoint</span> <span class="kd">implements</span> <span class="n">AddonInitializer</span> <span class="p">{</span>
-    <span class="nd">@Inject</span>
-    <span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">;</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExampleEntryPoint</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">AddonInitializer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nd">@Inject</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="p">;</span><span class="w"></span>
 
-    <span class="nd">@Inject</span>
-    <span class="kd">private</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
+<span class="w">    </span><span class="nd">@Inject</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="n">platform</span><span class="p">;</span><span class="w"></span>
 
-    <span class="nd">@Inject</span>
-    <span class="kd">private</span> <span class="n">BaseAddon</span> <span class="n">addon</span><span class="p">;</span>
+<span class="w">    </span><span class="nd">@Inject</span><span class="w"></span>
+<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">BaseAddon</span><span class="w"> </span><span class="n">addon</span><span class="p">;</span><span class="w"></span>
 
-    <span class="nd">@Override</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
-        <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
+<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
+<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span><span class="w"></span>
 
-        <span class="n">RegistryKey</span> <span class="n">key</span> <span class="o">=</span> <span class="n">addon</span><span class="p">.</span><span class="na">key</span><span class="p">(</span><span class="s">"EXAMPLE_STRUCTURE"</span><span class="p">);</span>
+<span class="w">        </span><span class="n">RegistryKey</span><span class="w"> </span><span class="n">key</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">addon</span><span class="p">.</span><span class="na">key</span><span class="p">(</span><span class="s">"EXAMPLE_STRUCTURE"</span><span class="p">);</span><span class="w"></span>
 
-        <span class="n">ExampleStructure</span> <span class="n">theStructure</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ExampleStructure</span><span class="p">(</span><span class="n">platform</span><span class="p">,</span> <span class="n">key</span><span class="p">);</span>
+<span class="w">        </span><span class="n">ExampleStructure</span><span class="w"> </span><span class="n">theStructure</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">ExampleStructure</span><span class="p">(</span><span class="n">platform</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="p">);</span><span class="w"></span>
 
-        <span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
-                <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-                <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-                <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
-                    <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
-                <span class="p">});</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="w">        </span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span><span class="w"></span>
+<span class="w">                </span><span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span><span class="w"> </span><span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
+<span class="w">                </span><span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">                    </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span><span class="w"></span>
+<span class="w">                </span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -462,40 +462,40 @@ to create a key:</p>
 <h3>Registering the Instance<a class="headerlink" href="#registering-the-instance" title="Permalink to this headline">¶</a></h3>
 <p>Now that we have an instance, we can finally register it! To do that, we’ll need a registry. We can get that from the
 <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/config/ConfigPack.html">ConfigPack</a> provided by <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/events/config/pack/ConfigPackPreLoadEvent.html">ConfigPackPreLoadEvent</a>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
-        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
-            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span><span class="w"> </span><span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span><span class="w"></span>
 
-            <span class="n">ConfigPack</span> <span class="n">pack</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getPack</span><span class="p">();</span>
-        <span class="p">});</span>
+<span class="w">            </span><span class="n">ConfigPack</span><span class="w"> </span><span class="n">pack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getPack</span><span class="p">();</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 <p>We can then get a registry using <code class="docutils literal notranslate"><span class="pre">#getOrCreateRegistry</span></code>. We want the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/structure/Structure.html">Structure</a> registry, so let’s get
 it!</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
-        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
-            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span><span class="w"> </span><span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span><span class="w"></span>
 
-            <span class="n">ConfigPack</span> <span class="n">pack</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getPack</span><span class="p">();</span>
-            <span class="n">CheckedRegistry</span><span class="o">&lt;</span><span class="n">Structure</span><span class="o">&gt;</span> <span class="n">structureRegistry</span> <span class="o">=</span> <span class="n">pack</span><span class="p">.</span><span class="na">getOrCreateRegistry</span><span class="p">(</span><span class="n">Structure</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-        <span class="p">});</span>
+<span class="w">            </span><span class="n">ConfigPack</span><span class="w"> </span><span class="n">pack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getPack</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">CheckedRegistry</span><span class="o">&lt;</span><span class="n">Structure</span><span class="o">&gt;</span><span class="w"> </span><span class="n">structureRegistry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pack</span><span class="p">.</span><span class="na">getOrCreateRegistry</span><span class="p">(</span><span class="n">Structure</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Now that we have the structure registry, we can finally register our structure instance with <code class="docutils literal notranslate"><span class="pre">#register</span></code>!</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
-        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
-        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
-            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span><span class="w"> </span><span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">            </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span><span class="w"></span>
 
-            <span class="n">ConfigPack</span> <span class="n">pack</span> <span class="o">=</span> <span class="n">event</span><span class="p">.</span><span class="na">getPack</span><span class="p">();</span>
-            <span class="n">CheckedRegistry</span><span class="o">&lt;</span><span class="n">Structure</span><span class="o">&gt;</span> <span class="n">structureRegistry</span> <span class="o">=</span> <span class="n">pack</span><span class="p">.</span><span class="na">getOrCreateRegistry</span><span class="p">(</span><span class="n">Structure</span><span class="p">.</span><span class="na">class</span><span class="p">);</span>
-            <span class="n">structureRegistry</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">theStructure</span><span class="p">);</span>
-        <span class="p">});</span>
+<span class="w">            </span><span class="n">ConfigPack</span><span class="w"> </span><span class="n">pack</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">event</span><span class="p">.</span><span class="na">getPack</span><span class="p">();</span><span class="w"></span>
+<span class="w">            </span><span class="n">CheckedRegistry</span><span class="o">&lt;</span><span class="n">Structure</span><span class="o">&gt;</span><span class="w"> </span><span class="n">structureRegistry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">pack</span><span class="p">.</span><span class="na">getOrCreateRegistry</span><span class="p">(</span><span class="n">Structure</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"></span>
+<span class="w">            </span><span class="n">structureRegistry</span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">theStructure</span><span class="p">);</span><span class="w"></span>
+<span class="w">        </span><span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

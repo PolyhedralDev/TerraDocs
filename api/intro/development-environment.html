@@ -290,36 +290,36 @@ use your build system.</p>
 <p>Terra publishes artifacts to the <a class="reference external" href="https://repo.codemc.io/">CodeMC Maven Repository</a>. Configure your build system
 to fetch from it:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="edfcad06-d008-4bf2-a9ed-17d21eb0d747" name="2f38b2c5-8d87-4393-8565-3a43a03895b5" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_groovy" for="edfcad06-d008-4bf2-a9ed-17d21eb0d747">
+<input checked="checked" id="df96b3c0-b951-4671-aeff-20497638320f" name="7edbca27-ebb8-4760-af44-cde689dd4ff1" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_groovy" for="df96b3c0-b951-4671-aeff-20497638320f">
 Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle</span><span class="w"></span>
 
-<span class="n">repositories</span> <span class="o">{</span>
-    <span class="c1">// Other repositories</span>
-    <span class="n">maven</span> <span class="o">{</span>
-        <span class="n">url</span> <span class="s2">"https://repo.codemc.io/repository/maven-public/"</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+<span class="n">repositories</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Other repositories</span><span class="w"></span>
+<span class="w">    </span><span class="n">maven</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">url</span><span class="w"> </span><span class="s2">"https://repo.codemc.io/repository/maven-public/"</span><span class="w"></span>
+<span class="w">    </span><span class="o">}</span><span class="w"></span>
+<span class="o">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="544f3806-c7fe-441e-8289-e44238d74ad0" name="2f38b2c5-8d87-4393-8565-3a43a03895b5" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="544f3806-c7fe-441e-8289-e44238d74ad0">
+<input id="ab330149-62ca-4f3e-acb0-c6a67bff0378" name="7edbca27-ebb8-4760-af44-cde689dd4ff1" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="ab330149-62ca-4f3e-acb0-c6a67bff0378">
 Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle.kts</span>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle.kts</span><span class="w"></span>
 
-<span class="n">repositories</span> <span class="p">{</span>
-    <span class="c1">// Other repositories</span>
-    <span class="n">maven</span> <span class="p">{</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="n">uri</span><span class="p">(</span><span class="s">"https://repo.codemc.io/repository/maven-public/"</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="n">repositories</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Other repositories</span><span class="w"></span>
+<span class="w">    </span><span class="n">maven</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uri</span><span class="p">(</span><span class="s">"https://repo.codemc.io/repository/maven-public/"</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="e7c00d5a-4bb5-4a0b-8d55-297ca9327400" name="2f38b2c5-8d87-4393-8565-3a43a03895b5" type="radio"/>
-<label class="sd-tab-label" data-sync-id="maven" for="e7c00d5a-4bb5-4a0b-8d55-297ca9327400">
+<input id="7f3dd765-0386-4fea-a442-6af318c8fb3c" name="7edbca27-ebb8-4760-af44-cde689dd4ff1" type="radio"/>
+<label class="sd-tab-label" data-sync-id="maven" for="7f3dd765-0386-4fea-a442-6af318c8fb3c">
 Maven</label><div class="sd-tab-content docutils">
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- pom.xml --&gt;</span>
 
@@ -341,34 +341,34 @@ Maven</label><div class="sd-tab-content docutils">
 <p>Now that you’ve configured the repository to acquire the Terra artifact from, you must specify dependency on the Terra
 API, and the Manifest Addon Loader:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="911597d4-5646-4544-b439-a0c52d8a3140" name="5608640a-6444-4bf1-a15c-3e161f12dbb7" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_groovy" for="911597d4-5646-4544-b439-a0c52d8a3140">
+<input checked="checked" id="1bc791fc-f789-475a-88c0-c5aa287a09f9" name="f96f1cae-06f2-4222-a543-96ae2a087325" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_groovy" for="1bc791fc-f789-475a-88c0-c5aa287a09f9">
 Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle</span><span class="w"></span>
 
-<span class="n">dependencies</span> <span class="o">{</span>
-    <span class="c1">// Other dependencies</span>
-    <span class="n">compileOnly</span> <span class="s1">'com.dfsek.terra:api:API_VERSION'</span>
-    <span class="n">compileOnly</span> <span class="s1">'com.dfsek.terra:manifest-addon-loader:LOADER_VERSION'</span>
-<span class="o">}</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Other dependencies</span><span class="w"></span>
+<span class="w">    </span><span class="n">compileOnly</span><span class="w"> </span><span class="s1">'com.dfsek.terra:api:API_VERSION'</span><span class="w"></span>
+<span class="w">    </span><span class="n">compileOnly</span><span class="w"> </span><span class="s1">'com.dfsek.terra:manifest-addon-loader:LOADER_VERSION'</span><span class="w"></span>
+<span class="o">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="517a1beb-47ab-46e5-aca0-efd27ac90866" name="5608640a-6444-4bf1-a15c-3e161f12dbb7" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="517a1beb-47ab-46e5-aca0-efd27ac90866">
+<input id="49e5d1a7-0aa0-4817-915a-66f2c2d391e7" name="f96f1cae-06f2-4222-a543-96ae2a087325" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="49e5d1a7-0aa0-4817-915a-66f2c2d391e7">
 Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle.kts</span>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle.kts</span><span class="w"></span>
 
-<span class="n">dependencies</span> <span class="p">{</span>
-    <span class="c1">// Other dependencies</span>
-    <span class="n">compileOnly</span><span class="p">(</span><span class="s">"com.dfsek.terra:api:API_VERSION"</span><span class="p">)</span>
-    <span class="n">compileOnly</span><span class="p">(</span><span class="s">"com.dfsek.terra:manifest-addon-loader:LOADER_VERSION"</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Other dependencies</span><span class="w"></span>
+<span class="w">    </span><span class="n">compileOnly</span><span class="p">(</span><span class="s">"com.dfsek.terra:api:API_VERSION"</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">compileOnly</span><span class="p">(</span><span class="s">"com.dfsek.terra:manifest-addon-loader:LOADER_VERSION"</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="a79d4437-e343-4560-b9f8-0e750d2814d0" name="5608640a-6444-4bf1-a15c-3e161f12dbb7" type="radio"/>
-<label class="sd-tab-label" data-sync-id="maven" for="a79d4437-e343-4560-b9f8-0e750d2814d0">
+<input id="2a310ab2-99be-40d7-a08d-bc25c856917c" name="f96f1cae-06f2-4222-a543-96ae2a087325" type="radio"/>
+<label class="sd-tab-label" data-sync-id="maven" for="2a310ab2-99be-40d7-a08d-bc25c856917c">
 Maven</label><div class="sd-tab-content docutils">
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- pom.xml --&gt;</span>
 
@@ -399,13 +399,13 @@ Maven</label><div class="sd-tab-content docutils">
 <section id="refresh-the-project">
 <h3>Refresh the Project<a class="headerlink" href="#refresh-the-project" title="Permalink to this headline">¶</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="48c51cbd-33a5-47f2-b240-eacf45342264" name="e4d79d55-2e39-4bc8-83e7-1bdba96e23ac" type="radio"/>
-<label class="sd-tab-label" for="48c51cbd-33a5-47f2-b240-eacf45342264">
+<input checked="checked" id="df177340-329e-4bb2-a268-e8c1feb94c4e" name="d2086d2a-3af9-41a4-a5bf-74a0417c01c4" type="radio"/>
+<label class="sd-tab-label" for="df177340-329e-4bb2-a268-e8c1feb94c4e">
 IntelliJ</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+O</span></code></p>
 </div>
-<input id="37ff2fc0-cee7-4e74-a283-17d3ac1d6ad8" name="e4d79d55-2e39-4bc8-83e7-1bdba96e23ac" type="radio"/>
-<label class="sd-tab-label" for="37ff2fc0-cee7-4e74-a283-17d3ac1d6ad8">
+<input id="f54d5d8c-93fc-4bec-99d3-b3ff28d4ccee" name="d2086d2a-3af9-41a4-a5bf-74a0417c01c4" type="radio"/>
+<label class="sd-tab-label" for="f54d5d8c-93fc-4bec-99d3-b3ff28d4ccee">
 Eclipse</label><div class="sd-tab-content docutils">
 <ol class="arabic simple">
 <li><p>Select the project root in the Project Explorer</p></li>
@@ -419,70 +419,70 @@ Eclipse</label><div class="sd-tab-content docutils">
 <section id="full-example-build-file">
 <h2>Full Example Build File<a class="headerlink" href="#full-example-build-file" title="Permalink to this headline">¶</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="f8ec654f-55c9-4514-bb58-f40a4e24fd8b" name="3d58dcc3-b8e8-40d8-a951-e417bb5103db" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_groovy" for="f8ec654f-55c9-4514-bb58-f40a4e24fd8b">
+<input checked="checked" id="bfa47523-0dd4-4ed0-960a-19d389030e4b" name="9dde9145-2c98-4c37-8b7d-32fcfc3cdc3f" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_groovy" for="bfa47523-0dd4-4ed0-960a-19d389030e4b">
 Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
-<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">plugins</span> <span class="o">{</span>
-    <span class="n">id</span> <span class="s1">'java'</span>
-<span class="o">}</span>
+<div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">plugins</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">id</span><span class="w"> </span><span class="s1">'java'</span><span class="w"></span>
+<span class="o">}</span><span class="w"></span>
 
-<span class="n">group</span> <span class="s1">'com.dfsek'</span>
-<span class="n">version</span> <span class="s1">'0.1.0'</span>
+<span class="n">group</span><span class="w"> </span><span class="s1">'com.dfsek'</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="s1">'0.1.0'</span><span class="w"></span>
 
-<span class="n">repositories</span> <span class="o">{</span>
-    <span class="n">mavenCentral</span><span class="o">()</span>
-    <span class="n">maven</span> <span class="o">{</span>
-        <span class="n">url</span> <span class="s2">"https://repo.codemc.io/repository/maven-public/"</span>
-    <span class="o">}</span>
-<span class="o">}</span>
+<span class="n">repositories</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">mavenCentral</span><span class="o">()</span><span class="w"></span>
+<span class="w">    </span><span class="n">maven</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">url</span><span class="w"> </span><span class="s2">"https://repo.codemc.io/repository/maven-public/"</span><span class="w"></span>
+<span class="w">    </span><span class="o">}</span><span class="w"></span>
+<span class="o">}</span><span class="w"></span>
 
-<span class="n">dependencies</span> <span class="o">{</span>
-    <span class="n">testImplementation</span> <span class="s1">'org.junit.jupiter:junit-jupiter-api:5.8.2'</span>
-    <span class="n">testRuntimeOnly</span> <span class="s1">'org.junit.jupiter:junit-jupiter-engine:5.8.2'</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">testImplementation</span><span class="w"> </span><span class="s1">'org.junit.jupiter:junit-jupiter-api:5.8.2'</span><span class="w"></span>
+<span class="w">    </span><span class="n">testRuntimeOnly</span><span class="w"> </span><span class="s1">'org.junit.jupiter:junit-jupiter-engine:5.8.2'</span><span class="w"></span>
 
-    <span class="n">compileOnly</span> <span class="s1">'com.dfsek.terra:api:API_VERSION'</span>
-    <span class="n">compileOnly</span> <span class="s1">'com.dfsek.terra:manifest-addon-loader:LOADER_VERSION'</span>
-<span class="o">}</span>
+<span class="w">    </span><span class="n">compileOnly</span><span class="w"> </span><span class="s1">'com.dfsek.terra:api:API_VERSION'</span><span class="w"></span>
+<span class="w">    </span><span class="n">compileOnly</span><span class="w"> </span><span class="s1">'com.dfsek.terra:manifest-addon-loader:LOADER_VERSION'</span><span class="w"></span>
+<span class="o">}</span><span class="w"></span>
 
-<span class="n">test</span> <span class="o">{</span>
-    <span class="n">useJUnitPlatform</span><span class="o">()</span>
-<span class="o">}</span>
+<span class="n">test</span><span class="w"> </span><span class="o">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">useJUnitPlatform</span><span class="o">()</span><span class="w"></span>
+<span class="o">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="e2b5bbbc-6a81-42a2-b5f4-c5353518b12f" name="3d58dcc3-b8e8-40d8-a951-e417bb5103db" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="e2b5bbbc-6a81-42a2-b5f4-c5353518b12f">
+<input id="ea8e5f48-07f8-42b5-8aa2-99570123da40" name="9dde9145-2c98-4c37-8b7d-32fcfc3cdc3f" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="ea8e5f48-07f8-42b5-8aa2-99570123da40">
 Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
-<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">plugins</span> <span class="p">{</span>
-    <span class="n">java</span>
-<span class="p">}</span>
+<div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">plugins</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">java</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">group</span> <span class="o">=</span> <span class="s">"com.dfsek"</span>
-<span class="n">version</span> <span class="o">=</span> <span class="s">"0.1.0"</span>
+<span class="n">group</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"com.dfsek"</span><span class="w"></span>
+<span class="n">version</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">"0.1.0"</span><span class="w"></span>
 
-<span class="n">repositories</span> <span class="p">{</span>
-    <span class="n">mavenCentral</span><span class="p">()</span>
-    <span class="n">maven</span> <span class="p">{</span>
-        <span class="n">url</span> <span class="o">=</span> <span class="n">uri</span><span class="p">(</span><span class="s">"https://repo.codemc.io/repository/maven-public/"</span><span class="p">)</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="n">repositories</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">mavenCentral</span><span class="p">()</span><span class="w"></span>
+<span class="w">    </span><span class="n">maven</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">url</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">uri</span><span class="p">(</span><span class="s">"https://repo.codemc.io/repository/maven-public/"</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">dependencies</span> <span class="p">{</span>
-    <span class="n">testImplementation</span><span class="p">(</span><span class="s">"org.junit.jupiter:junit-jupiter-api:5.8.2"</span><span class="p">)</span>
-    <span class="n">testRuntimeOnly</span><span class="p">(</span><span class="s">"org.junit.jupiter:junit-jupiter-engine"</span><span class="p">)</span>
+<span class="n">dependencies</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">testImplementation</span><span class="p">(</span><span class="s">"org.junit.jupiter:junit-jupiter-api:5.8.2"</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">testRuntimeOnly</span><span class="p">(</span><span class="s">"org.junit.jupiter:junit-jupiter-engine"</span><span class="p">)</span><span class="w"></span>
 
-    <span class="n">compileOnly</span><span class="p">(</span><span class="s">"com.dfsek.terra:api:API_VERSION"</span><span class="p">)</span>
-    <span class="n">compileOnly</span><span class="p">(</span><span class="s">"com.dfsek.terra:manifest-addon-loader:LOADER_VERSION"</span><span class="p">)</span>
-<span class="p">}</span>
+<span class="w">    </span><span class="n">compileOnly</span><span class="p">(</span><span class="s">"com.dfsek.terra:api:API_VERSION"</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="n">compileOnly</span><span class="p">(</span><span class="s">"com.dfsek.terra:manifest-addon-loader:LOADER_VERSION"</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="n">tasks</span><span class="p">.</span><span class="na">getByName</span><span class="o">&lt;</span><span class="n">Test</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"test"</span><span class="p">)</span> <span class="p">{</span>
-    <span class="n">useJUnitPlatform</span><span class="p">()</span>
-<span class="p">}</span>
+<span class="n">tasks</span><span class="p">.</span><span class="na">getByName</span><span class="o">&lt;</span><span class="n">Test</span><span class="o">&gt;</span><span class="p">(</span><span class="s">"test"</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">useJUnitPlatform</span><span class="p">()</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
-<input id="848edd1f-49f0-4cb1-b5a7-10534407a0f5" name="3d58dcc3-b8e8-40d8-a951-e417bb5103db" type="radio"/>
-<label class="sd-tab-label" data-sync-id="maven" for="848edd1f-49f0-4cb1-b5a7-10534407a0f5">
+<input id="3fc28bcb-c692-451f-ba37-82fa94715add" name="9dde9145-2c98-4c37-8b7d-32fcfc3cdc3f" type="radio"/>
+<label class="sd-tab-label" data-sync-id="maven" for="3fc28bcb-c692-451f-ba37-82fa94715add">
 Maven</label><div class="sd-tab-content docutils">
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
