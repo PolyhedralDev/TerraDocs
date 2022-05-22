@@ -13,8 +13,8 @@ Terra's platform-agnostic API allows us to seamlessly support many
 Minecraft modding platforms. The currently supported platforms include 
 `Fabric <https://fabricmc.net>`_, and the `Bukkit <https://dev.bukkit.org>`_
 ecosystem. In regards to Bukkit, we officially support `Paper <https://papermc.io>`_\+
-implementations only, including but not limited to `Airplane <https://airplane.gg>`_
-and `Purpur <https://purpur.pl3x.net>`_.
+implementations only, including but not limited to `Pufferfish <https://github.com/pufferfish-gg/Pufferfish>`_
+and `Purpur <https://purpurmc.org/>`_.
 
 .. grid:: 2
 
