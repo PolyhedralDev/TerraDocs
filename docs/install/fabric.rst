@@ -33,7 +33,7 @@ You can find what version of Terra you should download for your version of Minec
 2. Once you have downloaded the ``.jar`` file from Modrinth, simply place the
 file into your `mods` folder located inside your Minecraft client or server directory.
 
-3. Verify Terra has loaded.
+3. Restart your server and verify Terra has loaded.
 
 World Creation
 --------------
