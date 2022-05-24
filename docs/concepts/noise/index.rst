@@ -13,12 +13,7 @@ In Terra, noise does not refer to sound you can hear, but rather a series of
 something we will call a **noise function** - which is just a fancy algorithm that converts an input into a randomized
 numeric output.
 
-.. code-block:: none
-
-   ┌──────────────────┐    ┌────────────────┐    ┌───────────────────┐
-   │ Input parameters │ →  > Noise Function >  → │ Randomized output │
-   └──────────────────┘    └────────────────┘    │   (aka 'noise')   │
-                                                 └───────────────────┘
+.. literalinclude:: diagram/abstract.txt
 
 Why is Noise Important?
 =======================
@@ -65,13 +60,8 @@ guide, however is not essential in understanding the general idea.
 
 **MODEL**
 
-.. code-block:: none
+.. literalinclude:: diagram/1d.txt
 
-   ┌────────────────────┐   ┌─────────────┐   ┌──────────────────────┐
-   │  Input parameters  │ → > White Noise > → │  Randomized output   │
-   ├────────────────────┤   │   Function  │   │ within range [-1, 1] │
-   │ Number from 1 - 10 │   └─────────────┘   └──────────────────────┘
-   └────────────────────┘
 
 **RESULTS**
 
@@ -106,14 +96,7 @@ be a valid seed, but ``231.23`` would not.
 
 Expanding on our basic model of noise generation we have:
 
-.. code-block:: none
-
-   ┌──────────────────┐   ┌────────────────┐   ┌───────────────────┐
-   │ Input parameters │ → > Noise Function > → │ Randomized output │
-   ├──────────────────┤   └────────────────┘   └───────────────────┘
-   │ - Seed           │
-   │ - Input value    │
-   └──────────────────┘
+.. literalinclude:: diagram/1d_seed.txt
 
 Here is an example using two different seeds to produce different outputs, using the same inputs and noise function from
 the example above.
@@ -178,15 +161,7 @@ label the ``X`` & ``Z`` axes for the sake of simplicity.
 
 **TWO DIMENSIONAL MODEL**
 
-.. code-block:: none
-
-   ┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐
-   │ Input parameters │ → > White Noise > → │ Randomized output │
-   ├──────────────────┤   │   Function  │   ├───────────────────┤
-   │ - Seed           │   └─────────────┘   │ Displayed as as a │
-   | - Input 1 (X)    |                     │ 2D grid of shades │
-   | - Input 2 (Z)    |                     └───────────────────┘
-   └──────────────────┘
+.. literalinclude:: diagram/2d.txt
 
 **RESULTS**
 
@@ -278,15 +253,7 @@ value to determine whether we place some grass or not. The way this will be dete
 
 **GRASS PLACEMENT MODEL**
 
-.. code-block:: none
-
-   ┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐   ┌─────────────────────────┐
-   │ Input parameters │ → > White Noise > → │ Randomized output │ → >   Threshold Function    │
-   ├──────────────────┤   │   Function  │   ├───────────────────┤   ├─────────────────────────┤
-   │ - World Seed     │   └─────────────┘   │   A value from    │   │ If below the threshold, │
-   | - X Coordinate   │                     │     -1 to 1       │   │ place grass. (Displayed │
-   | - Z Coordinate   │                     └───────────────────┘   │   as a green pixel)     │
-   └──────────────────┘                                             └─────────────────────────┘
+.. literalinclude:: diagram/threshold.txt
 
 **RESULTS**
 

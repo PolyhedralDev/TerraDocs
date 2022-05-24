@@ -1,0 +1,7 @@
+┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐
+│ Input parameters │ → > White Noise > → │ Randomized output │
+├──────────────────┤   │   Function  │   ├───────────────────┤
+│ - Seed           │   └─────────────┘   │ Displayed as as a │
+| - Input 1 (X)    |                     │ 2D grid of shades │
+| - Input 2 (Z)    |                     └───────────────────┘
+└──────────────────┘
