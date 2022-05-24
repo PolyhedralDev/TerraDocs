@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Bukkit Installation" href="bukkit.html" /><link rel="prev" title="Fabric Client World Creation" href="fabric-client-world-creation.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Versions" href="versions.html" /><link rel="prev" title="Bukkit World Creation" href="bukkit-server-world-creation.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
-        <title>Fabric Server World Creation - Terra Docs</title>
+        <title>Worldmanager World Creation - Terra Docs</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
@@ -175,14 +175,14 @@
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children"><a class="reference internal" href="fabric.html">Fabric Installation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="fabric.html">Fabric Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="fabric-client-world-creation.html">Fabric Client World Creation</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Fabric Server World Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fabric-server-world-creation.html">Fabric Server World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="bukkit.html">Bukkit Installation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="bukkit.html">Bukkit Installation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="bukkit-server-world-creation.html">Bukkit World Creation</a></li>
-<li class="toctree-l3"><a class="reference internal" href="worldmanager-bukkit-world-creation.html">Worldmanager World Creation</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Worldmanager World Creation</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="versions.html">Versions</a></li>
@@ -254,47 +254,34 @@
           </label>
         </div>
         <article role="main">
-          <section id="fabric-server-world-creation">
-<h1>Fabric Server World Creation<a class="headerlink" href="#fabric-server-world-creation" title="Permalink to this headline">¶</a></h1>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>This guide is intended for the <strong>Fabric</strong> version of Terra.</p>
-<p><a class="reference internal" href="index.html"><span class="doc">Other Platform Installations</span></a> <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></p>
-</div>
+          <section id="worldmanager-world-creation">
+<h1>Worldmanager World Creation<a class="headerlink" href="#worldmanager-world-creation" title="Permalink to this headline">¶</a></h1>
+<p>Most world managers will have their own methods of setting / changing the generator for a world, however some may not
+support the use of custom generators. Please refer to either the documentation or support for your preferred manager if
+you’re not sure whether custom generators are supported, or how to set up a world with said manager, before consulting
+the Terra discord.</p>
+<p>Since there are many different plugins with their own process we won’t be covering all of them, however we do recommend
+using <a class="reference external" href="https://github.com/Multiverse/Multiverse-Core/wiki/">Multiverse Core</a> if you are unsure which manager to use.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p>We will be replacing the server’s default world with a new Terra world.</p>
-<p>Because we are working with changes to worlds <strong>ensure that you have made the necessary backups</strong> before making any destructive changes!</p>
-<p>It is not possible to easily change the generator of an existing world.
-This is a good thing, as changing the generator of a world will produce broken chunk borders between old and new terrain!</p>
+<p>Sometimes world managers will fail to correctly set the generator for a world when loading things up, which can lead
+to potentially damaging issues with your worlds such as broken chunk borders.</p>
+<p>Because of this we recommend additionally configuring a world <a class="reference internal" href="bukkit-server-world-creation.html"><span class="doc">directly through Bukkit</span></a>
+once you have set it up through a world manager, to serve as a fail-safe in the event that a <strong>world manager fails</strong>.</p>
 </div>
-<section id="procedure">
-<h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p>Ensure your server is not running.</p></li>
-<li><p>If you missed it above, please make a backup of any relevant world folders in your server directory.</p>
-<blockquote>
-<div><p>If you’re using a fresh server you won’t need to worry about this!</p>
-</div></blockquote>
-</li>
-<li><p>Configure your server’s world to use the new config as a generator:</p>
-<ol class="arabic simple">
-<li><p>Navigate to the <cite>server.properties</cite> file which is also contained within your server directory, and open it with any text editor.</p></li>
-<li><p>Assign your new generator to the default world by setting the <cite>level-type key</cite> to <cite>Terra:&lt;CONFIG_ID&gt;</cite> (for the default pack this would be <cite>Terra:OVERWORLD`</cite>). The config ID is case sensitive, e.g. <cite>Terra:OVERWORLD</cite> and <cite>Terra:overworld</cite> are considered two distinct IDs.</p></li>
-<li><p>If the <cite>level-type</cite> key doesn’t exist, simply add it yourself!</p></li>
-</ol>
-</li>
-<li><p>Either delete the existing world folder in your server directory or rename it to something else (for example world_backup). The name of your world can be found under the ‘level-name’ key, also in server.properties. The default world name is ‘world’.</p></li>
-<li><p>Boot your server back up.</p></li>
-<li><p>Your server should re-generate the world folder during startup.</p></li>
-<li><p>Join your server and check if your new world is using Terra world generation.</p></li>
-</ol>
-<p>If you followed the steps correctly without any errors, then you have successfully set up a server with Terra!</p>
+<section id="id1">
+<h2>Multiverse Core<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>To create a Terra world using Multiverse Core, add the following argument to the end of the
+<a class="reference external" href="https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference#create-command">Multiverse Create Command</a>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">-g</span> <span class="pre">Terra:&lt;PACK</span> <span class="pre">ID&gt;</span></code>.</p>
+<p>Here is an example command which will create a world with the name <cite>example_world</cite>, the <cite>NORMAL</cite> world environment, and
+a Terra generator using the pack with ID <cite>EXAMPLE</cite>:</p>
+<p><code class="docutils literal notranslate"><span class="pre">/mv</span> <span class="pre">create</span> <span class="pre">example_world</span> <span class="pre">NORMAL</span> <span class="pre">-g</span> <span class="pre">Terra:EXAMPLE</span></code></p>
 </section>
 <section id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>
 <p>If you run into issues during the world set up process, be sure to check you have followed each step correctly.
-Check for any errors in your client logs and try to interpret what the issue might be.</p>
+Check for any errors in your server console/logs and try to interpret what the issue might be.</p>
 <p>If you are unable to set up a world successfully, and have attempted to fix any issues yourself,
 please feel free to shoot us a message on our Discord server and provide any relevant information and most importantly the before mentioned logs!</p>
 </section>
@@ -305,23 +292,23 @@ please feel free to shoot us a message on our Discord server and provide any rel
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="bukkit.html">
+          <a class="next-page" href="versions.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Bukkit Installation</div>
+                <div class="title">Versions</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="fabric-client-world-creation.html">
+          <a class="prev-page" href="bukkit-server-world-creation.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Fabric Client World Creation</div>
+                <div class="title">Bukkit World Creation</div>
                 
               </div>
             </a>
@@ -331,7 +318,7 @@ please feel free to shoot us a message on our Discord server and provide any rel
               Copyright &#169; 2021, Terra Contributors |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/install/fabric-server-world-creation.rst.txt"
+            | <a class="muted-link" href="../_sources/install/worldmanager-bukkit-world-creation.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -351,8 +338,8 @@ please feel free to shoot us a message on our Discord server and provide any rel
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Fabric Server World Creation</a><ul>
-<li><a class="reference internal" href="#procedure">Procedure</a></li>
+<li><a class="reference internal" href="#">Worldmanager World Creation</a><ul>
+<li><a class="reference internal" href="#id1">Multiverse Core</a></li>
 <li><a class="reference internal" href="#troubleshooting">Troubleshooting</a></li>
 </ul>
 </li>
