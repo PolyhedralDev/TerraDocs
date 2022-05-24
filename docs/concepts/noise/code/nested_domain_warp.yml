@@ -1,0 +1,24 @@
+type: DOMAIN_WARP
+amplitude: 300
+
+function:
+  type: FBM
+  function:
+    type: OPEN_SIMPLEX_2
+    frequency: 0.002
+
+warp:
+  type: DOMAIN_WARP
+  amplitude: 20
+
+  function:
+    type: FBM
+    function:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.003
+
+  warp:
+    type: FBM
+    function:
+      type: OPEN_SIMPLEX_2
+      frequency: 0.02

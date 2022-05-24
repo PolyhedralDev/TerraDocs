@@ -368,26 +368,26 @@ Here what that would look like:
 
    type: <Noise Type>
 
-We can bring back our *white noise* function from earlier, which has type ``WhiteNoise``\ , and insert it into the template
+We can bring back our *white noise* function from earlier, which has type ``WHITE_NOISE``\ , and insert it into the template
 above, giving us the following noise config:
 
 .. code-block:: yaml
 
-   type: WhiteNoise
+   type: WHITE_NOISE
 
 Noise Config Parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 In addition to specifying the noise function to use, the ``type`` key will also determine what other keys become available
 as either *required* or *optional* when defining a noise config. Some ``type``\ s will have additional keys that need to be
-specified to function properly, and others like ``WhiteNoise`` don't require anything extra.
+specified to function properly, and others like ``WHITE_NOISE`` don't require anything extra.
 
-One example of an *optional* key available when specifying the ``WhiteNoise`` type is ``salt``. The function of salt is
+One example of an *optional* key available when specifying the ``WHITE_NOISE`` type is ``salt``. The function of salt is
 covered in `Seeds <#seeds>`_ if you need a refresher. Here is what the above example looks like with the ``salt`` key added:
 
 .. code-block:: yaml
 
-   type: WhiteNoise
+   type: WHITE_NOISE
    salt: 2321
 
 Another thing to note is that most optional parameters have a pre-defined default value that's set when not specified.
@@ -503,7 +503,7 @@ configuration:
 .. image:: /img/concepts/noise/palette_example.png
 
 This is also another great example of `noise segmentation <#noise-segmentation>`_ in action with weighted pools. You can
-see our ``OpenSimplex2`` function has been segmented equally between grass blocks and dirt, giving us a nice random
+see our ``OPEN_SIMPLEX_2`` function has been segmented equally between grass blocks and dirt, giving us a nice random
 pattern of surface blocks in the biome.
 
 Fractal Noise
@@ -550,24 +550,24 @@ as an input. The syntax for this is as followed:
 As you can see, we have the main noise config for our fractalizer, and a second noise config *nested* inside under the
 ``function`` key. The ``function`` key is the only **required** parameter for all fractalizers.
 
-Based on this template, we can create a real noise config. Let's use the ``fBm`` fractalizer, with an input function with
-``type`` ``OpenSimplex2``\ :
+Based on this template, we can create a real noise config. Let's use the ``FBM`` fractalizer, with an input function with
+``type`` ``OPEN_SIMPLEX_2``\ :
 
 .. code-block:: yaml
 
-   type: fBm
+   type: FBM
    function:
-     type: OpenSimplex2
+     type: OPEN_SIMPLEX_2
 
-Pretty simple, all we've done is passed some *simplex noise* into the *fBm* function. Fractalizers have a couple
+Pretty simple, all we've done is passed some *simplex noise* into the *FBM* function. Fractalizers have a couple
 additional parameters, including ``octaves``\ , ``lacunarity``\ , and ``gain``. Here is another example config with those
 parameters already defined:
 
 .. code-block:: yaml
 
-   type: fBm
+   type: FBM
    function:
-     type: OpenSimplex2
+     type: OPEN_SIMPLEX_2
    octaves: 3
    lacunarity: 2
    gain: 0.75
@@ -600,13 +600,13 @@ As you can see, our once perfectly square boxes have been contorted out of shape
 
 **IN A NOISE CONFIG**
 
-To use domain warping, we will need to set the ``type`` to ``DomainWarp``\ , and specify two additional required keys
+To use domain warping, we will need to set the ``type`` to ``DOMAIN_WARP``\ , and specify two additional required keys
 ``function`` and ``warp``. As you may have already guessed, both ``function`` and ``warp`` need to be set to a noise config,
 similar to how `fractalizers <#fractal-noise>`_ accept an input function:
 
 .. code-block:: yaml
 
-   type: DomainWarp
+   type: DOMAIN_WARP
    function:
      type: ... # Noise config to be warped
    warp:
@@ -618,16 +618,16 @@ function:
 
 .. code-block:: yaml
 
-   type: DomainWarp
+   type: DOMAIN_WARP
    function:
-     type: OpenSimplex2
+     type: OPEN_SIMPLEX_2
      frequency: 0.005
    warp:
-     type: OpenSimplex2
+     type: OPEN_SIMPLEX_2
    amplitude: 20
 
 Again it's recommended that you try out this noise config in the `Noise Tool <#noise-tool>`_ and see what changing each
-parameter does - What happens if you use ``WhiteNoise`` as a warp function instead?
+parameter does - What happens if you use ``WHITE_NOISE`` as a warp function instead?
 
 
 .. raw:: html
@@ -669,32 +669,8 @@ allows for constructing complex highly configurable systems of noise. Here is an
 `fractalized <#fractal-noise>`_ simplex by more fractalized simplex (which has also been domain warped by more...
 fractalized simplex!):
 
-.. code-block:: yaml
-
-   type: DomainWarp
-   amplitude: 300
-
-   function:
-     type: fBm
-     function:
-       type: OpenSimplex2
-       frequency: 0.002
-
-   warp:
-     type: DomainWarp
-     amplitude: 20
-
-     function:
-       type: fBm
-       function:
-         type: OpenSimplex2
-         frequency: 0.003
-
-     warp:
-       type: fBm
-       function:
-         type: OpenSimplex2
-         frequency: 0.02
+.. literalinclude:: code/nested_domain_warp.yml
+    :language: yaml
 
 Conclusion
 ==========
