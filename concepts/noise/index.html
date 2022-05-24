@@ -1,0 +1,956 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Config Packs" href="../../config/index.html" /><link rel="prev" title="Concepts" href="../index.html" />
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
+        <title>Noise Crash Course - Terra Docs</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/rounded-borders.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/cards.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/code-blocks.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/interpreted-text.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/padding.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/headings.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/logo.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Terra Docs</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/terra-logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Terra Docs</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../install/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/fabric.html">Fabric Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install/fabric-client-world-creation.html">Fabric Client World Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/fabric-server-world-creation.html">Fabric Server World Creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../install/bukkit.html">Bukkit Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../install/versions.html">Versions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Noise Crash Course</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../config/index.html">Config Packs</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../config/community-packs.html">Community Packs</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../config/development/index.html">Config Development</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/introduction.html">Config Development Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/config-files.html">Config Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/config-data.html">Defining Data in Configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/config-system.html">The Config System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/pack-from-scratch/index.html">Creating a Pack from Scratch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/modifying-existing-pack.html">Modifying an Existing Pack</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/loading.html">Terra Addon Loading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/development-environment.html">Setting up a Development Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/listening-for-an-event.html">Listening for an Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/adding-structure.html">Adding a Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/registering-config-type.html">Registering a Config Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/manifest-addons.html">Manifest Addons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/dependency-injection.html">Dependency Injection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/logging.html">Logging With SLF4J</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/events.html">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/type-key.html">Type Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/registries.html">Registries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/tectonic.html">Tectonic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/cloud.html">Registering Commands with Cloud</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="noise-crash-course">
+<h1>Noise Crash Course<a class="headerlink" href="#noise-crash-course" title="Permalink to this headline">¶</a></h1>
+<img alt="../../_images/noise_preview.png" src="../../_images/noise_preview.png"/>
+<section id="what-is-noise">
+<h2>What is Noise?<a class="headerlink" href="#what-is-noise" title="Permalink to this headline">¶</a></h2>
+<p>In Terra, noise does not refer to sound you can hear, but rather a series of
+<a class="reference external" href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">randomly</a>* generated values. These values are produced by
+something we will call a <strong>noise function</strong> - which is just a fancy algorithm that converts an input into a randomized
+numeric output.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐    ┌────────────────┐    ┌───────────────────┐
+│ Input parameters │ →  &gt; Noise Function &gt;  → │ Randomized output │
+└──────────────────┘    └────────────────┘    │   (aka 'noise')   │
+                                              └───────────────────┘
+</pre></div>
+</div>
+</section>
+<section id="why-is-noise-important">
+<h2>Why is Noise Important?<a class="headerlink" href="#why-is-noise-important" title="Permalink to this headline">¶</a></h2>
+<p>Noise is a central concept in Terra, because just about every random aspect of world generation is influenced by noise
+to some degree. Having a basic understanding of noise and how to manipulate it will give you insight into how worlds are
+randomly generated by Terra, and is an important skill to have if you want to develop your own config packs.</p>
+<p>Before learning how to manipulate noise, you should first have an understanding of the underlying concepts outlined
+here. Don’t worry, we won’t throw anything <em>too complicated</em> at you for now! Having a firm grasp on noise will bring you
+closer to controlling exactly how world generation will behave, which is why having a foundational understanding is
+important.</p>
+<p>Here is just a short of list of things heavily influenced by noise in Terra:</p>
+<ul class="simple">
+<li><p>The placement of biomes in the world.</p></li>
+<li><p>How terrain is shaped.</p></li>
+<li><p>How flora and trees are distributed.</p></li>
+</ul>
+</section>
+<section id="noise-basics">
+<h2>Noise Basics<a class="headerlink" href="#noise-basics" title="Permalink to this headline">¶</a></h2>
+<p>Here we will cover some key points is grasping noise in Terra. If you feel like certain concepts are too difficult to
+understand, feel free to skim over them for now, and revisit them later.</p>
+<section id="demonstration">
+<h3>Demonstration<a class="headerlink" href="#demonstration" title="Permalink to this headline">¶</a></h3>
+<p>Let’s begin with a demonstration displaying the most basic process of ‘creating’ noise. We will use a theoretical
+implementation of a noise function called <a class="reference external" href="https://en.wikipedia.org/wiki/White_noise">*white noise*</a>, and generate some
+values with it. Explaining how exactly our <em>white noise</em> function creates these values is outside the scope of this
+guide, however is not essential in understanding the general idea.</p>
+<blockquote>
+<div><p>We will perform a couple samples with our function, using numbers 1 - 10 as an input, and record the outputs as both a
+number and a shade from black to white. <strong>Conventionally, the values outputted by a noise function will be within a
+range of -1 to 1.</strong> We can visualize the relationship between the value and shade on a number line as such:</p>
+<img alt="../../_images/basic_example-04.png" src="../../_images/basic_example-04.png"/>
+<p>We will also round the output to one decimal place for simplicity.
+Typical outputs will produce decimals with <strong>much higher</strong> precision than just one decimal place!</p>
+</div></blockquote>
+<p><strong>MODEL</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌────────────────────┐   ┌─────────────┐   ┌──────────────────────┐
+│  Input parameters  │ → &gt; White Noise &gt; → │  Randomized output   │
+├────────────────────┤   │   Function  │   │ within range [-1, 1] │
+│ Number from 1 - 10 │   └─────────────┘   └──────────────────────┘
+└────────────────────┘
+</pre></div>
+</div>
+<p><strong>RESULTS</strong></p>
+<img alt="../../_images/basic_example-01.png" src="../../_images/basic_example-01.png"/>
+<p>Simple, right? All our noise function does is convert one value to another. You can think of noise functions like a
+little number machine that takes an input and scrambles it around to produce an output.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Input numbers do not have to be whole numbers! This means you can input numbers like <code class="docutils literal notranslate"><span class="pre">1.5</span></code> and noise functions will
+work still the same way. We’ve just used integers here for the sake of demonstration.</p>
+</div>
+</section>
+<section id="determinism">
+<h3>Determinism<a class="headerlink" href="#determinism" title="Permalink to this headline">¶</a></h3>
+<p>One requirement of Terra noise functions is that the output must be
+<a class="reference external" href="https://en.wikipedia.org/wiki/Deterministic_system">*deterministic*</a>, meaning given any input, the output must always
+be the same. This means we can reliably re-produce any ‘random’ results we get from noise functions by feeding it the
+same input.</p>
+<p>Going off the results above, when passing the number <code class="docutils literal notranslate"><span class="pre">5</span></code> to our <em>white noise</em> function, we will always get the number
+<code class="docutils literal notranslate"><span class="pre">0.4</span></code> back.</p>
+</section>
+<section id="seeds">
+<h3>Seeds<a class="headerlink" href="#seeds" title="Permalink to this headline">¶</a></h3>
+<p>Sometimes, we want to use the same input, and same noise function, but for multiple random unique outputs. In that case,
+we can use a seed in our noise function. Seeds are basically a way of getting a whole new uncorrelated set of random
+values from the same inputs + noise function. Unlike the input value, seeds must be a whole number, meaning <code class="docutils literal notranslate"><span class="pre">5324</span></code> would
+be a valid seed, but <code class="docutils literal notranslate"><span class="pre">231.23</span></code> would not.</p>
+<p>Expanding on our basic model of noise generation we have:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐   ┌────────────────┐   ┌───────────────────┐
+│ Input parameters │ → &gt; Noise Function &gt; → │ Randomized output │
+├──────────────────┤   └────────────────┘   └───────────────────┘
+│ - Seed           │
+│ - Input value    │
+└──────────────────┘
+</pre></div>
+</div>
+<p>Here is an example using two different seeds to produce different outputs, using the same inputs and noise function from
+the example above.</p>
+<p><code class="docutils literal notranslate"><span class="pre">Seed</span> <span class="pre">=</span> <span class="pre">0</span></code></p>
+<img alt="../../_images/basic_example-01.png" src="../../_images/basic_example-01.png"/>
+<p><code class="docutils literal notranslate"><span class="pre">Seed</span> <span class="pre">=</span> <span class="pre">1</span></code></p>
+<img alt="../../_images/basic_example-02.png" src="../../_images/basic_example-02.png"/>
+<p>One usage of seeds that you might be familiar with is minecraft world seeds. A vanilla minecraft world seed gets
+inserted into the many noise functions that govern vanilla world generation, resulting in completely different worlds
+per seed (since each noise function will return a completely new set of values for each unique seed). Combined with
+<a class="reference external" href="#determinism">determinism</a>, we’re able to produce new unique randomized worlds by picking a random seed, while also
+being able to generate the exact same world* provided we use the same seed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Vanilla Bedrock Generation Trivia</strong></p>
+<p>Some noise functions in vanilla Minecraft generation use the same seed for every world (meaning they don’t factor
+in the world seed), which can result in every world generating a certain characteristic the exact same way. One
+notable example - the function that controls bedrock formation uses a static seed for every world, leading every
+vanilla generated world to share the same random configuration of bedrock.</p>
+</div>
+<p>Within Terra world generation, all noise producing functions use a combination of the world seed and a value called
+<strong>salt</strong>, to determine its own seed. Salt is a number you specify when defining noise configurations, and simply gets
+added to the world seed. This allows individual noise configurations to use new sets of output values, while sharing the
+same base noise function.</p>
+</section>
+<section id="flavors-of-noise">
+<h3>Flavors of Noise<a class="headerlink" href="#flavors-of-noise" title="Permalink to this headline">¶</a></h3>
+<p>There are many variants and implementations of noise functions, such as our <em>white noise</em> function above. Each has their
+own quirks, behaviors, and applications, however in general they all follow the same basic principles outlined here. We
+will cover a couple of these variants later down the line.</p>
+<p>Here is a small list of notable noise functions that are commonly used in Terra:</p>
+<ul class="simple">
+<li><p>Simplex Noise</p></li>
+<li><p>Cellular / Voronoi / Worley Noise</p></li>
+<li><p>White Noise</p></li>
+<li><p>Value Noise</p></li>
+</ul>
+</section>
+<section id="multidimensional-noise">
+<h3>Multidimensional Noise<a class="headerlink" href="#multidimensional-noise" title="Permalink to this headline">¶</a></h3>
+<p>The phrase ‘multidimensional noise’ may sound intimidating, but don’t worry, it’s a fairly simple concept to understand.
+Simply put, multidimensional noise involves providing <strong>multiple</strong> input values, rather than just one. In every example
+thus far, we have only provided one value for each noise <em>‘sample’</em> (excluding the seed), meaning we are conceptually
+only sampling in one dimension, however we can go further.</p>
+<p>The simplest example of multidimensional noise is just adding one extra input to our noise function, for a grand total
+of 2 inputs. Conveniently, that gives us 2 dimensions, thus we can easily display a set of 2D samples in a grid. We will
+refer to the first input as <code class="docutils literal notranslate"><span class="pre">X</span></code>, and the second as <code class="docutils literal notranslate"><span class="pre">Z</span></code>.</p>
+<p>In a new example, let’s use a range of 1 - 3 for both <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Z</span></code>, giving us a total of 9 samples (3 x 3). We will only
+label the <code class="docutils literal notranslate"><span class="pre">X</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">Z</span></code> axes for the sake of simplicity.</p>
+<p><strong>TWO DIMENSIONAL MODEL</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐
+│ Input parameters │ → &gt; White Noise &gt; → │ Randomized output │
+├──────────────────┤   │   Function  │   ├───────────────────┤
+│ - Seed           │   └─────────────┘   │ Displayed as as a │
+| - Input 1 (X)    |                     │ 2D grid of shades │
+| - Input 2 (Z)    |                     └───────────────────┘
+└──────────────────┘
+</pre></div>
+</div>
+<p><strong>RESULTS</strong></p>
+<img alt="../../_images/basic_example-03.png" src="../../_images/basic_example-03.png"/>
+<p>As you can see, all we have done is added another dimension to our white noise function, allowing for noise to be
+depicted as a 2D grid, rather than a list of values.</p>
+<p>Taking this experiment further, let’s use a larger sample size of 64 x 64:</p>
+<img alt="../../_images/whitenoise64x64.png" src="../../_images/whitenoise64x64.png"/>
+<p>What we have done here is essentially produced a random image using our <em>white noise</em> function. By default, we will
+assume the above format of visualizing noise in 2D as an image, where each output value represents a grayscale pixel.</p>
+<p><strong>HIGHER DIMENSIONS</strong></p>
+<p>Many noise algorithms support an arbitrary amount of inputs, meaning that we can sample noise in any number of
+dimensions. Typically, we will only use up to three dimensions in Terra, where each input corresponds to the position on
+each axis <code class="docutils literal notranslate"><span class="pre">X</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code>, and <code class="docutils literal notranslate"><span class="pre">Z</span></code>.</p>
+</section>
+<section id="segmentation">
+<h3>Segmentation<a class="headerlink" href="#segmentation" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Image_segmentation">Segmentation</a> in this context refers to splitting a set of values
+into several parts based on the range each value fits in to.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is not a concept specific to noise, but is something to keep in mind, as it is commonly used in conjunction with
+noise and world generation.</p>
+</div>
+<p>The simplest form of segmentation is <strong>thresholding</strong>, which simply involves <em>separating a set of values into two groups
+based on whether they’re higher or lower than a number</em>. An example of thresholding would be outputting a value of <code class="docutils literal notranslate"><span class="pre">-1</span></code>
+for input values less than <code class="docutils literal notranslate"><span class="pre">0</span></code>, and outputting a value of <code class="docutils literal notranslate"><span class="pre">1</span></code> for every other input, however the output could be
+anything, such as <code class="docutils literal notranslate"><span class="pre">true</span> <span class="pre">/</span> <span class="pre">false</span></code> depending on use.</p>
+<p>Applying a threshold to every pixel of an image where <code class="docutils literal notranslate"><span class="pre">input</span> <span class="pre">=</span> <span class="pre">intensity</span> <span class="pre">of</span> <span class="pre">the</span> <span class="pre">pixel</span></code>, <code class="docutils literal notranslate"><span class="pre">output</span> <span class="pre">=</span> <span class="pre">either</span> <span class="pre">a</span> <span class="pre">black</span> <span class="pre">or</span>
+<span class="pre">white</span> <span class="pre">pixel</span></code>, and <code class="docutils literal notranslate"><span class="pre">threshold</span> <span class="pre">=</span> <span class="pre">50%</span></code>, we get the following result:</p>
+<img alt="../../_images/threshold_example.png" src="../../_images/threshold_example.png"/>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We can represent thresholding mathematically as a <a class="reference external" href="https://en.wikipedia.org/wiki/Piecewise">piecewise</a> function:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">f</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="o">=</span>
+<span class="p">{</span>
+  <span class="o">-</span><span class="mi">1</span>   <span class="k">if</span>   <span class="n">x</span> <span class="o">&lt;</span>  <span class="n">threshold</span>
+   <span class="mi">1</span>   <span class="k">if</span>   <span class="n">x</span> <span class="o">&gt;=</span> <span class="n">threshold</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Most applications of segmentation in Terra are essentially fancy piecewise functions like the one above, written
+programmatically.</p>
+</div>
+<p>Segmentation is a useful concept to understand when combined with noise, as it allows us to split noise functions into
+distinct values. We will cover an example of segmented noise and an application of it in the following section.</p>
+</section>
+</section>
+<section id="applying-noise-to-world-generation">
+<h2>Applying Noise to World Generation<a class="headerlink" href="#applying-noise-to-world-generation" title="Permalink to this headline">¶</a></h2>
+<p>You might be wondering: <em>How does this information translate to generating an entire world?</em> Before we jump straight
+from simple noise generation to generating entire worlds, let’s just keep it simple and apply the knowledge we’ve
+covered thus far to a simple application.</p>
+<section id="planting-grass">
+<h3>Planting Grass<a class="headerlink" href="#planting-grass" title="Permalink to this headline">¶</a></h3>
+<p>Let’s say we have a patch of land, and we want to generate some tall grass on it, how would we determine where the grass
+goes? The first thing we will want to do is define some basic rules for generating grass, before we get to the part
+where noise is involved:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Grass</span></code> may only generate on top of <code class="docutils literal notranslate"><span class="pre">Grass</span> <span class="pre">Blocks</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Grass</span></code> may only replace <code class="docutils literal notranslate"><span class="pre">Air</span></code>.</p></li>
+</ul>
+<p>Simple enough, now we know that grass will only generate where appropriate. With only these rules however, we would end
+up with grass on top of every single grass block! What if we only wanted it on <em>some</em> grass blocks? Well we can use our
+<em>white noise</em> function for that!</p>
+<p>Let’s feed our <em>X &amp; Z world coordinates &amp; seed</em> into our <em>2D white noise</em> function, which will give us a randomized
+output value (from -1 to 1 as discussed) for every X-Z column for any given world seed. We will then use that output
+value to determine whether we place some grass or not. The way this will be determined is by simply
+<a class="reference external" href="#segmentation">thresholding</a> it! We’ll start with a threshold of <code class="docutils literal notranslate"><span class="pre">0</span></code>, where any value below our threshold will mean
+<code class="docutils literal notranslate"><span class="pre">place</span> <span class="pre">grass</span></code>.</p>
+<p><strong>GRASS PLACEMENT MODEL</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐   ┌─────────────────────────┐
+│ Input parameters │ → &gt; White Noise &gt; → │ Randomized output │ → &gt;   Threshold Function    │
+├──────────────────┤   │   Function  │   ├───────────────────┤   ├─────────────────────────┤
+│ - World Seed     │   └─────────────┘   │   A value from    │   │ If below the threshold, │
+| - X Coordinate   │                     │     -1 to 1       │   │ place grass. (Displayed │
+| - Z Coordinate   │                     └───────────────────┘   │   as a green pixel)     │
+└──────────────────┘                                             └─────────────────────────┘
+</pre></div>
+</div>
+<p><strong>RESULTS</strong></p>
+<img alt="../../_images/grass_64x64_50pcthreshold.png" src="../../_images/grass_64x64_50pcthreshold.png"/>
+<p>As you can see, we now have a method of randomly determining if grass should be placed or not for any given
+<a class="reference external" href="#multidimensional-noise">X-Z coordinate</a> in <a class="reference external" href="#seeds">any world</a>. We can even reduce / increase how much grass we get by
+modifying our threshold value:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Threshold</span> <span class="pre">=</span> <span class="pre">-0.25</span></code></p>
+<img alt="../../_images/grass_64x64_25pcthreshold.png" src="../../_images/grass_64x64_25pcthreshold.png"/>
+<p>Lowering the threshold from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">-0.25</span></code> results in less grass because we are effectively removing the values between
+<code class="docutils literal notranslate"><span class="pre">-0.25</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code> from falling below the threshold. Conversely, <em>increasing</em> the threshold will result in more grass, as
+more values will fall below the threshold.</p>
+<p>Combining this with our rules we established earlier, we now have a method of checking for any block whether it should
+be grass or not.</p>
+<img alt="../../_images/grass.png" src="../../_images/grass.png"/>
+</section>
+</section>
+<section id="coherent-noise">
+<h2>Coherent Noise<a class="headerlink" href="#coherent-noise" title="Permalink to this headline">¶</a></h2>
+<p>Thus far, we have only covered noise that outputs seemingly random tv-static-like values, which is fine for simple
+applications like the grass example above. But how can we get noise capable of producing smooth rolling hills, vast
+mountains, and other structured random generation? Let’s place the white noise function under the category
+<strong>‘random noise’</strong>, and introduce a new category of noise functions called <strong>‘coherent noise’</strong>.</p>
+<p><strong>WHAT’S THE DIFFERENCE?</strong></p>
+<p>The main difference that separates <em>random noise</em> from <em>coherent noise</em> is that while random noise functions produce
+noise with no apparent structure, coherent noise functions produce <em>‘structured’</em> noise, where adjacent input values
+produce correlated output values.</p>
+<p>To get a better idea of the difference, here is a visualization of two different 2D sampled noise functions that both
+share the same inputs:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Random</span> <span class="pre">|</span> <span class="pre">Coherent</span></code></p>
+<img alt="../../_images/whitenoise64x64.png" src="../../_images/whitenoise64x64.png"/>
+<img alt="../../_images/opensimplex2_64x64.png" src="../../_images/opensimplex2_64x64.png"/>
+<p>As you can see, the coherent noise example has a discernible structure where output values are smooth, compared to the
+random noise example where there’s no apparent structure. The coherent noise function used above is known as
+<strong>Simplex noise</strong>, and is one of the many flavors of noise provided in Terra.</p>
+</section>
+<section id="segmenting-noise">
+<h2>Segmenting Noise<a class="headerlink" href="#segmenting-noise" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have introduced coherent noise, we can provide a better visual example of noise
+<a class="reference external" href="#segmentation">segmentation</a>. Let’s use the following list of colors and distribute them across a noise function
+via segmentation:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">colors</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Red</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Yellow</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Green</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Blue</span><span class="w"></span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Since we know that <a class="reference external" href="#demonstration">noise outputs will generally be between -1 and 1</a>, we will need to assign each
+color its own a range <em>within</em> the output range <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code>. To do this, it’s helpful to visualize things on a number
+line like so:</p>
+</div>
+<img alt="../../_images/basic_example-05.png" src="../../_images/basic_example-05.png"/>
+<p>From this we can intuitively see that <code class="docutils literal notranslate"><span class="pre">blue</span></code> corresponds to the range <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">0.5]</span></code>, <code class="docutils literal notranslate"><span class="pre">green</span></code> to <code class="docutils literal notranslate"><span class="pre">[-0.5,</span> <span class="pre">0]</span></code> and so on.
+Thankfully, you won’t ever have to define every range required for segmentation by hand, as Terra will automatically
+segment noise for you, but it’s still useful to get an idea of what is happening behind the scenes. Let’s finally
+segment some <em>simplex noise</em> by categorizing the output values into our colors based on the range they fit in.</p>
+<img alt="../../_images/posterized_opensimplex2_64x64.png" src="../../_images/posterized_opensimplex2_64x64.png"/>
+<p>This is where the usefulness of segmentation comes in - <em>we can treat these colors as anything</em>, whether that is a set
+of biomes, a pattern of blocks, or anything else that requires a list and a noise function. For example, <code class="docutils literal notranslate"><span class="pre">red</span></code> could
+represent a tropical island biome, <code class="docutils literal notranslate"><span class="pre">yellow</span></code> a beach, <code class="docutils literal notranslate"><span class="pre">green</span></code> shallow ocean, and <code class="docutils literal notranslate"><span class="pre">blue</span></code> deep ocean. Generally lists like
+this will be defined as a <a class="reference external" href="./Weighted-Pools">weighted pool</a> such that you can easily weigh certain items to take up more
+space as needed. As an example, here is what our new biome list may look like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">biomes</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">TROPICAL_ISLAND</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">BEACH</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">SHALLOW_OCEAN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">DEEP_OCEAN</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="manipulating-noise">
+<h2>Manipulating Noise<a class="headerlink" href="#manipulating-noise" title="Permalink to this headline">¶</a></h2>
+<p>Now that we have covered some essential topics regarding noise, let’s talk about creating, configuring, stretching,
+squishing, tweaking, and remixing it!</p>
+<img alt="../../_images/rocky_noise.png" src="../../_images/rocky_noise.png"/>
+<section id="noise-configs">
+<h3>Noise Configs<a class="headerlink" href="#noise-configs" title="Permalink to this headline">¶</a></h3>
+<p>So how exactly does this information translate to actually configuring noise in Terra? This is where we will introduce
+<strong>noise configs</strong>. When configuring <a class="reference external" href="./Config-Packs">config packs</a> many options will require a noise config, which is
+written in YAML just like most other areas of pack development. The simplest noise config just requires a <code class="docutils literal notranslate"><span class="pre">type</span></code>, which
+defines the noise function for use in the context of a noise config definition.</p>
+<p>Here what that would look like:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;Noise Type&gt;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>We can bring back our <em>white noise</em> function from earlier, which has type <code class="docutils literal notranslate"><span class="pre">WHITE_NOISE</span></code>, and insert it into the template
+above, giving us the following noise config:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
+</pre></div>
+</div>
+<section id="noise-config-parameters">
+<h4>Noise Config Parameters<a class="headerlink" href="#noise-config-parameters" title="Permalink to this headline">¶</a></h4>
+<p>In addition to specifying the noise function to use, the <code class="docutils literal notranslate"><span class="pre">type</span></code> key will also determine what other keys become available
+as either <em>required</em> or <em>optional</em> when defining a noise config. Some <code class="docutils literal notranslate"><span class="pre">type</span></code>s will have additional keys that need to be
+specified to function properly, and others like <code class="docutils literal notranslate"><span class="pre">WHITE_NOISE</span></code> don’t require anything extra.</p>
+<p>One example of an <em>optional</em> key available when specifying the <code class="docutils literal notranslate"><span class="pre">WHITE_NOISE</span></code> type is <code class="docutils literal notranslate"><span class="pre">salt</span></code>. The function of salt is
+covered in <a class="reference external" href="#seeds">Seeds</a> if you need a refresher. Here is what the above example looks like with the <code class="docutils literal notranslate"><span class="pre">salt</span></code> key added:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
+<span class="nt">salt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2321</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Another thing to note is that most optional parameters have a pre-defined default value that’s set when not specified.
+When the <code class="docutils literal notranslate"><span class="pre">salt</span></code> key is not included in a noise config, it will default to its predefined value <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+</section>
+<section id="noise-tool">
+<h4>Noise Tool<a class="headerlink" href="#noise-tool" title="Permalink to this headline">¶</a></h4>
+<p>Now that we know how to write a simple noise config, we can use a handy program aptly named the <strong>Noise Tool</strong> to
+preview what our config looks like.</p>
+<img alt="../../_images/noise_tool.png" src="../../_images/noise_tool.png"/>
+<p>The Noise Tool was specially designed for creating, previewing, and modifying noise configs, and is also what was used
+to generate every image of noise used on this page. You can find the Noise Tool on GitHub -
+<a class="reference external" href="https://github.com/PolyhedralDev/NoiseTool">Source</a> / <a class="reference external" href="https://github.com/PolyhedralDev/NoiseTool/releases">Download</a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>We suggest that you follow along the rest of this section with the Noise Tool, so you can try out parameters get the
+hang of writing your own noise configs. Playing around and experimenting on your own is a great way of learning what
+each parameter does, and will give you an intuition on how you can fine tune them to your advantage.</p>
+</div>
+<p>For a complete list of noise function <code class="docutils literal notranslate"><span class="pre">type</span></code>s and their parameters available in Terra, please refer to the
+<a class="reference external" href="./Noise-Options">Noise Configuration</a> documentation.</p>
+</section>
+</section>
+<section id="frequency">
+<h3>Frequency<a class="headerlink" href="#frequency" title="Permalink to this headline">¶</a></h3>
+<p>You might be wondering how we control just how large or how small details produced by noise functions are - This is
+where the concept of <strong>frequency</strong> comes in. Frequency is a number that modifies the scale of noise, where higher
+frequency produces more ‘zoomed out’ noise, while lower frequency results in more ‘zoomed in’ noise.</p>
+<p>Let’s preview some comparisons of the same noise function with varying frequencies:</p>
+<p><code class="docutils literal notranslate"><span class="pre">2x</span> <span class="pre">Frequency</span> <span class="pre">|</span> <span class="pre">1x</span> <span class="pre">Frequency</span> <span class="pre">|</span> <span class="pre">0.5x</span> <span class="pre">frequency</span></code></p>
+<img alt="../../_images/opensimplex2_64x64_freq_double.png" src="../../_images/opensimplex2_64x64_freq_double.png"/>
+<img alt="../../_images/opensimplex2_64x64.png" src="../../_images/opensimplex2_64x64.png"/>
+<img alt="../../_images/opensimplex2_64x64_freq_half.png" src="../../_images/opensimplex2_64x64_freq_half.png"/>
+<p>As a general rule of thumb:</p>
+<p><strong>HIGHER FREQUENCY</strong></p>
+<ul class="simple">
+<li><p>Zooms <em>out</em>.</p></li>
+<li><p>Produces <em>smaller</em> &amp; <em>closer</em> details.</p></li>
+<li><p>Increases the density of ‘points’ per unit of space.</p></li>
+</ul>
+<p><strong>LOWER FREQUENCY</strong></p>
+<ul class="simple">
+<li><p>Zooms <em>in</em>.</p></li>
+<li><p>Produces <em>larger</em> &amp; <em>more spread out</em> details.</p></li>
+<li><p>Decreases the density of ‘points’ per unit of space.</p></li>
+</ul>
+<p><strong>IN A NOISE CONFIG</strong></p>
+<p>Frequency can be defined for applicable <code class="docutils literal notranslate"><span class="pre">types</span></code>s via the <code class="docutils literal notranslate"><span class="pre">frequency</span></code> key like so:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;Noise Type&gt;</span><span class="w"></span>
+<span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;Desired Frequency&gt;</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Something to note is that tweaking frequency is only really useful for functions in the
+<a class="reference external" href="#coherent-noise">coherent noise</a> category. You’re able to modify the frequency of random noise based functions, however
+they don’t have the property of being able to scale like coherent noise functions do. There isn’t much reason to scale
+the frequency of a random noise function, as doing so functionally has same effect as changing the seed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p><strong>Under The Hood - How frequency works</strong></p>
+<p>The math behind frequencies is very simple: <em>multiply the input coordinates of a noise function by the
+frequency</em>. Here is a model of the process:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐                     ┌────────────────┐   ┌───────────────────┐
+│ Input parameters │          ╭──────┬ → &gt; Noise Function &gt; → │ Randomized output │
+├──────────────────┤          │      │   └────────────────┘   └───────────────────┘
+│ - Seed           &gt; ─────────╯      │
+│ - Frequency      &gt; ─────────╮      │
+| - Input 1 (X)    &gt; → X * Frequency ┤
+| - Input 2 (Z)    &gt; → Y * Frequency ╯
+└──────────────────┘
+</pre></div>
+</div>
+<p>For example, if we have a frequency of <cite>2</cite>, and want to sample the coordinates <cite>(X = 3, Z = 2)</cite>, first the coordinates
+will be multiplied by the frequency <cite>2</cite>, giving us the scaled coordinates <cite>(X’ = 6, Z’ = 4)</cite>. This new set of
+coordinates will then be input into the noise function which will then give us the final output value.</p>
+<blockquote>
+<div><p>Based on this logic, we can deduct that the input:</p>
+<p><cite>(X = 3, Z = 2, Frequency = 2)</cite></p>
+<p>Will give the exact same output when inputting:</p>
+<p><cite>(X = 6, Z = 4, Frequency = 1)</cite></p>
+</div></blockquote>
+<p>Higher frequencies effectively produce <em>faster changes</em> when incrementing input coordinates, which is why higher
+frequencies make details closer and therefore smaller.</p>
+</div>
+</section>
+</section>
+<section id="in-context">
+<h2>In Context<a class="headerlink" href="#in-context" title="Permalink to this headline">¶</a></h2>
+<p>To get a better idea of how noise configs get used in packs, Here is what one looks like in the context of a
+<a class="reference external" href="./Palette-Configuration">palette configuration</a>. The noise config is highlighted.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DIRTY_GRASS</span><span class="w"></span>
+<span class="nt">layers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="c1"># Single layer of grass and dirt blocks</span><span class="w"></span>
+<span class="w">    </span><span class="nt">layers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">materials</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"minecraft:grass_block"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"minecraft:coarse_dirt"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="hll"><span class="w">    </span><span class="nt">noise</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPEN_SIMPLEX_2</span><span class="w"></span>
+</span><span class="hll"><span class="w">      </span><span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.05</span><span class="w"></span>
+</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="c1"># Two layers of dirt below the top layer</span><span class="w"></span>
+<span class="w">    </span><span class="nt">layers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">materials</span><span class="p">:</span><span class="w"> </span><span class="s">"minecraft:dirt"</span><span class="w"></span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="c1"># Then finally stone</span><span class="w"></span>
+<span class="w">    </span><span class="nt">layers</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">    </span><span class="nt">materials</span><span class="p">:</span><span class="w"> </span><span class="s">"minecraft:stone"</span><span class="w"></span>
+</pre></div>
+</div>
+<p>The usage of noise here controls the arrangement of the <a class="reference external" href="./Weighted-Pools">weighted pool</a> of materials highlighted in
+red. To get a better idea of the relationship, here is a screenshot of a biome which uses the above palette
+configuration:</p>
+<img alt="../../_images/palette_example.png" src="../../_images/palette_example.png"/>
+<p>This is also another great example of <a class="reference external" href="#noise-segmentation">noise segmentation</a> in action with weighted pools. You can
+see our <code class="docutils literal notranslate"><span class="pre">OPEN_SIMPLEX_2</span></code> function has been segmented equally between grass blocks and dirt, giving us a nice random
+pattern of surface blocks in the biome.</p>
+</section>
+<section id="fractal-noise">
+<h2>Fractal Noise<a class="headerlink" href="#fractal-noise" title="Permalink to this headline">¶</a></h2>
+<p>In some situations, <a class="reference external" href="#coherent-noise">coherent noise</a> on its own may be far too smooth and uniform to produce
+‘<em>realistic</em>‘ results. Looking at the images above, you may notice plain simplex is quite <em>blobby</em>, which may not be
+desired for applications where more detail is required. This is where <strong>fractal noise</strong> comes in.</p>
+<p>The basic premise of fractal noise that we can produce more detail by stacking multiple of the same noise function on
+top of each other, where each successive function (called an <strong>octave</strong>) has a higher <a class="reference external" href="#frequency">frequency</a> and a
+scaled down output value (making it contribute less to the overall noise). This process of progressively stacking
+incrementally smaller noise layers to produce a <a class="reference external" href="https://en.wikipedia.org/wiki/Fractal">fractal</a> effect is referred to
+as <a class="reference external" href="https://en.wikipedia.org/wiki/Fractional_Brownian_motion">fractal Brownian motion</a> (Commonly abbreviated as fBm).</p>
+<p>It might sound quite complicated in writing, so we can demonstrate this concept visually to get a better idea of what’s
+happening:</p>
+<p><code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">Octave</span> <span class="pre">(Regular</span> <span class="pre">Noise)</span> <span class="pre">|</span> <span class="pre">2</span> <span class="pre">Octaves</span> <span class="pre">|</span> <span class="pre">3</span> <span class="pre">Octaves</span> <span class="pre">|</span> <span class="pre">4</span> <span class="pre">Octaves</span></code></p>
+<img alt="../../_images/opensimplex2_1_octave.png" src="../../_images/opensimplex2_1_octave.png"/>
+<img alt="../../_images/opensimplex2_2_octaves.png" src="../../_images/opensimplex2_2_octaves.png"/>
+<img alt="../../_images/opensimplex2_3_octaves.png" src="../../_images/opensimplex2_3_octaves.png"/>
+<img alt="../../_images/opensimplex2_4_octaves.png" src="../../_images/opensimplex2_4_octaves.png"/>
+<p>As you can see, the more octaves we add, the more detailed the noise gets. This is the main application of fractal
+noise - to produce more detail, especially at lower frequencies where detail is sparse. You won’t have to worry about
+the exact math behind how each octave gets stacked, as Terra will handle all of that for you.</p>
+<p><strong>IN A NOISE CONFIG</strong></p>
+<p>When fractalizing noise configs, we define the fractalizer as <em>its own noise config</em>, which takes <em>another noise config</em>
+as an input. The syntax for this is as followed:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;Fractalizer Type&gt;</span><span class="w"></span>
+<span class="nt">function</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"> </span><span class="c1"># Noise config to be fractalized</span><span class="w"></span>
+</pre></div>
+</div>
+<p>As you can see, we have the main noise config for our fractalizer, and a second noise config <em>nested</em> inside under the
+<code class="docutils literal notranslate"><span class="pre">function</span></code> key. The <code class="docutils literal notranslate"><span class="pre">function</span></code> key is the only <strong>required</strong> parameter for all fractalizers.</p>
+<p>Based on this template, we can create a real noise config. Let’s use the <code class="docutils literal notranslate"><span class="pre">FBM</span></code> fractalizer, with an input function with
+<code class="docutils literal notranslate"><span class="pre">type</span></code> <code class="docutils literal notranslate"><span class="pre">OPEN_SIMPLEX_2</span></code>:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FBM</span><span class="w"></span>
+<span class="nt">function</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPEN_SIMPLEX_2</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Pretty simple, all we’ve done is passed some <em>simplex noise</em> into the <em>FBM</em> function. Fractalizers have a couple
+additional parameters, including <code class="docutils literal notranslate"><span class="pre">octaves</span></code>, <code class="docutils literal notranslate"><span class="pre">lacunarity</span></code>, and <code class="docutils literal notranslate"><span class="pre">gain</span></code>. Here is another example config with those
+parameters already defined:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FBM</span><span class="w"></span>
+<span class="nt">function</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPEN_SIMPLEX_2</span><span class="w"></span>
+<span class="nt">octaves</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
+<span class="nt">lacunarity</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="nt">gain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.75</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Feel free to preview this config in the <a class="reference external" href="#noise-tool">Noise Tool</a>, and have an experiment with each parameter to see
+what they all do. To see all available fractalizers and their parameters, please refer to the
+<a class="reference external" href="./Noise-Options">Noise Configuration</a> documentation.</p>
+</section>
+<section id="domain-warping">
+<h2>Domain Warping<a class="headerlink" href="#domain-warping" title="Permalink to this headline">¶</a></h2>
+<img alt="../../_images/overwarped.png" src="../../_images/overwarped.png"/>
+<p>Similar to fractal noise, domain warping involves manipulating the input, aka the <em>domain</em> , before it’s passed to the
+noise function. More specifically, the domain of a noise function will be warped via translation by the output of a
+secondary warping function.</p>
+<p>To demonstrate domain warping more clearly, let’s take a 64 x 64 square of samples in a space. Our function <em>to be
+warped</em> will be a checkerboard pattern, and our <em>warping function</em> will be some basic simplex noise.</p>
+<img alt="../../_images/checkerboard.png" src="../../_images/checkerboard.png"/>
+<img alt="../../_images/simplex_warp.png" src="../../_images/simplex_warp.png"/>
+<p>When domain warping the checker board function by the simplex we get the following result:</p>
+<img alt="../../_images/checkerboard_warped.png" src="../../_images/checkerboard_warped.png"/>
+<p>As you can see, our once perfectly square boxes have been contorted out of shape by the warp function.</p>
+<p><strong>IN A NOISE CONFIG</strong></p>
+<p>To use domain warping, we will need to set the <code class="docutils literal notranslate"><span class="pre">type</span></code> to <code class="docutils literal notranslate"><span class="pre">DOMAIN_WARP</span></code>, and specify two additional required keys
+<code class="docutils literal notranslate"><span class="pre">function</span></code> and <code class="docutils literal notranslate"><span class="pre">warp</span></code>. As you may have already guessed, both <code class="docutils literal notranslate"><span class="pre">function</span></code> and <code class="docutils literal notranslate"><span class="pre">warp</span></code> need to be set to a noise config,
+similar to how <a class="reference external" href="#fractal-noise">fractalizers</a> accept an input function:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DOMAIN_WARP</span><span class="w"></span>
+<span class="nt">function</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"> </span><span class="c1"># Noise config to be warped</span><span class="w"></span>
+<span class="nt">warp</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">...</span><span class="w"> </span><span class="c1"># Warp noise config</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Additionally, we can specify <code class="docutils literal notranslate"><span class="pre">amplitude</span></code> which determines how much the function defined in <code class="docutils literal notranslate"><span class="pre">function</span></code> will be warped by
+the <code class="docutils literal notranslate"><span class="pre">warp</span></code> function. Here is an example of a real noise config which warps low frequency simplex with another simplex
+function:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DOMAIN_WARP</span><span class="w"></span>
+<span class="nt">function</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPEN_SIMPLEX_2</span><span class="w"></span>
+<span class="w">  </span><span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.005</span><span class="w"></span>
+<span class="nt">warp</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPEN_SIMPLEX_2</span><span class="w"></span>
+<span class="nt">amplitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Again it’s recommended that you try out this noise config in the <a class="reference external" href="#noise-tool">Noise Tool</a> and see what changing each
+parameter does - What happens if you use <code class="docutils literal notranslate"><span class="pre">WHITE_NOISE</span></code> as a warp function instead?</p>
+<details>
+<summary><b>Under The Hood</b> - The Math Behind Domain Warping</summary><br/>
+
+To get an in depth understanding of what's happening, let's explain the formula that is used to achieve domain warping:
+&gt;
+&gt; * We will define `noise(coordinate)` as our function to be warped, where `coordinate` represents the input values
+&gt; (such as the familiar `X` and `Z` coordinates).
+&gt;
+&gt; * To *translate* `noise`, we can simply add some translation to the input: `noise(coordinate + translation)`.
+&gt; Translating simply means moving left / right / up / down / etc.
+&gt;
+&gt; * We can then define `warp_noise(coordinate)` as our warping function.
+&gt;
+&gt; * If we make `translation` our `warp_noise` function then now the `coordinate` of `noise` will be translated by
+&gt; `warp_noise` like so:
+&gt;
+&gt;     `noise(coordinate + warp_noise(coordinate))`
+&gt;
+&gt; * Finally, we can multiply the output of `warp_noise` by a value `amplitude`, which will control how 'strong' the
+&gt; warping will be, to give us the final formula:
+&gt;
+&gt;     `noise(coordinate + warp_noise(coordinate) * amplitude)`
+
+</details></section>
+<section id="chained-functions">
+<h2>Chained Functions<a class="headerlink" href="#chained-functions" title="Permalink to this headline">¶</a></h2>
+<p>Because some keys such as <code class="docutils literal notranslate"><span class="pre">function</span></code> and <code class="docutils literal notranslate"><span class="pre">warp</span></code> accept a noise config, something we can do is <em>feed a
+`domain warp &lt;#domain-warping&gt;`_ function into another domain warp function</em>. In fact, we could feed <strong>any</strong> noise
+function into any other one, given it has a parameter that accepts a noise config. This is incredibly powerful, as it
+allows for constructing complex highly configurable systems of noise. Here is an example where we domain warp some
+<a class="reference external" href="#fractal-noise">fractalized</a> simplex by more fractalized simplex (which has also been domain warped by more…
+fractalized simplex!):</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DOMAIN_WARP</span><span class="w"></span>
+<span class="nt">amplitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">300</span><span class="w"></span>
+
+<span class="nt">function</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FBM</span><span class="w"></span>
+<span class="w">  </span><span class="nt">function</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPEN_SIMPLEX_2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.002</span><span class="w"></span>
+
+<span class="nt">warp</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">DOMAIN_WARP</span><span class="w"></span>
+<span class="w">  </span><span class="nt">amplitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
+
+<span class="w">  </span><span class="nt">function</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FBM</span><span class="w"></span>
+<span class="w">    </span><span class="nt">function</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPEN_SIMPLEX_2</span><span class="w"></span>
+<span class="w">      </span><span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.003</span><span class="w"></span>
+
+<span class="w">  </span><span class="nt">warp</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FBM</span><span class="w"></span>
+<span class="w">    </span><span class="nt">function</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPEN_SIMPLEX_2</span><span class="w"></span>
+<span class="w">      </span><span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.02</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>Now that you’ve got an idea of <a class="reference external" href="#what-is-noise">what noise is</a>, <a class="reference external" href="#noise-basics">how it works</a>, and a couple ways of
+<a class="reference external" href="#manipulating-noise">manipulating it</a>, you should now be equipped with the necessary  knowledge to start configuring
+your own fancy noise functions for use in your own customized world generation! For more information on the available
+noise functions in Terra, please refer to the <a class="reference external" href="./Noise-Options">Noise Configuration</a> documentation. If you have any
+further questions, feel free to ask us in our <a class="reference external" href="https://discord.gg/PXUEbbF">Discord</a>!</p>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../../config/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Config Packs</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Concepts</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Terra Contributors |
+          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            | <a class="muted-link" href="../../_sources/concepts/noise/index.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Noise Crash Course</a><ul>
+<li><a class="reference internal" href="#what-is-noise">What is Noise?</a></li>
+<li><a class="reference internal" href="#why-is-noise-important">Why is Noise Important?</a></li>
+<li><a class="reference internal" href="#noise-basics">Noise Basics</a><ul>
+<li><a class="reference internal" href="#demonstration">Demonstration</a></li>
+<li><a class="reference internal" href="#determinism">Determinism</a></li>
+<li><a class="reference internal" href="#seeds">Seeds</a></li>
+<li><a class="reference internal" href="#flavors-of-noise">Flavors of Noise</a></li>
+<li><a class="reference internal" href="#multidimensional-noise">Multidimensional Noise</a></li>
+<li><a class="reference internal" href="#segmentation">Segmentation</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#applying-noise-to-world-generation">Applying Noise to World Generation</a><ul>
+<li><a class="reference internal" href="#planting-grass">Planting Grass</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#coherent-noise">Coherent Noise</a></li>
+<li><a class="reference internal" href="#segmenting-noise">Segmenting Noise</a></li>
+<li><a class="reference internal" href="#manipulating-noise">Manipulating Noise</a><ul>
+<li><a class="reference internal" href="#noise-configs">Noise Configs</a><ul>
+<li><a class="reference internal" href="#noise-config-parameters">Noise Config Parameters</a></li>
+<li><a class="reference internal" href="#noise-tool">Noise Tool</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#frequency">Frequency</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#in-context">In Context</a></li>
+<li><a class="reference internal" href="#fractal-noise">Fractal Noise</a></li>
+<li><a class="reference internal" href="#domain-warping">Domain Warping</a></li>
+<li><a class="reference internal" href="#chained-functions">Chained Functions</a></li>
+<li><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/scripts/furo.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
+    </body>
+</html>
