@@ -44,7 +44,7 @@ If you followed the steps correctly without any errors, then you have successful
 Troubleshooting
 ---------------
 If you run into issues during the world set up process, be sure to check you have followed each step correctly.
-Check for any errors in your client logs and try to interpret what the issue might be.
+Check for any errors in your server logs and try to interpret what the issue might be.
 
 If you are unable to set up a world successfully, and have attempted to fix any issues yourself,
 please feel free to shoot us a message on our Discord server and provide any relevant information and most importantly the before mentioned logs!
