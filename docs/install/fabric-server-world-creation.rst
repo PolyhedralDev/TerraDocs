@@ -39,6 +39,10 @@ Procedure
 
 #. Join your server and check if your new world is using Terra world generation.
 
+.. note::
+    Terra is a **pure server mod**. If you have Terra on a server, Vanilla clients can join the server. Terra
+    does not need to be installed on clients unless playing with Terra in singleplayer.
+
 If you followed the steps correctly without any errors, then you have successfully set up a server with Terra!
 
 Troubleshooting
