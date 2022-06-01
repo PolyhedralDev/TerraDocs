@@ -38,7 +38,7 @@ Procedure
 
       worlds:
         <LEVEL NAME>:
-          generator: Terra:DEFAULT
+          generator: Terra:OVERWORLD
 
 .. attention:: These lines are **not** present by default, you have to add them yourself!
 
