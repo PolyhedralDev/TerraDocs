@@ -48,17 +48,25 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
         - Backwards Compatibility
 
     *
-        - **1.18**
-        - 6.0.0 :bdg-warning:`Beta` :bdg-secondary:`In Development`
+        - **1.19**
+        - 6.1.0 :bdg-warning:`Beta` :bdg-secondary:`In Development`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
         - `CodeMC <https://ci.codemc.io/job/PolyhedralDev/job/Terra/>`__
         - N/A
 
     *
+        - **1.18**
+        - 6.0.0 :bdg-warning:`Beta`
+        - :bdg-success:`Yes`
+        - :bdg-danger:`No`
+        - `CodeMC <https://modrinth.com/mod/terra/version/6.0.0-BETA/>`__
+        - N/A
+
+    *
         - **1.17**
         - 5.4.1 :bdg-warning:`Beta`
-        - :bdg-success:`Yes`
+        - :bdg-danger:`No`
         - :bdg-danger:`No`
         - `Modrinth <https://modrinth.com/mod/terra/version/i38N6tkR>`__
         - N/A
@@ -90,17 +98,25 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
         - Backwards Compatibility
 
     *
-        - **1.18**
-        - 6.0.0 :bdg-warning:`Beta` :bdg-secondary:`In Development`
+        - **1.19**
+        - 6.1.0 :bdg-warning:`Beta` :bdg-secondary:`In Development`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
         - `CodeMC <https://ci.codemc.io/job/PolyhedralDev/job/Terra/>`__
         - N/A
 
     *
+        - **1.18**
+        - 6.0.0 :bdg-warning:`Beta`
+        - :bdg-success:`Yes`
+        - :bdg-danger:`No`
+        - `SpigotMC <https://www.spigotmc.org/resources/terra.85151/download?version=454311/>`__
+        - N/A
+
+    *
         - **1.17**
         - 5.4.1 :bdg-warning:`Beta`
-        - :bdg-success:`Yes`
+        - :bdg-danger:`No`
         - :bdg-danger:`No`
         - `SpigotMC <https://www.spigotmc.org/resources/terra.85151/download?version=404442>`__
         - N/A
