@@ -60,7 +60,7 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
         - 6.0.0 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
         - :bdg-danger:`No`
-        - `CodeMC <https://modrinth.com/mod/terra/version/6.0.0-BETA/>`__
+        - `Modrinth <https://modrinth.com/mod/terra/version/6.0.0-BETA/>`__
         - N/A
 
     *
