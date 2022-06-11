@@ -45,6 +45,5 @@ Contents
     :titlesonly:
 
     install/index
-    concepts/index
     config/index
     api/index
