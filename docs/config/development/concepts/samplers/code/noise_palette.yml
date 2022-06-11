@@ -5,7 +5,7 @@ layers:
     materials:
       - "minecraft:grass_block": 1
       - "minecraft:coarse_dirt": 1
-    noise:
+    sampler:
       type: OPEN_SIMPLEX_2
       frequency: 0.05
   - # Two layers of dirt below the top layer
