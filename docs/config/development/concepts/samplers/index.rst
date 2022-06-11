@@ -737,21 +737,21 @@ parameter does - What happens if you use ``WHITE_NOISE`` as a warp sampler inste
    
    .. card::
 
-      * We will define ``sampler(coordinate)`` as our sampler to be warped, where ``coordinate`` represents the input values
-      (such as the familiar `X` and `Z` coordinates).
+      - We will define ``sampler(coordinate)`` as our sampler to be warped, where ``coordinate`` represents the input values
+        (such as the familiar `X` and `Z` coordinates).
+
+      - To *translate* ``sampler``, we can simply add some translation to the input: ``sampler(coordinate + translation)``.
+        Translating simply means moving left / right / up / down / etc.
       
-      * To *translate* ``sampler``, we can simply add some translation to the input: ``sampler(coordinate + translation)``.
-      Translating simply means moving left / right / up / down / etc.
+      - We can then define ``warp_sampler(coordinate)`` as our warping sampler.
       
-      * We can then define ``warp_sampler(coordinate)`` as our warping sampler.
-      
-      * If we make ``translation`` our ``warp_sampler`` sampler then now the ``coordinate`` of ``sampler`` will be translated by
-      ``warp_sampler`` like so:
+      - If we make ``translation`` our ``warp_sampler`` sampler then now the ``coordinate`` of ``sampler`` will be translated by
+        ``warp_sampler`` like so:
       
       `sampler(coordinate + warp_sampler(coordinate))`
       
-      * Finally, we can multiply the output of ``warp_sampler`` by a value ``amplitude``, which will control how 'strong' the
-      warping will be, to give us the final formula:
+      - Finally, we can multiply the output of ``warp_sampler`` by a value ``amplitude``, which will control how 'strong' the
+        warping will be, to give us the final formula:
       
       `sampler(coordinate + warp_sampler(coordinate) * amplitude)`
 
