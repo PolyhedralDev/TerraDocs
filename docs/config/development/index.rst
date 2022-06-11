@@ -15,4 +15,4 @@ Config Development
 
     modifying-existing-pack
 
-    concepts/index
+    samplers/index
