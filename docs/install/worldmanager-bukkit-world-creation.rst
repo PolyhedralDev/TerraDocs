@@ -25,12 +25,12 @@ Multiverse Core
 To create a Terra world using Multiverse Core, add the following argument to the end of the
 `Multiverse Create Command <https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference#create-command>`_:
 
-``-g Terra:<PACK ID>``.
+`-g Terra:<PACK ID>`.
 
-Here is an example command which will create a world with the name `example_world`, the `NORMAL` world environment, and
-a Terra generator using the pack with ID `EXAMPLE`:
+Here is an example command which will create a world with the name ``example_world``, the ``NORMAL`` world environment, and
+a Terra generator using the pack with ID ``EXAMPLE``:
 
-``/mv create example_world NORMAL -g Terra:EXAMPLE``
+`/mv create example_world NORMAL -g Terra:EXAMPLE`
 
 
 Troubleshooting
