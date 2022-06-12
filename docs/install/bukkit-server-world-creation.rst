@@ -22,37 +22,40 @@ outlined here, please refer to :doc:`Setting a Generator Through a World Manager
 Procedure
 ---------
 
-#. Ensure your server is not running.
+1. Ensure your server is not running.
 
-#. If you missed it above, please make a backup of any relevant world folders in your server directory.
+2. If you missed it above, please make a backup of any relevant world folders in your server directory.
 
-    If you're using a fresh server you won't need to worry about this!
+3. Configure your server's world to use the new config as a generator:
 
-#. Configure your server's world to use the new config as a generator:
+.. card::
 
-   #. Navigate to the `bukkit.yml` file which is also contained within your server directory, and open it with any text editor.
+  #. Navigate to the ``bukkit.yml`` file which is also contained within your server directory, and open it with any text editor.
 
-   #. Assign your new generator to the default world by **adding the following lines to the end of the file**:
+  #. Assign your new generator to the default world by **adding the following lines to the end of the file**:
 
-   .. code-block:: yaml
+  .. code-block:: yaml
+    :caption: bukkit.yml
 
-      worlds:
-        <LEVEL NAME>:
-          generator: Terra:OVERWORLD
+    worlds:
+      <LEVEL NAME>:
+        generator: Terra:OVERWORLD
 
-.. attention:: These lines are **not** present by default, you have to add them yourself!
+  .. attention:: These lines are **not** present by default, you have to add them yourself!
 
-#. Replace `<LEVEL NAME>` with the server's configured `level-name`. This can be found in the `server.properties` file
-   under the 'level-name' key. By default, level-name is set to `world`.
+4. Replace ``<LEVEL NAME>`` with the server's configured ``level-name``. (This can be found in the ``server.properties`` file
+   under the 'level-name' key. By default, level-name is set to ``world``.)
 
-#. Either delete the existing world folder (the name of this folder is covered above) in your server directory, or
-   rename it to something else (for example `world_backup`).
+5. Either delete the existing world folder (the name of this folder is covered above) in your server directory, or
+   rename it to something else (for example ``world_backup``).
 
-#. Boot your server back up.
+6. Boot your server back up.
+
+.. note::
 
     Your server should re-generate the world folder during startup.
 
-#. Join your server and check if your new world is using Terra world generation.
+7. Join your server and check if your new world is using Terra world generation.
 
 If you followed the steps correctly without any errors, then you have successfully set up a server with Terra!
 
@@ -60,9 +63,11 @@ Setting up Another World
 ------------------------
 
 If you have already done this process before and wish to set up another existing world (such as the Nether or End) with
-a new generator, you can simply add the world to the `worlds` key like so:
+a new generator, you can simply add the world under the ``worlds`` key like so:
 
 .. code-block:: yaml
+  :caption: bukkit.yml
+  :emphasize-lines: 4-5
    
    worlds:
      existing_world_name: 
@@ -73,6 +78,7 @@ a new generator, you can simply add the world to the `worlds` key like so:
 Here is an example with two worlds configured:
 
 .. code-block:: yaml
+  :caption: bukkit.yml
 
    worlds:
      world: 
