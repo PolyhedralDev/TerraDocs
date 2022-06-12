@@ -9,6 +9,14 @@ h4 {
     font-weight: bold;
 }
 
+h2 {
+    margin-top: 4rem;
+}
+
+h3 {
+    margin-top: 2rem;
+}
+
 h4,
 h5,
 h6 {
