@@ -4,7 +4,8 @@ styles the logo
 
 .sidebar-brand {
     flex-direction: row;
-    align-items: center
+    justify-content: center;
+    padding: 0 0.8rem 0 0;
 }
 
 .sidebar-logo {
@@ -12,6 +13,8 @@ styles the logo
 }
 
 .sidebar-brand-text {
-    font-weight: bolder;
-    margin-left: 1rem;
+    font-size: 1.8rem;
+    margin-left: 0.5rem;
+    line-height: 3rem;
+    text-anchor: middle;
 }
