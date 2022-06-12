@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="_static/css/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="_static/css/logo.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/content.css" />
     
     
 
@@ -30,21 +31,25 @@
   --color-code-foreground: #cccccc;
   --color-admonition-title--important: #ff9100;
   --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #000000;
+  --color-foreground-secondary: #333333;
+  --font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Cantarell, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --admonition-font-size: 1rem;
   
   }
   body[data-theme="dark"] {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
     }
   }
@@ -150,7 +155,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -245,19 +250,23 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="terra-documentation">
-<h1>Terra Documentation<a class="headerlink" href="#terra-documentation" title="Permalink to this headline">¶</a></h1>
+          <div class="line-block">
+<div class="line"><br/></div>
+</div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>This documentation site is under construction! Some things may not work currently, we’re working to get it up
 and running properly. Want to help? Check out the GitHub Repo for instructions on contributing:</p>
 <p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-outline-primary reference external" href="https://github.com/PolyhedralDev/TerraDocs"><span><svg aria-hidden="true" class="sd-octicon sd-octicon-mark-github" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" fill-rule="evenodd"></path></svg> TerraDocs</span></a></p>
+</div>
+<div class="line-block">
+<div class="line"><br/></div>
 </div>
 <p>Terra is a modern world generation modding platform, primarily for Minecraft. Terra allows complete customization of
 world generation with an advanced API, tightly integrated with a powerful configuration system:</p>
@@ -307,7 +316,7 @@ Addons provide the majority of Terra’s world generation <em>functionality</em>
 </div>
 </div>
 <section id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h2>
+<h1>Contents<a class="headerlink" href="#contents" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="install/index.html">Getting Started</a></li>
@@ -351,7 +360,6 @@ Addons provide the majority of Terra’s world generation <em>functionality</em>
 </ul>
 </div>
 </section>
-</section>
 
         </article>
       </div>
@@ -382,27 +390,8 @@ Addons provide the majority of Terra’s world generation <em>functionality</em>
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">Terra Documentation</a><ul>
-<li><a class="reference internal" href="#contents">Contents</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

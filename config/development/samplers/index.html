@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/css/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/logo.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/content.css" />
     
     
 
@@ -30,21 +31,25 @@
   --color-code-foreground: #cccccc;
   --color-admonition-title--important: #ff9100;
   --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #000000;
+  --color-foreground-secondary: #333333;
+  --font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Cantarell, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --admonition-font-size: 1rem;
   
   }
   body[data-theme="dark"] {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
     }
   }
@@ -296,23 +301,23 @@ guide, however is not essential in understanding the general idea.</p>
 <p>We will perform a couple samples with our sampler, using numbers 1 - 10 as an input, and record the outputs as both a
 number and a shade from black to white. <strong>Conventionally, the values outputted by a noise sampler will be within a
 range of -1 to 1.</strong> We can visualize the relationship between the value and shade on a number line as such:</p>
-<a class="reference internal image-reference" href="../../../_images/basic_example-04.png"><img alt="../../../_images/basic_example-04.png" src="../../../_images/basic_example-04.png" style="width: 75%;"/></a>
+<a class="reference internal image-reference" href="../../../_images/basic_example-04.png"><img alt="../../../_images/basic_example-04.png" class="align-center" src="../../../_images/basic_example-04.png" style="width: 75%;"/></a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Typically outputs will produce decimals with high precision, however we will round the output to one decimal place for simplicity.
 Input numbers also do not have to be whole numbers, this means noise samplers will still work the same way with inputs like <cite>1.5</cite>.
 Again we’ve just used integers here for the sake of demonstration.</p>
 </div>
-<p><strong>MODEL</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌────────────────────┐   ┌─────────────┐   ┌──────────────────────┐
+<p class="centered">
+<strong><strong>Model</strong></strong></p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌────────────────────┐   ┌─────────────┐   ┌──────────────────────┐
 │  Input parameters  │ → &gt; White Noise &gt; → │  Randomized output   │
 ├────────────────────┤   │   Sampler   │   │ within range [-1, 1] │
 │ Number from 1 - 10 │   └─────────────┘   └──────────────────────┘
 └────────────────────┘
 </pre></div>
 </div>
-<p><strong>RESULTS</strong></p>
-<a class="reference internal image-reference" href="../../../_images/basic_example-01.png"><img alt="../../../_images/basic_example-01.png" src="../../../_images/basic_example-01.png" style="width: 75%;"/></a>
+<p class="centered">
+<strong><strong>Results</strong></strong></p><a class="reference internal image-reference" href="../../../_images/basic_example-01.png"><img alt="../../../_images/basic_example-01.png" class="align-center" src="../../../_images/basic_example-01.png" style="width: 75%;"/></a>
 <p>Simple, right? All our noise sampler does is convert one value to a randomized value.</p>
 </section>
 <section id="determinism">
@@ -341,10 +346,10 @@ be a valid seed, but <code class="docutils literal notranslate"><span class="pre
 </div>
 <p>Here is an example using two different seeds to produce different outputs, using the same inputs and noise sampler from
 the example above.</p>
-<p><cite>Seed = 0</cite></p>
-<a class="reference internal image-reference" href="../../../_images/basic_example-01.png"><img alt="../../../_images/basic_example-01.png" src="../../../_images/basic_example-01.png" style="width: 75%;"/></a>
-<p><cite>Seed = 1</cite></p>
-<a class="reference internal image-reference" href="../../../_images/basic_example-02.png"><img alt="../../../_images/basic_example-02.png" src="../../../_images/basic_example-02.png" style="width: 75%;"/></a>
+<p class="centered">
+<strong><strong>Seed = 0</strong></strong></p><a class="reference internal image-reference" href="../../../_images/basic_example-01.png"><img alt="../../../_images/basic_example-01.png" class="align-center" src="../../../_images/basic_example-01.png" style="width: 75%;"/></a>
+<p class="centered">
+<strong><strong>Seed = 1</strong></strong></p><a class="reference internal image-reference" href="../../../_images/basic_example-02.png"><img alt="../../../_images/basic_example-02.png" class="align-center" src="../../../_images/basic_example-02.png" style="width: 75%;"/></a>
 <p>One usage of seeds that you might be familiar with is minecraft world seeds. A vanilla minecraft world seed gets
 inserted into the many noise algorithms that govern vanilla world generation, resulting in completely different worlds
 per seed (since each noise algorithm will return a completely new set of values for each unique seed). Combined with
@@ -386,8 +391,8 @@ of 2 inputs. Conveniently, that gives us 2 dimensions, thus we can easily displa
 refer to the first input as <code class="docutils literal notranslate"><span class="pre">X</span></code>, and the second as <code class="docutils literal notranslate"><span class="pre">Z</span></code>.</p>
 <p>In a new example, let’s use a range of 1 - 3 for both <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Z</span></code>, giving us a total of 9 samples (3 x 3). We will only
 label the <code class="docutils literal notranslate"><span class="pre">X</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">Z</span></code> axes for the sake of simplicity.</p>
-<p><strong>TWO DIMENSIONAL MODEL</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐
+<p class="centered">
+<strong><strong>Two Dimensional Model</strong></strong></p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐
 │ Input parameters │ → &gt; White Noise &gt; → │ Randomized output │
 ├──────────────────┤   │   Sampler   │   ├───────────────────┤
 │ - Seed           │   └─────────────┘   │ Displayed as as a │
@@ -396,18 +401,20 @@ label the <code class="docutils literal notranslate"><span class="pre">X</span><
 └──────────────────┘
 </pre></div>
 </div>
-<p><strong>RESULTS</strong></p>
-<a class="reference internal image-reference" href="../../../_images/basic_example-03.png"><img alt="../../../_images/basic_example-03.png" src="../../../_images/basic_example-03.png" style="width: 300px;"/></a>
+<p class="centered">
+<strong><strong>Results</strong></strong></p><a class="reference internal image-reference" href="../../../_images/basic_example-03.png"><img alt="../../../_images/basic_example-03.png" class="align-center" src="../../../_images/basic_example-03.png" style="width: 300px;"/></a>
 <p>As you can see, all we have done is added another dimension to our white noise sampler, allowing for noise to be
 depicted as a 2D grid, rather than a list of values.</p>
 <p>Taking this experiment further, let’s use a larger sample size of 64 x 64:</p>
-<img alt="../../../_images/whitenoise64x64.png" src="../../../_images/whitenoise64x64.png"/>
+<img alt="../../../_images/whitenoise64x64.png" class="align-center" src="../../../_images/whitenoise64x64.png"/>
 <p>What we have done here is essentially produced a random image using our <em>white noise</em> sampler. By default, we will
 assume the above format of visualizing noise in 2D as an image, where each output value represents a grayscale pixel.</p>
-<p><strong>HIGHER DIMENSIONS</strong></p>
+<section id="higher-dimensions">
+<h4>Higher Dimensions<a class="headerlink" href="#higher-dimensions" title="Permalink to this headline">¶</a></h4>
 <p>Many noise algorithms support an arbitrary amount of inputs, meaning that we can sample noise in any number of
 dimensions. Typically, we will only use up to three dimensions in Terra, where each input corresponds to the position on
 each axis <code class="docutils literal notranslate"><span class="pre">X</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code>, and <code class="docutils literal notranslate"><span class="pre">Z</span></code>.</p>
+</section>
 </section>
 <section id="segmentation">
 <h3>Segmentation<a class="headerlink" href="#segmentation" title="Permalink to this headline">¶</a></h3>
@@ -465,8 +472,8 @@ up with grass on top of every single grass block! What if we only wanted it on <
 that output value to determine whether we place some grass or not. The way this will be determined is by simply
 <a class="reference external" href="#segmentation">thresholding</a> it! We’ll start with a threshold of <code class="docutils literal notranslate"><span class="pre">0</span></code>, where any value below our threshold will mean
 <code class="docutils literal notranslate"><span class="pre">place</span> <span class="pre">grass</span></code>.</p>
-<p><strong>GRASS PLACEMENT MODEL</strong></p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐   ┌─────────────────────────┐
+<p class="centered">
+<strong><strong>Grass Placement Model</strong></strong></p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐   ┌─────────────────────────┐
 │ Input parameters │ → &gt; White Noise &gt; → │ Randomized output │ → &gt;   Threshold Function    │
 ├──────────────────┤   │   Sampler   │   ├───────────────────┤   ├─────────────────────────┤
 │ - World Seed     │   └─────────────┘   │   A value from    │   │ If below the threshold, │
@@ -475,19 +482,19 @@ that output value to determine whether we place some grass or not. The way this 
 └──────────────────┘                                             └─────────────────────────┘
 </pre></div>
 </div>
-<p><strong>RESULTS</strong></p>
-<img alt="../../../_images/grass_64x64_50pcthreshold.png" src="../../../_images/grass_64x64_50pcthreshold.png"/>
+<p class="centered">
+<strong><strong>Results</strong></strong></p><img alt="../../../_images/grass_64x64_50pcthreshold.png" class="align-center" src="../../../_images/grass_64x64_50pcthreshold.png"/>
 <p>As you can see, we now have a method of randomly determining if grass should be placed or not for any given
 <a class="reference external" href="#multidimensional-noise">X-Z coordinate</a> in <a class="reference external" href="#seeds">any world</a>. We can even reduce / increase how much grass we get by
 modifying our threshold value:</p>
-<p><code class="docutils literal notranslate"><span class="pre">Threshold</span> <span class="pre">=</span> <span class="pre">-0.25</span></code></p>
-<img alt="../../../_images/grass_64x64_25pcthreshold.png" src="../../../_images/grass_64x64_25pcthreshold.png"/>
+<p class="centered">
+<strong><strong>Threshold = -0.25</strong></strong></p><img alt="../../../_images/grass_64x64_25pcthreshold.png" class="align-center" src="../../../_images/grass_64x64_25pcthreshold.png"/>
 <p>Lowering the threshold from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">-0.25</span></code> results in less grass because we are effectively removing the values between
 <code class="docutils literal notranslate"><span class="pre">-0.25</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code> from falling below the threshold. Conversely, <em>increasing</em> the threshold will result in more grass, as
 more values will fall below the threshold.</p>
 <p>Combining this with our rules we established earlier, we now have a method of checking for any block whether it should
 be grass or not.</p>
-<a class="reference internal image-reference" href="../../../_images/grass.png"><img alt="../../../_images/grass.png" src="../../../_images/grass.png" style="height: 300px;"/></a>
+<a class="reference internal image-reference" href="../../../_images/grass.png"><img alt="../../../_images/grass.png" class="align-center" src="../../../_images/grass.png" style="width: 75%;"/></a>
 </section>
 </section>
 <section id="coherent-noise">
@@ -496,21 +503,22 @@ be grass or not.</p>
 applications like the grass example above. But how can we get noise capable of producing smooth rolling hills, vast
 mountains, and other structured random generation? Let’s place the white noise sampler under the category
 <strong>‘random noise’</strong>, and introduce a new category of noise samplers called <strong>‘coherent noise’</strong>.</p>
-<p><strong>WHAT’S THE DIFFERENCE?</strong></p>
+<section id="what-s-the-difference">
+<h3>What’s The Difference?<a class="headerlink" href="#what-s-the-difference" title="Permalink to this headline">¶</a></h3>
 <p>The main difference that separates <em>random noise</em> from <em>coherent noise</em> is that while random noise samplers produce
 noise with no apparent structure, coherent noise samplers produce <em>‘structured’</em> noise, where adjacent input values
 produce similar output values.</p>
 <p>To get a better idea of the difference, here is a visualization of two different 2D sampled noise samplers that both
 share the same inputs:</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-auto docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>Random</strong></p>
-<img alt="../../../_images/whitenoise64x64.png" src="../../../_images/whitenoise64x64.png"/>
+<p class="centered">
+<strong><strong>Random</strong></strong></p><img alt="../../../_images/whitenoise64x64.png" src="../../../_images/whitenoise64x64.png"/>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>Coherent</strong></p>
-<img alt="../../../_images/opensimplex2_64x64.png" src="../../../_images/opensimplex2_64x64.png"/>
+<p class="centered">
+<strong><strong>Coherent</strong></strong></p><img alt="../../../_images/opensimplex2_64x64.png" src="../../../_images/opensimplex2_64x64.png"/>
 </div>
 </div>
 </div>
@@ -546,6 +554,7 @@ Categorization of Noise Samplers</div>
 </div>
 </div>
 </section>
+</section>
 <section id="noise-segmentation">
 <h2>Noise Segmentation<a class="headerlink" href="#noise-segmentation" title="Permalink to this headline">¶</a></h2>
 <p>Now that we have introduced coherent noise, we can provide a better visual example of noise
@@ -566,15 +575,15 @@ line like so:</p>
 Thankfully, you won’t ever have to define every range required for segmentation by hand, as Terra will automatically
 segment noise for you, but it’s still useful to get an idea of what is happening behind the scenes. Let’s finally
 segment some <em>simplex noise</em> by categorizing the output values into our colors based on the range they fit in.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-auto docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>Raw Noise Values</strong></p>
-<img alt="../../../_images/opensimplex2_64x64.png" src="../../../_images/opensimplex2_64x64.png"/>
+<p class="centered">
+<strong><strong>Raw Noise Values</strong></strong></p><img alt="../../../_images/opensimplex2_64x64.png" src="../../../_images/opensimplex2_64x64.png"/>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>Segmented Noise</strong></p>
-<img alt="../../../_images/posterized_opensimplex2_64x64.png" src="../../../_images/posterized_opensimplex2_64x64.png"/>
+<p class="centered">
+<strong><strong>Segmented Noise</strong></strong></p><img alt="../../../_images/posterized_opensimplex2_64x64.png" src="../../../_images/posterized_opensimplex2_64x64.png"/>
 </div>
 </div>
 </div>
@@ -701,33 +710,34 @@ frequency produces more ‘zoomed out’ outputs, while lower frequency results 
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>2x Frequency</strong></p>
-<img alt="../../../_images/opensimplex2_64x64_freq_double.png" src="../../../_images/opensimplex2_64x64_freq_double.png"/>
+<p class="centered">
+<strong><strong>2x Frequency</strong></strong></p><img alt="../../../_images/opensimplex2_64x64_freq_double.png" src="../../../_images/opensimplex2_64x64_freq_double.png"/>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>1x Frequency</strong></p>
-<img alt="../../../_images/opensimplex2_64x64.png" src="../../../_images/opensimplex2_64x64.png"/>
+<p class="centered">
+<strong><strong>1x Frequency</strong></strong></p><img alt="../../../_images/opensimplex2_64x64.png" src="../../../_images/opensimplex2_64x64.png"/>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>0.5x Frequency</strong></p>
-<img alt="../../../_images/opensimplex2_64x64_freq_half.png" src="../../../_images/opensimplex2_64x64_freq_half.png"/>
+<p class="centered">
+<strong><strong>0.5x Frequency</strong></strong></p><img alt="../../../_images/opensimplex2_64x64_freq_half.png" src="../../../_images/opensimplex2_64x64_freq_half.png"/>
 </div>
 </div>
 </div>
 <p>As a general rule of thumb:</p>
-<p><strong>HIGHER FREQUENCY</strong></p>
+<p><strong>Higher Frequency</strong></p>
 <ul class="simple">
 <li><p>Zooms <em>out</em>.</p></li>
 <li><p>Produces <em>smaller</em> &amp; <em>closer</em> details.</p></li>
 <li><p>Increases the density of ‘points’ per unit of space.</p></li>
 </ul>
-<p><strong>LOWER FREQUENCY</strong></p>
+<p><strong>Lower Frequency</strong></p>
 <ul class="simple">
 <li><p>Zooms <em>in</em>.</p></li>
 <li><p>Produces <em>larger</em> &amp; <em>more spread out</em> details.</p></li>
 <li><p>Decreases the density of ‘points’ per unit of space.</p></li>
 </ul>
-<p><strong>IN A SAMPLER CONFIG</strong></p>
+<section id="in-a-sampler-config">
+<h4>In a Sampler Config<a class="headerlink" href="#in-a-sampler-config" title="Permalink to this headline">¶</a></h4>
 <p>Frequency can be defined for applicable <code class="docutils literal notranslate"><span class="pre">types</span></code>s via the <code class="docutils literal notranslate"><span class="pre">frequency</span></code> key like so:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;Sampler Type&gt;</span><span class="w"></span>
 <span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;Desired Frequency&gt;</span><span class="w"></span>
@@ -769,6 +779,7 @@ frequencies make details closer and therefore smaller.</p>
 thought of as applying a scale transformation to the coordinate space of the world before passing it into the sampler.</p>
 </div>
 </details></section>
+</section>
 <section id="samplers-in-context">
 <h3>Samplers In Context<a class="headerlink" href="#samplers-in-context" title="Permalink to this headline">¶</a></h3>
 <p>To get a better idea of how sampler configs get used in packs, Here is what one looks like in the context of a
@@ -814,27 +825,28 @@ happening:</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-4 sd-row-cols-xs-4 sd-row-cols-sm-4 sd-row-cols-md-4 sd-row-cols-lg-4 docutils">
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>1 Octave (No Fractalization)</strong></p>
-<img alt="../../../_images/opensimplex2_1_octave.png" src="../../../_images/opensimplex2_1_octave.png"/>
+<p class="centered">
+<strong><strong>No Fractalization</strong></strong></p><img alt="../../../_images/opensimplex2_1_octave.png" src="../../../_images/opensimplex2_1_octave.png"/>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>2 Octaves</strong></p>
-<img alt="../../../_images/opensimplex2_2_octaves.png" src="../../../_images/opensimplex2_2_octaves.png"/>
+<p class="centered">
+<strong><strong>2 Octaves</strong></strong></p><img alt="../../../_images/opensimplex2_2_octaves.png" src="../../../_images/opensimplex2_2_octaves.png"/>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>3 Octaves</strong></p>
-<img alt="../../../_images/opensimplex2_3_octaves.png" src="../../../_images/opensimplex2_3_octaves.png"/>
+<p class="centered">
+<strong><strong>3 Octaves</strong></strong></p><img alt="../../../_images/opensimplex2_3_octaves.png" src="../../../_images/opensimplex2_3_octaves.png"/>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>4 Octaves</strong></p>
-<img alt="../../../_images/opensimplex2_4_octaves.png" src="../../../_images/opensimplex2_4_octaves.png"/>
+<p class="centered">
+<strong><strong>4 Octaves</strong></strong></p><img alt="../../../_images/opensimplex2_4_octaves.png" src="../../../_images/opensimplex2_4_octaves.png"/>
 </div>
 </div>
 </div>
 <p>As you can see, the more octaves we add, the more detailed the noise gets. This is the main application of fractalization -
 to produce more detail, especially at lower frequencies where detail is sparse. You won’t have to worry about
 the exact math behind how each octave gets stacked, as Terra will handle all of that for you.</p>
-<p><strong>IN A SAMPLER CONFIG</strong></p>
+<section id="id8">
+<h4>In a Sampler Config<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p>When fractalizing sampler configs, we define the fractalizer as <em>its own sampler config</em>, which takes <em>the target sampler config</em>
 as a parameter. The syntax for this is as followed:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;Fractalizer Type&gt;</span><span class="w"></span>
@@ -866,6 +878,7 @@ parameters already defined:</p>
 what they all do. To see all available fractalizers and their parameters, please refer to the
 <a class="reference external" href="./Noise-Options">Sampler</a> documentation.</p>
 </section>
+</section>
 <section id="domain-warping">
 <h3>Domain Warping<a class="headerlink" href="#domain-warping" title="Permalink to this headline">¶</a></h3>
 <a class="reference internal image-reference" href="../../../_images/overwarped.png"><img alt="../../../_images/overwarped.png" class="align-center" src="../../../_images/overwarped.png" style="width: 100%;"/></a>
@@ -874,28 +887,23 @@ sampler. More specifically, the domain of a sampler will be warped via translati
 secondary warping sampler.</p>
 <p>To demonstrate domain warping more clearly, let’s take a 64 x 64 square of samples in a space. Our sampler <em>to be
 warped</em> will be a checkerboard pattern, and our <em>warping sampler</em> will be some basic simplex noise.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-m-auto docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>Sampler To Be Warped</strong></p>
-<img alt="../../../_images/checkerboard.png" src="../../../_images/checkerboard.png"/>
+<p class="centered">
+<strong><strong>Sampler To Be Warped</strong></strong></p><img alt="../../../_images/checkerboard.png" class="align-center" src="../../../_images/checkerboard.png"/>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
-<p><strong>Warping Sampler</strong></p>
-<img alt="../../../_images/simplex_warp.png" src="../../../_images/simplex_warp.png"/>
+<p class="centered">
+<strong><strong>Warping Sampler</strong></strong></p><img alt="../../../_images/simplex_warp.png" class="align-center" src="../../../_images/simplex_warp.png"/>
 </div>
 </div>
 </div>
 <p>When domain warping the checker board sampler by the simplex we get the following result:</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
-<div class="sd-col sd-d-flex-column docutils">
-<img alt="../../../_images/checkerboard_warped.png" src="../../../_images/checkerboard_warped.png"/>
-</div>
-</div>
-</div>
+<img alt="../../../_images/checkerboard_warped.png" class="align-center" src="../../../_images/checkerboard_warped.png"/>
 <p>As you can see, our once perfectly square boxes have been contorted out of shape by the warp sampler.</p>
-<p><strong>IN A NOISE CONFIG</strong></p>
+<section id="id11">
+<h4>In a Sampler Config<a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <p>To use domain warping, we will need to set the <code class="docutils literal notranslate"><span class="pre">type</span></code> to <code class="docutils literal notranslate"><span class="pre">DOMAIN_WARP</span></code>, and specify two additional required keys
 <code class="docutils literal notranslate"><span class="pre">sampler</span></code> and <code class="docutils literal notranslate"><span class="pre">warp</span></code>. As you may have already guessed, both <code class="docutils literal notranslate"><span class="pre">sampler</span></code> and <code class="docutils literal notranslate"><span class="pre">warp</span></code> need to be set to a sampler config,
 similar to how <a class="reference external" href="#fractal-noise">fractalizers</a> accept an input sampler:</p>
@@ -952,6 +960,7 @@ in translating each axis equally, resulting in anisotropy.</p>
 </div>
 </div>
 </details></section>
+</section>
 <section id="sampler-composition">
 <h3>Sampler Composition<a class="headerlink" href="#sampler-composition" title="Permalink to this headline">¶</a></h3>
 <p>Because some keys such as <code class="docutils literal notranslate"><span class="pre">sampler</span></code> and <code class="docutils literal notranslate"><span class="pre">warp</span></code> accept a sampler config, something we can do is feed a
@@ -1057,7 +1066,10 @@ further questions, feel free to ask us in our <a class="reference external" href
 <li><a class="reference internal" href="#determinism">Determinism</a></li>
 <li><a class="reference internal" href="#seeds">Seeds</a></li>
 <li><a class="reference internal" href="#flavors-of-noise">Flavors of Noise</a></li>
-<li><a class="reference internal" href="#multidimensional-sampling">Multidimensional Sampling</a></li>
+<li><a class="reference internal" href="#multidimensional-sampling">Multidimensional Sampling</a><ul>
+<li><a class="reference internal" href="#higher-dimensions">Higher Dimensions</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#segmentation">Segmentation</a></li>
 </ul>
 </li>
@@ -1065,7 +1077,10 @@ further questions, feel free to ask us in our <a class="reference external" href
 <li><a class="reference internal" href="#planting-grass">Planting Grass</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#coherent-noise">Coherent Noise</a></li>
+<li><a class="reference internal" href="#coherent-noise">Coherent Noise</a><ul>
+<li><a class="reference internal" href="#what-s-the-difference">What’s The Difference?</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#noise-segmentation">Noise Segmentation</a></li>
 <li><a class="reference internal" href="#generalizing-the-sampler">Generalizing the Sampler</a></li>
 <li><a class="reference internal" href="#configuring-samplers">Configuring Samplers</a><ul>
@@ -1074,10 +1089,19 @@ further questions, feel free to ask us in our <a class="reference external" href
 <li><a class="reference internal" href="#noise-tool">Noise Tool</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#frequency">Frequency</a></li>
+<li><a class="reference internal" href="#frequency">Frequency</a><ul>
+<li><a class="reference internal" href="#in-a-sampler-config">In a Sampler Config</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#samplers-in-context">Samplers In Context</a></li>
-<li><a class="reference internal" href="#fractalization">Fractalization</a></li>
-<li><a class="reference internal" href="#domain-warping">Domain Warping</a></li>
+<li><a class="reference internal" href="#fractalization">Fractalization</a><ul>
+<li><a class="reference internal" href="#id8">In a Sampler Config</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#domain-warping">Domain Warping</a><ul>
+<li><a class="reference internal" href="#id11">In a Sampler Config</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#sampler-composition">Sampler Composition</a></li>
 </ul>
 </li>

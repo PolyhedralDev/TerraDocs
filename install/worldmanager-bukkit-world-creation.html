@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/logo.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/content.css" />
     
     
 
@@ -30,21 +31,25 @@
   --color-code-foreground: #cccccc;
   --color-admonition-title--important: #ff9100;
   --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #000000;
+  --color-foreground-secondary: #333333;
+  --font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Cantarell, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --admonition-font-size: 1rem;
   
   }
   body[data-theme="dark"] {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
     }
   }
@@ -270,10 +275,10 @@ once you have set it up through a world manager, to serve as a fail-safe in the 
 <h2>Multiverse Core<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>To create a Terra world using Multiverse Core, add the following argument to the end of the
 <a class="reference external" href="https://github.com/Multiverse/Multiverse-Core/wiki/Command-Reference#create-command">Multiverse Create Command</a>:</p>
-<p><code class="docutils literal notranslate"><span class="pre">-g</span> <span class="pre">Terra:&lt;PACK</span> <span class="pre">ID&gt;</span></code>.</p>
-<p>Here is an example command which will create a world with the name <cite>example_world</cite>, the <cite>NORMAL</cite> world environment, and
-a Terra generator using the pack with ID <cite>EXAMPLE</cite>:</p>
-<p><code class="docutils literal notranslate"><span class="pre">/mv</span> <span class="pre">create</span> <span class="pre">example_world</span> <span class="pre">NORMAL</span> <span class="pre">-g</span> <span class="pre">Terra:EXAMPLE</span></code></p>
+<p><cite>-g Terra:&lt;PACK ID&gt;</cite>.</p>
+<p>Here is an example command which will create a world with the name <code class="docutils literal notranslate"><span class="pre">example_world</span></code>, the <code class="docutils literal notranslate"><span class="pre">NORMAL</span></code> world environment, and
+a Terra generator using the pack with ID <code class="docutils literal notranslate"><span class="pre">EXAMPLE</span></code>:</p>
+<p><cite>/mv create example_world NORMAL -g Terra:EXAMPLE</cite></p>
 </section>
 <section id="troubleshooting">
 <h2>Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permalink to this headline">¶</a></h2>

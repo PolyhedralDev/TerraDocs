@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/css/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css/logo.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/content.css" />
     
     
 
@@ -30,21 +31,25 @@
   --color-code-foreground: #cccccc;
   --color-admonition-title--important: #ff9100;
   --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #000000;
+  --color-foreground-secondary: #333333;
+  --font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Cantarell, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --admonition-font-size: 1rem;
   
   }
   body[data-theme="dark"] {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
     }
   }
@@ -268,39 +273,43 @@
 outlined here, please refer to <a class="reference internal" href="worldmanager-bukkit-world-creation.html"><span class="doc">Setting a Generator Through a World Manager</span></a></p>
 <section id="procedure">
 <h2>Procedure<a class="headerlink" href="#procedure" title="Permalink to this headline">¶</a></h2>
-<ol class="arabic">
-<li><p>Ensure your server is not running.</p></li>
-<li><p>If you missed it above, please make a backup of any relevant world folders in your server directory.</p>
-<blockquote>
-<div><p>If you’re using a fresh server you won’t need to worry about this!</p>
-</div></blockquote>
-</li>
-<li><p>Configure your server’s world to use the new config as a generator:</p>
 <ol class="arabic simple">
-<li><p>Navigate to the <cite>bukkit.yml</cite> file which is also contained within your server directory, and open it with any text editor.</p></li>
-<li><p>Assign your new generator to the default world by <strong>adding the following lines to the end of the file</strong>:</p></li>
+<li><p>Ensure your server is not running.</p></li>
+<li><p>If you missed it above, please make a backup of any relevant world folders in your server directory.</p></li>
+<li><p>Configure your server’s world to use the new config as a generator:</p></li>
 </ol>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Navigate to the <code class="docutils literal notranslate"><span class="pre">bukkit.yml</span></code> file which is also contained within your server directory, and open it with any text editor.</p></li>
+<li><p class="sd-card-text">Assign your new generator to the default world by <strong>adding the following lines to the end of the file</strong>:</p></li>
+</ol>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">bukkit.yml</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&lt;LEVEL NAME&gt;</span><span class="p">:</span><span class="w"></span>
 <span class="w">    </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:OVERWORLD</span><span class="w"></span>
 </pre></div>
 </div>
-</li>
-</ol>
+</div>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>These lines are <strong>not</strong> present by default, you have to add them yourself!</p>
+<p class="sd-card-text">These lines are <strong>not</strong> present by default, you have to add them yourself!</p>
 </div>
-<ol class="arabic">
-<li><p>Replace <cite>&lt;LEVEL NAME&gt;</cite> with the server’s configured <cite>level-name</cite>. This can be found in the <cite>server.properties</cite> file
-under the ‘level-name’ key. By default, level-name is set to <cite>world</cite>.</p></li>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;LEVEL</span> <span class="pre">NAME&gt;</span></code> with the server’s configured <code class="docutils literal notranslate"><span class="pre">level-name</span></code>. (This can be found in the <code class="docutils literal notranslate"><span class="pre">server.properties</span></code> file
+under the ‘level-name’ key. By default, level-name is set to <code class="docutils literal notranslate"><span class="pre">world</span></code>.)</p></li>
 <li><p>Either delete the existing world folder (the name of this folder is covered above) in your server directory, or
-rename it to something else (for example <cite>world_backup</cite>).</p></li>
-<li><p>Boot your server back up.</p>
-<blockquote>
-<div><p>Your server should re-generate the world folder during startup.</p>
-</div></blockquote>
-</li>
+rename it to something else (for example <code class="docutils literal notranslate"><span class="pre">world_backup</span></code>).</p></li>
+<li><p>Boot your server back up.</p></li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Your server should re-generate the world folder during startup.</p>
+</div>
+<ol class="arabic simple" start="7">
 <li><p>Join your server and check if your new world is using Terra world generation.</p></li>
 </ol>
 <p>If you followed the steps correctly without any errors, then you have successfully set up a server with Terra!</p>
@@ -308,21 +317,27 @@ rename it to something else (for example <cite>world_backup</cite>).</p></li>
 <section id="setting-up-another-world">
 <h2>Setting up Another World<a class="headerlink" href="#setting-up-another-world" title="Permalink to this headline">¶</a></h2>
 <p>If you have already done this process before and wish to set up another existing world (such as the Nether or End) with
-a new generator, you can simply add the world to the <cite>worlds</cite> key like so:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">existing_world_name</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:EXAMPLE_PACK_1</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&lt;NEW WORLD NAME&gt;</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;NEW GENERATOR ID&gt;</span><span class="w"></span>
-</pre></div>
+a new generator, you can simply add the world under the <code class="docutils literal notranslate"><span class="pre">worlds</span></code> key like so:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">bukkit.yml</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
+<span class="w">   </span><span class="nt">existing_world_name</span><span class="p">:</span><span class="w"></span>
+<span class="w">     </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:EXAMPLE_PACK_1</span><span class="w"></span>
+<span class="hll"><span class="w">   </span><span class="nt">&lt;NEW WORLD NAME&gt;</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">     </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;NEW GENERATOR ID&gt;</span><span class="w"></span>
+</span></pre></div>
+</div>
 </div>
 <p>Here is an example with two worlds configured:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">world</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:OVERWORLD</span><span class="w"></span>
-<span class="w">  </span><span class="nt">world_nether</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:NETHER</span><span class="w"></span>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">bukkit.yml</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
+<span class="w">   </span><span class="nt">world</span><span class="p">:</span><span class="w"></span>
+<span class="w">     </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:OVERWORLD</span><span class="w"></span>
+<span class="w">   </span><span class="nt">world_nether</span><span class="p">:</span><span class="w"></span>
+<span class="w">     </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:NETHER</span><span class="w"></span>
 </pre></div>
+</div>
 </div>
 </section>
 <section id="troubleshooting">

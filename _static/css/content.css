@@ -1,0 +1,7 @@
+/*
+Set text to use secondary foreground color
+*/
+
+.content p {
+    color: var(--color-foreground-secondary);
+}

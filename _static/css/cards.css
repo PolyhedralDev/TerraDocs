@@ -8,3 +8,7 @@ Make clickable card borders fade on hover
 .sd-card-hover {
     transition: border-color 250ms ease;
 }
+
+.sd-card-body dl {
+    margin: 0;
+}

@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/logo.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/content.css" />
     
     
 
@@ -30,21 +31,25 @@
   --color-code-foreground: #cccccc;
   --color-admonition-title--important: #ff9100;
   --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #000000;
+  --color-foreground-secondary: #333333;
+  --font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Cantarell, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --admonition-font-size: 1rem;
   
   }
   body[data-theme="dark"] {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
     }
   }
@@ -352,13 +357,13 @@ when the addon initializes!</p>
 <p>To install your addon, first you need to <em>compile</em> it, then <em>archive</em> it. The process is slightly different depending
 on your build system:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1f2deafa-97dd-48f9-b1f9-01198960da15" name="6016b276-ec31-4d73-8004-e6c5aedb861f" type="radio"/>
-<label class="sd-tab-label" for="1f2deafa-97dd-48f9-b1f9-01198960da15">
+<input checked="checked" id="fab79ea7-3af3-4949-be25-9802386de19b" name="e26f1614-3c2c-400f-89ca-0e03e212e8eb" type="radio"/>
+<label class="sd-tab-label" for="fab79ea7-3af3-4949-be25-9802386de19b">
 Gradle</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">:jar</span></code> task. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">build/libs</span></code>.</p>
 </div>
-<input id="460d951b-4c4b-4b7e-963f-80703a7d1121" name="6016b276-ec31-4d73-8004-e6c5aedb861f" type="radio"/>
-<label class="sd-tab-label" for="460d951b-4c4b-4b7e-963f-80703a7d1121">
+<input id="89ba6071-60e1-404a-8c8d-3e2e21838fa9" name="e26f1614-3c2c-400f-89ca-0e03e212e8eb" type="radio"/>
+<label class="sd-tab-label" for="89ba6071-60e1-404a-8c8d-3e2e21838fa9">
 Maven</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">package</span></code> goal. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">target</span></code>.</p>
 </div>

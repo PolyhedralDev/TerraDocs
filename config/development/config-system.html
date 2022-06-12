@@ -20,6 +20,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/tabs.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/logo.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/content.css" />
     
     
 
@@ -30,21 +31,25 @@
   --color-code-foreground: #cccccc;
   --color-admonition-title--important: #ff9100;
   --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #000000;
+  --color-foreground-secondary: #333333;
+  --font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Cantarell, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --admonition-font-size: 1rem;
   
   }
   body[data-theme="dark"] {
     --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
   }
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
-  --color-admonition-title--important: #ff9100;
-  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
   
     }
   }
@@ -285,8 +290,8 @@ should be set to</strong>. For example, here are a couple parameters specified
 within a Terra config pack manifest that provides some basic information
 about the pack:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="85d64d9f-ce80-4a16-9d73-b2bcb73328f5" name="6c02d607-9328-4756-afda-26fdd7d53eec" type="radio"/>
-<label class="sd-tab-label" for="85d64d9f-ce80-4a16-9d73-b2bcb73328f5">
+<input checked="checked" id="929c72e7-0f96-4916-97b1-00ef67d9fffb" name="f3719522-a87b-4c27-a8b7-536ade3175be" type="radio"/>
+<label class="sd-tab-label" for="929c72e7-0f96-4916-97b1-00ef67d9fffb">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
@@ -297,8 +302,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="664243c6-bd4c-4c00-8438-0708d8a87d61" name="6c02d607-9328-4756-afda-26fdd7d53eec" type="radio"/>
-<label class="sd-tab-label" for="664243c6-bd4c-4c00-8438-0708d8a87d61">
+<input id="ee5e7690-251d-4113-bff3-4fe4bddd409b" name="f3719522-a87b-4c27-a8b7-536ade3175be" type="radio"/>
+<label class="sd-tab-label" for="ee5e7690-251d-4113-bff3-4fe4bddd409b">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">pack.json</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
@@ -317,8 +322,8 @@ example in the below config, the top level object may abide by a
 template and specify a parameter that is nested, which we can see has
 the value <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">parameter</span> <span class="pre">value</span></code>.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="1637757e-9703-4a5f-b08d-686d8ae79b56" name="0cbe8a90-7340-46c4-9b6c-dee8a2cfce62" type="radio"/>
-<label class="sd-tab-label" for="1637757e-9703-4a5f-b08d-686d8ae79b56">
+<input checked="checked" id="83709e70-1ac3-4a39-b65a-0bd7869de465" name="8f19d8b3-847e-44d4-8f3a-73a3c7c6726b" type="radio"/>
+<label class="sd-tab-label" for="83709e70-1ac3-4a39-b65a-0bd7869de465">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
@@ -329,8 +334,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="0ddbe812-c348-4cc4-a810-659142775b9e" name="0cbe8a90-7340-46c4-9b6c-dee8a2cfce62" type="radio"/>
-<label class="sd-tab-label" for="0ddbe812-c348-4cc4-a810-659142775b9e">
+<input id="c47a197e-f626-42d3-a960-9417e23a76f4" name="8f19d8b3-847e-44d4-8f3a-73a3c7c6726b" type="radio"/>
+<label class="sd-tab-label" for="c47a197e-f626-42d3-a960-9417e23a76f4">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
@@ -371,8 +376,8 @@ called <code class="docutils literal notranslate"><span class="pre">AnimalTempla
 <p>We can then write a new config using our new type assuming our top level
 object is of type <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="0a28e0b6-3c02-4969-8bc1-76731a0fef9d" name="783f7862-24d4-486d-b89f-ea91ce75b0ec" type="radio"/>
-<label class="sd-tab-label" for="0a28e0b6-3c02-4969-8bc1-76731a0fef9d">
+<input checked="checked" id="5ecc5044-692b-4695-91a1-5bfd64e1fadf" name="eae0a459-38b3-4093-bb69-5776b5a16c3c" type="radio"/>
+<label class="sd-tab-label" for="5ecc5044-692b-4695-91a1-5bfd64e1fadf">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">koala.yml</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
@@ -382,8 +387,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="64af04e5-ea8c-4097-a635-3ba5264cd886" name="783f7862-24d4-486d-b89f-ea91ce75b0ec" type="radio"/>
-<label class="sd-tab-label" for="64af04e5-ea8c-4097-a635-3ba5264cd886">
+<input id="e6aa90a4-5c55-478d-85d1-3e39f231908d" name="eae0a459-38b3-4093-bb69-5776b5a16c3c" type="radio"/>
+<label class="sd-tab-label" for="e6aa90a4-5c55-478d-85d1-3e39f231908d">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">koala.json</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
@@ -402,8 +407,8 @@ load the config. For example, the following config would not load
 because 1. <code class="docutils literal notranslate"><span class="pre">color</span></code> has not been specified and is a required parameter,
 and 2. <code class="docutils literal notranslate"><span class="pre">legs</span></code> is not of the required type integer:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="6b7c4cf0-11ce-4ade-9d07-838618ec02c8" name="e935ba5e-1876-4994-b7f4-fb1d44220fa2" type="radio"/>
-<label class="sd-tab-label" for="6b7c4cf0-11ce-4ade-9d07-838618ec02c8">
+<input checked="checked" id="bacb2340-d08f-412e-b3b3-e9306fc83ef3" name="7eed5917-8a4e-43ed-b806-f751a20c239c" type="radio"/>
+<label class="sd-tab-label" for="bacb2340-d08f-412e-b3b3-e9306fc83ef3">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text">koala.yml</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
@@ -412,8 +417,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="1e8cfb76-40b0-4708-bf06-e4ccfe0d6c7e" name="e935ba5e-1876-4994-b7f4-fb1d44220fa2" type="radio"/>
-<label class="sd-tab-label" for="1e8cfb76-40b0-4708-bf06-e4ccfe0d6c7e">
+<input id="2491c832-6a61-4b8b-b5f8-7d04b420a6c1" name="7eed5917-8a4e-43ed-b806-f751a20c239c" type="radio"/>
+<label class="sd-tab-label" for="2491c832-6a61-4b8b-b5f8-7d04b420a6c1">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">koala.json</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
@@ -468,8 +473,8 @@ Terra’s config system.</p>
 create a config able to be read and interpreted by the config loader
 like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a3c6baf0-569f-42c2-b0b6-4a75b862bc06" name="3076bbf7-5de4-4402-a945-89d6f5306029" type="radio"/>
-<label class="sd-tab-label" for="a3c6baf0-569f-42c2-b0b6-4a75b862bc06">
+<input checked="checked" id="8b1046b4-83b1-4859-9732-5036d9e6d446" name="a9b0420c-8ad5-48ae-84bc-ed92cf246f35" type="radio"/>
+<label class="sd-tab-label" for="8b1046b4-83b1-4859-9732-5036d9e6d446">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.yml</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
@@ -485,8 +490,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="3a3f8f27-d404-4a55-b772-c0586b18b12a" name="3076bbf7-5de4-4402-a945-89d6f5306029" type="radio"/>
-<label class="sd-tab-label" for="3a3f8f27-d404-4a55-b772-c0586b18b12a">
+<input id="493cb5a3-6a09-4cf7-8aba-f0c9f2949c27" name="a9b0420c-8ad5-48ae-84bc-ed92cf246f35" type="radio"/>
+<label class="sd-tab-label" for="493cb5a3-6a09-4cf7-8aba-f0c9f2949c27">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.json</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
@@ -546,8 +551,8 @@ registry key <code class="docutils literal notranslate"><span class="pre">ZOO</s
 <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">ZOO</span></code> in our config from above, signifying to
 Terra that our config top level object will be of type <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="92cc5d5a-72ef-4daf-9e3d-2b1dcb7ba789" name="febe7433-5b0a-47b8-b428-e13135b4054e" type="radio"/>
-<label class="sd-tab-label" for="92cc5d5a-72ef-4daf-9e3d-2b1dcb7ba789">
+<input checked="checked" id="d86de73d-c656-4db4-9a19-b4c356aa007a" name="226fca29-4a81-4945-affb-4b5fbfdbb6cc" type="radio"/>
+<label class="sd-tab-label" for="d86de73d-c656-4db4-9a19-b4c356aa007a">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id13">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.yml</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
@@ -564,8 +569,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="a8e75d5f-84d4-424a-8075-33604900157c" name="febe7433-5b0a-47b8-b428-e13135b4054e" type="radio"/>
-<label class="sd-tab-label" for="a8e75d5f-84d4-424a-8075-33604900157c">
+<input id="0d37c766-1f5d-4d69-bc89-9dea96944538" name="226fca29-4a81-4945-affb-4b5fbfdbb6cc" type="radio"/>
+<label class="sd-tab-label" for="0d37c766-1f5d-4d69-bc89-9dea96944538">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id14">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.json</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
@@ -615,8 +620,8 @@ are automatically registered by Terra, allowing us to access all of our
 <code class="docutils literal notranslate"><span class="pre">ZOO</span></code> configs from anywhere via the <em>zoo registry</em>.</p>
 <p>And with this, here is what our final config looks like:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="55af0fd3-afdc-499c-9695-21db69929615" name="295f9d97-a00f-4915-8244-2178ccc4d706" type="radio"/>
-<label class="sd-tab-label" for="55af0fd3-afdc-499c-9695-21db69929615">
+<input checked="checked" id="ffe68b1a-636e-42ca-b422-24e9c84832c9" name="9f85f367-6989-49aa-8f1a-0c1c774acd78" type="radio"/>
+<label class="sd-tab-label" for="ffe68b1a-636e-42ca-b422-24e9c84832c9">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id15">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.yml</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
@@ -634,8 +639,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="8a8b72b0-79a0-4d97-b7d5-b5eb50831acf" name="295f9d97-a00f-4915-8244-2178ccc4d706" type="radio"/>
-<label class="sd-tab-label" for="8a8b72b0-79a0-4d97-b7d5-b5eb50831acf">
+<input id="d517ce50-033a-4795-891c-e5ad1ebc0cc8" name="9f85f367-6989-49aa-8f1a-0c1c774acd78" type="radio"/>
+<label class="sd-tab-label" for="d517ce50-033a-4795-891c-e5ad1ebc0cc8">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id16">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.json</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
