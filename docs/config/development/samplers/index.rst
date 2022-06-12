@@ -56,6 +56,7 @@ range of -1 to 1.** We can visualize the relationship between the value and shad
 
 .. image:: /img/concepts/noise/basic_example-04.png
    :width: 75%
+   :align: center
 
 .. note:: 
 
@@ -63,15 +64,15 @@ range of -1 to 1.** We can visualize the relationship between the value and shad
    Input numbers also do not have to be whole numbers, this means noise samplers will still work the same way with inputs like `1.5`.
    Again we've just used integers here for the sake of demonstration.
 
-**MODEL**
+.. centered:: **Model**
 
 .. literalinclude:: diagram/1d.txt
 
-
-**RESULTS**
+.. centered:: **Results**
 
 .. image:: /img/concepts/noise/basic_example-01.png
    :width: 75%
+   :align: center
 
 Simple, right? All our noise sampler does is convert one value to a randomized value.
 
@@ -101,15 +102,17 @@ Expanding on our basic model of noise generation we have:
 Here is an example using two different seeds to produce different outputs, using the same inputs and noise sampler from
 the example above.
 
-`Seed = 0`
+.. centered:: **Seed = 0**
 
 .. image:: /img/concepts/noise/basic_example-01.png
    :width: 75%
+   :align: center
 
-`Seed = 1`
+.. centered:: **Seed = 1**
 
 .. image:: /img/concepts/noise/basic_example-02.png
    :width: 75%
+   :align: center
 
 One usage of seeds that you might be familiar with is minecraft world seeds. A vanilla minecraft world seed gets
 inserted into the many noise algorithms that govern vanilla world generation, resulting in completely different worlds
@@ -159,14 +162,15 @@ refer to the first input as ``X``, and the second as ``Z``.
 In a new example, let's use a range of 1 - 3 for both ``X`` and ``Z``, giving us a total of 9 samples (3 x 3). We will only
 label the ``X`` & ``Z`` axes for the sake of simplicity.
 
-**TWO DIMENSIONAL MODEL**
+.. centered:: **Two Dimensional Model**
 
 .. literalinclude:: diagram/2d.txt
 
-**RESULTS**
+.. centered:: **Results**
 
 .. image:: /img/concepts/noise/basic_example-03.png
    :width: 300
+   :align: center
 
 As you can see, all we have done is added another dimension to our white noise sampler, allowing for noise to be
 depicted as a 2D grid, rather than a list of values.
@@ -174,11 +178,13 @@ depicted as a 2D grid, rather than a list of values.
 Taking this experiment further, let's use a larger sample size of 64 x 64:
 
 .. image:: /img/concepts/noise/whitenoise64x64.png
+   :align: center
 
 What we have done here is essentially produced a random image using our *white noise* sampler. By default, we will
 assume the above format of visualizing noise in 2D as an image, where each output value represents a grayscale pixel.
 
-**HIGHER DIMENSIONS**
+Higher Dimensions
+.................
 
 Many noise algorithms support an arbitrary amount of inputs, meaning that we can sample noise in any number of
 dimensions. Typically, we will only use up to three dimensions in Terra, where each input corresponds to the position on
@@ -252,21 +258,23 @@ that output value to determine whether we place some grass or not. The way this 
 `thresholding <#segmentation>`__ it! We'll start with a threshold of ``0``, where any value below our threshold will mean
 ``place grass``.
 
-**GRASS PLACEMENT MODEL**
+.. centered:: **Grass Placement Model**
 
 .. literalinclude:: diagram/threshold.txt
 
-**RESULTS**
+.. centered:: **Results**
 
 .. image:: /img/concepts/noise/grass_64x64_50pcthreshold.png
+   :align: center
 
 As you can see, we now have a method of randomly determining if grass should be placed or not for any given
 `X-Z coordinate <#multidimensional-noise>`_ in `any world <#seeds>`_. We can even reduce / increase how much grass we get by
 modifying our threshold value:
 
-``Threshold = -0.25``
+.. centered:: **Threshold = -0.25**
 
 .. image:: /img/concepts/noise/grass_64x64_25pcthreshold.png
+   :align: center
 
 Lowering the threshold from ``0`` to ``-0.25`` results in less grass because we are effectively removing the values between
 ``-0.25`` and ``0`` from falling below the threshold. Conversely, *increasing* the threshold will result in more grass, as
@@ -276,7 +284,8 @@ Combining this with our rules we established earlier, we now have a method of ch
 be grass or not.
 
 .. image:: /img/concepts/noise/grass.png
-   :height: 300
+   :width: 75%
+   :align: center
 
 Coherent Noise
 ==============
@@ -286,7 +295,8 @@ applications like the grass example above. But how can we get noise capable of p
 mountains, and other structured random generation? Let's place the white noise sampler under the category
 **'random noise'**, and introduce a new category of noise samplers called **'coherent noise'**.
 
-**WHAT'S THE DIFFERENCE?**
+What's The Difference?
+......................
 
 The main difference that separates *random noise* from *coherent noise* is that while random noise samplers produce
 noise with no apparent structure, coherent noise samplers produce *'structured'* noise, where adjacent input values
@@ -295,17 +305,18 @@ produce similar output values.
 To get a better idea of the difference, here is a visualization of two different 2D sampled noise samplers that both
 share the same inputs:
 
-.. grid:: 3
+.. grid:: 2
+   :margin: auto
 
    .. grid-item::
       
-      **Random**
+      .. centered:: **Random**
    
       .. image:: /img/concepts/noise/whitenoise64x64.png
 
    .. grid-item::
 
-      **Coherent**
+      .. centered:: **Coherent**
 
       .. image:: /img/concepts/noise/opensimplex2_64x64.png
 
@@ -348,17 +359,18 @@ Thankfully, you won't ever have to define every range required for segmentation 
 segment noise for you, but it's still useful to get an idea of what is happening behind the scenes. Let's finally
 segment some *simplex noise* by categorizing the output values into our colors based on the range they fit in.
 
-.. grid:: 3
+.. grid:: 2
+   :margin: auto
 
    .. grid-item::
 
-      **Raw Noise Values**
+      .. centered:: **Raw Noise Values**
 
       .. image:: /img/concepts/noise/opensimplex2_64x64.png
 
    .. grid-item::
 
-      **Segmented Noise**
+      .. centered:: **Segmented Noise**
 
       .. image:: /img/concepts/noise/posterized_opensimplex2_64x64.png
 
@@ -431,7 +443,7 @@ above, giving us the following sampler config:
    type: WHITE_NOISE
 
 Sampler Parameters
-^^^^^^^^^^^^^^^^^^
+..................
 
 In addition to specifying the type of sampler to use, the ``type`` key will also determine what other keys become available
 as either *required* or *optional* within the sampler config. Some ``type``\s will have additional keys that need to be
@@ -449,7 +461,7 @@ Another thing to note is that most optional parameters have a pre-defined defaul
 When the ``salt`` key is not included in a sampler config, it will default to its predefined value ``0``.
 
 Noise Tool
-^^^^^^^^^^
+..........
 
 Now that we know how to write a simple sampler config, we can use a handy program aptly named the **Noise Tool** to
 preview what our config looks like.
@@ -485,37 +497,38 @@ Let's preview some comparisons of a simplex noise sampler with varying frequenci
 
    .. grid-item::
 
-      **2x Frequency**
+      .. centered:: **2x Frequency**
       
       .. image:: /img/concepts/noise/opensimplex2_64x64_freq_double.png
 
    .. grid-item::
 
-      **1x Frequency**
+      .. centered:: **1x Frequency**
       
       .. image:: /img/concepts/noise/opensimplex2_64x64.png
 
    .. grid-item::
 
-      **0.5x Frequency**
+      .. centered:: **0.5x Frequency**
       
       .. image:: /img/concepts/noise/opensimplex2_64x64_freq_half.png
 
 As a general rule of thumb:
 
-**HIGHER FREQUENCY**
+**Higher Frequency**
 
 * Zooms *out*.
 * Produces *smaller* & *closer* details.
 * Increases the density of 'points' per unit of space.
 
-**LOWER FREQUENCY**
+**Lower Frequency**
 
 * Zooms *in*.
 * Produces *larger* & *more spread out* details.
 * Decreases the density of 'points' per unit of space.
 
-**IN A SAMPLER CONFIG**
+In a Sampler Config
+...................
 
 Frequency can be defined for applicable ``types``\s via the ``frequency`` key like so:
 
@@ -595,25 +608,25 @@ happening:
 
    .. grid-item::
 
-      **1 Octave (No Fractalization)**
+      .. centered:: **No Fractalization**
 
       .. image:: /img/concepts/noise/fractal/opensimplex2_1_octave.png
 
    .. grid-item::
 
-      **2 Octaves**
+      .. centered:: **2 Octaves**
 
       .. image:: /img/concepts/noise/fractal/opensimplex2_2_octaves.png
 
    .. grid-item::
 
-      **3 Octaves**
+      .. centered:: **3 Octaves**
 
       .. image:: /img/concepts/noise/fractal/opensimplex2_3_octaves.png
 
    .. grid-item::
 
-      **4 Octaves**
+      .. centered:: **4 Octaves**
 
       .. image:: /img/concepts/noise/fractal/opensimplex2_4_octaves.png
 
@@ -621,7 +634,8 @@ As you can see, the more octaves we add, the more detailed the noise gets. This 
 to produce more detail, especially at lower frequencies where detail is sparse. You won't have to worry about
 the exact math behind how each octave gets stacked, as Terra will handle all of that for you.
 
-**IN A SAMPLER CONFIG**
+In a Sampler Config
+...................
 
 When fractalizing sampler configs, we define the fractalizer as *its own sampler config*, which takes *the target sampler config*
 as a parameter. The syntax for this is as followed:
@@ -675,31 +689,32 @@ secondary warping sampler.
 To demonstrate domain warping more clearly, let's take a 64 x 64 square of samples in a space. Our sampler *to be
 warped* will be a checkerboard pattern, and our *warping sampler* will be some basic simplex noise.
 
-.. grid:: 3
+.. grid:: 2
+   :margin: auto
 
    .. grid-item::
 
-      **Sampler To Be Warped**
+      .. centered:: **Sampler To Be Warped**
 
       .. image:: /img/concepts/noise/domainwarp/checkerboard.png
+         :align: center
 
    .. grid-item::
 
-      **Warping Sampler**
+      .. centered:: **Warping Sampler**
 
       .. image:: /img/concepts/noise/domainwarp/simplex_warp.png
+         :align: center
 
 When domain warping the checker board sampler by the simplex we get the following result:
 
-.. grid:: 3
-
-   .. grid-item::
-
-      .. image:: /img/concepts/noise/domainwarp/checkerboard_warped.png
+.. image:: /img/concepts/noise/domainwarp/checkerboard_warped.png
+   :align: center
 
 As you can see, our once perfectly square boxes have been contorted out of shape by the warp sampler.
 
-**IN A NOISE CONFIG**
+In a Sampler Config
+...................
 
 To use domain warping, we will need to set the ``type`` to ``DOMAIN_WARP``, and specify two additional required keys
 ``sampler`` and ``warp``. As you may have already guessed, both ``sampler`` and ``warp`` need to be set to a sampler config,
