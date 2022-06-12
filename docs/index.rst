@@ -1,6 +1,4 @@
-===================
-Terra Documentation
-===================
+|
 
 .. attention::
 
@@ -12,6 +10,8 @@ Terra Documentation
         :outline:
 
         :octicon:`mark-github` TerraDocs
+
+|
 
 Terra is a modern world generation modding platform, primarily for Minecraft. Terra allows complete customization of
 world generation with an advanced API, tightly integrated with a powerful configuration system:
