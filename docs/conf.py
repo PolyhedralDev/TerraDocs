@@ -92,7 +92,7 @@ html_css_files = [
     'css/headings.css',
     'css/admonitions.css',
     'css/tabs.css',
-    'css/logo.css'
+    'css/logo.css',
     'css/content.css',
 ]
 
