@@ -57,12 +57,17 @@ html_theme = 'furo'
 
 html_theme_options = {
     "dark_css_variables": {
-        "color-admonition-title--important": "#ff9100",
-        "color-admonition-title-background--important": "rgba(255,145,0,.1)",
+        "color-foreground-primary": "#ffffff",
+        "color-foreground-secondary": "#dbdbdb",
     },
     "light_css_variables": {
         "color-admonition-title--important": "#ff9100",
         "color-admonition-title-background--important": "rgba(255,145,0,.1)",
+        "color-foreground-primary": "#000000",
+        "color-foreground-secondary": "#333333",
+
+        "font-stack": "-apple-system, BlinkMacSystemFont, Segoe UI, Cantarell, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+        "admonition-font-size": "1rem",
     }
 }
 
@@ -88,6 +93,7 @@ html_css_files = [
     'css/admonitions.css',
     'css/tabs.css',
     'css/logo.css'
+    'css/content.css',
 ]
 
 # JDLinker config
