@@ -3,10 +3,15 @@ styles the logo
  */
 
 .sidebar-brand {
-    flex-direction: row-reverse;
+    flex-direction: row;
     align-items: center
 }
 
 .sidebar-logo {
-    width: 4em;
+    width: 3em;
+}
+
+.sidebar-brand-text {
+    font-weight: bolder;
+    margin-left: 1rem;
 }
