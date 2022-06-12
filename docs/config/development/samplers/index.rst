@@ -296,7 +296,7 @@ mountains, and other structured random generation? Let's place the white noise s
 **'random noise'**, and introduce a new category of noise samplers called **'coherent noise'**.
 
 What's The Difference?
-......................
+----------------------
 
 The main difference that separates *random noise* from *coherent noise* is that while random noise samplers produce
 noise with no apparent structure, coherent noise samplers produce *'structured'* noise, where adjacent input values
