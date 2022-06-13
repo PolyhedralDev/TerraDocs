@@ -34,18 +34,17 @@ Terra is composed of several parts that facilitate world generation:
         addons, and a default configuration pack together to work as one cohesive
         unit.
 
-
 As a config developer, you will primarily be utilizing addons via Terra's
 configuration system to define how worlds generate. It is still a good idea to
-have an understanding of how these components interact, as it will provide a richer
-understanding of what is going on under the hood.
+have an understanding of how these components interact, however is not strictly
+necessary.
+
+1. Setting Up Your Test Environment
+===================================
 
 .. warning::
 
     Do not follow the rest of this guide on any live production environment.
-
-1. Setting Up Your Test Environment
-===================================
 
 Before beginning development on a new pack, you will need a suitable server or
 client to test with. We recommend using a `Fabric <https://fabricmc.net>`__
