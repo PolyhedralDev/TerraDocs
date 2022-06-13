@@ -19,19 +19,17 @@ Terra is composed of several parts that facilitate world generation:
 
     **An Addon Loader**
         Allows for loading addons, which integrate the API to provide functionality.
-        The majority of Terra's functionality comes from addons, as without them Terra
-        wouldn't do much. This is similar to how mod loaders like Fabric and Forge won't
-        do much without any mods installed.
 
     **Core Addons**
         A suite of addons that provides standard functionality to Terra.
 
     **Configuration Packs**
-        A collection of configuration files that utilize the functionality provided
-        by addons to define how worlds generate.
+        A collection of configuration files that define how worlds generate, utilizing
+        the functionality provided by addons.
 
     **Platform Implementations**
         The layer between the platform (such as Bukkit or Fabric) and the API.
+
         Platform implementations typically package the API, addon loader, core
         addons, and a default configuration pack together to work as one cohesive
         unit.
