@@ -7,6 +7,7 @@ Config Packs
 
     community-packs
     development/index
+    documentation/index
 
 What is a config pack?
 ======================
