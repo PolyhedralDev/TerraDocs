@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Terra API" href="../../../api/index.html" /><link rel="prev" title="Modifying an Existing Pack" href="../modifying-existing-pack.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Config Documentation" href="../../documentation/index.html" /><link rel="prev" title="Modifying an Existing Pack" href="../modifying-existing-pack.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
         <title>Samplers &amp; Noise - Terra Docs</title>
@@ -206,10 +206,14 @@
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Samplers &amp; Noise</a></li>
 </ul>
 </li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/sampler/index.html">Sampler Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/development-environment.html">Setting up a Development Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
@@ -218,7 +222,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/registering-config-type.html">Registering a Config Type</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/logging.html">Logging With SLF4J</a></li>
@@ -705,7 +709,7 @@ above, giving us the following sampler config:</p>
 <p>In addition to specifying the type of sampler to use, the <code class="docutils literal notranslate"><span class="pre">type</span></code> key will also determine what other keys become available
 as either <em>required</em> or <em>optional</em> within the sampler config. Some <code class="docutils literal notranslate"><span class="pre">type</span></code>s will have additional keys that need to be
 specified to function properly, and others like <code class="docutils literal notranslate"><span class="pre">WHITE_NOISE</span></code> don’t require anything extra.</p>
-<p>One example of an <em>optional</em> key available when specifying the <code class="docutils literal notranslate"><span class="pre">WHITE_NOISE</span></code> type is <code class="docutils literal notranslate"><span class="pre">salt</span></code>. The function of salt is
+<p id="sampler-salt">One example of an <em>optional</em> key available when specifying the <code class="docutils literal notranslate"><span class="pre">WHITE_NOISE</span></code> type is <code class="docutils literal notranslate"><span class="pre">salt</span></code>. The function of salt is
 covered <a class="reference external" href="#seeds">here</a> if you need a refresher. Here is what the above example looks like with the <code class="docutils literal notranslate"><span class="pre">salt</span></code> key added:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
 <span class="nt">salt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2321</span><span class="w"></span>
@@ -729,11 +733,11 @@ hang of writing your own sampler configs. Playing around and experimenting on yo
 each parameter does, and will give you an intuition on how you can fine tune them to your advantage.</p>
 </div>
 <p>For a complete list of sampler <code class="docutils literal notranslate"><span class="pre">type</span></code>s and their parameters available in Terra, please refer to the
-<a class="reference external" href="./Noise-Options">Sampler</a> documentation.</p>
+<a class="reference internal" href="../../documentation/sampler/index.html"><span class="doc">Sampler Configuration</span></a> page.</p>
 </section>
 </section>
 <section id="frequency">
-<h3>Frequency<a class="headerlink" href="#frequency" title="Permalink to this headline">¶</a></h3>
+<span id="sampler-frequency"></span><h3>Frequency<a class="headerlink" href="#frequency" title="Permalink to this headline">¶</a></h3>
 <p>You might be wondering how we control just how large or how small details produced by samplers are - This is
 where the concept of <strong>frequency</strong> comes in. Frequency is a number that modifies the ‘scale’ of sampler outputs, where higher
 frequency produces more ‘zoomed out’ outputs, while lower frequency results in more ‘zoomed in’ outputs.</p>
@@ -917,11 +921,11 @@ parameters already defined:</p>
 </div>
 <p>Feel free to preview this config in the <a class="reference external" href="#noise-tool">Noise Tool</a>, and have an experiment with each parameter to see
 what they all do. To see all available fractalizers and their parameters, please refer to the
-<a class="reference external" href="./Noise-Options">Sampler</a> documentation.</p>
+<a class="reference internal" href="../../documentation/sampler/index.html"><span class="doc">Sampler Configuration</span></a> page.</p>
 </section>
 </section>
 <section id="domain-warping">
-<h3>Domain Warping<a class="headerlink" href="#domain-warping" title="Permalink to this headline">¶</a></h3>
+<span id="id10"></span><h3>Domain Warping<a class="headerlink" href="#domain-warping" title="Permalink to this headline">¶</a></h3>
 <a class="reference internal image-reference" href="../../../_images/overwarped.png"><img alt="../../../_images/overwarped.png" class="align-center" src="../../../_images/overwarped.png" style="width: 100%;"/></a>
 <p>Similar to fractalization, domain warping involves manipulating the input, aka the <em>domain</em> , before it’s passed to the
 sampler. More specifically, the domain of a sampler will be warped via translation by the output of a
@@ -1043,7 +1047,7 @@ fractalized simplex!):</p>
 <p>Now that you’ve got an idea of <a class="reference external" href="#what-is-noise">what noise is</a>, <a class="reference external" href="#noise-basics">how it works</a>, and a couple ways of
 <a class="reference external" href="#configuring-samplers">configuring it</a>, you should now be equipped with the necessary  knowledge to start configuring
 your own fancy samplers for use in your own customized world generation! For more information on the available
-samplers in Terra, please refer to the <a class="reference external" href="./Noise-Options">sampler</a> documentation. If you have any
+samplers in Terra, please refer to the <a class="reference internal" href="../../documentation/sampler/index.html"><span class="doc">Sampler Configuration</span></a> page. If you have any
 further questions, feel free to ask us in our <a class="reference external" href="https://discord.gg/PXUEbbF">Discord</a>!</p>
 </section>
 </section>
@@ -1053,12 +1057,12 @@ further questions, feel free to ask us in our <a class="reference external" href
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../../api/index.html">
+          <a class="next-page" href="../../documentation/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Terra API</div>
+                <div class="title">Config Documentation</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
