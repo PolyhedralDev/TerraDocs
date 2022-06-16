@@ -95,6 +95,7 @@ html_css_files = [
     'css/tabs.css',
     'css/logo.css',
     'css/content.css',
+    'css/lists.css',
 ]
 
 # JDLinker config
