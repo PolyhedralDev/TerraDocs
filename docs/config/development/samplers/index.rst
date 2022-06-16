@@ -490,7 +490,7 @@ to generate every image of noise used on this page. You can find the Noise Tool 
 
 
 For a complete list of sampler ``type``\s and their parameters available in Terra, please refer to the
-`Sampler <./Noise-Options>`_ documentation.
+:doc:`/config/documentation/sampler/index` page.
 
 .. _sampler-frequency:
 
@@ -684,7 +684,7 @@ parameters already defined:
 
 Feel free to preview this config in the `Noise Tool <#noise-tool>`_, and have an experiment with each parameter to see
 what they all do. To see all available fractalizers and their parameters, please refer to the
-`Sampler <./Noise-Options>`_ documentation.
+:doc:`/config/documentation/sampler/index` page.
 
 .. _domain-warping:
 
@@ -806,5 +806,5 @@ Conclusion
 Now that you've got an idea of `what noise is <#what-is-noise>`_, `how it works <#noise-basics>`_, and a couple ways of
 `configuring it <#configuring-samplers>`_, you should now be equipped with the necessary  knowledge to start configuring
 your own fancy samplers for use in your own customized world generation! For more information on the available
-samplers in Terra, please refer to the `sampler <./Noise-Options>`_ documentation. If you have any
+samplers in Terra, please refer to the :doc:`/config/documentation/sampler/index` page. If you have any
 further questions, feel free to ask us in our `Discord <https://discord.gg/PXUEbbF>`_!

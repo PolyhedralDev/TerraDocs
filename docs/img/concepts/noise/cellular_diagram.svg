@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="57.978474mm"
+   height="42.313557mm"
+   viewBox="0 0 57.978474 42.313557"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04, custom)"
+   sodipodi:docname="cellular-noise.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#505050"
+     bordercolor="#ffffff"
+     borderopacity="1"
+     inkscape:pageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:lockguides="true"
+     inkscape:zoom="5.8421301"
+     inkscape:cx="72.319512"
+     inkscape:cy="87.468096"
+     inkscape:window-width="1920"
+     inkscape:window-height="1053"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <marker
+       id="ExperimentalArrow"
+       refX="5"
+       refY="3"
+       orient="auto-start-reverse"
+       inkscape:stockid="ExperimentalArrow"
+       inkscape:isstock="true">
+      <path
+         style="fill:context-stroke"
+         d="M 10,3 0,6 V 0 Z"
+         id="path2434" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleOutL"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleOutL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(0.8)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path2323" />
+    </marker>
+    <marker
+       style="overflow:visible"
+       id="TriangleInL"
+       refX="0"
+       refY="0"
+       orient="auto"
+       inkscape:stockid="TriangleInL"
+       inkscape:isstock="true">
+      <path
+         transform="scale(-0.8)"
+         style="fill:context-stroke;fill-rule:evenodd;stroke:context-stroke;stroke-width:1pt"
+         d="M 5.77,0 -2.88,5 V -5 Z"
+         id="path2313" />
+    </marker>
+    <marker
+       id="ExperimentalArrow-9"
+       refX="5"
+       refY="3"
+       orient="auto-start-reverse"
+       inkscape:stockid="ExperimentalArrow"
+       inkscape:isstock="true">
+      <path
+         style="fill:context-stroke"
+         d="M 10,3 0,6 V 0 Z"
+         id="path2434-3" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-56.144955,-138.1049)">
+    <rect
+       style="fill:#ffffff;stroke:none;stroke-width:0.273207"
+       id="rect1501"
+       width="57.978474"
+       height="42.313557"
+       x="56.144955"
+       y="138.1049" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.264583"
+       id="rect1207"
+       width="16.295012"
+       height="16.295012"
+       x="76.986687"
+       y="142.96667" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.264583"
+       id="rect1211"
+       width="16.295012"
+       height="16.295012"
+       x="93.2817"
+       y="142.96667" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.264583"
+       id="rect1219"
+       width="16.295012"
+       height="16.295012"
+       x="60.691673"
+       y="142.96667" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.264583"
+       id="rect1223"
+       width="16.295012"
+       height="16.295012"
+       x="60.691673"
+       y="159.26169" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.264583"
+       id="rect1227"
+       width="16.295012"
+       height="16.295012"
+       x="76.986687"
+       y="159.26169" />
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.264583"
+       id="rect1231"
+       width="16.295012"
+       height="16.295012"
+       x="93.2817"
+       y="159.26169" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ExperimentalArrow)"
+       d="m 68.850078,151.13476 c 0.687375,-1.79734 1.37475,-3.59469 2.062125,-5.39203"
+       id="path2078"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ExperimentalArrow-9)"
+       d="m 85.150734,151.26699 2.134535,2.73596"
+       id="path2859"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ExperimentalArrow-9)"
+       d="m 101.43217,151.34074 -2.046599,1.50812"
+       id="path2861"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ExperimentalArrow-9)"
+       d="m 101.56264,167.35777 2.08692,-3.21261"
+       id="path2863"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ExperimentalArrow-9)"
+       d="m 85.165304,167.39917 -2.76032,5.47278"
+       id="path2865"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;stroke:#ff0000;stroke-width:0.265;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;marker-end:url(#ExperimentalArrow-9)"
+       d="m 68.902523,167.4833 -2.814446,-5.03749"
+       id="path2867"
+       sodipodi:nodetypes="cc" />
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       id="circle1221"
+       cx="68.83918"
+       cy="151.11418"
+       r="0.66147208" />
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       id="circle1225"
+       cx="68.83918"
+       cy="167.40919"
+       r="0.66147208" />
+    <circle
+       style="fill:#0000ff;stroke:none;stroke-width:0.264583"
+       id="circle1225-2"
+       cx="65.48912"
+       cy="161.31598"
+       r="0.66147208" />
+    <circle
+       style="fill:#0000ff;stroke:none;stroke-width:0.264583"
+       id="circle1225-2-9"
+       cx="81.853088"
+       cy="174.10765"
+       r="0.66147208" />
+    <circle
+       style="fill:#0000ff;stroke:none;stroke-width:0.264583"
+       id="circle1225-2-9-1"
+       cx="98.311478"
+       cy="153.59074"
+       r="0.66147208" />
+    <circle
+       style="fill:#0000ff;stroke:none;stroke-width:0.264583"
+       id="circle1225-2-9-1-2"
+       cx="104.27216"
+       cy="163.18518"
+       r="0.66147208" />
+    <circle
+       style="fill:#0000ff;stroke:none;stroke-width:0.264583"
+       id="circle1225-2-9-1-2-7"
+       cx="88.038414"
+       cy="154.90665"
+       r="0.66147208" />
+    <circle
+       style="fill:#0000ff;stroke:none;stroke-width:0.264583"
+       id="circle1225-2-9-1-2-7-0"
+       cx="71.402519"
+       cy="144.42493"
+       r="0.66147208" />
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       id="circle1229"
+       cx="85.134193"
+       cy="167.40919"
+       r="0.66147208" />
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       id="circle1233"
+       cx="101.42921"
+       cy="167.40919"
+       r="0.66147208" />
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       id="circle1209"
+       cx="85.134186"
+       cy="151.11418"
+       r="0.66147208" />
+    <circle
+       style="fill:#000000;stroke:#000000;stroke-width:0.264583"
+       id="circle1213"
+       cx="101.42921"
+       cy="151.11418"
+       r="0.66147208" />
+  </g>
+</svg>

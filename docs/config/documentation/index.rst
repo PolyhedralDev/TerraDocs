@@ -20,6 +20,11 @@ Other Configs
 
 These configs define objects contained within the parameters of other objects.
 
+.. toctree::
+    :maxdepth: 1
+
+    sampler/index
+
 .. _config-documentation-format:
 
 Documentation Format
