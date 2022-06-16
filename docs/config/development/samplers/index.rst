@@ -455,6 +455,8 @@ In addition to specifying the type of sampler to use, the ``type`` key will also
 as either *required* or *optional* within the sampler config. Some ``type``\s will have additional keys that need to be
 specified to function properly, and others like ``WHITE_NOISE`` don't require anything extra.
 
+.. _sampler-salt:
+
 One example of an *optional* key available when specifying the ``WHITE_NOISE`` type is ``salt``. The function of salt is
 covered `here <#seeds>`_ if you need a refresher. Here is what the above example looks like with the ``salt`` key added:
 
@@ -489,6 +491,8 @@ to generate every image of noise used on this page. You can find the Noise Tool 
 
 For a complete list of sampler ``type``\s and their parameters available in Terra, please refer to the
 `Sampler <./Noise-Options>`_ documentation.
+
+.. _sampler-frequency:
 
 Frequency
 ---------
@@ -681,6 +685,8 @@ parameters already defined:
 Feel free to preview this config in the `Noise Tool <#noise-tool>`_, and have an experiment with each parameter to see
 what they all do. To see all available fractalizers and their parameters, please refer to the
 `Sampler <./Noise-Options>`_ documentation.
+
+.. _domain-warping:
 
 Domain Warping
 --------------
