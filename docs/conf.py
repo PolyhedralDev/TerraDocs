@@ -32,6 +32,7 @@ extensions = [
     'm2r2',
     'sphinx_design',
     'sphinx.ext.githubpages',
+    'sphinx.ext.graphviz',
 ]
 
 source_suffix = [
@@ -107,6 +108,12 @@ javadoc_links = {
 # Syntax Highlighting Color
 pygments_style = 'stata-dark'
 pygments_dark_style = 'stata-dark'
+
+# Graphviz
+graphviz_output_format = 'svg'
+graphviz_dot_args = [
+    '-Gpad=0.2',
+]
 
 # The master toctree document.
 master_doc = 'index'

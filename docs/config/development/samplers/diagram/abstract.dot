@@ -1,0 +1,11 @@
+digraph {
+    node [shape=record]
+    rankdir=LR
+
+    input [label="Input Parameters"]
+    sampler [label="Noise Sampler"]
+    output [label="Randomized Output (aka 'noise')"]
+
+    input -> sampler
+    sampler -> output
+}

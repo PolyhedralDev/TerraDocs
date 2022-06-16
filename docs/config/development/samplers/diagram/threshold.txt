@@ -1,7 +1,0 @@
-┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐   ┌─────────────────────────┐
-│ Input parameters │ → > White Noise > → │ Randomized output │ → >   Threshold Function    │
-├──────────────────┤   │   Sampler   │   ├───────────────────┤   ├─────────────────────────┤
-│ - World Seed     │   └─────────────┘   │   A value from    │   │ If below the threshold, │
-| - X Coordinate   │                     │     -1 to 1       │   │ place grass. (Displayed │
-| - Z Coordinate   │                     └───────────────────┘   │   as a green pixel)     │
-└──────────────────┘                                             └─────────────────────────┘

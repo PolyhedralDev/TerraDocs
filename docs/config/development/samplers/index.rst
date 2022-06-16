@@ -15,7 +15,8 @@ In Terra, noise does not refer to sound you can hear, but rather a series of
 something we will call a **noise sampler** - which is just a mathematical function that turns an input into a randomized
 numeric output.
 
-.. literalinclude:: diagram/abstract.txt
+.. graphviz:: diagram/abstract.dot
+   :align: center
 
 Why is Noise Important?
 =======================
@@ -66,7 +67,8 @@ range of -1 to 1.** We can visualize the relationship between the value and shad
 
 .. centered:: **Model**
 
-.. literalinclude:: diagram/1d.txt
+.. graphviz:: diagram/1d.dot
+   :align: center
 
 .. centered:: **Results**
 
@@ -97,7 +99,8 @@ be a valid seed, but ``231.23`` would not.
 
 Expanding on our basic model of noise generation we have:
 
-.. literalinclude:: diagram/1d_seed.txt
+.. graphviz:: diagram/1d_seed.dot
+   :align: center
 
 Here is an example using two different seeds to produce different outputs, using the same inputs and noise sampler from
 the example above.
@@ -164,7 +167,9 @@ label the ``X`` & ``Z`` axes for the sake of simplicity.
 
 .. centered:: **Two Dimensional Model**
 
-.. literalinclude:: diagram/2d.txt
+.. graphviz:: diagram/2d.dot
+   :align: center
+
 
 .. centered:: **Results**
 
@@ -260,7 +265,8 @@ that output value to determine whether we place some grass or not. The way this 
 
 .. centered:: **Grass Placement Model**
 
-.. literalinclude:: diagram/threshold.txt
+.. graphviz:: diagram/threshold.dot
+   :align: center
 
 .. centered:: **Results**
 
@@ -548,7 +554,8 @@ the frequency of a random noise sampler, as doing so functionally has same effec
    The math behind frequencies is very simple: *multiply the input coordinates of a sampler by the
    frequency*. Here is a model of the process:
 
-   .. literalinclude:: diagram/frequency.txt
+   .. graphviz:: diagram/frequency.dot
+      :align: center
 
    For example, if we have a frequency of `2`, and want to sample the coordinates `(X = 3, Z = 2)`, first the coordinates
    will be multiplied by the frequency `2`, giving us the scaled coordinates `(X' = 6, Z' = 4)`. This new set of

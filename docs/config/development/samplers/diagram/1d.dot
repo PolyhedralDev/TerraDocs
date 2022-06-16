@@ -1,0 +1,12 @@
+digraph {
+
+    node [shape=record]
+    rankdir=LR
+
+    input [label="Input Parameters|Number from 1-10"]
+    sampler [label="White Noise Sampler"]
+    output [label="Randomized Output\n(within range [-1, 1])"]
+
+    input -> sampler
+    sampler -> output
+}

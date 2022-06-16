@@ -3,6 +3,7 @@ Makes the borders of many elements more round
 */
 .sd-card,
 .highlight,
-.admonition {
+.admonition,
+object.graphviz {
     border-radius: 0.4rem;
 }

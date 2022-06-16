@@ -1,0 +1,12 @@
+digraph {
+    node [shape=record]
+
+    input [label="Input Parameters|{World Seed|X Coordinate|Y Coordinate}"]
+    sampler [label="White Noise Sampler"]
+    output [label="{Randomized Output|A value from -1 to 1}"]
+    thresholdfunction [label="Threshold Function|If below the threshold, place grass.\n(Displayed as a green pixel)"]
+
+    input -> sampler
+    sampler -> output
+    output -> thresholdfunction
+}
