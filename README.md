@@ -9,6 +9,7 @@ Based on [Sponge](https://github.com/SpongePowered/SpongeDocs)'s documentation t
 1. Install tooling
    * `pip` for Sphinx and its dependencies.
    * `npm` for Gulp and its dependencies.
+   * [Graphviz](https://graphviz.org/download/) for rendering diagrams.
 2. Install project dependencies:
    ```bash
    npm install -g gulp
