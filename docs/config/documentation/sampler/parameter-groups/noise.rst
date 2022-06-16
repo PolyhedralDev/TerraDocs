@@ -1,5 +1,5 @@
-:bdg-primary:`frequency` ``Float``
+:bdg-success:`frequency` ``Float``
 Controls the :ref:`frequency <sampler-frequency>` of noise.
 
-:bdg-primary:`salt` ``Integer``
+:bdg-success:`salt` ``Integer``
 Determines the :ref:`seed <sampler-salt>` for the sampler.
