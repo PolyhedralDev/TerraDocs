@@ -12,3 +12,9 @@ Make clickable card borders fade on hover
 .sd-card-body dl {
     margin: 0;
 }
+
+.nested-cards .sd-card {
+    border-color: var(--color-background-border);
+    margin-bottom: 0;
+    box-shadow: 0.1rem 0.2rem 0.6rem #00000033 !important; 
+}
