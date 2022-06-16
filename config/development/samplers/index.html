@@ -9,6 +9,7 @@
         <title>Samplers &amp; Noise - Terra Docs</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/rounded-borders.css" />
@@ -265,11 +266,18 @@
 <a class="reference external" href="https://en.wikipedia.org/wiki/Pseudorandom_number_generator">randomly</a>* generated values. These values are produced by
 something we will call a <strong>noise sampler</strong> - which is just a mathematical function that turns an input into a randomized
 numeric output.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐    ┌───────────────┐    ┌───────────────────┐
-│ Input parameters │ →  &gt; Noise Sampler &gt;  → │ Randomized output │
-└──────────────────┘    └───────────────┘    │   (aka 'noise')   │
-                                             └───────────────────┘
-</pre></div>
+<div align="center" class="align-center"><div class="graphviz"><object class="graphviz" data="../../../_images/graphviz-1661b3fa40b0a2125f70505cb9061a7ff34973d7.svg" type="image/svg+xml">
+<p class="warning">digraph {
+    node [shape=record]
+    rankdir=LR
+
+    input [label="Input Parameters"]
+    sampler [label="Noise Sampler"]
+    output [label="Randomized Output (aka 'noise')"]
+
+    input -&gt; sampler
+    sampler -&gt; output
+}</p></object></div>
 </div>
 </section>
 <section id="why-is-noise-important">
@@ -309,12 +317,19 @@ Input numbers also do not have to be whole numbers, this means noise samplers wi
 Again we’ve just used integers here for the sake of demonstration.</p>
 </div>
 <p class="centered">
-<strong><strong>Model</strong></strong></p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌────────────────────┐   ┌─────────────┐   ┌──────────────────────┐
-│  Input parameters  │ → &gt; White Noise &gt; → │  Randomized output   │
-├────────────────────┤   │   Sampler   │   │ within range [-1, 1] │
-│ Number from 1 - 10 │   └─────────────┘   └──────────────────────┘
-└────────────────────┘
-</pre></div>
+<strong><strong>Model</strong></strong></p><div align="center" class="align-center"><div class="graphviz"><object class="graphviz" data="../../../_images/graphviz-6fcd14bd19c6263421040419fd2dba95a575f25b.svg" type="image/svg+xml">
+<p class="warning">digraph {
+
+    node [shape=record]
+    rankdir=LR
+
+    input [label="Input Parameters|Number from 1-10"]
+    sampler [label="White Noise Sampler"]
+    output [label="Randomized Output\n(within range [-1, 1])"]
+
+    input -&gt; sampler
+    sampler -&gt; output
+}</p></object></div>
 </div>
 <p class="centered">
 <strong><strong>Results</strong></strong></p><a class="reference internal image-reference" href="../../../_images/basic_example-01.png"><img alt="../../../_images/basic_example-01.png" class="align-center" src="../../../_images/basic_example-01.png" style="width: 75%;"/></a>
@@ -336,13 +351,19 @@ we can use a seed in our noise sampler. Seeds are basically a way of getting a w
 values from the same inputs + noise sampler. Unlike the input value, seeds must be a whole number, meaning <code class="docutils literal notranslate"><span class="pre">5324</span></code> would
 be a valid seed, but <code class="docutils literal notranslate"><span class="pre">231.23</span></code> would not.</p>
 <p>Expanding on our basic model of noise generation we have:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐   ┌───────────────┐   ┌───────────────────┐
-│ Input parameters │ → &gt; Noise Sampler &gt; → │ Randomized output │
-├──────────────────┤   └───────────────┘   └───────────────────┘
-│ - Seed           │
-│ - Input value    │
-└──────────────────┘
-</pre></div>
+<div align="center" class="align-center"><div class="graphviz"><object class="graphviz" data="../../../_images/graphviz-1b77b0488d996d12e2d105850280cf65b114fab9.svg" type="image/svg+xml">
+<p class="warning">digraph {
+
+   node [shape=record]
+   rankdir=LR
+
+   input [label="Input Parameters|{Seed|Input Value}"]
+   sampler [label="Noise Sampler"]
+   output [label="Randomized Output"]
+
+   input -&gt; sampler
+   sampler -&gt; output
+}</p></object></div>
 </div>
 <p>Here is an example using two different seeds to produce different outputs, using the same inputs and noise sampler from
 the example above.</p>
@@ -392,14 +413,19 @@ refer to the first input as <code class="docutils literal notranslate"><span cla
 <p>In a new example, let’s use a range of 1 - 3 for both <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Z</span></code>, giving us a total of 9 samples (3 x 3). We will only
 label the <code class="docutils literal notranslate"><span class="pre">X</span></code> &amp; <code class="docutils literal notranslate"><span class="pre">Z</span></code> axes for the sake of simplicity.</p>
 <p class="centered">
-<strong><strong>Two Dimensional Model</strong></strong></p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐
-│ Input parameters │ → &gt; White Noise &gt; → │ Randomized output │
-├──────────────────┤   │   Sampler   │   ├───────────────────┤
-│ - Seed           │   └─────────────┘   │ Displayed as as a │
-| - Input 1 (X)    |                     │ 2D grid of shades │
-| - Input 2 (Z)    |                     └───────────────────┘
-└──────────────────┘
-</pre></div>
+<strong><strong>Two Dimensional Model</strong></strong></p><div align="center" class="align-center"><div class="graphviz"><object class="graphviz" data="../../../_images/graphviz-dc97d2e98dea5b46f8175655b648474eb89b3bf4.svg" type="image/svg+xml">
+<p class="warning">digraph {
+
+   node [shape=record]
+   rankdir=LR
+
+   input [label="Input Parameters|{Seed|X|Z}"]
+   sampler [label="White Noise Sampler"]
+   output [label="Output Noise|Displayed as a 2D grid of shades"]
+
+   input -&gt; sampler
+   sampler -&gt; output
+}</p></object></div>
 </div>
 <p class="centered">
 <strong><strong>Results</strong></strong></p><a class="reference internal image-reference" href="../../../_images/basic_example-03.png"><img alt="../../../_images/basic_example-03.png" class="align-center" src="../../../_images/basic_example-03.png" style="width: 300px;"/></a>
@@ -473,14 +499,19 @@ that output value to determine whether we place some grass or not. The way this 
 <a class="reference external" href="#segmentation">thresholding</a> it! We’ll start with a threshold of <code class="docutils literal notranslate"><span class="pre">0</span></code>, where any value below our threshold will mean
 <code class="docutils literal notranslate"><span class="pre">place</span> <span class="pre">grass</span></code>.</p>
 <p class="centered">
-<strong><strong>Grass Placement Model</strong></strong></p><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐   ┌─────────────┐   ┌───────────────────┐   ┌─────────────────────────┐
-│ Input parameters │ → &gt; White Noise &gt; → │ Randomized output │ → &gt;   Threshold Function    │
-├──────────────────┤   │   Sampler   │   ├───────────────────┤   ├─────────────────────────┤
-│ - World Seed     │   └─────────────┘   │   A value from    │   │ If below the threshold, │
-| - X Coordinate   │                     │     -1 to 1       │   │ place grass. (Displayed │
-| - Z Coordinate   │                     └───────────────────┘   │   as a green pixel)     │
-└──────────────────┘                                             └─────────────────────────┘
-</pre></div>
+<strong><strong>Grass Placement Model</strong></strong></p><div align="center" class="align-center"><div class="graphviz"><object class="graphviz" data="../../../_images/graphviz-372ba5cc3818fe14e499ef2cceb650439c65bd92.svg" type="image/svg+xml">
+<p class="warning">digraph {
+    node [shape=record]
+
+    input [label="Input Parameters|{World Seed|X Coordinate|Y Coordinate}"]
+    sampler [label="White Noise Sampler"]
+    output [label="{Randomized Output|A value from -1 to 1}"]
+    thresholdfunction [label="Threshold Function|If below the threshold, place grass.\n(Displayed as a green pixel)"]
+
+    input -&gt; sampler
+    sampler -&gt; output
+    output -&gt; thresholdfunction
+}</p></object></div>
 </div>
 <p class="centered">
 <strong><strong>Results</strong></strong></p><img alt="../../../_images/grass_64x64_50pcthreshold.png" class="align-center" src="../../../_images/grass_64x64_50pcthreshold.png"/>
@@ -756,15 +787,25 @@ Under The Hood - How frequency works<div class="sd-summary-down docutils">
 </summary><div class="sd-summary-content sd-card-body docutils">
 <p class="sd-card-text">The math behind frequencies is very simple: <em>multiply the input coordinates of a sampler by the
 frequency</em>. Here is a model of the process:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>┌──────────────────┐                     ┌───────────────┐   ┌───────────────────┐
-│ Input parameters │          ╭──────┬ → &gt; Noise Sampler &gt; → │ Randomized output │
-├──────────────────┤          │      │   └───────────────┘   └───────────────────┘
-│ - Seed           &gt; ─────────╯      │
-│ - Frequency      &gt; ─────────╮      │
-| - Input 1 (X)    &gt; → X * Frequency ┤
-| - Input 2 (Z)    &gt; → Y * Frequency ╯
-└──────────────────┘
-</pre></div>
+<div align="center" class="align-center"><div class="graphviz"><object class="graphviz" data="../../../_images/graphviz-cd5c858f65d39b2f19e5515549a0c3f6a161674d.svg" type="image/svg+xml">
+<p class="warning">digraph {
+    nodesep=1
+    overlap=false
+    node [shape=record]
+
+    input [label="{Inputs|{&lt;s&gt; Seed|&lt;x&gt; X Coordinate|&lt;z&gt;Z Coordinate}}"]
+    samplerparams [label="{Sampler Parameters|&lt;f&gt; Frequency}"]
+    sampler [label="Noise Algorithm"]
+    output [label="Randomized Output"]
+    transform [label="&lt;x&gt; X * Frequency|&lt;z&gt; Z * Frequency"]
+
+    sampler -&gt; output
+
+    input:s -&gt; sampler
+    samplerparams:f -&gt; transform:x,transform:z
+    input:x -&gt; transform:x -&gt; sampler
+    input:z -&gt; transform:z -&gt; sampler
+}</p></object></div>
 </div>
 <p class="sd-card-text">For example, if we have a frequency of <cite>2</cite>, and want to sample the coordinates <cite>(X = 3, Z = 2)</cite>, first the coordinates
 will be multiplied by the frequency <cite>2</cite>, giving us the scaled coordinates <cite>(X’ = 6, Z’ = 4)</cite>. This new set of

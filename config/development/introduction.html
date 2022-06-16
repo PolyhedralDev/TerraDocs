@@ -9,6 +9,7 @@
         <title>Config Development Introduction - Terra Docs</title>
       <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
     <link rel="stylesheet" type="text/css" href="../../_static/css/rounded-borders.css" />
@@ -267,21 +268,18 @@ development workspace.</p>
 <p>Terra is composed of several parts that facilitate world generation:</p>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<dl class="simple">
+<dl>
 <dt><strong>A Voxel World Generation API</strong></dt><dd><p class="sd-card-text">The base framework for world generation.</p>
 </dd>
-<dt><strong>An Addon Loader</strong></dt><dd><p class="sd-card-text">Allows for loading addons, which integrate the API to provide functionality.
-The majority of Terra’s functionality comes from addons, as without them Terra
-wouldn’t do much. This is similar to how mod loaders like Fabric and Forge won’t
-do much without any mods installed.</p>
+<dt><strong>An Addon Loader</strong></dt><dd><p class="sd-card-text">Allows for loading addons, which integrate the API to provide functionality.</p>
 </dd>
 <dt><strong>Core Addons</strong></dt><dd><p class="sd-card-text">A suite of addons that provides standard functionality to Terra.</p>
 </dd>
-<dt><strong>Configuration Packs</strong></dt><dd><p class="sd-card-text">A collection of configuration files that utilize the functionality provided
-by addons to define how worlds generate.</p>
+<dt><strong>Configuration Packs</strong></dt><dd><p class="sd-card-text">A collection of configuration files that define how worlds generate, utilizing
+the functionality provided by addons.</p>
 </dd>
-<dt><strong>Platform Implementations</strong></dt><dd><p class="sd-card-text">The layer between the platform (such as Bukkit or Fabric) and the API.
-Platform implementations typically package the API, addon loader, core
+<dt><strong>Platform Implementations</strong></dt><dd><p class="sd-card-text">The layer between the platform (such as Bukkit or Fabric) and the API.</p>
+<p class="sd-card-text">Platform implementations typically package the API, addon loader, core
 addons, and a default configuration pack together to work as one cohesive
 unit.</p>
 </dd>
@@ -290,15 +288,15 @@ unit.</p>
 </div>
 <p>As a config developer, you will primarily be utilizing addons via Terra’s
 configuration system to define how worlds generate. It is still a good idea to
-have an understanding of how these components interact, as it will provide a richer
-understanding of what is going on under the hood.</p>
+have an understanding of how these components interact, however is not strictly
+necessary.</p>
+</section>
+<section id="setting-up-your-test-environment">
+<h2>1. Setting Up Your Test Environment<a class="headerlink" href="#setting-up-your-test-environment" title="Permalink to this headline">¶</a></h2>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>Do not follow the rest of this guide on any live production environment.</p>
 </div>
-</section>
-<section id="setting-up-your-test-environment">
-<h2>1. Setting Up Your Test Environment<a class="headerlink" href="#setting-up-your-test-environment" title="Permalink to this headline">¶</a></h2>
 <p>Before beginning development on a new pack, you will need a suitable server or
 client to test with. We recommend using a <a class="reference external" href="https://fabricmc.net">Fabric</a>
 client to develop config packs on, however this choice is ultimately up to you.
@@ -409,13 +407,13 @@ an external file editor on top of your editor tabs and or instances.</p>
 <p>You will need to know where the Terra directory is located, as this will be where all the files
 relevant to config development go:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a53ac24b-45f9-4b7c-8fd2-fbd67dfd3a0c" name="891475ec-600b-4c3e-8706-a780e4d65722" type="radio"/>
-<label class="sd-tab-label" for="a53ac24b-45f9-4b7c-8fd2-fbd67dfd3a0c">
+<input checked="checked" id="f817e1a3-fcfa-4a99-b3a8-a2c1cd24a783" name="6f5e11f5-4052-41c1-b46d-7c7800c08803" type="radio"/>
+<label class="sd-tab-label" for="f817e1a3-fcfa-4a99-b3a8-a2c1cd24a783">
 Fabric</label><div class="sd-tab-content docutils">
 <p><cite>/config/Terra/</cite></p>
 </div>
-<input id="377635ef-efa6-4520-96ce-70ce754bfc27" name="891475ec-600b-4c3e-8706-a780e4d65722" type="radio"/>
-<label class="sd-tab-label" for="377635ef-efa6-4520-96ce-70ce754bfc27">
+<input id="c8fcc2c4-f06f-4877-ac3d-a06608eb43f1" name="6f5e11f5-4052-41c1-b46d-7c7800c08803" type="radio"/>
+<label class="sd-tab-label" for="c8fcc2c4-f06f-4877-ac3d-a06608eb43f1">
 Bukkit</label><div class="sd-tab-content docutils">
 <p><cite>/plugins/Terra/</cite></p>
 </div>

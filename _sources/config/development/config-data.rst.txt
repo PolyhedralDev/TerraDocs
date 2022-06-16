@@ -364,21 +364,24 @@ Here is an example of a ``Map`` contained within the value of another
 
    .. tab-item:: YAML
 
-      For simple data types like integers and strings it is clear which key
-      corresponds to which value, as they are typically contained on the same
-      line, but maps and lists may span multiple lines, so we need a way of
-      defining which objects are defined under which keys and items. In YAML,
-      we can specify this kind of relationship via *indentation* - which is
-      simply how many spaces come before the key one a line. We conventionally
-      use two spaces to indicate 'one level' of indentation in YAML configs.
+      .. admonition:: Info
+         :class: tip
+
+         For simple data types like integers and strings it is clear which key
+         corresponds to which value, as they are typically contained on the same
+         line, but maps and lists may span multiple lines, so we need a way of
+         defining which objects are defined under which keys and items. In YAML,
+         we can specify this kind of relationship via *indentation* - which is
+         simply how many spaces come before the key one a line. We conventionally
+         use two spaces to indicate 'one level' of indentation in YAML configs.
 
       .. code-block:: yaml
          :caption: config.yml
          :linenos:
 
          parent-key:
-            child-key: value
-            sibling-key: another value
+           child-key: value
+           sibling-key: another value
 
       You can see that the map containing ``child-key`` and ``sibling-key`` is
       indented by two spaces, and is defined under the ``parent-key`` key,
@@ -531,6 +534,9 @@ lines and indentation:
    empty-map: {}
 
    empty-list: []
+
+YAML Anchors
+------------
 
 YAML also provides additional systems like **anchors**, which allow for
 easily re-using data within a config and is useful for when you might
