@@ -19,34 +19,46 @@ Fabric Server World Creation
 Procedure
 ---------
 
-#. Ensure your server is not running.
+1. Ensure your server is not running.
 
 #. If you missed it above, please make a backup of any relevant world folders in your server directory.
 
-    If you're using a fresh server you won't need to worry about this!
-
 #. Configure your server's world to use the new config as a generator:
 
-   #. Navigate to the `server.properties` file which is also contained within your server directory, and open it with any text editor.
-   #. Assign your new generator to the default world by setting the `level-type key` to `Terra:<CONFIG_ID>` (for the default pack this would be `Terra:OVERWORLD``). The config ID is case sensitive, e.g. `Terra:OVERWORLD` and `Terra:overworld` are considered two distinct IDs.
-   #. If the `level-type` key doesn't exist, simply add it yourself!
+.. card::
 
-#. Either delete the existing world folder in your server directory or rename it to something else (for example world_backup). The name of your world can be found under the 'level-name' key, also in server.properties. The default world name is 'world'.
+    #. Navigate to the ``server.properties`` file which is also contained within your server directory, and open it with any text editor.
+    
+    #. Assign your new generator to the default world by setting the ``level-type`` key to ``level-type=terra:<CONFIG_ID>/<CONFIG_ID>``
+       (for the default pack this would be ``terra:overworld/overworld``). The pack ID must be all lowercase, e.g. for a pack called
+       ``EXAMPLE``, you would use ``terra:example/example``.
+   
+    .. attention::
+
+        If the ``level-type`` key doesn't exist, simply add it yourself to the end of the file.
+
+4. Either delete the existing world folder in your server directory or rename it to something else (for example ``world_backup``).
+   The name of your world can be found under the ``level-name`` key, which is also located in the ``server.properties`` file.
+   The default world name is ``world``.
 
 #. Boot your server back up.
 
-#. Your server should re-generate the world folder during startup.
-
-#. Join your server and check if your new world is using Terra world generation.
-
 .. note::
-    Terra is a **pure server mod**. If you have Terra on a server, Vanilla clients can join the server. Terra
-    does not need to be installed on clients unless playing with Terra in singleplayer.
+
+    Your server should re-generate the world folder during startup.
+
+6. Join your server and check if your new world is using Terra world generation.
 
 If you followed the steps correctly without any errors, then you have successfully set up a server with Terra!
 
+.. note::
+
+    Terra is a **pure server mod**. If you have Terra on a server, Vanilla clients can join the server. Terra
+    does not need to be installed on clients unless playing with Terra in singleplayer.
+
 Troubleshooting
 ---------------
+
 If you run into issues during the world set up process, be sure to check you have followed each step correctly.
 Check for any errors in your server logs and try to interpret what the issue might be.
 
