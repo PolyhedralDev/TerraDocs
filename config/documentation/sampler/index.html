@@ -556,10 +556,122 @@ The lookup sampler used when the <code class="docutils literal notranslate"><spa
 </section>
 <section id="image">
 <h3>IMAGE<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h3>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <code class="docutils literal notranslate"><span class="pre">String</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">frequency</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">channel</span> <code class="docutils literal notranslate"><span class="pre">String</span></code></p>
-</section>
+<p>Outputs the channel of an image that is tiled, redistributed from the channel range [0-255] to output range [-1, 1].</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <code class="docutils literal notranslate"><span class="pre">String</span></code>
+Path to the image relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
+<p>Example path: <cite>path/to/the/image.png</cite></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">frequency</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code>
+<a class="reference internal" href="../../development/samplers/index.html#sampler-frequency"><span class="std std-ref">Frequency</span></a> of the image. Determines how the image gets scaled.</p>
+<p>A frequency of <code class="docutils literal notranslate"><span class="pre">1.0</span></code> means 1 pixel = 1 block, a frequency of <code class="docutils literal notranslate"><span class="pre">2.0</span></code> means 2 pixels = 1 block.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Frequencies below <code class="docutils literal notranslate"><span class="pre">1.0</span></code> are not recommended, as pixels aren’t interpolated when upscaled;
+results may look pixelated depending on use.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-col sd-d-flex-column sd-p-0 docutils">
+<p><strong>grayscale_circles.png</strong></p>
+<a class="reference internal image-reference" href="../../../_images/grayscale_circles.png"><img alt="../../../_images/grayscale_circles.png" src="../../../_images/grayscale_circles.png" style="width: 200px;"/></a>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>1.0 Frequency</strong></p>
+<a class="reference internal image-reference" href="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png"><img alt="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png" src="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png" style="width: 200px;"/></a>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>0.25 Frequency</strong></p>
+<a class="reference internal image-reference" href="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png"><img alt="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png" src="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png" style="width: 200px;"/></a>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">0.25</span></code> frequency = <code class="docutils literal notranslate"><span class="pre">0.25</span> <span class="pre">pixels</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">block</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">pixel</span> <span class="pre">=</span> <span class="pre">4</span> <span class="pre">blocks</span></code> (as demonstrated above using a block grid).</p>
+</div>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">channel</span> <code class="docutils literal notranslate"><span class="pre">String</span></code>
+Which channel of the image to output.</p>
+<p>Valid channels:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GRAYSCALE</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ALPHA</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">RED</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GREEN</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">BLUE</span></code></p></li>
+</ul>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Channel Examples</div>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-6 sd-row-cols-xs-6 sd-row-cols-sm-6 sd-row-cols-md-6 sd-row-cols-lg-6 docutils">
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<p class="sd-card-text">Original Image</p>
+<img alt="../../../_images/pacman_ghosts.png" src="../../../_images/pacman_ghosts.png"/>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<p class="sd-card-text">Grayscale</p>
+<img alt="../../../_images/pacman_ghosts_grayscale.png" src="../../../_images/pacman_ghosts_grayscale.png"/>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<p class="sd-card-text">Alpha Channel*</p>
+<img alt="../../../_images/pacman_ghosts_alpha_channel.png" src="../../../_images/pacman_ghosts_alpha_channel.png"/>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<p class="sd-card-text">Red Channel</p>
+<img alt="../../../_images/pacman_ghosts_red_channel.png" src="../../../_images/pacman_ghosts_red_channel.png"/>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<p class="sd-card-text">Green Channel</p>
+<img alt="../../../_images/pacman_ghosts_green_channel.png" src="../../../_images/pacman_ghosts_green_channel.png"/>
+</div>
+<div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
+<p class="sd-card-text">Blue Channel</p>
+<img alt="../../../_images/pacman_ghosts_blue_channel.png" src="../../../_images/pacman_ghosts_blue_channel.png"/>
+</div>
+</div>
+</div>
+<p class="sd-card-text">*The alpha channel is all white because there is no transparency in the original image.</p>
+</div>
+</div>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+Example Image Samplers<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-col sd-d-flex-column sd-p-0 docutils">
+<p class="sd-card-text"><strong>grayscale_circles.png</strong></p>
+<a class="reference internal image-reference" href="../../../_images/grayscale_circles.png"><img alt="../../../_images/grayscale_circles.png" src="../../../_images/grayscale_circles.png" style="width: 200px;"/></a>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p class="sd-card-text"><strong>mountain_heightmap.png</strong></p>
+<a class="reference internal image-reference" href="../../../_images/mountain_heightmap.png"><img alt="../../../_images/mountain_heightmap.png" src="../../../_images/mountain_heightmap.png" style="width: 200px;"/></a>
+</div>
+</div>
+</div>
+<p class="sd-card-text">World generated using the mountain heightmap to shape the terrain, and the circles
+to determine biome temperature:</p>
+<a class="reference internal image-reference" href="../../../_images/image_distributed_biomes.png"><img alt="../../../_images/image_distributed_biomes.png" src="../../../_images/image_distributed_biomes.png" style="width: 50%;"/></a>
+<p class="sd-card-text"><strong>Terrain Sampler</strong> (Using <a class="reference internal" href="#linear-heightmap">LINEAR_HEIGHTMAP</a> to work as a terrain sampler)</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LINEAR_HEIGHTMAP</span><span class="w"></span>
+<span class="nt">base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128</span><span class="w"></span>
+<span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64</span><span class="w"></span>
+<span class="nt">sampler</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMAGE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mountain_heightmap.png</span><span class="w"></span>
+<span class="w">  </span><span class="nt">channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRAYSCALE</span><span class="w"></span>
+<span class="w">  </span><span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Temperature Sampler</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMAGE</span><span class="w"></span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grayscale_circles.png</span><span class="w"></span>
+<span class="nt">channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRAYSCALE</span><span class="w"></span>
+<span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</details></section>
 <section id="constant">
 <h3>CONSTANT<a class="headerlink" href="#constant" title="Permalink to this headline">¶</a></h3>
 <p>Outputs a constant value, regardless of the inputs.</p>
