@@ -137,50 +137,84 @@ Sampler Types
 WHITE_NOISE
 -----------
 
+Produces `White noise`_.
+
+.. image:: /img/concepts/noise/whitenoise64x64.png
+
 .. include:: parameter-groups/noise.rst
 
 POSITIVE_WHITE_NOISE
 --------------------
+
+Identical to `WHITE_NOISE`_, but redistributed to only produce positive
+values for convenience.
 
 .. include:: parameter-groups/noise.rst
 
 GAUSSIAN
 --------
 
+Identical to `WHITE_NOISE`_, but redistributed to follow a `gaussian distribution`_\.
+
 .. include:: parameter-groups/noise.rst
 
 PERLIN
 ------
 
+Produces `Perlin noise`_.
+
 .. include:: parameter-groups/noise.rst
+
+.. tip::
+
+    It is recommended to use other simplex based samplers rather than PERLIN, as
+    Perlin noise produces signficant directional artifacts, which may be undesired.
 
 SIMPLEX
 -------
+
+Produces `Simplex noise`_.
 
 .. include:: parameter-groups/noise.rst
 
 OPEN_SIMPLEX_2
 --------------
 
+Produces `Simplex noise`_ (using the algorithm from OpenSimplex2_).
+
+.. image:: /img/concepts/noise/opensimplex2_64x64.png
+
 .. include:: parameter-groups/noise.rst
 
 OPEN_SIMPLEX_2S
 ---------------
+
+Produces smoother `Simplex noise`_ (using the algorithm from OpenSimplex2_).
 
 .. include:: parameter-groups/noise.rst
 
 VALUE
 -----
 
+Produces `Value noise`_ using `linear interpolation`_ (`bilinear`_ for 2D, `trilinear`_ for 3D).
+
 .. include:: parameter-groups/noise.rst
 
 VALUE_CUBIC
 -----------
 
+Identical to `VALUE`_ except using `cubic interpolation`_ (`bicubic`_ for 2D, `tricubic`_ for 3D).
+
 .. include:: parameter-groups/noise.rst
 
 GABOR
 -----
+
+Produces `Gabor noise`_.
+
+.. warning::
+
+    The GABOR sampler is significantly slower at producing noise compared to other noise samplers.
 
 .. include:: parameter-groups/noise.rst
 
@@ -207,7 +241,7 @@ Default: ``0.625``
 CELLULAR
 --------
 
-Produces noise derived from an infinite grid of 'cells'.
+Produces cellular / `Worley noise`_.
 
 .. image:: /img/concepts/noise/cellular_256x256.png
 
@@ -224,12 +258,11 @@ Produces noise derived from an infinite grid of 'cells'.
 .. include:: parameter-groups/noise.rst
 
 :bdg-success:`distance` ``String``
-The method used for calculating the distance from the cell origin. Only relevant
-for ``return`` types 
+The method used for calculating the distance from the cell origin.
 
 Default: ``EuclideanSq``
 
-Distance types:
+**Distance Types**
 
 - ``Euclidean``
 - ``EuclideanSq``
@@ -241,23 +274,32 @@ The function the sampler will use to calculate the noise.
 
 Default: ``Distance``
 
-Return types:
+**Return Types**
+
+Definitions:
+
+``d1`` - The distance from the nearest cell origin.
+
+``d2`` - The distance from the second nearest cell origin
+
+``d3`` - The distance from the third nearest cell origin
+
+Types:
 
 - ``CellValue`` - Returns a random value based on the nearest cell origin.
-- ``Distance`` - Returns the distance from the nearest cell origin.
-- ``Distance2``
-- ``Distance2Add``
-- ``Distance2Sub``
-- ``Distance2Mul``
-- ``Distance2Div``
 - ``NoiseLookup`` - Passes the coordinates of the nearest cell origin into a sampler, and returns the output.
-- ``Distance3``
-- ``Distance3Add``
-- ``Distance3Sub``
-- ``Distance3Mul``
-- ``Distance3Div``
 - ``Angle`` - Returns the angle from the sampled coordinates to the nearest cell origin in radians.
-
+- ``Distance`` - Returns ``d1``.
+- ``Distance2``- Returns ``d2``.
+- ``Distance2Add`` - Returns ``(d1 + d2) / 2``
+- ``Distance2Sub`` - Returns ``d2 - d1``
+- ``Distance2Mul`` - Returns ``(d1 * d2) / 2``
+- ``Distance2Div`` - Returns ``d1 / d2``
+- ``Distance3`` - Returns ``d3``
+- ``Distance3Add`` - Returns ``(d1 + d3) / 2``
+- ``Distance3Sub`` - Returns ``d3 - d1``
+- ``Distance3Mul`` - Returns ``d3 * d1``
+- ``Distance3Div`` - Returns ``d1 / d3``
 
 :bdg-success:`jitter` ``Float``
 Determines how far cell origins can randomly spread out from the ceneter of cells.
@@ -405,7 +447,8 @@ Valid channels:
 CONSTANT
 --------
 
-Outputs a constant value, regardless of the inputs.
+Outputs a constant value, regardless of the inputs. Typically used in cases where you
+don't want the sampler to do anything.
 
 :bdg-success:`value` ``Float``
 The value to be outputted.
@@ -443,9 +486,14 @@ Default: ``1.0``
 LINEAR_HEIGHTMAP
 ----------------
 
+Treats a 2D sampler as a heightmap, converting it to a 3D `SDF`_
+for use as a terrain sampler.
+
 :bdg-primary:`base` ``Float``
+The base y level of the terrain.
 
 :bdg-success:`sampler` ``Sampler``
+The sampler to be used as a heightmap.
 
 Default: `CONSTANT`_ sampler
 
@@ -570,3 +618,18 @@ Default: Empty map
 
 Default: Empty map
 
+.. _OpenSimplex2: https://github.com/KdotJPG/OpenSimplex2
+.. _gaussian distribution: https://en.wikipedia.org/wiki/Normal_distribution
+.. _White noise: https://en.wikipedia.org/wiki/White_noise
+.. _Perlin noise: https://en.wikipedia.org/wiki/Perlin_noise
+.. _Simplex noise: https://en.wikipedia.org/wiki/Simplex_noise
+.. _SDF: https://en.wikipedia.org/wiki/Signed_distance_function
+.. _Value noise: https://en.wikipedia.org/wiki/Value_noise
+.. _linear interpolation: https://en.wikipedia.org/wiki/Linear_interpolation
+.. _bilinear: https://en.wikipedia.org/wiki/Bilinear_interpolation
+.. _trilinear: https://en.wikipedia.org/wiki/Trilinear_interpolation
+.. _cubic interpolation: https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Interpolation_on_a_single_interval
+.. _bicubic: https://en.wikipedia.org/wiki/Bicubic_interpolation
+.. _tricubic: https://en.wikipedia.org/wiki/Tricubic_interpolation
+.. _Gabor noise: https://graphics.cs.kuleuven.be/publications/GLLD12GNBE/
+.. _Worley noise: https://en.wikipedia.org/wiki/Worley_noise
