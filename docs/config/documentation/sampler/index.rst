@@ -261,11 +261,132 @@ The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup`
 IMAGE
 -----
 
+Outputs the channel of an image that is tiled, redistributed from the channel range [0-255] to output range [-1, 1].
+
 :bdg-primary:`image` ``String``
+Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+
+Example path: `path/to/the/image.png`
 
 :bdg-primary:`frequency` ``Float``
+:ref:`Frequency <sampler-frequency>` of the image. Determines how the image gets scaled.
+
+A frequency of ``1.0`` means 1 pixel = 1 block, a frequency of ``2.0`` means 2 pixels = 1 block.
+
+.. attention::
+
+    Frequencies below ``1.0`` are not recommended, as pixels aren't interpolated when upscaled;
+    results may look pixelated depending on use.
+
+    .. grid:: 3
+
+        .. grid-item:: **grayscale_circles.png**
+            :padding: 0
+
+            .. image:: /img/concepts/noise/image/grayscale_circles.png
+                :width: 200
+
+        .. grid-item:: **1.0 Frequency**
+
+            .. image:: /img/concepts/noise/image/image_sampler_circles_frequency_1.0_zoomed.png
+                :width: 200
+
+        .. grid-item:: **0.25 Frequency**
+
+            .. image:: /img/concepts/noise/image/image_sampler_circles_frequency_0.25_zoomed.png
+                :width: 200
+
+    ``0.25`` frequency = ``0.25 pixels = 1 block`` or ``1 pixel = 4 blocks`` (as demonstrated above using a block grid).
 
 :bdg-primary:`channel` ``String``
+Which channel of the image to output.
+
+Valid channels:
+
+- ``GRAYSCALE``
+- ``ALPHA``
+- ``RED``
+- ``GREEN``
+- ``BLUE``
+
+.. card:: Channel Examples
+
+    .. grid:: 6
+
+        .. grid-item:: Original Image
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts.png
+
+        .. grid-item:: Grayscale
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts_grayscale.png
+
+        .. grid-item:: Alpha Channel*
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts_alpha_channel.png
+
+        .. grid-item:: Red Channel
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts_red_channel.png
+
+        .. grid-item:: Green Channel
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts_green_channel.png
+
+        .. grid-item:: Blue Channel
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts_blue_channel.png
+
+    \*The alpha channel is all white because there is no transparency in the original image.
+
+.. dropdown:: Example Image Samplers
+
+    .. grid:: 3
+
+        .. grid-item:: **grayscale_circles.png**
+            :padding: 0
+
+            .. image:: /img/concepts/noise/image/grayscale_circles.png
+                :width: 200
+
+        .. grid-item:: **mountain_heightmap.png**
+
+            .. image:: /img/concepts/noise/image/mountain_heightmap.png
+                :width: 200
+
+    World generated using the mountain heightmap to shape the terrain, and the circles
+    to determine biome temperature:
+
+    .. image:: /img/concepts/noise/image/image_distributed_biomes.png
+        :width: 50%
+
+    **Terrain Sampler** (Using `LINEAR_HEIGHTMAP`_ to work as a terrain sampler)
+
+    .. code-block:: yaml
+        
+        type: LINEAR_HEIGHTMAP
+        base: 128
+        scale: 64
+        sampler:
+          type: IMAGE
+          image: mountain_heightmap.png
+          channel: GRAYSCALE
+          frequency: 1
+
+    **Temperature Sampler**
+
+    .. code-block:: yaml
+
+        type: IMAGE
+        image: grayscale_circles.png
+        channel: GRAYSCALE
+        frequency: 1
 
 CONSTANT
 --------
