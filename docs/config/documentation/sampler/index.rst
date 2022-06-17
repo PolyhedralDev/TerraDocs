@@ -612,19 +612,154 @@ MIN
 EXPRESSION
 ----------
 
+Evaluates an arbitrary user defined expression as the sampler output. Expression
+samplers additionally allow the use of user defined functions, including other samplers,
+as well as constants defined within the sampler.
+
 :bdg-primary:`expression` ``String``
+The expression to be evaluated for each sample. Variables ``x``, ``y`` (3D only), and ``z``
+act as the sampler's coordinate inputs.
 
 :bdg-success:`variables` ``Map`` < ``String`` : ``Float`` >
+Defines a mapping of variable names to values for use in the scope of the expression. This
+is most useful for providing named constants that can easily be modified if needed.
 
 Default: Empty map
 
 :bdg-success:`samplers` ``Map`` < ``String`` : ``DimensionApplicableSampler`` >
+Defines a mapping of function names to samplers.
+
+Each sampler may be utilized within the expression like so: ``<name>(<x>, <z>)`` (for 2D) or
+``<name>(<x>, <y>, <z>)`` (for 3D), where <name> is the declared function name, and where
+the respective axis coordinates are the coordinate inputs passed to the sampler.
 
 Default: Empty map
 
 :bdg-success:`functions` ``Map`` < ``String`` : ``MathFunction`` >
+Defines a mapping of function names to user-defined math functions. Functions may be
+called within the expression like so ``<name>(<arg 1>, <arg 2>, ...)``, where <name> is the declared
+function name, and where each input coorresponds to the argument list defined by the function.
 
 Default: Empty map
+
+.. dropdown:: Examples
+    :class-container: nested-cards
+
+    .. card:: **Simple addition**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            expression: 1 + 1
+
+        The sampler above outputs the result of ``1`` plus ``1``, therefore the sampler will always
+        output ``2``.
+
+    .. card:: **Using variables**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            variables:
+              a: 1
+              b: 2
+
+            expression: a - b
+
+        The sampler above outputs the result of ``a`` minus ``b``, which is evaluated as
+        ``1`` minus ``2``, therefore the sampler will always output ``-1``.
+
+    .. card:: **Using functions**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            functions:
+              addThenDivide:
+                arguments:
+                  - a
+                  - b
+                  - c
+                expression: (a + b) / c
+    
+            expression: addThenDivide(3, 2, 10)
+
+        The sampler above outputs the results of passing ``3``, ``2``, and ``10`` into
+        the function ``addThenDivide()``. This function evaluation would be ``(3 + 2) / 10``,
+        or ``3 + 2`` = ``5``, then ``5 / 10`` = ``0.5``. Therefore the sampler will always
+        output ``0.5``.
+
+    .. card:: **Using coordinates**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            expression: x + z
+
+        The sampler above will output the result of adding the ``x`` coordinate and the ``z``
+        coordinate. For example, if Terra wanted to sample a block where ``x = 4``, and ``z = 2``,
+        that sample would return ``4 + 2`` or ``6`` for that block.
+
+    .. card:: **Using samplers**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            samplers:
+              whiteNoise:
+                dimensions: 2
+                type: WHITE_NOISE
+
+            expression: whiteNoise(2, 5)
+
+        The sampler above will output the result of a 2D `WHITE_NOISE`_ sampler when passed
+        the coordinates ``X = 2`` and ``Z = 5``.
+
+    .. card:: **Combining everything**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            variables:
+              someConstant: 3
+              anotherConstant: 2.5
+
+            functions:
+              add:
+                arguments:
+                  - a
+                  - b
+                expression: a + b
+
+            samplers:
+              exampleSampler:
+                dimensions: 2
+                type: WHITE_NOISE
+
+            expression: |
+              exampleSampler(x * 2, z * 2) +
+              add(someConstant, anotherConstant)
+
+        The expression sampler above defines:
+
+        - Two variables ``someConstant`` and ``anotherConstant``, which are ``3`` and ``2.5`` respectively.
+        - A 2 argument function ``exampleFunction()``, that simply adds the two arguments together.
+        - A 2D sampler ``exampleSampler()``.
+        - An expression that:
+            - Evaluates ``exampleSampler()`` using:
+                - ``x`` coordinate multiplied by ``2`` as the X coordinate, and
+                - ``z`` multiplied by ``2`` as the Z coordinate.
+            - Evaluates ``add()`` using:
+                - ``3`` (defined by ``someConstant``) as the ``a`` argument, and
+                - ``2.5`` (defined by ``anotherConstant``) as the ``b`` argument.
+            - Adds the result of ``add()`` or ``5.5`` to the ``exampleSampler()`` evaluation.
+            - Outputs the final result.
 
 .. _OpenSimplex2: https://github.com/KdotJPG/OpenSimplex2
 .. _gaussian distribution: https://en.wikipedia.org/wiki/Normal_distribution
