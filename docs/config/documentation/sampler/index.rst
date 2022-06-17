@@ -252,6 +252,10 @@ Produces cellular / `Worley noise`_.
 - Black dots: The center of each cell.
 - Red lines: A random direction and distance from the cell center, called 'jitter'.
 - Blue dots: The cell origin, determined by jitter from the cell center.
+- Green dot: Coordinates being sampled.
+- Purple line: Distance to the closest cell origin.
+- Orange line: Distance to the second closest cell origin.
+- Gold line: Distance to the third closest cell origin.
 
 **PARAMETERS**
 
@@ -278,6 +282,10 @@ Default: ``Distance``
 
 Definitions:
 
+``s`` - The coordinates being sampled.
+
+``c`` - The coordinates of the nearest cell origin.
+
 ``d1`` - The distance from the nearest cell origin.
 
 ``d2`` - The distance from the second nearest cell origin
@@ -286,23 +294,23 @@ Definitions:
 
 Types:
 
-- ``CellValue`` - Returns a random value based on the nearest cell origin.
-- ``NoiseLookup`` - Passes the coordinates of the nearest cell origin into a sampler, and returns the output.
-- ``Angle`` - Returns the angle from the sampled coordinates to the nearest cell origin in radians.
+- ``NoiseLookup`` - Passes ``c`` into a sampler, and returns the output.
+- ``CellValue`` - Returns a random value based on ``c`` (Equivalent to ``NoiseLookup`` with a `WHITE_NOISE`_ sampler).
+- ``Angle`` - Returns the angle from ``s`` to ``c``.
 - ``Distance`` - Returns ``d1``.
 - ``Distance2``- Returns ``d2``.
-- ``Distance2Add`` - Returns ``(d1 + d2) / 2``
-- ``Distance2Sub`` - Returns ``d2 - d1``
-- ``Distance2Mul`` - Returns ``(d1 * d2) / 2``
-- ``Distance2Div`` - Returns ``d1 / d2``
-- ``Distance3`` - Returns ``d3``
-- ``Distance3Add`` - Returns ``(d1 + d3) / 2``
-- ``Distance3Sub`` - Returns ``d3 - d1``
-- ``Distance3Mul`` - Returns ``d3 * d1``
-- ``Distance3Div`` - Returns ``d1 / d3``
+- ``Distance2Add`` - Returns ``(d1 + d2) / 2``.
+- ``Distance2Sub`` - Returns ``d2 - d1``.
+- ``Distance2Mul`` - Returns ``(d1 * d2) / 2``.
+- ``Distance2Div`` - Returns ``d1 / d2``.
+- ``Distance3`` - Returns ``d3``.
+- ``Distance3Add`` - Returns ``(d1 + d3) / 2``.
+- ``Distance3Sub`` - Returns ``d3 - d1``.
+- ``Distance3Mul`` - Returns ``d3 * d1``.
+- ``Distance3Div`` - Returns ``d1 / d3``.
 
 :bdg-success:`jitter` ``Float``
-Determines how far cell origins can randomly spread out from the ceneter of cells.
+Determines how far cell origins can randomly spread out from the center of cells.
 
 Default: ``1``
 
