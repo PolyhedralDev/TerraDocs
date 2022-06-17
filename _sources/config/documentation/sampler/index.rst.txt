@@ -137,67 +137,111 @@ Sampler Types
 WHITE_NOISE
 -----------
 
+Produces `White noise`_.
+
+.. image:: /img/concepts/noise/whitenoise64x64.png
+
 .. include:: parameter-groups/noise.rst
 
 POSITIVE_WHITE_NOISE
 --------------------
+
+Identical to `WHITE_NOISE`_, but redistributed to only produce positive
+values for convenience.
 
 .. include:: parameter-groups/noise.rst
 
 GAUSSIAN
 --------
 
+Identical to `WHITE_NOISE`_, but redistributed to follow a `gaussian distribution`_\.
+
 .. include:: parameter-groups/noise.rst
 
 PERLIN
 ------
 
+Produces `Perlin noise`_.
+
 .. include:: parameter-groups/noise.rst
+
+.. tip::
+
+    It is recommended to use other simplex based samplers rather than PERLIN, as
+    Perlin noise produces signficant directional artifacts, which may be undesired.
 
 SIMPLEX
 -------
+
+Produces `Simplex noise`_.
 
 .. include:: parameter-groups/noise.rst
 
 OPEN_SIMPLEX_2
 --------------
 
+Produces `Simplex noise`_ (using the algorithm from OpenSimplex2_).
+
+.. image:: /img/concepts/noise/opensimplex2_64x64.png
+
 .. include:: parameter-groups/noise.rst
 
 OPEN_SIMPLEX_2S
 ---------------
+
+Produces smoother `Simplex noise`_ (using the algorithm from OpenSimplex2_).
 
 .. include:: parameter-groups/noise.rst
 
 VALUE
 -----
 
+Produces `Value noise`_ using `linear interpolation`_ (`bilinear`_ for 2D, `trilinear`_ for 3D).
+
 .. include:: parameter-groups/noise.rst
 
 VALUE_CUBIC
 -----------
+
+Identical to `VALUE`_ except using `cubic interpolation`_ (`bicubic`_ for 2D, `tricubic`_ for 3D).
 
 .. include:: parameter-groups/noise.rst
 
 GABOR
 -----
 
+Produces `Gabor noise`_.
+
+.. warning::
+
+    The GABOR sampler is significantly slower at producing noise compared to other noise samplers.
+
 .. include:: parameter-groups/noise.rst
 
 :bdg-success:`rotation` ``Float``
 
+Default: ``0.25``
+
 :bdg-success:`isotrophic` ``Boolean``
+
+Default: ``true``
 
 :bdg-success:`deviation` ``Float``
 
+Default: ``1.0``
+
 :bdg-success:`impulses` ``Float``
 
+Default: ``64.0``
+
 :bdg-success:`frequency_0` ``Float``
+
+Default: ``0.625``
 
 CELLULAR
 --------
 
-Produces noise derived from an infinite grid of 'cells'.
+Produces cellular / `Worley noise`_.
 
 .. image:: /img/concepts/noise/cellular_256x256.png
 
@@ -214,12 +258,11 @@ Produces noise derived from an infinite grid of 'cells'.
 .. include:: parameter-groups/noise.rst
 
 :bdg-success:`distance` ``String``
-The method used for calculating the distance from the cell origin. Only relevant
-for ``return`` types 
+The method used for calculating the distance from the cell origin.
 
-Default - ``EuclideanSq``
+Default: ``EuclideanSq``
 
-Distance types:
+**Distance Types**
 
 - ``Euclidean``
 - ``EuclideanSq``
@@ -229,34 +272,47 @@ Distance types:
 :bdg-success:`return` ``String``
 The function the sampler will use to calculate the noise.
 
-Default - ``Distance``
+Default: ``Distance``
 
-Return types:
+**Return Types**
+
+Definitions:
+
+``d1`` - The distance from the nearest cell origin.
+
+``d2`` - The distance from the second nearest cell origin
+
+``d3`` - The distance from the third nearest cell origin
+
+Types:
 
 - ``CellValue`` - Returns a random value based on the nearest cell origin.
-- ``Distance`` - Returns the distance from the nearest cell origin.
-- ``Distance2``
-- ``Distance2Add``
-- ``Distance2Sub``
-- ``Distance2Mul``
-- ``Distance2Div``
 - ``NoiseLookup`` - Passes the coordinates of the nearest cell origin into a sampler, and returns the output.
-- ``Distance3``
-- ``Distance3Add``
-- ``Distance3Sub``
-- ``Distance3Mul``
-- ``Distance3Div``
 - ``Angle`` - Returns the angle from the sampled coordinates to the nearest cell origin in radians.
-
+- ``Distance`` - Returns ``d1``.
+- ``Distance2``- Returns ``d2``.
+- ``Distance2Add`` - Returns ``(d1 + d2) / 2``
+- ``Distance2Sub`` - Returns ``d2 - d1``
+- ``Distance2Mul`` - Returns ``(d1 * d2) / 2``
+- ``Distance2Div`` - Returns ``d1 / d2``
+- ``Distance3`` - Returns ``d3``
+- ``Distance3Add`` - Returns ``(d1 + d3) / 2``
+- ``Distance3Sub`` - Returns ``d3 - d1``
+- ``Distance3Mul`` - Returns ``d3 * d1``
+- ``Distance3Div`` - Returns ``d1 / d3``
 
 :bdg-success:`jitter` ``Float``
 Determines how far cell origins can randomly spread out from the ceneter of cells.
+
+Default: ``1``
 
 A jitter of ``0`` places cell origins exactly in the center of each cell, resulting in a perfect grid.
 Values between ``-1`` and ``1`` are recommended, as values outside that range may produce artifacts.
 
 :bdg-success:`lookup` ``Sampler``
 The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
+
+Default: `OPEN_SIMPLEX_2`_ sampler
 
 IMAGE
 -----
@@ -391,10 +447,13 @@ Valid channels:
 CONSTANT
 --------
 
-Outputs a constant value, regardless of the inputs.
+Outputs a constant value, regardless of the inputs. Typically used in cases where you
+don't want the sampler to do anything.
 
 :bdg-success:`value` ``Float``
 The value to be outputted.
+
+Default: ``0.0``
 
 DOMAIN_WARP
 -----------
@@ -407,6 +466,8 @@ Warps a sampler by another sampler. See :ref:`Domain Warping <domain-warping>` f
 
 :bdg-success:`amplitude` ``Float``
 
+Default: ``1.0``
+
 KERNEL
 ------
 
@@ -416,16 +477,30 @@ KERNEL
 
 :bdg-success:`factor` ``Float``
 
+Default: ``1.0``
+
 :bdg-success:`frequency` ``Float``
+
+Default: ``1.0``
 
 LINEAR_HEIGHTMAP
 ----------------
 
+Treats a 2D sampler as a heightmap, converting it to a 3D `SDF`_
+for use as a terrain sampler.
+
 :bdg-primary:`base` ``Float``
+The base y level of the terrain.
 
 :bdg-success:`sampler` ``Sampler``
+The sampler to be used as a heightmap.
+
+Default: `CONSTANT`_ sampler
 
 :bdg-success:`scale` ``Float``
+Scales the height of the heightmap.
+
+Default: ``1.0``
 
 FBM
 ---
@@ -438,6 +513,8 @@ PING_PONG
 .. include:: parameter-groups/fractalizer.rst
 
 :bdg-success:`ping-pong` ``Float``
+
+Default: ``2.0``
 
 RIDGED
 ------
@@ -472,6 +549,8 @@ NORMAL
 :bdg-primary:`standard-deviation` ``Float``
 
 :bdg-success:`groups` ``Integer``
+
+Default: ``16384``
 
 PROBABILITY
 -----------
@@ -529,6 +608,28 @@ EXPRESSION
 
 :bdg-success:`variables` ``Map`` < ``String`` : ``Float`` >
 
+Default: Empty map
+
 :bdg-success:`samplers` ``Map`` < ``String`` : ``DimensionApplicableSampler`` >
 
+Default: Empty map
+
 :bdg-success:`functions` ``Map`` < ``String`` : ``MathFunction`` >
+
+Default: Empty map
+
+.. _OpenSimplex2: https://github.com/KdotJPG/OpenSimplex2
+.. _gaussian distribution: https://en.wikipedia.org/wiki/Normal_distribution
+.. _White noise: https://en.wikipedia.org/wiki/White_noise
+.. _Perlin noise: https://en.wikipedia.org/wiki/Perlin_noise
+.. _Simplex noise: https://en.wikipedia.org/wiki/Simplex_noise
+.. _SDF: https://en.wikipedia.org/wiki/Signed_distance_function
+.. _Value noise: https://en.wikipedia.org/wiki/Value_noise
+.. _linear interpolation: https://en.wikipedia.org/wiki/Linear_interpolation
+.. _bilinear: https://en.wikipedia.org/wiki/Bilinear_interpolation
+.. _trilinear: https://en.wikipedia.org/wiki/Trilinear_interpolation
+.. _cubic interpolation: https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Interpolation_on_a_single_interval
+.. _bicubic: https://en.wikipedia.org/wiki/Bicubic_interpolation
+.. _tricubic: https://en.wikipedia.org/wiki/Tricubic_interpolation
+.. _Gabor noise: https://graphics.cs.kuleuven.be/publications/GLLD12GNBE/
+.. _Worley noise: https://en.wikipedia.org/wiki/Worley_noise
