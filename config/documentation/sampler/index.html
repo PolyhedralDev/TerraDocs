@@ -557,6 +557,10 @@ Determines the <a class="reference internal" href="../../development/samplers/in
 <li><p>Black dots: The center of each cell.</p></li>
 <li><p>Red lines: A random direction and distance from the cell center, called ‘jitter’.</p></li>
 <li><p>Blue dots: The cell origin, determined by jitter from the cell center.</p></li>
+<li><p>Green dot: Coordinates being sampled.</p></li>
+<li><p>Purple line: Distance to the closest cell origin.</p></li>
+<li><p>Orange line: Distance to the second closest cell origin.</p></li>
+<li><p>Gold line: Distance to the third closest cell origin.</p></li>
 </ul>
 <p><strong>PARAMETERS</strong></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code>
@@ -580,28 +584,30 @@ The function the sampler will use to calculate the noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">Distance</span></code></p>
 <p><strong>Return Types</strong></p>
 <p>Definitions:</p>
+<p><code class="docutils literal notranslate"><span class="pre">s</span></code> - The coordinates being sampled.</p>
+<p><code class="docutils literal notranslate"><span class="pre">c</span></code> - The coordinates of the nearest cell origin.</p>
 <p><code class="docutils literal notranslate"><span class="pre">d1</span></code> - The distance from the nearest cell origin.</p>
 <p><code class="docutils literal notranslate"><span class="pre">d2</span></code> - The distance from the second nearest cell origin</p>
 <p><code class="docutils literal notranslate"><span class="pre">d3</span></code> - The distance from the third nearest cell origin</p>
 <p>Types:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">CellValue</span></code> - Returns a random value based on the nearest cell origin.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">NoiseLookup</span></code> - Passes the coordinates of the nearest cell origin into a sampler, and returns the output.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Angle</span></code> - Returns the angle from the sampled coordinates to the nearest cell origin in radians.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">NoiseLookup</span></code> - Passes <code class="docutils literal notranslate"><span class="pre">c</span></code> into a sampler, and returns the output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CellValue</span></code> - Returns a random value based on <code class="docutils literal notranslate"><span class="pre">c</span></code> (Equivalent to <code class="docutils literal notranslate"><span class="pre">NoiseLookup</span></code> with a <a class="reference internal" href="#white-noise">WHITE_NOISE</a> sampler).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Angle</span></code> - Returns the angle from <code class="docutils literal notranslate"><span class="pre">s</span></code> to <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Distance</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d1</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Distance2</span></code>- Returns <code class="docutils literal notranslate"><span class="pre">d2</span></code>.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Distance2Add</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">(d1</span> <span class="pre">+</span> <span class="pre">d2)</span> <span class="pre">/</span> <span class="pre">2</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Distance2Sub</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d2</span> <span class="pre">-</span> <span class="pre">d1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Distance2Mul</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">(d1</span> <span class="pre">*</span> <span class="pre">d2)</span> <span class="pre">/</span> <span class="pre">2</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Distance2Div</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d1</span> <span class="pre">/</span> <span class="pre">d2</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Distance3</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d3</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Distance3Add</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">(d1</span> <span class="pre">+</span> <span class="pre">d3)</span> <span class="pre">/</span> <span class="pre">2</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Distance3Sub</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d3</span> <span class="pre">-</span> <span class="pre">d1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Distance3Mul</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d3</span> <span class="pre">*</span> <span class="pre">d1</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">Distance3Div</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d1</span> <span class="pre">/</span> <span class="pre">d3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distance2Add</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">(d1</span> <span class="pre">+</span> <span class="pre">d2)</span> <span class="pre">/</span> <span class="pre">2</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distance2Sub</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d2</span> <span class="pre">-</span> <span class="pre">d1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distance2Mul</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">(d1</span> <span class="pre">*</span> <span class="pre">d2)</span> <span class="pre">/</span> <span class="pre">2</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distance2Div</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d1</span> <span class="pre">/</span> <span class="pre">d2</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distance3</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d3</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distance3Add</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">(d1</span> <span class="pre">+</span> <span class="pre">d3)</span> <span class="pre">/</span> <span class="pre">2</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distance3Sub</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d3</span> <span class="pre">-</span> <span class="pre">d1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distance3Mul</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d3</span> <span class="pre">*</span> <span class="pre">d1</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Distance3Div</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d1</span> <span class="pre">/</span> <span class="pre">d3</span></code>.</p></li>
 </ul>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">jitter</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code>
-Determines how far cell origins can randomly spread out from the ceneter of cells.</p>
+Determines how far cell origins can randomly spread out from the center of cells.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
 <p>A jitter of <code class="docutils literal notranslate"><span class="pre">0</span></code> places cell origins exactly in the center of each cell, resulting in a perfect grid.
 Values between <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> are recommended, as values outside that range may produce artifacts.</p>
@@ -869,14 +875,180 @@ Scales the height of the heightmap.</p>
 </section>
 <section id="expression">
 <h3>EXPRESSION<a class="headerlink" href="#expression" title="Permalink to this headline">¶</a></h3>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">expression</span> <code class="docutils literal notranslate"><span class="pre">String</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">variables</span> <code class="docutils literal notranslate"><span class="pre">Map</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">String</span></code> : <code class="docutils literal notranslate"><span class="pre">Float</span></code> &gt;</p>
+<p>Evaluates an arbitrary user defined expression as the sampler output. Expression
+samplers additionally allow the use of user defined functions, including other samplers,
+as well as constants defined within the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">expression</span> <code class="docutils literal notranslate"><span class="pre">String</span></code>
+The expression to be evaluated for each sample. Variables <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> (3D only), and <code class="docutils literal notranslate"><span class="pre">z</span></code>
+act as the sampler’s coordinate inputs.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">variables</span> <code class="docutils literal notranslate"><span class="pre">Map</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">String</span></code> : <code class="docutils literal notranslate"><span class="pre">Float</span></code> &gt;
+Defines a mapping of variable names to values for use in the scope of the expression. This
+is most useful for providing named constants that can easily be modified if needed.</p>
 <p>Default: Empty map</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">samplers</span> <code class="docutils literal notranslate"><span class="pre">Map</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">String</span></code> : <code class="docutils literal notranslate"><span class="pre">DimensionApplicableSampler</span></code> &gt;</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">samplers</span> <code class="docutils literal notranslate"><span class="pre">Map</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">String</span></code> : <code class="docutils literal notranslate"><span class="pre">DimensionApplicableSampler</span></code> &gt;
+Defines a mapping of function names to samplers.</p>
+<p>Each sampler may be utilized within the expression like so: <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;(&lt;x&gt;,</span> <span class="pre">&lt;z&gt;)</span></code> (for 2D) or
+<code class="docutils literal notranslate"><span class="pre">&lt;name&gt;(&lt;x&gt;,</span> <span class="pre">&lt;y&gt;,</span> <span class="pre">&lt;z&gt;)</span></code> (for 3D), where &lt;name&gt; is the declared function name, and where
+the respective axis coordinates are the coordinate inputs passed to the sampler.</p>
 <p>Default: Empty map</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">functions</span> <code class="docutils literal notranslate"><span class="pre">Map</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">String</span></code> : <code class="docutils literal notranslate"><span class="pre">MathFunction</span></code> &gt;</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">functions</span> <code class="docutils literal notranslate"><span class="pre">Map</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">String</span></code> : <code class="docutils literal notranslate"><span class="pre">MathFunction</span></code> &gt;
+Defines a mapping of function names to user-defined math functions. Functions may be
+called within the expression like so <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;(&lt;arg</span> <span class="pre">1&gt;,</span> <span class="pre">&lt;arg</span> <span class="pre">2&gt;,</span> <span class="pre">...)</span></code>, where &lt;name&gt; is the declared
+function name, and where each input coorresponds to the argument list defined by the function.</p>
 <p>Default: Empty map</p>
-</section>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 nested-cards">
+<summary class="sd-summary-title sd-card-header">
+Examples<div class="sd-summary-down docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<div class="sd-summary-up docutils">
+<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+</summary><div class="sd-summary-content sd-card-body docutils">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<strong>Simple addition</strong></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1 + 1</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">The sampler above outputs the result of <code class="docutils literal notranslate"><span class="pre">1</span></code> plus <code class="docutils literal notranslate"><span class="pre">1</span></code>, therefore the sampler will always
+output <code class="docutils literal notranslate"><span class="pre">2</span></code>.</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<strong>Using variables</strong></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a - b</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">The sampler above outputs the result of <code class="docutils literal notranslate"><span class="pre">a</span></code> minus <code class="docutils literal notranslate"><span class="pre">b</span></code>, which is evaluated as
+<code class="docutils literal notranslate"><span class="pre">1</span></code> minus <code class="docutils literal notranslate"><span class="pre">2</span></code>, therefore the sampler will always output <code class="docutils literal notranslate"><span class="pre">-1</span></code>.</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<strong>Using functions</strong></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+
+<span class="nt">functions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">addThenDivide</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c</span><span class="w"></span>
+<span class="w">    </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(a + b) / c</span><span class="w"></span>
+
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">addThenDivide(3, 2, 10)</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">The sampler above outputs the results of passing <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, and <code class="docutils literal notranslate"><span class="pre">10</span></code> into
+the function <code class="docutils literal notranslate"><span class="pre">addThenDivide()</span></code>. This function evaluation would be <code class="docutils literal notranslate"><span class="pre">(3</span> <span class="pre">+</span> <span class="pre">2)</span> <span class="pre">/</span> <span class="pre">10</span></code>,
+or <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">2</span></code> = <code class="docutils literal notranslate"><span class="pre">5</span></code>, then <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">/</span> <span class="pre">10</span></code> = <code class="docutils literal notranslate"><span class="pre">0.5</span></code>. Therefore the sampler will always
+output <code class="docutils literal notranslate"><span class="pre">0.5</span></code>.</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<strong>Using coordinates</strong></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x + z</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">The sampler above will output the result of adding the <code class="docutils literal notranslate"><span class="pre">x</span></code> coordinate and the <code class="docutils literal notranslate"><span class="pre">z</span></code>
+coordinate. For example, if Terra wanted to sample a block where <code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">4</span></code>, and <code class="docutils literal notranslate"><span class="pre">z</span> <span class="pre">=</span> <span class="pre">2</span></code>,
+that sample would return <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">+</span> <span class="pre">2</span></code> or <code class="docutils literal notranslate"><span class="pre">6</span></code> for that block.</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<strong>Using samplers</strong></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+
+<span class="nt">samplers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">whiteNoise</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
+
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">whiteNoise(2, 5)</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">The sampler above will output the result of a 2D <a class="reference internal" href="#white-noise">WHITE_NOISE</a> sampler when passed
+the coordinates <code class="docutils literal notranslate"><span class="pre">X</span> <span class="pre">=</span> <span class="pre">2</span></code> and <code class="docutils literal notranslate"><span class="pre">Z</span> <span class="pre">=</span> <span class="pre">5</span></code>.</p>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+<strong>Combining everything</strong></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+
+<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">someConstant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
+<span class="w">  </span><span class="nt">anotherConstant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.5</span><span class="w"></span>
+
+<span class="nt">functions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">add</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
+<span class="w">    </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a + b</span><span class="w"></span>
+
+<span class="nt">samplers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">exampleSampler</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
+
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">  </span><span class="no">exampleSampler(x * 2, z * 2) +</span><span class="w"></span>
+<span class="w">  </span><span class="no">add(someConstant, anotherConstant)</span><span class="w"></span>
+</pre></div>
+</div>
+<p class="sd-card-text">The expression sampler above defines:</p>
+<ul class="simple">
+<li><p class="sd-card-text">Two variables <code class="docutils literal notranslate"><span class="pre">someConstant</span></code> and <code class="docutils literal notranslate"><span class="pre">anotherConstant</span></code>, which are <code class="docutils literal notranslate"><span class="pre">3</span></code> and <code class="docutils literal notranslate"><span class="pre">2.5</span></code> respectively.</p></li>
+<li><p class="sd-card-text">A 2 argument function <code class="docutils literal notranslate"><span class="pre">exampleFunction()</span></code>, that simply adds the two arguments together.</p></li>
+<li><p class="sd-card-text">A 2D sampler <code class="docutils literal notranslate"><span class="pre">exampleSampler()</span></code>.</p></li>
+<li><dl class="simple">
+<dt>An expression that:</dt><dd><ul>
+<li><dl class="simple">
+<dt>Evaluates <code class="docutils literal notranslate"><span class="pre">exampleSampler()</span></code> using:</dt><dd><ul>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">x</span></code> coordinate multiplied by <code class="docutils literal notranslate"><span class="pre">2</span></code> as the X coordinate, and</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">z</span></code> multiplied by <code class="docutils literal notranslate"><span class="pre">2</span></code> as the Z coordinate.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><dl class="simple">
+<dt>Evaluates <code class="docutils literal notranslate"><span class="pre">add()</span></code> using:</dt><dd><ul>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">3</span></code> (defined by <code class="docutils literal notranslate"><span class="pre">someConstant</span></code>) as the <code class="docutils literal notranslate"><span class="pre">a</span></code> argument, and</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">2.5</span></code> (defined by <code class="docutils literal notranslate"><span class="pre">anotherConstant</span></code>) as the <code class="docutils literal notranslate"><span class="pre">b</span></code> argument.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+<li><p class="sd-card-text">Adds the result of <code class="docutils literal notranslate"><span class="pre">add()</span></code> or <code class="docutils literal notranslate"><span class="pre">5.5</span></code> to the <code class="docutils literal notranslate"><span class="pre">exampleSampler()</span></code> evaluation.</p></li>
+<li><p class="sd-card-text">Outputs the final result.</p></li>
+</ul>
+</dd>
+</dl>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</details></section>
 </section>
 </section>
 
