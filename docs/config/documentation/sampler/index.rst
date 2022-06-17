@@ -186,13 +186,23 @@ GABOR
 
 :bdg-success:`rotation` ``Float``
 
+Default: ``0.25``
+
 :bdg-success:`isotrophic` ``Boolean``
+
+Default: ``true``
 
 :bdg-success:`deviation` ``Float``
 
+Default: ``1.0``
+
 :bdg-success:`impulses` ``Float``
 
+Default: ``64.0``
+
 :bdg-success:`frequency_0` ``Float``
+
+Default: ``0.625``
 
 CELLULAR
 --------
@@ -217,7 +227,7 @@ Produces noise derived from an infinite grid of 'cells'.
 The method used for calculating the distance from the cell origin. Only relevant
 for ``return`` types 
 
-Default - ``EuclideanSq``
+Default: ``EuclideanSq``
 
 Distance types:
 
@@ -229,7 +239,7 @@ Distance types:
 :bdg-success:`return` ``String``
 The function the sampler will use to calculate the noise.
 
-Default - ``Distance``
+Default: ``Distance``
 
 Return types:
 
@@ -252,11 +262,15 @@ Return types:
 :bdg-success:`jitter` ``Float``
 Determines how far cell origins can randomly spread out from the ceneter of cells.
 
+Default: ``1``
+
 A jitter of ``0`` places cell origins exactly in the center of each cell, resulting in a perfect grid.
 Values between ``-1`` and ``1`` are recommended, as values outside that range may produce artifacts.
 
 :bdg-success:`lookup` ``Sampler``
 The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
+
+Default: `OPEN_SIMPLEX_2`_ sampler
 
 IMAGE
 -----
@@ -396,6 +410,8 @@ Outputs a constant value, regardless of the inputs.
 :bdg-success:`value` ``Float``
 The value to be outputted.
 
+Default: ``0.0``
+
 DOMAIN_WARP
 -----------
 
@@ -407,6 +423,8 @@ Warps a sampler by another sampler. See :ref:`Domain Warping <domain-warping>` f
 
 :bdg-success:`amplitude` ``Float``
 
+Default: ``1.0``
+
 KERNEL
 ------
 
@@ -416,7 +434,11 @@ KERNEL
 
 :bdg-success:`factor` ``Float``
 
+Default: ``1.0``
+
 :bdg-success:`frequency` ``Float``
+
+Default: ``1.0``
 
 LINEAR_HEIGHTMAP
 ----------------
@@ -425,7 +447,12 @@ LINEAR_HEIGHTMAP
 
 :bdg-success:`sampler` ``Sampler``
 
+Default: `CONSTANT`_ sampler
+
 :bdg-success:`scale` ``Float``
+Scales the height of the heightmap.
+
+Default: ``1.0``
 
 FBM
 ---
@@ -438,6 +465,8 @@ PING_PONG
 .. include:: parameter-groups/fractalizer.rst
 
 :bdg-success:`ping-pong` ``Float``
+
+Default: ``2.0``
 
 RIDGED
 ------
@@ -472,6 +501,8 @@ NORMAL
 :bdg-primary:`standard-deviation` ``Float``
 
 :bdg-success:`groups` ``Integer``
+
+Default: ``16384``
 
 PROBABILITY
 -----------
@@ -529,6 +560,13 @@ EXPRESSION
 
 :bdg-success:`variables` ``Map`` < ``String`` : ``Float`` >
 
+Default: Empty map
+
 :bdg-success:`samplers` ``Map`` < ``String`` : ``DimensionApplicableSampler`` >
 
+Default: Empty map
+
 :bdg-success:`functions` ``Map`` < ``String`` : ``MathFunction`` >
+
+Default: Empty map
+
