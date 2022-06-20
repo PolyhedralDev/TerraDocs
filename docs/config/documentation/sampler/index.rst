@@ -620,11 +620,25 @@ as well as constants defined within the sampler.
 The expression to be evaluated for each sample. Variables ``x``, ``y`` (3D only), and ``z``
 act as the sampler's coordinate inputs.
 
+**Expression example**
+
+.. code-block:: yaml
+
+    expression: (x * 3) / z
+
 :bdg-success:`variables` ``Map`` < ``String`` : ``Float`` >
 Defines a mapping of variable names to values for use in the scope of the expression. This
 is most useful for providing named constants that can easily be modified if needed.
 
 Default: Empty map
+
+**Example defining variables**
+
+.. code-block:: yaml
+
+    variables:
+      a: 1
+      b: 2
 
 :bdg-success:`samplers` ``Map`` < ``String`` : ``DimensionApplicableSampler`` >
 Defines a mapping of function names to samplers.
@@ -635,6 +649,20 @@ the respective axis coordinates are the coordinate inputs passed to the sampler.
 
 Default: Empty map
 
+.. note::
+
+    Samplers defined within an EXPRESSION sampler must be ``DimensionApplicableSampler``\s,
+    see the `DimensionApplicableSampler`_ section for details.
+
+**Example defining samplers**
+
+.. code-block:: yaml
+
+    samplers:
+      whiteNoise:
+        dimensions: 2
+        type: WHITE_NOISE
+
 :bdg-success:`functions` ``Map`` < ``String`` : ``MathFunction`` >
 Defines a mapping of function names to user-defined math functions. Functions may be
 called within the expression like so ``<name>(<arg 1>, <arg 2>, ...)``, where <name> is the declared
@@ -642,7 +670,19 @@ function name, and where each input coorresponds to the argument list defined by
 
 Default: Empty map
 
-.. dropdown:: Examples
+**Example defining functions**
+
+.. code-block:: yaml
+
+    functions:
+      addThenDivide:
+        arguments:
+            - a
+            - b
+            - c
+        expression: (a + b) / c
+
+.. dropdown:: Example Expression Samplers
     :class-container: nested-cards
 
     .. card:: **Simple addition**
