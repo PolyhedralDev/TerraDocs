@@ -96,6 +96,7 @@ html_css_files = [
     'css/logo.css',
     'css/content.css',
     'css/lists.css',
+    'css/text-colors.css',
 ]
 
 # JDLinker config

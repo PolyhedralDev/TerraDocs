@@ -249,13 +249,21 @@ Produces cellular / `Worley noise`_.
 
 .. image:: /img/concepts/noise/cellular_diagram.svg
 
-- Black dots: The center of each cell.
-- Red lines: A random direction and distance from the cell center, called 'jitter'.
-- Blue dots: The cell origin, determined by jitter from the cell center.
-- Green dot: Coordinates being sampled.
-- Purple line: Distance to the closest cell origin.
-- Orange line: Distance to the second closest cell origin.
-- Gold line: Distance to the third closest cell origin.
+.. role:: black
+.. role:: red
+.. role:: blue
+.. role:: green
+.. role:: purple
+.. role:: orange
+.. role:: gold
+
+- :black:`Black dots` - The center of each cell.
+- :red:`Red lines` - A random direction and distance from the cell center, called 'jitter'.
+- :blue:`Blue dots` - The cell origin, determined by jitter from the cell center.
+- :green:`Green dot` - Coordinates being sampled.
+- :purple:`Purple line` - Distance to the closest cell origin.
+- :orange:`Orange line` - Distance to the second closest cell origin.
+- :gold:`Gold line` - Distance to the third closest cell origin.
 
 **PARAMETERS**
 
