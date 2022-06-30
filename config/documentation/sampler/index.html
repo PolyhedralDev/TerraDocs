@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="../../../_static/css/logo.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/content.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/css/lists.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/text-colors.css" />
     
     
 
@@ -554,13 +555,13 @@ Determines the <a class="reference internal" href="../../development/samplers/in
 <img alt="../../../_images/cellular_256x256.png" src="../../../_images/cellular_256x256.png"/>
 <p><strong>DIAGRAM</strong></p>
 <img alt="../../../_images/cellular_diagram.svg" src="../../../_images/cellular_diagram.svg"/><ul class="simple">
-<li><p>Black dots: The center of each cell.</p></li>
-<li><p>Red lines: A random direction and distance from the cell center, called ‘jitter’.</p></li>
-<li><p>Blue dots: The cell origin, determined by jitter from the cell center.</p></li>
-<li><p>Green dot: Coordinates being sampled.</p></li>
-<li><p>Purple line: Distance to the closest cell origin.</p></li>
-<li><p>Orange line: Distance to the second closest cell origin.</p></li>
-<li><p>Gold line: Distance to the third closest cell origin.</p></li>
+<li><p><span class="black">Black dots</span> - The center of each cell.</p></li>
+<li><p><span class="red">Red lines</span> - A random direction and distance from the cell center, called ‘jitter’.</p></li>
+<li><p><span class="blue">Blue dots</span> - The cell origin, determined by jitter from the cell center.</p></li>
+<li><p><span class="green">Green dot</span> - Coordinates being sampled.</p></li>
+<li><p><span class="purple">Purple line</span> - Distance to the closest cell origin.</p></li>
+<li><p><span class="orange">Orange line</span> - Distance to the second closest cell origin.</p></li>
+<li><p><span class="gold">Gold line</span> - Distance to the third closest cell origin.</p></li>
 </ul>
 <p><strong>PARAMETERS</strong></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code>
@@ -744,9 +745,12 @@ The value to be outputted.</p>
 <section id="domain-warp">
 <h3>DOMAIN_WARP<a class="headerlink" href="#domain-warp" title="Permalink to this headline">¶</a></h3>
 <p>Warps a sampler by another sampler. See <a class="reference internal" href="../../development/samplers/index.html#domain-warping"><span class="std std-ref">Domain Warping</span></a> for more information.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">warp</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">amplitude</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">warp</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code>
+The sampler that determines warping.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code>
+The sampler to be warped.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">amplitude</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code>
+How much warping to apply.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p>
 </section>
 <section id="kernel">
@@ -811,18 +815,24 @@ Scales the height of the heightmap.</p>
 </section>
 <section id="linear">
 <h3>LINEAR<a class="headerlink" href="#linear" title="Permalink to this headline">¶</a></h3>
+<p>Redistributes the range <code class="docutils literal notranslate"><span class="pre">[min,</span> <span class="pre">max]</span></code> to <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code>, typically for use with weighted
+pools.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">max</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">min</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code></p>
 </section>
 <section id="clamp">
 <h3>CLAMP<a class="headerlink" href="#clamp" title="Permalink to this headline">¶</a></h3>
+<p>Outputs <code class="docutils literal notranslate"><span class="pre">max</span></code> when the sampler outputs a value greater than <code class="docutils literal notranslate"><span class="pre">max</span></code>, and returns <code class="docutils literal notranslate"><span class="pre">min</span></code>
+when the sampler outputs a value less than <code class="docutils literal notranslate"><span class="pre">min</span></code>, used to constrain sampler outputs to
+a certain range.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">max</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">min</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code></p>
 </section>
 <section id="normal">
 <h3>NORMAL<a class="headerlink" href="#normal" title="Permalink to this headline">¶</a></h3>
+<p>Redistributes normally distributed outputs to be evenly distributed.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">mean</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">standard-deviation</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code></p>
@@ -831,45 +841,56 @@ Scales the height of the heightmap.</p>
 </section>
 <section id="probability">
 <h3>PROBABILITY<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h3>
+<p>Redistributes the range <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code> to <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>, typically used in cases where it’s easier to
+work with values from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code>, e.g defining a threshold as a percentage of a noise sampler.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 </section>
 <section id="scale">
 <h3>SCALE<a class="headerlink" href="#scale" title="Permalink to this headline">¶</a></h3>
+<p>Evaluates <code class="docutils literal notranslate"><span class="pre">sampler()</span> <span class="pre">*</span> <span class="pre">amplitude</span></code>.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">amplitude</span> <code class="docutils literal notranslate"><span class="pre">Float</span></code></p>
 </section>
 <section id="posterization">
 <h3>POSTERIZATION<a class="headerlink" href="#posterization" title="Permalink to this headline">¶</a></h3>
+<p>Applies a step function to the sampler, where <code class="docutils literal notranslate"><span class="pre">steps</span></code> determines how many steps will be within
+the range <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code>.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">steps</span> <code class="docutils literal notranslate"><span class="pre">Integer</span></code></p>
 </section>
 <section id="add">
 <h3>ADD<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h3>
+<p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">+</span> <span class="pre">right()</span></code>.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 </section>
 <section id="sub">
 <h3>SUB<a class="headerlink" href="#sub" title="Permalink to this headline">¶</a></h3>
+<p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">-</span> <span class="pre">right()</span></code>.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 </section>
 <section id="mul">
 <h3>MUL<a class="headerlink" href="#mul" title="Permalink to this headline">¶</a></h3>
+<p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">*</span> <span class="pre">right()</span></code>.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 </section>
 <section id="div">
 <h3>DIV<a class="headerlink" href="#div" title="Permalink to this headline">¶</a></h3>
+<p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">/</span> <span class="pre">right()</span></code>.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 </section>
 <section id="max">
 <h3>MAX<a class="headerlink" href="#max" title="Permalink to this headline">¶</a></h3>
+<p>Evaluates <code class="docutils literal notranslate"><span class="pre">max(left(),</span> <span class="pre">right())</span></code>.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 </section>
 <section id="min">
 <h3>MIN<a class="headerlink" href="#min" title="Permalink to this headline">¶</a></h3>
+<p>Evaluates <code class="docutils literal notranslate"><span class="pre">min(left(),</span> <span class="pre">right())</span></code>.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <code class="docutils literal notranslate"><span class="pre">Sampler</span></code></p>
 </section>
@@ -881,24 +902,56 @@ as well as constants defined within the sampler.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">expression</span> <code class="docutils literal notranslate"><span class="pre">String</span></code>
 The expression to be evaluated for each sample. Variables <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> (3D only), and <code class="docutils literal notranslate"><span class="pre">z</span></code>
 act as the sampler’s coordinate inputs.</p>
+<p><strong>Expression example</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(x * 3) / z</span><span class="w"></span>
+</pre></div>
+</div>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">variables</span> <code class="docutils literal notranslate"><span class="pre">Map</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">String</span></code> : <code class="docutils literal notranslate"><span class="pre">Float</span></code> &gt;
 Defines a mapping of variable names to values for use in the scope of the expression. This
 is most useful for providing named constants that can easily be modified if needed.</p>
 <p>Default: Empty map</p>
+<p><strong>Example defining variables</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+</pre></div>
+</div>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">samplers</span> <code class="docutils literal notranslate"><span class="pre">Map</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">String</span></code> : <code class="docutils literal notranslate"><span class="pre">DimensionApplicableSampler</span></code> &gt;
 Defines a mapping of function names to samplers.</p>
 <p>Each sampler may be utilized within the expression like so: <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;(&lt;x&gt;,</span> <span class="pre">&lt;z&gt;)</span></code> (for 2D) or
 <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;(&lt;x&gt;,</span> <span class="pre">&lt;y&gt;,</span> <span class="pre">&lt;z&gt;)</span></code> (for 3D), where &lt;name&gt; is the declared function name, and where
 the respective axis coordinates are the coordinate inputs passed to the sampler.</p>
 <p>Default: Empty map</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Samplers defined within an EXPRESSION sampler must be <code class="docutils literal notranslate"><span class="pre">DimensionApplicableSampler</span></code>s,
+see the <a class="reference internal" href="#dimensionapplicablesampler">DimensionApplicableSampler</a> section for details.</p>
+</div>
+<p><strong>Example defining samplers</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">samplers</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">whiteNoise</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
+</pre></div>
+</div>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">functions</span> <code class="docutils literal notranslate"><span class="pre">Map</span></code> &lt; <code class="docutils literal notranslate"><span class="pre">String</span></code> : <code class="docutils literal notranslate"><span class="pre">MathFunction</span></code> &gt;
 Defines a mapping of function names to user-defined math functions. Functions may be
 called within the expression like so <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;(&lt;arg</span> <span class="pre">1&gt;,</span> <span class="pre">&lt;arg</span> <span class="pre">2&gt;,</span> <span class="pre">...)</span></code>, where &lt;name&gt; is the declared
 function name, and where each input coorresponds to the argument list defined by the function.</p>
 <p>Default: Empty map</p>
+<p><strong>Example defining functions</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">functions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">addThenDivide</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c</span><span class="w"></span>
+<span class="w">    </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(a + b) / c</span><span class="w"></span>
+</pre></div>
+</div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 nested-cards">
 <summary class="sd-summary-title sd-card-header">
-Examples<div class="sd-summary-down docutils">
+Example Expression Samplers<div class="sd-summary-down docutils">
 <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
