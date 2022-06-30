@@ -52,6 +52,8 @@ client to develop config packs on, however this choice is ultimately up to you.
 You can refer to the :doc:`Getting Started </install/index>` page for instructions
 on how to get Terra up and running on your desired platform.
 
+.. _console:
+
 Accessing Console
 -----------------
 
