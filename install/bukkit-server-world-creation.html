@@ -296,7 +296,7 @@ outlined here, please refer to <a class="reference internal" href="worldmanager-
 <div class="code-block-caption"><span class="caption-text">bukkit.yml</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
 <span class="w">  </span><span class="nt">&lt;LEVEL NAME&gt;</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:OVERWORLD</span><span class="w"></span>
+<span class="w">    </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:&lt;PACK ID&gt;</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -308,7 +308,9 @@ outlined here, please refer to <a class="reference internal" href="worldmanager-
 </div>
 <ol class="arabic simple" start="4">
 <li><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;LEVEL</span> <span class="pre">NAME&gt;</span></code> with the server’s configured <code class="docutils literal notranslate"><span class="pre">level-name</span></code>. (This can be found in the <code class="docutils literal notranslate"><span class="pre">server.properties</span></code> file
-under the ‘level-name’ key. By default, level-name is set to <code class="docutils literal notranslate"><span class="pre">world</span></code>.)</p></li>
+under the ‘<code class="docutils literal notranslate"><span class="pre">level-name</span></code>’ key. By default, <code class="docutils literal notranslate"><span class="pre">level-name</span></code> is set to <code class="docutils literal notranslate"><span class="pre">world</span></code>.)</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;PACK</span> <span class="pre">ID&gt;</span></code> with an installed config pack’s ID. The ID for the default pack that comes pre-installed with Terra
+is <code class="docutils literal notranslate"><span class="pre">OVERWORLD</span></code>, so if you have not installed any other config packs, replace <code class="docutils literal notranslate"><span class="pre">&lt;PACK</span> <span class="pre">ID&gt;</span></code> with <code class="docutils literal notranslate"><span class="pre">OVERWORLD</span></code>.</p></li>
 <li><p>Either delete the existing world folder (the name of this folder is covered above) in your server directory, or
 rename it to something else (for example <code class="docutils literal notranslate"><span class="pre">world_backup</span></code>).</p></li>
 <li><p>Boot your server back up.</p></li>
@@ -317,7 +319,7 @@ rename it to something else (for example <code class="docutils literal notransla
 <p class="admonition-title">Note</p>
 <p>Your server should re-generate the world folder during startup.</p>
 </div>
-<ol class="arabic simple" start="7">
+<ol class="arabic simple" start="8">
 <li><p>Join your server and check if your new world is using Terra world generation.</p></li>
 </ol>
 <p>If you followed the steps correctly without any errors, then you have successfully set up a server with Terra!</p>

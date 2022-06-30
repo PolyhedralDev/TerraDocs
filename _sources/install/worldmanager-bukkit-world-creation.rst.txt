@@ -27,11 +27,13 @@ To create a Terra world using Multiverse Core, add the following argument to the
 
 `-g Terra:<PACK ID>`.
 
+Terra comes pre-installed with the Overworld pack, which uses the ``OVERWORLD`` ID. If you have not installed any other
+config packs, then replace ``<PACK ID>`` with ``OVERWORLD``.
+
 Here is an example command which will create a world with the name ``example_world``, the ``NORMAL`` world environment, and
-a Terra generator using the pack with ID ``EXAMPLE``:
+the default ``OVERWORLD`` pack:
 
-`/mv create example_world NORMAL -g Terra:EXAMPLE`
-
+`/mv create example_world NORMAL -g Terra:OVERWORLD`
 
 Troubleshooting
 ---------------
