@@ -477,10 +477,13 @@ DOMAIN_WARP
 Warps a sampler by another sampler. See :ref:`Domain Warping <domain-warping>` for more information.
 
 :bdg-primary:`warp` ``Sampler``
+The sampler that determines warping.
 
 :bdg-primary:`sampler` ``Sampler``
+The sampler to be warped.
 
 :bdg-success:`amplitude` ``Float``
+How much warping to apply.
 
 Default: ``1.0``
 
@@ -540,6 +543,9 @@ RIDGED
 LINEAR
 ------
 
+Redistributes the range ``[min, max]`` to ``[-1, 1]``, typically for use with weighted
+pools.
+
 .. include:: parameter-groups/normalizer.rst
 
 :bdg-primary:`max` ``Float``
@@ -549,6 +555,10 @@ LINEAR
 CLAMP
 -----
 
+Outputs ``max`` when the sampler outputs a value greater than ``max``, and returns ``min``
+when the sampler outputs a value less than ``min``, used to constrain sampler outputs to
+a certain range.
+
 .. include:: parameter-groups/normalizer.rst
 
 :bdg-primary:`max` ``Float``
@@ -557,6 +567,8 @@ CLAMP
 
 NORMAL
 ------
+
+Redistributes normally distributed outputs to be evenly distributed.
 
 .. include:: parameter-groups/normalizer.rst
 
@@ -571,10 +583,15 @@ Default: ``16384``
 PROBABILITY
 -----------
 
+Redistributes the range ``[-1, 1]`` to ``[0, 1]``, typically used in cases where it's easier to
+work with values from ``0`` to ``1``, e.g defining a threshold as a percentage of a noise sampler.
+
 .. include:: parameter-groups/normalizer.rst
 
 SCALE
 -----
+
+Evaluates ``sampler() * amplitude``.
 
 .. include:: parameter-groups/normalizer.rst
 
@@ -583,6 +600,9 @@ SCALE
 POSTERIZATION
 -------------
 
+Applies a step function to the sampler, where ``steps`` determines how many steps will be within
+the range ``[-1, 1]``.
+
 .. include:: parameter-groups/normalizer.rst
 
 :bdg-primary:`steps` ``Integer``
@@ -590,30 +610,42 @@ POSTERIZATION
 ADD
 ---
 
+Evaluates ``left() + right()``.
+
 .. include:: parameter-groups/binary-arithmetic.rst
 
 SUB
 ---
+
+Evaluates ``left() - right()``.
 
 .. include:: parameter-groups/binary-arithmetic.rst
 
 MUL
 ---
 
+Evaluates ``left() * right()``.
+
 .. include:: parameter-groups/binary-arithmetic.rst
 
 DIV
 ---
+
+Evaluates ``left() / right()``.
 
 .. include:: parameter-groups/binary-arithmetic.rst
 
 MAX
 ---
 
+Evaluates ``max(left(), right())``.
+
 .. include:: parameter-groups/binary-arithmetic.rst
 
 MIN
 ---
+
+Evaluates ``min(left(), right())``.
 
 .. include:: parameter-groups/binary-arithmetic.rst
 
