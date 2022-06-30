@@ -39,23 +39,26 @@ Procedure
 
     worlds:
       <LEVEL NAME>:
-        generator: Terra:OVERWORLD
+        generator: Terra:<PACK ID>
 
   .. attention:: These lines are **not** present by default, you have to add them yourself!
 
 4. Replace ``<LEVEL NAME>`` with the server's configured ``level-name``. (This can be found in the ``server.properties`` file
-   under the 'level-name' key. By default, level-name is set to ``world``.)
+   under the '``level-name``' key. By default, ``level-name`` is set to ``world``.)
 
-5. Either delete the existing world folder (the name of this folder is covered above) in your server directory, or
+5. Replace ``<PACK ID>`` with an installed config pack's ID. The ID for the default pack that comes pre-installed with Terra
+   is ``OVERWORLD``, so if you have not installed any other config packs, replace ``<PACK ID>`` with ``OVERWORLD``.
+
+6. Either delete the existing world folder (the name of this folder is covered above) in your server directory, or
    rename it to something else (for example ``world_backup``).
 
-6. Boot your server back up.
+7. Boot your server back up.
 
 .. note::
 
     Your server should re-generate the world folder during startup.
 
-7. Join your server and check if your new world is using Terra world generation.
+8. Join your server and check if your new world is using Terra world generation.
 
 If you followed the steps correctly without any errors, then you have successfully set up a server with Terra!
 
