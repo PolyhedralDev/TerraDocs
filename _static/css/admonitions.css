@@ -8,6 +8,10 @@ Styles admonitions
     padding: 1rem;
 }
 
+.admonition + p {
+    margin-top: 1rem;
+}
+
 p.admonition-title {
     background: none !important;
     text-transform: uppercase;

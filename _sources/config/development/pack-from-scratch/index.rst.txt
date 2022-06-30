@@ -10,8 +10,8 @@ for more information before continuing.
 .. card::
 
     If you wish to **modify an existing pack** rather than creating your
-    own from scratch, please refer to :doc:`this </config/development/modifying-existing-pack>`
-    instead.
+    own from scratch, please refer to the :doc:`/config/development/modifying-existing-pack`
+    guide instead.
 
 .. attention::
 

@@ -158,7 +158,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -198,6 +198,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Config Packs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../community-packs.html">Community Packs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pack-installation.html">Pack Installation</a></li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Config Development</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="introduction.html">Config Development Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="config-files.html">Config Files</a></li>
@@ -257,7 +258,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -265,6 +266,157 @@
         <article role="main">
           <section id="modifying-an-existing-pack">
 <h1>Modifying an Existing Pack<a class="headerlink" href="#modifying-an-existing-pack" title="Permalink to this headline">¶</a></h1>
+<p>This guide will outline the process of duplicating an existing Terra configuration pack for use in
+personal modification. This guide will not cover how to modify specific features of world generation,
+only the initial set up required to make your own modifications. If you haven’t already, please read the
+<a class="reference internal" href="introduction.html"><span class="doc">Config Development Introduction</span></a>
+for more information before continuing.</p>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">If you wish to <strong>create a pack from scratch</strong> rather than modifying an existing one,
+please refer to the <a class="reference internal" href="pack-from-scratch/index.html"><span class="doc">Creating a Pack from Scratch</span></a> guide instead.</p>
+</div>
+</div>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This guide is written for Terra version 6.0.+ and will not be applicable to prior versions!</p>
+</div>
+<section id="setting-up-a-new-pack">
+<h2>Setting up a New Pack<a class="headerlink" href="#setting-up-a-new-pack" title="Permalink to this headline">¶</a></h2>
+<p><cite>PROCEDURE</cite></p>
+<section id="find-a-suitable-pack-for-your-version">
+<h3>1. Find a suitable pack for your version.<a class="headerlink" href="#find-a-suitable-pack-for-your-version" title="Permalink to this headline">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">If you wish to modify the default pack that comes preinstalled with Terra, you can find it in the
+<a class="reference internal" href="introduction.html#packs-directory"><span class="std std-ref">packs directory</span></a>. You can find the source for the default pack over at the
+<a class="reference external" href="https://www.github.com/PolyhedralDev/TerraOverworldConfig">Overworld</a> repository.</p>
+<p class="sd-card-text">For other available packs, refer to the <a class="reference internal" href="../community-packs.html"><span class="doc">Community Packs</span></a> page. Be sure to check that the
+pack you wish to modify is compatible with your version of Terra before proceeding.</p>
+</div>
+</div>
+</section>
+<section id="create-your-config-pack-directory">
+<h3>1. Create your config pack directory<a class="headerlink" href="#create-your-config-pack-directory" title="Permalink to this headline">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Navigate to your <a class="reference internal" href="introduction.html#packs-directory"><span class="std std-ref">packs directory</span></a> and create a new folder inside, the
+name of this folder is up to you to decide. For this guide we will use <code class="docutils literal notranslate"><span class="pre">custom-pack</span></code> as an
+example.</p>
+<p class="sd-card-text">You should have the following directory structure: <cite>Terra/packs/custom-pack</cite></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Terra/
+├── packs/
+┆   ├── default.zip
+    └── custom-pack/ &lt;- New folder you've just created
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="copy-the-contents-of-the-pack-you-wish-to-modify">
+<h3>2. Copy the contents of the pack you wish to modify<a class="headerlink" href="#copy-the-contents-of-the-pack-you-wish-to-modify" title="Permalink to this headline">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Copy the contents of the pack you wish to modify into the new directory you created in the
+previous step. If the pack you’re modifying has been distributed as a <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file, extract
+the contents into your new directory.</p>
+<div class="tip admonition">
+<p class="admonition-title">Modifying the default pack</p>
+<p class="sd-card-text">If you wish to make modifications to the default pack, extract the contents of <code class="docutils literal notranslate"><span class="pre">default.zip</span></code>
+into your new folder.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p class="sd-card-text">Packs can be loaded from both folders and <code class="docutils literal notranslate"><span class="pre">.zip</span></code> archives, so you <strong>do not</strong> have to re-zip
+a pack in order for it to load.</p>
+</div>
+<p class="sd-card-text">If you have correctly copied the contents over, the pack manifest aka <code class="docutils literal notranslate"><span class="pre">pack.yml</span></code> should be directly
+inside your new pack directory like so:</p>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">CORRECT</span> - <cite>Terra/packs/custom-pack/pack.yml</cite></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Terra/
+├── packs/
+┆   ├── default.zip
+    └── custom-pack/
+        ├── pack.yml
+        ┆
+</pre></div>
+</div>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">INCORRECT</span> - <cite>Terra/packs/custom-pack/folder/pack.yml</cite></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Terra/
+├── packs/
+┆   ├── default.zip
+    └── custom-pack/
+        └── folder/
+            ├── pack.yml
+            ┆
+</pre></div>
+</div>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">INCORRECT</span> - <cite>Terra/packs/custom-pack/original-pack.zip</cite></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Terra/
+├── packs/
+┆   ├── default.zip
+    └── custom-pack/
+        └── original-pack.zip
+</pre></div>
+</div>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">INCORRECT</span> - <cite>Terra/packs/pack.yml</cite></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Terra/
+├── packs/
+┆   ├── default.zip
+    ├── pack.yml
+    ┆
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p class="sd-card-text">Any folder or zip contained within the packs directory will attempt to load as a config pack.
+Do not leave any folders or zips you do not intend to load as packs within the packs directory.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="set-a-custom-id-for-your-new-pack">
+<h3>3. Set a custom ID for your new pack<a class="headerlink" href="#set-a-custom-id-for-your-new-pack" title="Permalink to this headline">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<ol class="arabic simple">
+<li><p class="sd-card-text">Open <code class="docutils literal notranslate"><span class="pre">pack.yml</span></code> contained in your pack folder.</p></li>
+<li><p class="sd-card-text">Locate the line that begins with <code class="docutils literal notranslate"><span class="pre">id:</span></code>.</p></li>
+<li><p class="sd-card-text">Replace the id specified after <code class="docutils literal notranslate"><span class="pre">id:</span></code> with an ID of your choice. We will use <code class="docutils literal notranslate"><span class="pre">CUSTOM</span></code> as an example.</p></li>
+</ol>
+<p class="sd-card-text">Pack IDs must only contain uppercase alphanumeric characters <code class="docutils literal notranslate"><span class="pre">A-Z</span></code> <code class="docutils literal notranslate"><span class="pre">0-9</span></code>, and underscores <code class="docutils literal notranslate"><span class="pre">_</span></code>.</p>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">VALID</span></p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CUSTOM</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+<p class="sd-card-text"><span class="sd-sphinx-override sd-badge sd-bg-danger sd-bg-text-danger">INVALID</span></p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">custom id</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="verify-the-pack-loads">
+<h3>4. Verify the pack loads<a class="headerlink" href="#verify-the-pack-loads" title="Permalink to this headline">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Start up your client / server and look for your new custom pack ID in <a class="reference internal" href="introduction.html#console"><span class="std std-ref">console</span></a>.
+If you see:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">XX</span><span class="p">:</span><span class="n">XX</span><span class="p">:</span><span class="n">XX</span> <span class="n">INFO</span><span class="p">]:</span> <span class="p">[</span><span class="n">Terra</span><span class="p">]</span> <span class="n">Loading</span> <span class="n">config</span> <span class="n">pack</span> <span class="s2">"CUSTOM"</span>
+<span class="p">[</span><span class="n">XX</span><span class="p">:</span><span class="n">XX</span><span class="p">:</span><span class="n">XX</span> <span class="n">INFO</span><span class="p">]:</span> <span class="p">[</span><span class="n">Terra</span><span class="p">]</span> <span class="n">CUSTOM</span> <span class="o">&lt;</span><span class="n">PACK</span> <span class="n">VERSION</span><span class="o">&gt;</span> <span class="n">by</span> <span class="o">&lt;</span><span class="n">AUTHOR</span><span class="o">&gt;</span> <span class="n">loaded</span> <span class="ow">in</span> <span class="n">XXXX</span><span class="o">.</span><span class="n">XXXXms</span><span class="o">.</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Then your pack should be ready for making modifications!</p>
+</div>
+</div>
+</section>
+</section>
 </section>
 
         </article>
@@ -306,8 +458,34 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Modifying an Existing Pack</a><ul>
+<li><a class="reference internal" href="#setting-up-a-new-pack">Setting up a New Pack</a><ul>
+<li><a class="reference internal" href="#find-a-suitable-pack-for-your-version">1. Find a suitable pack for your version.</a></li>
+<li><a class="reference internal" href="#create-your-config-pack-directory">1. Create your config pack directory</a></li>
+<li><a class="reference internal" href="#copy-the-contents-of-the-pack-you-wish-to-modify">2. Copy the contents of the pack you wish to modify</a></li>
+<li><a class="reference internal" href="#set-a-custom-id-for-your-new-pack">3. Set a custom ID for your new pack</a></li>
+<li><a class="reference internal" href="#verify-the-pack-loads">4. Verify the pack loads</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
