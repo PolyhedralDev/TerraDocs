@@ -6,6 +6,8 @@ Getting Started
     :hidden:
 
     fabric
+    forge
+    quilt
     bukkit
     versions
 

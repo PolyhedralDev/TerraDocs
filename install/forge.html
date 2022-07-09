@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Fabric Installation" href="fabric.html" /><link rel="prev" title="Contents" href="../index.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Quilt Installation" href="quilt.html" /><link rel="prev" title="Fabric, Forge and Quilt Server World Creation" href="mod-server-world-creation.html" />
 
     <link rel="shortcut icon" href="../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
-        <title>Getting Started - Terra Docs</title>
+        <title>Forge Installation - Terra Docs</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
@@ -158,7 +158,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -182,13 +182,13 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Getting Started</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2 has-children"><a class="reference internal" href="fabric.html">Fabric Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="forge.html">Forge Installation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 current has-children current-page"><a class="current reference internal" href="#">Forge Installation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
 </ul>
@@ -269,70 +269,47 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="getting-started">
-<h1>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this headline">¶</a></h1>
+          <section id="forge-installation">
+<h1>Forge Installation<a class="headerlink" href="#forge-installation" title="Permalink to this headline">¶</a></h1>
 <div class="toctree-wrapper compound">
 </div>
-<p>Terra’s platform-agnostic API allows us to seamlessly support many
-Minecraft modding platforms. The currently supported platforms include
-<a class="reference external" href="https://fabricmc.net">Fabric</a>, and the <a class="reference external" href="https://dev.bukkit.org">Bukkit</a>
-ecosystem. In regards to Bukkit, we officially support <a class="reference external" href="https://papermc.io">Paper</a>+
-implementations only, including but not limited to <a class="reference external" href="https://github.com/pufferfish-gg/Pufferfish">Pufferfish</a>
-and <a class="reference external" href="https://purpurmc.org/">Purpur</a>.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold sd-text-primary docutils">
-Fabric Server &amp; Client <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></div>
-<p class="sd-card-text">If you want to run Terra in a singleplayer environment, or on a small server
-with friends, we recommend using Fabric. Our Fabric implementation is the most
-feature complete, since Fabric gives us freedom to directly interface with the
-game in ways impossible on other platforms.</p>
-</div>
-<a class="sd-stretched-link reference internal" href="fabric.html"><span class="doc"></span></a></div>
-</div>
-<div class="sd-col sd-d-flex-row docutils">
-<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
-<div class="sd-card-body docutils">
-<div class="sd-card-title sd-font-weight-bold sd-text-primary docutils">
-Bukkit Server <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></div>
-<p class="sd-card-text">If you’re running a large server for lots of people, you’ll probably want to use
-Bukkit, simply because of all the plugins available for large servers. We do not
-recommend using Bukkit for small servers, for that, use Fabric.</p>
-</div>
-<a class="sd-stretched-link reference internal" href="bukkit.html"><span class="doc"></span></a></div>
-</div>
-</div>
-</div>
-<p><strong>All Present &amp; Past Releases</strong></p>
-<p>Want to know if Terra will run on your version of Minecraft? You can find a complete list of all
-supported, unsupported, and legacy releases of Terra for all platforms <a class="reference internal" href="versions.html"><span class="doc">here</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Lots of people get confused about what the difference is between Bukkit, Spigot, and Paper.</p>
-<p><strong>Bukkit</strong> is an API, a way for developers to interface with and write plugins
-for the Minecraft server.</p>
-<p><strong>Spigot</strong> is an <em>implementation</em> of the Bukkit API, It’s a platform that allows the Minecraft
-server to load and run Bukkit plugins. Bukkit itself is no longer maintained by the Bukkit team,
-so now SpigotMC maintains both Bukkit (the API) and Spigot (the implementation).</p>
-<p><strong>Paper</strong> is a <em>fork</em> of Spigot, a project based on Spigot that extends It’s functionality. Paper
-adds many performance optimizations to the Minecraft server, and also extends the Bukkit API.</p>
-<p><strong>What does this have to do with Terra?</strong></p>
-<p>We refer to the entire Bukkit ecosystem (Bukkit API, Spigot, Paper and friends..) as <em>Bukkit</em>
-simply because Bukkit is the name of the API. <strong>However</strong> - Terra develops against and tests on
-Paper. We do this because Bukkit and Spigot simply do not expose the required API for Terra to
-be fully functional. Paper’s extended API does. This means that while Terra will still <em>work</em>
-on Spigot, there will be (important) features missing.</p>
-<p><strong>TL;DR - Use Paper, or a fork of Paper.</strong></p>
+<p>This guide is intended for the <strong>Forge</strong> version of Terra.</p>
+<p><a class="reference internal" href="index.html"><span class="doc">Other Platform Installations</span></a> <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If you have already installed Terra or already know how to install Forge mods, you can skip to the world creation
+guide at the bottom of this page.</p>
+</div>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>1. Download the latest Terra Fabric release hosted on Modrinth <a class="reference external" href="https://modrinth.com/mod/terra">here</a>.
+You can find what version of Terra you should download for your version of Minecraft <a class="reference internal" href="versions.html"><span class="doc">here</span></a>.</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
+<p>Make sure you grab the correct version! The Modrinth page contains releases for multiple platforms, so make sure you
+selection the <strong>Forge</strong> release, <strong>not the Fabric or Quilt</strong> releases.</p>
+</div>
+<p>2. Once you have downloaded the <code class="docutils literal notranslate"><span class="pre">.jar</span></code> file from Modrinth, simply place the
+file into your <cite>mods</cite> folder located inside your Minecraft client or server directory.</p>
+<ol class="arabic simple" start="3">
+<li><p>Restart your server and verify Terra has loaded.</p></li>
+</ol>
+</section>
+<section id="world-creation">
+<h2>World Creation<a class="headerlink" href="#world-creation" title="Permalink to this headline">¶</a></h2>
+<p>Please refer to the guide for your relevant setup:</p>
+<p><a class="reference internal" href="mod-client-world-creation.html"><span class="doc">Client World Creation</span></a> <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></p>
+<p><a class="reference internal" href="mod-server-world-creation.html"><span class="doc">Server World Creation</span></a> <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></p>
+</section>
 </section>
 
         </article>
@@ -340,23 +317,23 @@ on Spigot, there will be (important) features missing.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="fabric.html">
+          <a class="next-page" href="quilt.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Fabric Installation</div>
+                <div class="title">Quilt Installation</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../index.html">
+          <a class="prev-page" href="mod-server-world-creation.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Home</div>
+                <div class="title">Fabric, Forge and Quilt Server World Creation</div>
                 
               </div>
             </a>
@@ -366,7 +343,7 @@ on Spigot, there will be (important) features missing.</p>
               Copyright &#169; 2021, Terra Contributors |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/install/index.rst.txt"
+            | <a class="muted-link" href="../_sources/install/forge.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -374,8 +351,28 @@ on Spigot, there will be (important) features missing.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Forge Installation</a><ul>
+<li><a class="reference internal" href="#installation">Installation</a></li>
+<li><a class="reference internal" href="#world-creation">World Creation</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

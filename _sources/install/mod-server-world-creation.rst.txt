@@ -1,10 +1,10 @@
-============================
-Fabric Server World Creation
-============================
+=============================================
+Fabric, Forge and Quilt Server World Creation
+=============================================
 
 .. note::
 
-    This guide is intended for the **Fabric** version of Terra.
+    This guide is intended for the **Fabric, Forge and Quilt** versions of Terra.
     
     :doc:`Other Platform Installations <index>` :octicon:`chevron-right`
 

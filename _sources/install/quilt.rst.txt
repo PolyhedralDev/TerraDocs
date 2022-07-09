@@ -1,6 +1,6 @@
-===================
-Fabric Installation
-===================
+==================
+Quilt Installation
+==================
 
 .. toctree::
     :hidden:
@@ -10,13 +10,13 @@ Fabric Installation
 
 .. note::
 
-    This guide is intended for the **Fabric** version of Terra.
+    This guide is intended for the **Quilt** version of Terra.
     
     :doc:`Other Platform Installations <index>` :octicon:`chevron-right`
 
 .. tip::
 
-    If you have already installed Terra or already know how to install Fabric mods, you can skip to the world creation
+    If you have already installed Terra or already know how to install Forge mods, you can skip to the world creation
     guide at the bottom of this page.
 
 Installation
@@ -28,12 +28,14 @@ You can find what version of Terra you should download for your version of Minec
 .. important::
     
     Make sure you grab the correct version! The Modrinth page contains releases for multiple platforms, so make sure you
-    selection the **Fabric** release, **not the Forge or Quilt** releases.
+    selection the **Quilt** release, **not the Fabric or Forge** releases.
 
 2. Once you have downloaded the ``.jar`` file from Modrinth, simply place the
 file into your `mods` folder located inside your Minecraft client or server directory.
 
-3. Restart your server and verify Terra has loaded.
+3. Install `Quilt Standard Libraries (QSL) <https://modrinth.com/mod/qsl>`_
+
+4. Restart your server and verify Terra has loaded.
 
 World Creation
 --------------
