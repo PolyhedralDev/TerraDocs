@@ -6,6 +6,7 @@ Getting Started
     :hidden:
 
     fabric
+    forge
     bukkit
     versions
 
