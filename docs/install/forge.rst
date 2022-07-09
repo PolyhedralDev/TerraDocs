@@ -22,7 +22,7 @@ Forge Installation
 Installation
 ------------
 
-1. Download the latest Terra Fabric release hosted on Modrinth `here <https://modrinth.com/mod/terra>`_.
+1. Download the latest Terra Forge release hosted on Modrinth `here <https://modrinth.com/mod/terra>`_.
 You can find what version of Terra you should download for your version of Minecraft :doc:`here <versions>`.
 
 .. important::
