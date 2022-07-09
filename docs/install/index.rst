@@ -7,6 +7,7 @@ Getting Started
 
     fabric
     forge
+    quilt
     bukkit
     versions
 
