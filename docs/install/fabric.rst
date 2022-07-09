@@ -5,8 +5,8 @@ Fabric Installation
 .. toctree::
     :hidden:
 
-    fabric-client-world-creation
-    fabric-server-world-creation
+    mod-client-world-creation
+    mod-server-world-creation
 
 .. note::
 
@@ -40,6 +40,6 @@ World Creation
 
 Please refer to the guide for your relevant setup:
 
-:doc:`Client World Creation <fabric-client-world-creation>` :octicon:`chevron-right`
+:doc:`Client World Creation <mod-client-world-creation>` :octicon:`chevron-right`
 
-:doc:`Server World Creation <fabric-server-world-creation>` :octicon:`chevron-right`
+:doc:`Server World Creation <mod-server-world-creation>` :octicon:`chevron-right`
