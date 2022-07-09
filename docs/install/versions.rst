@@ -130,7 +130,7 @@ All releases of Forge Terra can be found on Modrinth `here <https://modrinth.com
         - 5.3.3 :bdg-danger:`Alpha`
         - :bdg-danger:`No`
         - :bdg-danger:`No`
-        - `Modrinth <https://modrinth.com/mod/terra/version/DYQWCFn1>`_
+        - `Modrinth <https://modrinth.com/mod/terra/version/DYQWCFn1>`__
         - N/A
 
     *
@@ -138,7 +138,7 @@ All releases of Forge Terra can be found on Modrinth `here <https://modrinth.com
         - 6.2.0 :bdg-danger:`Alpha`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
-        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.0-BETA-forge>`_
+        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.0-BETA-forge>`__
         - N/A
 
 Quilt
@@ -162,7 +162,7 @@ All releases of Quilt Terra can be found on Modrinth `here <https://modrinth.com
         - 6.2.0 :bdg-danger:`Alpha`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
-        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.0-BETA-quilt>`_
+        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.0-BETA-quilt>`__
         - N/A
 
 ===========
