@@ -7,20 +7,24 @@ Community Packs
 
 
 Overworld pack
-==========
+==============
+
 | **Authors:** Astrash, Sancires, Aureus
 | **Source:** https://github.com/PolyhedralDev/TerraOverworldConfig
 | **Terra Version:** 6.x
+
 Overworld config pack for Terra which provides many preset configurations and variables to play
 around with!
 See the :doc:`/config/development/modifying-existing-pack` guide to get started.
 
 Tartarus
 ==========
+
 | **Author:** Jaddot
 | **Source:** https://github.com/Jason-Ding19/Tartarus
 | **Terra Version:** 6.x
+
 A Minecraft Terra generation pack that adds a ton of new biomes to the Nether! 
 
-.. image:: ./img_communitypacks/tartarus.png
+.. image:: /img/communitypacks/tartarus.png
    :width: 75%
