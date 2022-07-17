@@ -2,14 +2,29 @@
 Community Packs
 ===============
 
-As of `30/6/2022`, there currently are no community created config packs that exist for Terra v6,
-excluding the default `Overworld`_ pack.
+| This page contains a list of community packs for Terra.
+| To add your pack to this list, submit a PR to the `Docs Repository <https://github.com/PolyhedralDev/TerraDocs>`__
 
-This is expected as Terra v6 has not been released for long, and we have not built up sufficient
-documentation to provide developers with the means to develop new packs for it.
 
-If you wish to get more out of Terra, or tweak things to better fit your vision, we would recommend
-modifying the `Overworld`_ pack, which provides many preset configurations and variables to play
-around with. See the :doc:`/config/development/modifying-existing-pack` guide to get started.
+Overworld pack
+==============
 
-.. _Overworld: https://www.github.com/PolyhedralDev/TerraOverworldConfig
+| **Authors:** Astrash, Sancires, Aureus
+| **Source:** https://github.com/PolyhedralDev/TerraOverworldConfig
+| **Terra Version:** 6.x
+
+Overworld config pack for Terra which provides many preset configurations and variables to play
+around with!
+See the :doc:`/config/development/modifying-existing-pack` guide to get started.
+
+Tartarus
+==========
+
+| **Author:** Jaddot
+| **Source:** https://github.com/Jason-Ding19/Tartarus
+| **Terra Version:** 6.x
+
+A Minecraft Terra generation pack that adds a ton of new biomes to the Nether! 
+
+.. image:: /img/communitypacks/tartarus.png
+   :width: 75%
