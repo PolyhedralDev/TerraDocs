@@ -1,0 +1,48 @@
+.black {
+    padding: 0 0.3rem;
+    background-color: black;
+    border-radius: 0.3rem;
+    color: white;
+}
+
+.red {
+    padding: 0 0.3rem;
+    background-color: red;
+    border-radius: 0.3rem;
+    color: white;
+}
+
+.blue {
+    padding: 0 0.3rem;
+    background-color: blue;
+    border-radius: 0.3rem;
+    color: white;
+}
+
+.green {
+    padding: 0 0.3rem;
+    background-color: limegreen;
+    border-radius: 0.3rem;
+    color: white;
+}
+
+.purple {
+    padding: 0 0.3rem;
+    background-color: magenta;
+    border-radius: 0.3rem;
+    color: white;
+}
+
+.orange {
+    padding: 0 0.3rem;
+    background-color: orange;
+    border-radius: 0.3rem;
+    color: white;
+}
+
+.gold {
+    padding: 0 0.3rem;
+    background-color: darkgoldenrod;
+    border-radius: 0.3rem;
+    color: white;
+}

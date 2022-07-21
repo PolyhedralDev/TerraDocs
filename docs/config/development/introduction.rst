@@ -19,41 +19,40 @@ Terra is composed of several parts that facilitate world generation:
 
     **An Addon Loader**
         Allows for loading addons, which integrate the API to provide functionality.
-        The majority of Terra's functionality comes from addons, as without them Terra
-        wouldn't do much. This is similar to how mod loaders like Fabric and Forge won't
-        do much without any mods installed.
 
     **Core Addons**
         A suite of addons that provides standard functionality to Terra.
 
     **Configuration Packs**
-        A collection of configuration files that utilize the functionality provided
-        by addons to define how worlds generate.
+        A collection of configuration files that define how worlds generate, utilizing
+        the functionality provided by addons.
 
     **Platform Implementations**
         The layer between the platform (such as Bukkit or Fabric) and the API.
+
         Platform implementations typically package the API, addon loader, core
         addons, and a default configuration pack together to work as one cohesive
         unit.
 
-
 As a config developer, you will primarily be utilizing addons via Terra's
 configuration system to define how worlds generate. It is still a good idea to
-have an understanding of how these components interact, as it will provide a richer
-understanding of what is going on under the hood.
+have an understanding of how these components interact, however is not strictly
+necessary.
+
+1. Setting Up Your Test Environment
+===================================
 
 .. warning::
 
     Do not follow the rest of this guide on any live production environment.
-
-1. Setting Up Your Test Environment
-===================================
 
 Before beginning development on a new pack, you will need a suitable server or
 client to test with. We recommend using a `Fabric <https://fabricmc.net>`__
 client to develop config packs on, however this choice is ultimately up to you.
 You can refer to the :doc:`Getting Started </install/index>` page for instructions
 on how to get Terra up and running on your desired platform.
+
+.. _console:
 
 Accessing Console
 -----------------

@@ -32,6 +32,7 @@ extensions = [
     'm2r2',
     'sphinx_design',
     'sphinx.ext.githubpages',
+    'sphinx.ext.graphviz',
 ]
 
 source_suffix = [
@@ -57,12 +58,17 @@ html_theme = 'furo'
 
 html_theme_options = {
     "dark_css_variables": {
-        "color-admonition-title--important": "#ff9100",
-        "color-admonition-title-background--important": "rgba(255,145,0,.1)",
+        "color-foreground-primary": "#ffffff",
+        "color-foreground-secondary": "#dbdbdb",
     },
     "light_css_variables": {
         "color-admonition-title--important": "#ff9100",
         "color-admonition-title-background--important": "rgba(255,145,0,.1)",
+        "color-foreground-primary": "#000000",
+        "color-foreground-secondary": "#333333",
+
+        "font-stack": "-apple-system, BlinkMacSystemFont, Segoe UI, Cantarell, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol",
+        "admonition-font-size": "1rem",
     }
 }
 
@@ -87,7 +93,10 @@ html_css_files = [
     'css/headings.css',
     'css/admonitions.css',
     'css/tabs.css',
-    'css/logo.css'
+    'css/logo.css',
+    'css/content.css',
+    'css/lists.css',
+    'css/text-colors.css',
 ]
 
 # JDLinker config
@@ -101,6 +110,12 @@ javadoc_links = {
 # Syntax Highlighting Color
 pygments_style = 'stata-dark'
 pygments_dark_style = 'stata-dark'
+
+# Graphviz
+graphviz_output_format = 'svg'
+graphviz_dot_args = [
+    '-Gpad=0.2',
+]
 
 # The master toctree document.
 master_doc = 'index'

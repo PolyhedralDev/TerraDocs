@@ -1,0 +1,18 @@
+digraph {
+    nodesep=1
+    overlap=false
+    node [shape=record]
+
+    input [label="{Inputs|{<s> Seed|<x> X Coordinate|<z>Z Coordinate}}"]
+    samplerparams [label="{Sampler Parameters|<f> Frequency}"]
+    sampler [label="Noise Algorithm"]
+    output [label="Randomized Output"]
+    transform [label="<x> X * Frequency|<z> Z * Frequency"]
+
+    sampler -> output
+
+    input:s -> sampler
+    samplerparams:f -> transform:x,transform:z
+    input:x -> transform:x -> sampler
+    input:z -> transform:z -> sampler
+}

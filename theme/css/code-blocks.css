@@ -13,6 +13,10 @@ Style code block captions to better represent file names
     border-top-left-radius: 0;
 }
 
+div.highlight pre {
+    padding: 1rem;
+}
+
 .caption-text {
     display: inline-block;
     background-color: #232629;
@@ -22,6 +26,7 @@ Style code block captions to better represent file names
     padding: 0.125rem 0.5rem;
     vertical-align: bottom;
     margin-bottom: 0.1rem;
+    margin-top: 1rem;
     border-top-left-radius: 0.25rem;
     border-top-right-radius: 0.25rem;
 }

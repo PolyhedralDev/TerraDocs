@@ -8,4 +8,5 @@ Modifies sphinx design tabs
 
 .sd-tab-content {
     box-shadow: none;
+    padding-bottom: 0;
 }

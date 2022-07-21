@@ -2,12 +2,14 @@
 Styles admonitions
  */
 
-:root {
-    --color-admonition-title--important: #ff00ff
-}
-
 .admonition {
     border-left: none;
+    margin-bottom: 0;
+    padding: 1rem;
+}
+
+.admonition + p {
+    margin-top: 1rem;
 }
 
 p.admonition-title {
@@ -15,6 +17,7 @@ p.admonition-title {
     text-transform: uppercase;
     font-weight: bold;
     font-family: var(--font-stack--monospace);
+    padding: 0 0 0 2rem;
 *} 
 
 /*
@@ -46,10 +49,7 @@ Use admonition title color for background instead
 
 .tip {
     background-color: var(--color-admonition-title-background--tip);
-}/*
-.tip .admonition-title {
-    color: var(--color-admonition-title--tip);
-}*/
+}
 
 .important {
     background-color: var(--color-admonition-title-background--important);

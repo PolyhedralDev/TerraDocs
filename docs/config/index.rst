@@ -6,16 +6,6 @@ Config Packs
     :maxdepth: 2
 
     community-packs
+    pack-installation
     development/index
-
-What is a config pack?
-======================
-
-Where can I find config packs?
-==============================
-
-How do I install a pack?
-========================
-
-How can I make my own pack?
-===========================
+    documentation/index

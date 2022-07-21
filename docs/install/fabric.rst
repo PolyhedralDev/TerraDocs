@@ -5,8 +5,8 @@ Fabric Installation
 .. toctree::
     :hidden:
 
-    fabric-client-world-creation
-    fabric-server-world-creation
+    mod-client-world-creation
+    mod-server-world-creation
 
 .. note::
 
@@ -28,18 +28,18 @@ You can find what version of Terra you should download for your version of Minec
 .. important::
     
     Make sure you grab the correct version! The Modrinth page contains releases for multiple platforms, so make sure you
-    selection the **Fabric** release, **not the Forge** release.
+    selection the **Fabric** release, **not the Forge or Quilt** releases.
 
 2. Once you have downloaded the ``.jar`` file from Modrinth, simply place the
 file into your `mods` folder located inside your Minecraft client or server directory.
 
-3. Verify Terra has loaded.
+3. Restart your server and verify Terra has loaded.
 
 World Creation
 --------------
 
 Please refer to the guide for your relevant setup:
 
-:doc:`Client World Creation <fabric-client-world-creation>` :octicon:`chevron-right`
+:doc:`Client World Creation <mod-client-world-creation>` :octicon:`chevron-right`
 
-:doc:`Server World Creation <fabric-server-world-creation>` :octicon:`chevron-right`
+:doc:`Server World Creation <mod-server-world-creation>` :octicon:`chevron-right`
