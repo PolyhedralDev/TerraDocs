@@ -110,7 +110,7 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
         - 1.13+
 
 Forge
-------
+-----
 
 All releases of Forge Terra can be found on Modrinth `here <https://modrinth.com/mod/terra/versions>`__.
 
@@ -142,7 +142,7 @@ All releases of Forge Terra can be found on Modrinth `here <https://modrinth.com
         - N/A
 
 Quilt
-=====
+-----
 
 All releases of Quilt Terra can be found on Modrinth `here <https://modrinth.com/mod/terra/versions>`__.
 
@@ -165,19 +165,18 @@ All releases of Quilt Terra can be found on Modrinth `here <https://modrinth.com
         - `Modrinth <https://modrinth.com/mod/terra/version/6.2.0-BETA-quilt>`__
         - N/A
 
-===========
 Definitions
 ===========
 
-.. [1] **Minecraft Version:** The vanilla Minecraft version for the relevant platform.
+.. [1] **Minecraft Version** - The vanilla Minecraft version for the relevant platform.
 
-.. [2] **Latest Terra Version:** The latest Terra version supporting the corresponding Minecraft version.  
+.. [2] **Latest Terra Version** - The latest Terra version supporting the corresponding Minecraft version.  
 
-.. [3] **Supported:** Whether or not you will receive official support for using the release.
+.. [3] **Supported** - Whether or not you will receive official support for using the release.
 
-.. [4] **Maintained:** Whether or not new Terra releases will be developed for the corresponding Minecraft version.
+.. [4] **Maintained** - Whether or not new Terra releases will be developed for the corresponding Minecraft version.
 
-.. [5] **Download:** Downloads for the latest Terra version for the corresponding Minecraft version.
+.. [5] **Download** - Downloads for the latest Terra version for the corresponding Minecraft version.
 
-.. [6] **Backwards Compatibility:** Some releases of Terra are backwards compatible with older versions of Minecraft, the oldest of which is listed under this column. This however does not guarantee backwards compatibility of config packs shipped with the release.
+.. [6] **Backwards Compatibility** - Some releases of Terra are backwards compatible with older versions of Minecraft, the oldest of which is listed under this column. This however does not guarantee backwards compatibility of config packs shipped with the release.
 
