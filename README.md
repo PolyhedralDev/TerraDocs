@@ -6,19 +6,20 @@ Based on [Sponge](https://github.com/SpongePowered/SpongeDocs)'s documentation t
 
 ## Usage
 
-1. Install tooling
+1. Setup the environment:
+   * Python 3
+   * node.js
+2. Install tooling (in same directory as this README):
    * `pip` for Sphinx and its dependencies.
    * `npm` for Gulp and its dependencies.
    * [Graphviz](https://graphviz.org/download/) for rendering diagrams.
-2. Install project dependencies:
+3. Install project dependencies and run:
    ```bash
    npm install -g gulp
    npm install
    pip install -r requirements.txt
-    ```
-3. Run Gulp:
-   ```bash
-   gulp 
+   # Windows users: If you see a WARNING about adding the \Scripts folder to PATH, do it, then restart terminal.
+   gulp
    ```
 
 
