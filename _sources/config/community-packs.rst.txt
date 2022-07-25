@@ -28,3 +28,13 @@ A Minecraft Terra generation pack that adds a ton of new biomes to the Nether!
 
 .. image:: /img/communitypacks/tartarus.png
    :width: 75%
+
+Aeropelago
+==========
+
+| **Author:** Astrash
+| **Source:** https://github.com/Astrashh/Aeropelago
+| **Terra Version:** 6.2+.x
+
+A Terra config pack themed around floating islands.
+
