@@ -119,6 +119,30 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
         - :doc:`SpigotMC <versions/legacy/bukkit/5.3.3>`
         - 1.13+
 
+.. note::
+
+    Lots of people get confused about what the difference is between Bukkit, Spigot, and Paper.
+
+    **Bukkit** is an API, a way for developers to interface with and write plugins
+    for the Minecraft server.
+
+    **Spigot** is an *implementation* of the Bukkit API, It's a platform that allows the Minecraft
+    server to load and run Bukkit plugins. Bukkit itself is no longer maintained by the Bukkit team,
+    so now SpigotMC maintains both Bukkit (the API) and Spigot (the implementation).
+
+    **Paper** is a *fork* of Spigot, a project based on Spigot that extends It's functionality. Paper
+    adds many performance optimizations to the Minecraft server, and also extends the Bukkit API.
+
+    **What does this have to do with Terra?**
+
+    We refer to the entire Bukkit ecosystem (Bukkit API, Spigot, Paper and friends..) as *Bukkit*
+    simply because Bukkit is the name of the API. **However** - Terra develops against and tests on
+    Paper. We do this because Bukkit and Spigot simply do not expose the required API for Terra to
+    be fully functional. Paper's extended API does. This means that while Terra will still *work*
+    on Spigot, there will be (important) features missing.
+
+    **TL;DR - Use Paper, or a fork of Paper.**
+
 .. _forge-versions:
 
 Forge
