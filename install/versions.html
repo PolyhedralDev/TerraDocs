@@ -398,6 +398,24 @@ You should not use any of these releases in production as they may be unstable a
 </tr>
 </tbody>
 </table></div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Lots of people get confused about what the difference is between Bukkit, Spigot, and Paper.</p>
+<p><strong>Bukkit</strong> is an API, a way for developers to interface with and write plugins
+for the Minecraft server.</p>
+<p><strong>Spigot</strong> is an <em>implementation</em> of the Bukkit API, It’s a platform that allows the Minecraft
+server to load and run Bukkit plugins. Bukkit itself is no longer maintained by the Bukkit team,
+so now SpigotMC maintains both Bukkit (the API) and Spigot (the implementation).</p>
+<p><strong>Paper</strong> is a <em>fork</em> of Spigot, a project based on Spigot that extends It’s functionality. Paper
+adds many performance optimizations to the Minecraft server, and also extends the Bukkit API.</p>
+<p><strong>What does this have to do with Terra?</strong></p>
+<p>We refer to the entire Bukkit ecosystem (Bukkit API, Spigot, Paper and friends..) as <em>Bukkit</em>
+simply because Bukkit is the name of the API. <strong>However</strong> - Terra develops against and tests on
+Paper. We do this because Bukkit and Spigot simply do not expose the required API for Terra to
+be fully functional. Paper’s extended API does. This means that while Terra will still <em>work</em>
+on Spigot, there will be (important) features missing.</p>
+<p><strong>TL;DR - Use Paper, or a fork of Paper.</strong></p>
+</div>
 </section>
 <section id="forge">
 <span id="forge-versions"></span><h2>Forge<a class="headerlink" href="#forge" title="Permalink to this headline">¶</a></h2>

@@ -287,7 +287,7 @@
 </div>
 <p>Terra’s platform-agnostic API allows us to seamlessly support many
 Minecraft modding platforms. The currently supported platforms include
-<a class="reference external" href="https://fabricmc.net">Fabric</a>, and the <a class="reference external" href="https://dev.bukkit.org">Bukkit</a>
+<a class="reference external" href="https://fabricmc.net">Fabric</a>, <a class="reference external" href="https://files.minecraftforge.net/">Forge</a>, <a class="reference external" href="https://quiltmc.org/">Quilt</a>, and the <a class="reference external" href="https://dev.bukkit.org">Bukkit</a>
 ecosystem. In regards to Bukkit, we officially support <a class="reference external" href="https://papermc.io">Paper</a>+
 implementations only, including but not limited to <a class="reference external" href="https://github.com/pufferfish-gg/Pufferfish">Pufferfish</a>
 and <a class="reference external" href="https://purpurmc.org/">Purpur</a>.</p>
@@ -298,10 +298,8 @@ and <a class="reference external" href="https://purpurmc.org/">Purpur</a>.</p>
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold sd-text-primary docutils">
 Fabric Server &amp; Client <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></div>
-<p class="sd-card-text">If you want to run Terra in a singleplayer environment, or on a small server
-with friends, we recommend using Fabric. Our Fabric implementation is the most
-feature complete, since Fabric gives us freedom to directly interface with the
-game in ways impossible on other platforms.</p>
+<p class="sd-card-text">Fabric is the base platform Terra is primarily developed for. Recommended for running Terra in a singleplayer environment, or on a small server
+with friends.</p>
 </div>
 <a class="sd-stretched-link reference internal" href="fabric.html"><span class="doc"></span></a></div>
 </div>
@@ -309,8 +307,29 @@ game in ways impossible on other platforms.</p>
 <div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold sd-text-primary docutils">
+Quilt Server &amp; Client <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></div>
+<p class="sd-card-text">Quilt is recommended for running Terra in a singleplayer environment, or on a small server
+with friends.</p>
+</div>
+<a class="sd-stretched-link reference internal" href="quilt.html"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold sd-text-primary docutils">
+Forge Server &amp; Client <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></div>
+<p class="sd-card-text">Forge is recommended for running Terra in a singleplayer environment, or on a small server
+with friends. If you only wish to use Terra without other Forge specific mods, we recommend
+using Fabric instead.</p>
+</div>
+<a class="sd-stretched-link reference internal" href="forge.html"><span class="doc"></span></a></div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm sd-card-hover docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold sd-text-primary docutils">
 Bukkit Server <svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-right" height="1.0em" version="1.1" viewbox="0 0 16 16" width="1.0em"><path d="M6.22 3.22a.75.75 0 011.06 0l4.25 4.25a.75.75 0 010 1.06l-4.25 4.25a.75.75 0 01-1.06-1.06L9.94 8 6.22 4.28a.75.75 0 010-1.06z" fill-rule="evenodd"></path></svg></div>
-<p class="sd-card-text">If you’re running a large server for lots of people, you’ll probably want to use
+<p class="sd-card-text">Recommended for large servers for lots of people. You’ll probably want to use
 Bukkit, simply because of all the plugins available for large servers. We do not
 recommend using Bukkit for small servers, for that, use Fabric.</p>
 </div>
@@ -321,24 +340,6 @@ recommend using Bukkit for small servers, for that, use Fabric.</p>
 <p><strong>All Present &amp; Past Releases</strong></p>
 <p>Want to know if Terra will run on your version of Minecraft? You can find a complete list of all
 supported, unsupported, and legacy releases of Terra for all platforms <a class="reference internal" href="versions.html"><span class="doc">here</span></a>.</p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Lots of people get confused about what the difference is between Bukkit, Spigot, and Paper.</p>
-<p><strong>Bukkit</strong> is an API, a way for developers to interface with and write plugins
-for the Minecraft server.</p>
-<p><strong>Spigot</strong> is an <em>implementation</em> of the Bukkit API, It’s a platform that allows the Minecraft
-server to load and run Bukkit plugins. Bukkit itself is no longer maintained by the Bukkit team,
-so now SpigotMC maintains both Bukkit (the API) and Spigot (the implementation).</p>
-<p><strong>Paper</strong> is a <em>fork</em> of Spigot, a project based on Spigot that extends It’s functionality. Paper
-adds many performance optimizations to the Minecraft server, and also extends the Bukkit API.</p>
-<p><strong>What does this have to do with Terra?</strong></p>
-<p>We refer to the entire Bukkit ecosystem (Bukkit API, Spigot, Paper and friends..) as <em>Bukkit</em>
-simply because Bukkit is the name of the API. <strong>However</strong> - Terra develops against and tests on
-Paper. We do this because Bukkit and Spigot simply do not expose the required API for Terra to
-be fully functional. Paper’s extended API does. This means that while Terra will still <em>work</em>
-on Spigot, there will be (important) features missing.</p>
-<p><strong>TL;DR - Use Paper, or a fork of Paper.</strong></p>
-</div>
 </section>
 
         </article>
