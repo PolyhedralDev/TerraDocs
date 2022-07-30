@@ -8,7 +8,7 @@ Fabric, Forge and Quilt Client World Creation
     
     :doc:`Other Platform Installations <index>` :octicon:`chevron-right`
 
-These instructions are intended for setting up a Terra world for Fabric singleplayer.
+These instructions are intended for setting up a Terra world on singleplayer.
 
 Procedure
 ---------
