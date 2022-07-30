@@ -13,7 +13,7 @@ Getting Started
 
 Terra's platform-agnostic API allows us to seamlessly support many
 Minecraft modding platforms. The currently supported platforms include 
-`Fabric <https://fabricmc.net>`_, and the `Bukkit <https://dev.bukkit.org>`_
+`Fabric <https://fabricmc.net>`_, `Forge <https://files.minecraftforge.net/>`_, `Quilt <https://quiltmc.org/>`_, and the `Bukkit <https://dev.bukkit.org>`_
 ecosystem. In regards to Bukkit, we officially support `Paper <https://papermc.io>`_\+
 implementations only, including but not limited to `Pufferfish <https://github.com/pufferfish-gg/Pufferfish>`_
 and `Purpur <https://purpurmc.org/>`_.
@@ -25,17 +25,32 @@ and `Purpur <https://purpurmc.org/>`_.
         :link-type: doc
         :class-title: sd-text-primary 
 
-        If you want to run Terra in a singleplayer environment, or on a small server
-        with friends, we recommend using Fabric. Our Fabric implementation is the most
-        feature complete, since Fabric gives us freedom to directly interface with the
-        game in ways impossible on other platforms.
+        Fabric is the base platform Terra is primarily developed for. Recommended for running Terra in a singleplayer environment, or on a small server
+        with friends.
+
+    .. grid-item-card:: Quilt Server & Client :octicon:`chevron-right`
+        :link: quilt
+        :link-type: doc
+        :class-title: sd-text-primary 
+
+        Quilt is recommended for running Terra in a singleplayer environment, or on a small server
+        with friends.
+
+    .. grid-item-card:: Forge Server & Client :octicon:`chevron-right`
+        :link: forge
+        :link-type: doc
+        :class-title: sd-text-primary 
+
+        Forge is recommended for running Terra in a singleplayer environment, or on a small server
+        with friends. If you only wish to use Terra without other Forge specific mods, we recommend
+        using Fabric instead.
 
     .. grid-item-card:: Bukkit Server :octicon:`chevron-right`
         :link: bukkit
         :link-type: doc
         :class-title: sd-text-primary 
 
-        If you're running a large server for lots of people, you'll probably want to use
+        Recommended for large servers for lots of people. You'll probably want to use
         Bukkit, simply because of all the plugins available for large servers. We do not
         recommend using Bukkit for small servers, for that, use Fabric.
 
