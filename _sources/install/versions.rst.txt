@@ -2,12 +2,20 @@
 Versions
 ========
 
+.. toctree::
+    :hidden:
+    :glob:
+
+    versions/legacy/*/*
+
 On this page you can find the latest releases of Terra for each platform & Minecraft version.
 
 .. warning::
 
     \*Releases labelled :bdg-secondary:`In Development` are strictly available for previewing and development only.
     You should not use any of these releases in production as they may be unstable and subject to changes.
+
+.. _fabric-versions:
 
 Fabric
 ------
@@ -48,7 +56,7 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
         - 5.4.1 :bdg-warning:`Beta`
         - :bdg-danger:`No`
         - :bdg-danger:`No`
-        - `Modrinth <https://modrinth.com/mod/terra/version/i38N6tkR>`__
+        - :doc:`Modrinth <versions/legacy/fabric/5.4.1>`
         - N/A
 
     *
@@ -56,8 +64,10 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
         - 5.3.3 :bdg-warning:`Beta`
         - :bdg-danger:`No`
         - :bdg-danger:`No`
-        - `Modrinth <https://modrinth.com/mod/terra/version/9DWPUHbr>`__
+        - :doc:`Modrinth <versions/legacy/fabric/5.3.3>`
         - N/A
+
+.. _bukkit-versions:
 
 Bukkit
 ------
@@ -98,7 +108,7 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
         - 5.4.1 :bdg-warning:`Beta`
         - :bdg-danger:`No`
         - :bdg-danger:`No`
-        - `SpigotMC <https://www.spigotmc.org/resources/terra.85151/download?version=404442>`__
+        - :doc:`SpigotMC <versions/legacy/bukkit/5.4.1>`
         - N/A
 
     *
@@ -106,8 +116,10 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
         - 5.3.3 :bdg-warning:`Beta`
         - :bdg-danger:`No`
         - :bdg-danger:`No`
-        - `SpigotMC <https://www.spigotmc.org/resources/terra.85151/download?version=399361>`__
+        - :doc:`SpigotMC <versions/legacy/bukkit/5.3.3>`
         - 1.13+
+
+.. _forge-versions:
 
 Forge
 -----
@@ -126,20 +138,22 @@ All releases of Forge Terra can be found on Modrinth `here <https://modrinth.com
         - Backwards Compatibility [6]_
 
     *
-        - **1.16.5**
-        - 5.3.3 :bdg-danger:`Alpha`
-        - :bdg-danger:`No`
-        - :bdg-danger:`No`
-        - `Modrinth <https://modrinth.com/mod/terra/version/DYQWCFn1>`__
-        - N/A
-
-    *
         - **1.19**
         - 6.2.0 :bdg-danger:`Alpha`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
         - `Modrinth <https://modrinth.com/mod/terra/version/6.2.0-BETA-forge>`__
         - N/A
+
+    *
+        - **1.16.5**
+        - 5.3.3 :bdg-danger:`Alpha`
+        - :bdg-danger:`No`
+        - :bdg-danger:`No`
+        - :doc:`Modrinth <versions/legacy/forge/5.3.3>`
+        - N/A
+
+.. _quilt-versions:
 
 Quilt
 -----

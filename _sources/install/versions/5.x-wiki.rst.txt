@@ -1,0 +1,1 @@
+For installation guides and further information, refer to the legacy wiki (for versions 5.x of Terra) `here <https://github.com/PolyhedralDev/TerraWiki/wiki>`__ instead.

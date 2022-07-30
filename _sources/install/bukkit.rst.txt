@@ -26,11 +26,9 @@ Bukkit Installation
 Installation
 ------------
 
-#. Download the latest stable Terra bukkit release hosted on SpigotMC `here <https://www.spigotmc.org/resources/terra.85151/>`_.
-   You can find what version of Terra you should download for your version of Minecraft :doc:`here <versions>`.
+#. Download Terra for Bukkit. You can find what version of Terra you should download for your version of Minecraft :ref:`here <bukkit-versions>`.
 
-#. Once you have downloaded the ``.jar`` file from SpigotMC, simply place the
-   file into your `plugins` folder located inside your server directory.
+#. Once you have downloaded the ``.jar`` file, simply place the file into your `plugins` folder located inside your server directory.
 
 #. Once the plugin has been installed restart your server
 
