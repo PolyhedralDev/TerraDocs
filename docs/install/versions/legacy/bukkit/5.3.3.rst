@@ -1,0 +1,11 @@
+===================
+Bukkit Legacy 5.3.3
+===================
+
+.. include:: ../../unsupported.rst
+
+.. include:: ../../unmaintained.rst
+
+:bdg-primary:`Download` - https://www.spigotmc.org/resources/terra.85151/download?version=399361
+
+.. include:: ../../5.x-wiki.rst
