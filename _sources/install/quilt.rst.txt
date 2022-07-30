@@ -28,7 +28,7 @@ Installation
 
 3. Install `Quilt Standard Libraries (QSL) <https://modrinth.com/mod/qsl>`_
 
-4. Restart your server and verify Terra has loaded.
+4. Restart your server / client and verify Terra has loaded.
 
 World Creation
 --------------

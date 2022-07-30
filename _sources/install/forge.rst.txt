@@ -26,7 +26,7 @@ Installation
 
 2. Once you have downloaded the ``.jar`` file, simply place the file into your `mods` folder located inside your Minecraft client or server directory.
 
-3. Restart your server and verify Terra has loaded.
+3. Restart your server / client and verify Terra has loaded.
 
 World Creation
 --------------
