@@ -38,3 +38,11 @@ Aeropelago
 
 A Terra config pack themed around floating islands.
 
+VoidWorld
+==========
+
+| **Author:** Aureus
+| **Source:** https://github.com/justaureus/VoidWorld
+| **Terra Version:** 6.x
+
+A simple Minecraft Void World config pack for the Terra world generation platform.
