@@ -188,12 +188,12 @@ All releases of Quilt Terra can be found on Modrinth `here <https://modrinth.com
     :header-rows: 1
 
     *
-        - Minecraft Version
-        - Terra Version
-        - Supported
-        - Maintained
-        - Download
-        - Backwards Compatibility
+        - Minecraft Version [1]_
+        - Latest Terra Version [2]_
+        - Supported [3]_
+        - Maintained [4]_
+        - Download [5]_
+        - Backwards Compatibility [6]_
 
     *
         - **1.19**
