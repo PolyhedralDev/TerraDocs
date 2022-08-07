@@ -45,10 +45,10 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
 
     *
         - **1.18**
-        - 6.0.0 :bdg-warning:`Beta`
+        - 6.1.1 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
         - :bdg-danger:`No`
-        - `Modrinth <https://modrinth.com/mod/terra/version/6.0.0-BETA/>`__
+        - `Modrinth <https://modrinth.com/mod/terra/version/6.1.1-BETA/>`__
         - N/A
 
     *
@@ -97,10 +97,10 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
 
     *
         - **1.18**
-        - 6.0.0 :bdg-warning:`Beta`
+        - 6.1.2 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
         - :bdg-danger:`No`
-        - `SpigotMC <https://www.spigotmc.org/resources/terra.85151/download?version=454311/>`__
+        - `SpigotMC <https://www.spigotmc.org/resources/terra.85151/download?version=456104/>`__
         - N/A
 
     *
