@@ -312,8 +312,8 @@ outlined here, please refer to <a class="reference internal" href="worldmanager-
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">bukkit.yml</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">&lt;LEVEL NAME&gt;</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:&lt;PACK ID&gt;</span><span class="w"></span>
+<span class="w">  </span><span class="nt">LEVEL_NAME</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:PACK_ID</span><span class="w"></span>
 </pre></div>
 </div>
 </div>
@@ -324,10 +324,10 @@ outlined here, please refer to <a class="reference internal" href="worldmanager-
 </div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;LEVEL</span> <span class="pre">NAME&gt;</span></code> with the server’s configured <code class="docutils literal notranslate"><span class="pre">level-name</span></code>. (This can be found in the <code class="docutils literal notranslate"><span class="pre">server.properties</span></code> file
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">LEVEL_NAME</span></code> with the server’s configured <code class="docutils literal notranslate"><span class="pre">level-name</span></code>. (This can be found in the <code class="docutils literal notranslate"><span class="pre">server.properties</span></code> file
 under the ‘<code class="docutils literal notranslate"><span class="pre">level-name</span></code>’ key. By default, <code class="docutils literal notranslate"><span class="pre">level-name</span></code> is set to <code class="docutils literal notranslate"><span class="pre">world</span></code>.)</p></li>
-<li><p>Replace <code class="docutils literal notranslate"><span class="pre">&lt;PACK</span> <span class="pre">ID&gt;</span></code> with an installed config pack’s ID. The ID for the default pack that comes pre-installed with Terra
-is <code class="docutils literal notranslate"><span class="pre">OVERWORLD</span></code>, so if you have not installed any other config packs, replace <code class="docutils literal notranslate"><span class="pre">&lt;PACK</span> <span class="pre">ID&gt;</span></code> with <code class="docutils literal notranslate"><span class="pre">OVERWORLD</span></code>.</p></li>
+<li><p>Replace <code class="docutils literal notranslate"><span class="pre">PACK_ID</span></code> with an installed config pack’s ID. The ID for the default pack that comes pre-installed with Terra
+is <code class="docutils literal notranslate"><span class="pre">OVERWORLD</span></code>, so if you have not installed any other config packs, replace <code class="docutils literal notranslate"><span class="pre">PACK_ID</span></code> with <code class="docutils literal notranslate"><span class="pre">OVERWORLD</span></code>.</p></li>
 <li><p>Either delete the existing world folder (the name of this folder is covered above) in your server directory, or
 rename it to something else (for example <code class="docutils literal notranslate"><span class="pre">world_backup</span></code>).</p></li>
 <li><p>Boot your server back up.</p></li>
@@ -343,28 +343,34 @@ rename it to something else (for example <code class="docutils literal notransla
 </section>
 <section id="setting-up-another-world">
 <h2>Setting up Another World<a class="headerlink" href="#setting-up-another-world" title="Permalink to this headline">¶</a></h2>
-<p>If you have already done this process before and wish to set up another existing world (such as the Nether or End) with
+<p>If you have already done this process before and wish to set up another <strong>existing</strong> world (such as the Nether or End) with
 a new generator, you can simply add the world under the <code class="docutils literal notranslate"><span class="pre">worlds</span></code> key like so:</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">bukkit.yml</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
 <span class="w">   </span><span class="nt">existing_world_name</span><span class="p">:</span><span class="w"></span>
 <span class="w">     </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:EXAMPLE_PACK_1</span><span class="w"></span>
-<span class="hll"><span class="w">   </span><span class="nt">&lt;NEW WORLD NAME&gt;</span><span class="p">:</span><span class="w"></span>
-</span><span class="hll"><span class="w">     </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;NEW GENERATOR ID&gt;</span><span class="w"></span>
+<span class="hll"><span class="w">   </span><span class="nt">another_world_name</span><span class="p">:</span><span class="w"></span>
+</span><span class="hll"><span class="w">     </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:EXAMPLE_PACK_2</span><span class="w"></span>
 </span></pre></div>
 </div>
 </div>
-<p>Here is an example with two worlds configured:</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">bukkit.yml</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
-<span class="w">   </span><span class="nt">world</span><span class="p">:</span><span class="w"></span>
-<span class="w">     </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:OVERWORLD</span><span class="w"></span>
-<span class="w">   </span><span class="nt">world_nether</span><span class="p">:</span><span class="w"></span>
-<span class="w">     </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:NETHER</span><span class="w"></span>
-</pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We highly recommend listing worlds you have set up for custom generation via a world manager here as well, in the event that the
+world manager fails. Typically the world manager will be the only thing responsible for assigning generators, but during failure
+the server will default to this config, and then vanilla generation if not specified.</p>
+<p>Using the bukkit config as a fallback will prevent the server defaulting to vanilla generation if failure occurs (which will cause
+chunk breaks and is very annoying to fix).</p>
 </div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This will only set the generator for worlds that already exist on the server, if a world listed here has not been created,
+Bukkit will not create a new world. For creating new worlds that are not the default Overworld, Nether, or End worlds, you
+will have to use a world management plugin.</p>
+<p>We do not recommend switching generators on a world that is already in use, you should only set the generator here as a fallback, or if
+you are setting up the generator for a world that has already been created on the server but has not been generated. For the latter case,
+you should clear the world data after setting the generator here before starting the server up.</p>
 </div>
 </section>
 <section id="troubleshooting">
