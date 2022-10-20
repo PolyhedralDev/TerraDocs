@@ -7,6 +7,9 @@ pack from the beginning. If you haven't already, please read the
 :doc:`Config Development Introduction </config/development/introduction>`
 for more information before continuing.
 
+If you're stuck or need an example, you can find reference config packs for this guide on the
+`GitHub repo <https://github.com/PolyhedralDev/TerraPackFromScratch/>`_\.
+
 .. card::
 
     If you wish to **modify an existing pack** rather than creating your
@@ -368,3 +371,6 @@ Conclusion
 ==========
 
 Once you have verified your pack has loaded correctly, you can now generate a world with your new pack!
+
+Reference configurations for this introduction can be found on GitHub
+`here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/1-setting-up>`_.
