@@ -38,16 +38,16 @@ Procedure
     :caption: bukkit.yml
 
     worlds:
-      <LEVEL NAME>:
-        generator: Terra:<PACK ID>
+      LEVEL_NAME:
+        generator: Terra:PACK_ID
 
   .. attention:: These lines are **not** present by default, you have to add them yourself!
 
-4. Replace ``<LEVEL NAME>`` with the server's configured ``level-name``. (This can be found in the ``server.properties`` file
+4. Replace ``LEVEL_NAME`` with the server's configured ``level-name``. (This can be found in the ``server.properties`` file
    under the '``level-name``' key. By default, ``level-name`` is set to ``world``.)
 
-5. Replace ``<PACK ID>`` with an installed config pack's ID. The ID for the default pack that comes pre-installed with Terra
-   is ``OVERWORLD``, so if you have not installed any other config packs, replace ``<PACK ID>`` with ``OVERWORLD``.
+5. Replace ``PACK_ID`` with an installed config pack's ID. The ID for the default pack that comes pre-installed with Terra
+   is ``OVERWORLD``, so if you have not installed any other config packs, replace ``PACK_ID`` with ``OVERWORLD``.
 
 6. Either delete the existing world folder (the name of this folder is covered above) in your server directory, or
    rename it to something else (for example ``world_backup``).
