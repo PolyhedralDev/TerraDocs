@@ -65,7 +65,7 @@ If you followed the steps correctly without any errors, then you have successful
 Setting up Another World
 ------------------------
 
-If you have already done this process before and wish to set up another existing world (such as the Nether or End) with
+If you have already done this process before and wish to set up another **existing** world (such as the Nether or End) with
 a new generator, you can simply add the world under the ``worlds`` key like so:
 
 .. code-block:: yaml
@@ -75,19 +75,25 @@ a new generator, you can simply add the world under the ``worlds`` key like so:
    worlds:
      existing_world_name: 
        generator: Terra:EXAMPLE_PACK_1
-     <NEW WORLD NAME>: 
-       generator: <NEW GENERATOR ID>
+     another_world_name:
+       generator: Terra:EXAMPLE_PACK_2
 
-Here is an example with two worlds configured:
+.. tip::
+  We highly recommend listing worlds you have set up for custom generation via a world manager here as well, in the event that the
+  world manager fails. Typically the world manager will be the only thing responsible for assigning generators, but during failure
+  the server will default to this config, and then vanilla generation if not specified.
 
-.. code-block:: yaml
-  :caption: bukkit.yml
+  Using the bukkit config as a fallback will prevent the server defaulting to vanilla generation if failure occurs (which will cause
+  chunk breaks and is very annoying to fix).
 
-   worlds:
-     world: 
-       generator: Terra:OVERWORLD
-     world_nether: 
-       generator: Terra:NETHER
+.. warning::
+  This will only set the generator for worlds that already exist on the server, if a world listed here has not been created,
+  Bukkit will not create a new world. For creating new worlds that are not the default Overworld, Nether, or End worlds, you
+  will have to use a world management plugin.
+
+  We do not recommend switching generators on a world that is already in use, you should only set the generator here as a fallback, or if
+  you are setting up the generator for a world that has already been created on the server but has not been generated. For the latter case,
+  you should clear the world data after setting the generator here before starting the server up.
 
 Troubleshooting
 ---------------
