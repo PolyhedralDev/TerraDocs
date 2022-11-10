@@ -38,6 +38,9 @@ ReimagEND
 
 A Terra pack designed to reimagine the End with new biomes, features, and terrain to explore.
 
+.. image:: /img/communitypacks/reimagEND.png
+   :width: 75%
+
 Aeropelago
 ==========
 
