@@ -29,6 +29,15 @@ A Minecraft Terra generation pack that adds a ton of new biomes to the Nether!
 .. image:: /img/communitypacks/tartarus.png
    :width: 75%
 
+ReimagEND
+==========
+
+| **Authors:** Aureus, RogueShade
+| **Source:** https://github.com/justaureus/ReimagEND
+| **Terra Version:** 6.2+.x
+
+A Terra pack designed to reimagine the End with new biomes, features, and terrain to explore.
+
 Aeropelago
 ==========
 
