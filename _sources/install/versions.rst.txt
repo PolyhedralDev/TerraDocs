@@ -108,7 +108,7 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
         - 5.4.1 :bdg-warning:`Beta`
         - :bdg-danger:`No`
         - :bdg-danger:`No`
-        - :doc:`SpigotMC <versions/legacy/bukkit/5.4.1>`
+        - :doc:`Modrinth <versions/legacy/bukkit/5.4.1>`
         - N/A
 
     *
@@ -116,7 +116,7 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
         - 5.3.3 :bdg-warning:`Beta`
         - :bdg-danger:`No`
         - :bdg-danger:`No`
-        - :doc:`SpigotMC <versions/legacy/bukkit/5.3.3>`
+        - :doc:`Modrinth <versions/legacy/bukkit/5.3.3>`
         - 1.13+
 
 .. note::
