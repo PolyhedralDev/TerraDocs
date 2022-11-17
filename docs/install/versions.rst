@@ -37,10 +37,10 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
 
     *
         - **1.19**
-        - 6.2.0 :bdg-warning:`Beta`
+        - 6.2.1 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
-        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.0-BETA-fabric/>`__
+        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.1-BETA-fabric/>`__
         - N/A
 
     *
@@ -72,7 +72,7 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
 Bukkit
 ------
 
-All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotmc.org/resources/terra.85151/history>`__.
+All releases of Bukkit Terra can be found on Modrinth `here <https://modrinth.com/mod/terra/versions>`__.
 
 :doc:`Bukkit Installation </install/bukkit>` :octicon:`chevron-right`
 
@@ -89,10 +89,10 @@ All releases of Bukkit Terra can be found on SpigotMC `here <https://www.spigotm
 
     *
         - **1.19**
-        - 6.2.0 :bdg-warning:`Beta`
+        - 6.2.1 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
-        - `SpigotMC <https://www.spigotmc.org/resources/terra.85151/download?version=459814>`__
+        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.1-BETA-bukkit>`__
         - N/A
 
     *
@@ -163,10 +163,10 @@ All releases of Forge Terra can be found on Modrinth `here <https://modrinth.com
 
     *
         - **1.19**
-        - 6.2.0 :bdg-danger:`Alpha`
+        - 6.2.1 :bdg-danger:`Alpha`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
-        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.0-BETA-forge>`__
+        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.1-BETA-forge>`__
         - N/A
 
     *
@@ -197,10 +197,10 @@ All releases of Quilt Terra can be found on Modrinth `here <https://modrinth.com
 
     *
         - **1.19**
-        - 6.2.0 :bdg-danger:`Alpha`
+        - 6.2.1 :bdg-danger:`Alpha`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
-        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.0-BETA-quilt>`__
+        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.1-BETA-quilt>`__
         - N/A
 
 Definitions
