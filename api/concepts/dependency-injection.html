@@ -291,11 +291,11 @@ need to have access to.</p>
 <p>To inject to a field, simply make the field non-final and non-static, and annotate it <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/inject/annotations/Inject.html">Inject</a>.</p>
 <section id="example">
 <h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span><span class="w"></span>
-<span class="kd">private</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="n">platform</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
+<span class="kd">private</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
 
-<span class="nd">@Inject</span><span class="w"></span>
-<span class="kd">private</span><span class="w"> </span><span class="n">BaseAddon</span><span class="w"> </span><span class="n">addon</span><span class="p">;</span><span class="w"></span>
+<span class="nd">@Inject</span>
+<span class="kd">private</span> <span class="n">BaseAddon</span> <span class="n">addon</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>This example demonstrates injecting the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> and <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instances. This is a very common

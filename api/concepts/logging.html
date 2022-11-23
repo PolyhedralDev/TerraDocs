@@ -292,8 +292,8 @@ API for logging.</p>
 <h3>Manifest Addon Loader Entry Point<a class="headerlink" href="#manifest-addon-loader-entry-point" title="Permalink to this headline">¶</a></h3>
 <p>If you are using a logger in an entry point of a Manifest Addon Loader addon, you can use
 <a class="reference internal" href="dependency-injection.html"><span class="doc">dependency injection</span></a> to obtain a Logger instance:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span><span class="w"></span>
-<span class="kd">private</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
+<span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">;</span>
 </pre></div>
 </div>
 </section>
@@ -301,7 +301,7 @@ API for logging.</p>
 <h3>Using LoggerFactory<a class="headerlink" href="#using-loggerfactory" title="Permalink to this headline">¶</a></h3>
 <p>If you’re using a logger from elsewhere in your addon, you can use SLF4J’s <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/LoggerFactory.html">LoggerFactory</a> to obtain
 a class-specific Logger instance:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kd">final</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">MyClass</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w"> </span><span class="c1">// MyClass should be the class you're getting a logger for.</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kd">private</span> <span class="kd">static</span> <span class="kd">final</span> <span class="n">Logger</span> <span class="n">logger</span> <span class="o">=</span> <span class="n">LoggerFactory</span><span class="p">.</span><span class="na">getLogger</span><span class="p">(</span><span class="n">MyClass</span><span class="p">.</span><span class="na">class</span><span class="p">);</span> <span class="c1">// MyClass should be the class you're getting a logger for.</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -317,10 +317,10 @@ a class-specific Logger instance:</p>
 <section id="using-a-logger">
 <h2>Using a Logger<a class="headerlink" href="#using-a-logger" title="Permalink to this headline">¶</a></h2>
 <p>Using a logger is very simple. Here is an example that prints a message at 4 log levels:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">.</span><span class="na">debug</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span><span class="w"></span>
-<span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span><span class="w"></span>
-<span class="n">logger</span><span class="p">.</span><span class="na">warn</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span><span class="w"></span>
-<span class="n">logger</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">.</span><span class="na">debug</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="na">warn</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span>
+<span class="n">logger</span><span class="p">.</span><span class="na">error</span><span class="p">(</span><span class="s">"This is a message!"</span><span class="p">)</span>
 </pre></div>
 </div>
 <section id="logging-levels">
@@ -341,13 +341,13 @@ it from functioning normally.</p></li>
 <h3>String Formatting in SLF4J<a class="headerlink" href="#string-formatting-in-slf4j" title="Permalink to this headline">¶</a></h3>
 <p>SLF4J supports string formatting for inserting data into log messages. Here is an example of a logging statement
 you might find in an application:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Got "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">amount</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" "</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">food</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s">" from grocery store."</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Got "</span> <span class="o">+</span> <span class="n">amount</span> <span class="o">+</span> <span class="s">" "</span> <span class="o">+</span> <span class="n">food</span> <span class="o">+</span> <span class="s">" from grocery store."</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>This logging statement uses string concatenation to insert 2 variables into the message. This is not only more verbose
 code-wise, it also requires the overhead of string concatenation, which will create a performance penalty in hot code.</p>
 <p>SLF4J contains a simple way to solve both of these issues, called string <em>formatting</em>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Got {} {} from grocery store"</span><span class="p">,</span><span class="w"> </span><span class="n">amount</span><span class="p">,</span><span class="w"> </span><span class="n">food</span><span class="p">);</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Got {} {} from grocery store"</span><span class="p">,</span> <span class="n">amount</span><span class="p">,</span> <span class="n">food</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>In the message, simply put <code class="docutils literal notranslate"><span class="pre">{}</span></code> where the variables should be inserted, then add the variables as method parameters

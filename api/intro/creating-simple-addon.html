@@ -311,16 +311,16 @@ about what they do <a class="reference internal" href="../concepts/manifest-addo
 <p>The entry point is where the manifest loader will initialize your addon. Create a new Java class in your project
 with the name defined in the <code class="docutils literal notranslate"><span class="pre">entrypoints</span></code> value in your manifest. If you didn’t change the manifest, that would be
 <code class="docutils literal notranslate"><span class="pre">com.example.addon.ExampleEntryPoint</span></code>. In your new class, implement <code class="docutils literal notranslate"><span class="pre">AddonInitializer</span></code>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.addon</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExampleEntryPoint</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">AddonInitializer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleEntryPoint</span> <span class="kd">implements</span> <span class="n">AddonInitializer</span> <span class="p">{</span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
 
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -333,21 +333,21 @@ addon!</p>
 <h3>Injecting a Logger<a class="headerlink" href="#injecting-a-logger" title="Permalink to this headline">¶</a></h3>
 <p>Let’s make our addon log a message on initialization. To do that, we’ll need a <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/Logger.html">Logger</a>. There are two ways
 to access a Logger, we’ll be accessing ours via <a class="reference internal" href="../concepts/dependency-injection.html"><span class="doc">dependency injection</span></a>:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.addon</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.api.inject.annotations.Inject</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.slf4j.Logger</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.inject.annotations.Inject</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExampleEntryPoint</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">AddonInitializer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Inject</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="p">;</span><span class="w"></span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleEntryPoint</span> <span class="kd">implements</span> <span class="n">AddonInitializer</span> <span class="p">{</span>
+    <span class="nd">@Inject</span>
+    <span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">;</span>
 
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
 
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 <p>The <code class="docutils literal notranslate"><span class="pre">logger</span></code> field is now an injection target for a <a class="reference external" href="https://www.slf4j.org/apidocs/org/slf4j/Logger.html">Logger</a>. This means that before our addon initializes,
@@ -357,21 +357,21 @@ it’ll receive a logger.</p>
 <h3>Using a Logger<a class="headerlink" href="#using-a-logger" title="Permalink to this headline">¶</a></h3>
 <p>Now we have a logger, but our addon still doesn’t do anything. Let’s use the logger to log a message to the console
 when the addon initializes!</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.addon</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.api.inject.annotations.Inject</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.slf4j.Logger</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.inject.annotations.Inject</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExampleEntryPoint</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">AddonInitializer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Inject</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="p">;</span><span class="w"></span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleEntryPoint</span> <span class="kd">implements</span> <span class="n">AddonInitializer</span> <span class="p">{</span>
+    <span class="nd">@Inject</span>
+    <span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">;</span>
 
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
@@ -382,13 +382,13 @@ when the addon initializes!</p>
 <p>To install your addon, first you need to <em>compile</em> it, then <em>archive</em> it. The process is slightly different depending
 on your build system:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="05142201-2bdb-42b5-a820-c81ee85e44c1" name="aad2609a-2b3a-45e4-af82-87ec0c074843" type="radio"/>
-<label class="sd-tab-label" for="05142201-2bdb-42b5-a820-c81ee85e44c1">
+<input checked="checked" id="4d1c2bca-a7bc-4014-ae31-ad7f4afde9c9" name="98a5a4dd-f0c4-446a-b847-a8c6ddf323dc" type="radio"/>
+<label class="sd-tab-label" for="4d1c2bca-a7bc-4014-ae31-ad7f4afde9c9">
 Gradle</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">:jar</span></code> task. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">build/libs</span></code>.</p>
 </div>
-<input id="8c4c18bb-753b-4046-917d-c3c09b084f8f" name="aad2609a-2b3a-45e4-af82-87ec0c074843" type="radio"/>
-<label class="sd-tab-label" for="8c4c18bb-753b-4046-917d-c3c09b084f8f">
+<input id="83658c48-813e-46d0-a10b-3626b37fd495" name="98a5a4dd-f0c4-446a-b847-a8c6ddf323dc" type="radio"/>
+<label class="sd-tab-label" for="83658c48-813e-46d0-a10b-3626b37fd495">
 Maven</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">package</span></code> goal. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">target</span></code>.</p>
 </div>

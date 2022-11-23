@@ -303,11 +303,11 @@ Event Handler, read about it <a class="reference internal" href="../concepts/eve
 <h3>Injecting the Required Objects<a class="headerlink" href="#injecting-the-required-objects" title="Permalink to this headline">¶</a></h3>
 <p>To access the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/EventManager.html">EventManager</a>, which we’ll use to access the Functional Event Handler, we need a
 <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance. We’ll also need our <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/addon/BaseAddon.html">BaseAddon</a> instance later, so let’s inject that too:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span><span class="w"></span>
-<span class="kd">private</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="n">platform</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="nd">@Inject</span>
+<span class="kd">private</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
 
-<span class="nd">@Inject</span><span class="w"></span>
-<span class="kd">private</span><span class="w"> </span><span class="n">BaseAddon</span><span class="w"> </span><span class="n">addon</span><span class="p">;</span><span class="w"></span>
+<span class="nd">@Inject</span>
+<span class="kd">private</span> <span class="n">BaseAddon</span> <span class="n">addon</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="admonition note">
@@ -320,12 +320,12 @@ Event Handler, read about it <a class="reference internal" href="../concepts/eve
 <h3>Creating an Event Context<a class="headerlink" href="#creating-an-event-context" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/EventContext.html">EventContext</a> is used for defining a handler for an event. The event context is a builder-like object
 that you can use to configure properties of your handler. Let’s create an event context for ConfigPackPreLoadEvent:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span><span class="w"> </span><span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="p">});</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
+        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+        <span class="p">});</span>
 </pre></div>
 </div>
 <p>If you recompile and install your addon again, you’ll see that… nothing happens.</p>
@@ -377,13 +377,13 @@ loads!</p>
 <p>Another way is to mark your event handler as <em>global</em>. Using the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/functional/EventContext.html#--">EventContext#global</a> method, you can
 eliminate the pack scope from your event handler. This will cause your handler to be fired regardless of whether
 the pack that fired it depends on your addon. Marking the handler as global would look like this:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span><span class="w"> </span><span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">            </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span><span class="w"></span>
-<span class="w">        </span><span class="p">})</span><span class="w"></span>
-<span class="w">        </span><span class="p">.</span><span class="na">global</span><span class="p">();</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
+        <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+        <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
+            <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+        <span class="p">})</span>
+        <span class="p">.</span><span class="na">global</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -399,38 +399,38 @@ source.</p>
 <p>You now have a pack-scoped event listener in your addon, which logs when the <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/event/events/config/pack/ConfigPackPreLoadEvent.html">ConfigPackPreLoadEvent</a> is
 fired. Continue to learn how to register objects!</p>
 <p>Our example addon at this stage looks like this:</p>
-<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span><span class="w"> </span><span class="nn">com.example.addon</span><span class="p">;</span><span class="w"></span>
+<div class="highlight-java notranslate"><div class="highlight"><pre><span></span><span class="kn">package</span> <span class="nn">com.example.addon</span><span class="p">;</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.api.Platform</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.api.addon.BaseAddon</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.api.event.events.config.pack.ConfigPackPreLoadEvent</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.api.event.functional.FunctionalEventHandler</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">com.dfsek.terra.api.inject.annotations.Inject</span><span class="p">;</span><span class="w"></span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">org.slf4j.Logger</span><span class="p">;</span><span class="w"></span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.addons.manifest.api.AddonInitializer</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.Platform</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.addon.BaseAddon</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.event.events.config.pack.ConfigPackPreLoadEvent</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.event.functional.FunctionalEventHandler</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">com.dfsek.terra.api.inject.annotations.Inject</span><span class="p">;</span>
+<span class="kn">import</span> <span class="nn">org.slf4j.Logger</span><span class="p">;</span>
 
-<span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">ExampleEntryPoint</span><span class="w"> </span><span class="kd">implements</span><span class="w"> </span><span class="n">AddonInitializer</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">    </span><span class="nd">@Inject</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Logger</span><span class="w"> </span><span class="n">logger</span><span class="p">;</span><span class="w"></span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">ExampleEntryPoint</span> <span class="kd">implements</span> <span class="n">AddonInitializer</span> <span class="p">{</span>
+    <span class="nd">@Inject</span>
+    <span class="kd">private</span> <span class="n">Logger</span> <span class="n">logger</span><span class="p">;</span>
 
-<span class="w">    </span><span class="nd">@Inject</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">Platform</span><span class="w"> </span><span class="n">platform</span><span class="p">;</span><span class="w"></span>
+    <span class="nd">@Inject</span>
+    <span class="kd">private</span> <span class="n">Platform</span> <span class="n">platform</span><span class="p">;</span>
 
-<span class="w">    </span><span class="nd">@Inject</span><span class="w"></span>
-<span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">BaseAddon</span><span class="w"> </span><span class="n">addon</span><span class="p">;</span><span class="w"></span>
+    <span class="nd">@Inject</span>
+    <span class="kd">private</span> <span class="n">BaseAddon</span> <span class="n">addon</span><span class="p">;</span>
 
-<span class="w">    </span><span class="nd">@Override</span><span class="w"></span>
-<span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">initialize</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">        </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span><span class="w"></span>
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">initialize</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"Hello, World!"</span><span class="p">);</span>
 
-<span class="w">        </span><span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span><span class="w"></span>
-<span class="w">                </span><span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
-<span class="w">                </span><span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span><span class="w"> </span><span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span><span class="w"></span>
-<span class="w">                </span><span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span><span class="w"> </span><span class="o">-&gt;</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="w">                    </span><span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span><span class="w"></span>
-<span class="w">                </span><span class="p">});</span><span class="w"></span>
-<span class="w">    </span><span class="p">}</span><span class="w"></span>
-<span class="p">}</span><span class="w"></span>
+        <span class="n">platform</span><span class="p">.</span><span class="na">getEventManager</span><span class="p">()</span>
+                <span class="p">.</span><span class="na">getHandler</span><span class="p">(</span><span class="n">FunctionalEventHandler</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+                <span class="p">.</span><span class="na">register</span><span class="p">(</span><span class="n">addon</span><span class="p">,</span> <span class="n">ConfigPackPreLoadEvent</span><span class="p">.</span><span class="na">class</span><span class="p">)</span>
+                <span class="p">.</span><span class="na">then</span><span class="p">(</span><span class="n">event</span> <span class="o">-&gt;</span> <span class="p">{</span>
+                    <span class="n">logger</span><span class="p">.</span><span class="na">info</span><span class="p">(</span><span class="s">"We're loading a config pack!"</span><span class="p">);</span>
+                <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
 </pre></div>
 </div>
 </section>
