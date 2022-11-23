@@ -41,6 +41,18 @@ A Terra pack designed to reimagine the End with new biomes, features, and terrai
 .. image:: /img/communitypacks/ReimagEND.png
    :width: 75%
 
+Hydraxia
+==========
+
+| **Author:** Jaddot
+| **Source:** https://github.com/JaddotWuzHere/Hydraxia
+| **Terra Version:** 6.2.x
+
+A Minecraft Terra generation pack that turns the entire world into a winter wonderland!
+
+.. image:: /img/communitypacks/hydraxia.png
+   :width: 75%
+
 Aeropelago
 ==========
 
