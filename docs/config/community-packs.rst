@@ -11,7 +11,7 @@ Overworld pack
 
 | **Authors:** Astrash, Sancires, Aureus
 | **Source:** https://github.com/PolyhedralDev/TerraOverworldConfig
-| **Terra Version:** 6.x
+| **Terra Version:** 6.2+.x
 
 Overworld config pack for Terra which provides many preset configurations and variables to play
 around with!
