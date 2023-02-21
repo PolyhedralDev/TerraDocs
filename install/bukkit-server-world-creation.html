@@ -326,8 +326,38 @@ outlined here, please refer to <a class="reference internal" href="worldmanager-
 <ol class="arabic simple" start="4">
 <li><p>Replace <code class="docutils literal notranslate"><span class="pre">LEVEL_NAME</span></code> with the server’s configured <code class="docutils literal notranslate"><span class="pre">level-name</span></code>. (This can be found in the <code class="docutils literal notranslate"><span class="pre">server.properties</span></code> file
 under the ‘<code class="docutils literal notranslate"><span class="pre">level-name</span></code>’ key. By default, <code class="docutils literal notranslate"><span class="pre">level-name</span></code> is set to <code class="docutils literal notranslate"><span class="pre">world</span></code>.)</p></li>
+</ol>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Here is an example using the default <code class="docutils literal notranslate"><span class="pre">world</span></code> <code class="docutils literal notranslate"><span class="pre">level-name</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">bukkit.yml</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">world</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:PACK_ID</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="5">
 <li><p>Replace <code class="docutils literal notranslate"><span class="pre">PACK_ID</span></code> with an installed config pack’s ID. The ID for the default pack that comes pre-installed with Terra
 is <code class="docutils literal notranslate"><span class="pre">OVERWORLD</span></code>, so if you have not installed any other config packs, replace <code class="docutils literal notranslate"><span class="pre">PACK_ID</span></code> with <code class="docutils literal notranslate"><span class="pre">OVERWORLD</span></code>.</p></li>
+</ol>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">Here is the example above, using the default <code class="docutils literal notranslate"><span class="pre">OVERWORLD</span></code> config pack:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">bukkit.yml</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">world</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:OVERWORLD</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="6">
 <li><p>Either delete the existing world folder (the name of this folder is covered above) in your server directory, or
 rename it to something else (for example <code class="docutils literal notranslate"><span class="pre">world_backup</span></code>).</p></li>
 <li><p>Boot your server back up.</p></li>
@@ -345,8 +375,8 @@ rename it to something else (for example <code class="docutils literal notransla
 <h2>Setting up Another World<a class="headerlink" href="#setting-up-another-world" title="Permalink to this headline">¶</a></h2>
 <p>If you have already done this process before and wish to set up another <strong>existing</strong> world (such as the Nether or End) with
 a new generator, you can simply add the world under the <code class="docutils literal notranslate"><span class="pre">worlds</span></code> key like so:</p>
-<div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">bukkit.yml</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">bukkit.yml</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">worlds</span><span class="p">:</span><span class="w"></span>
 <span class="w">   </span><span class="nt">existing_world_name</span><span class="p">:</span><span class="w"></span>
 <span class="w">     </span><span class="nt">generator</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra:EXAMPLE_PACK_1</span><span class="w"></span>
