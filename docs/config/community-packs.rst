@@ -53,6 +53,18 @@ A Minecraft Terra generation pack that turns the entire world into a winter wond
 .. image:: /img/communitypacks/hydraxia.png
    :width: 75%
 
+SkyLands
+==========
+
+| **Author:** Falcon
+| **Source:** https://github.com/Gray-Falcon/SkyLands
+| **Terra Version:** 6.2.x
+
+A Minecraft Terra pack that generates floating islands world!
+
+.. image:: /img/communitypacks/SkyLands.png
+   :width: 75%
+
 Aeropelago
 ==========
 
