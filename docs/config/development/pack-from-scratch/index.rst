@@ -342,6 +342,7 @@ After you have added ``biome-provider-single``, you can add the ``biomes`` param
       chunk-generator-noise-3d: 0.1.+
       config-noise-function: 0.1.+
       palette-block-shortcut: 0.1.+
+      config-biome: 0.1.+
       biome-provider-single: 0.1.+
 
     generator: NOISE_3D
