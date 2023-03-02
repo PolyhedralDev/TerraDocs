@@ -11,7 +11,7 @@ Overworld pack
 
 | **Authors:** Astrash, Sancires, Aureus
 | **Source:** https://github.com/PolyhedralDev/TerraOverworldConfig
-| **Terra Version:** 6.x
+| **Terra Version:** 6.2+.x
 
 Overworld config pack for Terra which provides many preset configurations and variables to play
 around with!
@@ -27,6 +27,30 @@ Tartarus
 A Minecraft Terra generation pack that adds a ton of new biomes to the Nether! 
 
 .. image:: /img/communitypacks/tartarus.png
+   :width: 75%
+
+ReimagEND
+==========
+
+| **Authors:** Aureus, RogueShade
+| **Source:** https://github.com/justaureus/ReimagEND
+| **Terra Version:** 6.2+.x
+
+A Terra pack designed to reimagine the End with new biomes, features, and terrain to explore.
+
+.. image:: /img/communitypacks/ReimagEND.png
+   :width: 75%
+
+Hydraxia
+==========
+
+| **Author:** Jaddot
+| **Source:** https://github.com/JaddotWuzHere/Hydraxia
+| **Terra Version:** 6.2.x
+
+A Minecraft Terra generation pack that turns the entire world into a winter wonderland!
+
+.. image:: /img/communitypacks/hydraxia.png
    :width: 75%
 
 Aeropelago

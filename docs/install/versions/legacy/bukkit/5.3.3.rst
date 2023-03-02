@@ -6,6 +6,6 @@ Bukkit Legacy 5.3.3
 
 .. include:: ../../unmaintained.rst
 
-:bdg-primary:`Download` - https://www.spigotmc.org/resources/terra.85151/download?version=399361
+:bdg-primary:`Download` - https://modrinth.com/mod/terra/version/5.3.3-BETA-bukkit
 
 .. include:: ../../5.x-wiki.rst
