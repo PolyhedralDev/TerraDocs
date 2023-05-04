@@ -1,0 +1,14 @@
+digraph {
+    node [shape=record]
+    rankdir=LR
+
+    input [label="2D Coordinates"]
+    sampler [label="1) Retrieve Color"]
+    converter [label="2) Convert Color"]
+    output [label="Output (e.g biome, height value)"]
+
+    input -> sampler
+    sampler -> converter
+    converter -> output
+}
+

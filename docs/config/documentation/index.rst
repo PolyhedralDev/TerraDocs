@@ -24,6 +24,7 @@ These configs define objects contained within the parameters of other objects.
     :maxdepth: 1
 
     sampler/index
+    image/index
 
 .. _config-documentation-format:
 
