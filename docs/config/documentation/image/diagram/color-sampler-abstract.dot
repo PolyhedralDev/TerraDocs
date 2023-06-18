@@ -1,0 +1,12 @@
+digraph {
+    node [shape=record]
+    rankdir=LR
+
+    input [label="2D Coordinates"]
+    sampler [label="Color Sampler"]
+    output [label="Color"]
+
+    input -> sampler
+    sampler -> output
+}
+
