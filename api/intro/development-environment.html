@@ -228,12 +228,20 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../config/documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/sampler/index.html">Sampler Configuration</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../config/documentation/image/index.html">Image Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/image/color-sampler.html">Color Sampler Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/image/image.html">Image Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/image/noise-samplers.html">Image Noise Sampler Configurations</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/image/image-biome-provider-v2.html">Image Biome Provider Configuration</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/image/pipeline-image-source.html">Pipeline Image Source Configuration</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Introduction to the Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+</ul>
+</li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Introduction to the Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Setting up a Development Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="creating-simple-addon.html">Creating a Simple Addon</a></li>
@@ -242,7 +250,7 @@
 <li class="toctree-l3"><a class="reference internal" href="registering-config-type.html">Registering a Config Type</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../concepts/logging.html">Logging With SLF4J</a></li>
@@ -325,8 +333,8 @@ use your build system.</p>
 <p>Terra publishes artifacts to the <a class="reference external" href="https://repo.codemc.io/">CodeMC Maven Repository</a>. Configure your build system
 to fetch from it:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="3bdd7001-e2ae-4440-aa1a-ab37145c0e72" name="2f719d10-7e56-419a-af0a-a5bdc698e730" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_groovy" for="3bdd7001-e2ae-4440-aa1a-ab37145c0e72">
+<input checked="checked" id="91d013f5-5629-4602-927f-33cfddc944ed" name="23dfe3fc-91de-4ca8-9aba-71b114c56a3b" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_groovy" for="91d013f5-5629-4602-927f-33cfddc944ed">
 Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle</span>
 
@@ -339,8 +347,8 @@ Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="949977ca-2c81-4297-9c34-0b72325ea5ab" name="2f719d10-7e56-419a-af0a-a5bdc698e730" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="949977ca-2c81-4297-9c34-0b72325ea5ab">
+<input id="5fc8fb87-1b2e-4a27-801e-c49a8504f69e" name="23dfe3fc-91de-4ca8-9aba-71b114c56a3b" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="5fc8fb87-1b2e-4a27-801e-c49a8504f69e">
 Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle.kts</span>
 
@@ -353,8 +361,8 @@ Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="14911f8c-386c-4298-9fb1-271cbdf92937" name="2f719d10-7e56-419a-af0a-a5bdc698e730" type="radio"/>
-<label class="sd-tab-label" data-sync-id="maven" for="14911f8c-386c-4298-9fb1-271cbdf92937">
+<input id="9d6f9614-80c7-41a9-bd49-24b6f714d3b2" name="23dfe3fc-91de-4ca8-9aba-71b114c56a3b" type="radio"/>
+<label class="sd-tab-label" data-sync-id="maven" for="9d6f9614-80c7-41a9-bd49-24b6f714d3b2">
 Maven</label><div class="sd-tab-content docutils">
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- pom.xml --&gt;</span>
 
@@ -376,8 +384,8 @@ Maven</label><div class="sd-tab-content docutils">
 <p>Now that you’ve configured the repository to acquire the Terra artifact from, you must specify dependency on the Terra
 API, and the Manifest Addon Loader:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="26cf6a02-638d-4223-9053-5f3519520c84" name="32696396-1614-405e-8fa0-998d83995c74" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_groovy" for="26cf6a02-638d-4223-9053-5f3519520c84">
+<input checked="checked" id="49f7634a-8a06-43c4-b36f-89c9e2529ac8" name="0d9ab2c4-4a6c-4252-925d-c27b6ff6e3e6" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_groovy" for="49f7634a-8a06-43c4-b36f-89c9e2529ac8">
 Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle</span>
 
@@ -389,8 +397,8 @@ Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="2104e9f3-3430-49ac-b911-b7382af6aa1d" name="32696396-1614-405e-8fa0-998d83995c74" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="2104e9f3-3430-49ac-b911-b7382af6aa1d">
+<input id="a3f512d3-7869-4d9e-a058-6b56cd86df11" name="0d9ab2c4-4a6c-4252-925d-c27b6ff6e3e6" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="a3f512d3-7869-4d9e-a058-6b56cd86df11">
 Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="c1">// build.gradle.kts</span>
 
@@ -402,8 +410,8 @@ Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="de56f3d0-1561-4eb9-9d30-920cfa365b6c" name="32696396-1614-405e-8fa0-998d83995c74" type="radio"/>
-<label class="sd-tab-label" data-sync-id="maven" for="de56f3d0-1561-4eb9-9d30-920cfa365b6c">
+<input id="b15ab0f7-72f6-4747-9d1a-9906f3e23ada" name="0d9ab2c4-4a6c-4252-925d-c27b6ff6e3e6" type="radio"/>
+<label class="sd-tab-label" data-sync-id="maven" for="b15ab0f7-72f6-4747-9d1a-9906f3e23ada">
 Maven</label><div class="sd-tab-content docutils">
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cm">&lt;!-- pom.xml --&gt;</span>
 
@@ -434,13 +442,13 @@ Maven</label><div class="sd-tab-content docutils">
 <section id="refresh-the-project">
 <h3>Refresh the Project<a class="headerlink" href="#refresh-the-project" title="Permalink to this headline">¶</a></h3>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="20463b2a-f725-4197-bdc2-0661adaf146d" name="f56df5f7-fb04-46bd-8492-53c9412e0d88" type="radio"/>
-<label class="sd-tab-label" for="20463b2a-f725-4197-bdc2-0661adaf146d">
+<input checked="checked" id="ee138a2d-9980-4fcb-856f-f0d2d76a3de4" name="f660e73f-8770-416e-9145-5dd9e594f187" type="radio"/>
+<label class="sd-tab-label" for="ee138a2d-9980-4fcb-856f-f0d2d76a3de4">
 IntelliJ</label><div class="sd-tab-content docutils">
 <p><code class="docutils literal notranslate"><span class="pre">Ctrl+Shift+O</span></code></p>
 </div>
-<input id="fcf377bb-d844-4469-b515-a436027c5f62" name="f56df5f7-fb04-46bd-8492-53c9412e0d88" type="radio"/>
-<label class="sd-tab-label" for="fcf377bb-d844-4469-b515-a436027c5f62">
+<input id="2159ad76-d45e-4254-9a8b-12b635a8d45e" name="f660e73f-8770-416e-9145-5dd9e594f187" type="radio"/>
+<label class="sd-tab-label" for="2159ad76-d45e-4254-9a8b-12b635a8d45e">
 Eclipse</label><div class="sd-tab-content docutils">
 <ol class="arabic simple">
 <li><p>Select the project root in the Project Explorer</p></li>
@@ -454,8 +462,8 @@ Eclipse</label><div class="sd-tab-content docutils">
 <section id="full-example-build-file">
 <h2>Full Example Build File<a class="headerlink" href="#full-example-build-file" title="Permalink to this headline">¶</a></h2>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="176c4670-fa90-4082-bf7a-6028a4532e03" name="fd048d09-6e81-4861-a3ee-52456ec98a4b" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_groovy" for="176c4670-fa90-4082-bf7a-6028a4532e03">
+<input checked="checked" id="34e19557-5ac1-4363-9988-2a1210b7d44a" name="ec77f2f2-adc3-4afb-9bee-a36d0e9c83fe" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_groovy" for="34e19557-5ac1-4363-9988-2a1210b7d44a">
 Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-groovy notranslate"><div class="highlight"><pre><span></span><span class="n">plugins</span> <span class="o">{</span>
     <span class="n">id</span> <span class="s1">'java'</span>
@@ -485,8 +493,8 @@ Gradle (Groovy DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="0ef38fd1-89f0-4946-b44e-979812b2cee3" name="fd048d09-6e81-4861-a3ee-52456ec98a4b" type="radio"/>
-<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="0ef38fd1-89f0-4946-b44e-979812b2cee3">
+<input id="eb53af94-0e8e-47a1-881b-a53cdb8569b2" name="ec77f2f2-adc3-4afb-9bee-a36d0e9c83fe" type="radio"/>
+<label class="sd-tab-label" data-sync-id="gradle_kotlin" for="eb53af94-0e8e-47a1-881b-a53cdb8569b2">
 Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 <div class="highlight-kotlin notranslate"><div class="highlight"><pre><span></span><span class="n">plugins</span> <span class="p">{</span>
     <span class="n">java</span>
@@ -516,8 +524,8 @@ Gradle (Kotlin DSL)</label><div class="sd-tab-content docutils">
 </pre></div>
 </div>
 </div>
-<input id="3c1a6144-0910-4e26-8391-448778b8fdbf" name="fd048d09-6e81-4861-a3ee-52456ec98a4b" type="radio"/>
-<label class="sd-tab-label" data-sync-id="maven" for="3c1a6144-0910-4e26-8391-448778b8fdbf">
+<input id="89cf3a0c-1276-4f9f-91ec-9600e5dc78f7" name="ec77f2f2-adc3-4afb-9bee-a36d0e9c83fe" type="radio"/>
+<label class="sd-tab-label" data-sync-id="maven" for="89cf3a0c-1276-4f9f-91ec-9600e5dc78f7">
 Maven</label><div class="sd-tab-content docutils">
 <div class="highlight-xml notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
 <span class="nt">&lt;project</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
