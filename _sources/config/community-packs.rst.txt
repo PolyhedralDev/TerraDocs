@@ -60,7 +60,7 @@ SkyLands
 | **Source:** https://github.com/Gray-Falcon/SkyLands
 | **Terra Version:** 6.2.x
 
-A Minecraft Terra pack that generates floating islands world!
+Pack that generates floating islands world with new biomes and structures!
 
 .. image:: /img/communitypacks/SkyLands.png
    :width: 75%
