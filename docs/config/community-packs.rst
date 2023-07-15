@@ -82,3 +82,16 @@ VoidWorld
 | **Terra Version:** 6.x
 
 A simple Minecraft Void World config pack for the Terra world generation platform.
+
+Substratum
+==========
+
+| **Authors:** RogueShade
+| **Source:** https://github.com/DeathShadez/Substratum
+| **Terra Version:** 6.2+.x
+
+A Terra pack that creates a completely underground world with several unique caves to explore within.
+
+.. image:: /img/communitypacks/substratum.png
+   :width: 75%
+   
