@@ -31,4 +31,4 @@ If you run into issues during the world set up process, be sure to check you hav
 Check for any errors in your client logs and try to interpret what the issue might be.
 
 If you are unable to set up a world successfully, and have attempted to fix any issues yourself,
-please feel free to shoot us a message on our Discord server and provide any relevant information and most importantly the before mentioned logs!
+please feel free to :doc:`ask for help </contact>` and provide any relevant information and most importantly the before mentioned logs!

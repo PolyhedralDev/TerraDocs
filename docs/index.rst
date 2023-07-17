@@ -44,6 +44,7 @@ Contents
     :maxdepth: 3
     :titlesonly:
 
+    contact
     install/index
     config/index
     api/index
