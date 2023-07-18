@@ -366,7 +366,7 @@ If for whatever reason your pack does not load, an error message will show up in
 has failed to load, please read through any of these errors and try to interpret what you may have done wrong,
 and follow through the previous steps again carefully.
 
-If you still are unable to load the pack, feel free to provide any relevant errors in our `Discord server <https://discord.com/invite/PXUEbbF>`_.
+If you still are unable to load the pack, feel free to :doc:`contact us </contact>` with any relevant errors.
 
 Conclusion
 ==========
