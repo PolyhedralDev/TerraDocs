@@ -807,4 +807,4 @@ Now that you've got an idea of `what noise is <#what-is-noise>`_, `how it works 
 `configuring it <#configuring-samplers>`_, you should now be equipped with the necessary  knowledge to start configuring
 your own fancy samplers for use in your own customized world generation! For more information on the available
 samplers in Terra, please refer to the :doc:`/config/documentation/sampler/index` page. If you have any
-further questions, feel free to ask us in our `Discord <https://discord.gg/PXUEbbF>`_!
+further questions, feel free to :doc:`ask for help </contact>`!

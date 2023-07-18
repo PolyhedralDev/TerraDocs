@@ -45,5 +45,6 @@ Contents
     :titlesonly:
 
     install/index
+    contact
     config/index
     api/index
