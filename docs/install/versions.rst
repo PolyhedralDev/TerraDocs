@@ -36,17 +36,25 @@ All releases of Fabric Terra can be found on Modrinth `here <https://modrinth.co
         - Backwards Compatibility [6]_
 
     *
+        - **1.20**
+        - 6.3.1 :bdg-warning:`Beta`
+        - :bdg-success:`Yes`
+        - :bdg-success:`Yes`
+        - `Modrinth <https://modrinth.com/plugin/terra/version/6.3.1-BETA-fabric/>`__
+        - N/A
+
+    *
         - **1.19**
-        - 6.2.1 :bdg-warning:`Beta`
+        - 6.3.0 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
-        - :bdg-success:`Yes`
-        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.1-BETA-fabric/>`__
+        - :bdg-danger:`No`
+        - `Modrinth <https://modrinth.com/plugin/terra/version/6.3.0-BETA-fabric/>`__
         - N/A
 
     *
         - **1.18**
         - 6.1.1 :bdg-warning:`Beta`
-        - :bdg-success:`Yes`
+        - :bdg-danger:`No`
         - :bdg-danger:`No`
         - `Modrinth <https://modrinth.com/mod/terra/version/6.1.1-BETA/>`__
         - N/A
@@ -88,17 +96,25 @@ All releases of Bukkit Terra can be found on Modrinth `here <https://modrinth.co
         - Backwards Compatibility [6]_
 
     *
+        - **1.20**
+        - 6.3.1 :bdg-warning:`Beta`
+        - :bdg-success:`Yes`
+        - :bdg-success:`Yes`
+        - `Modrinth <https://modrinth.com/mod/terra/version/6.3.1-BETA-bukkit>`__
+        - N/A
+
+    *
         - **1.19**
-        - 6.2.1 :bdg-warning:`Beta`
+        - 6.3.0 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
-        - :bdg-success:`Yes`
-        - `Modrinth <https://modrinth.com/mod/terra/version/6.2.1-BETA-bukkit>`__
+        - :bdg-danger:`No`
+        - `Modrinth <https://modrinth.com/mod/terra/version/6.3.0-BETA-bukkit>`__
         - N/A
 
     *
         - **1.18**
         - 6.1.2 :bdg-warning:`Beta`
-        - :bdg-success:`Yes`
+        - :bdg-danger:`No`
         - :bdg-danger:`No`
         - `SpigotMC <https://www.spigotmc.org/resources/terra.85151/download?version=456104/>`__
         - N/A
@@ -165,7 +181,7 @@ All releases of Forge Terra can be found on Modrinth `here <https://modrinth.com
         - **1.19**
         - 6.2.1 :bdg-danger:`Alpha`
         - :bdg-success:`Yes`
-        - :bdg-success:`Yes`
+        - :bdg-danger:`No`
         - `Modrinth <https://modrinth.com/mod/terra/version/6.2.1-BETA-forge>`__
         - N/A
 
@@ -199,7 +215,7 @@ All releases of Quilt Terra can be found on Modrinth `here <https://modrinth.com
         - **1.19**
         - 6.2.1 :bdg-danger:`Alpha`
         - :bdg-success:`Yes`
-        - :bdg-success:`Yes`
+        - :bdg-danger:`No`
         - `Modrinth <https://modrinth.com/mod/terra/version/6.2.1-BETA-quilt>`__
         - N/A
 
