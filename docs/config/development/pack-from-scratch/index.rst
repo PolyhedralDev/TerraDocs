@@ -146,7 +146,7 @@ Setting up a New Pack
         version: 0.1.0
 
         addons:
-          language-yaml: 0.1.+
+          language-yaml: 1.+
 
     Addons defined under the ``addons`` parameter are specified as :ref:`key-value pairs <key-value-pair>` where the key
     specifies the addon name, and the value specifies the required addon version(s).
@@ -173,8 +173,8 @@ Setting up a New Pack
         :emphasize-lines: 3
 
         addons:
-          language-yaml: 0.1.+
-          chunk-generator-noise-3d: 0.1.+
+          language-yaml: 1.+
+          chunk-generator-noise-3d: 1.+
 
     .. note::
 
@@ -192,8 +192,8 @@ Setting up a New Pack
         version: 0.1.0
 
         addons:
-          language-yaml: 0.1.+
-          chunk-generator-noise-3d: 0.1.+
+          language-yaml: 1.+
+          chunk-generator-noise-3d: 1.+
 
         generator: NOISE_3D
 
@@ -205,17 +205,17 @@ Setting up a New Pack
         :emphasize-lines: 4,5
 
         addons:
-          language-yaml: 0.1.+
-          chunk-generator-noise-3d: 0.1.+
-          config-noise-function: 0.1.+
-          palette-block-shortcut: 0.1.+
+          language-yaml: 1.+
+          chunk-generator-noise-3d: 1.+
+          config-noise-function: 1.+
+          palette-block-shortcut: 1.+
 
 6. Create your first biome
 --------------------------
 
 .. card::
 
-    1. Add the ``config-biome`` addon as a dependency, using versions ``0.1.+``. This will allow us to create new
+    1. Add the ``config-biome`` addon as a dependency, using versions ``1.+``. This will allow us to create new
     biomes via the ``BIOME`` :ref:`config type <config-types>` which is provided by the addon. 
 
     2. :ref:`Create a new config file <create-config-file>`, this can be named anything but for this guide we will
@@ -324,7 +324,7 @@ Biome providers tell Terra how to place biomes in a world.
 
 We can define a provider under the ``biomes`` parameter, but first we will need to add a provider to our pack for use.
 For this guide, we will be using the ``SINGLE`` biome provider, which will require adding the ``biome-provider-single`` core addon
-(versions ``0.1.+``).
+(versions ``1.+``).
 
 After you have added ``biome-provider-single``, you can add the ``biomes`` parameter to your pack manifest like so:
 
@@ -338,12 +338,12 @@ After you have added ``biome-provider-single``, you can add the ``biomes`` param
     version: 0.1.0
 
     addons:
-      language-yaml: 0.1.+
-      chunk-generator-noise-3d: 0.1.+
-      config-noise-function: 0.1.+
-      palette-block-shortcut: 0.1.+
-      config-biome: 0.1.+
-      biome-provider-single: 0.1.+
+      language-yaml: 1.+
+      chunk-generator-noise-3d: 1.+
+      config-noise-function: 1.+
+      palette-block-shortcut: 1.+
+      config-biome: 1.+
+      biome-provider-single: 1.+
 
     generator: NOISE_3D
 
