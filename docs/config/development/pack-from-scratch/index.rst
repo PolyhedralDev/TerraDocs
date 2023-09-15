@@ -16,10 +16,6 @@ If you're stuck or need an example, you can find reference config packs for this
     own from scratch, please refer to the :doc:`/config/development/modifying-existing-pack`
     guide instead.
 
-.. attention::
-
-    This guide is written for Terra version 6.0.+ and will not be applicable to prior versions!
-
 Setting up a New Pack
 =====================
 
