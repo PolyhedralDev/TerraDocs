@@ -620,6 +620,7 @@ The function the sampler will use to calculate the noise.</p>
 <p>Types:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">NoiseLookup</span></code> - Passes <code class="docutils literal notranslate"><span class="pre">c</span></code> into a sampler, and returns the output.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">LocalNoiseLookup</span></code> - Passes <code class="docutils literal notranslate"><span class="pre">s</span> <span class="pre">-</span> <span class="pre">c</span></code> into a sampler, and returns the output.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">CellValue</span></code> - Returns a random value based on <code class="docutils literal notranslate"><span class="pre">c</span></code> (Equivalent to <code class="docutils literal notranslate"><span class="pre">NoiseLookup</span></code> with a <a class="reference internal" href="#white-noise">WHITE_NOISE</a> sampler).</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Angle</span></code> - Returns the angle from <code class="docutils literal notranslate"><span class="pre">s</span></code> to <code class="docutils literal notranslate"><span class="pre">c</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Distance</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d1</span></code>.</p></li>
