@@ -94,4 +94,16 @@ A Terra pack that creates a completely underground world with several unique cav
 
 .. image:: /img/communitypacks/substratum.png
    :width: 75%
+
+Origen
+==========
+
+| **Authors:** Rearth
+| **Source:** https://github.com/Rearth/Origen
+| **Terra Version:** 6.4+.x
+
+Adds new and more exotic biomes and generation to the overworld. Based on the default overworld pack, with mostly new biomes.
+
+.. image:: /img/communitypacks/origen.png
+   :width: 75%
    
