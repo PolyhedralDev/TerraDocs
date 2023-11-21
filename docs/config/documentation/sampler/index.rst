@@ -303,6 +303,7 @@ Definitions:
 Types:
 
 - ``NoiseLookup`` - Passes ``c`` into a sampler, and returns the output.
+- ``LocalNoiseLookup`` - Passes ``s - c`` into a sampler, and returns the output.
 - ``CellValue`` - Returns a random value based on ``c`` (Equivalent to ``NoiseLookup`` with a `WHITE_NOISE`_ sampler).
 - ``Angle`` - Returns the angle from ``s`` to ``c``.
 - ``Distance`` - Returns ``d1``.
