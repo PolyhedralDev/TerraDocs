@@ -29,7 +29,6 @@ Object Configs
     :glob:
 
     objects/*
-    image/index
 
 .. _config-documentation-format:
 

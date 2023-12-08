@@ -68,6 +68,12 @@ base:
     BiomeProvider:
       type: TEMPLATED
 
+    Biome:
+      type: MULTI_TYPE
+      description: A biome ID
+      types:
+        string:
+
 config-noise-function:
   objects:
     DimensionApplicableSampler:
@@ -833,17 +839,62 @@ config-noise-function:
 
             default: "{}"
 
+biome-provider-pipeline-v2:
+  objects:
+    Source:
+      type: TEMPLATED
+      description: A pipeline source
+    PipelineBiome:
+      type: MULTI_TYPE
+      description: A pipeline biome
+
+pipeline-image:
+  templates:
+    Source:
+      IMAGE:
+        params:
+          color-sampler:
+            type: ColorSampler
+          color-conversion:
+            type: ColorConverter<PipelineBiome>
+
+biome-provider-image-v2:
+  templates:
+    BiomeProvider:
+      IMAGE:
+        params:
+          color-sampler:
+            type: ColorSampler
+          color-conversion:
+            type: ColorConverter<Biome>
+          resolution:
+            type: Integer
+            default: "1"
+
 library-image:
   objects:
     Image:
       type: TEMPLATED
-      description: An image
+      description: |
+        This page contains the different ways of defining how an image should
+        be loaded for use in other configurations requiring the ``Image`` type.
+
     ColorSampler:
       type: TEMPLATED
-      description: A color sampler
+      description: |
+        A color sampler is a config defined function that assigns a color for every XZ coordinate pair.
+        Color samplers are typically used to distribute things across the entire world by utilizing color data,
+        for example using a heightmap to shape terrain, or an image to draw where biomes should go.
+
+        Color samplers differ from :doc:`Image` s in that they can provide colors for any XZ coordinate, whereas
+        ``Image`` s only work with a set size. 
+
     ColorString:
       type: MULTI_TYPE
       description: A string representing a color
+
+    ColorConverter:
+      type: TEMPLATED
 
   templates:
     ColorSampler:
@@ -863,18 +914,27 @@ library-image:
             type: ColorSampler
 
       COLOR:
+        description: |
+          Provides the same color for any input.
         params:
           color:
             type: ColorString
+            summary: The color to output.
 
       SINGLE_IMAGE:
         extends: ImageColorSamplerTemplate
+        description: |
+          Outputs the pixels of an ``Image``, colors for coordinates outside the bounds of the image
+          are provided by a 'fallback' color sampler, which typically will be the `COLOR`_ type.
         params:
           outside-sampler:
             type: ColorSampler
+            summary: The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
 
       TILED_IMAGE:
         extends: ImageColorSamplerTemplate
+        description: |
+          Outputs a repeating grid of pixels sourced from the provided ``Image`` .
 
       ROTATE:
         extends: MutateColorSamplerTemplate
@@ -891,10 +951,13 @@ library-image:
             type: Integer
     Image:
       BITMAP:
-        description: A bitmap
+        description: |
+          Loads a singular image. For very large images that you may have issues loading, 
+          try the `STITCHED_BITMAP`_ type instead.
         params:
           path-format:
             type: String
+            summary: "Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\\``)"
           rows:
             type: Integer
           columns:
@@ -904,9 +967,49 @@ library-image:
             default: "false"
 
       STITCHED_BITMAP:
+        description: |
+          An alternate way of loading ``Image`` s via a set of smaller images
+          arranged in a grid that are 'stitched' together during generation.
+          This type is primarily used when singular images are too large to be
+          loaded into memory (a limit imposed Java's ``BufferedImage`` class implementation).
+
         params:
           path:
             type: String
+            summary: "The format string for the path to the images relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\\``)"
+            description: |
+              The file name section of the path format must contain the text ``{row}`` and ``{column}``
+              indicating the sections of the file names that indicate which rows and columns the files belong to.
+
+              Given the following example image files in the pack directory to be stitched into one image:
+
+              .. code-block::
+
+                  my-config-pack/
+                  ├── pack.yml
+                  ├── images
+                  ┆   └── stitched-image/
+                          ├ my-image-0-0.png
+                          ├ my-image-0-1.png
+                          ├ my-image-1-0.png
+                          └ my-image-1-1.png
+
+              The ``path-format`` to stitch together the images would be: 
+
+              .. code-block:: yaml
+
+                  path-format: images/stitched-image/my-image-{row}-{column}.png
+          rows:
+            type: Integer
+            summary: How many rows of images to stitch together.
+          columns:
+            type: Integer
+            summary: How many columns of images to stitch together.
+          zero-indexed:
+            type: Boolean
+            description: |
+              Should be set to true if the image row and column indexes begin at 0.
+            default: "false"
 
     NoiseSampler:
 
