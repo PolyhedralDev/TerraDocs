@@ -3,41 +3,39 @@ Config Development Introduction
 ===============================
 
 This section goes over some general information, and the basic setup
-preceding actual config pack development, including a basic overview
-of how Terra works and the process of setting up an appropriate
-development workspace.
+preceding actual config pack development.
 
-How Terra Works as a Platform
-=============================
+.. How Terra Works as a Platform
+.. =============================
 
-Terra is composed of several parts that facilitate world generation:
+.. Terra is composed of several parts that facilitate world generation:
 
-.. card::
+.. .. card::
 
-    **A Voxel World Generation API**
-        The base framework for world generation.
+..     **A Voxel World Generation API**
+..         The base framework for world generation.
 
-    **An Addon Loader**
-        Allows for loading addons, which integrate the API to provide functionality.
+..     **An Addon Loader**
+..         Allows for loading addons, which integrate the API to provide functionality.
 
-    **Core Addons**
-        A suite of addons that provides standard functionality to Terra.
+..     **Core Addons**
+..         A suite of addons that provides standard functionality to Terra.
 
-    **Configuration Packs**
-        A collection of configuration files that define how worlds generate, utilizing
-        the functionality provided by addons.
+..     **Configuration Packs**
+..         A collection of configuration files that define how worlds generate, utilizing
+..         the functionality provided by addons.
 
-    **Platform Implementations**
-        The layer between the platform (such as Bukkit or Fabric) and the API.
+..     **Platform Implementations**
+..         The layer between the platform (such as Bukkit or Fabric) and the API.
 
-        Platform implementations typically package the API, addon loader, core
-        addons, and a default configuration pack together to work as one cohesive
-        unit.
+..         Platform implementations typically package the API, addon loader, core
+..         addons, and a default configuration pack together to work as one cohesive
+..         unit.
 
-As a config developer, you will primarily be utilizing addons via Terra's
-configuration system to define how worlds generate. It is still a good idea to
-have an understanding of how these components interact, however is not strictly
-necessary.
+.. As a config developer, you will primarily be utilizing addons via Terra's
+.. configuration system to define how worlds generate. It is still a good idea to
+.. have an understanding of how these components interact, however is not strictly
+.. necessary.
 
 1. Setting Up Your Test Environment
 ===================================
