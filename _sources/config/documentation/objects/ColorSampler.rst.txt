@@ -1,0 +1,97 @@
+============
+ColorSampler
+============
+
+A color sampler is a config defined function that assigns a color for every XZ coordinate pair.
+Color samplers are typically used to distribute things across the entire world by utilizing color data,
+for example using a heightmap to shape terrain, or an image to draw where biomes should go.
+
+Color samplers differ from :doc:`Image` s in that they can provide colors for any XZ coordinate, whereas
+``Image`` s only work with a set size. 
+
+
+Types
+=====
+
+Different types of ``ColorSampler`` provide different behaviours and may have additional parameters for configuring that behavior.
+
+The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+
+A list of available types for ``ColorSampler`` are listed below:
+
+---------
+
+COLOR
+-----
+
+:superscript:`Added by the 'library-image' addon`
+
+Provides the same color for any input.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`color` :doc:`ColorString` - The color to output.
+
+---------
+
+SINGLE_IMAGE
+------------
+
+:superscript:`Added by the 'library-image' addon`
+
+Outputs the pixels of an ``Image``, colors for coordinates outside the bounds of the image
+are provided by a 'fallback' color sampler, which typically will be the `COLOR`_ type.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`image` :doc:`Image` - The image to be sampled
+
+:bdg-primary:`align` Alignment 
+
+:bdg-primary:`outside-sampler` :doc:`ColorSampler` - The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
+
+---------
+
+TILED_IMAGE
+-----------
+
+:superscript:`Added by the 'library-image' addon`
+
+Outputs a repeating grid of pixels sourced from the provided ``Image`` .
+
+
+`PARAMETERS:`
+
+:bdg-primary:`image` :doc:`Image` - The image to be sampled
+
+:bdg-primary:`align` Alignment 
+
+---------
+
+ROTATE
+------
+
+:superscript:`Added by the 'library-image' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`color-sampler` :doc:`ColorSampler` 
+
+:bdg-primary:`angle` :doc:`Float` 
+
+---------
+
+TRANSLATE
+---------
+
+:superscript:`Added by the 'library-image' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`color-sampler` :doc:`ColorSampler` 
+
+:bdg-primary:`x` :doc:`Integer` 
+
+:bdg-primary:`z` :doc:`Integer` 

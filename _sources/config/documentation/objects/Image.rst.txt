@@ -1,0 +1,89 @@
+=====
+Image
+=====
+
+This page contains the different ways of defining how an image should
+be loaded for use in other configurations requiring the ``Image`` type.
+
+
+Types
+=====
+
+Different types of ``Image`` provide different behaviours and may have additional parameters for configuring that behavior.
+
+The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+
+A list of available types for ``Image`` are listed below:
+
+---------
+
+BITMAP
+------
+
+:superscript:`Added by the 'library-image' addon`
+
+Loads a singular image. For very large images that you may have issues loading, 
+try the `STITCHED_BITMAP`_ type instead.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`path-format` :doc:`String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+
+:bdg-primary:`rows` :doc:`Integer` 
+
+:bdg-primary:`columns` :doc:`Integer` 
+
+:bdg-success:`zero-indexed` :doc:`Boolean` 
+
+Default: ``false``
+
+---------
+
+STITCHED_BITMAP
+---------------
+
+:superscript:`Added by the 'library-image' addon`
+
+An alternate way of loading ``Image`` s via a set of smaller images
+arranged in a grid that are 'stitched' together during generation.
+This type is primarily used when singular images are too large to be
+loaded into memory (a limit imposed Java's ``BufferedImage`` class implementation).
+
+
+`PARAMETERS:`
+
+:bdg-primary:`path` :doc:`String` - The format string for the path to the images relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+
+The file name section of the path format must contain the text ``{row}`` and ``{column}``
+indicating the sections of the file names that indicate which rows and columns the files belong to.
+
+Given the following example image files in the pack directory to be stitched into one image:
+
+.. code-block::
+
+    my-config-pack/
+    ├── pack.yml
+    ├── images
+    ┆   └── stitched-image/
+            ├ my-image-0-0.png
+            ├ my-image-0-1.png
+            ├ my-image-1-0.png
+            └ my-image-1-1.png
+
+The ``path-format`` to stitch together the images would be: 
+
+.. code-block:: yaml
+
+    path-format: images/stitched-image/my-image-{row}-{column}.png
+
+
+:bdg-primary:`rows` :doc:`Integer` - How many rows of images to stitch together.
+
+:bdg-primary:`columns` :doc:`Integer` - How many columns of images to stitch together.
+
+:bdg-success:`zero-indexed` :doc:`Boolean` 
+
+Default: ``false``
+
+Should be set to true if the image row and column indexes begin at 0.

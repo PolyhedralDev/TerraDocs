@@ -35,7 +35,7 @@ Setting up a New Pack
 
 .. card::
 
-    To make a **pack manifest**, :ref:`create a new config file <create-config-file>` within 
+    :ref:`Create a new config file <create-config-file>` within 
     your pack directory with the file name ``pack.yml``.
     
     Pack manifests define pack-wide information that is required for it to load correctly
@@ -129,8 +129,9 @@ Setting up a New Pack
     :doc:`Config Files </config/development/config-files>` page. To do so, we will need to include an
     addon in our pack manifest that has the functionality to parse config files.
 
-    In this guide we will be using YAML for our config files, as support for YAML is included by default
-    via the ``language-yaml`` core addon. We can include this via the pack manifest ``addons`` parameter like so:
+    In this guide we will be using YAML for our config files provided by the ``language-yaml`` addon.
+    YAML is the standard language used for writing Terra config files.
+    We can include this via the pack manifest ``addons`` parameter like so:
 
     .. code-block:: yaml
         :caption: pack.yml
@@ -146,6 +147,9 @@ Setting up a New Pack
 
     Addons defined under the ``addons`` parameter are specified as :ref:`key-value pairs <key-value-pair>` where the key
     specifies the addon name, and the value specifies the required addon version(s).
+
+    The string ``1.+`` means that the pack can use any version of the addon where the major version (the first number)
+    is 1, and the minor version (second number) is 0 or above.
 
     .. note::
 
@@ -327,7 +331,7 @@ After you have added ``biome-provider-single``, you can add the ``biomes`` param
 .. code-block:: yaml
     :caption: pack.yml
     :linenos:
-    :emphasize-lines: 14-16
+    :emphasize-lines: 15-17
 
     id: YOUR_PACK_ID
 

@@ -1,0 +1,17 @@
+============
+MathFunction
+============
+
+A math function
+
+`PARAMETERS:`
+
+:bdg-primary:`expression` :doc:`Expression` 
+
+:bdg-success:`arguments` :doc:`List`\<:doc:`String`\> 
+
+Default: ``[]``
+
+:bdg-success:`functions` :doc:`Map`\<:doc:`String`\, :doc:`MathFunction`\> 
+
+Default: ``{}``

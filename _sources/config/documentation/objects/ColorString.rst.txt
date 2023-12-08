@@ -1,0 +1,5 @@
+===========
+ColorString
+===========
+
+A string representing a color

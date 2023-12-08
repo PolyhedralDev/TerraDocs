@@ -1,0 +1,1195 @@
+============
+NoiseSampler
+============
+
+.. seealso::
+
+    :doc:`/config/development/samplers/index`
+
+    :ref:`Config Documentation Format <config-documentation-format>` :octicon:`chevron-right`
+
+A sampler is a config defined function that maps coordinates and the world seed to a set
+of output values.
+
+A 'sample' is defined as a single calculation provided by a sampler, and the result of
+that calculation is regarded as the 'output value'. A collective set of output values is
+regarded as 'noise'.
+
+The output values determine some kind of behaviour for each block or column. This behaviour
+is dependent on the context of the sampler definition. 
+
+
+Types
+=====
+
+Different types of ``NoiseSampler`` provide different behaviours and may have additional parameters for configuring that behavior.
+
+The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+
+A list of available types for ``NoiseSampler`` are listed below:
+
+---------
+
+WHITE_NOISE
+-----------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Produces `White noise`_.
+
+.. image:: /img/concepts/noise/whitenoise64x64.png
+
+.. _White noise: https://en.wikipedia.org/wiki/White_noise
+
+
+`PARAMETERS:`
+
+:bdg-success:`frequency` :doc:`Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`salt` :doc:`Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
+
+---------
+
+POSITIVE_WHITE_NOISE
+--------------------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Identical to `WHITE_NOISE`_, but redistributed to only produce positive
+values for convenience.
+
+
+`PARAMETERS:`
+
+:bdg-success:`frequency` :doc:`Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`salt` :doc:`Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
+
+---------
+
+GAUSSIAN
+--------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Identical to `WHITE_NOISE`_, but redistributed to follow a `gaussian distribution`_\.
+
+.. _gaussian distribution: https://en.wikipedia.org/wiki/Normal_distribution
+
+
+`PARAMETERS:`
+
+:bdg-success:`frequency` :doc:`Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`salt` :doc:`Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
+
+---------
+
+PERLIN
+------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Produces `Perlin noise`_.
+
+.. _Perlin noise: https://en.wikipedia.org/wiki/Perlin_noise
+
+
+`PARAMETERS:`
+
+:bdg-success:`frequency` :doc:`Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`salt` :doc:`Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
+
+.. tip::
+
+    It is recommended to use other simplex based samplers rather than PERLIN, as
+    Perlin noise produces signficant directional artifacts, which may be undesired.
+
+
+---------
+
+SIMPLEX
+-------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Produces `Simplex noise`_.
+
+.. _Simplex noise: https://en.wikipedia.org/wiki/Simplex_noise
+
+
+`PARAMETERS:`
+
+:bdg-success:`frequency` :doc:`Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`salt` :doc:`Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
+
+---------
+
+OPEN_SIMPLEX_2
+--------------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Produces `Simplex noise`_ (using the algorithm from OpenSimplex2_).
+
+.. _Simplex noise: https://en.wikipedia.org/wiki/Simplex_noise
+.. _OpenSimplex2: https://github.com/KdotJPG/OpenSimplex2
+
+.. image:: /img/concepts/noise/opensimplex2_64x64.png
+
+
+`PARAMETERS:`
+
+:bdg-success:`frequency` :doc:`Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`salt` :doc:`Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
+
+---------
+
+OPEN_SIMPLEX_2S
+---------------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Produces smoother `Simplex noise`_ (using the algorithm from OpenSimplex2_).
+
+.. _Simplex noise: https://en.wikipedia.org/wiki/Simplex_noise
+.. _OpenSimplex2: https://github.com/KdotJPG/OpenSimplex2
+
+
+`PARAMETERS:`
+
+:bdg-success:`frequency` :doc:`Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`salt` :doc:`Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
+
+---------
+
+VALUE
+-----
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Produces `Value noise`_ using `linear interpolation`_ (`bilinear`_ for 2D, `trilinear`_ for 3D).
+
+.. _Value noise: https://en.wikipedia.org/wiki/Value_noise
+.. _linear interpolation: https://en.wikipedia.org/wiki/Linear_interpolation
+.. _bilinear: https://en.wikipedia.org/wiki/Bilinear_interpolation
+.. _trilinear: https://en.wikipedia.org/wiki/Trilinear_interpolation
+
+
+`PARAMETERS:`
+
+:bdg-success:`frequency` :doc:`Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`salt` :doc:`Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
+
+---------
+
+VALUE_CUBIC
+-----------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+
+Identical to `VALUE`_ except using `cubic interpolation`_ (`bicubic`_ for 2D, `tricubic`_ for 3D).
+
+.. _cubic interpolation: https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Interpolation_on_a_single_interval
+.. _bicubic: https://en.wikipedia.org/wiki/Bicubic_interpolation
+.. _tricubic: https://en.wikipedia.org/wiki/Tricubic_interpolation
+
+
+`PARAMETERS:`
+
+:bdg-success:`frequency` :doc:`Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`salt` :doc:`Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
+
+---------
+
+GABOR
+-----
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+
+Produces `Gabor noise`_.
+  
+.. _Gabor noise: https://graphics.cs.kuleuven.be/publications/GLLD12GNBE/
+
+.. warning::
+
+    The GABOR sampler is significantly slower at producing noise compared to other noise samplers.
+
+
+`PARAMETERS:`
+
+:bdg-success:`frequency` :doc:`Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`salt` :doc:`Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
+
+:bdg-success:`rotation` :doc:`Float` 
+
+Default: ``0.25``
+
+:bdg-success:`isotropic` :doc:`Boolean` 
+
+Default: ``true``
+
+:bdg-success:`deviation` :doc:`Float` 
+
+Default: ``1.0``
+
+:bdg-success:`impulses` :doc:`Float` 
+
+Default: ``64.0``
+
+:bdg-success:`frequency_0` :doc:`Float` 
+
+Default: ``0.625``
+
+---------
+
+CELLULAR
+--------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Produces cellular / `Worley noise`_.
+  
+.. _Worley noise: https://en.wikipedia.org/wiki/Worley_noise
+
+.. image:: /img/concepts/noise/cellular_256x256.png
+
+**DIAGRAM**
+
+.. image:: /img/concepts/noise/cellular_diagram.svg
+
+.. role:: black
+.. role:: red
+.. role:: blue
+.. role:: green
+.. role:: purple
+.. role:: orange
+.. role:: gold
+
+- :black:`Black dots` - The center of each cell.
+- :red:`Red lines` - A random direction and distance from the cell center, called 'jitter'.
+- :blue:`Blue dots` - The cell origin, determined by jitter from the cell center.
+- :green:`Green dot` - Coordinates being sampled.
+- :purple:`Purple line` - Distance to the closest cell origin.
+- :orange:`Orange line` - Distance to the second closest cell origin.
+- :gold:`Gold line` - Distance to the third closest cell origin.
+
+
+`PARAMETERS:`
+
+:bdg-success:`frequency` :doc:`Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`salt` :doc:`Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
+
+:bdg-success:`distance` :doc:`String` - The method used for calculating the distance from the cell origin.
+
+Default: ``EuclideanSq``
+
+**Distance Types**
+
+- ``Euclidean``
+- ``EuclideanSq``
+- ``Manhattan``
+- ``Hybrid``
+
+
+:bdg-success:`return` :doc:`String` - The function the sampler will use to calculate the noise.
+
+Default: ``Distance``
+
+**Return Types**
+
+Definitions:
+
+``s`` - The coordinates being sampled.
+
+``c`` - The coordinates of the nearest cell origin.
+
+``d1`` - The distance from the nearest cell origin.
+
+``d2`` - The distance from the second nearest cell origin
+
+``d3`` - The distance from the third nearest cell origin
+
+Types:
+
+- ``NoiseLookup`` - Passes ``c`` into a sampler, and returns the output.
+- ``CellValue`` - Returns a random value based on ``c`` (Equivalent to ``NoiseLookup`` with a `WHITE_NOISE`_ sampler).
+- ``LocalNoiseLookup`` - Passes ``s - c`` into a sampler, and returns the output.
+- ``Angle`` - Returns the angle from ``s`` to ``c``.
+- ``Distance`` - Returns ``d1``.
+- ``Distance2``- Returns ``d2``.
+- ``Distance2Add`` - Returns ``(d1 + d2) / 2``.
+- ``Distance2Sub`` - Returns ``d2 - d1``.
+- ``Distance2Mul`` - Returns ``(d1 * d2) / 2``.
+- ``Distance2Div`` - Returns ``d1 / d2``.
+- ``Distance3`` - Returns ``d3``.
+- ``Distance3Add`` - Returns ``(d1 + d3) / 2``.
+- ``Distance3Sub`` - Returns ``d3 - d1``.
+- ``Distance3Mul`` - Returns ``d3 * d1``.
+- ``Distance3Div`` - Returns ``d1 / d3``.
+
+
+:bdg-success:`jitter` :doc:`Float` - Determines how far cell origins can randomly spread out from the center of cells.
+
+Default: ``1``
+
+A jitter of ``0`` places cell origins exactly in the center of each cell, resulting in a perfect grid.
+Values between ``-1`` and ``1`` are recommended, as values outside that range may produce artifacts.
+
+
+:bdg-success:`lookup` :doc:`NoiseSampler` - The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
+
+Default: ```OPEN_SIMPLEX_2`_ sampler``
+
+---------
+
+IMAGE
+-----
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Outputs the channel of an image that is tiled, redistributed from the channel range [0-255] to output range [-1, 1].
+
+
+`PARAMETERS:`
+
+:bdg-primary:`image` :doc:`String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+
+Example path: `path/to/the/image.png`
+
+
+:bdg-primary:`frequency` :doc:`Float` - :ref:`Frequency <sampler-frequency>` of the image. Determines how the image gets scaled.
+
+A frequency of ``1.0`` means 1 pixel = 1 block, a frequency of ``2.0`` means 2 pixels = 1 block.
+
+.. attention::
+
+    Frequencies below ``1.0`` are not recommended, as pixels aren't interpolated when upscaled;
+    results may look pixelated depending on use.
+
+    .. grid:: 3
+
+        .. grid-item:: **grayscale_circles.png**
+            :padding: 0
+
+            .. image:: /img/concepts/noise/image/grayscale_circles.png
+                :width: 200
+
+        .. grid-item:: **1.0 Frequency**
+
+            .. image:: /img/concepts/noise/image/image_sampler_circles_frequency_1.0_zoomed.png
+                :width: 200
+
+        .. grid-item:: **0.25 Frequency**
+
+            .. image:: /img/concepts/noise/image/image_sampler_circles_frequency_0.25_zoomed.png
+                :width: 200
+
+    ``0.25`` frequency = ``0.25 pixels = 1 block`` or ``1 pixel = 4 blocks`` (as demonstrated above using a block grid).
+
+
+:bdg-primary:`channel` :doc:`String` - Which channel of the image to output.
+
+Valid channels:
+
+- ``GRAYSCALE``
+- ``ALPHA``
+- ``RED``
+- ``GREEN``
+- ``BLUE``
+
+.. card:: Channel Examples
+
+    .. grid:: 6
+
+        .. grid-item:: Original Image
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts.png
+
+        .. grid-item:: Grayscale
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts_grayscale.png
+
+        .. grid-item:: Alpha Channel*
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts_alpha_channel.png
+
+        .. grid-item:: Red Channel
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts_red_channel.png
+
+        .. grid-item:: Green Channel
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts_green_channel.png
+
+        .. grid-item:: Blue Channel
+            :columns: 4
+
+            .. image:: /img/concepts/noise/image/pacman_ghosts_blue_channel.png
+
+    \*The alpha channel is all white because there is no transparency in the original image.
+
+
+.. dropdown:: Example Image Samplers
+
+    .. grid:: 3
+
+        .. grid-item:: **grayscale_circles.png**
+            :padding: 0
+
+            .. image:: /img/concepts/noise/image/grayscale_circles.png
+                :width: 200
+
+        .. grid-item:: **mountain_heightmap.png**
+
+            .. image:: /img/concepts/noise/image/mountain_heightmap.png
+                :width: 200
+
+    World generated using the mountain heightmap to shape the terrain, and the circles
+    to determine biome temperature:
+
+    .. image:: /img/concepts/noise/image/image_distributed_biomes.png
+        :width: 50%
+
+    **Terrain Sampler** (Using `LINEAR_HEIGHTMAP`_ to work as a terrain sampler)
+
+    .. code-block:: yaml
+        
+        type: LINEAR_HEIGHTMAP
+        base: 128
+        scale: 64
+        sampler:
+          type: IMAGE
+          image: mountain_heightmap.png
+          channel: GRAYSCALE
+          frequency: 1
+
+    **Temperature Sampler**
+
+    .. code-block:: yaml
+
+        type: IMAGE
+        image: grayscale_circles.png
+        channel: GRAYSCALE
+        frequency: 1
+
+
+---------
+
+CONSTANT
+--------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Outputs a constant value, regardless of the inputs. Typically used in cases where you
+don't want the sampler to do anything.
+
+
+`PARAMETERS:`
+
+:bdg-success:`value` :doc:`Float` - The value to be outputted.
+
+Default: ``0.0``
+
+---------
+
+DOMAIN_WARP
+-----------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Warps a sampler by another sampler. See :ref:`Domain Warping <domain-warping>` for more information.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`warp` :doc:`NoiseSampler` - The sampler that determines warping.
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` - The sampler to be warped.
+
+:bdg-success:`amplitude` :doc:`Float` - How much warping to apply.
+
+Default: ``1.0``
+
+---------
+
+KERNEL
+------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`kernel` :doc:`List`\<:doc:`List`\<:doc:`Float`\>> 
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+:bdg-success:`factor` :doc:`Float` 
+
+Default: ``1.0``
+
+:bdg-success:`frequency` :doc:`Float` 
+
+Default: ``1.0``
+
+---------
+
+LINEAR_HEIGHTMAP
+----------------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Treats a 2D sampler as a heightmap, converting it to a 3D `SDF`_
+for use as a terrain sampler.
+
+.. _SDF: https://en.wikipedia.org/wiki/Signed_distance_function
+
+
+`PARAMETERS:`
+
+:bdg-primary:`base` :doc:`Float` - The base y level of the terrain.
+
+:bdg-success:`sampler` :doc:`NoiseSampler` - The sampler to be used as a heightmap.
+
+Default: ```CONSTANT`_ sampler``
+
+:bdg-success:`scale` :doc:`Float` - Scales the height of the heightmap.
+
+Default: ``1.0``
+
+---------
+
+FBM
+---
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+:bdg-success:`octaves` :doc:`Integer` 
+
+Default: ``3``
+
+:bdg-success:`gain` :doc:`Float` 
+
+Default: ``0.5``
+
+:bdg-success:`lacunarity` :doc:`Float` 
+
+Default: ``2.0``
+
+:bdg-success:`weighted-strength` :doc:`Float` 
+
+Default: ``0.0``
+
+---------
+
+PING_PONG
+---------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+:bdg-success:`octaves` :doc:`Integer` 
+
+Default: ``3``
+
+:bdg-success:`gain` :doc:`Float` 
+
+Default: ``0.5``
+
+:bdg-success:`lacunarity` :doc:`Float` 
+
+Default: ``2.0``
+
+:bdg-success:`weighted-strength` :doc:`Float` 
+
+Default: ``0.0``
+
+:bdg-success:`ping-pong` :doc:`Float` 
+
+Default: ``2.0``
+
+---------
+
+RIDGED
+------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+:bdg-success:`octaves` :doc:`Integer` 
+
+Default: ``3``
+
+:bdg-success:`gain` :doc:`Float` 
+
+Default: ``0.5``
+
+:bdg-success:`lacunarity` :doc:`Float` 
+
+Default: ``2.0``
+
+:bdg-success:`weighted-strength` :doc:`Float` 
+
+Default: ``0.0``
+
+---------
+
+LINEAR
+------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Redistributes the range ``[min, max]`` to ``[-1, 1]``, typically for use with weighted
+pools.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+:bdg-primary:`max` :doc:`Float` 
+
+:bdg-primary:`min` :doc:`Float` 
+
+---------
+
+CLAMP
+-----
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Outputs ``max`` when the sampler outputs a value greater than ``max``, and returns ``min``
+when the sampler outputs a value less than ``min``, used to constrain sampler outputs to
+a certain range.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+:bdg-primary:`max` :doc:`Float` 
+
+:bdg-primary:`min` :doc:`Float` 
+
+---------
+
+NORMAL
+------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Redistributes normally distributed outputs to be evenly distributed.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+:bdg-primary:`mean` :doc:`Float` 
+
+:bdg-primary:`standard-deviation` :doc:`Float` 
+
+:bdg-success:`groups` :doc:`Integer` 
+
+Default: ``16384``
+
+---------
+
+PROBABILITY
+-----------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Redistributes the range ``[-1, 1]`` to ``[0, 1]``, typically used in cases where it's easier to
+work with values from ``0`` to ``1``, e.g defining a threshold as a percentage of a noise sampler.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+---------
+
+SCALE
+-----
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Evaluates ``sampler() * amplitude``.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+:bdg-primary:`amplitude` :doc:`Float` 
+
+---------
+
+POSTERIZATION
+-------------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Applies a step function to the sampler, where ``steps`` determines how many steps will be within
+the range ``[-1, 1]``.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+:bdg-primary:`steps` :doc:`Integer` 
+
+---------
+
+ADD
+---
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Evaluates ``left() + right()``.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`left` :doc:`NoiseSampler` 
+
+:bdg-primary:`right` :doc:`NoiseSampler` 
+
+---------
+
+SUB
+---
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Evaluates ``left() - right()``.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`left` :doc:`NoiseSampler` 
+
+:bdg-primary:`right` :doc:`NoiseSampler` 
+
+---------
+
+MUL
+---
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Evaluates ``left() * right()``.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`left` :doc:`NoiseSampler` 
+
+:bdg-primary:`right` :doc:`NoiseSampler` 
+
+---------
+
+DIV
+---
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Evaluates ``left() / right()``.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`left` :doc:`NoiseSampler` 
+
+:bdg-primary:`right` :doc:`NoiseSampler` 
+
+---------
+
+MAX
+---
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Evaluates ``max(left(), right())``.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`left` :doc:`NoiseSampler` 
+
+:bdg-primary:`right` :doc:`NoiseSampler` 
+
+---------
+
+MIN
+---
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Evaluates ``min(left(), right())``.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`left` :doc:`NoiseSampler` 
+
+:bdg-primary:`right` :doc:`NoiseSampler` 
+
+---------
+
+EXPRESSION
+----------
+
+:superscript:`Added by the 'config-noise-function' addon`
+
+Evaluates an arbitrary user defined expression as the sampler output. Expression
+samplers additionally allow the use of user defined functions, including other samplers,
+as well as constants defined within the sampler.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`expression` :doc:`Expression` 
+
+The expression to be evaluated for each sample. Variables ``x``, ``y`` (3D only), and ``z``
+act as the sampler's coordinate inputs.
+
+**Expression example**
+
+.. code-block:: yaml
+
+    expression: (x * 3) / z
+
+
+.. card:: Expression
+    :link: Expression
+    :link-type: doc
+
+    An expression
+
+:bdg-success:`variables` :doc:`Map`\<:doc:`String`\, :doc:`Float`\> 
+
+Default: ``{}``
+
+Defines a mapping of variable names to values for use in the scope of the expression. This
+is most useful for providing named constants that can easily be modified if needed.
+
+**Example defining variables**
+
+.. code-block:: yaml
+
+    variables:
+      a: 1
+      b: 2
+
+
+:bdg-success:`samplers` :doc:`Map`\<:doc:`String`\, :doc:`DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
+
+Default: ``{}``
+
+Each sampler may be utilized within the expression like so: ``<name>(<x>, <z>)`` (for 2D) or
+``<name>(<x>, <y>, <z>)`` (for 3D), where <name> is the declared function name, and where
+the respective axis coordinates are the coordinate inputs passed to the sampler.
+
+.. note::
+
+    Samplers defined within an EXPRESSION sampler must be ``DimensionApplicableSampler``\s,
+    see the :doc:`DimensionApplicableSampler` section for details.
+
+**Example defining samplers**
+
+.. code-block:: yaml
+
+    samplers:
+      whiteNoise:
+        dimensions: 2
+        type: WHITE_NOISE
+
+
+:bdg-success:`functions` :doc:`Map`\<:doc:`String`\, :doc:`MathFunction`\> 
+
+Default: ``{}``
+
+Defines a mapping of function names to user-defined math functions. Functions may be
+called within the expression like so ``<name>(<arg 1>, <arg 2>, ...)``, where <name> is the declared
+function name, and where each input coorresponds to the argument list defined by the function.
+
+**Example defining functions**
+
+.. code-block:: yaml
+
+    functions:
+      addThenDivide:
+        arguments:
+            - a
+            - b
+            - c
+        expression: (a + b) / c
+
+
+.. dropdown:: Example Expression Samplers
+    :class-container: nested-cards
+
+    .. card:: **Simple addition**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            expression: 1 + 1
+
+        The sampler above outputs the result of ``1`` plus ``1``, therefore the sampler will always
+        output ``2``.
+
+    .. card:: **Using variables**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            variables:
+              a: 1
+              b: 2
+
+            expression: a - b
+
+        The sampler above outputs the result of ``a`` minus ``b``, which is evaluated as
+        ``1`` minus ``2``, therefore the sampler will always output ``-1``.
+
+    .. card:: **Using functions**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            functions:
+              addThenDivide:
+                arguments:
+                  - a
+                  - b
+                  - c
+                expression: (a + b) / c
+    
+            expression: addThenDivide(3, 2, 10)
+
+        The sampler above outputs the results of passing ``3``, ``2``, and ``10`` into
+        the function ``addThenDivide()``. This function evaluation would be ``(3 + 2) / 10``,
+        or ``3 + 2`` = ``5``, then ``5 / 10`` = ``0.5``. Therefore the sampler will always
+        output ``0.5``.
+
+    .. card:: **Using coordinates**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            expression: x + z
+
+        The sampler above will output the result of adding the ``x`` coordinate and the ``z``
+        coordinate. For example, if Terra wanted to sample a block where ``x = 4``, and ``z = 2``,
+        that sample would return ``4 + 2`` or ``6`` for that block.
+
+    .. card:: **Using samplers**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            samplers:
+              whiteNoise:
+                dimensions: 2
+                type: WHITE_NOISE
+
+            expression: whiteNoise(2, 5)
+
+        The sampler above will output the result of a 2D `WHITE_NOISE`_ sampler when passed
+        the coordinates ``X = 2`` and ``Z = 5``.
+
+    .. card:: **Combining everything**
+
+        .. code-block:: yaml
+
+            type: EXPRESSION
+
+            variables:
+              someConstant: 3
+              anotherConstant: 2.5
+
+            functions:
+              add:
+                arguments:
+                  - a
+                  - b
+                expression: a + b
+
+            samplers:
+              exampleSampler:
+                dimensions: 2
+                type: WHITE_NOISE
+
+            expression: |
+              exampleSampler(x * 2, z * 2) +
+              add(someConstant, anotherConstant)
+
+        The expression sampler above defines:
+
+        - Two variables ``someConstant`` and ``anotherConstant``, which are ``3`` and ``2.5`` respectively.
+        - A 2 argument function ``exampleFunction()``, that simply adds the two arguments together.
+        - A 2D sampler ``exampleSampler()``.
+        - An expression that:
+            - Evaluates ``exampleSampler()`` using:
+                - ``x`` coordinate multiplied by ``2`` as the X coordinate, and
+                - ``z`` multiplied by ``2`` as the Z coordinate.
+            - Evaluates ``add()`` using:
+                - ``3`` (defined by ``someConstant``) as the ``a`` argument, and
+                - ``2.5`` (defined by ``anotherConstant``) as the ``b`` argument.
+            - Adds the result of ``add()`` or ``5.5`` to the ``exampleSampler()`` evaluation.
+            - Outputs the final result.
+
+
+---------
+
+CHANNEL
+-------
+
+:superscript:`Added by the 'library-image' addon`
+
+Outputs a channel from a color sampler.
+
+
+`PARAMETERS:`
+
+:bdg-primary:`color-sampler` :doc:`ColorSampler` - The color sampler to extract channel values from.
+
+:bdg-success:`normalize` :doc:`Boolean` - If the channel should be normalized to range [-1, 1] or not.
+
+Default: ``true``
+
+:bdg-success:`premultiply` :doc:`Boolean` - Whether to multiply color channels by the alpha channel or not.
+
+Default: ``false``
+
+If you are expecting pixel transparency to reduce the output value then this should be set to true.
+
+
+---------
+
+DISTANCE_TRANSFORM
+------------------
+
+:superscript:`Added by the 'library-image' addon`
+
+Returns the result of a `distance transform <https://homepages.inf.ed.ac.uk/rbf/HIPR2/distance.htm>`_ on an image.
+
+`PARAMETERS:`
+
+:bdg-primary:`image` :doc:`Image` 
+
+:bdg-success:`threshold` :doc:`Integer` 
+
+Default: ``127``
+
+:bdg-success:`clamp-to-max-edge` :doc:`Boolean` 
+
+Default: ``false``
+
+:bdg-success:`channel` Channel 
+
+Default: ``GRAYSCALE``
+
+:bdg-success:`cost-function` :doc:`String` 
+
+Default: ``Channel``
+
+Valid values:
+
+- ``Channel``
+- ``Threshold``
+- ``ThresholdEdge``
+- ``ThresholdEdgeSigned``
+
+
+:bdg-success:`invert-threshold` :doc:`Boolean` 
+
+Default: ``false``
+
+:bdg-success:`normalization` :doc:`String` 
+
+Default: ``None``
+
+Valid values:
+
+- ``None``
+- ``Linear``
+- ``SmoothPreserveZero``

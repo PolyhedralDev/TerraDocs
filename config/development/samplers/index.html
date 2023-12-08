@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Config Documentation" href="../../documentation/index.html" /><link rel="prev" title="Modifying an Existing Pack" href="../modifying-existing-pack.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Image Configuration" href="../image/index.html" /><link rel="prev" title="Modifying an Existing Pack" href="../modifying-existing-pack.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
         <title>Samplers &amp; Noise - Terra Docs</title>
@@ -225,24 +225,35 @@
 <li class="toctree-l3"><a class="reference internal" href="../pack-from-scratch/index.html">Creating a Pack from Scratch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../modifying-existing-pack.html">Modifying an Existing Pack</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Samplers &amp; Noise</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../image/index.html">Image Configuration</a></li>
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="../../documentation/sampler/index.html">Sampler Configuration</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../documentation/image/index.html">Image Configuration</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/image/color-sampler.html">Color Sampler Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/image/image.html">Image Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/image/noise-samplers.html">Image Noise Sampler Configurations</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/image/image-biome-provider-v2.html">Image Biome Provider Configuration</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/image/pipeline-image-source.html">Pipeline Image Source Configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Biome.html">Biome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/BiomeProvider.html">BiomeProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Boolean.html">Boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/ColorConverter.html">ColorConverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/ColorSampler.html">ColorSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/ColorString.html">ColorString</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Expression.html">Expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Float.html">Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Image.html">Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Integer.html">Integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/List.html">List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Map.html">Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/MathFunction.html">MathFunction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Range.html">Range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Source.html">Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/String.html">String</a></li>
 </ul>
 </li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/development-environment.html">Setting up a Development Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
@@ -251,7 +262,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/registering-config-type.html">Registering a Config Type</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/logging.html">Logging With SLF4J</a></li>
@@ -762,7 +773,7 @@ hang of writing your own sampler configs. Playing around and experimenting on yo
 each parameter does, and will give you an intuition on how you can fine tune them to your advantage.</p>
 </div>
 <p>For a complete list of sampler <code class="docutils literal notranslate"><span class="pre">type</span></code>s and their parameters available in Terra, please refer to the
-<a class="reference internal" href="../../documentation/sampler/index.html"><span class="doc">Sampler Configuration</span></a> page.</p>
+<a class="reference internal" href="../../documentation/objects/NoiseSampler.html"><span class="doc">NoiseSampler</span></a> page.</p>
 </section>
 </section>
 <section id="frequency">
@@ -950,7 +961,7 @@ parameters already defined:</p>
 </div>
 <p>Feel free to preview this config in the <a class="reference external" href="#noise-tool">Noise Tool</a>, and have an experiment with each parameter to see
 what they all do. To see all available fractalizers and their parameters, please refer to the
-<a class="reference internal" href="../../documentation/sampler/index.html"><span class="doc">Sampler Configuration</span></a> page.</p>
+<a class="reference internal" href="../../documentation/objects/NoiseSampler.html"><span class="doc">NoiseSampler</span></a> page.</p>
 </section>
 </section>
 <section id="domain-warping">
@@ -1076,7 +1087,7 @@ fractalized simplex!):</p>
 <p>Now that you’ve got an idea of <a class="reference external" href="#what-is-noise">what noise is</a>, <a class="reference external" href="#noise-basics">how it works</a>, and a couple ways of
 <a class="reference external" href="#configuring-samplers">configuring it</a>, you should now be equipped with the necessary  knowledge to start configuring
 your own fancy samplers for use in your own customized world generation! For more information on the available
-samplers in Terra, please refer to the <a class="reference internal" href="../../documentation/sampler/index.html"><span class="doc">Sampler Configuration</span></a> page. If you have any
+samplers in Terra, please refer to the <a class="reference internal" href="../../documentation/objects/NoiseSampler.html"><span class="doc">NoiseSampler</span></a> page. If you have any
 further questions, feel free to <a class="reference internal" href="../../../contact.html"><span class="doc">ask for help</span></a>!</p>
 </section>
 </section>
@@ -1086,12 +1097,12 @@ further questions, feel free to <a class="reference internal" href="../../../con
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../documentation/index.html">
+          <a class="next-page" href="../image/index.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Config Documentation</div>
+                <div class="title">Image Configuration</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>

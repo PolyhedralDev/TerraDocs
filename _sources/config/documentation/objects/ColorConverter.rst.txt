@@ -1,0 +1,12 @@
+==============
+ColorConverter
+==============
+
+Types
+=====
+
+Different types of ``ColorConverter`` provide different behaviours and may have additional parameters for configuring that behavior.
+
+The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+
+A list of available types for ``ColorConverter`` are listed below:

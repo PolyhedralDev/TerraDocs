@@ -15,16 +15,20 @@ Config Documentation
 Configuration Files
 ===================
 
-Other Configs
-=============
+.. .. toctree::
+..     :maxdepth: 1
+..     :glob:
 
-These configs define objects contained within the parameters of other objects.
+..     files/*
+
+Object Configs
+==============
 
 .. toctree::
     :maxdepth: 1
+    :glob:
 
-    sampler/index
-    image/index
+    objects/*
 
 .. _config-documentation-format:
 

@@ -1,0 +1,27 @@
+======
+Source
+======
+
+A pipeline source
+
+Types
+=====
+
+Different types of ``Source`` provide different behaviours and may have additional parameters for configuring that behavior.
+
+The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+
+A list of available types for ``Source`` are listed below:
+
+---------
+
+IMAGE
+-----
+
+:superscript:`Added by the 'pipeline-image' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`color-sampler` :doc:`ColorSampler` 
+
+:bdg-primary:`color-conversion` :doc:`ColorConverter`\<:doc:`PipelineBiome`\> 

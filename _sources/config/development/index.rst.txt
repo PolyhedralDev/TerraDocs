@@ -16,3 +16,4 @@ Config Development
     modifying-existing-pack
 
     samplers/index
+    image/index

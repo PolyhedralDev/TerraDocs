@@ -1,0 +1,11 @@
+==========================
+DimensionApplicableSampler
+==========================
+
+bla
+
+`PARAMETERS:`
+
+:bdg-primary:`dimensions` :doc:`Integer` 
+
+:bdg-primary:`.` :doc:`NoiseSampler` 
