@@ -1,1 +1,0 @@
-:bdg-primary:`sampler` ``Sampler``

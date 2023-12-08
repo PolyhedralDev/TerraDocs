@@ -29,7 +29,6 @@ Object Configs
     :glob:
 
     objects/*
-    sampler/index
     image/index
 
 .. _config-documentation-format:
