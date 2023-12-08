@@ -7,6 +7,10 @@ const del = require('del');
 const spawn = require('child_process').spawn;
 
 const docsDir = "docs";
+const ignoredWatchDirs = [
+    "config/documentation/objects",
+    "config/documentation/files",
+]
 
 function shell(plugin, command, args) {
     return (done) =>
@@ -33,7 +37,7 @@ function webserver(done) {
 
 
 function watch() {
-    gulp.watch(`./${docsDir}/**`, gulp.series('sphinx:dev'));
+    gulp.watch([`./${docsDir}/**`, ...ignoredWatchDirs.map(dir => `!./${docsDir}/${dir}`)], gulp.series('sphinx:dev'));
 }
 
 gulp.task('clean', () => del(['build']));

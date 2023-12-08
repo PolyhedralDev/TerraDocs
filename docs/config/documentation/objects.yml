@@ -1,0 +1,966 @@
+# The configdocumenter extension will read from this file
+# and automatically generate rst files inside the
+# 'objects' and 'files' directories for documentation
+
+base:
+  objects:
+    String:
+      type: PRIMITIVE
+      description: A string
+
+    Integer:
+      type: PRIMITIVE
+      description: An integer
+
+    Float:
+      type: PRIMITIVE
+      description: A float
+
+    Boolean:
+      type: PRIMITIVE
+      description: Either ``true`` or ``false``
+
+    Map:
+      type: PRIMITIVE
+      description: A map
+
+    List:
+      type: PRIMITIVE
+      description: A list
+
+    Expression:
+      type: PRIMITIVE
+      description: An expression
+
+    NoiseSampler:
+      type: TEMPLATED
+      description: |
+        .. seealso::
+
+            :doc:`/config/development/samplers/index`
+
+            :ref:`Config Documentation Format <config-documentation-format>` :octicon:`chevron-right`
+
+        A sampler is a config defined function that maps coordinates and the world seed to a set
+        of output values.
+
+        A 'sample' is defined as a single calculation provided by a sampler, and the result of
+        that calculation is regarded as the 'output value'. A collective set of output values is
+        regarded as 'noise'.
+
+        The output values determine some kind of behaviour for each block or column. This behaviour
+        is dependent on the context of the sampler definition. 
+
+    Range:
+      type: MULTI_TYPE
+      description: A range
+      types:
+        int:
+          description: When a range is declared as an int ...
+        map:
+          description: When a range is declared as a map ...
+          params:
+            min:
+              type: Integer
+            max:
+              type: Integer
+
+    BiomeProvider:
+      type: TEMPLATED
+
+config-noise-function:
+  objects:
+    DimensionApplicableSampler:
+      type: MULTI_TYPE
+      description: bla
+      types:
+        map:
+          params:
+            dimensions:
+              type: Integer
+            .:
+              type: NoiseSampler
+
+    MathFunction:
+      type: MULTI_TYPE
+      description: A math function
+      types:
+        map:
+          params:
+            expression:
+              type: Expression
+            arguments:
+              type: List<String>
+              default: "[]"
+            functions:
+              type: Map<String, MathFunction>
+              default: "{}"
+
+  templates:
+    NoiseSampler:
+      AbstractNoiseTemplate:
+        abstract: true
+        params:
+          frequency:
+            type: Float
+            summary: Controls the :ref:`frequency <sampler-frequency>` of noise.
+            default: "0.02"
+          salt:
+            type: Integer
+            summary: Determines the :ref:`seed <sampler-salt>` for the sampler.
+            default: "0"
+
+      AbstractBinaryArithmeticTemplate:
+        abstract: true
+        params:
+          left:
+            type: NoiseSampler
+          right:
+            type: NoiseSampler
+
+      AbstractFractalizerTemplate:
+        abstract: true
+        params:
+          sampler:
+            type: NoiseSampler
+          octaves:
+            type: Integer
+            default: "3"
+          gain:
+            type: Float
+            default: "0.5"
+          lacunarity:
+            type: Float
+            default: "2.0"
+          weighted-strength:
+            type: Float
+            default: "0.0"
+
+      AbstractNormalizerTemplate:
+        abstract: true
+        params:
+          sampler:
+            type: NoiseSampler
+
+      WHITE_NOISE:
+        extends: AbstractNoiseTemplate
+        description: |
+          Produces `White noise`_.
+
+          .. image:: /img/concepts/noise/whitenoise64x64.png
+
+          .. _White noise: https://en.wikipedia.org/wiki/White_noise
+
+      POSITIVE_WHITE_NOISE:
+        extends: AbstractNoiseTemplate
+        description: |
+          Identical to `WHITE_NOISE`_, but redistributed to only produce positive
+          values for convenience.
+
+      GAUSSIAN:
+        extends: AbstractNoiseTemplate
+        description: |
+          Identical to `WHITE_NOISE`_, but redistributed to follow a `gaussian distribution`_\.
+
+          .. _gaussian distribution: https://en.wikipedia.org/wiki/Normal_distribution
+
+      PERLIN:
+        extends: AbstractNoiseTemplate
+        description: |
+          Produces `Perlin noise`_.
+
+          .. _Perlin noise: https://en.wikipedia.org/wiki/Perlin_noise
+
+        footer: |
+          .. tip::
+
+              It is recommended to use other simplex based samplers rather than PERLIN, as
+              Perlin noise produces signficant directional artifacts, which may be undesired.
+
+      SIMPLEX:
+        extends: AbstractNoiseTemplate
+        description: |
+          Produces `Simplex noise`_.
+
+          .. _Simplex noise: https://en.wikipedia.org/wiki/Simplex_noise
+
+      OPEN_SIMPLEX_2:
+        extends: AbstractNoiseTemplate
+        description: |
+          Produces `Simplex noise`_ (using the algorithm from OpenSimplex2_).
+
+          .. _Simplex noise: https://en.wikipedia.org/wiki/Simplex_noise
+          .. _OpenSimplex2: https://github.com/KdotJPG/OpenSimplex2
+
+          .. image:: /img/concepts/noise/opensimplex2_64x64.png
+
+      OPEN_SIMPLEX_2S:
+        extends: AbstractNoiseTemplate
+        description: |
+          Produces smoother `Simplex noise`_ (using the algorithm from OpenSimplex2_).
+
+          .. _Simplex noise: https://en.wikipedia.org/wiki/Simplex_noise
+          .. _OpenSimplex2: https://github.com/KdotJPG/OpenSimplex2
+
+      VALUE:
+        extends: AbstractNoiseTemplate
+        description: |
+          Produces `Value noise`_ using `linear interpolation`_ (`bilinear`_ for 2D, `trilinear`_ for 3D).
+
+          .. _Value noise: https://en.wikipedia.org/wiki/Value_noise
+          .. _linear interpolation: https://en.wikipedia.org/wiki/Linear_interpolation
+          .. _bilinear: https://en.wikipedia.org/wiki/Bilinear_interpolation
+          .. _trilinear: https://en.wikipedia.org/wiki/Trilinear_interpolation
+
+      VALUE_CUBIC:
+        extends: AbstractNoiseTemplate
+        description: |
+
+          Identical to `VALUE`_ except using `cubic interpolation`_ (`bicubic`_ for 2D, `tricubic`_ for 3D).
+
+          .. _cubic interpolation: https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Interpolation_on_a_single_interval
+          .. _bicubic: https://en.wikipedia.org/wiki/Bicubic_interpolation
+          .. _tricubic: https://en.wikipedia.org/wiki/Tricubic_interpolation
+
+      GABOR:
+        extends: AbstractNoiseTemplate
+        description: |
+
+          Produces `Gabor noise`_.
+            
+          .. _Gabor noise: https://graphics.cs.kuleuven.be/publications/GLLD12GNBE/
+
+          .. warning::
+
+              The GABOR sampler is significantly slower at producing noise compared to other noise samplers.
+        params:
+          rotation:
+            type: Float
+            default: "0.25"
+          isotropic:
+            type: Boolean
+            default: "true"
+          deviation:
+            type: Float
+            default: "1.0"
+          impulses:
+            type: Float
+            default: "64.0"
+          frequency_0:
+            type: Float
+            default: "0.625"
+
+      CELLULAR:
+        extends: AbstractNoiseTemplate
+        description: |
+          Produces cellular / `Worley noise`_.
+            
+          .. _Worley noise: https://en.wikipedia.org/wiki/Worley_noise
+
+          .. image:: /img/concepts/noise/cellular_256x256.png
+
+          **DIAGRAM**
+
+          .. image:: /img/concepts/noise/cellular_diagram.svg
+
+          .. role:: black
+          .. role:: red
+          .. role:: blue
+          .. role:: green
+          .. role:: purple
+          .. role:: orange
+          .. role:: gold
+
+          - :black:`Black dots` - The center of each cell.
+          - :red:`Red lines` - A random direction and distance from the cell center, called 'jitter'.
+          - :blue:`Blue dots` - The cell origin, determined by jitter from the cell center.
+          - :green:`Green dot` - Coordinates being sampled.
+          - :purple:`Purple line` - Distance to the closest cell origin.
+          - :orange:`Orange line` - Distance to the second closest cell origin.
+          - :gold:`Gold line` - Distance to the third closest cell origin.
+
+        params:
+          distance:
+            type: String
+            summary: The method used for calculating the distance from the cell origin.
+            default: EuclideanSq
+            description: |
+              **Distance Types**
+
+              - ``Euclidean``
+              - ``EuclideanSq``
+              - ``Manhattan``
+              - ``Hybrid``
+          return:
+            type: String
+            summary: The function the sampler will use to calculate the noise.
+            default: Distance
+            description: |
+              **Return Types**
+
+              Definitions:
+
+              ``s`` - The coordinates being sampled.
+
+              ``c`` - The coordinates of the nearest cell origin.
+
+              ``d1`` - The distance from the nearest cell origin.
+
+              ``d2`` - The distance from the second nearest cell origin
+
+              ``d3`` - The distance from the third nearest cell origin
+
+              Types:
+
+              - ``NoiseLookup`` - Passes ``c`` into a sampler, and returns the output.
+              - ``CellValue`` - Returns a random value based on ``c`` (Equivalent to ``NoiseLookup`` with a `WHITE_NOISE`_ sampler).
+              - ``Angle`` - Returns the angle from ``s`` to ``c``.
+              - ``Distance`` - Returns ``d1``.
+              - ``Distance2``- Returns ``d2``.
+              - ``Distance2Add`` - Returns ``(d1 + d2) / 2``.
+              - ``Distance2Sub`` - Returns ``d2 - d1``.
+              - ``Distance2Mul`` - Returns ``(d1 * d2) / 2``.
+              - ``Distance2Div`` - Returns ``d1 / d2``.
+              - ``Distance3`` - Returns ``d3``.
+              - ``Distance3Add`` - Returns ``(d1 + d3) / 2``.
+              - ``Distance3Sub`` - Returns ``d3 - d1``.
+              - ``Distance3Mul`` - Returns ``d3 * d1``.
+              - ``Distance3Div`` - Returns ``d1 / d3``.
+          jitter: 
+            type: Float
+            summary: Determines how far cell origins can randomly spread out from the center of cells.
+            default: "1"
+            description: |
+              A jitter of ``0`` places cell origins exactly in the center of each cell, resulting in a perfect grid.
+              Values between ``-1`` and ``1`` are recommended, as values outside that range may produce artifacts.
+
+          lookup:
+            type: NoiseSampler
+            summary: The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
+            default: "`OPEN_SIMPLEX_2`_ sampler"
+
+      IMAGE:
+        description: |
+          Outputs the channel of an image that is tiled, redistributed from the channel range [0-255] to output range [-1, 1].
+        footer: |
+          .. dropdown:: Example Image Samplers
+
+              .. grid:: 3
+
+                  .. grid-item:: **grayscale_circles.png**
+                      :padding: 0
+
+                      .. image:: /img/concepts/noise/image/grayscale_circles.png
+                          :width: 200
+
+                  .. grid-item:: **mountain_heightmap.png**
+
+                      .. image:: /img/concepts/noise/image/mountain_heightmap.png
+                          :width: 200
+
+              World generated using the mountain heightmap to shape the terrain, and the circles
+              to determine biome temperature:
+
+              .. image:: /img/concepts/noise/image/image_distributed_biomes.png
+                  :width: 50%
+
+              **Terrain Sampler** (Using `LINEAR_HEIGHTMAP`_ to work as a terrain sampler)
+
+              .. code-block:: yaml
+                  
+                  type: LINEAR_HEIGHTMAP
+                  base: 128
+                  scale: 64
+                  sampler:
+                    type: IMAGE
+                    image: mountain_heightmap.png
+                    channel: GRAYSCALE
+                    frequency: 1
+
+              **Temperature Sampler**
+
+              .. code-block:: yaml
+
+                  type: IMAGE
+                  image: grayscale_circles.png
+                  channel: GRAYSCALE
+                  frequency: 1
+
+        params:
+          image:
+            type: String
+            summary: "Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\\``)"
+            description: |
+              Example path: `path/to/the/image.png`
+          frequency:
+            type: Float
+            summary: :ref:`Frequency <sampler-frequency>` of the image. Determines how the image gets scaled.
+            description: |
+              A frequency of ``1.0`` means 1 pixel = 1 block, a frequency of ``2.0`` means 2 pixels = 1 block.
+
+              .. attention::
+
+                  Frequencies below ``1.0`` are not recommended, as pixels aren't interpolated when upscaled;
+                  results may look pixelated depending on use.
+
+                  .. grid:: 3
+
+                      .. grid-item:: **grayscale_circles.png**
+                          :padding: 0
+
+                          .. image:: /img/concepts/noise/image/grayscale_circles.png
+                              :width: 200
+
+                      .. grid-item:: **1.0 Frequency**
+
+                          .. image:: /img/concepts/noise/image/image_sampler_circles_frequency_1.0_zoomed.png
+                              :width: 200
+
+                      .. grid-item:: **0.25 Frequency**
+
+                          .. image:: /img/concepts/noise/image/image_sampler_circles_frequency_0.25_zoomed.png
+                              :width: 200
+
+                  ``0.25`` frequency = ``0.25 pixels = 1 block`` or ``1 pixel = 4 blocks`` (as demonstrated above using a block grid).
+          channel:
+            type: String
+            summary: Which channel of the image to output.
+            description: |
+              Valid channels:
+
+              - ``GRAYSCALE``
+              - ``ALPHA``
+              - ``RED``
+              - ``GREEN``
+              - ``BLUE``
+
+              .. card:: Channel Examples
+
+                  .. grid:: 6
+
+                      .. grid-item:: Original Image
+                          :columns: 4
+
+                          .. image:: /img/concepts/noise/image/pacman_ghosts.png
+
+                      .. grid-item:: Grayscale
+                          :columns: 4
+
+                          .. image:: /img/concepts/noise/image/pacman_ghosts_grayscale.png
+
+                      .. grid-item:: Alpha Channel*
+                          :columns: 4
+
+                          .. image:: /img/concepts/noise/image/pacman_ghosts_alpha_channel.png
+
+                      .. grid-item:: Red Channel
+                          :columns: 4
+
+                          .. image:: /img/concepts/noise/image/pacman_ghosts_red_channel.png
+
+                      .. grid-item:: Green Channel
+                          :columns: 4
+
+                          .. image:: /img/concepts/noise/image/pacman_ghosts_green_channel.png
+
+                      .. grid-item:: Blue Channel
+                          :columns: 4
+
+                          .. image:: /img/concepts/noise/image/pacman_ghosts_blue_channel.png
+
+                  \*The alpha channel is all white because there is no transparency in the original image.
+
+      CONSTANT:
+        description: |
+          Outputs a constant value, regardless of the inputs. Typically used in cases where you
+          don't want the sampler to do anything.
+        params:
+          value:
+            type: Float
+            summary: The value to be outputted.
+            default: "0.0"
+
+      DOMAIN_WARP:
+        description: |
+          Warps a sampler by another sampler. See :ref:`Domain Warping <domain-warping>` for more information.
+        params:
+          warp:
+            type: NoiseSampler
+            summary: The sampler that determines warping.
+
+          sampler:
+            type: NoiseSampler
+            summary: The sampler to be warped.
+
+          amplitude:
+            type: Float
+            summary: How much warping to apply.
+            default: "1.0"
+
+      KERNEL:
+        params:
+          kernel:
+            type: List<List<Float>>
+          sampler:
+            type: NoiseSampler
+          factor:
+            type: Float
+            default: "1.0"
+          frequency:
+            type: Float
+            default: "1.0"
+
+      LINEAR_HEIGHTMAP:
+        description: |
+          Treats a 2D sampler as a heightmap, converting it to a 3D `SDF`_
+          for use as a terrain sampler.
+
+          .. _SDF: https://en.wikipedia.org/wiki/Signed_distance_function
+        params:
+          base:
+            type: Float
+            summary: The base y level of the terrain.
+
+          sampler:
+            type: NoiseSampler
+            summary: The sampler to be used as a heightmap.
+            default: "`CONSTANT`_ sampler"
+
+          scale:
+            type: Float
+            summary: Scales the height of the heightmap.
+            default: "1.0"
+
+      FBM:
+        extends: AbstractFractalizerTemplate
+
+      PING_PONG:
+        extends: AbstractFractalizerTemplate
+        params:
+          ping-pong:
+            type: Float
+            default: "2.0"
+
+      RIDGED:
+        extends: AbstractFractalizerTemplate
+
+      LINEAR:
+        extends: AbstractNormalizerTemplate
+        description: |
+          Redistributes the range ``[min, max]`` to ``[-1, 1]``, typically for use with weighted
+          pools.
+        params:
+          max:
+            type: Float
+          min:
+            type: Float
+
+      CLAMP:
+        extends: AbstractNormalizerTemplate
+        description: |
+          Outputs ``max`` when the sampler outputs a value greater than ``max``, and returns ``min``
+          when the sampler outputs a value less than ``min``, used to constrain sampler outputs to
+          a certain range.
+        params:
+          max:
+            type: Float
+          min:
+            type: Float
+
+      NORMAL:
+        extends: AbstractNormalizerTemplate
+        description: |
+          Redistributes normally distributed outputs to be evenly distributed.
+        params:
+          mean:
+            type: Float
+          standard-deviation:
+            type: Float
+
+          groups:
+            type: Integer
+            default: "16384"
+
+      PROBABILITY:
+        extends: AbstractNormalizerTemplate
+        description: |
+          Redistributes the range ``[-1, 1]`` to ``[0, 1]``, typically used in cases where it's easier to
+          work with values from ``0`` to ``1``, e.g defining a threshold as a percentage of a noise sampler.
+
+      SCALE:
+        extends: AbstractNormalizerTemplate
+        description: |
+          Evaluates ``sampler() * amplitude``.
+        params:
+          amplitude:
+            type: Float
+
+      POSTERIZATION:
+        extends: AbstractNormalizerTemplate
+        description: |
+          Applies a step function to the sampler, where ``steps`` determines how many steps will be within
+          the range ``[-1, 1]``.
+        params:
+          steps:
+            type: Integer
+
+      ADD:
+        extends: AbstractBinaryArithmeticTemplate
+        description: |
+          Evaluates ``left() + right()``.
+
+      SUB:
+        extends: AbstractBinaryArithmeticTemplate
+        description: |
+          Evaluates ``left() - right()``.
+
+      MUL:
+        extends: AbstractBinaryArithmeticTemplate
+        description: |
+          Evaluates ``left() * right()``.
+
+      DIV:
+        extends: AbstractBinaryArithmeticTemplate
+        description: |
+          Evaluates ``left() / right()``.
+
+      MAX:
+        extends: AbstractBinaryArithmeticTemplate
+        description: |
+          Evaluates ``max(left(), right())``.
+
+      MIN:
+        extends: AbstractBinaryArithmeticTemplate
+        description: |
+          Evaluates ``min(left(), right())``.
+
+      EXPRESSION:
+        description: |
+          Evaluates an arbitrary user defined expression as the sampler output. Expression
+          samplers additionally allow the use of user defined functions, including other samplers,
+          as well as constants defined within the sampler.
+        footer: |
+          .. dropdown:: Example Expression Samplers
+              :class-container: nested-cards
+
+              .. card:: **Simple addition**
+
+                  .. code-block:: yaml
+
+                      type: EXPRESSION
+
+                      expression: 1 + 1
+
+                  The sampler above outputs the result of ``1`` plus ``1``, therefore the sampler will always
+                  output ``2``.
+
+              .. card:: **Using variables**
+
+                  .. code-block:: yaml
+
+                      type: EXPRESSION
+
+                      variables:
+                        a: 1
+                        b: 2
+
+                      expression: a - b
+
+                  The sampler above outputs the result of ``a`` minus ``b``, which is evaluated as
+                  ``1`` minus ``2``, therefore the sampler will always output ``-1``.
+
+              .. card:: **Using functions**
+
+                  .. code-block:: yaml
+
+                      type: EXPRESSION
+
+                      functions:
+                        addThenDivide:
+                          arguments:
+                            - a
+                            - b
+                            - c
+                          expression: (a + b) / c
+              
+                      expression: addThenDivide(3, 2, 10)
+
+                  The sampler above outputs the results of passing ``3``, ``2``, and ``10`` into
+                  the function ``addThenDivide()``. This function evaluation would be ``(3 + 2) / 10``,
+                  or ``3 + 2`` = ``5``, then ``5 / 10`` = ``0.5``. Therefore the sampler will always
+                  output ``0.5``.
+
+              .. card:: **Using coordinates**
+
+                  .. code-block:: yaml
+
+                      type: EXPRESSION
+
+                      expression: x + z
+
+                  The sampler above will output the result of adding the ``x`` coordinate and the ``z``
+                  coordinate. For example, if Terra wanted to sample a block where ``x = 4``, and ``z = 2``,
+                  that sample would return ``4 + 2`` or ``6`` for that block.
+
+              .. card:: **Using samplers**
+
+                  .. code-block:: yaml
+
+                      type: EXPRESSION
+
+                      samplers:
+                        whiteNoise:
+                          dimensions: 2
+                          type: WHITE_NOISE
+
+                      expression: whiteNoise(2, 5)
+
+                  The sampler above will output the result of a 2D `WHITE_NOISE`_ sampler when passed
+                  the coordinates ``X = 2`` and ``Z = 5``.
+
+              .. card:: **Combining everything**
+
+                  .. code-block:: yaml
+
+                      type: EXPRESSION
+
+                      variables:
+                        someConstant: 3
+                        anotherConstant: 2.5
+
+                      functions:
+                        add:
+                          arguments:
+                            - a
+                            - b
+                          expression: a + b
+
+                      samplers:
+                        exampleSampler:
+                          dimensions: 2
+                          type: WHITE_NOISE
+
+                      expression: |
+                        exampleSampler(x * 2, z * 2) +
+                        add(someConstant, anotherConstant)
+
+                  The expression sampler above defines:
+
+                  - Two variables ``someConstant`` and ``anotherConstant``, which are ``3`` and ``2.5`` respectively.
+                  - A 2 argument function ``exampleFunction()``, that simply adds the two arguments together.
+                  - A 2D sampler ``exampleSampler()``.
+                  - An expression that:
+                      - Evaluates ``exampleSampler()`` using:
+                          - ``x`` coordinate multiplied by ``2`` as the X coordinate, and
+                          - ``z`` multiplied by ``2`` as the Z coordinate.
+                      - Evaluates ``add()`` using:
+                          - ``3`` (defined by ``someConstant``) as the ``a`` argument, and
+                          - ``2.5`` (defined by ``anotherConstant``) as the ``b`` argument.
+                      - Adds the result of ``add()`` or ``5.5`` to the ``exampleSampler()`` evaluation.
+                      - Outputs the final result.
+
+        params:
+          expression:
+            type: Expression
+            inline-types:
+              - Expression
+            description: |
+              The expression to be evaluated for each sample. Variables ``x``, ``y`` (3D only), and ``z``
+              act as the sampler's coordinate inputs.
+
+              **Expression example**
+
+              .. code-block:: yaml
+
+                  expression: (x * 3) / z
+          variables:
+            type: Map<String, Float>
+            default: "{}"
+            description: |
+              Defines a mapping of variable names to values for use in the scope of the expression. This
+              is most useful for providing named constants that can easily be modified if needed.
+
+              **Example defining variables**
+
+              .. code-block:: yaml
+
+                  variables:
+                    a: 1
+                    b: 2
+          samplers:
+            type: Map<String, DimensionApplicableSampler>
+            summary: Defines a mapping of function names to samplers.
+            description: |
+              Each sampler may be utilized within the expression like so: ``<name>(<x>, <z>)`` (for 2D) or
+              ``<name>(<x>, <y>, <z>)`` (for 3D), where <name> is the declared function name, and where
+              the respective axis coordinates are the coordinate inputs passed to the sampler.
+
+              .. note::
+
+                  Samplers defined within an EXPRESSION sampler must be ``DimensionApplicableSampler``\s,
+                  see the :doc:`DimensionApplicableSampler` section for details.
+
+              **Example defining samplers**
+
+              .. code-block:: yaml
+
+                  samplers:
+                    whiteNoise:
+                      dimensions: 2
+                      type: WHITE_NOISE
+
+            default: "{}"
+
+          functions:
+            type: Map<String, MathFunction>
+            description: |
+              Defines a mapping of function names to user-defined math functions. Functions may be
+              called within the expression like so ``<name>(<arg 1>, <arg 2>, ...)``, where <name> is the declared
+              function name, and where each input coorresponds to the argument list defined by the function.
+
+              **Example defining functions**
+
+              .. code-block:: yaml
+
+                  functions:
+                    addThenDivide:
+                      arguments:
+                          - a
+                          - b
+                          - c
+                      expression: (a + b) / c
+
+            default: "{}"
+
+library-image:
+  objects:
+    Image:
+      type: TEMPLATED
+      description: An image
+    ColorSampler:
+      type: TEMPLATED
+      description: A color sampler
+    ColorString:
+      type: MULTI_TYPE
+      description: A string representing a color
+
+  templates:
+    ColorSampler:
+      ImageColorSamplerTemplate:
+        abstract: true
+        params:
+          image:
+            type: Image
+            summary: The image to be sampled
+          align:
+            type: Alignment
+
+      MutateColorSamplerTemplate:
+        abstract: true
+        params:
+          color-sampler:
+            type: ColorSampler
+
+      COLOR:
+        params:
+          color:
+            type: ColorString
+
+      SINGLE_IMAGE:
+        extends: ImageColorSamplerTemplate
+        params:
+          outside-sampler:
+            type: ColorSampler
+
+      TILED_IMAGE:
+        extends: ImageColorSamplerTemplate
+
+      ROTATE:
+        extends: MutateColorSamplerTemplate
+        params:
+          angle:
+            type: Float
+
+      TRANSLATE:
+        extends: MutateColorSamplerTemplate
+        params:
+          x:
+            type: Integer
+          z:
+            type: Integer
+    Image:
+      BITMAP:
+        description: A bitmap
+        params:
+          path-format:
+            type: String
+          rows:
+            type: Integer
+          columns:
+            type: Integer
+          zero-indexed:
+            type: Boolean
+            default: "false"
+
+      STITCHED_BITMAP:
+        params:
+          path:
+            type: String
+
+    NoiseSampler:
+
+      CHANNEL:
+        description: |
+          Outputs a channel from a color sampler.
+        params:
+          color-sampler:
+            type: ColorSampler
+            summary: The color sampler to extract channel values from.
+          normalize:
+            type: Boolean
+            summary: If the channel should be normalized to range [-1, 1] or not.
+            default: "true"
+          premultiply:
+            type: Boolean
+            summary: Whether to multiply color channels by the alpha channel or not.
+            description: |
+              If you are expecting pixel transparency to reduce the output value then this should be set to true.
+            default: "false"
+
+      DISTANCE_TRANSFORM:
+        description: Returns the result of a `distance transform <https://homepages.inf.ed.ac.uk/rbf/HIPR2/distance.htm>`_ on an image.
+        params:
+          image:
+            type: Image
+          threshold:
+            type: Integer
+            default: "127"
+          clamp-to-max-edge:
+            type: Boolean
+            default: "false"
+          channel:
+            type: Channel
+            default: "GRAYSCALE"
+          cost-function:
+            type: String
+            default: "Channel"
+            description: |
+              Valid values:
+
+              - ``Channel``
+              - ``Threshold``
+              - ``ThresholdEdge``
+              - ``ThresholdEdgeSigned``
+          invert-threshold:
+            type: Boolean
+            default: "false"
+          normalization:
+            type: String
+            default: "None"
+            description: |
+              Valid values:
+
+              - ``None``
+              - ``Linear``
+              - ``SmoothPreserveZero``
+

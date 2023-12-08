@@ -2,3 +2,5 @@ build/
 node_modules/
 package-lock.json
 .venv/
+docs/config/documentation/objects
+**/__pycache__/**
