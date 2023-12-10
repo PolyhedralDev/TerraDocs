@@ -241,24 +241,37 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../config/documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Biome.html">Biome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/BiomeProvider.html">BiomeProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Block.html">Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Boolean.html">Boolean</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/ColorConverter.html">ColorConverter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/ColorSampler.html">ColorSampler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/ColorString.html">ColorString</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Distributor.html">Distributor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Expression.html">Expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Extrusion.html">Extrusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Float.html">Float</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Image.html">Image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Integer.html">Integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/List.html">List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Locator.html">Locator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Map.html">Map</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/MathFunction.html">MathFunction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/NumberPredicate.html">NumberPredicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Pattern.html">Pattern</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Point.html">Point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Range.html">Range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Set.html">Set</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Source.html">Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Stage.html">Stage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/String.html">String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/Tag.html">Tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/documentation/objects/WeightedList.html">WeightedList</a></li>
 </ul>
 </li>
 </ul>
@@ -413,13 +426,13 @@ when the addon initializes!</p>
 <p>To install your addon, first you need to <em>compile</em> it, then <em>archive</em> it. The process is slightly different depending
 on your build system:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="c3b304b2-97f2-4223-9158-414f36b9f7e2" name="4c00890c-61e4-4aa1-bd53-04be7d153b6f" type="radio"/>
-<label class="sd-tab-label" for="c3b304b2-97f2-4223-9158-414f36b9f7e2">
+<input checked="checked" id="a4fe00d5-515f-48bd-8f2a-b07c350b54d4" name="1417a1b0-1ac9-4889-a540-42d8aebad7ea" type="radio"/>
+<label class="sd-tab-label" for="a4fe00d5-515f-48bd-8f2a-b07c350b54d4">
 Gradle</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">:jar</span></code> task. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">build/libs</span></code>.</p>
 </div>
-<input id="d40ae5f2-e098-4f81-ab3b-ea1f72503503" name="4c00890c-61e4-4aa1-bd53-04be7d153b6f" type="radio"/>
-<label class="sd-tab-label" for="d40ae5f2-e098-4f81-ab3b-ea1f72503503">
+<input id="4a2a7fd1-7f29-436b-a74e-269183f62ee7" name="1417a1b0-1ac9-4889-a540-42d8aebad7ea" type="radio"/>
+<label class="sd-tab-label" for="4a2a7fd1-7f29-436b-a74e-269183f62ee7">
 Maven</label><div class="sd-tab-content docutils">
 <p>Run the <code class="docutils literal notranslate"><span class="pre">package</span></code> goal. The JAR will be produced in <code class="docutils literal notranslate"><span class="pre">target</span></code>.</p>
 </div>

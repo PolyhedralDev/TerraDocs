@@ -1,0 +1,100 @@
+===========
+Distributor
+===========
+
+Types
+=====
+
+Different types of ``Distributor`` provide different behaviours and may have additional parameters for configuring that behavior.
+
+The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+
+A list of available types for ``Distributor`` are listed below:
+
+---------
+
+SAMPLER
+-------
+
+:superscript:`Added by the 'config-distributors' addon`
+
+`PARAMETERS:`
+
+:bdg-success:`threshold` :doc:`Float` 
+
+Default: ``0.0``
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+---------
+
+POINTS
+------
+
+:superscript:`Added by the 'config-distributors' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`points` :doc:`Set`\<:doc:`Point`\> 
+
+---------
+
+PADDED_GRID
+-----------
+
+:superscript:`Added by the 'config-distributors' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`width` :doc:`Integer` 
+
+:bdg-primary:`padding` :doc:`Integer` 
+
+:bdg-primary:`salt` :doc:`Integer` 
+
+---------
+
+AND
+---
+
+:superscript:`Added by the 'config-distributors' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`distributors` :doc:`List`\<:doc:`Distributor`\> 
+
+---------
+
+OR
+--
+
+:superscript:`Added by the 'config-distributors' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`distributors` :doc:`List`\<:doc:`Distributor`\> 
+
+---------
+
+XOR
+---
+
+:superscript:`Added by the 'config-distributors' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`distributors` :doc:`List`\<:doc:`Distributor`\> 
+
+---------
+
+YES
+---
+
+:superscript:`Added by the 'config-distributors' addon`
+
+---------
+
+NO
+--
+
+:superscript:`Added by the 'config-distributors' addon`

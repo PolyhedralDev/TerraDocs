@@ -24,4 +24,17 @@ IMAGE
 
 :bdg-primary:`color-sampler` :doc:`ColorSampler` 
 
-:bdg-primary:`color-conversion` :doc:`ColorConverter`\<:doc:`PipelineBiome`\> 
+:bdg-primary:`color-conversion` ColorConverter<:doc:`PipelineBiome`\> 
+
+---------
+
+SAMPLER
+-------
+
+:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+:bdg-primary:`biomes` :doc:`WeightedList`\<:doc:`PipelineBiome`\> 

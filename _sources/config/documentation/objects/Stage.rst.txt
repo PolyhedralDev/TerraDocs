@@ -1,0 +1,86 @@
+=====
+Stage
+=====
+
+Types
+=====
+
+Different types of ``Stage`` provide different behaviours and may have additional parameters for configuring that behavior.
+
+The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+
+A list of available types for ``Stage`` are listed below:
+
+---------
+
+FRACTAL_EXPAND
+--------------
+
+:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+
+---------
+
+SMOOTH
+------
+
+:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+
+---------
+
+REPLACE
+-------
+
+:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`from` :doc:`Tag` 
+
+:bdg-primary:`to` :doc:`WeightedList`\<:doc:`PipelineBiome`\> 
+
+---------
+
+REPLACE_LIST
+------------
+
+:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`default-from` :doc:`Tag` 
+
+:bdg-primary:`default-to` :doc:`WeightedList`\<:doc:`PipelineBiome`\> 
+
+:bdg-primary:`to` :doc:`Map`\<:doc:`PipelineBiome`\, :doc:`WeightedList`\<:doc:`PipelineBiome`\>> 
+
+---------
+
+BORDER
+------
+
+:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`from` :doc:`Tag` 
+
+:bdg-primary:`replace` :doc:`Tag` 
+
+:bdg-primary:`to` :doc:`WeightedList`\<:doc:`PipelineBiome`\> 
+
+---------
+
+BORDER_LIST
+-----------
+
+:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`from` :doc:`Tag` 
+
+:bdg-primary:`default-replace` :doc:`Tag` 
+
+:bdg-primary:`default-to` :doc:`WeightedList`\<:doc:`PipelineBiome`\> 
+
+:bdg-primary:`replace` :doc:`Map`\<:doc:`PipelineBiome`\, :doc:`WeightedList`\<:doc:`PipelineBiome`\>> 

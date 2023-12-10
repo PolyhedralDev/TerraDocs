@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="String" href="String.html" /><link rel="prev" title="Range" href="Range.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Stage" href="Stage.html" /><link rel="prev" title="Set" href="Set.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
         <title>Source - Terra Docs</title>
@@ -241,24 +241,37 @@
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Config Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="Biome.html">Biome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BiomeProvider.html">BiomeProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Block.html">Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Boolean.html">Boolean</a></li>
-<li class="toctree-l3"><a class="reference internal" href="ColorConverter.html">ColorConverter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ColorSampler.html">ColorSampler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ColorString.html">ColorString</a></li>
 <li class="toctree-l3"><a class="reference internal" href="DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Distributor.html">Distributor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Expression.html">Expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Float.html">Float</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Integer.html">Integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="List.html">List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Locator.html">Locator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Map.html">Map</a></li>
 <li class="toctree-l3"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NoiseSampler.html">NoiseSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="NumberPredicate.html">NumberPredicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Pattern.html">Pattern</a></li>
 <li class="toctree-l3"><a class="reference internal" href="PipelineBiome.html">PipelineBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Point.html">Point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.html">Range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Set.html">Set</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Stage.html">Stage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="String.html">String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Tag.html">Tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="WeightedList.html">WeightedList</a></li>
 </ul>
 </li>
 </ul>
@@ -326,7 +339,15 @@
 <p><sup>Added by the ‘pipeline-image’ addon</sup></p>
 <p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-sampler</span> <a class="reference internal" href="ColorSampler.html"><span class="doc">ColorSampler</span></a></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-conversion</span> <a class="reference internal" href="ColorConverter.html"><span class="doc">ColorConverter</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-conversion</span> ColorConverter&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;</p>
+</section>
+<hr class="docutils"/>
+<section id="sampler">
+<h3>SAMPLER<a class="headerlink" href="#sampler" title="Permalink to this headline">¶</a></h3>
+<p><sup>Added by the ‘biome-provider-pipeline-v2’ addon</sup></p>
+<p><cite>PARAMETERS:</cite></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="NoiseSampler.html"><span class="doc">NoiseSampler</span></a></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">biomes</span> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;</p>
 </section>
 </section>
 </section>
@@ -336,23 +357,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="String.html">
+          <a class="next-page" href="Stage.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">String</div>
+                <div class="title">Stage</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="Range.html">
+          <a class="prev-page" href="Set.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Range</div>
+                <div class="title">Set</div>
                 
               </div>
             </a>
@@ -385,6 +406,7 @@
 <li><a class="reference internal" href="#">Source</a><ul>
 <li><a class="reference internal" href="#types">Types</a><ul>
 <li><a class="reference internal" href="#image">IMAGE</a></li>
+<li><a class="reference internal" href="#sampler">SAMPLER</a></li>
 </ul>
 </li>
 </ul>

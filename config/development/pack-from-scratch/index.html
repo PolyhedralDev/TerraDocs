@@ -241,24 +241,37 @@
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../../documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Biome.html">Biome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/BiomeProvider.html">BiomeProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Block.html">Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Boolean.html">Boolean</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/ColorConverter.html">ColorConverter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/ColorSampler.html">ColorSampler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/ColorString.html">ColorString</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Distributor.html">Distributor</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Expression.html">Expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Extrusion.html">Extrusion</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Float.html">Float</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Image.html">Image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Integer.html">Integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/List.html">List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Locator.html">Locator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Map.html">Map</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/MathFunction.html">MathFunction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/NumberPredicate.html">NumberPredicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Pattern.html">Pattern</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Point.html">Point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Range.html">Range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Set.html">Set</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Source.html">Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Stage.html">Stage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/String.html">String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Tag.html">Tag</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/WeightedList.html">WeightedList</a></li>
 </ul>
 </li>
 </ul>
@@ -393,8 +406,8 @@ you can refer to the <a class="reference internal" href="../config-system.html">
 you are free to define each parameter in whatever order you’d like. In addition, extra blank lines between
 parameters is ignored, the follow examples are all equivalent:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2a36b67e-c607-44a0-8814-bd7286d02d73" name="118f9351-476d-4b65-a8c6-b8bc2dfa5907" type="radio"/>
-<label class="sd-tab-label" for="2a36b67e-c607-44a0-8814-bd7286d02d73">
+<input checked="checked" id="371a8155-15ba-49c6-8045-1f9a235e1f03" name="b947a023-5b11-4e46-ad60-009c7206c6fd" type="radio"/>
+<label class="sd-tab-label" for="371a8155-15ba-49c6-8045-1f9a235e1f03">
 Example 1</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
@@ -405,8 +418,8 @@ Example 1</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="41642645-f0f4-4735-979f-b8c70e4d89f6" name="118f9351-476d-4b65-a8c6-b8bc2dfa5907" type="radio"/>
-<label class="sd-tab-label" for="41642645-f0f4-4735-979f-b8c70e4d89f6">
+<input id="f70c9905-9bd9-495a-8b51-43456f7e19da" name="b947a023-5b11-4e46-ad60-009c7206c6fd" type="radio"/>
+<label class="sd-tab-label" for="f70c9905-9bd9-495a-8b51-43456f7e19da">
 Example 2</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
@@ -416,8 +429,8 @@ Example 2</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="67d4fce0-4511-470e-9eec-bd3947a5db6b" name="118f9351-476d-4b65-a8c6-b8bc2dfa5907" type="radio"/>
-<label class="sd-tab-label" for="67d4fce0-4511-470e-9eec-bd3947a5db6b">
+<input id="a35a7b7e-36c2-404e-975b-6bf23245f0c3" name="b947a023-5b11-4e46-ad60-009c7206c6fd" type="radio"/>
+<label class="sd-tab-label" for="a35a7b7e-36c2-404e-975b-6bf23245f0c3">
 Example 3</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>

@@ -13,6 +13,17 @@ A list of available types for ``BiomeProvider`` are listed below:
 
 ---------
 
+SINGLE
+------
+
+:superscript:`Added by the 'biome-provider-single' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`biome` :doc:`Biome` 
+
+---------
+
 IMAGE
 -----
 
@@ -22,8 +33,50 @@ IMAGE
 
 :bdg-primary:`color-sampler` :doc:`ColorSampler` 
 
-:bdg-primary:`color-conversion` :doc:`ColorConverter`\<:doc:`Biome`\> 
+:bdg-primary:`color-conversion` :doc:`BiomeColorConverter` 
 
 :bdg-success:`resolution` :doc:`Integer` 
 
 Default: ``1``
+
+---------
+
+PIPELINE
+--------
+
+:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+
+`PARAMETERS:`
+
+:bdg-success:`resolution` :doc:`Integer` 
+
+Default: ``1``
+
+:bdg-success:`blend.sampler` :doc:`NoiseSampler` 
+
+Default: ``Constant 0``
+
+:bdg-success:`blend.amplitude` :doc:`Float` 
+
+Default: ``0.0``
+
+:bdg-primary:`pipeline.source` :doc:`Source` 
+
+:bdg-primary:`pipeline.stages` :doc:`List`\<:doc:`Stage`\> 
+
+---------
+
+EXTRUSION
+---------
+
+:superscript:`Added by the 'biome-provider-extrusion' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`provider` :doc:`BiomeProvider` 
+
+:bdg-success:`resolution` :doc:`Integer` 
+
+Default: ``4``
+
+:bdg-primary:`extrusions` :doc:`List`\<:doc:`Extrusion`\> 

@@ -1,0 +1,104 @@
+=======
+Pattern
+=======
+
+Types
+=====
+
+Different types of ``Pattern`` provide different behaviours and may have additional parameters for configuring that behavior.
+
+The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+
+A list of available types for ``Pattern`` are listed below:
+
+---------
+
+MATCH_AIR
+---------
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`offset` :doc:`Range` 
+
+---------
+
+MATCH_SOLID
+-----------
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`offset` :doc:`Range` 
+
+---------
+
+MATCH
+-----
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`block` BlockState 
+
+:bdg-primary:`offset` :doc:`Range` 
+
+---------
+
+MATCH_SET
+---------
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`blocks` :doc:`Set`\<:doc:`Block`\> 
+
+:bdg-primary:`offset` :doc:`Range` 
+
+---------
+
+AND
+---
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`patterns` :doc:`List`\<:doc:`Pattern`\> 
+
+---------
+
+OR
+--
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`patterns` :doc:`List`\<:doc:`Pattern`\> 
+
+---------
+
+XOR
+---
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`patterns` :doc:`List`\<:doc:`Pattern`\> 
+
+---------
+
+NOT
+---
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`pattern` :doc:`Pattern` 

@@ -1,0 +1,9 @@
+=====
+Point
+=====
+
+`PARAMETERS:`
+
+:bdg-primary:`x` :doc:`Integer` 
+
+:bdg-primary:`z` :doc:`Integer` 

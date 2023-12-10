@@ -1,0 +1,155 @@
+=======
+Locator
+=======
+
+Types
+=====
+
+Different types of ``Locator`` provide different behaviours and may have additional parameters for configuring that behavior.
+
+The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+
+A list of available types for ``Locator`` are listed below:
+
+---------
+
+SURFACE
+-------
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`range` :doc:`Range` 
+
+---------
+
+TOP
+---
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`range` :doc:`Range` 
+
+---------
+
+RANDOM
+------
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`height` :doc:`Range` 
+
+:bdg-primary:`amount` :doc:`Range` 
+
+:bdg-success:`salt` :doc:`Integer` 
+
+Default: ``0``
+
+---------
+
+GAUSSIAN_RANDOM
+---------------
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`height` :doc:`Range` 
+
+:bdg-primary:`amount` :doc:`Range` 
+
+:bdg-primary:`standard-deviation` :doc:`Float` 
+
+:bdg-success:`salt` :doc:`Integer` 
+
+Default: ``0``
+
+---------
+
+PATTERN
+-------
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`range` :doc:`Range` 
+
+:bdg-primary:`pattern` :doc:`Pattern` 
+
+---------
+
+ADJACENT_PATTERN
+----------------
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`range` :doc:`Range` 
+
+:bdg-primary:`pattern` :doc:`Pattern` 
+
+:bdg-success:`match-all` :doc:`Boolean` 
+
+Default: ``false``
+
+---------
+
+SAMPLER
+-------
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`samplers` :doc:`List`\<:doc:`NoiseSampler`\> 
+
+---------
+
+SAMPLER_3D
+----------
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`sampler` :doc:`NoiseSampler` 
+
+---------
+
+AND
+---
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`locators` :doc:`List`\<:doc:`Locator`\> 
+
+---------
+
+OR
+--
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`locators` :doc:`List`\<:doc:`Locator`\> 
+
+---------
+
+XOR
+---
+
+:superscript:`Added by the 'config-locators' addon`
+
+`PARAMETERS:`
+
+:bdg-primary:`locators` :doc:`List`\<:doc:`Locator`\> 
