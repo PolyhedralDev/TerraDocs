@@ -3,6 +3,12 @@ Fabric:
     :doc:`Fabric Installation </install/fabric>` :octicon:`chevron-right`
 
   versions:
+    - mc-ver: "1.20.2"
+      terra-ver: "6.4.1"
+      stage: BETA
+      link: https://modrinth.com/plugin/terra/version/6.4.1-BETA-fabric
+      supported: true
+      maintained: true
     - mc-ver: "1.20"
       terra-ver: "6.3.1"
       stage: BETA
@@ -31,6 +37,12 @@ Bukkit:
   description: |
     :doc:`Bukkit Installation </install/bukkit>` :octicon:`chevron-right`
   versions:
+    - mc-ver: "1.20.2"
+      terra-ver: "6.4.1"
+      stage: BETA
+      link: https://modrinth.com/plugin/terra/version/6.4.1-BETA-bukkit
+      supported: true
+      maintained: true
     - mc-ver: "1.20"
       terra-ver: "6.3.1"
       stage: BETA
@@ -93,6 +105,12 @@ Forge:
 
 Quilt:
   versions:
+    - mc-ver: "1.20.2"
+      terra-ver: "6.4.1"
+      stage: BETA
+      link: https://modrinth.com/plugin/terra/version/6.4.1-BETA-fabric
+      supported: true
+      maintained: true
     - mc-ver: "1.19"
       terra-ver: "6.2.1"
       stage: ALPHA
