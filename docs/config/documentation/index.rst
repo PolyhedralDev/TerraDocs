@@ -27,6 +27,7 @@ Object Configs
 .. toctree::
     :maxdepth: 1
     :glob:
+    :hidden: 
 
     objects/*
 
