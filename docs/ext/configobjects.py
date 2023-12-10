@@ -2,6 +2,8 @@ import rstutils as rst
 import warnings
 import re
 
+from yamlutils import *
+
 def convert_yaml_template_set(addon_name, raw_templates):
     return {
         RegistryKey(addon_name, template_name): Template(
@@ -14,7 +16,7 @@ def convert_yaml_template_set(addon_name, raw_templates):
             footer=template.get("footer"),
         )
         for (template_name,template)
-        in raw_templates.items()
+        in set_default_values(raw_templates, {}).items()
         if not template.get("abstract", False)
     }
 
@@ -72,8 +74,8 @@ def resolve_extensions(raw_templates, template_name, visited=None):
         raise ValueError("Recursion detected")
     visited.add(template_name)
 
-    template = raw_templates[template_name]
-    parameters = template.get("params", {}); # Unsafe, assumes params is defined
+    template = raw_templates[template_name] if raw_templates.get(template_name) is not None else {}
+    parameters = template.get("params", {}) 
 
     if "extends" in template: # Merge in parameters from parent if present
         parent_key = template["extends"]

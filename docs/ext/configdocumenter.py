@@ -5,6 +5,8 @@ import yaml
 import rstutils as rst
 from configobjects import *
 
+from yamlutils import *
+
 def setup(app):
     doc_dir = os.path.join(app.srcdir, 'config/documentation')
     addons_dir = os.path.join(doc_dir, 'addons')
@@ -18,10 +20,10 @@ def setup(app):
         if not filename.endswith(".yml") or not os.path.isfile(file):
             continue
         with open(file, 'r') as file:
-            for addon_name, addon in yaml.safe_load(file).items():
+            for addon_name, addon in ensure_dict(yaml.safe_load(file)).items():
                 if addon_name in addons:
                     raise ValueError(f"Addon {addon_name} is defined multiple times across multiple files")
-                addons[addon_name] = addon
+                addons[addon_name] = ensure_dict(addon)
 
     objects = {}
 
@@ -38,6 +40,7 @@ def setup(app):
         for object_name, templates in addon.get("templates", {}).items(): 
             if object_name not in objects:
                 continue
+            templates = ensure_dict(templates)
             objects[object_name].templates.update(convert_yaml_template_set(addon_name, templates))
 
     # Write objects into rst files
