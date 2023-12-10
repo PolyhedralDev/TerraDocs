@@ -1,0 +1,9 @@
+============
+Bukkit 6.3.0
+============
+
+.. include:: ../../unsupported.rst
+
+:bdg-primary:`Download` - https://modrinth.com/mod/terra/version/6.3.0-BETA-bukkit
+
+:ref:`Other Bukkit versions <Bukkit-versions>` :octicon:`chevron-right`

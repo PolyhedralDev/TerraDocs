@@ -1,0 +1,587 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Image Configuration" href="../image/index.html" /><link rel="prev" title="How Noise Distributes Things" href="use.html" />
+
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
+        <title>How Noise Samplers Work - Terra Docs</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/rounded-borders.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/cards.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/code-blocks.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/interpreted-text.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/padding.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/headings.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/admonitions.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tabs.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/logo.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/content.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/lists.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/text-colors.css" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #000000;
+  --color-foreground-secondary: #333333;
+  --font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Cantarell, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --admonition-font-size: 1rem;
+  
+  }
+  body[data-theme="dark"] {
+    --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    body:not([data-theme="light"]) {
+      --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
+  
+    }
+  }
+</style></head>
+  <body>
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z" />
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../../index.html"><div class="brand">Terra Docs</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../../_static/terra-logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Terra Docs</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
+  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../install/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/fabric.html">Fabric Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/forge.html">Forge Installation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/quilt.html">Quilt Installation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/bukkit.html">Bukkit Installation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/bukkit-server-world-creation.html">Bukkit World Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/worldmanager-bukkit-world-creation.html">Worldmanager World Creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/versions.html">Versions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Bukkit/5.3.3.html">Bukkit Legacy 5.3.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Bukkit/5.4.1.html">Bukkit Legacy 5.4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Bukkit/6.1.2.html">Bukkit 6.1.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Bukkit/6.3.0.html">Bukkit 6.3.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Fabric/5.3.3.html">Fabric Legacy 5.3.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Fabric/5.4.1.html">Fabric Legacy 5.4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Fabric/6.1.1.html">Fabric 6.1.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Fabric/6.3.0.html">Fabric 6.3.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Forge/5.3.3.html">Forge Legacy 5.3.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Forge/6.2.1.html">Forge 6.2.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Quilt/6.2.1.html">Quilt 6.2.1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact &amp; Support</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../index.html">Config Packs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../../community-packs.html">Community Packs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../pack-installation.html">Pack Installation</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Config Development</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../introduction.html">Config Development Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../config-files.html">Config Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../config-data.html">Defining Data in Configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../config-system.html">The Config System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../pack-from-scratch/index.html">Creating a Pack from Scratch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../modifying-existing-pack.html">Modifying an Existing Pack</a></li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="index.html">Noise</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="configuring.html">Configuring Noise Samplers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="use.html">How Noise Distributes Things</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">How Noise Samplers Work</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../image/index.html">Image Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Biome.html">Biome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/BiomeProvider.html">BiomeProvider</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Boolean.html">Boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/ColorConverter.html">ColorConverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/ColorSampler.html">ColorSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/ColorString.html">ColorString</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Expression.html">Expression</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Float.html">Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Image.html">Image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Integer.html">Integer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/List.html">List</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Map.html">Map</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/MathFunction.html">MathFunction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Range.html">Range</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/Source.html">Source</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/objects/String.html">String</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/intro/loading.html">Terra Addon Loading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/intro/development-environment.html">Setting up a Development Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/intro/listening-for-an-event.html">Listening for an Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/intro/adding-structure.html">Adding a Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/intro/registering-config-type.html">Registering a Config Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/manifest-addons.html">Manifest Addons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/dependency-injection.html">Dependency Injection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/logging.html">Logging With SLF4J</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/events.html">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/type-key.html">Type Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/registries.html">Registries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/tectonic.html">Tectonic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/cloud.html">Registering Commands with Cloud</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <div class="content-icon-container">
+          <div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="how-noise-samplers-work">
+<h1>How Noise Samplers Work<a class="headerlink" href="#how-noise-samplers-work" title="Permalink to this headline">¶</a></h1>
+<section id="noise-basics">
+<h2>Noise Basics<a class="headerlink" href="#noise-basics" title="Permalink to this headline">¶</a></h2>
+<p>Let’s begin with a demonstration displaying the most basic process of ‘creating’ noise. We will use a noise
+algorithm that produces <a class="reference external" href="https://en.wikipedia.org/wiki/White_noise">white noise</a>, and pass numbers
+1 to 10 into it. (Understanding how exactly algorithm produces specific values is not essential in
+understanding the general idea.)</p>
+<p>Conventionally, the values outputted by the algorithms used by Terra will be within a range of -1 to 1, so they can be visualized
+as a shade like so:</p>
+<a class="reference internal image-reference" href="../../../_images/basic_example-04.png"><img alt="../../../_images/basic_example-04.png" class="align-center" src="../../../_images/basic_example-04.png" style="width: 75%;"/></a>
+<p class="centered">
+<strong><strong>Model</strong></strong></p><div align="center" class="align-center"><div class="graphviz"><object class="graphviz" data="../../../_images/graphviz-218519ade99a78d391b937da438c1584f027c228.svg" type="image/svg+xml">
+<p class="warning">digraph {
+
+    node [shape=record]
+    rankdir=UD
+
+    input [label="Input\n(Number from 1-10)"]
+    sampler [label="White Noise Algorithm"]
+    output [label="Randomized Output\n(within range [-1, 1])"]
+
+    input -&gt; sampler [label="Passed to"]
+    sampler -&gt; output [label="Produces"]
+}</p></object></div>
+</div>
+<p class="centered">
+<strong><strong>Results</strong></strong></p><a class="reference internal image-reference" href="../../../_images/basic_example-01.png"><img alt="../../../_images/basic_example-01.png" class="align-center" src="../../../_images/basic_example-01.png" style="width: 75%;"/></a>
+<p>Simple, right? All the algorithm does is convert one number to another randomized number.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Outputs have been rounded to one decimal place for simplicity, in practice there is more precision.</p>
+<p>Whole number inputs have been used for the sake of demonstration, noise algorithms will still work the same way with inputs like <code class="docutils literal notranslate"><span class="pre">1.5</span></code>.</p>
+</div>
+<section id="seeds">
+<h3>Seeds<a class="headerlink" href="#seeds" title="Permalink to this headline">¶</a></h3>
+<p>Seeds are an additional noise algorithm input:</p>
+<div align="center" class="align-center"><div class="graphviz"><object class="graphviz" data="../../../_images/graphviz-4fb531c2af9fd22547e1f570e7df2b36bad4f3b5.svg" type="image/svg+xml">
+<p class="warning">digraph {
+
+   node [shape=record]
+   rankdir=UD
+
+   input [label="Input|{Seed|Number}"]
+   sampler [label="Noise Algorithm"]
+   output [label="Randomized Output"]
+
+   input -&gt; sampler [label="Passed to"]
+   sampler -&gt; output [label="Produces"]
+}</p></object></div>
+</div>
+<p>Seeds provide a way of getting a whole new set of random values from the same inputs. Seeds must be a whole number, meaning <code class="docutils literal notranslate"><span class="pre">5324</span></code> would
+be a valid seed, but <code class="docutils literal notranslate"><span class="pre">231.23</span></code> would not.</p>
+<p>Here is an example using two different seeds to produce different outputs, using the same inputs from
+the example above.</p>
+<p class="centered">
+<strong><strong>White noise with seed = 0</strong></strong></p><a class="reference internal image-reference" href="../../../_images/basic_example-01.png"><img alt="../../../_images/basic_example-01.png" class="align-center" src="../../../_images/basic_example-01.png" style="width: 75%;"/></a>
+<p class="centered">
+<strong><strong>White noise with seed = 1</strong></strong></p><a class="reference internal image-reference" href="../../../_images/basic_example-02.png"><img alt="../../../_images/basic_example-02.png" class="align-center" src="../../../_images/basic_example-02.png" style="width: 75%;"/></a>
+<p>One usage of seeds that you might be familiar with is minecraft world seeds. A vanilla minecraft world seed gets
+inserted into the many noise algorithms that govern vanilla world generation, resulting in completely different worlds
+per seed.</p>
+<div class="tip admonition">
+<p class="admonition-title">Vanilla Minecraft World Generation Trivia</p>
+<p>In previous versions of Minecraft, Some noise algorithms used the same seed for every world (meaning they don’t factor
+in the world seed), which resulted in every world generating a certain characteristic the exact same way. One notable
+example - the algorithm that controls bedrock formation used a static seed for every world, leading every world to
+share the same random configuration of bedrock.</p>
+</div>
+</section>
+<section id="noise-samplers">
+<h3>Noise Samplers<a class="headerlink" href="#noise-samplers" title="Permalink to this headline">¶</a></h3>
+<p>The values being input into a noise noise algorithm are typically positions in a world. For example the values 1 to 10 might be coordinates on the <code class="docutils literal notranslate"><span class="pre">X</span></code> axis.
+When used this way, a noise algorithm effectively provides a random value for any given position in the world as described by its coordinates.
+We call a noise algorithm used this way a <strong>noise sampler</strong>.</p>
+<p>Passing a position into a noise sampler is also called ‘sampling’ that position. A ‘sample’ is a singular output value for a given position, and a set of samples is called <em>noise</em>.</p>
+<div align="center" class="align-center"><div class="graphviz"><object class="graphviz" data="../../../_images/graphviz-f0a524b96e9d3c34d9e9fb2bf549c068b2c40fdf.svg" type="image/svg+xml">
+<p class="warning">digraph {
+
+    node [shape=record]
+    rankdir=UD
+
+    input [label="Input\nPosition"]
+    sampler [label="Noise Sampler\n(Uses a noise algorithm)"]
+    output [label="Sample\n(Randomized value for position)"]
+
+    input -&gt; sampler [label="Passed to"]
+    sampler -&gt; output [label="Produces"]
+}</p></object></div>
+</div>
+<section id="multiple-dimensions">
+<h4>Multiple Dimensions<a class="headerlink" href="#multiple-dimensions" title="Permalink to this headline">¶</a></h4>
+<p>In the examples above only one axis of coordinates is passed as input, however noise samplers utilize multiple dimensional coordinates to specify input positions.</p>
+<p>Providing two dimensional coordinates means sampling in 2D.
+The <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Z</span></code> axes are used for coordinates passed into 2D noise samplers.</p>
+<p>In a new example, let’s use a range of 1 - 3 for both <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Z</span></code>, giving us a total of 9 samples (3 x 3).
+Exact coordinate values are omitted for the sake of simplicity.</p>
+<p class="centered">
+<strong><strong>Two Dimensional Model</strong></strong></p><div align="center" class="align-center"><div class="graphviz"><object class="graphviz" data="../../../_images/graphviz-50b8409c3a0da1436e2fa7895de1ca608b9d975c.svg" type="image/svg+xml">
+<p class="warning">digraph {
+
+   node [shape=record]
+   rankdir=UD
+
+   input [label="Inputs|{Seed|X Coordinates (1 to 3)|Z Coordinates (1 to 3)}"]
+   sampler [label="2D White Noise Sampler"]
+   output [label="Output Noise\n(Displayed as a 2D grid of shades)"]
+
+   input -&gt; sampler [label="Passed to"]
+   sampler -&gt; output [label="Produces"]
+}</p></object></div>
+</div>
+<p class="centered">
+<strong><strong>Results</strong></strong></p><a class="reference internal image-reference" href="../../../_images/basic_example-03.png"><img alt="../../../_images/basic_example-03.png" class="align-center" src="../../../_images/basic_example-03.png" style="width: 300px;"/></a>
+<p>Adding an extra dimension allows noise to be depicted as a 2D grid, rather than a list of values as was shown earlier.</p>
+<p>Taking this experiment further, let’s use a larger sample area of 64 x 64:</p>
+<img alt="../../../_images/whitenoise64x64.png" class="align-center" src="../../../_images/whitenoise64x64.png"/>
+<p>What we have done here is essentially produced a random image using a white noise sampler.</p>
+<p>By default, we will assume the above format of visualizing noise in 2D as an image, where each output value represents a grayscale pixel.</p>
+</section>
+<section id="higher-dimensions">
+<h4>Higher Dimensions<a class="headerlink" href="#higher-dimensions" title="Permalink to this headline">¶</a></h4>
+<p>Many noise algorithms support many more than two inputs (excluding seed), which can be treated as the number of dimensions,
+however in Terra, noise samplers only support either two or three dimensions. 3D noise samplers use axes <code class="docutils literal notranslate"><span class="pre">X</span></code>, <code class="docutils literal notranslate"><span class="pre">Y</span></code>, and <code class="docutils literal notranslate"><span class="pre">Z</span></code>.</p>
+</section>
+</section>
+<section id="salt">
+<span id="noise-sampler-salt-theory"></span><h3>Salt<a class="headerlink" href="#salt" title="Permalink to this headline">¶</a></h3>
+<p>The seed a noise sampler will use is set to the world seed plus a value called <strong>salt</strong>. Salt is a number you can specify when defining noise sampler configurations
+and allows noise samplers using the same algorithm to produce different sets of output values.</p>
+<p>Setting different salts for noise samplers that would otherwise be identical is useful in order to prevent different things from potentially being distributed the
+same way in the same location.</p>
+</section>
+<section id="determinism">
+<h3>Determinism<a class="headerlink" href="#determinism" title="Permalink to this headline">¶</a></h3>
+<p>Given any input, the output of a noise sampler must <em>always</em> be the same. Because of this, we can reliably re-produce any ‘random’
+results we get from noise samplers by feeding it the same input. In more formal terms, this means that noise samplers must be
+<a class="reference external" href="https://en.wikipedia.org/wiki/Deterministic_system">deterministic</a>.</p>
+</section>
+<section id="coherent-noise">
+<span id="id1"></span><h3>Coherent Noise<a class="headerlink" href="#coherent-noise" title="Permalink to this headline">¶</a></h3>
+<p>Thus far, we have only covered noise looks like tv-static, which is fine for many
+applications. But how can we get noise capable of producing smooth rolling hills, vast
+mountains, and other structured random generation? Let’s introduce a new category of noise samplers called <strong>‘coherent noise’</strong>.</p>
+<section id="what-s-the-difference">
+<h4>What’s The Difference?<a class="headerlink" href="#what-s-the-difference" title="Permalink to this headline">¶</a></h4>
+<p>The main difference that separates what we will call <strong>random noise</strong> from coherent noise is that while random noise samplers produce
+noise with no apparent structure, coherent noise samplers produce ‘structured’ noise, where sampling nearby positions produce similar output values.</p>
+<p>To get a better idea of the difference, here is a visualization of two different 2D sampled noise samplers that both
+share the same inputs:</p>
+<div class="sd-container-fluid sd-sphinx-override sd-m-auto docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-column docutils">
+<p class="centered">
+<strong><strong>Random</strong></strong></p><img alt="../../../_images/whitenoise64x64.png" src="../../../_images/whitenoise64x64.png"/>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p class="centered">
+<strong><strong>Coherent</strong></strong></p><img alt="../../../_images/opensimplex2_64x64.png" src="../../../_images/opensimplex2_64x64.png"/>
+</div>
+</div>
+</div>
+<p>As you can see, the coherent noise example has a discernible structure where output values are smooth, compared to the
+random noise example where there’s no apparent structure. The coherent noise algorithm used in the sampler above is known as
+<strong>simplex noise</strong>, and is one of the many flavors of noise provided in Terra.</p>
+</section>
+</section>
+<section id="flavors-of-noise">
+<h3>Flavors of Noise<a class="headerlink" href="#flavors-of-noise" title="Permalink to this headline">¶</a></h3>
+<p>There are many other variants and implementations of noise samplers, such as the white noise and simplex noise samplers. Each has their
+own quirks, behaviors, and applications, however in general they all follow the same principle of providing values for each position.</p>
+<p>Here is a small list of the most commonly used noise samplers in Terra:</p>
+<ul class="simple">
+<li><p>Simplex Noise</p></li>
+<li><p>Cellular / Voronoi / Worley Noise</p></li>
+<li><p>White Noise</p></li>
+<li><p>Value Noise</p></li>
+<li><p>Domain Warp</p></li>
+<li><p>FBM</p></li>
+<li><p>Expression</p></li>
+</ul>
+<p>A full list of available noise samplers can be found at the <a class="reference internal" href="../../documentation/objects/NoiseSampler.html"><span class="doc">NoiseSampler</span></a> documentation.</p>
+</section>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../image/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Image Configuration</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="use.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">How Noise Distributes Things</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, Terra Contributors |
+          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+            | <a class="muted-link" href="../../../_sources/config/development/noise/theory.rst.txt"
+               rel="nofollow">
+              Show Source
+            </a>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">How Noise Samplers Work</a><ul>
+<li><a class="reference internal" href="#noise-basics">Noise Basics</a><ul>
+<li><a class="reference internal" href="#seeds">Seeds</a></li>
+<li><a class="reference internal" href="#noise-samplers">Noise Samplers</a><ul>
+<li><a class="reference internal" href="#multiple-dimensions">Multiple Dimensions</a></li>
+<li><a class="reference internal" href="#higher-dimensions">Higher Dimensions</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#salt">Salt</a></li>
+<li><a class="reference internal" href="#determinism">Determinism</a></li>
+<li><a class="reference internal" href="#coherent-noise">Coherent Noise</a><ul>
+<li><a class="reference internal" href="#what-s-the-difference">What’s The Difference?</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#flavors-of-noise">Flavors of Noise</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/scripts/furo.js"></script>
+    <script src="../../../_static/design-tabs.js"></script>
+    </body>
+</html>

@@ -4,18 +4,17 @@ NoiseSampler
 
 .. seealso::
 
-    :doc:`/config/development/samplers/index`
+    :doc:`/config/development/noise/index`
 
     :ref:`Config Documentation Format <config-documentation-format>` :octicon:`chevron-right`
 
-A sampler is a config defined function that maps coordinates and the world seed to a set
+A sampler is a config defined function that world positions and the world seed to a set
 of output values.
 
-A 'sample' is defined as a single calculation provided by a sampler, and the result of
-that calculation is regarded as the 'output value'. A collective set of output values is
-regarded as 'noise'.
+A 'sample' is defined as the value produced by a single calculation provided by a sampler. A collective set of
+samples is regarded as 'noise'.
 
-The output values determine some kind of behaviour for each block or column. This behaviour
+Noise produced by noise samplers :doc:`determine some kind of behaviour </config/development/noise/use>` for each block or column. This behaviour
 is dependent on the context of the sampler definition. 
 
 

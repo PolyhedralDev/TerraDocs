@@ -1,0 +1,11 @@
+===================
+Fabric Legacy 5.3.3
+===================
+
+.. include:: ../../unsupported.rst
+
+:bdg-primary:`Download` - https://modrinth.com/mod/terra/version/9DWPUHbr
+
+.. include:: ../../5.x-wiki.rst
+
+:ref:`Other Fabric versions <Fabric-versions>` :octicon:`chevron-right`

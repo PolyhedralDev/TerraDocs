@@ -1,0 +1,9 @@
+============
+Fabric 6.3.0
+============
+
+.. include:: ../../unsupported.rst
+
+:bdg-primary:`Download` - https://modrinth.com/plugin/terra/version/6.3.0-BETA-fabric/
+
+:ref:`Other Fabric versions <Fabric-versions>` :octicon:`chevron-right`

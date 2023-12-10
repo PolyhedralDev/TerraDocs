@@ -1,0 +1,11 @@
+===================
+Bukkit Legacy 5.3.3
+===================
+
+.. include:: ../../unsupported.rst
+
+:bdg-primary:`Download` - https://modrinth.com/mod/terra/version/5.3.3-BETA-bukkit
+
+.. include:: ../../5.x-wiki.rst
+
+:ref:`Other Bukkit versions <Bukkit-versions>` :octicon:`chevron-right`

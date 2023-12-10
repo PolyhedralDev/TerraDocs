@@ -15,5 +15,5 @@ Config Development
 
     modifying-existing-pack
 
-    samplers/index
+    noise/index
     image/index

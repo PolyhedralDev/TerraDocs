@@ -1,0 +1,9 @@
+===========
+Quilt 6.2.1
+===========
+
+.. include:: ../../unsupported.rst
+
+:bdg-primary:`Download` - https://modrinth.com/mod/terra/version/6.2.1-BETA-quilt
+
+:ref:`Other Quilt versions <Quilt-versions>` :octicon:`chevron-right`
