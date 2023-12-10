@@ -1,0 +1,13 @@
+biome-provider-image-v2:
+  templates:
+    BiomeProvider:
+      IMAGE:
+        params:
+          color-sampler:
+            type: ColorSampler
+          color-conversion:
+            type: ColorConverter<Biome>
+          resolution:
+            type: Integer
+            default: "1"
+

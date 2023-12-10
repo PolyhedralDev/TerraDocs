@@ -1,0 +1,71 @@
+base:
+  objects:
+    String:
+      type: PRIMITIVE
+      description: A string
+
+    Integer:
+      type: PRIMITIVE
+      description: An integer
+
+    Float:
+      type: PRIMITIVE
+      description: A float
+
+    Boolean:
+      type: PRIMITIVE
+      description: Either ``true`` or ``false``
+
+    Map:
+      type: PRIMITIVE
+      description: A map
+
+    List:
+      type: PRIMITIVE
+      description: A list
+
+    Expression:
+      type: PRIMITIVE
+      description: An expression
+
+    NoiseSampler:
+      type: TEMPLATED
+      description: |
+        .. seealso::
+
+            :doc:`/config/development/noise/index`
+
+            :ref:`Config Documentation Format <config-documentation-format>` :octicon:`chevron-right`
+
+        A sampler is a config defined function that world positions and the world seed to a set
+        of output values.
+
+        A 'sample' is defined as the value produced by a single calculation provided by a sampler. A collective set of
+        samples is regarded as 'noise'.
+
+        Noise produced by noise samplers :doc:`determine some kind of behaviour </config/development/noise/use>` for each block or column. This behaviour
+        is dependent on the context of the sampler definition. 
+
+    Range:
+      type: MULTI_TYPE
+      description: A range
+      types:
+        int:
+          description: When a range is declared as an int ...
+        map:
+          description: When a range is declared as a map ...
+          params:
+            min:
+              type: Integer
+            max:
+              type: Integer
+
+    BiomeProvider:
+      type: TEMPLATED
+
+    Biome:
+      type: MULTI_TYPE
+      description: A biome ID
+      types:
+        string:
+

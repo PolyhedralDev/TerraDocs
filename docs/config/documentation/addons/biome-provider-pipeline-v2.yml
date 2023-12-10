@@ -1,0 +1,9 @@
+biome-provider-pipeline-v2:
+  objects:
+    Source:
+      type: TEMPLATED
+      description: A pipeline source
+    PipelineBiome:
+      type: MULTI_TYPE
+      description: A pipeline biome
+
