@@ -1,0 +1,6 @@
+config-number-predicate:
+  objects:
+    NumberPredicate:
+      type: MULTI_TYPE
+      types:
+        string:

@@ -1,12 +1,39 @@
 biome-provider-image-v2:
+  objects:
+    BiomeColorConverter:
+      type: TEMPLATED
+    BiomeColorMapping:
+      type: TEMPLATED
+
   templates:
+    BiomeColorConverter:
+      EXACT:
+        params:
+          match:
+            type: BiomeColorMapping
+          else:
+            type: Biome
+          ignore-alpha:
+            type: Boolean
+            default: "true"
+      CLOSEST:
+        params:
+          match:
+            type: BiomeColorMapping
+
+    BiomeColorMapping:
+      USE_BIOME_COLORS:
+      MAP:
+        params:
+          map:
+            type: Map<ColorString, Biome>
     BiomeProvider:
       IMAGE:
         params:
           color-sampler:
             type: ColorSampler
           color-conversion:
-            type: ColorConverter<Biome>
+            type: BiomeColorConverter
           resolution:
             type: Integer
             default: "1"

@@ -1,0 +1,107 @@
+config-locators:
+  objects:
+    Pattern:
+      type: TEMPLATED
+
+  templates:
+    Locator:
+      SURFACE:
+        params:
+          range:
+            type: Range
+      TOP:
+        params:
+          range:
+            type: Range
+      RANDOM:
+        params:
+          height:
+            type: Range
+          amount:
+            type: Range
+          salt:
+            type: Integer
+            default: "0"
+      GAUSSIAN_RANDOM:
+        params:
+          height:
+            type: Range
+          amount:
+            type: Range
+          standard-deviation:
+            type: Float
+          salt:
+            type: Integer
+            default: "0"
+      PATTERN:
+        params:
+          range:
+            type: Range
+          pattern:
+            type: Pattern
+      ADJACENT_PATTERN:
+        params:
+          range:
+            type: Range
+          pattern:
+            type: Pattern
+          match-all:
+            type: Boolean
+            default: "false"
+      SAMPLER:
+        params:
+          samplers:
+            type: List<NoiseSampler>
+      SAMPLER_3D:
+        params:
+          sampler:
+            type: NoiseSampler
+      AND:
+        params:
+          locators:
+            type: List<Locator>
+      OR:
+        params:
+          locators:
+            type: List<Locator>
+      XOR:
+        params:
+          locators:
+            type: List<Locator>
+    Pattern:
+      MATCH_AIR:
+        params:
+          offset:
+            type: Range
+      MATCH_SOLID:
+        params:
+          offset:
+            type: Range
+      MATCH:
+        params:
+          block:
+            type: BlockState
+          offset:
+            type: Range
+      MATCH_SET:
+        params:
+          blocks:
+            type: Set<Block>
+          offset:
+            type: Range
+      AND:
+        params:
+          patterns:
+            type: List<Pattern>
+      OR:
+        params:
+          patterns:
+            type: List<Pattern>
+      XOR:
+        params:
+          patterns:
+            type: List<Pattern>
+      NOT:
+        params:
+          pattern:
+            type: Pattern

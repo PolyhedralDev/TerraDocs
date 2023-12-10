@@ -20,9 +20,6 @@ library-image:
       type: MULTI_TYPE
       description: A string representing a color
 
-    ColorConverter:
-      type: TEMPLATED
-
   templates:
     ColorSampler:
       ImageColorSamplerTemplate:

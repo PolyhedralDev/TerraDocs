@@ -6,4 +6,76 @@ biome-provider-pipeline-v2:
     PipelineBiome:
       type: MULTI_TYPE
       description: A pipeline biome
+      types:
+        string:
+    Stage:
+      type: TEMPLATED
+    Tag:
+      type: MULTI_TYPE
+      types:
+        string:
 
+  templates:
+    BiomeProvider:
+      PIPELINE:
+        params:
+          resolution:
+            type: Integer
+            default: "1"
+          blend.sampler:
+            type: NoiseSampler
+            default: Constant 0
+          blend.amplitude:
+            type: Float
+            default: "0.0"
+          pipeline.source:
+            type: Source
+          pipeline.stages:
+            type: List<Stage>
+    Source:
+      SAMPLER:
+        params:
+          sampler:
+            type: NoiseSampler
+          biomes:
+            type: WeightedList<PipelineBiome>
+    Stage:
+      StageTemplate:
+        abstract: true
+        params:
+          sampler:
+            type: NoiseSampler
+      FRACTAL_EXPAND:
+      SMOOTH:
+      REPLACE:
+        params:
+          from:
+            type: Tag
+          to:
+            type: WeightedList<PipelineBiome>
+      REPLACE_LIST:
+        params:
+          default-from:
+            type: Tag
+          default-to:
+            type: WeightedList<PipelineBiome>
+          to:
+            type: Map<PipelineBiome, WeightedList<PipelineBiome>>
+      BORDER:
+        params:
+          from:
+            type: Tag
+          replace:
+            type: Tag
+          to:
+            type: WeightedList<PipelineBiome>
+      BORDER_LIST:
+        params:
+          from:
+            type: Tag
+          default-replace:
+            type: Tag
+          default-to:
+            type: WeightedList<PipelineBiome>
+          replace:
+            type: Map<PipelineBiome, WeightedList<PipelineBiome>>

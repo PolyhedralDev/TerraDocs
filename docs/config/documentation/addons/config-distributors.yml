@@ -1,0 +1,47 @@
+config-distributors:
+  objects:
+    Point:
+      type: MULTI_TYPE
+      types:
+        map:
+          params:
+            x:
+              type: Integer
+            z:
+              type: Integer
+  templates:
+    Distributor:
+      SAMPLER:
+        params:
+          threshold:
+            type: Float
+            default: "0.0"
+          sampler:
+            type: NoiseSampler
+      POINTS:
+        params:
+          points:
+            type: Set<Point>
+      PADDED_GRID:
+        params:
+          width:
+            type: Integer
+          padding:
+            type: Integer
+          salt:
+            type: Integer
+      AND:
+        params:
+          distributors:
+            type: List<Distributor>
+      OR:
+        params:
+          distributors:
+            type: List<Distributor>
+      XOR:
+        params:
+          distributors:
+            type: List<Distributor>
+      "YES":
+      "NO":
+

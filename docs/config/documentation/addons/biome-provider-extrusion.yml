@@ -1,0 +1,42 @@
+biome-provider-extrusion:
+  objects:
+    Extrusion:
+      type: TEMPLATED
+    ExtrusionReplaceableBiome:
+      type: MULTI_TYPE
+      types:
+        string:
+
+  templates:
+    BiomeProvider:
+      EXTRUSION:
+        params:
+          provider:
+            type: BiomeProvider
+          resolution:
+            type: Integer
+            default: "4"
+          extrusions:
+            type: List<Extrusion>
+
+    Extrusion:
+      SamplerExtrusionTemplate:
+        abstract: true
+        params:
+          sampler:
+            type: NoiseSampler
+          range:
+            type: Range
+      SET:
+        extends: SamplerExtrusionTemplate
+        params:
+          to:
+            type: WeightedList<ExtrusionReplaceableBiome>
+      REPLACE:
+        extends: SamplerExtrusionTemplate
+        params:
+          to:
+            type: WeightedList<ExtrusionReplaceableBiome>
+          from:
+            type: String
+

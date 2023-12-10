@@ -24,9 +24,17 @@ base:
       type: PRIMITIVE
       description: A list
 
+    Set:
+      type: PRIMITIVE
+      description: A set
+
     Expression:
       type: PRIMITIVE
       description: An expression
+
+    WeightedList:
+      type: MULTI_TYPE
+      description: A weighted list
 
     NoiseSampler:
       type: TEMPLATED
@@ -69,3 +77,13 @@ base:
       types:
         string:
 
+    Block:
+      type: MULTI_TYPE
+      types:
+        string:
+
+    Distributor:
+      type: TEMPLATED
+
+    Locator:
+      type: TEMPLATED

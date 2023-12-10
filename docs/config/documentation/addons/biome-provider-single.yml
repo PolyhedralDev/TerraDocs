@@ -1,0 +1,7 @@
+biome-provider-single:
+  templates:
+    BiomeProvider:
+      SINGLE:
+        params:
+          biome:
+            type: Biome
