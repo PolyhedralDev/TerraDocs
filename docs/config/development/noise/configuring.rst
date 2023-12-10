@@ -171,7 +171,7 @@ palette configuration. The sampler config is highlighted:
     :language: yaml
     :emphasize-lines: 9-10
 
-The usage of noise here controls the arrangement of the :ref:`weighted pool <weighted-pools>` of materials.
+The usage of noise here controls the arrangement of the :ref:`weighted list <weighted-list>` of materials.
 To get a better idea of the relationship, here is a screenshot of a biome which uses the above palette
 configuration:
 

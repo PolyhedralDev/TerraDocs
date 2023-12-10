@@ -49,7 +49,7 @@ Lowering the threshold from ``0`` to ``-0.25`` results in less grass because we 
 ``-0.25`` and ``0`` from falling below the threshold. Conversely, *increasing* the threshold will result in more grass, as
 more values will fall below the threshold.
 
-.. _weighted-pools:
+.. _weighted-lists:
 
 Distributing Lists
 ==================
@@ -90,7 +90,7 @@ This process is done is by applying multiple thresholds to split the range of no
 
 From this we can intuitively see that samples less than ``-0.5`` will correspond to ``Blue``, samples in range ``[-0.5, 0]`` to ``Green`` and so on.
 
-Weighted Pools
+Weighted Lists
 ,,,,,,,,,,,,,,
 
 Repeating a list item will result in it taking up a larger range of values, for example this would make ``Blue`` take up twice the area compared to the other colors:
@@ -114,9 +114,9 @@ Rather than repeating each item to increase its 'weight' in the list, we can def
      - Yellow: 1
      - Red: 1
 
-This is what we call a **weighted pool**. Weighted pools are commonly used in conjunction with noise samplers to distribute things.
+This is what we call a **weighted list**. Weighted lists are commonly used in conjunction with noise samplers to distribute things.
 
 The numbers can be thought of as the ratios each item will take up across a noise sampler's output. Using the example above, there would be
 a Blue:Green:Yellow:Red ratio of 2:1:1:1
 
-*Terra will automatically determine the thresholds and segment the noise behind the scenes*, making weighted pools easy to configure.
+*Terra will automatically determine the thresholds and segment the noise behind the scenes*, making weighted lists easy to configure.
