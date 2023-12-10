@@ -1,0 +1,100 @@
+Fabric:
+  description: |
+    :doc:`Fabric Installation </install/fabric>` :octicon:`chevron-right`
+
+  versions:
+    - mc-ver: "1.20"
+      terra-ver: "6.3.1"
+      stage: BETA
+      link: https://modrinth.com/plugin/terra/version/6.3.1-BETA-fabric/
+      supported: true
+    - mc-ver: "1.19"
+      terra-ver: "6.3.0"
+      stage: BETA
+      link: https://modrinth.com/plugin/terra/version/6.3.0-BETA-fabric/
+    - mc-ver: "1.18"
+      terra-ver: "6.1.1"
+      stage: BETA
+      link: https://modrinth.com/mod/terra/version/6.1.1-BETA/
+    - mc-ver: "1.17"
+      terra-ver: "5.4.1"
+      stage: BETA
+      link: https://modrinth.com/mod/terra/version/i38N6tkR
+      legacy: true
+    - mc-ver: "1.16.5"
+      terra-ver: "5.3.3"
+      stage: BETA
+      link: https://modrinth.com/mod/terra/version/9DWPUHbr
+      legacy: true
+
+Bukkit:
+  description: |
+    :doc:`Bukkit Installation </install/bukkit>` :octicon:`chevron-right`
+  versions:
+    - mc-ver: "1.20"
+      terra-ver: "6.3.1"
+      stage: BETA
+      link: https://modrinth.com/mod/terra/version/6.3.1-BETA-bukkit
+      supported: true
+    - mc-ver: "1.19"
+      terra-ver: "6.3.0"
+      stage: BETA
+      link: https://modrinth.com/mod/terra/version/6.3.0-BETA-bukkit
+    - mc-ver: "1.18"
+      terra-ver: "6.1.2"
+      stage: BETA
+      link: https://www.spigotmc.org/resources/terra.85151/download?version=456104/
+    - mc-ver: "1.17"
+      terra-ver: "5.4.1"
+      stage: BETA
+      link: https://modrinth.com/mod/terra/version/5.4.1-BETA-bukkit
+      legacy: true
+    - mc-ver: "1.16.5"
+      terra-ver: "5.3.3"
+      stage: BETA
+      link: https://modrinth.com/mod/terra/version/5.3.3-BETA-bukkit
+      legacy: true
+  footer: |
+    .. note::
+
+        Lots of people get confused about what the difference is between Bukkit, Spigot, and Paper.
+
+        **Bukkit** is an API, a way for developers to interface with and write plugins
+        for the Minecraft server.
+
+        **Spigot** is an *implementation* of the Bukkit API, It's a platform that allows the Minecraft
+        server to load and run Bukkit plugins. Bukkit itself is no longer maintained by the Bukkit team,
+        so now SpigotMC maintains both Bukkit (the API) and Spigot (the implementation).
+
+        **Paper** is a *fork* of Spigot, a project based on Spigot that extends It's functionality. Paper
+        adds many performance optimizations to the Minecraft server, and also extends the Bukkit API.
+
+        **What does this have to do with Terra?**
+
+        We refer to the entire Bukkit ecosystem (Bukkit API, Spigot, Paper and friends..) as *Bukkit*
+        simply because Bukkit is the name of the API. **However** - Terra develops against and tests on
+        Paper. We do this because Bukkit and Spigot simply do not expose the required API for Terra to
+        be fully functional. Paper's extended API does. This means that while Terra will still *work*
+        on Spigot, there will be (important) features missing.
+
+        **TL;DR - Use Paper, or a fork of Paper.**
+
+Forge:
+  versions:
+    - mc-ver: "1.19"
+      terra-ver: "6.2.1"
+      stage: ALPHA
+      link: https://modrinth.com/mod/terra/version/6.2.1-BETA-forge
+    - mc-ver: "1.16.5"
+      terra-ver: "5.3.3"
+      stage: ALPHA
+      link: https://modrinth.com/mod/terra/version/DYQWCFn1
+      legacy: true
+
+Quilt:
+  versions:
+    - mc-ver: "1.19"
+      terra-ver: "6.2.1"
+      stage: ALPHA
+      link: https://modrinth.com/mod/terra/version/6.2.1-BETA-quilt
+

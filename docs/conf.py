@@ -34,6 +34,7 @@ extensions = [
     'sphinx.ext.githubpages',
     'sphinx.ext.graphviz',
     'configdocumenter',
+    'platformversionsdocumenter',
 ]
 
 source_suffix = [
