@@ -1,0 +1,12 @@
+digraph {
+
+   node [shape=record]
+   rankdir=UD
+
+   input [label="Input|{Seed|Number}"]
+   sampler [label="Noise Algorithm"]
+   output [label="Randomized Output"]
+
+   input -> sampler [label="Passed to"]
+   sampler -> output [label="Produces"]
+}

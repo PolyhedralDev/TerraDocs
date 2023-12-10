@@ -1,0 +1,12 @@
+digraph {
+
+    node [shape=record]
+    rankdir=UD
+
+    input [label="Input\nPosition"]
+    sampler [label="Noise Sampler\n(Uses a noise algorithm)"]
+    output [label="Sample\n(Randomized value for position)"]
+
+    input -> sampler [label="Passed to"]
+    sampler -> output [label="Produces"]
+}

@@ -1,0 +1,12 @@
+digraph {
+
+   node [shape=record]
+   rankdir=UD
+
+   input [label="Inputs|{Seed|X Coordinates (1 to 3)|Z Coordinates (1 to 3)}"]
+   sampler [label="2D White Noise Sampler"]
+   output [label="Output Noise\n(Displayed as a 2D grid of shades)"]
+
+   input -> sampler [label="Passed to"]
+   sampler -> output [label="Produces"]
+}
