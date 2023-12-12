@@ -183,10 +183,12 @@ class ConfigType():
         yaml = ensure_dict(yaml)
         self.description = yaml.get("description")
         self.addon = addon
-        self.params = {} 
+        self.addon_params = {} 
 
-    def add_params(self, params):
-        self.params.update(params)
+    def add_params(self, addon, params):
+        if addon in self.addon_params:
+            raise ValueError(f"Config type already has parameters for addon {addon}")
+        self.addon_params[addon] = params
 
     def to_rst_lines(self, config_name, objects, include_heading: bool=True) -> list[str]:
         lines = []
@@ -199,13 +201,14 @@ class ConfigType():
         if self.description:
             lines.append(self.description)
 
-        grouped_params = {}
-        for param_name, param in sort_params(self.params).items():
-            grouped_params.setdefault(param.addon, {})[param_name] = param
-        for addon_name, params in grouped_params.items():
-            lines.append(rst.sep)
-            group_name = addon_name if addon_name != self.addon else "Default"
-            lines.append(rst.interpreted(f"{group_name} parameters"))
+        # Sort parameters within each addon
+        sorted_addon_params = [ (addon_name ,sort_params(params)) for (addon_name, params) in self.addon_params.items() ]
+        # Make params from current addon first, then sort addons alphabetically
+        sorted_addon_params = sorted(sorted_addon_params, key=lambda pair: (pair[0] != self.addon, pair[0])) 
+        for addon_name, params in sorted_addon_params:
+            if addon_name != self.addon:
+                lines.append(rst.sep)
+                lines.append(rst.interpreted(f"{addon_name} parameters"))
             for param_name, param in params.items():
                 lines += param.to_rst_lines(param_name, objects)
 

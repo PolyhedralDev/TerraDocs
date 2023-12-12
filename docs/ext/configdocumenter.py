@@ -65,7 +65,7 @@ def setup(app):
             if config_name not in configs:
                 continue
             parameters = { param_name: Parameter(param_yaml, addon_name) for (param_name, param_yaml) in ensure_dict(ensure_dict(config_yaml).get("params")).items() }
-            configs[config_name].add_params(parameters)
+            configs[config_name].add_params(addon_name, parameters)
 
     # Write objects into rst files
     objects_dir = clean_dir(os.path.join(doc_dir, 'objects'))
