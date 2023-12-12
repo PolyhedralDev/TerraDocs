@@ -10,10 +10,6 @@ biome-provider-pipeline-v2:
         string:
     Stage:
       type: TEMPLATED
-    Tag:
-      type: MULTI_TYPE
-      types:
-        string:
 
   templates:
     BiomeProvider:
@@ -46,7 +42,9 @@ biome-provider-pipeline-v2:
           sampler:
             type: NoiseSampler
       FRACTAL_EXPAND:
+        description: Adds detail
       SMOOTH:
+        description: Smooths out detail
       REPLACE:
         params:
           from:

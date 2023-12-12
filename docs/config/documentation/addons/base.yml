@@ -77,6 +77,24 @@ base:
       types:
         string:
 
+    Palette:
+      type: MULTI_TYPE
+      description: A palette ID
+      types:
+        string:
+
+    Feature:
+      type: MULTI_TYPE
+      description: A feature ID
+      types:
+        string:
+
+    Structure:
+      type: MULTI_TYPE
+      description: A structure ID
+      types:
+        string:
+
     Block:
       type: MULTI_TYPE
       types:
@@ -87,3 +105,40 @@ base:
 
     Locator:
       type: TEMPLATED
+
+    GenerationStage:
+      type: TEMPLATED
+
+    Tag:
+      type: MULTI_TYPE
+      description: A tag
+      types:
+        string:
+
+    PlatformBiome:
+      type: MULTI_TYPE
+      description: A platform biome
+      types:
+        string:
+
+  configs:
+    pack.yml:
+      description: |
+        The config pack manifest
+
+  config-templates:
+    pack.yml:
+      params:
+        id:
+          type: String
+        author:
+          type: String
+          default: Anon Y. Mous
+        stages:
+          type: List<GenerationStage>
+        version:
+          type: Version
+        generator:
+          type: ChunkGenerator
+        biomes:
+          type: BiomeProvider

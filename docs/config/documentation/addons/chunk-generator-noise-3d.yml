@@ -1,2 +1,63 @@
 chunk-generator-noise-3d:
+  objects:
+    SlantLayer:
+      type: MULTI_TYPE
+      types:
+        map:
+          params:
+            threshold:
+              type: Float
+            palette:
+              type: List<Map<Palette, Integer>>
+
+  config-templates:
+    pack.yml:
+      params:
+        blend.terrain.elevation:
+          type: Integer
+          default: "4"
+        carving.resolution.horizontal:
+          type: Integer
+          default: "4"
+        carving.resolution.vertical:
+          type: Integer
+          default: "2"
+        slant.calculation-method:
+          type: SlantCalculationMethod
+          default: "Derivative"
+    BIOME:
+      params:
+        slant:
+          type: List<SlantLayer>
+          default: "[]"
+        slant-depth:
+          type: Integer
+          default: Infinity
+        palette:
+          type: List<Map<Palette, Integer>>
+        ocean.level:
+          type: Integer
+          default: "0"
+        ocean.palette:
+          type: Palette
+          default: Palette of air
+        carving.update-palette:
+          type: Boolean
+          default: "false"
+        terrain.sampler:
+          type: NoiseSampler
+        terrain.sampler-2d:
+          type: NoiseSampler
+        terrain.blend.distance:
+          type: Integer
+          default: "3"
+        terrain.blend.weight:
+          type: Float
+          default: "1.0"
+        terrain.blend.step:
+          type: Integer
+          default: "4"
+        terrain.blend.weight-2d:
+          type: Float
+          default: "1.0"
 

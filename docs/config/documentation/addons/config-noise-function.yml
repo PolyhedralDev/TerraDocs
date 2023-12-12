@@ -2,7 +2,6 @@ config-noise-function:
   objects:
     DimensionApplicableSampler:
       type: MULTI_TYPE
-      description: bla
       types:
         map:
           params:

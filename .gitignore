@@ -3,6 +3,7 @@ node_modules/
 package-lock.json
 .venv/
 docs/config/documentation/objects
+docs/config/documentation/configs
 docs/install/versions.rst
 docs/install/versions/platforms/*/*
 **/__pycache__/**

@@ -80,7 +80,7 @@ config-locators:
       MATCH:
         params:
           block:
-            type: BlockState
+            type: Block
           offset:
             type: Range
       MATCH_SET:

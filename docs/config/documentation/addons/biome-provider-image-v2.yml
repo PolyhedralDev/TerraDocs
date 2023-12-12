@@ -23,6 +23,7 @@ biome-provider-image-v2:
 
     BiomeColorMapping:
       USE_BIOME_COLORS:
+        description: Maps to each biome using its declared ``color`` parameter.
       MAP:
         params:
           map:

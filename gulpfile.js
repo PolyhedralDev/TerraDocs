@@ -9,7 +9,7 @@ const spawn = require('child_process').spawn;
 const docsDir = "docs";
 const ignoredPaths = [
     "config/documentation/objects",
-    "config/documentation/files",
+    "config/documentation/configs",
     "install/versions.rst",
     "install/versions/platforms",
 ]

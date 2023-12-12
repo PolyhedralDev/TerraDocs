@@ -1,4 +1,7 @@
 pipeline-image:
+  objects:
+    PipelineBiomeColorConverter:
+      type: TEMPLATED
   templates:
     Source:
       IMAGE:
@@ -6,5 +9,5 @@ pipeline-image:
           color-sampler:
             type: ColorSampler
           color-conversion:
-            type: ColorConverter<PipelineBiome>
+            type: PipelineBiomeColorConverter
 

@@ -1,0 +1,17 @@
+config-biome:
+  configs:
+    BIOME:
+  config-templates:
+    BIOME:
+      params:
+        id:
+          type: String
+        extends:
+          type: List<Biome>
+          default: "[]"
+        vanilla:
+          type: PlatformBiome
+        color:
+          type: Integer
+        tags:
+          type: Set<Tag>
