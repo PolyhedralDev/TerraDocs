@@ -49,7 +49,7 @@ Lowering the threshold from ``0`` to ``-0.25`` results in less grass because we 
 ``-0.25`` and ``0`` from falling below the threshold. Conversely, *increasing* the threshold will result in more grass, as
 more values will fall below the threshold.
 
-.. _weighted-lists:
+.. _weighted-list:
 
 Distributing Lists
 ==================
