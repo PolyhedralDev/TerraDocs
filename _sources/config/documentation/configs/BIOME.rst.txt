@@ -4,84 +4,70 @@ BIOME
 
 :superscript:`*Config type requires the 'config-biome' addon to use`
 
-:bdg-primary:`features.<stage id>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Feature`\> 
+---------
 
-:superscript:`*Parameter requires the 'generation-stage-feature' addon to use`
+`Default parameters`
+
+:bdg-primary:`color` :doc:`/config/documentation/objects/Integer`\ 
 
 :bdg-primary:`id` :doc:`/config/documentation/objects/String`\ 
+
+:bdg-primary:`tags` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Tag`\> 
+
+:bdg-primary:`vanilla` :doc:`/config/documentation/objects/PlatformBiome`\ 
 
 :bdg-success:`extends` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Biome`\> 
 
 Default: ``[]``
 
-:bdg-primary:`vanilla` :doc:`/config/documentation/objects/PlatformBiome`\ 
+---------
 
-:bdg-primary:`color` :doc:`/config/documentation/objects/Integer`\ 
+`generation-stage-feature parameters`
 
-:bdg-primary:`tags` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Tag`\> 
+:bdg-primary:`features.<stage id>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Feature`\> 
 
-:bdg-success:`slant` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/SlantLayer`\> 
+---------
 
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
-
-Default: ``[]``
-
-:bdg-success:`slant-depth` :doc:`/config/documentation/objects/Integer`\ 
-
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
-
-Default: ``Infinity``
+`chunk-generator-noise-3d parameters`
 
 :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
 
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
+:bdg-primary:`terrain.sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
+
+:bdg-primary:`terrain.sampler-2d` :doc:`/config/documentation/objects/NoiseSampler`\ 
+
+:bdg-success:`carving.update-palette` :doc:`/config/documentation/objects/Boolean`\ 
+
+Default: ``false``
 
 :bdg-success:`ocean.level` :doc:`/config/documentation/objects/Integer`\ 
-
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
 
 Default: ``0``
 
 :bdg-success:`ocean.palette` :doc:`/config/documentation/objects/Palette`\ 
 
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
-
 Default: ``Palette of air``
 
-:bdg-success:`carving.update-palette` :doc:`/config/documentation/objects/Boolean`\ 
+:bdg-success:`slant` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/SlantLayer`\> 
 
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
+Default: ``[]``
 
-Default: ``false``
+:bdg-success:`slant-depth` :doc:`/config/documentation/objects/Integer`\ 
 
-:bdg-primary:`terrain.sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
-
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
-
-:bdg-primary:`terrain.sampler-2d` :doc:`/config/documentation/objects/NoiseSampler`\ 
-
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
+Default: ``Infinity``
 
 :bdg-success:`terrain.blend.distance` :doc:`/config/documentation/objects/Integer`\ 
 
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
-
 Default: ``3``
-
-:bdg-success:`terrain.blend.weight` :doc:`/config/documentation/objects/Float`\ 
-
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
-
-Default: ``1.0``
 
 :bdg-success:`terrain.blend.step` :doc:`/config/documentation/objects/Integer`\ 
 
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
-
 Default: ``4``
 
-:bdg-success:`terrain.blend.weight-2d` :doc:`/config/documentation/objects/Float`\ 
+:bdg-success:`terrain.blend.weight` :doc:`/config/documentation/objects/Float`\ 
 
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
+Default: ``1.0``
+
+:bdg-success:`terrain.blend.weight-2d` :doc:`/config/documentation/objects/Float`\ 
 
 Default: ``1.0``

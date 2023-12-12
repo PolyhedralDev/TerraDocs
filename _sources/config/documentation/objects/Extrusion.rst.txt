@@ -18,9 +18,9 @@ A list of available types for ``Extrusion`` are listed below:
 SET
 ---
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
-
 :bdg-primary:`range` :doc:`/config/documentation/objects/Range`\ 
+
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
 :bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
 
@@ -29,10 +29,10 @@ SET
 REPLACE
 -------
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
+:bdg-primary:`from` :doc:`/config/documentation/objects/String`\ 
 
 :bdg-primary:`range` :doc:`/config/documentation/objects/Range`\ 
 
-:bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
-:bdg-primary:`from` :doc:`/config/documentation/objects/String`\ 
+:bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 

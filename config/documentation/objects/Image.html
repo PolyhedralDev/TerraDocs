@@ -352,9 +352,9 @@ be loaded for use in other configurations requiring the <code class="docutils li
 <h3>BITMAP<a class="headerlink" href="#bitmap" title="Permalink to this headline">¶</a></h3>
 <p>Loads a singular image. For very large images that you may have issues loading,
 try the <a class="reference internal" href="#stitched-bitmap">STITCHED_BITMAP</a> type instead.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">columns</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">path-format</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- Path to the image relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">rows</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">columns</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">zero-indexed</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
 </section>
@@ -365,6 +365,7 @@ try the <a class="reference internal" href="#stitched-bitmap">STITCHED_BITMAP</a
 arranged in a grid that are ‘stitched’ together during generation.
 This type is primarily used when singular images are too large to be
 loaded into memory (a limit imposed Java’s <code class="docutils literal notranslate"><span class="pre">BufferedImage</span></code> class implementation).</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">columns</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- How many columns of images to stitch together.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">path</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- The format string for the path to the images relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
 <p>The file name section of the path format must contain the text <code class="docutils literal notranslate"><span class="pre">{row}</span></code> and <code class="docutils literal notranslate"><span class="pre">{column}</span></code>
 indicating the sections of the file names that indicate which rows and columns the files belong to.</p>
@@ -384,7 +385,6 @@ indicating the sections of the file names that indicate which rows and columns t
 </pre></div>
 </div>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">rows</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- How many rows of images to stitch together.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">columns</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- How many columns of images to stitch together.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">zero-indexed</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
 <p>Should be set to true if the image row and column indexes begin at 0.</p>

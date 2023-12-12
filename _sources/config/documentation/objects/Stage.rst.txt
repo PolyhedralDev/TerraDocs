@@ -63,10 +63,10 @@ BORDER
 BORDER_LIST
 -----------
 
-:bdg-primary:`from` :doc:`/config/documentation/objects/Tag`\ 
-
 :bdg-primary:`default-replace` :doc:`/config/documentation/objects/Tag`\ 
 
 :bdg-primary:`default-to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+
+:bdg-primary:`from` :doc:`/config/documentation/objects/Tag`\ 
 
 :bdg-primary:`replace` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 

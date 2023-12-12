@@ -18,11 +18,11 @@ SAMPLER
 
 :superscript:`*Type requires the 'config-distributors' addon to use`
 
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
+
 :bdg-success:`threshold` :doc:`/config/documentation/objects/Float`\ 
 
 Default: ``0.0``
-
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
 ---------
 
@@ -40,11 +40,11 @@ PADDED_GRID
 
 :superscript:`*Type requires the 'config-distributors' addon to use`
 
-:bdg-primary:`width` :doc:`/config/documentation/objects/Integer`\ 
-
 :bdg-primary:`padding` :doc:`/config/documentation/objects/Integer`\ 
 
 :bdg-primary:`salt` :doc:`/config/documentation/objects/Integer`\ 
+
+:bdg-primary:`width` :doc:`/config/documentation/objects/Integer`\ 
 
 ---------
 

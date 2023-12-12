@@ -40,9 +40,9 @@ Outputs the pixels of an ``Image``, colors for coordinates outside the bounds of
 are provided by a 'fallback' color sampler, which typically will be the `COLOR`_ type.
 
 
-:bdg-primary:`image` :doc:`/config/documentation/objects/Image`\ - The image to be sampled
-
 :bdg-primary:`align` Alignment 
+
+:bdg-primary:`image` :doc:`/config/documentation/objects/Image`\ - The image to be sampled
 
 :bdg-primary:`outside-sampler` :doc:`/config/documentation/objects/ColorSampler`\ - The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
 
@@ -54,18 +54,18 @@ TILED_IMAGE
 Outputs a repeating grid of pixels sourced from the provided ``Image`` .
 
 
-:bdg-primary:`image` :doc:`/config/documentation/objects/Image`\ - The image to be sampled
-
 :bdg-primary:`align` Alignment 
+
+:bdg-primary:`image` :doc:`/config/documentation/objects/Image`\ - The image to be sampled
 
 ---------
 
 ROTATE
 ------
 
-:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
-
 :bdg-primary:`angle` :doc:`/config/documentation/objects/Float`\ 
+
+:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
 
 ---------
 

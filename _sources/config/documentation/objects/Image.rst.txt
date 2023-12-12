@@ -26,11 +26,11 @@ Loads a singular image. For very large images that you may have issues loading,
 try the `STITCHED_BITMAP`_ type instead.
 
 
+:bdg-primary:`columns` :doc:`/config/documentation/objects/Integer`\ 
+
 :bdg-primary:`path-format` :doc:`/config/documentation/objects/String`\ - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
 
 :bdg-primary:`rows` :doc:`/config/documentation/objects/Integer`\ 
-
-:bdg-primary:`columns` :doc:`/config/documentation/objects/Integer`\ 
 
 :bdg-success:`zero-indexed` :doc:`/config/documentation/objects/Boolean`\ 
 
@@ -46,6 +46,8 @@ arranged in a grid that are 'stitched' together during generation.
 This type is primarily used when singular images are too large to be
 loaded into memory (a limit imposed Java's ``BufferedImage`` class implementation).
 
+
+:bdg-primary:`columns` :doc:`/config/documentation/objects/Integer`\ - How many columns of images to stitch together.
 
 :bdg-primary:`path` :doc:`/config/documentation/objects/String`\ - The format string for the path to the images relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
 
@@ -73,8 +75,6 @@ The ``path-format`` to stitch together the images would be:
 
 
 :bdg-primary:`rows` :doc:`/config/documentation/objects/Integer`\ - How many rows of images to stitch together.
-
-:bdg-primary:`columns` :doc:`/config/documentation/objects/Integer`\ - How many columns of images to stitch together.
 
 :bdg-success:`zero-indexed` :doc:`/config/documentation/objects/Boolean`\ 
 

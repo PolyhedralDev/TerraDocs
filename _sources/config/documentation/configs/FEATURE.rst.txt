@@ -4,12 +4,16 @@ FEATURE
 
 :superscript:`*Config type requires the 'config-feature' addon to use`
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String`\ 
+---------
+
+`Default parameters`
 
 :bdg-primary:`distributor` :doc:`/config/documentation/objects/Distributor`\ 
 
+:bdg-primary:`id` :doc:`/config/documentation/objects/String`\ 
+
 :bdg-primary:`locator` :doc:`/config/documentation/objects/Locator`\ 
 
-:bdg-primary:`structures.structures` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Structure`\> 
-
 :bdg-primary:`structures.distribution` :doc:`/config/documentation/objects/NoiseSampler`\ 
+
+:bdg-primary:`structures.structures` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Structure`\> 

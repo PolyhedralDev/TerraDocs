@@ -241,33 +241,33 @@ Produces `Gabor noise`_.
     The GABOR sampler is significantly slower at producing noise compared to other noise samplers.
 
 
+:bdg-success:`deviation` :doc:`/config/documentation/objects/Float`\ 
+
+Default: ``1.0``
+
 :bdg-success:`frequency` :doc:`/config/documentation/objects/Float`\ - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer`\ - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-success:`frequency_0` :doc:`/config/documentation/objects/Float`\ 
 
-Default: ``0``
-
-:bdg-success:`rotation` :doc:`/config/documentation/objects/Float`\ 
-
-Default: ``0.25``
-
-:bdg-success:`isotropic` :doc:`/config/documentation/objects/Boolean`\ 
-
-Default: ``true``
-
-:bdg-success:`deviation` :doc:`/config/documentation/objects/Float`\ 
-
-Default: ``1.0``
+Default: ``0.625``
 
 :bdg-success:`impulses` :doc:`/config/documentation/objects/Float`\ 
 
 Default: ``64.0``
 
-:bdg-success:`frequency_0` :doc:`/config/documentation/objects/Float`\ 
+:bdg-success:`isotropic` :doc:`/config/documentation/objects/Boolean`\ 
 
-Default: ``0.625``
+Default: ``true``
+
+:bdg-success:`rotation` :doc:`/config/documentation/objects/Float`\ 
+
+Default: ``0.25``
+
+:bdg-success:`salt` :doc:`/config/documentation/objects/Integer`\ - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+Default: ``0``
 
 ---------
 
@@ -303,14 +303,6 @@ Produces cellular / `Worley noise`_.
 - :gold:`Gold line` - Distance to the third closest cell origin.
 
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float`\ - Controls the :ref:`frequency <sampler-frequency>` of noise.
-
-Default: ``0.02``
-
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer`\ - Determines the :ref:`seed <sampler-salt>` for the sampler.
-
-Default: ``0``
-
 :bdg-success:`distance` :doc:`/config/documentation/objects/String`\ - The method used for calculating the distance from the cell origin.
 
 Default: ``EuclideanSq``
@@ -322,6 +314,22 @@ Default: ``EuclideanSq``
 - ``Manhattan``
 - ``Hybrid``
 
+
+:bdg-success:`frequency` :doc:`/config/documentation/objects/Float`\ - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+Default: ``0.02``
+
+:bdg-success:`jitter` :doc:`/config/documentation/objects/Float`\ - Determines how far cell origins can randomly spread out from the center of cells.
+
+Default: ``1``
+
+A jitter of ``0`` places cell origins exactly in the center of each cell, resulting in a perfect grid.
+Values between ``-1`` and ``1`` are recommended, as values outside that range may produce artifacts.
+
+
+:bdg-success:`lookup` :doc:`/config/documentation/objects/NoiseSampler`\ - The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
+
+Default: ```OPEN_SIMPLEX_2`_ sampler``
 
 :bdg-success:`return` :doc:`/config/documentation/objects/String`\ - The function the sampler will use to calculate the noise.
 
@@ -360,17 +368,9 @@ Types:
 - ``Distance3Div`` - Returns ``d1 / d3``.
 
 
-:bdg-success:`jitter` :doc:`/config/documentation/objects/Float`\ - Determines how far cell origins can randomly spread out from the center of cells.
+:bdg-success:`salt` :doc:`/config/documentation/objects/Integer`\ - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
-Default: ``1``
-
-A jitter of ``0`` places cell origins exactly in the center of each cell, resulting in a perfect grid.
-Values between ``-1`` and ``1`` are recommended, as values outside that range may produce artifacts.
-
-
-:bdg-success:`lookup` :doc:`/config/documentation/objects/NoiseSampler`\ - The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
-
-Default: ```OPEN_SIMPLEX_2`_ sampler``
+Default: ``0``
 
 ---------
 
@@ -380,41 +380,6 @@ IMAGE
 :superscript:`*Type requires the 'config-noise-function' addon to use`
 
 Outputs the channel of an image that is tiled, redistributed from the channel range [0-255] to output range [-1, 1].
-
-
-:bdg-primary:`image` :doc:`/config/documentation/objects/String`\ - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
-
-Example path: `path/to/the/image.png`
-
-
-:bdg-primary:`frequency` :doc:`/config/documentation/objects/Float`\ - :ref:`Frequency <sampler-frequency>` of the image. Determines how the image gets scaled.
-
-A frequency of ``1.0`` means 1 pixel = 1 block, a frequency of ``2.0`` means 2 pixels = 1 block.
-
-.. attention::
-
-    Frequencies below ``1.0`` are not recommended, as pixels aren't interpolated when upscaled;
-    results may look pixelated depending on use.
-
-    .. grid:: 3
-
-        .. grid-item:: **grayscale_circles.png**
-            :padding: 0
-
-            .. image:: /img/concepts/noise/image/grayscale_circles.png
-                :width: 200
-
-        .. grid-item:: **1.0 Frequency**
-
-            .. image:: /img/concepts/noise/image/image_sampler_circles_frequency_1.0_zoomed.png
-                :width: 200
-
-        .. grid-item:: **0.25 Frequency**
-
-            .. image:: /img/concepts/noise/image/image_sampler_circles_frequency_0.25_zoomed.png
-                :width: 200
-
-    ``0.25`` frequency = ``0.25 pixels = 1 block`` or ``1 pixel = 4 blocks`` (as demonstrated above using a block grid).
 
 
 :bdg-primary:`channel` :doc:`/config/documentation/objects/String`\ - Which channel of the image to output.
@@ -462,6 +427,41 @@ Valid channels:
             .. image:: /img/concepts/noise/image/pacman_ghosts_blue_channel.png
 
     \*The alpha channel is all white because there is no transparency in the original image.
+
+
+:bdg-primary:`frequency` :doc:`/config/documentation/objects/Float`\ - :ref:`Frequency <sampler-frequency>` of the image. Determines how the image gets scaled.
+
+A frequency of ``1.0`` means 1 pixel = 1 block, a frequency of ``2.0`` means 2 pixels = 1 block.
+
+.. attention::
+
+    Frequencies below ``1.0`` are not recommended, as pixels aren't interpolated when upscaled;
+    results may look pixelated depending on use.
+
+    .. grid:: 3
+
+        .. grid-item:: **grayscale_circles.png**
+            :padding: 0
+
+            .. image:: /img/concepts/noise/image/grayscale_circles.png
+                :width: 200
+
+        .. grid-item:: **1.0 Frequency**
+
+            .. image:: /img/concepts/noise/image/image_sampler_circles_frequency_1.0_zoomed.png
+                :width: 200
+
+        .. grid-item:: **0.25 Frequency**
+
+            .. image:: /img/concepts/noise/image/image_sampler_circles_frequency_0.25_zoomed.png
+                :width: 200
+
+    ``0.25`` frequency = ``0.25 pixels = 1 block`` or ``1 pixel = 4 blocks`` (as demonstrated above using a block grid).
+
+
+:bdg-primary:`image` :doc:`/config/documentation/objects/String`\ - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+
+Example path: `path/to/the/image.png`
 
 
 .. dropdown:: Example Image Samplers
@@ -533,9 +533,9 @@ DOMAIN_WARP
 Warps a sampler by another sampler. See :ref:`Domain Warping <domain-warping>` for more information.
 
 
-:bdg-primary:`warp` :doc:`/config/documentation/objects/NoiseSampler`\ - The sampler that determines warping.
-
 :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ - The sampler to be warped.
+
+:bdg-primary:`warp` :doc:`/config/documentation/objects/NoiseSampler`\ - The sampler that determines warping.
 
 :bdg-success:`amplitude` :doc:`/config/documentation/objects/Float`\ - How much warping to apply.
 
@@ -592,10 +592,6 @@ FBM
 
 :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
-:bdg-success:`octaves` :doc:`/config/documentation/objects/Integer`\ 
-
-Default: ``3``
-
 :bdg-success:`gain` :doc:`/config/documentation/objects/Float`\ 
 
 Default: ``0.5``
@@ -603,6 +599,10 @@ Default: ``0.5``
 :bdg-success:`lacunarity` :doc:`/config/documentation/objects/Float`\ 
 
 Default: ``2.0``
+
+:bdg-success:`octaves` :doc:`/config/documentation/objects/Integer`\ 
+
+Default: ``3``
 
 :bdg-success:`weighted-strength` :doc:`/config/documentation/objects/Float`\ 
 
@@ -617,10 +617,6 @@ PING_PONG
 
 :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
-:bdg-success:`octaves` :doc:`/config/documentation/objects/Integer`\ 
-
-Default: ``3``
-
 :bdg-success:`gain` :doc:`/config/documentation/objects/Float`\ 
 
 Default: ``0.5``
@@ -629,13 +625,17 @@ Default: ``0.5``
 
 Default: ``2.0``
 
-:bdg-success:`weighted-strength` :doc:`/config/documentation/objects/Float`\ 
+:bdg-success:`octaves` :doc:`/config/documentation/objects/Integer`\ 
 
-Default: ``0.0``
+Default: ``3``
 
 :bdg-success:`ping-pong` :doc:`/config/documentation/objects/Float`\ 
 
 Default: ``2.0``
+
+:bdg-success:`weighted-strength` :doc:`/config/documentation/objects/Float`\ 
+
+Default: ``0.0``
 
 ---------
 
@@ -646,10 +646,6 @@ RIDGED
 
 :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
-:bdg-success:`octaves` :doc:`/config/documentation/objects/Integer`\ 
-
-Default: ``3``
-
 :bdg-success:`gain` :doc:`/config/documentation/objects/Float`\ 
 
 Default: ``0.5``
@@ -657,6 +653,10 @@ Default: ``0.5``
 :bdg-success:`lacunarity` :doc:`/config/documentation/objects/Float`\ 
 
 Default: ``2.0``
+
+:bdg-success:`octaves` :doc:`/config/documentation/objects/Integer`\ 
+
+Default: ``3``
 
 :bdg-success:`weighted-strength` :doc:`/config/documentation/objects/Float`\ 
 
@@ -673,11 +673,11 @@ Redistributes the range ``[min, max]`` to ``[-1, 1]``, typically for use with we
 pools.
 
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
-
 :bdg-primary:`max` :doc:`/config/documentation/objects/Float`\ 
 
 :bdg-primary:`min` :doc:`/config/documentation/objects/Float`\ 
+
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
 ---------
 
@@ -691,11 +691,11 @@ when the sampler outputs a value less than ``min``, used to constrain sampler ou
 a certain range.
 
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
-
 :bdg-primary:`max` :doc:`/config/documentation/objects/Float`\ 
 
 :bdg-primary:`min` :doc:`/config/documentation/objects/Float`\ 
+
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
 ---------
 
@@ -707,9 +707,9 @@ NORMAL
 Redistributes normally distributed outputs to be evenly distributed.
 
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
-
 :bdg-primary:`mean` :doc:`/config/documentation/objects/Float`\ 
+
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
 :bdg-primary:`standard-deviation` :doc:`/config/documentation/objects/Float`\ 
 
@@ -740,9 +740,9 @@ SCALE
 Evaluates ``sampler() * amplitude``.
 
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
-
 :bdg-primary:`amplitude` :doc:`/config/documentation/objects/Float`\ 
+
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
 ---------
 
@@ -873,20 +873,25 @@ act as the sampler's coordinate inputs.
 
     An expression
 
-:bdg-success:`variables` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
+:bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
 
 Default: ``{}``
 
-Defines a mapping of variable names to values for use in the scope of the expression. This
-is most useful for providing named constants that can easily be modified if needed.
+Defines a mapping of function names to user-defined math functions. Functions may be
+called within the expression like so ``<name>(<arg 1>, <arg 2>, ...)``, where <name> is the declared
+function name, and where each input coorresponds to the argument list defined by the function.
 
-**Example defining variables**
+**Example defining functions**
 
 .. code-block:: yaml
 
-    variables:
-      a: 1
-      b: 2
+    functions:
+      addThenDivide:
+        arguments:
+            - a
+            - b
+            - c
+        expression: (a + b) / c
 
 
 :bdg-success:`samplers` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
@@ -912,25 +917,20 @@ the respective axis coordinates are the coordinate inputs passed to the sampler.
         type: WHITE_NOISE
 
 
-:bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+:bdg-success:`variables` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
 
 Default: ``{}``
 
-Defines a mapping of function names to user-defined math functions. Functions may be
-called within the expression like so ``<name>(<arg 1>, <arg 2>, ...)``, where <name> is the declared
-function name, and where each input coorresponds to the argument list defined by the function.
+Defines a mapping of variable names to values for use in the scope of the expression. This
+is most useful for providing named constants that can easily be modified if needed.
 
-**Example defining functions**
+**Example defining variables**
 
 .. code-block:: yaml
 
-    functions:
-      addThenDivide:
-        arguments:
-            - a
-            - b
-            - c
-        expression: (a + b) / c
+    variables:
+      a: 1
+      b: 2
 
 
 .. dropdown:: Example Expression Samplers
@@ -1087,17 +1087,13 @@ Returns the result of a `distance transform <https://homepages.inf.ed.ac.uk/rbf/
 
 :bdg-primary:`image` :doc:`/config/documentation/objects/Image`\ 
 
-:bdg-success:`threshold` :doc:`/config/documentation/objects/Integer`\ 
+:bdg-success:`channel` Channel 
 
-Default: ``127``
+Default: ``GRAYSCALE``
 
 :bdg-success:`clamp-to-max-edge` :doc:`/config/documentation/objects/Boolean`\ 
 
 Default: ``false``
-
-:bdg-success:`channel` Channel 
-
-Default: ``GRAYSCALE``
 
 :bdg-success:`cost-function` :doc:`/config/documentation/objects/String`\ 
 
@@ -1124,3 +1120,8 @@ Valid values:
 - ``None``
 - ``Linear``
 - ``SmoothPreserveZero``
+
+
+:bdg-success:`threshold` :doc:`/config/documentation/objects/Integer`\ 
+
+Default: ``127``

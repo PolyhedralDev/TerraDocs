@@ -18,9 +18,9 @@ A list of available types for ``BiomeColorConverter`` are listed below:
 EXACT
 -----
 
-:bdg-primary:`match` :doc:`/config/documentation/objects/BiomeColorMapping`\ 
-
 :bdg-primary:`else` :doc:`/config/documentation/objects/Biome`\ 
+
+:bdg-primary:`match` :doc:`/config/documentation/objects/BiomeColorMapping`\ 
 
 :bdg-success:`ignore-alpha` :doc:`/config/documentation/objects/Boolean`\ 
 

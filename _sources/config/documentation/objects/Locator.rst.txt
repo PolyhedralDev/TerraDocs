@@ -36,9 +36,9 @@ RANDOM
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-:bdg-primary:`height` :doc:`/config/documentation/objects/Range`\ 
-
 :bdg-primary:`amount` :doc:`/config/documentation/objects/Range`\ 
+
+:bdg-primary:`height` :doc:`/config/documentation/objects/Range`\ 
 
 :bdg-success:`salt` :doc:`/config/documentation/objects/Integer`\ 
 
@@ -51,9 +51,9 @@ GAUSSIAN_RANDOM
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-:bdg-primary:`height` :doc:`/config/documentation/objects/Range`\ 
-
 :bdg-primary:`amount` :doc:`/config/documentation/objects/Range`\ 
+
+:bdg-primary:`height` :doc:`/config/documentation/objects/Range`\ 
 
 :bdg-primary:`standard-deviation` :doc:`/config/documentation/objects/Float`\ 
 
@@ -68,9 +68,9 @@ PATTERN
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-:bdg-primary:`range` :doc:`/config/documentation/objects/Range`\ 
-
 :bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern`\ 
+
+:bdg-primary:`range` :doc:`/config/documentation/objects/Range`\ 
 
 ---------
 
@@ -79,9 +79,9 @@ ADJACENT_PATTERN
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-:bdg-primary:`range` :doc:`/config/documentation/objects/Range`\ 
-
 :bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern`\ 
+
+:bdg-primary:`range` :doc:`/config/documentation/objects/Range`\ 
 
 :bdg-success:`match-all` :doc:`/config/documentation/objects/Boolean`\ 
 

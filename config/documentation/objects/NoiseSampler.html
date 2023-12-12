@@ -462,20 +462,20 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <p class="admonition-title">Warning</p>
 <p>The GABOR sampler is significantly slower at producing noise compared to other noise samplers.</p>
 </div>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">rotation</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">0.25</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">isotropic</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">true</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">deviation</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">impulses</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">64.0</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency_0</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.625</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">impulses</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">64.0</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">isotropic</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">true</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">rotation</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">0.25</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="cellular">
@@ -493,10 +493,6 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <li><p><span class="orange">Orange line</span> - Distance to the second closest cell origin.</p></li>
 <li><p><span class="gold">Gold line</span> - Distance to the third closest cell origin.</p></li>
 </ul>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">distance</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- The method used for calculating the distance from the cell origin.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">EuclideanSq</span></code></p>
 <p><strong>Distance Types</strong></p>
@@ -506,6 +502,14 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <li><p><code class="docutils literal notranslate"><span class="pre">Manhattan</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Hybrid</span></code></p></li>
 </ul>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">jitter</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Determines how far cell origins can randomly spread out from the center of cells.</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+<p>A jitter of <code class="docutils literal notranslate"><span class="pre">0</span></code> places cell origins exactly in the center of each cell, resulting in a perfect grid.
+Values between <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> are recommended, as values outside that range may produce artifacts.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">lookup</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a>- The lookup sampler used when the <code class="docutils literal notranslate"><span class="pre">distance</span></code> parameter is set to <code class="docutils literal notranslate"><span class="pre">NoiseLookup</span></code></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">`OPEN_SIMPLEX_2`_</span> <span class="pre">sampler</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">return</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- The function the sampler will use to calculate the noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">Distance</span></code></p>
 <p><strong>Return Types</strong></p>
@@ -533,44 +537,14 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <li><p><code class="docutils literal notranslate"><span class="pre">Distance3Mul</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d3</span> <span class="pre">*</span> <span class="pre">d1</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Distance3Div</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d1</span> <span class="pre">/</span> <span class="pre">d3</span></code>.</p></li>
 </ul>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">jitter</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Determines how far cell origins can randomly spread out from the center of cells.</p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
-<p>A jitter of <code class="docutils literal notranslate"><span class="pre">0</span></code> places cell origins exactly in the center of each cell, resulting in a perfect grid.
-Values between <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> are recommended, as values outside that range may produce artifacts.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">lookup</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a>- The lookup sampler used when the <code class="docutils literal notranslate"><span class="pre">distance</span></code> parameter is set to <code class="docutils literal notranslate"><span class="pre">NoiseLookup</span></code></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">`OPEN_SIMPLEX_2`_</span> <span class="pre">sampler</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="image">
 <h3>IMAGE<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Outputs the channel of an image that is tiled, redistributed from the channel range [0-255] to output range [-1, 1].</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- Path to the image relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
-<p>Example path: <cite>path/to/the/image.png</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">Frequency</span></a> of the image. Determines how the image gets scaled.</p>
-<p>A frequency of <code class="docutils literal notranslate"><span class="pre">1.0</span></code> means 1 pixel = 1 block, a frequency of <code class="docutils literal notranslate"><span class="pre">2.0</span></code> means 2 pixels = 1 block.</p>
-<div class="admonition attention">
-<p class="admonition-title">Attention</p>
-<p>Frequencies below <code class="docutils literal notranslate"><span class="pre">1.0</span></code> are not recommended, as pixels aren’t interpolated when upscaled;
-results may look pixelated depending on use.</p>
-<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
-<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
-<div class="sd-col sd-d-flex-column sd-p-0 docutils">
-<p><strong>grayscale_circles.png</strong></p>
-<a class="reference internal image-reference" href="../../../_images/grayscale_circles.png"><img alt="../../../_images/grayscale_circles.png" src="../../../_images/grayscale_circles.png" style="width: 200px;"/></a>
-</div>
-<div class="sd-col sd-d-flex-column docutils">
-<p><strong>1.0 Frequency</strong></p>
-<a class="reference internal image-reference" href="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png"><img alt="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png" src="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png" style="width: 200px;"/></a>
-</div>
-<div class="sd-col sd-d-flex-column docutils">
-<p><strong>0.25 Frequency</strong></p>
-<a class="reference internal image-reference" href="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png"><img alt="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png" src="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png" style="width: 200px;"/></a>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">0.25</span></code> frequency = <code class="docutils literal notranslate"><span class="pre">0.25</span> <span class="pre">pixels</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">block</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">pixel</span> <span class="pre">=</span> <span class="pre">4</span> <span class="pre">blocks</span></code> (as demonstrated above using a block grid).</p>
-</div>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">channel</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- Which channel of the image to output.</p>
 <p>Valid channels:</p>
 <ul class="simple">
@@ -615,6 +589,32 @@ Channel Examples</div>
 <p class="sd-card-text">*The alpha channel is all white because there is no transparency in the original image.</p>
 </div>
 </div>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">Frequency</span></a> of the image. Determines how the image gets scaled.</p>
+<p>A frequency of <code class="docutils literal notranslate"><span class="pre">1.0</span></code> means 1 pixel = 1 block, a frequency of <code class="docutils literal notranslate"><span class="pre">2.0</span></code> means 2 pixels = 1 block.</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Frequencies below <code class="docutils literal notranslate"><span class="pre">1.0</span></code> are not recommended, as pixels aren’t interpolated when upscaled;
+results may look pixelated depending on use.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
+<div class="sd-col sd-d-flex-column sd-p-0 docutils">
+<p><strong>grayscale_circles.png</strong></p>
+<a class="reference internal image-reference" href="../../../_images/grayscale_circles.png"><img alt="../../../_images/grayscale_circles.png" src="../../../_images/grayscale_circles.png" style="width: 200px;"/></a>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>1.0 Frequency</strong></p>
+<a class="reference internal image-reference" href="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png"><img alt="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png" src="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png" style="width: 200px;"/></a>
+</div>
+<div class="sd-col sd-d-flex-column docutils">
+<p><strong>0.25 Frequency</strong></p>
+<a class="reference internal image-reference" href="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png"><img alt="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png" src="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png" style="width: 200px;"/></a>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">0.25</span></code> frequency = <code class="docutils literal notranslate"><span class="pre">0.25</span> <span class="pre">pixels</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">block</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">pixel</span> <span class="pre">=</span> <span class="pre">4</span> <span class="pre">blocks</span></code> (as demonstrated above using a block grid).</p>
+</div>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- Path to the image relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
+<p>Example path: <cite>path/to/the/image.png</cite></p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Example Image Samplers<div class="sd-summary-down docutils">
@@ -671,8 +671,8 @@ don’t want the sampler to do anything.</p>
 <h3>DOMAIN_WARP<a class="headerlink" href="#domain-warp" title="Permalink to this headline">¶</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Warps a sampler by another sampler. See <a class="reference internal" href="../../development/noise/configuring.html#domain-warping"><span class="std std-ref">Domain Warping</span></a> for more information.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">warp</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a>- The sampler that determines warping.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a>- The sampler to be warped.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">warp</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a>- The sampler that determines warping.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">amplitude</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- How much warping to apply.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p>
 </section>
@@ -704,12 +704,12 @@ for use as a terrain sampler.</p>
 <h3>FBM<a class="headerlink" href="#fbm" title="Permalink to this headline">¶</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">octaves</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">gain</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.5</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">lacunarity</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">2.0</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">octaves</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">weighted-strength</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
 </section>
@@ -718,28 +718,28 @@ for use as a terrain sampler.</p>
 <h3>PING_PONG<a class="headerlink" href="#ping-pong" title="Permalink to this headline">¶</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">octaves</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">gain</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.5</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">lacunarity</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">2.0</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">weighted-strength</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">octaves</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ping-pong</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">2.0</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">weighted-strength</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="ridged">
 <h3>RIDGED<a class="headerlink" href="#ridged" title="Permalink to this headline">¶</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">octaves</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">gain</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.5</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">lacunarity</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">2.0</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">octaves</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">weighted-strength</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
 </section>
@@ -749,9 +749,9 @@ for use as a terrain sampler.</p>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Redistributes the range <code class="docutils literal notranslate"><span class="pre">[min,</span> <span class="pre">max]</span></code> to <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code>, typically for use with weighted
 pools.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">max</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">min</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="clamp">
@@ -760,17 +760,17 @@ pools.</p>
 <p>Outputs <code class="docutils literal notranslate"><span class="pre">max</span></code> when the sampler outputs a value greater than <code class="docutils literal notranslate"><span class="pre">max</span></code>, and returns <code class="docutils literal notranslate"><span class="pre">min</span></code>
 when the sampler outputs a value less than <code class="docutils literal notranslate"><span class="pre">min</span></code>, used to constrain sampler outputs to
 a certain range.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">max</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">min</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="normal">
 <h3>NORMAL<a class="headerlink" href="#normal" title="Permalink to this headline">¶</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Redistributes normally distributed outputs to be evenly distributed.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">mean</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">standard-deviation</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">groups</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">16384</span></code></p>
@@ -788,8 +788,8 @@ work with values from <code class="docutils literal notranslate"><span class="pr
 <h3>SCALE<a class="headerlink" href="#scale" title="Permalink to this headline">¶</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">sampler()</span> <span class="pre">*</span> <span class="pre">amplitude</span></code>.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">amplitude</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="posterization">
@@ -869,14 +869,19 @@ Expression</div>
 <p class="sd-card-text">An expression</p>
 </div>
 <a class="sd-stretched-link reference internal" href="Expression.html"><span class="doc"></span></a></div>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">variables</span> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>&gt;</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">functions</span> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="MathFunction.html"><span class="doc">MathFunction</span></a>&gt;</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">{}</span></code></p>
-<p>Defines a mapping of variable names to values for use in the scope of the expression. This
-is most useful for providing named constants that can easily be modified if needed.</p>
-<p><strong>Example defining variables</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="w">  </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<p>Defines a mapping of function names to user-defined math functions. Functions may be
+called within the expression like so <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;(&lt;arg</span> <span class="pre">1&gt;,</span> <span class="pre">&lt;arg</span> <span class="pre">2&gt;,</span> <span class="pre">...)</span></code>, where &lt;name&gt; is the declared
+function name, and where each input coorresponds to the argument list defined by the function.</p>
+<p><strong>Example defining functions</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">functions</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">addThenDivide</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c</span><span class="w"></span>
+<span class="w">    </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(a + b) / c</span><span class="w"></span>
 </pre></div>
 </div>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">samplers</span> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="DimensionApplicableSampler.html"><span class="doc">DimensionApplicableSampler</span></a>&gt; - Defines a mapping of function names to samplers.</p>
@@ -896,19 +901,14 @@ see the <a class="reference internal" href="DimensionApplicableSampler.html"><sp
 <span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
 </pre></div>
 </div>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">functions</span> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="MathFunction.html"><span class="doc">MathFunction</span></a>&gt;</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">variables</span> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>&gt;</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">{}</span></code></p>
-<p>Defines a mapping of function names to user-defined math functions. Functions may be
-called within the expression like so <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;(&lt;arg</span> <span class="pre">1&gt;,</span> <span class="pre">&lt;arg</span> <span class="pre">2&gt;,</span> <span class="pre">...)</span></code>, where &lt;name&gt; is the declared
-function name, and where each input coorresponds to the argument list defined by the function.</p>
-<p><strong>Example defining functions</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">functions</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">addThenDivide</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c</span><span class="w"></span>
-<span class="w">    </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(a + b) / c</span><span class="w"></span>
+<p>Defines a mapping of variable names to values for use in the scope of the expression. This
+is most useful for providing named constants that can easily be modified if needed.</p>
+<p><strong>Example defining variables</strong></p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">variables</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
 </pre></div>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 nested-cards">
@@ -1082,12 +1082,10 @@ the coordinates <code class="docutils literal notranslate"><span class="pre">X</
 <p><sup>*Type requires the ‘library-image’ addon to use</sup></p>
 <p>Returns the result of a <a class="reference external" href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/distance.htm">distance transform</a> on an image.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <a class="reference internal" href="Image.html"><span class="doc">Image</span></a></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">threshold</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">127</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">clamp-to-max-edge</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">channel</span> Channel</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">GRAYSCALE</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">clamp-to-max-edge</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">cost-function</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">Channel</span></code></p>
 <p>Valid values:</p>
@@ -1107,6 +1105,8 @@ the coordinates <code class="docutils literal notranslate"><span class="pre">X</
 <li><p><code class="docutils literal notranslate"><span class="pre">Linear</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">SmoothPreserveZero</span></code></p></li>
 </ul>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">threshold</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">127</span></code></p>
 </section>
 </section>
 </section>

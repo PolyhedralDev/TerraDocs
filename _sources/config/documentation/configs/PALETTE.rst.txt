@@ -4,6 +4,10 @@ PALETTE
 
 :superscript:`*Config type requires the 'config-palette' addon to use`
 
+---------
+
+`Default parameters`
+
 :bdg-primary:`id` :doc:`/config/documentation/objects/String`\ 
 
 :bdg-primary:`layers` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/PaletteLayer`\> 

@@ -4,6 +4,6 @@ DimensionApplicableSampler
 
 :superscript:`*Config object requires the 'config-noise-function' addon to use`
 
-:bdg-primary:`dimensions` :doc:`/config/documentation/objects/Integer`\ 
-
 :bdg-primary:`.` :doc:`/config/documentation/objects/NoiseSampler`\ 
+
+:bdg-primary:`dimensions` :doc:`/config/documentation/objects/Integer`\ 

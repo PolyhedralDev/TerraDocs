@@ -27,9 +27,9 @@ IMAGE
 
 :superscript:`*Type requires the 'biome-provider-image-v2' addon to use`
 
-:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
-
 :bdg-primary:`color-conversion` :doc:`/config/documentation/objects/BiomeColorConverter`\ 
+
+:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
 
 :bdg-success:`resolution` :doc:`/config/documentation/objects/Integer`\ 
 
@@ -42,21 +42,21 @@ PIPELINE
 
 :superscript:`*Type requires the 'biome-provider-pipeline-v2' addon to use`
 
-:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer`\ 
+:bdg-primary:`pipeline.source` :doc:`/config/documentation/objects/Source`\ 
 
-Default: ``1``
-
-:bdg-success:`blend.sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
-
-Default: ``Constant 0``
+:bdg-primary:`pipeline.stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> 
 
 :bdg-success:`blend.amplitude` :doc:`/config/documentation/objects/Float`\ 
 
 Default: ``0.0``
 
-:bdg-primary:`pipeline.source` :doc:`/config/documentation/objects/Source`\ 
+:bdg-success:`blend.sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
-:bdg-primary:`pipeline.stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> 
+Default: ``Constant 0``
+
+:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer`\ 
+
+Default: ``1``
 
 ---------
 
@@ -65,10 +65,10 @@ EXTRUSION
 
 :superscript:`*Type requires the 'biome-provider-extrusion' addon to use`
 
+:bdg-primary:`extrusions` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 
+
 :bdg-primary:`provider` :doc:`/config/documentation/objects/BiomeProvider`\ 
 
 :bdg-success:`resolution` :doc:`/config/documentation/objects/Integer`\ 
 
 Default: ``4``
-
-:bdg-primary:`extrusions` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 

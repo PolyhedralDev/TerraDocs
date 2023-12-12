@@ -22,15 +22,15 @@ IMAGE
 
 :superscript:`*Type requires the 'pipeline-image' addon to use`
 
-:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
-
 :bdg-primary:`color-conversion` :doc:`/config/documentation/objects/PipelineBiomeColorConverter`\ 
+
+:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
 
 ---------
 
 SAMPLER
 -------
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
-
 :bdg-primary:`biomes` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 

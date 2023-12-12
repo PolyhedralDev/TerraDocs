@@ -5,40 +5,40 @@ pack.yml
 The config pack manifest
 
 
+---------
+
+`Default parameters`
+
+:bdg-primary:`biomes` :doc:`/config/documentation/objects/BiomeProvider`\ 
+
+:bdg-primary:`generator` ChunkGenerator 
+
 :bdg-primary:`id` :doc:`/config/documentation/objects/String`\ 
-
-:bdg-success:`author` :doc:`/config/documentation/objects/String`\ 
-
-Default: ``Anon Y. Mous``
 
 :bdg-primary:`stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> 
 
 :bdg-primary:`version` Version 
 
-:bdg-primary:`generator` ChunkGenerator 
+:bdg-success:`author` :doc:`/config/documentation/objects/String`\ 
 
-:bdg-primary:`biomes` :doc:`/config/documentation/objects/BiomeProvider`\ 
+Default: ``Anon Y. Mous``
+
+---------
+
+`chunk-generator-noise-3d parameters`
 
 :bdg-success:`blend.terrain.elevation` :doc:`/config/documentation/objects/Integer`\ 
-
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
 
 Default: ``4``
 
 :bdg-success:`carving.resolution.horizontal` :doc:`/config/documentation/objects/Integer`\ 
 
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
-
 Default: ``4``
 
 :bdg-success:`carving.resolution.vertical` :doc:`/config/documentation/objects/Integer`\ 
 
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
-
 Default: ``2``
 
 :bdg-success:`slant.calculation-method` SlantCalculationMethod 
-
-:superscript:`*Parameter requires the 'chunk-generator-noise-3d' addon to use`
 
 Default: ``Derivative``
