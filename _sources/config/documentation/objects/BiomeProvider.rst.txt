@@ -7,7 +7,7 @@ Types
 
 Different types of ``BiomeProvider`` provide different behaviours and may have additional parameters for configuring that behavior.
 
-The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+The type is specified by setting the :bdg-primary:`type` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
 
 A list of available types for ``BiomeProvider`` are listed below:
 
@@ -16,26 +16,22 @@ A list of available types for ``BiomeProvider`` are listed below:
 SINGLE
 ------
 
-:superscript:`Added by the 'biome-provider-single' addon`
+:superscript:`*Type requires the 'biome-provider-single' addon to use`
 
-`PARAMETERS:`
-
-:bdg-primary:`biome` :doc:`Biome` 
+:bdg-primary:`biome` :doc:`/config/documentation/objects/Biome`\ 
 
 ---------
 
 IMAGE
 -----
 
-:superscript:`Added by the 'biome-provider-image-v2' addon`
+:superscript:`*Type requires the 'biome-provider-image-v2' addon to use`
 
-`PARAMETERS:`
+:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
 
-:bdg-primary:`color-sampler` :doc:`ColorSampler` 
+:bdg-primary:`color-conversion` :doc:`/config/documentation/objects/BiomeColorConverter`\ 
 
-:bdg-primary:`color-conversion` :doc:`BiomeColorConverter` 
-
-:bdg-success:`resolution` :doc:`Integer` 
+:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer`\ 
 
 Default: ``1``
 
@@ -44,39 +40,35 @@ Default: ``1``
 PIPELINE
 --------
 
-:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+:superscript:`*Type requires the 'biome-provider-pipeline-v2' addon to use`
 
-`PARAMETERS:`
-
-:bdg-success:`resolution` :doc:`Integer` 
+:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer`\ 
 
 Default: ``1``
 
-:bdg-success:`blend.sampler` :doc:`NoiseSampler` 
+:bdg-success:`blend.sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
 Default: ``Constant 0``
 
-:bdg-success:`blend.amplitude` :doc:`Float` 
+:bdg-success:`blend.amplitude` :doc:`/config/documentation/objects/Float`\ 
 
 Default: ``0.0``
 
-:bdg-primary:`pipeline.source` :doc:`Source` 
+:bdg-primary:`pipeline.source` :doc:`/config/documentation/objects/Source`\ 
 
-:bdg-primary:`pipeline.stages` :doc:`List`\<:doc:`Stage`\> 
+:bdg-primary:`pipeline.stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> 
 
 ---------
 
 EXTRUSION
 ---------
 
-:superscript:`Added by the 'biome-provider-extrusion' addon`
+:superscript:`*Type requires the 'biome-provider-extrusion' addon to use`
 
-`PARAMETERS:`
+:bdg-primary:`provider` :doc:`/config/documentation/objects/BiomeProvider`\ 
 
-:bdg-primary:`provider` :doc:`BiomeProvider` 
-
-:bdg-success:`resolution` :doc:`Integer` 
+:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer`\ 
 
 Default: ``4``
 
-:bdg-primary:`extrusions` :doc:`List`\<:doc:`Extrusion`\> 
+:bdg-primary:`extrusions` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 

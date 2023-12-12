@@ -2,6 +2,8 @@
 Source
 ======
 
+:superscript:`*Config object requires the 'biome-provider-pipeline-v2' addon to use`
+
 A pipeline source
 
 Types
@@ -9,7 +11,7 @@ Types
 
 Different types of ``Source`` provide different behaviours and may have additional parameters for configuring that behavior.
 
-The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+The type is specified by setting the :bdg-primary:`type` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
 
 A list of available types for ``Source`` are listed below:
 
@@ -18,23 +20,17 @@ A list of available types for ``Source`` are listed below:
 IMAGE
 -----
 
-:superscript:`Added by the 'pipeline-image' addon`
+:superscript:`*Type requires the 'pipeline-image' addon to use`
 
-`PARAMETERS:`
+:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
 
-:bdg-primary:`color-sampler` :doc:`ColorSampler` 
-
-:bdg-primary:`color-conversion` ColorConverter<:doc:`PipelineBiome`\> 
+:bdg-primary:`color-conversion` :doc:`/config/documentation/objects/PipelineBiomeColorConverter`\ 
 
 ---------
 
 SAMPLER
 -------
 
-:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
-`PARAMETERS:`
-
-:bdg-primary:`sampler` :doc:`NoiseSampler` 
-
-:bdg-primary:`biomes` :doc:`WeightedList`\<:doc:`PipelineBiome`\> 
+:bdg-primary:`biomes` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 

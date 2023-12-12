@@ -240,6 +240,10 @@
 </ul>
 </li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="../documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/configs/BIOME.html">BIOME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/configs/FEATURE.html">FEATURE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/configs/PALETTE.html">PALETTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/configs/pack.yml.html">pack.yml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Biome.html">Biome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/BiomeColorConverter.html">BiomeColorConverter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/BiomeColorMapping.html">BiomeColorMapping</a></li>
@@ -253,7 +257,9 @@
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Expression.html">Expression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Extrusion.html">Extrusion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Feature.html">Feature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Float.html">Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/objects/GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Image.html">Image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Integer.html">Integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/List.html">List</a></li>
@@ -262,14 +268,20 @@
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/MathFunction.html">MathFunction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/NumberPredicate.html">NumberPredicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Palette.html">Palette</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/objects/PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Pattern.html">Pattern</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/objects/PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/objects/PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Point.html">Point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Range.html">Range</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Set.html">Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/objects/SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Source.html">Source</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Stage.html">Stage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/String.html">String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Structure.html">Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/Tag.html">Tag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../documentation/objects/WeightedList.html">WeightedList</a></li>
 </ul>
@@ -359,8 +371,8 @@ should be set to</strong>. For example, here are a couple parameters specified
 within a Terra config pack manifest that provides some basic information
 about the pack:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="bfb1c8b4-59e9-4407-a914-4d41fd3cf539" name="4a860fc9-d515-4951-b852-b53bc174704b" type="radio"/>
-<label class="sd-tab-label" for="bfb1c8b4-59e9-4407-a914-4d41fd3cf539">
+<input checked="checked" id="4fd5bf17-afde-406a-a709-50a72644d532" name="e54d6e58-86d5-4496-b379-f1b1fa89c0cb" type="radio"/>
+<label class="sd-tab-label" for="4fd5bf17-afde-406a-a709-50a72644d532">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id3">
 <div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
@@ -371,8 +383,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="94f1a954-91da-4e24-95e7-f2e39e5b5580" name="4a860fc9-d515-4951-b852-b53bc174704b" type="radio"/>
-<label class="sd-tab-label" for="94f1a954-91da-4e24-95e7-f2e39e5b5580">
+<input id="54d566ab-f4cd-4722-b11f-fd960aa300f6" name="e54d6e58-86d5-4496-b379-f1b1fa89c0cb" type="radio"/>
+<label class="sd-tab-label" for="54d566ab-f4cd-4722-b11f-fd960aa300f6">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id4">
 <div class="code-block-caption"><span class="caption-text">pack.json</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
@@ -391,8 +403,8 @@ example in the below config, the top level object may abide by a
 template and specify a parameter that is nested, which we can see has
 the value <code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">parameter</span> <span class="pre">value</span></code>.</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="bcc37a05-0528-4619-9bc1-0bd45eda7f17" name="0751f651-f2d2-4080-9fd6-0760cd113226" type="radio"/>
-<label class="sd-tab-label" for="bcc37a05-0528-4619-9bc1-0bd45eda7f17">
+<input checked="checked" id="22b29053-e303-44f7-b561-ab744690562c" name="125c60bf-6458-4b5a-afba-59a596874ac5" type="radio"/>
+<label class="sd-tab-label" for="22b29053-e303-44f7-b561-ab744690562c">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id5">
 <div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
@@ -403,8 +415,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="cecf168c-1231-4746-86f2-a44f57b6adbc" name="0751f651-f2d2-4080-9fd6-0760cd113226" type="radio"/>
-<label class="sd-tab-label" for="cecf168c-1231-4746-86f2-a44f57b6adbc">
+<input id="2c100ffe-985f-43a9-a767-7825d8ed49a7" name="125c60bf-6458-4b5a-afba-59a596874ac5" type="radio"/>
+<label class="sd-tab-label" for="2c100ffe-985f-43a9-a767-7825d8ed49a7">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id6">
 <div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
@@ -445,8 +457,8 @@ called <code class="docutils literal notranslate"><span class="pre">AnimalTempla
 <p>We can then write a new config using our new type assuming our top level
 object is of type <code class="docutils literal notranslate"><span class="pre">AnimalTemplate</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="be9764d0-8030-40b1-8af4-85c034bc0846" name="c4fcf600-e733-479b-8dba-c872a5c479b1" type="radio"/>
-<label class="sd-tab-label" for="be9764d0-8030-40b1-8af4-85c034bc0846">
+<input checked="checked" id="a1d47d44-b28c-41ee-a531-88d7fb609f6b" name="bebb09e7-9214-4f86-9d5f-43588c6f5904" type="radio"/>
+<label class="sd-tab-label" for="a1d47d44-b28c-41ee-a531-88d7fb609f6b">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id7">
 <div class="code-block-caption"><span class="caption-text">koala.yml</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
@@ -456,8 +468,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="9851c8df-e0e2-405c-8eab-9ebf67b18852" name="c4fcf600-e733-479b-8dba-c872a5c479b1" type="radio"/>
-<label class="sd-tab-label" for="9851c8df-e0e2-405c-8eab-9ebf67b18852">
+<input id="542db4d4-ad83-434d-96c7-d98b1e16b750" name="bebb09e7-9214-4f86-9d5f-43588c6f5904" type="radio"/>
+<label class="sd-tab-label" for="542db4d4-ad83-434d-96c7-d98b1e16b750">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id8">
 <div class="code-block-caption"><span class="caption-text">koala.json</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
@@ -476,8 +488,8 @@ load the config. For example, the following config would not load
 because 1. <code class="docutils literal notranslate"><span class="pre">color</span></code> has not been specified and is a required parameter,
 and 2. <code class="docutils literal notranslate"><span class="pre">legs</span></code> is not of the required type integer:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="ec0b8e08-429a-4177-a63e-36a92e2348c5" name="eebf1761-3d3d-4ae0-bf65-5428ac45d3b5" type="radio"/>
-<label class="sd-tab-label" for="ec0b8e08-429a-4177-a63e-36a92e2348c5">
+<input checked="checked" id="2c7a04f1-b40f-46eb-b58e-1ffe5edb4cfd" name="57c1cf8a-3542-49fb-af60-c1841d6c1e8f" type="radio"/>
+<label class="sd-tab-label" for="2c7a04f1-b40f-46eb-b58e-1ffe5edb4cfd">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id9">
 <div class="code-block-caption"><span class="caption-text">koala.yml</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
@@ -486,8 +498,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="1dbc5deb-6379-4da3-894d-11f197e48fbe" name="eebf1761-3d3d-4ae0-bf65-5428ac45d3b5" type="radio"/>
-<label class="sd-tab-label" for="1dbc5deb-6379-4da3-894d-11f197e48fbe">
+<input id="9f588900-dc90-4220-bcb3-26cf305445e2" name="57c1cf8a-3542-49fb-af60-c1841d6c1e8f" type="radio"/>
+<label class="sd-tab-label" for="9f588900-dc90-4220-bcb3-26cf305445e2">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id10">
 <div class="code-block-caption"><span class="caption-text">koala.json</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
@@ -542,8 +554,8 @@ Terra’s config system.</p>
 create a config able to be read and interpreted by the config loader
 like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="d325a8b4-8b07-4faf-a90e-8cafb6a05fec" name="4b75e10b-f903-4284-9861-981c7d26eb67" type="radio"/>
-<label class="sd-tab-label" for="d325a8b4-8b07-4faf-a90e-8cafb6a05fec">
+<input checked="checked" id="fab84c39-a9dd-4246-9f68-1e0b12effee5" name="6590bbcc-6b6c-42f3-8357-4d0e39a55d31" type="radio"/>
+<label class="sd-tab-label" for="fab84c39-a9dd-4246-9f68-1e0b12effee5">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id11">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.yml</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
@@ -559,8 +571,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="cc40972f-5049-4e28-aba2-a8722b3aba1f" name="4b75e10b-f903-4284-9861-981c7d26eb67" type="radio"/>
-<label class="sd-tab-label" for="cc40972f-5049-4e28-aba2-a8722b3aba1f">
+<input id="cea4f9ab-f07d-4318-93ed-a5262195eeff" name="6590bbcc-6b6c-42f3-8357-4d0e39a55d31" type="radio"/>
+<label class="sd-tab-label" for="cea4f9ab-f07d-4318-93ed-a5262195eeff">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.json</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
@@ -620,8 +632,8 @@ registry key <code class="docutils literal notranslate"><span class="pre">ZOO</s
 <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter to <code class="docutils literal notranslate"><span class="pre">ZOO</span></code> in our config from above, signifying to
 Terra that our config top level object will be of type <code class="docutils literal notranslate"><span class="pre">ZooTemplate</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="e7633230-2fd4-409a-9ad7-53b711b0c33a" name="b2eb62c9-511d-4322-b17d-a9c953d18b13" type="radio"/>
-<label class="sd-tab-label" for="e7633230-2fd4-409a-9ad7-53b711b0c33a">
+<input checked="checked" id="2c54e31c-f11b-47a3-8e4e-559dc94ca030" name="48347297-a14e-494a-9bc1-8e27ac53f88e" type="radio"/>
+<label class="sd-tab-label" for="2c54e31c-f11b-47a3-8e4e-559dc94ca030">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id13">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.yml</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
@@ -638,8 +650,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="3364306f-ba64-4897-9334-ef79a4390d92" name="b2eb62c9-511d-4322-b17d-a9c953d18b13" type="radio"/>
-<label class="sd-tab-label" for="3364306f-ba64-4897-9334-ef79a4390d92">
+<input id="42504a92-c7fc-4430-acdf-14807c0c86f1" name="48347297-a14e-494a-9bc1-8e27ac53f88e" type="radio"/>
+<label class="sd-tab-label" for="42504a92-c7fc-4430-acdf-14807c0c86f1">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id14">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.json</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
@@ -689,8 +701,8 @@ are automatically registered by Terra, allowing us to access all of our
 <code class="docutils literal notranslate"><span class="pre">ZOO</span></code> configs from anywhere via the <em>zoo registry</em>.</p>
 <p>And with this, here is what our final config looks like:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="97c0f418-fba2-4e7f-ba53-b19914954f24" name="2e3b7cfd-1d59-48b3-b5ed-6506be0ea5af" type="radio"/>
-<label class="sd-tab-label" for="97c0f418-fba2-4e7f-ba53-b19914954f24">
+<input checked="checked" id="c9e9f036-bcaf-4bc4-9cac-16bb79018fdc" name="78ee6f61-c0f6-4654-9b98-3789e1273fe5" type="radio"/>
+<label class="sd-tab-label" for="c9e9f036-bcaf-4bc4-9cac-16bb79018fdc">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id15">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.yml</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
@@ -708,8 +720,8 @@ YAML</label><div class="sd-tab-content docutils">
 </div>
 </div>
 </div>
-<input id="35cf6d13-00db-4ffd-8003-860d2ffdaaec" name="2e3b7cfd-1d59-48b3-b5ed-6506be0ea5af" type="radio"/>
-<label class="sd-tab-label" for="35cf6d13-00db-4ffd-8003-860d2ffdaaec">
+<input id="11b548e7-b3f9-4cf5-82a7-1a18d3de7aa7" name="78ee6f61-c0f6-4654-9b98-3789e1273fe5" type="radio"/>
+<label class="sd-tab-label" for="11b548e7-b3f9-4cf5-82a7-1a18d3de7aa7">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id16">
 <div class="code-block-caption"><span class="caption-text">australian_zoo.json</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>

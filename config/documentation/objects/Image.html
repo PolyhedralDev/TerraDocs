@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Integer" href="Integer.html" /><link rel="prev" title="Float" href="Float.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Integer" href="Integer.html" /><link rel="prev" title="GenerationStage" href="GenerationStage.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
         <title>Image - Terra Docs</title>
@@ -240,6 +240,10 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Config Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../configs/BIOME.html">BIOME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configs/FEATURE.html">FEATURE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configs/PALETTE.html">PALETTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configs/pack.yml.html">pack.yml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Biome.html">Biome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
@@ -253,7 +257,9 @@
 <li class="toctree-l3"><a class="reference internal" href="Expression.html">Expression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Feature.html">Feature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Float.html">Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Integer.html">Integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="List.html">List</a></li>
@@ -262,14 +268,20 @@
 <li class="toctree-l3"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NoiseSampler.html">NoiseSampler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NumberPredicate.html">NumberPredicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Palette.html">Palette</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Pattern.html">Pattern</a></li>
 <li class="toctree-l3"><a class="reference internal" href="PipelineBiome.html">PipelineBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Point.html">Point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.html">Range</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Set.html">Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Source.html">Source</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Stage.html">Stage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="String.html">String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Structure.html">Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Tag.html">Tag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="WeightedList.html">WeightedList</a></li>
 </ul>
@@ -327,21 +339,20 @@
         <article role="main">
           <section id="image">
 <h1>Image<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h1>
+<p><sup>*Config object requires the ‘library-image’ addon to use</sup></p>
 <p>This page contains the different ways of defining how an image should
 be loaded for use in other configurations requiring the <code class="docutils literal notranslate"><span class="pre">Image</span></code> type.</p>
 <section id="types">
 <h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
 <p>Different types of <code class="docutils literal notranslate"><span class="pre">Image</span></code> provide different behaviours and may have additional parameters for configuring that behavior.</p>
-<p>The type is specified by setting the <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with <code class="docutils literal notranslate"><span class="pre">ADDON_NAME:</span></code> to specify which one to use.</p>
+<p>The type is specified by setting the <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">type</span> parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with <code class="docutils literal notranslate"><span class="pre">ADDON_NAME:</span></code> to specify which one to use.</p>
 <p>A list of available types for <code class="docutils literal notranslate"><span class="pre">Image</span></code> are listed below:</p>
 <hr class="docutils"/>
 <section id="bitmap">
 <h3>BITMAP<a class="headerlink" href="#bitmap" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘library-image’ addon</sup></p>
 <p>Loads a singular image. For very large images that you may have issues loading,
 try the <a class="reference internal" href="#stitched-bitmap">STITCHED_BITMAP</a> type instead.</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">path-format</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a> - Path to the image relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">path-format</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- Path to the image relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">rows</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">columns</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">zero-indexed</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
@@ -350,13 +361,11 @@ try the <a class="reference internal" href="#stitched-bitmap">STITCHED_BITMAP</a
 <hr class="docutils"/>
 <section id="stitched-bitmap">
 <h3>STITCHED_BITMAP<a class="headerlink" href="#stitched-bitmap" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘library-image’ addon</sup></p>
 <p>An alternate way of loading <code class="docutils literal notranslate"><span class="pre">Image</span></code> s via a set of smaller images
 arranged in a grid that are ‘stitched’ together during generation.
 This type is primarily used when singular images are too large to be
 loaded into memory (a limit imposed Java’s <code class="docutils literal notranslate"><span class="pre">BufferedImage</span></code> class implementation).</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">path</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a> - The format string for the path to the images relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">path</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- The format string for the path to the images relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
 <p>The file name section of the path format must contain the text <code class="docutils literal notranslate"><span class="pre">{row}</span></code> and <code class="docutils literal notranslate"><span class="pre">{column}</span></code>
 indicating the sections of the file names that indicate which rows and columns the files belong to.</p>
 <p>Given the following example image files in the pack directory to be stitched into one image:</p>
@@ -374,8 +383,8 @@ indicating the sections of the file names that indicate which rows and columns t
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">path-format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images/stitched-image/my-image-{row}-{column}.png</span><span class="w"></span>
 </pre></div>
 </div>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">rows</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - How many rows of images to stitch together.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">columns</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - How many columns of images to stitch together.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">rows</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- How many rows of images to stitch together.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">columns</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- How many columns of images to stitch together.</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">zero-indexed</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
 <p>Should be set to true if the image row and column indexes begin at 0.</p>
@@ -397,14 +406,14 @@ indicating the sections of the file names that indicate which rows and columns t
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="Float.html">
+          <a class="prev-page" href="GenerationStage.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Float</div>
+                <div class="title">GenerationStage</div>
                 
               </div>
             </a>

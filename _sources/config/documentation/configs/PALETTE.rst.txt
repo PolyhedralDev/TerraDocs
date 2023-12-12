@@ -1,0 +1,13 @@
+=======
+PALETTE
+=======
+
+:superscript:`*Config type requires the 'config-palette' addon to use`
+
+:bdg-primary:`id` :doc:`/config/documentation/objects/String`\ 
+
+:bdg-primary:`layers` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/PaletteLayer`\> 
+
+:bdg-success:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
+
+Default: ``Constant 0``

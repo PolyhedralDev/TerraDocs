@@ -2,4 +2,6 @@
 PipelineBiome
 =============
 
+:superscript:`*Config object requires the 'biome-provider-pipeline-v2' addon to use`
+
 A pipeline biome

@@ -240,6 +240,10 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Config Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../configs/BIOME.html">BIOME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configs/FEATURE.html">FEATURE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configs/PALETTE.html">PALETTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configs/pack.yml.html">pack.yml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Biome.html">Biome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
@@ -253,7 +257,9 @@
 <li class="toctree-l3"><a class="reference internal" href="Expression.html">Expression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Feature.html">Feature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Float.html">Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Integer.html">Integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="List.html">List</a></li>
@@ -262,14 +268,20 @@
 <li class="toctree-l3"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NoiseSampler.html">NoiseSampler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NumberPredicate.html">NumberPredicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Palette.html">Palette</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Pattern.html">Pattern</a></li>
 <li class="toctree-l3"><a class="reference internal" href="PipelineBiome.html">PipelineBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Point.html">Point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.html">Range</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Set.html">Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Source.html">Source</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Stage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="String.html">String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Structure.html">Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Tag.html">Tag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="WeightedList.html">WeightedList</a></li>
 </ul>
@@ -327,34 +339,31 @@
         <article role="main">
           <section id="stage">
 <h1>Stage<a class="headerlink" href="#stage" title="Permalink to this headline">¶</a></h1>
+<p><sup>*Config object requires the ‘biome-provider-pipeline-v2’ addon to use</sup></p>
 <section id="types">
 <h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
 <p>Different types of <code class="docutils literal notranslate"><span class="pre">Stage</span></code> provide different behaviours and may have additional parameters for configuring that behavior.</p>
-<p>The type is specified by setting the <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with <code class="docutils literal notranslate"><span class="pre">ADDON_NAME:</span></code> to specify which one to use.</p>
+<p>The type is specified by setting the <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">type</span> parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with <code class="docutils literal notranslate"><span class="pre">ADDON_NAME:</span></code> to specify which one to use.</p>
 <p>A list of available types for <code class="docutils literal notranslate"><span class="pre">Stage</span></code> are listed below:</p>
 <hr class="docutils"/>
 <section id="fractal-expand">
 <h3>FRACTAL_EXPAND<a class="headerlink" href="#fractal-expand" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘biome-provider-pipeline-v2’ addon</sup></p>
+<p>Adds detail</p>
 </section>
 <hr class="docutils"/>
 <section id="smooth">
 <h3>SMOOTH<a class="headerlink" href="#smooth" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘biome-provider-pipeline-v2’ addon</sup></p>
+<p>Smooths out detail</p>
 </section>
 <hr class="docutils"/>
 <section id="replace">
 <h3>REPLACE<a class="headerlink" href="#replace" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘biome-provider-pipeline-v2’ addon</sup></p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">from</span> <a class="reference internal" href="Tag.html"><span class="doc">Tag</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">to</span> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;</p>
 </section>
 <hr class="docutils"/>
 <section id="replace-list">
 <h3>REPLACE_LIST<a class="headerlink" href="#replace-list" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘biome-provider-pipeline-v2’ addon</sup></p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">default-from</span> <a class="reference internal" href="Tag.html"><span class="doc">Tag</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">default-to</span> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">to</span> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>, <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;&gt;</p>
@@ -362,8 +371,6 @@
 <hr class="docutils"/>
 <section id="border">
 <h3>BORDER<a class="headerlink" href="#border" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘biome-provider-pipeline-v2’ addon</sup></p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">from</span> <a class="reference internal" href="Tag.html"><span class="doc">Tag</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">replace</span> <a class="reference internal" href="Tag.html"><span class="doc">Tag</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">to</span> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;</p>
@@ -371,8 +378,6 @@
 <hr class="docutils"/>
 <section id="border-list">
 <h3>BORDER_LIST<a class="headerlink" href="#border-list" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘biome-provider-pipeline-v2’ addon</sup></p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">from</span> <a class="reference internal" href="Tag.html"><span class="doc">Tag</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">default-replace</span> <a class="reference internal" href="Tag.html"><span class="doc">Tag</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">default-to</span> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;</p>

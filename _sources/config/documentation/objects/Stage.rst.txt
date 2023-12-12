@@ -2,12 +2,14 @@
 Stage
 =====
 
+:superscript:`*Config object requires the 'biome-provider-pipeline-v2' addon to use`
+
 Types
 =====
 
 Different types of ``Stage`` provide different behaviours and may have additional parameters for configuring that behavior.
 
-The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+The type is specified by setting the :bdg-primary:`type` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
 
 A list of available types for ``Stage`` are listed below:
 
@@ -16,71 +18,55 @@ A list of available types for ``Stage`` are listed below:
 FRACTAL_EXPAND
 --------------
 
-:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+Adds detail
 
 ---------
 
 SMOOTH
 ------
 
-:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+Smooths out detail
 
 ---------
 
 REPLACE
 -------
 
-:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+:bdg-primary:`from` :doc:`/config/documentation/objects/Tag`\ 
 
-`PARAMETERS:`
-
-:bdg-primary:`from` :doc:`Tag` 
-
-:bdg-primary:`to` :doc:`WeightedList`\<:doc:`PipelineBiome`\> 
+:bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
 ---------
 
 REPLACE_LIST
 ------------
 
-:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+:bdg-primary:`default-from` :doc:`/config/documentation/objects/Tag`\ 
 
-`PARAMETERS:`
+:bdg-primary:`default-to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
-:bdg-primary:`default-from` :doc:`Tag` 
-
-:bdg-primary:`default-to` :doc:`WeightedList`\<:doc:`PipelineBiome`\> 
-
-:bdg-primary:`to` :doc:`Map`\<:doc:`PipelineBiome`\, :doc:`WeightedList`\<:doc:`PipelineBiome`\>> 
+:bdg-primary:`to` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
 
 ---------
 
 BORDER
 ------
 
-:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+:bdg-primary:`from` :doc:`/config/documentation/objects/Tag`\ 
 
-`PARAMETERS:`
+:bdg-primary:`replace` :doc:`/config/documentation/objects/Tag`\ 
 
-:bdg-primary:`from` :doc:`Tag` 
-
-:bdg-primary:`replace` :doc:`Tag` 
-
-:bdg-primary:`to` :doc:`WeightedList`\<:doc:`PipelineBiome`\> 
+:bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
 ---------
 
 BORDER_LIST
 -----------
 
-:superscript:`Added by the 'biome-provider-pipeline-v2' addon`
+:bdg-primary:`from` :doc:`/config/documentation/objects/Tag`\ 
 
-`PARAMETERS:`
+:bdg-primary:`default-replace` :doc:`/config/documentation/objects/Tag`\ 
 
-:bdg-primary:`from` :doc:`Tag` 
+:bdg-primary:`default-to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
-:bdg-primary:`default-replace` :doc:`Tag` 
-
-:bdg-primary:`default-to` :doc:`WeightedList`\<:doc:`PipelineBiome`\> 
-
-:bdg-primary:`replace` :doc:`Map`\<:doc:`PipelineBiome`\, :doc:`WeightedList`\<:doc:`PipelineBiome`\>> 
+:bdg-primary:`replace` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 

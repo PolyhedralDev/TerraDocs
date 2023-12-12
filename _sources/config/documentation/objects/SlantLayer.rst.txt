@@ -1,0 +1,9 @@
+==========
+SlantLayer
+==========
+
+:superscript:`*Config object requires the 'chunk-generator-noise-3d' addon to use`
+
+:bdg-primary:`threshold` :doc:`/config/documentation/objects/Float`\ 
+
+:bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 

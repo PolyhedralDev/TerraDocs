@@ -1,0 +1,14 @@
+===========================
+PipelineBiomeColorConverter
+===========================
+
+:superscript:`*Config object requires the 'pipeline-image' addon to use`
+
+Types
+=====
+
+Different types of ``PipelineBiomeColorConverter`` provide different behaviours and may have additional parameters for configuring that behavior.
+
+The type is specified by setting the :bdg-primary:`type` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+
+A list of available types for ``PipelineBiomeColorConverter`` are listed below:

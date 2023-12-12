@@ -2,12 +2,14 @@
 BiomeColorMapping
 =================
 
+:superscript:`*Config object requires the 'biome-provider-image-v2' addon to use`
+
 Types
 =====
 
 Different types of ``BiomeColorMapping`` provide different behaviours and may have additional parameters for configuring that behavior.
 
-The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+The type is specified by setting the :bdg-primary:`type` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
 
 A list of available types for ``BiomeColorMapping`` are listed below:
 
@@ -16,15 +18,11 @@ A list of available types for ``BiomeColorMapping`` are listed below:
 USE_BIOME_COLORS
 ----------------
 
-:superscript:`Added by the 'biome-provider-image-v2' addon`
+Maps to each biome using its declared ``color`` parameter.
 
 ---------
 
 MAP
 ---
 
-:superscript:`Added by the 'biome-provider-image-v2' addon`
-
-`PARAMETERS:`
-
-:bdg-primary:`map` :doc:`Map`\<:doc:`ColorString`\, :doc:`Biome`\> 
+:bdg-primary:`map` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 

@@ -1,0 +1,13 @@
+============
+PaletteLayer
+============
+
+:superscript:`*Config object requires the 'config-palette' addon to use`
+
+:bdg-primary:`materials` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Block`\> 
+
+:bdg-primary:`layers` :doc:`/config/documentation/objects/Integer`\ 
+
+:bdg-success:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
+
+Default: ``None``

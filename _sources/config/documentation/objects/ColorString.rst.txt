@@ -2,4 +2,6 @@
 ColorString
 ===========
 
+:superscript:`*Config object requires the 'library-image' addon to use`
+
 A string representing a color

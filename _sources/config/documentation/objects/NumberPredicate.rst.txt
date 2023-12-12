@@ -1,3 +1,5 @@
 ===============
 NumberPredicate
 ===============
+
+:superscript:`*Config object requires the 'config-number-predicate' addon to use`

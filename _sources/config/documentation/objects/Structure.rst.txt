@@ -1,0 +1,5 @@
+=========
+Structure
+=========
+
+A structure ID

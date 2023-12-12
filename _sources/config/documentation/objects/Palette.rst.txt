@@ -1,0 +1,5 @@
+=======
+Palette
+=======
+
+A palette ID

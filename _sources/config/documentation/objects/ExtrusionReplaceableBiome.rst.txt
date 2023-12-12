@@ -1,3 +1,5 @@
 =========================
 ExtrusionReplaceableBiome
 =========================
+
+:superscript:`*Config object requires the 'biome-provider-extrusion' addon to use`

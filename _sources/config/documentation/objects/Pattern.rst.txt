@@ -2,12 +2,14 @@
 Pattern
 =======
 
+:superscript:`*Config object requires the 'config-locators' addon to use`
+
 Types
 =====
 
 Different types of ``Pattern`` provide different behaviours and may have additional parameters for configuring that behavior.
 
-The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+The type is specified by setting the :bdg-primary:`type` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
 
 A list of available types for ``Pattern`` are listed below:
 
@@ -16,89 +18,57 @@ A list of available types for ``Pattern`` are listed below:
 MATCH_AIR
 ---------
 
-:superscript:`Added by the 'config-locators' addon`
-
-`PARAMETERS:`
-
-:bdg-primary:`offset` :doc:`Range` 
+:bdg-primary:`offset` :doc:`/config/documentation/objects/Range`\ 
 
 ---------
 
 MATCH_SOLID
 -----------
 
-:superscript:`Added by the 'config-locators' addon`
-
-`PARAMETERS:`
-
-:bdg-primary:`offset` :doc:`Range` 
+:bdg-primary:`offset` :doc:`/config/documentation/objects/Range`\ 
 
 ---------
 
 MATCH
 -----
 
-:superscript:`Added by the 'config-locators' addon`
+:bdg-primary:`block` :doc:`/config/documentation/objects/Block`\ 
 
-`PARAMETERS:`
-
-:bdg-primary:`block` BlockState 
-
-:bdg-primary:`offset` :doc:`Range` 
+:bdg-primary:`offset` :doc:`/config/documentation/objects/Range`\ 
 
 ---------
 
 MATCH_SET
 ---------
 
-:superscript:`Added by the 'config-locators' addon`
+:bdg-primary:`blocks` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
 
-`PARAMETERS:`
-
-:bdg-primary:`blocks` :doc:`Set`\<:doc:`Block`\> 
-
-:bdg-primary:`offset` :doc:`Range` 
+:bdg-primary:`offset` :doc:`/config/documentation/objects/Range`\ 
 
 ---------
 
 AND
 ---
 
-:superscript:`Added by the 'config-locators' addon`
-
-`PARAMETERS:`
-
-:bdg-primary:`patterns` :doc:`List`\<:doc:`Pattern`\> 
+:bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
 ---------
 
 OR
 --
 
-:superscript:`Added by the 'config-locators' addon`
-
-`PARAMETERS:`
-
-:bdg-primary:`patterns` :doc:`List`\<:doc:`Pattern`\> 
+:bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
 ---------
 
 XOR
 ---
 
-:superscript:`Added by the 'config-locators' addon`
-
-`PARAMETERS:`
-
-:bdg-primary:`patterns` :doc:`List`\<:doc:`Pattern`\> 
+:bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
 ---------
 
 NOT
 ---
 
-:superscript:`Added by the 'config-locators' addon`
-
-`PARAMETERS:`
-
-:bdg-primary:`pattern` :doc:`Pattern` 
+:bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern`\ 

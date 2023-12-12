@@ -8,8 +8,6 @@ When a range is declared as an int ...
 
 When a range is declared as a map ...
 
-`PARAMETERS:`
+:bdg-primary:`min` :doc:`/config/documentation/objects/Integer`\ 
 
-:bdg-primary:`min` :doc:`Integer` 
-
-:bdg-primary:`max` :doc:`Integer` 
+:bdg-primary:`max` :doc:`/config/documentation/objects/Integer`\ 

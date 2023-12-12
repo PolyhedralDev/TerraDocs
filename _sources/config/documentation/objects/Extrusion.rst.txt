@@ -2,12 +2,14 @@
 Extrusion
 =========
 
+:superscript:`*Config object requires the 'biome-provider-extrusion' addon to use`
+
 Types
 =====
 
 Different types of ``Extrusion`` provide different behaviours and may have additional parameters for configuring that behavior.
 
-The type is specified by setting the ``type`` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
+The type is specified by setting the :bdg-primary:`type` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
 
 A list of available types for ``Extrusion`` are listed below:
 
@@ -16,29 +18,21 @@ A list of available types for ``Extrusion`` are listed below:
 SET
 ---
 
-:superscript:`Added by the 'biome-provider-extrusion' addon`
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
-`PARAMETERS:`
+:bdg-primary:`range` :doc:`/config/documentation/objects/Range`\ 
 
-:bdg-primary:`sampler` :doc:`NoiseSampler` 
-
-:bdg-primary:`range` :doc:`Range` 
-
-:bdg-primary:`to` :doc:`WeightedList`\<:doc:`ExtrusionReplaceableBiome`\> 
+:bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
 
 ---------
 
 REPLACE
 -------
 
-:superscript:`Added by the 'biome-provider-extrusion' addon`
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
 
-`PARAMETERS:`
+:bdg-primary:`range` :doc:`/config/documentation/objects/Range`\ 
 
-:bdg-primary:`sampler` :doc:`NoiseSampler` 
+:bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
 
-:bdg-primary:`range` :doc:`Range` 
-
-:bdg-primary:`to` :doc:`WeightedList`\<:doc:`ExtrusionReplaceableBiome`\> 
-
-:bdg-primary:`from` :doc:`String` 
+:bdg-primary:`from` :doc:`/config/documentation/objects/String`\ 

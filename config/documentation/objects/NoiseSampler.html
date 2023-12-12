@@ -240,6 +240,10 @@
 </ul>
 </li>
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Config Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../configs/BIOME.html">BIOME</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configs/FEATURE.html">FEATURE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configs/PALETTE.html">PALETTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../configs/pack.yml.html">pack.yml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Biome.html">Biome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
 <li class="toctree-l3"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
@@ -253,7 +257,9 @@
 <li class="toctree-l3"><a class="reference internal" href="Expression.html">Expression</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
 <li class="toctree-l3"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Feature.html">Feature</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Float.html">Float</a></li>
+<li class="toctree-l3"><a class="reference internal" href="GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Integer.html">Integer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="List.html">List</a></li>
@@ -262,14 +268,20 @@
 <li class="toctree-l3"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">NoiseSampler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="NumberPredicate.html">NumberPredicate</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Palette.html">Palette</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Pattern.html">Pattern</a></li>
 <li class="toctree-l3"><a class="reference internal" href="PipelineBiome.html">PipelineBiome</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l3"><a class="reference internal" href="PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Point.html">Point</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Range.html">Range</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Set.html">Set</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Source.html">Source</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Stage.html">Stage</a></li>
 <li class="toctree-l3"><a class="reference internal" href="String.html">String</a></li>
+<li class="toctree-l3"><a class="reference internal" href="Structure.html">Structure</a></li>
 <li class="toctree-l3"><a class="reference internal" href="Tag.html">Tag</a></li>
 <li class="toctree-l3"><a class="reference internal" href="WeightedList.html">WeightedList</a></li>
 </ul>
@@ -341,52 +353,48 @@ is dependent on the context of the sampler definition.</p>
 <section id="types">
 <h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
 <p>Different types of <code class="docutils literal notranslate"><span class="pre">NoiseSampler</span></code> provide different behaviours and may have additional parameters for configuring that behavior.</p>
-<p>The type is specified by setting the <code class="docutils literal notranslate"><span class="pre">type</span></code> parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with <code class="docutils literal notranslate"><span class="pre">ADDON_NAME:</span></code> to specify which one to use.</p>
+<p>The type is specified by setting the <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">type</span> parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with <code class="docutils literal notranslate"><span class="pre">ADDON_NAME:</span></code> to specify which one to use.</p>
 <p>A list of available types for <code class="docutils literal notranslate"><span class="pre">NoiseSampler</span></code> are listed below:</p>
 <hr class="docutils"/>
 <section id="white-noise">
 <h3>WHITE_NOISE<a class="headerlink" href="#white-noise" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://en.wikipedia.org/wiki/White_noise">White noise</a>.</p>
 <img alt="../../../_images/whitenoise64x64.png" src="../../../_images/whitenoise64x64.png"/>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="positive-white-noise">
 <h3>POSITIVE_WHITE_NOISE<a class="headerlink" href="#positive-white-noise" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Identical to <a class="reference internal" href="#white-noise">WHITE_NOISE</a>, but redistributed to only produce positive
 values for convenience.</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="gaussian">
 <h3>GAUSSIAN<a class="headerlink" href="#gaussian" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Identical to <a class="reference internal" href="#white-noise">WHITE_NOISE</a>, but redistributed to follow a <a class="reference external" href="https://en.wikipedia.org/wiki/Normal_distribution">gaussian distribution</a>.</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="perlin">
 <h3>PERLIN<a class="headerlink" href="#perlin" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://en.wikipedia.org/wiki/Perlin_noise">Perlin noise</a>.</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
@@ -397,72 +405,66 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <hr class="docutils"/>
 <section id="simplex">
 <h3>SIMPLEX<a class="headerlink" href="#simplex" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://en.wikipedia.org/wiki/Simplex_noise">Simplex noise</a>.</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="open-simplex-2">
 <h3>OPEN_SIMPLEX_2<a class="headerlink" href="#open-simplex-2" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://en.wikipedia.org/wiki/Simplex_noise">Simplex noise</a> (using the algorithm from <a class="reference external" href="https://github.com/KdotJPG/OpenSimplex2">OpenSimplex2</a>).</p>
 <img alt="../../../_images/opensimplex2_64x64.png" src="../../../_images/opensimplex2_64x64.png"/>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="open-simplex-2s">
 <h3>OPEN_SIMPLEX_2S<a class="headerlink" href="#open-simplex-2s" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces smoother <a class="reference external" href="https://en.wikipedia.org/wiki/Simplex_noise">Simplex noise</a> (using the algorithm from <a class="reference external" href="https://github.com/KdotJPG/OpenSimplex2">OpenSimplex2</a>).</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="value">
 <h3>VALUE<a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://en.wikipedia.org/wiki/Value_noise">Value noise</a> using <a class="reference external" href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a> (<a class="reference external" href="https://en.wikipedia.org/wiki/Bilinear_interpolation">bilinear</a> for 2D, <a class="reference external" href="https://en.wikipedia.org/wiki/Trilinear_interpolation">trilinear</a> for 3D).</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="value-cubic">
 <h3>VALUE_CUBIC<a class="headerlink" href="#value-cubic" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Identical to <a class="reference internal" href="#value">VALUE</a> except using <a class="reference external" href="https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Interpolation_on_a_single_interval">cubic interpolation</a> (<a class="reference external" href="https://en.wikipedia.org/wiki/Bicubic_interpolation">bicubic</a> for 2D, <a class="reference external" href="https://en.wikipedia.org/wiki/Tricubic_interpolation">tricubic</a> for 3D).</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="gabor">
 <h3>GABOR<a class="headerlink" href="#gabor" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://graphics.cs.kuleuven.be/publications/GLLD12GNBE/">Gabor noise</a>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
 <p>The GABOR sampler is significantly slower at producing noise compared to other noise samplers.</p>
 </div>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">rotation</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.25</span></code></p>
@@ -478,7 +480,7 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <hr class="docutils"/>
 <section id="cellular">
 <h3>CELLULAR<a class="headerlink" href="#cellular" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces cellular / <a class="reference external" href="https://en.wikipedia.org/wiki/Worley_noise">Worley noise</a>.</p>
 <img alt="../../../_images/cellular_256x256.png" src="../../../_images/cellular_256x256.png"/>
 <p><strong>DIAGRAM</strong></p>
@@ -491,12 +493,11 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <li><p><span class="orange">Orange line</span> - Distance to the second closest cell origin.</p></li>
 <li><p><span class="gold">Gold line</span> - Distance to the third closest cell origin.</p></li>
 </ul>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">salt</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">distance</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a> - The method used for calculating the distance from the cell origin.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">distance</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- The method used for calculating the distance from the cell origin.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">EuclideanSq</span></code></p>
 <p><strong>Distance Types</strong></p>
 <ul class="simple">
@@ -505,7 +506,7 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <li><p><code class="docutils literal notranslate"><span class="pre">Manhattan</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Hybrid</span></code></p></li>
 </ul>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">return</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a> - The function the sampler will use to calculate the noise.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">return</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- The function the sampler will use to calculate the noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">Distance</span></code></p>
 <p><strong>Return Types</strong></p>
 <p>Definitions:</p>
@@ -532,22 +533,21 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <li><p><code class="docutils literal notranslate"><span class="pre">Distance3Mul</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d3</span> <span class="pre">*</span> <span class="pre">d1</span></code>.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">Distance3Div</span></code> - Returns <code class="docutils literal notranslate"><span class="pre">d1</span> <span class="pre">/</span> <span class="pre">d3</span></code>.</p></li>
 </ul>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">jitter</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Determines how far cell origins can randomly spread out from the center of cells.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">jitter</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Determines how far cell origins can randomly spread out from the center of cells.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
 <p>A jitter of <code class="docutils literal notranslate"><span class="pre">0</span></code> places cell origins exactly in the center of each cell, resulting in a perfect grid.
 Values between <code class="docutils literal notranslate"><span class="pre">-1</span></code> and <code class="docutils literal notranslate"><span class="pre">1</span></code> are recommended, as values outside that range may produce artifacts.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">lookup</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The lookup sampler used when the <code class="docutils literal notranslate"><span class="pre">distance</span></code> parameter is set to <code class="docutils literal notranslate"><span class="pre">NoiseLookup</span></code></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">lookup</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a>- The lookup sampler used when the <code class="docutils literal notranslate"><span class="pre">distance</span></code> parameter is set to <code class="docutils literal notranslate"><span class="pre">NoiseLookup</span></code></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">`OPEN_SIMPLEX_2`_</span> <span class="pre">sampler</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="image">
 <h3>IMAGE<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Outputs the channel of an image that is tiled, redistributed from the channel range [0-255] to output range [-1, 1].</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a> - Path to the image relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- Path to the image relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
 <p>Example path: <cite>path/to/the/image.png</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">Frequency</span></a> of the image. Determines how the image gets scaled.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">frequency</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">Frequency</span></a> of the image. Determines how the image gets scaled.</p>
 <p>A frequency of <code class="docutils literal notranslate"><span class="pre">1.0</span></code> means 1 pixel = 1 block, a frequency of <code class="docutils literal notranslate"><span class="pre">2.0</span></code> means 2 pixels = 1 block.</p>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
@@ -571,7 +571,7 @@ results may look pixelated depending on use.</p>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">0.25</span></code> frequency = <code class="docutils literal notranslate"><span class="pre">0.25</span> <span class="pre">pixels</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">block</span></code> or <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">pixel</span> <span class="pre">=</span> <span class="pre">4</span> <span class="pre">blocks</span></code> (as demonstrated above using a block grid).</p>
 </div>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">channel</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a> - Which channel of the image to output.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">channel</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- Which channel of the image to output.</p>
 <p>Valid channels:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">GRAYSCALE</span></code></p></li>
@@ -660,29 +660,26 @@ to determine biome temperature:</p>
 <hr class="docutils"/>
 <section id="constant">
 <h3>CONSTANT<a class="headerlink" href="#constant" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Outputs a constant value, regardless of the inputs. Typically used in cases where you
 don’t want the sampler to do anything.</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">value</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - The value to be outputted.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">value</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- The value to be outputted.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="domain-warp">
 <h3>DOMAIN_WARP<a class="headerlink" href="#domain-warp" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Warps a sampler by another sampler. See <a class="reference internal" href="../../development/noise/configuring.html#domain-warping"><span class="std std-ref">Domain Warping</span></a> for more information.</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">warp</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The sampler that determines warping.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The sampler to be warped.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">amplitude</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - How much warping to apply.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">warp</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a>- The sampler that determines warping.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a>- The sampler to be warped.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">amplitude</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- How much warping to apply.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="kernel">
 <h3>KERNEL<a class="headerlink" href="#kernel" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
-<p><cite>PARAMETERS:</cite></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">kernel</span> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="Float.html"><span class="doc">Float</span></a>&gt;&gt;</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">factor</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
@@ -693,21 +690,19 @@ don’t want the sampler to do anything.</p>
 <hr class="docutils"/>
 <section id="linear-heightmap">
 <h3>LINEAR_HEIGHTMAP<a class="headerlink" href="#linear-heightmap" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Treats a 2D sampler as a heightmap, converting it to a 3D <a class="reference external" href="https://en.wikipedia.org/wiki/Signed_distance_function">SDF</a>
 for use as a terrain sampler.</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">base</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - The base y level of the terrain.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The sampler to be used as a heightmap.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">base</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- The base y level of the terrain.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a>- The sampler to be used as a heightmap.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">`CONSTANT`_</span> <span class="pre">sampler</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">scale</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Scales the height of the heightmap.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">scale</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>- Scales the height of the heightmap.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p>
 </section>
 <hr class="docutils"/>
 <section id="fbm">
 <h3>FBM<a class="headerlink" href="#fbm" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
-<p><cite>PARAMETERS:</cite></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">octaves</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
@@ -721,8 +716,7 @@ for use as a terrain sampler.</p>
 <hr class="docutils"/>
 <section id="ping-pong">
 <h3>PING_PONG<a class="headerlink" href="#ping-pong" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
-<p><cite>PARAMETERS:</cite></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">octaves</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
@@ -738,8 +732,7 @@ for use as a terrain sampler.</p>
 <hr class="docutils"/>
 <section id="ridged">
 <h3>RIDGED<a class="headerlink" href="#ridged" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
-<p><cite>PARAMETERS:</cite></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">octaves</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">3</span></code></p>
@@ -753,10 +746,9 @@ for use as a terrain sampler.</p>
 <hr class="docutils"/>
 <section id="linear">
 <h3>LINEAR<a class="headerlink" href="#linear" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Redistributes the range <code class="docutils literal notranslate"><span class="pre">[min,</span> <span class="pre">max]</span></code> to <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code>, typically for use with weighted
 pools.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">max</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">min</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
@@ -764,11 +756,10 @@ pools.</p>
 <hr class="docutils"/>
 <section id="clamp">
 <h3>CLAMP<a class="headerlink" href="#clamp" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Outputs <code class="docutils literal notranslate"><span class="pre">max</span></code> when the sampler outputs a value greater than <code class="docutils literal notranslate"><span class="pre">max</span></code>, and returns <code class="docutils literal notranslate"><span class="pre">min</span></code>
 when the sampler outputs a value less than <code class="docutils literal notranslate"><span class="pre">min</span></code>, used to constrain sampler outputs to
 a certain range.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">max</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">min</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
@@ -776,9 +767,8 @@ a certain range.</p>
 <hr class="docutils"/>
 <section id="normal">
 <h3>NORMAL<a class="headerlink" href="#normal" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Redistributes normally distributed outputs to be evenly distributed.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">mean</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">standard-deviation</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
@@ -788,93 +778,83 @@ a certain range.</p>
 <hr class="docutils"/>
 <section id="probability">
 <h3>PROBABILITY<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Redistributes the range <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code> to <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>, typically used in cases where it’s easier to
 work with values from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code>, e.g defining a threshold as a percentage of a noise sampler.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="scale">
 <h3>SCALE<a class="headerlink" href="#scale" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">sampler()</span> <span class="pre">*</span> <span class="pre">amplitude</span></code>.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">amplitude</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="posterization">
 <h3>POSTERIZATION<a class="headerlink" href="#posterization" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Applies a step function to the sampler, where <code class="docutils literal notranslate"><span class="pre">steps</span></code> determines how many steps will be within
 the range <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code>.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">sampler</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">steps</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="add">
 <h3>ADD<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">+</span> <span class="pre">right()</span></code>.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="sub">
 <h3>SUB<a class="headerlink" href="#sub" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">-</span> <span class="pre">right()</span></code>.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="mul">
 <h3>MUL<a class="headerlink" href="#mul" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">*</span> <span class="pre">right()</span></code>.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="div">
 <h3>DIV<a class="headerlink" href="#div" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">/</span> <span class="pre">right()</span></code>.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="max">
 <h3>MAX<a class="headerlink" href="#max" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">max(left(),</span> <span class="pre">right())</span></code>.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="min">
 <h3>MIN<a class="headerlink" href="#min" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">min(left(),</span> <span class="pre">right())</span></code>.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">left</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">right</span> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="expression">
 <h3>EXPRESSION<a class="headerlink" href="#expression" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘config-noise-function’ addon</sup></p>
+<p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates an arbitrary user defined expression as the sampler output. Expression
 samplers additionally allow the use of user defined functions, including other samplers,
 as well as constants defined within the sampler.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">expression</span> <a class="reference internal" href="Expression.html"><span class="doc">Expression</span></a></p>
 <p>The expression to be evaluated for each sample. Variables <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> (3D only), and <code class="docutils literal notranslate"><span class="pre">z</span></code>
 act as the sampler’s coordinate inputs.</p>
@@ -1087,22 +1067,20 @@ the coordinates <code class="docutils literal notranslate"><span class="pre">X</
 <hr class="docutils"/>
 <section id="channel">
 <h3>CHANNEL<a class="headerlink" href="#channel" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘library-image’ addon</sup></p>
+<p><sup>*Type requires the ‘library-image’ addon to use</sup></p>
 <p>Outputs a channel from a color sampler.</p>
-<p><cite>PARAMETERS:</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-sampler</span> <a class="reference internal" href="ColorSampler.html"><span class="doc">ColorSampler</span></a> - The color sampler to extract channel values from.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">normalize</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a> - If the channel should be normalized to range [-1, 1] or not.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-sampler</span> <a class="reference internal" href="ColorSampler.html"><span class="doc">ColorSampler</span></a>- The color sampler to extract channel values from.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">normalize</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a>- If the channel should be normalized to range [-1, 1] or not.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">true</span></code></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">premultiply</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a> - Whether to multiply color channels by the alpha channel or not.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">premultiply</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a>- Whether to multiply color channels by the alpha channel or not.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
 <p>If you are expecting pixel transparency to reduce the output value then this should be set to true.</p>
 </section>
 <hr class="docutils"/>
 <section id="distance-transform">
 <h3>DISTANCE_TRANSFORM<a class="headerlink" href="#distance-transform" title="Permalink to this headline">¶</a></h3>
-<p><sup>Added by the ‘library-image’ addon</sup></p>
+<p><sup>*Type requires the ‘library-image’ addon to use</sup></p>
 <p>Returns the result of a <a class="reference external" href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/distance.htm">distance transform</a> on an image.</p>
-<p><cite>PARAMETERS:</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <a class="reference internal" href="Image.html"><span class="doc">Image</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">threshold</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">127</span></code></p>

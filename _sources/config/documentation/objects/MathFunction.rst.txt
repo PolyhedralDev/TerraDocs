@@ -2,16 +2,16 @@
 MathFunction
 ============
 
+:superscript:`*Config object requires the 'config-noise-function' addon to use`
+
 A math function
 
-`PARAMETERS:`
+:bdg-primary:`expression` :doc:`/config/documentation/objects/Expression`\ 
 
-:bdg-primary:`expression` :doc:`Expression` 
-
-:bdg-success:`arguments` :doc:`List`\<:doc:`String`\> 
+:bdg-success:`arguments` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> 
 
 Default: ``[]``
 
-:bdg-success:`functions` :doc:`Map`\<:doc:`String`\, :doc:`MathFunction`\> 
+:bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
 
 Default: ``{}``
