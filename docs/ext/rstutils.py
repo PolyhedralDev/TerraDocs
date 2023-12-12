@@ -18,6 +18,9 @@ def underline(text: str, char: str) -> str:
 def indent(text: str, spaces: int) -> str:
     return " " * spaces + text
 
+def interpreted(text: str) -> str:
+    return f"`{text}`"
+
 def wrap_in_card(lines: list[str],
                  title: str="",
                  link: str=None,
@@ -31,3 +34,4 @@ def wrap_in_card(lines: list[str],
         header += f"\n    :link-type: {link_type}"
     return [header] + [indent(line, 4) for line in lines]
 
+sep = "---------"

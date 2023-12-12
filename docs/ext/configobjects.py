@@ -1,6 +1,7 @@
 import rstutils as rst
 import warnings
 import re
+from operator import itemgetter
 
 from yamlutils import *
 
@@ -52,9 +53,8 @@ class Parameter:
         self.inline_types = set(yaml.get("inline-types", []))
         self.addon = addon
 
-    def to_rst_lines(self, name, objects, include_addon: bool=False) -> list[str]:
-        required = self.default_value is None
-        badge_role = ":bdg-primary:" if required else ":bdg-success:"
+    def to_rst_lines(self, name, objects) -> list[str]:
+        badge_role = ":bdg-primary:" if self.is_required() else ":bdg-success:"
 
         def map_types(type_expression):
             def map_to_link_if_present(match):
@@ -68,10 +68,7 @@ class Parameter:
 
         strings = [f"{badge_role}`{name}` {map_types(self.value_type)} {self.summary}"]
 
-        if include_addon:
-            strings += addon_text(self.addon, "Parameter")
-
-        if not required:
+        if not self.is_required():
             strings.append(f"Default: ``{self.default_value}``")
 
         if self.description is not None:
@@ -85,6 +82,14 @@ class Parameter:
 
         return strings
 
+    def is_required(self) -> bool:
+        return self.default_value is None
+
+def sort_params(params: dict[str, Parameter]) -> dict[str, Parameter]:
+    sorted_params = sorted(params.items(), key=itemgetter(0)) # Sort alphabetically
+    sorted_params = sorted(sorted_params, key=lambda pair: pair[1].is_required(), reverse=True) # Put required params first
+    return dict(sorted_params)
+
 class Template:
     def __init__(self, yaml, addon):
         self.description = yaml.get("description")
@@ -97,7 +102,7 @@ class Template:
         if self.description:
             strings.append(self.description)
         if self.parameters:
-            for param_name, param in self.parameters.items():
+            for param_name, param in sort_params(self.parameters).items():
                 strings += param.to_rst_lines(param_name, objects)
         if self.footer:
             strings.append(self.footer)
@@ -154,7 +159,7 @@ class Templated(ObjectType):
             f"A list of available types for ``{object_name}`` are listed below:"
         ]
         for template_regkey, template in self.templates.items():
-            lines += ["---------", rst.h3(template_regkey.key)]
+            lines += [rst.sep, rst.h3(template_regkey.key)]
             if template.addon is not self.addon:
                 lines += addon_text(template_regkey.addon, "Type")
             lines += template.to_rst_lines(objects)
@@ -185,12 +190,24 @@ class ConfigType():
 
     def to_rst_lines(self, config_name, objects, include_heading: bool=True) -> list[str]:
         lines = []
+
         if include_heading:
             lines.append(rst.h1(config_name))
+
         lines += addon_text(self.addon, "Config type")
+
         if self.description:
             lines.append(self.description)
-        for param_name, param in self.params.items():
-            lines += param.to_rst_lines(param_name, objects, include_addon=param.addon is not self.addon)
+
+        grouped_params = {}
+        for param_name, param in sort_params(self.params).items():
+            grouped_params.setdefault(param.addon, {})[param_name] = param
+        for addon_name, params in grouped_params.items():
+            lines.append(rst.sep)
+            group_name = addon_name if addon_name != self.addon else "Default"
+            lines.append(rst.interpreted(f"{group_name} parameters"))
+            for param_name, param in params.items():
+                lines += param.to_rst_lines(param_name, objects)
+
         return lines
 
