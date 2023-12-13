@@ -5,13 +5,9 @@ pack.yml
 The config pack manifest
 
 
----------
-
-`Default parameters`
-
 :bdg-primary:`biomes` :doc:`/config/documentation/objects/BiomeProvider`\ 
 
-:bdg-primary:`generator` ChunkGenerator 
+:bdg-primary:`generator` :doc:`/config/documentation/objects/ChunkGenerator`\ 
 
 :bdg-primary:`id` :doc:`/config/documentation/objects/String`\ 
 
@@ -25,7 +21,9 @@ Default: ``Anon Y. Mous``
 
 ---------
 
-`chunk-generator-noise-3d parameters`
+:superscript:`*Parameters require the 'chunk-generator-noise-3d' addon to use`
+
+The following parameters are only applicable if :bdg-primary:`generator` is set to ``NOISE_3D``
 
 :bdg-success:`blend.terrain.elevation` :doc:`/config/documentation/objects/Integer`\ 
 

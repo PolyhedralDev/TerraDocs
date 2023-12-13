@@ -2,4 +2,4 @@
 Biome
 =====
 
-A biome ID
+A Terra biome ID.

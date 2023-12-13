@@ -2,4 +2,4 @@
 Palette
 =======
 
-A palette ID
+A Terra palette ID. Palettes are added via the :doc:`/config/documentation/configs/PALETTE` config type.

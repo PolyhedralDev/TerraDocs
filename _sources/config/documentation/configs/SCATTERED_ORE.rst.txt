@@ -1,0 +1,31 @@
+=============
+SCATTERED_ORE
+=============
+
+:superscript:`*Config type requires the 'config-ore' addon to use`
+
+:bdg-primary:`extends` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Structure`\> - A list of other ``SCATTERED_ORE`` configs to copy parameters from.
+
+Parameters from configs listed first take precedence, with parameters defined inside this config taking the highest precedence.
+
+:bdg-primary:`id` :doc:`/config/documentation/objects/String`\ - An identifier used to reference this config from other configs via :doc:`/config/documentation/objects/Structure` objects.
+
+---------
+
+:bdg-primary:`id` :doc:`/config/documentation/objects/String`\ 
+
+:bdg-primary:`material` :doc:`/config/documentation/objects/Block`\ 
+
+:bdg-primary:`replace` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+
+:bdg-success:`material-overrides` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+
+Default: ``{}``
+
+:bdg-success:`physics` :doc:`/config/documentation/objects/Boolean`\ 
+
+Default: ``false``
+
+:bdg-success:`size` :doc:`/config/documentation/objects/Integer`\ 
+
+Default: ``7``

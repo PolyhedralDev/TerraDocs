@@ -242,7 +242,9 @@
 <li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Config Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">BIOME</a></li>
 <li class="toctree-l3"><a class="reference internal" href="FEATURE.html">FEATURE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ORE.html">ORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="PALETTE.html">PALETTE</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SCATTERED_ORE.html">SCATTERED_ORE</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pack.yml.html">pack.yml</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../objects/Biome.html">Biome</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../objects/BiomeColorConverter.html">BiomeColorConverter</a></li>
@@ -250,6 +252,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../objects/BiomeProvider.html">BiomeProvider</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../objects/Block.html">Block</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../objects/Boolean.html">Boolean</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../objects/ChunkGenerator.html">ChunkGenerator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../objects/ColorSampler.html">ColorSampler</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../objects/ColorString.html">ColorString</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../objects/DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
@@ -340,19 +343,16 @@
           <section id="biome">
 <h1>BIOME<a class="headerlink" href="#biome" title="Permalink to this headline">¶</a></h1>
 <p><sup>*Config type requires the ‘config-biome’ addon to use</sup></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">extends</span> <a class="reference internal" href="../objects/List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="../objects/Biome.html"><span class="doc">Biome</span></a>&gt; - A list of other <code class="docutils literal notranslate"><span class="pre">BIOME</span></code> configs to copy parameters from.</p>
+<p>Parameters from configs listed first take precedence, with parameters defined inside this config taking the highest precedence.</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">id</span> <a class="reference internal" href="../objects/String.html"><span class="doc">String</span></a>- An identifier used to reference this config from other configs via <a class="reference internal" href="../objects/Biome.html"><span class="doc">Biome</span></a> objects.</p>
 <hr class="docutils"/>
-<p><cite>Default parameters</cite></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color</span> <a class="reference internal" href="../objects/Integer.html"><span class="doc">Integer</span></a></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">id</span> <a class="reference internal" href="../objects/String.html"><span class="doc">String</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">tags</span> <a class="reference internal" href="../objects/Set.html"><span class="doc">Set</span></a>&lt;<a class="reference internal" href="../objects/Tag.html"><span class="doc">Tag</span></a>&gt;</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">vanilla</span> <a class="reference internal" href="../objects/PlatformBiome.html"><span class="doc">PlatformBiome</span></a></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">extends</span> <a class="reference internal" href="../objects/List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="../objects/Biome.html"><span class="doc">Biome</span></a>&gt;</p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">[]</span></code></p>
 <hr class="docutils"/>
-<p><cite>generation-stage-feature parameters</cite></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">features.&lt;stage id&gt;</span> <a class="reference internal" href="../objects/List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="../objects/Feature.html"><span class="doc">Feature</span></a>&gt;</p>
-<hr class="docutils"/>
-<p><cite>chunk-generator-noise-3d parameters</cite></p>
+<p><sup>*Parameters require the ‘chunk-generator-noise-3d’ addon to use</sup></p>
+<p>The following parameters are only applicable if <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">generator</span> in <a class="reference internal" href="pack.yml.html"><span class="doc">pack.yml</span></a> is set to <code class="docutils literal notranslate"><span class="pre">NOISE_3D</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">palette</span> <a class="reference internal" href="../objects/List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="../objects/Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="../objects/Palette.html"><span class="doc">Palette</span></a>, <a class="reference internal" href="../objects/Integer.html"><span class="doc">Integer</span></a>&gt;&gt;</p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">terrain.sampler</span> <a class="reference internal" href="../objects/NoiseSampler.html"><span class="doc">NoiseSampler</span></a></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">terrain.sampler-2d</span> <a class="reference internal" href="../objects/NoiseSampler.html"><span class="doc">NoiseSampler</span></a></p>
@@ -374,6 +374,11 @@
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p>
 <p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">terrain.blend.weight-2d</span> <a class="reference internal" href="../objects/Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p>
+<hr class="docutils"/>
+<p><sup>*Parameters require the ‘generation-stage-feature’ addon to use</sup></p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">features.&lt;stage id&gt;</span> <a class="reference internal" href="../objects/List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="../objects/Feature.html"><span class="doc">Feature</span></a>&gt;</p>
+<p>A list of features to generate within this biome during the feature generation stage specified by <code class="docutils literal notranslate"><span class="pre">&lt;stage</span> <span class="pre">id&gt;</span></code>.</p>
+<p>Available feature stages are defined in <a class="reference internal" href="pack.yml.html"><span class="doc">pack.yml</span></a>.</p>
 </section>
 
         </article>
