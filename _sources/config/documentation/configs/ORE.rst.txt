@@ -4,11 +4,15 @@ ORE
 
 :superscript:`*Config type requires the 'config-ore' addon to use`
 
-:bdg-primary:`extends` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Structure`\> - A list of other ``ORE`` configs to copy parameters from.
+This config type creates instances of :doc:`/config/documentation/objects/Structure`.
 
-Parameters from configs listed first take precedence, with parameters defined inside this config taking the highest precedence.
+:bdg-primary:`extends` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> - A list of other ``ORE`` configs to copy parameters from.
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String`\ - An identifier used to reference this config from other configs via :doc:`/config/documentation/objects/Structure` objects.
+Parameters from extended configs are only used if they have not already been defined in the current config. Configs listed first take precedence. This allows for re-use of parameters across multiple config files.
+
+:bdg-primary:`id` :doc:`/config/documentation/objects/String`\ - An identifier used to reference this config from other configs.
+
+The instance of :doc:`/config/documentation/objects/Structure` created by a config using this config type is identified using this parameter.
 
 ---------
 
