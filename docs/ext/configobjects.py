@@ -44,7 +44,7 @@ class RegistryKey:
 
     def __str__(self):
         return self.addon + ":" + self.key
-
+    
 class Parameter:
     def __init__(self, yaml, addon):
         self.value_type = yaml["type"]
@@ -63,9 +63,9 @@ class Parameter:
                 if type_string not in objects:
                     warnings.warn(f"Parameter '{name}' is set to undocumented object '{type_string}'")
                     return type_string
-                return f":doc:`/config/documentation/objects/{type_string}`\\"
+                return f":doc:`/config/documentation/objects/{type_string}`"
             unescaped = re.sub(r'\w+', map_to_link_if_present, type_expression)
-            return re.sub(r'(`\w+`)(\S)', lambda match: match.group(1) + "\\" + match.group(2), unescaped) # Escape any non whitespace characters following the :doc: role TODO BROKEN
+            return re.sub(r'(:doc:`[\w/]+`)(\S)', lambda match: match.group(1) + "\\" + match.group(2), unescaped) # Escape any non whitespace characters following the :doc: role
 
         strings = [f"{badge_role}`{name}` {map_types(self.value_type)} {self.summary}"]
 
