@@ -10,7 +10,11 @@ generation-stage-feature:
             default: "4"
   config-templates:
     BIOME:
-      params:
-        features.<stage id>:
-          type: List<Feature>
+      base:
+        params:
+          features.<stage id>:
+            type: List<Feature>
+            description: |
+              A list of features to generate within this biome during the feature generation stage specified by ``<stage id>``.
 
+              Available feature stages are defined in :doc:`/config/documentation/configs/pack.yml`.

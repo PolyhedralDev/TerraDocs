@@ -1,0 +1,31 @@
+config-ore:
+  configs:
+    ORE:
+      registers: Structure
+    SCATTERED_ORE:
+      registers: Structure
+  config-templates:
+    ORE:
+      base:
+        params: &base-ore-template
+          id:
+            type: String
+          material:
+            type: Block
+          material-overrides:
+            type: Map<Block, Block>
+            default: "{}"
+          replace:
+            type: Set<Block>
+          physics:
+            type: Boolean
+            default: "false"
+          size:
+            type: Float
+    SCATTERED_ORE:
+      base:
+        params:
+          <<: *base-ore-template
+          size:
+            type: Integer
+            default: "7"

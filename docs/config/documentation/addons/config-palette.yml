@@ -17,11 +17,12 @@ config-palette:
     PALETTE:
   config-templates:
     PALETTE:
-      params:
-        id: 
-          type: String
-        layers:
-          type: List<PaletteLayer>
-        sampler:
-          type: NoiseSampler
-          default: "Constant 0"
+      base:
+        params:
+          id: 
+            type: String
+          layers:
+            type: List<PaletteLayer>
+          sampler:
+            type: NoiseSampler
+            default: "Constant 0"

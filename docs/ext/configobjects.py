@@ -8,18 +8,19 @@ from yamlutils import *
 def addon_text(addon_name: str, thing: str) -> list[str]:
     lines = []
     if addon_name != "base":
-        lines.append(f":superscript:`*{thing} requires the '{addon_name}' addon to use`")
+        require_text = "require" if thing.endswith("s") else "requires"
+        lines.append(f":superscript:`*{thing} {require_text} the '{addon_name}' addon to use`")
     return lines
 
-def merge_abstract_params(raw_templates, template_name, visited=None):
+def merge_abstract_params(raw_templates, template_key, visited=None):
     # Ensure extensions follow a DAG
     if visited is None:
         visited = set()
-    if template_name in visited:
+    if template_key in visited:
         raise ValueError("Recursion detected")
-    visited.add(template_name)
+    visited.add(template_key)
 
-    template = ensure_dict(raw_templates.get(template_name))
+    template = ensure_dict(raw_templates.get(template_key))
     parameters = template.get("params", {}) 
 
     if "extends" in template: # Merge in parameters from parent if present
@@ -30,8 +31,8 @@ def merge_abstract_params(raw_templates, template_name, visited=None):
 
 def resolve_abstract_templates(raw_templates):
     return {
-        template_name: ensure_dict(template) | { "params": merge_abstract_params(raw_templates, template_name) }
-        for (template_name, template)
+        template_key: ensure_dict(template) | { "params": merge_abstract_params(raw_templates, template_key) }
+        for (template_key, template)
         in raw_templates.items()
         if not ensure_dict(template).get("abstract", False)
     }
@@ -144,7 +145,7 @@ class MultiType(ObjectType):
 
 class Templated(ObjectType):
     def __init__(self, yaml, addon: str):
-        self.templates = {} 
+        self.templates: dict[RegistryKey, Template] = {} 
         super().__init__(yaml.get("description"), addon=addon)
 
     def add_templates(self, templates: dict[RegistryKey, Template]):
@@ -172,10 +173,19 @@ class Primitive(ObjectType):
     def to_rst_lines(self, object_name, objects, include_heading: bool=True) -> list[str]:
         return super().to_rst_lines(object_name, objects, include_heading)
 
+class RegistryKeyObjectType(ObjectType):
+    def __init__(self, yaml, addon: str):
+        super().__init__(yaml.get("description"), addon=addon)
+
+    def to_rst_lines(self, object_name, objects, include_heading: bool=True) -> list[str]:
+       lines = super().to_rst_lines(object_name, objects, include_heading)
+       return lines
+
 type_keys = {
     "MULTI_TYPE": MultiType,
     "TEMPLATED": Templated,
     "PRIMITIVE": Primitive,
+    "REGISTRY_KEY": RegistryKeyObjectType,
 }
 
 class ConfigType():
@@ -183,12 +193,11 @@ class ConfigType():
         yaml = ensure_dict(yaml)
         self.description = yaml.get("description")
         self.addon = addon
-        self.addon_params = {} 
+        self.templates = {}
+        self.registers = yaml.get("registers")
 
-    def add_params(self, addon, params):
-        if addon in self.addon_params:
-            raise ValueError(f"Config type already has parameters for addon {addon}")
-        self.addon_params[addon] = params
+    def add_templates(self, templates: dict[RegistryKey, Template]):
+        self.templates.update(templates)
 
     def to_rst_lines(self, config_name, objects, include_heading: bool=True) -> list[str]:
         lines = []
@@ -200,17 +209,31 @@ class ConfigType():
 
         if self.description:
             lines.append(self.description)
-
-        # Sort parameters within each addon
-        sorted_addon_params = [ (addon_name ,sort_params(params)) for (addon_name, params) in self.addon_params.items() ]
-        # Make params from current addon first, then sort addons alphabetically
-        sorted_addon_params = sorted(sorted_addon_params, key=lambda pair: (pair[0] != self.addon, pair[0])) 
-        for addon_name, params in sorted_addon_params:
-            if addon_name != self.addon:
-                lines.append(rst.sep)
-                lines.append(rst.interpreted(f"{addon_name} parameters"))
-            for param_name, param in params.items():
-                lines += param.to_rst_lines(param_name, objects)
+            
+        # Sort by addon, make templates added by the config's addon first in the list
+        global_templates = [] if not self.registers else [
+            (RegistryKey("base", "global"), Template(addon="base",
+                yaml={
+                    "params": {
+                        "id": {
+                            "type": "String",
+                            "summary": f"An identifier used to reference this config from other configs via :doc:`/config/documentation/objects/{self.registers}` objects."
+                        },
+                        "extends": {
+                            "type": f"List<{self.registers}>",
+                            "summary": f"A list of other ``{config_name}`` configs to copy parameters from.",
+                            "description": "Parameters from configs listed first take precedence, with parameters defined inside this config taking the highest precedence."
+                        }
+                    }
+                }
+            ))
+        ]
+        sorted_templates = global_templates + sorted(self.templates.items(), key=lambda pair: (pair[0].addon != self.addon, pair[0].addon))
+        for i, (template_regkey, template) in enumerate(sorted_templates):
+            if i != 0:
+                lines += [rst.sep]
+            if template.addon is not self.addon:
+                lines += addon_text(template_regkey.addon, "Parameters")
+            lines += template.to_rst_lines(objects)
 
         return lines
-

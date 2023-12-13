@@ -61,11 +61,13 @@ def setup(app):
             templates = { RegistryKey(addon_name, template_name): Template(template, addon_name) for (template_name, template) in templates.items() }
             objects[object_name].add_templates(templates)
 
-        for config_name, config_yaml in addon.get("config-templates", {}).items(): 
+        for config_name, templates in addon.get("config-templates", {}).items(): 
             if config_name not in configs:
                 continue
-            parameters = { param_name: Parameter(param_yaml, addon_name) for (param_name, param_yaml) in ensure_dict(ensure_dict(config_yaml).get("params")).items() }
-            configs[config_name].add_params(addon_name, parameters)
+            templates = resolve_abstract_templates(ensure_dict(templates))
+            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name) for (template_name, template) in templates.items() }
+            for template_name, template in templates.items():
+                configs[config_name].add_templates(templates)
 
     # Write objects into rst files
     objects_dir = clean_dir(os.path.join(doc_dir, 'objects'))

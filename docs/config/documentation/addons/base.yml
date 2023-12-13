@@ -72,16 +72,14 @@ base:
       type: TEMPLATED
 
     Biome:
-      type: MULTI_TYPE
-      description: A biome ID
-      types:
-        string:
+      type: REGISTRY_KEY
+      description: |
+        A Terra biome ID.
 
     Palette:
       type: MULTI_TYPE
-      description: A palette ID
-      types:
-        string:
+      description: |
+        A Terra palette ID. Palettes are added via the :doc:`/config/documentation/configs/PALETTE` config type.
 
     Feature:
       type: MULTI_TYPE
@@ -121,6 +119,9 @@ base:
       types:
         string:
 
+    ChunkGenerator:
+      type: MULTI_TYPE
+
   configs:
     pack.yml:
       description: |
@@ -128,17 +129,18 @@ base:
 
   config-templates:
     pack.yml:
-      params:
-        id:
-          type: String
-        author:
-          type: String
-          default: Anon Y. Mous
-        stages:
-          type: List<GenerationStage>
-        version:
-          type: Version
-        generator:
-          type: ChunkGenerator
-        biomes:
-          type: BiomeProvider
+      base:
+        params:
+          id:
+            type: String
+          author:
+            type: String
+            default: Anon Y. Mous
+          stages:
+            type: List<GenerationStage>
+          version:
+            type: Version
+          generator:
+            type: ChunkGenerator
+          biomes:
+            type: BiomeProvider
