@@ -195,6 +195,7 @@ class ConfigType():
         self.addon = addon
         self.templates = {}
         self.registers = yaml.get("registers")
+        self.use_global_template = yaml.get("use-global-template", True)
 
     def add_templates(self, templates: dict[RegistryKey, Template]):
         self.templates.update(templates)
@@ -206,28 +207,34 @@ class ConfigType():
             lines.append(rst.h1(config_name))
 
         lines += addon_text(self.addon, "Config type")
+        
+        if self.registers:
+            references_role = f":doc:`/config/documentation/objects/{self.registers}`" 
+            lines.append(f"This config type creates instances of {references_role}.")
 
         if self.description:
             lines.append(self.description)
             
         # Sort by addon, make templates added by the config's addon first in the list
-        global_templates = [] if not self.registers else [
-            (RegistryKey("base", "global"), Template(addon="base",
-                yaml={
-                    "params": {
-                        "id": {
-                            "type": "String",
-                            "summary": f"An identifier used to reference this config from other configs via :doc:`/config/documentation/objects/{self.registers}` objects."
-                        },
-                        "extends": {
-                            "type": f"List<{self.registers}>",
-                            "summary": f"A list of other ``{config_name}`` configs to copy parameters from.",
-                            "description": "Parameters from configs listed first take precedence, with parameters defined inside this config taking the highest precedence."
-                        }
+        global_templates = [] if not self.use_global_template else [
+            (RegistryKey("base", "global"), Template(
+            addon="base",
+            yaml={
+                "params": {
+                    "id": {
+                        "type": "String",
+                        "summary": f"An identifier used to reference this config from other configs.",
+                        "description": None if not self.registers else f"The instance of {references_role} created by a config using this config type is identified using this parameter."
+                    },
+                    "extends": {
+                        "type": f"List<String>",
+                        "summary": f"A list of other ``{config_name}`` configs to copy parameters from.",
+                        "description": "Parameters from extended configs are only used if they have not already been defined in the current config. Configs listed first take precedence. This allows for re-use of parameters across multiple config files."
                     }
                 }
-            ))
+            })),
         ]
+
         sorted_templates = global_templates + sorted(self.templates.items(), key=lambda pair: (pair[0].addon != self.addon, pair[0].addon))
         for i, (template_regkey, template) in enumerate(sorted_templates):
             if i != 0:

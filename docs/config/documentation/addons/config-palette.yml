@@ -15,6 +15,7 @@ config-palette:
 
   configs:
     PALETTE:
+      registers: Palette
   config-templates:
     PALETTE:
       base:

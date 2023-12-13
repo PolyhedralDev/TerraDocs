@@ -126,6 +126,7 @@ base:
     pack.yml:
       description: |
         The config pack manifest
+      use-global-template: false
 
   config-templates:
     pack.yml:
