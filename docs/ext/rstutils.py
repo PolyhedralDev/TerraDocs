@@ -53,3 +53,13 @@ def ref(ref: str, text: str=None) -> str:
 
 def bold(text: str) -> str:
     return f"**{text}**"
+
+def clean_ref_name(ref: str) -> str:
+    def retain_dashes(match) -> str:
+        if match.group(0).startswith("-"):
+            return "-"
+        return ""
+    return re.sub(r"[^a-zA-Z0-9-_.:+]|--+", retain_dashes, ref).lower()
+
+def escape_role_text(text: str) -> str:
+    return re.sub(r"[<>]", lambda match: "\\" + match.group(0), text)

@@ -59,7 +59,7 @@ def setup(app):
                 continue
             obj = objects[object_name]
             templates = resolve_abstract_templates(ensure_dict(templates))
-            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name, obj, objects, name=template_name) for (template_name, template) in templates.items() }
+            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name, obj, objects, template_name) for (template_name, template) in templates.items() }
             obj.add_templates(templates)
 
         for config_name, templates in addon.get("config-templates", {}).items(): 
@@ -67,7 +67,7 @@ def setup(app):
                 continue
             config = configs[config_name]
             templates = resolve_abstract_templates(ensure_dict(templates))
-            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name, config, objects) for (template_name, template) in templates.items() }
+            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name, config, objects, template_name) for (template_name, template) in templates.items() }
             for template_name, template in templates.items():
                 config.add_templates(templates)
                 

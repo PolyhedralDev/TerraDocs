@@ -71,15 +71,11 @@ class Parameter:
                 objects[type_string].add_reference(self)
             
     def ref_name(self) -> str:
-        return f"parameter-{str(self.template.__hash__())}-{self.name}"
+        return rst.clean_ref_name(f"{self.template.ref_name()}-parameter-{self.name}")
     
     def badge(self) -> str:
-        badge_role = ":bdg-primary:" if self.is_required() else ":bdg-success:"
-        return f"{badge_role}`{self.name}`"
-    
-    def ref_badge(self) -> str:
         badge_role = ":bdg-ref-primary:" if self.is_required() else ":bdg-ref-success:"
-        return f"{badge_role}`{self.name} <{self.ref_name()}>`"
+        return f"{badge_role}`{rst.escape_role_text(self.name)} <{self.ref_name()}>`"
     
     def summary_line(self, objects) -> str:
         return f"{self.badge()} {map_types(self.value_type, objects)} {self.summary}"
@@ -94,7 +90,7 @@ class Parameter:
             strings.append(self.description)
 
         for inline_type in self.inline_types:
-            if inline_type not in objects:
+            if inline_type not in objectsparam:
                 warnings.warn(f"Parameter '{self.name}' references undocumented object '{inline_type}' for inline documentation")
             else:
                 strings += rst.wrap_in_card(objects[inline_type].to_rst_lines(inline_type, objects, include_heading=False), title=inline_type, link=inline_type, link_type="doc")
@@ -110,13 +106,16 @@ def sort_params(params: dict[str, Parameter]) -> dict[str, Parameter]:
     return dict(sorted_params)
 
 class Template:
-    def __init__(self, yaml, addon, parent, objects, name=None):
+    def __init__(self, yaml, addon, parent, objects, name):
         self.name = name
         self.description = yaml.get("description")
         self.parameters = { param_key: Parameter(param_key, param, self, objects) for (param_key, param) in ensure_dict(yaml.get("params")).items() }
         self.footer = yaml.get("footer")
         self.addon = addon
         self.parent = parent
+        
+    def ref_name(self):
+        return f"{self.parent.ref_name()}-template-{self.addon}-{self.name}"
 
     def to_rst_lines(self, objects) -> list[str]:
         strings = []
@@ -165,6 +164,9 @@ class ObjectType:
                 parameter.summary_line(objects)
             ])
         return lines
+    
+    def ref_name(self):
+        return f"object-{self.name}"
 
     def add_reference(self, reference: Parameter):
         self.references.add(reference)
@@ -180,7 +182,7 @@ class MultiType(ObjectType):
         documented_types = yaml.get("types", {})
         object_types = {}
         if "map" in documented_types:
-            object_types["map"] = Template(documented_types["map"], addon, self, objects)
+            object_types["map"] = Template(documented_types["map"], addon, self, objects, "map")
         if "int" in documented_types:
             object_types["int"] = documented_types["int"]["description"] # Unsafe, assumes 'description' is defined
         self.types = object_types
@@ -246,6 +248,9 @@ class ConfigType():
 
     def add_templates(self, templates: dict[RegistryKey, Template]):
         self.templates.update(templates)
+    
+    def ref_name(self):
+        return f"config-{self.name}"
         
     def to_rst_lines(self, objects, include_heading: bool=True) -> list[str]:
         lines = []
@@ -281,7 +286,8 @@ class ConfigType():
                 }
             },
             parent=self,
-            objects=self.objects
+            objects=self.objects,
+            name="global"
             )),
         ]
 
