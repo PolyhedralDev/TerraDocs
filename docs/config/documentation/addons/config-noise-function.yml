@@ -692,8 +692,6 @@ config-noise-function:
         params:
           expression:
             type: Expression
-            inline-types:
-              - Expression
             description: |
               The expression to be evaluated for each sample. Variables ``x``, ``y`` (3D only), and ``z``
               act as the sampler's coordinate inputs.

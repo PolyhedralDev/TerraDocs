@@ -1,3 +1,5 @@
+import re
+
 def h1(text: str) -> str:
     line = '=' * len(text)
     return '\n'.join([line, text, line])
@@ -35,3 +37,19 @@ def wrap_in_card(lines: list[str],
     return [header] + [indent(line, 4) for line in lines]
 
 sep = "---------"
+
+def bullet(text: str) -> str:
+    return f"- {text}"
+
+def bullet_lines(lines: list[str]) -> list[str]:
+    return [ bullet(line) if i == 0 else indent(line, 2) for (i, line) in enumerate(lines) ]
+
+def ref(ref: str, text: str=None) -> str:
+    if text:
+        text_escaped = re.sub(r"[<>]", lambda match: "\\" + match.group(0), text)
+        return f":ref:`{text_escaped} <{ref}>`"
+    else:
+        return f":ref:`{ref}`"
+
+def bold(text: str) -> str:
+    return f"**{text}**"

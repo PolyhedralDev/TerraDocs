@@ -36,8 +36,9 @@ def setup(app):
                     raise ValueError(f"Addon {addon_name} is defined multiple times across multiple files")
                 addons[addon_name] = ensure_dict(addon)
 
-    objects = {}
-    configs = {}
+    objects: dict[str, ObjectType] = {}
+    object_references: dict[str, set[Parameter]] = {}
+    configs: dict[str, ConfigType] = {}
 
     for addon_name, addon in addons.items():
         # Create objects
@@ -45,29 +46,37 @@ def setup(app):
             if object_name in objects:
                 raise ValueError(f"Multiple addons define a description for object {object_name}")
             object_type = object_description.get("type")
-            objects[object_name] = type_keys[object_type](object_description, addon_name)
+            objects[object_name] = type_keys[object_type](object_name, object_description, addon_name, object_references)
         # Create config files
         for config_name, config_yaml in ensure_dict(addon.get("configs")).items():
             if config_name in configs:
                 raise ValueError(f"Multiple addons define a description for config type {config_name}")
-            configs[config_name] = ConfigType(config_yaml, addon_name)
+            configs[config_name] = ConfigType(config_name, config_yaml, addon_name, object_references)
 
     for addon_name, addon in addons.items():
         # Add templates to templated objects
         for object_name, templates in addon.get("templates", {}).items(): 
             if object_name not in objects:
                 continue
+            obj = objects[object_name]
             templates = resolve_abstract_templates(ensure_dict(templates))
-            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name) for (template_name, template) in templates.items() }
-            objects[object_name].add_templates(templates)
+            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name, obj, object_references, name=template_name) for (template_name, template) in templates.items() }
+            obj.add_templates(templates)
 
         for config_name, templates in addon.get("config-templates", {}).items(): 
             if config_name not in configs:
                 continue
+            config = configs[config_name]
             templates = resolve_abstract_templates(ensure_dict(templates))
-            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name) for (template_name, template) in templates.items() }
+            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name, config, object_references) for (template_name, template) in templates.items() }
             for template_name, template in templates.items():
-                configs[config_name].add_templates(templates)
+                config.add_templates(templates)
+                
+    # Add references to each object
+    for object_name, references in object_references.items():
+        if object_name not in objects:
+            continue
+        objects[object_name].set_references(references)
 
     # Write objects into rst files
     objects_dir = clean_dir(os.path.join(doc_dir, 'objects'))
@@ -81,7 +90,7 @@ def setup(app):
     for config_name, config_description in configs.items():
         output_file = os.path.join(configs_dir, config_name + '.rst')
         with open(output_file, 'w') as file:
-            file.write("\n\n".join(config_description.to_rst_lines(config_name, objects)))
+            file.write("\n\n".join(config_description.to_rst_lines(objects)))
 
     return {
         'version': '0.1',
