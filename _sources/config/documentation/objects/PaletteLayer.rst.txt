@@ -4,10 +4,25 @@ PaletteLayer
 
 :superscript:`*Config object requires the 'config-palette' addon to use`
 
-:bdg-primary:`layers` :doc:`/config/documentation/objects/Integer`\ 
+.. _parameter-8771743700677-layers:
+
+:bdg-primary:`layers` :doc:`/config/documentation/objects/Integer` 
+
+.. _parameter-8771743700677-materials:
 
 :bdg-primary:`materials` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Block`\> 
 
-:bdg-success:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
+.. _parameter-8771743700677-sampler:
+
+:bdg-success:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
 
 Default: ``None``
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In PALETTE <parameter-8771743710557-layers>`:
+
+  :bdg-primary:`layers` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/PaletteLayer`\> 

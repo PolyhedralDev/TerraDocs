@@ -18,11 +18,17 @@ A list of available types for ``BiomeColorConverter`` are listed below:
 EXACT
 -----
 
-:bdg-primary:`else` :doc:`/config/documentation/objects/Biome`\ 
+.. _parameter-8771743711115-else:
 
-:bdg-primary:`match` :doc:`/config/documentation/objects/BiomeColorMapping`\ 
+:bdg-primary:`else` :doc:`/config/documentation/objects/Biome` 
 
-:bdg-success:`ignore-alpha` :doc:`/config/documentation/objects/Boolean`\ 
+.. _parameter-8771743711115-match:
+
+:bdg-primary:`match` :doc:`/config/documentation/objects/BiomeColorMapping` 
+
+.. _parameter-8771743711115-ignore-alpha:
+
+:bdg-success:`ignore-alpha` :doc:`/config/documentation/objects/Boolean` 
 
 Default: ``true``
 
@@ -31,4 +37,15 @@ Default: ``true``
 CLOSEST
 -------
 
-:bdg-primary:`match` :doc:`/config/documentation/objects/BiomeColorMapping`\ 
+.. _parameter-8771743710752-match:
+
+:bdg-primary:`match` :doc:`/config/documentation/objects/BiomeColorMapping` 
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In IMAGE in BiomeProvider <parameter-8771743710233-color-conversion>`:
+
+  :bdg-primary:`color-conversion` :doc:`/config/documentation/objects/BiomeColorConverter` 

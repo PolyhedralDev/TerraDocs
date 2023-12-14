@@ -4,6 +4,19 @@ Point
 
 :superscript:`*Config object requires the 'config-distributors' addon to use`
 
-:bdg-primary:`x` :doc:`/config/documentation/objects/Integer`\ 
+.. _parameter-8771743599803-x:
 
-:bdg-primary:`z` :doc:`/config/documentation/objects/Integer`\ 
+:bdg-primary:`x` :doc:`/config/documentation/objects/Integer` 
+
+.. _parameter-8771743599803-z:
+
+:bdg-primary:`z` :doc:`/config/documentation/objects/Integer` 
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In POINTS in Distributor <parameter-8771743710851-points>`:
+
+  :bdg-primary:`points` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Point`\> 

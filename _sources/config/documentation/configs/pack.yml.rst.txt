@@ -5,17 +5,29 @@ pack.yml
 The config pack manifest
 
 
-:bdg-primary:`biomes` :doc:`/config/documentation/objects/BiomeProvider`\ 
+.. _parameter-8771743710836-biomes:
 
-:bdg-primary:`generator` :doc:`/config/documentation/objects/ChunkGenerator`\ 
+:bdg-primary:`biomes` :doc:`/config/documentation/objects/BiomeProvider` 
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String`\ 
+.. _parameter-8771743710836-generator:
+
+:bdg-primary:`generator` :doc:`/config/documentation/objects/ChunkGenerator` 
+
+.. _parameter-8771743710836-id:
+
+:bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+
+.. _parameter-8771743710836-stages:
 
 :bdg-primary:`stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> 
 
+.. _parameter-8771743710836-version:
+
 :bdg-primary:`version` Version 
 
-:bdg-success:`author` :doc:`/config/documentation/objects/String`\ 
+.. _parameter-8771743710836-author:
+
+:bdg-success:`author` :doc:`/config/documentation/objects/String` 
 
 Default: ``Anon Y. Mous``
 
@@ -25,17 +37,25 @@ Default: ``Anon Y. Mous``
 
 The following parameters are only applicable if :bdg-primary:`generator` is set to ``NOISE_3D``
 
-:bdg-success:`blend.terrain.elevation` :doc:`/config/documentation/objects/Integer`\ 
+.. _parameter-8771743710917-blend.terrain.elevation:
+
+:bdg-success:`blend.terrain.elevation` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``4``
 
-:bdg-success:`carving.resolution.horizontal` :doc:`/config/documentation/objects/Integer`\ 
+.. _parameter-8771743710917-carving.resolution.horizontal:
+
+:bdg-success:`carving.resolution.horizontal` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``4``
 
-:bdg-success:`carving.resolution.vertical` :doc:`/config/documentation/objects/Integer`\ 
+.. _parameter-8771743710917-carving.resolution.vertical:
+
+:bdg-success:`carving.resolution.vertical` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``2``
+
+.. _parameter-8771743710917-slant.calculation-method:
 
 :bdg-success:`slant.calculation-method` SlantCalculationMethod 
 

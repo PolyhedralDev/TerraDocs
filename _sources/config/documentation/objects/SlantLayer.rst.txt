@@ -4,6 +4,19 @@ SlantLayer
 
 :superscript:`*Config object requires the 'chunk-generator-noise-3d' addon to use`
 
+.. _parameter-8771743600046-palette:
+
 :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
 
-:bdg-primary:`threshold` :doc:`/config/documentation/objects/Float`\ 
+.. _parameter-8771743600046-threshold:
+
+:bdg-primary:`threshold` :doc:`/config/documentation/objects/Float` 
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In BIOME <parameter-8771743710728-slant>`:
+
+  :bdg-success:`slant` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/SlantLayer`\> 

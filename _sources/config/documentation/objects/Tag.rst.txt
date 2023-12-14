@@ -3,3 +3,36 @@ Tag
 ===
 
 A tag
+
+Uses
+====
+
+Used by 7 parameters:
+
+- :ref:`In BIOME <parameter-8771743710803-tags>`:
+
+  :bdg-primary:`tags` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Tag`\> 
+
+- :ref:`In REPLACE_LIST in Stage <parameter-8771743710845-default-from>`:
+
+  :bdg-primary:`default-from` :doc:`/config/documentation/objects/Tag` 
+
+- :ref:`In BORDER_LIST in Stage <parameter-8771743710395-default-replace>`:
+
+  :bdg-primary:`default-replace` :doc:`/config/documentation/objects/Tag` 
+
+- :ref:`In BORDER in Stage <parameter-8771743710461-from>`:
+
+  :bdg-primary:`from` :doc:`/config/documentation/objects/Tag` 
+
+- :ref:`In BORDER in Stage <parameter-8771743710461-replace>`:
+
+  :bdg-primary:`replace` :doc:`/config/documentation/objects/Tag` 
+
+- :ref:`In BORDER_LIST in Stage <parameter-8771743710395-from>`:
+
+  :bdg-primary:`from` :doc:`/config/documentation/objects/Tag` 
+
+- :ref:`In REPLACE in Stage <parameter-8771743710437-from>`:
+
+  :bdg-primary:`from` :doc:`/config/documentation/objects/Tag` 

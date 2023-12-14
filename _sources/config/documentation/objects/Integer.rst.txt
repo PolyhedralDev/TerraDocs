@@ -3,3 +3,204 @@ Integer
 =======
 
 An integer
+
+Uses
+====
+
+Used by 49 parameters:
+
+- :ref:`In SlantLayer <parameter-8771743600046-palette>`:
+
+  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+
+- :ref:`In PERLIN in NoiseSampler <parameter-8771743600382-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In FBM in NoiseSampler <parameter-8771743600424-octaves>`:
+
+  :bdg-success:`octaves` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In SIMPLEX in NoiseSampler <parameter-8771743600556-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In CELLULAR in NoiseSampler <parameter-8771743600196-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In STITCHED_BITMAP in Image <parameter-8771743710311-columns>`:
+
+  :bdg-primary:`columns` :doc:`/config/documentation/objects/Integer` - How many columns of images to stitch together.
+
+- :ref:`In PADDED_GRID in Distributor <parameter-8771743711022-salt>`:
+
+  :bdg-primary:`salt` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In pack.yml <parameter-8771743710917-carving.resolution.vertical>`:
+
+  :bdg-success:`carving.resolution.vertical` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In NORMAL in NoiseSampler <parameter-8771743600532-groups>`:
+
+  :bdg-success:`groups` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In IMAGE in BiomeProvider <parameter-8771743710233-resolution>`:
+
+  :bdg-success:`resolution` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In BIOME <parameter-8771743710803-color>`:
+
+  :bdg-primary:`color` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In OPEN_SIMPLEX_2S in NoiseSampler <parameter-8771743600460-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In BIOME <parameter-8771743710728-palette>`:
+
+  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+
+- :ref:`In VALUE in NoiseSampler <parameter-8771743600592-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In EXTRUSION in BiomeProvider <parameter-8771743710821-resolution>`:
+
+  :bdg-success:`resolution` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In Range <parameter-8771743600319-max>`:
+
+  :bdg-primary:`max` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In BIOME <parameter-8771743710728-terrain.blend.step>`:
+
+  :bdg-success:`terrain.blend.step` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In STITCHED_BITMAP in Image <parameter-8771743710311-rows>`:
+
+  :bdg-primary:`rows` :doc:`/config/documentation/objects/Integer` - How many rows of images to stitch together.
+
+- :ref:`In PaletteLayer <parameter-8771743700677-layers>`:
+
+  :bdg-primary:`layers` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In BIOME <parameter-8771743710728-terrain.blend.distance>`:
+
+  :bdg-success:`terrain.blend.distance` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In TRANSLATE in ColorSampler <parameter-8771743710743-z>`:
+
+  :bdg-primary:`z` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In POSTERIZATION in NoiseSampler <parameter-8771743599929-steps>`:
+
+  :bdg-primary:`steps` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In BITMAP in Image <parameter-8771743710776-rows>`:
+
+  :bdg-primary:`rows` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In BITMAP in Image <parameter-8771743710776-columns>`:
+
+  :bdg-primary:`columns` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In Point <parameter-8771743599803-x>`:
+
+  :bdg-primary:`x` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In PADDED_GRID in Distributor <parameter-8771743711022-width>`:
+
+  :bdg-primary:`width` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In RIDGED in NoiseSampler <parameter-8771743600100-octaves>`:
+
+  :bdg-success:`octaves` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In pack.yml <parameter-8771743710917-carving.resolution.horizontal>`:
+
+  :bdg-success:`carving.resolution.horizontal` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In Range <parameter-8771743600319-min>`:
+
+  :bdg-primary:`min` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In POSITIVE_WHITE_NOISE in NoiseSampler <parameter-8771743600271-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In SCATTERED_ORE <parameter-8771743710797-size>`:
+
+  :bdg-success:`size` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In GAUSSIAN_RANDOM in Locator <parameter-8771743599695-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <parameter-8771743710512-threshold>`:
+
+  :bdg-success:`threshold` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In PADDED_GRID in Distributor <parameter-8771743711022-padding>`:
+
+  :bdg-primary:`padding` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In OPEN_SIMPLEX_2 in NoiseSampler <parameter-8771743600316-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In pack.yml <parameter-8771743710917-blend.terrain.elevation>`:
+
+  :bdg-success:`blend.terrain.elevation` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In Point <parameter-8771743599803-z>`:
+
+  :bdg-primary:`z` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In BIOME <parameter-8771743710728-slant-depth>`:
+
+  :bdg-success:`slant-depth` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In TRANSLATE in ColorSampler <parameter-8771743710743-x>`:
+
+  :bdg-primary:`x` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In VALUE_CUBIC in NoiseSampler <parameter-8771743600577-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In GABOR in NoiseSampler <parameter-8771743600412-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In FEATURE in GenerationStage <parameter-8771743600472-resolution>`:
+
+  :bdg-success:`resolution` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In RANDOM in Locator <parameter-8771743599836-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In WHITE_NOISE in NoiseSampler <parameter-8771743600157-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In GAUSSIAN in NoiseSampler <parameter-8771743600457-salt>`:
+
+  :bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In BIOME <parameter-8771743710728-ocean.level>`:
+
+  :bdg-success:`ocean.level` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In PING_PONG in NoiseSampler <parameter-8771743600175-octaves>`:
+
+  :bdg-success:`octaves` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In DimensionApplicableSampler <parameter-8771743700611-dimensions>`:
+
+  :bdg-primary:`dimensions` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In PIPELINE in BiomeProvider <parameter-8771743710413-resolution>`:
+
+  :bdg-success:`resolution` :doc:`/config/documentation/objects/Integer` 

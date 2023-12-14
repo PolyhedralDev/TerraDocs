@@ -6,22 +6,36 @@ FEATURE
 
 This config type creates instances of :doc:`/config/documentation/objects/Feature`.
 
+.. _parameter-8771743711037-extends:
+
 :bdg-primary:`extends` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> - A list of other ``FEATURE`` configs to copy parameters from.
 
 Parameters from extended configs are only used if they have not already been defined in the current config. Configs listed first take precedence. This allows for re-use of parameters across multiple config files.
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String`\ - An identifier used to reference this config from other configs.
+.. _parameter-8771743711037-id:
+
+:bdg-primary:`id` :doc:`/config/documentation/objects/String` - An identifier used to reference this config from other configs.
 
 The instance of :doc:`/config/documentation/objects/Feature` created by a config using this config type is identified using this parameter.
 
 ---------
 
-:bdg-primary:`distributor` :doc:`/config/documentation/objects/Distributor`\ 
+.. _parameter-8771743710341-distributor:
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String`\ 
+:bdg-primary:`distributor` :doc:`/config/documentation/objects/Distributor` 
 
-:bdg-primary:`locator` :doc:`/config/documentation/objects/Locator`\ 
+.. _parameter-8771743710341-id:
 
-:bdg-primary:`structures.distribution` :doc:`/config/documentation/objects/NoiseSampler`\ 
+:bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+
+.. _parameter-8771743710341-locator:
+
+:bdg-primary:`locator` :doc:`/config/documentation/objects/Locator` 
+
+.. _parameter-8771743710341-structures.distribution:
+
+:bdg-primary:`structures.distribution` :doc:`/config/documentation/objects/NoiseSampler` 
+
+.. _parameter-8771743710341-structures.structures:
 
 :bdg-primary:`structures.structures` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Structure`\> 

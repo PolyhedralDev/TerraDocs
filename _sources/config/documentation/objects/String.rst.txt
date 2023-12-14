@@ -3,3 +3,92 @@ String
 ======
 
 A string
+
+Uses
+====
+
+Used by 21 parameters:
+
+- :ref:`In PALETTE <parameter-8771743710557-id>`:
+
+  :bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In IMAGE in NoiseSampler <parameter-8771743600160-channel>`:
+
+  :bdg-primary:`channel` :doc:`/config/documentation/objects/String` - Which channel of the image to output.
+
+- :ref:`In ORE <parameter-8771743710692-id>`:
+
+  :bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In BITMAP in Image <parameter-8771743710776-path-format>`:
+
+  :bdg-primary:`path-format` :doc:`/config/documentation/objects/String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+
+- :ref:`In FEATURE <parameter-8771743710341-id>`:
+
+  :bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In IMAGE in NoiseSampler <parameter-8771743600160-image>`:
+
+  :bdg-primary:`image` :doc:`/config/documentation/objects/String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+
+- :ref:`In pack.yml <parameter-8771743710836-id>`:
+
+  :bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-variables>`:
+
+  :bdg-success:`variables` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
+
+- :ref:`In MathFunction <parameter-8771743700494-arguments>`:
+
+  :bdg-success:`arguments` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> 
+
+- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-functions>`:
+
+  :bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+
+- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <parameter-8771743710512-cost-function>`:
+
+  :bdg-success:`cost-function` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In MathFunction <parameter-8771743700494-functions>`:
+
+  :bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+
+- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <parameter-8771743710512-normalization>`:
+
+  :bdg-success:`normalization` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In CELLULAR in NoiseSampler <parameter-8771743600196-distance>`:
+
+  :bdg-success:`distance` :doc:`/config/documentation/objects/String` - The method used for calculating the distance from the cell origin.
+
+- :ref:`In REPLACE in Extrusion <parameter-8771743711136-from>`:
+
+  :bdg-primary:`from` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In STITCHED_BITMAP in Image <parameter-8771743710311-path>`:
+
+  :bdg-primary:`path` :doc:`/config/documentation/objects/String` - The format string for the path to the images relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+
+- :ref:`In SCATTERED_ORE <parameter-8771743710797-id>`:
+
+  :bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In pack.yml <parameter-8771743710836-author>`:
+
+  :bdg-success:`author` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-samplers>`:
+
+  :bdg-success:`samplers` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
+
+- :ref:`In CELLULAR in NoiseSampler <parameter-8771743600196-return>`:
+
+  :bdg-success:`return` :doc:`/config/documentation/objects/String` - The function the sampler will use to calculate the noise.
+
+- :ref:`In FEATURE in GenerationStage <parameter-8771743600472-id>`:
+
+  :bdg-primary:`id` :doc:`/config/documentation/objects/String` 

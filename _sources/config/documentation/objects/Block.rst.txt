@@ -1,3 +1,44 @@
 =====
 Block
 =====
+
+Uses
+====
+
+Used by 9 parameters:
+
+- :ref:`In PaletteLayer <parameter-8771743700677-materials>`:
+
+  :bdg-primary:`materials` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In SCATTERED_ORE <parameter-8771743710797-material-overrides>`:
+
+  :bdg-success:`material-overrides` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In ORE <parameter-8771743710692-replace>`:
+
+  :bdg-primary:`replace` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In ORE <parameter-8771743710692-material>`:
+
+  :bdg-primary:`material` :doc:`/config/documentation/objects/Block` 
+
+- :ref:`In SCATTERED_ORE <parameter-8771743710797-material>`:
+
+  :bdg-primary:`material` :doc:`/config/documentation/objects/Block` 
+
+- :ref:`In SCATTERED_ORE <parameter-8771743710797-replace>`:
+
+  :bdg-primary:`replace` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In MATCH_SET in Pattern <parameter-8771743599938-blocks>`:
+
+  :bdg-primary:`blocks` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In ORE <parameter-8771743710692-material-overrides>`:
+
+  :bdg-success:`material-overrides` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In MATCH in Pattern <parameter-8771743600268-block>`:
+
+  :bdg-primary:`block` :doc:`/config/documentation/objects/Block` 

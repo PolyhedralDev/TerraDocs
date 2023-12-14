@@ -3,3 +3,21 @@ Biome
 =====
 
 A Terra biome ID.
+
+
+Uses
+====
+
+Used by 3 parameters:
+
+- :ref:`In SINGLE in BiomeProvider <parameter-8771743599722-biome>`:
+
+  :bdg-primary:`biome` :doc:`/config/documentation/objects/Biome` 
+
+- :ref:`In MAP in BiomeColorMapping <parameter-8771743711001-map>`:
+
+  :bdg-primary:`map` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
+
+- :ref:`In EXACT in BiomeColorConverter <parameter-8771743711115-else>`:
+
+  :bdg-primary:`else` :doc:`/config/documentation/objects/Biome` 

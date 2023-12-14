@@ -3,3 +3,88 @@ List
 ====
 
 A list
+
+Uses
+====
+
+Used by 20 parameters:
+
+- :ref:`In SlantLayer <parameter-8771743600046-palette>`:
+
+  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+
+- :ref:`In OR in Distributor <parameter-8771743710317-distributors>`:
+
+  :bdg-primary:`distributors` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+
+- :ref:`In OR in Locator <parameter-8771743600052-locators>`:
+
+  :bdg-primary:`locators` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+
+- :ref:`In BIOME <parameter-8771743600262-features.<stage id>>`:
+
+  :bdg-primary:`features.<stage id>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Feature`\> 
+
+- :ref:`In XOR in Pattern <parameter-8771743599980-patterns>`:
+
+  :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+
+- :ref:`In OR in Pattern <parameter-8771743599635-patterns>`:
+
+  :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+
+- :ref:`In PALETTE <parameter-8771743710557-layers>`:
+
+  :bdg-primary:`layers` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/PaletteLayer`\> 
+
+- :ref:`In BIOME <parameter-8771743710728-palette>`:
+
+  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+
+- :ref:`In XOR in Locator <parameter-8771743599626-locators>`:
+
+  :bdg-primary:`locators` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+
+- :ref:`In MathFunction <parameter-8771743700494-arguments>`:
+
+  :bdg-success:`arguments` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> 
+
+- :ref:`In EXTRUSION in BiomeProvider <parameter-8771743710821-extrusions>`:
+
+  :bdg-primary:`extrusions` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 
+
+- :ref:`In XOR in Distributor <parameter-8771743710683-distributors>`:
+
+  :bdg-primary:`distributors` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+
+- :ref:`In AND in Locator <parameter-8771743599632-locators>`:
+
+  :bdg-primary:`locators` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+
+- :ref:`In pack.yml <parameter-8771743710836-stages>`:
+
+  :bdg-primary:`stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> 
+
+- :ref:`In AND in Distributor <parameter-8771743710452-distributors>`:
+
+  :bdg-primary:`distributors` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+
+- :ref:`In PIPELINE in BiomeProvider <parameter-8771743710413-pipeline.stages>`:
+
+  :bdg-primary:`pipeline.stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> 
+
+- :ref:`In KERNEL in NoiseSampler <parameter-8771743600502-kernel>`:
+
+  :bdg-primary:`kernel` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Float`\>> 
+
+- :ref:`In SAMPLER in Locator <parameter-8771743599680-samplers>`:
+
+  :bdg-primary:`samplers` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/NoiseSampler`\> 
+
+- :ref:`In BIOME <parameter-8771743710728-slant>`:
+
+  :bdg-success:`slant` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/SlantLayer`\> 
+
+- :ref:`In AND in Pattern <parameter-8771743599773-patterns>`:
+
+  :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 

@@ -3,3 +3,208 @@ Float
 =====
 
 A float
+
+Uses
+====
+
+Used by 50 parameters:
+
+- :ref:`In SIMPLEX in NoiseSampler <parameter-8771743600556-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+- :ref:`In SlantLayer <parameter-8771743600046-threshold>`:
+
+  :bdg-primary:`threshold` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In CLAMP in NoiseSampler <parameter-8771743600139-max>`:
+
+  :bdg-primary:`max` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In LINEAR in NoiseSampler <parameter-8771743600451-min>`:
+
+  :bdg-primary:`min` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In OPEN_SIMPLEX_2 in NoiseSampler <parameter-8771743600316-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+- :ref:`In NORMAL in NoiseSampler <parameter-8771743600532-standard-deviation>`:
+
+  :bdg-primary:`standard-deviation` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In PIPELINE in BiomeProvider <parameter-8771743710413-blend.amplitude>`:
+
+  :bdg-success:`blend.amplitude` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In DOMAIN_WARP in NoiseSampler <parameter-8771743600166-amplitude>`:
+
+  :bdg-success:`amplitude` :doc:`/config/documentation/objects/Float` - How much warping to apply.
+
+- :ref:`In GAUSSIAN_RANDOM in Locator <parameter-8771743599695-standard-deviation>`:
+
+  :bdg-primary:`standard-deviation` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In PING_PONG in NoiseSampler <parameter-8771743600175-gain>`:
+
+  :bdg-success:`gain` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In LINEAR_HEIGHTMAP in NoiseSampler <parameter-8771743600115-base>`:
+
+  :bdg-primary:`base` :doc:`/config/documentation/objects/Float` - The base y level of the terrain.
+
+- :ref:`In FBM in NoiseSampler <parameter-8771743600424-lacunarity>`:
+
+  :bdg-success:`lacunarity` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In FBM in NoiseSampler <parameter-8771743600424-weighted-strength>`:
+
+  :bdg-success:`weighted-strength` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In PING_PONG in NoiseSampler <parameter-8771743600175-weighted-strength>`:
+
+  :bdg-success:`weighted-strength` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-variables>`:
+
+  :bdg-success:`variables` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
+
+- :ref:`In CELLULAR in NoiseSampler <parameter-8771743600196-jitter>`:
+
+  :bdg-success:`jitter` :doc:`/config/documentation/objects/Float` - Determines how far cell origins can randomly spread out from the center of cells.
+
+- :ref:`In VALUE in NoiseSampler <parameter-8771743600592-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+- :ref:`In WHITE_NOISE in NoiseSampler <parameter-8771743600157-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+- :ref:`In GABOR in NoiseSampler <parameter-8771743600412-deviation>`:
+
+  :bdg-success:`deviation` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In BIOME <parameter-8771743710728-terrain.blend.weight>`:
+
+  :bdg-success:`terrain.blend.weight` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In KERNEL in NoiseSampler <parameter-8771743600502-factor>`:
+
+  :bdg-success:`factor` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In RIDGED in NoiseSampler <parameter-8771743600100-gain>`:
+
+  :bdg-success:`gain` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In GABOR in NoiseSampler <parameter-8771743600412-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+- :ref:`In PING_PONG in NoiseSampler <parameter-8771743600175-ping-pong>`:
+
+  :bdg-success:`ping-pong` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In GAUSSIAN in NoiseSampler <parameter-8771743600457-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+- :ref:`In RIDGED in NoiseSampler <parameter-8771743600100-lacunarity>`:
+
+  :bdg-success:`lacunarity` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In PING_PONG in NoiseSampler <parameter-8771743600175-lacunarity>`:
+
+  :bdg-success:`lacunarity` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In CELLULAR in NoiseSampler <parameter-8771743600196-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+- :ref:`In IMAGE in NoiseSampler <parameter-8771743600160-frequency>`:
+
+  :bdg-primary:`frequency` :doc:`/config/documentation/objects/Float` - :ref:`Frequency <sampler-frequency>` of the image. Determines how the image gets scaled.
+
+- :ref:`In RIDGED in NoiseSampler <parameter-8771743600100-weighted-strength>`:
+
+  :bdg-success:`weighted-strength` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In GABOR in NoiseSampler <parameter-8771743600412-impulses>`:
+
+  :bdg-success:`impulses` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In CLAMP in NoiseSampler <parameter-8771743600139-min>`:
+
+  :bdg-primary:`min` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In FBM in NoiseSampler <parameter-8771743600424-gain>`:
+
+  :bdg-success:`gain` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In GABOR in NoiseSampler <parameter-8771743600412-frequency_0>`:
+
+  :bdg-success:`frequency_0` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In VALUE_CUBIC in NoiseSampler <parameter-8771743600577-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+- :ref:`In LINEAR in NoiseSampler <parameter-8771743600451-max>`:
+
+  :bdg-primary:`max` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In SAMPLER in Distributor <parameter-8771743711130-threshold>`:
+
+  :bdg-success:`threshold` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In GABOR in NoiseSampler <parameter-8771743600412-rotation>`:
+
+  :bdg-success:`rotation` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In OPEN_SIMPLEX_2S in NoiseSampler <parameter-8771743600460-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+- :ref:`In POSITIVE_WHITE_NOISE in NoiseSampler <parameter-8771743600271-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+
+- :ref:`In NORMAL in NoiseSampler <parameter-8771743600532-mean>`:
+
+  :bdg-primary:`mean` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In ORE <parameter-8771743710692-size>`:
+
+  :bdg-primary:`size` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In ROTATE in ColorSampler <parameter-8771743710446-angle>`:
+
+  :bdg-primary:`angle` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In SCALE in NoiseSampler <parameter-8771743599917-amplitude>`:
+
+  :bdg-primary:`amplitude` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In KERNEL in NoiseSampler <parameter-8771743600502-kernel>`:
+
+  :bdg-primary:`kernel` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Float`\>> 
+
+- :ref:`In LINEAR_HEIGHTMAP in NoiseSampler <parameter-8771743600115-scale>`:
+
+  :bdg-success:`scale` :doc:`/config/documentation/objects/Float` - Scales the height of the heightmap.
+
+- :ref:`In BIOME <parameter-8771743710728-terrain.blend.weight-2d>`:
+
+  :bdg-success:`terrain.blend.weight-2d` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In CONSTANT in NoiseSampler <parameter-8771743600217-value>`:
+
+  :bdg-success:`value` :doc:`/config/documentation/objects/Float` - The value to be outputted.
+
+- :ref:`In KERNEL in NoiseSampler <parameter-8771743600502-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In PERLIN in NoiseSampler <parameter-8771743600382-frequency>`:
+
+  :bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.

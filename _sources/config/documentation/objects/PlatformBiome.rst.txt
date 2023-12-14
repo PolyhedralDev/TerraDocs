@@ -3,3 +3,12 @@ PlatformBiome
 =============
 
 A platform biome
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In BIOME <parameter-8771743710803-vanilla>`:
+
+  :bdg-primary:`vanilla` :doc:`/config/documentation/objects/PlatformBiome` 

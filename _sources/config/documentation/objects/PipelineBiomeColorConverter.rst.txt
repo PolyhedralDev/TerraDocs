@@ -12,3 +12,12 @@ Different types of ``PipelineBiomeColorConverter`` provide different behaviours 
 The type is specified by setting the :bdg-primary:`type` parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with ``ADDON_NAME:`` to specify which one to use.
 
 A list of available types for ``PipelineBiomeColorConverter`` are listed below:
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In IMAGE in Source <parameter-8771743599692-color-conversion>`:
+
+  :bdg-primary:`color-conversion` :doc:`/config/documentation/objects/PipelineBiomeColorConverter` 

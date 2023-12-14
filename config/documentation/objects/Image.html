@@ -355,10 +355,10 @@ be loaded for use in other configurations requiring the <code class="docutils li
 <h3>BITMAP<a class="headerlink" href="#bitmap" title="Permalink to this headline">¶</a></h3>
 <p>Loads a singular image. For very large images that you may have issues loading,
 try the <a class="reference internal" href="#stitched-bitmap">STITCHED_BITMAP</a> type instead.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">columns</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">path-format</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- Path to the image relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">rows</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">zero-indexed</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
+<p id="parameter-8771743710776-columns"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">columns</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
+<p id="parameter-8771743710776-path-format"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">path-format</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a> - Path to the image relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
+<p id="parameter-8771743710776-rows"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">rows</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
+<p id="parameter-8771743710776-zero-indexed"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">zero-indexed</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
 </section>
 <hr class="docutils"/>
@@ -368,8 +368,8 @@ try the <a class="reference internal" href="#stitched-bitmap">STITCHED_BITMAP</a
 arranged in a grid that are ‘stitched’ together during generation.
 This type is primarily used when singular images are too large to be
 loaded into memory (a limit imposed Java’s <code class="docutils literal notranslate"><span class="pre">BufferedImage</span></code> class implementation).</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">columns</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- How many columns of images to stitch together.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">path</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a>- The format string for the path to the images relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
+<p id="parameter-8771743710311-columns"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">columns</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - How many columns of images to stitch together.</p>
+<p id="parameter-8771743710311-path"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">path</span> <a class="reference internal" href="String.html"><span class="doc">String</span></a> - The format string for the path to the images relative to the config pack directory. (For Windows users: Use the <code class="docutils literal notranslate"><span class="pre">/</span></code> directory separator instead of <code class="docutils literal notranslate"><span class="pre">\</span></code>)</p>
 <p>The file name section of the path format must contain the text <code class="docutils literal notranslate"><span class="pre">{row}</span></code> and <code class="docutils literal notranslate"><span class="pre">{column}</span></code>
 indicating the sections of the file names that indicate which rows and columns the files belong to.</p>
 <p>Given the following example image files in the pack directory to be stitched into one image:</p>
@@ -387,11 +387,26 @@ indicating the sections of the file names that indicate which rows and columns t
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">path-format</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">images/stitched-image/my-image-{row}-{column}.png</span><span class="w"></span>
 </pre></div>
 </div>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">rows</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>- How many rows of images to stitch together.</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">zero-indexed</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
+<p id="parameter-8771743710311-rows"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">rows</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - How many rows of images to stitch together.</p>
+<p id="parameter-8771743710311-zero-indexed"><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">zero-indexed</span> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
 <p>Should be set to true if the image row and column indexes begin at 0.</p>
 </section>
+</section>
+<section id="uses">
+<h2>Uses<a class="headerlink" href="#uses" title="Permalink to this headline">¶</a></h2>
+<p>Used by 3 parameters:</p>
+<ul>
+<li><p><a class="reference internal" href="ColorSampler.html#parameter-8771743710713-image"><span class="std std-ref">In SINGLE_IMAGE in ColorSampler</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <a class="reference internal" href="#"><span class="doc">Image</span></a> - The image to be sampled</p>
+</li>
+<li><p><a class="reference internal" href="NoiseSampler.html#parameter-8771743710512-image"><span class="std std-ref">In DISTANCE_TRANSFORM in NoiseSampler</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <a class="reference internal" href="#"><span class="doc">Image</span></a></p>
+</li>
+<li><p><a class="reference internal" href="ColorSampler.html#parameter-8771743710749-image"><span class="std std-ref">In TILED_IMAGE in ColorSampler</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <a class="reference internal" href="#"><span class="doc">Image</span></a> - The image to be sampled</p>
+</li>
+</ul>
 </section>
 </section>
 
@@ -452,6 +467,7 @@ indicating the sections of the file names that indicate which rows and columns t
 <li><a class="reference internal" href="#stitched-bitmap">STITCHED_BITMAP</a></li>
 </ul>
 </li>
+<li><a class="reference internal" href="#uses">Uses</a></li>
 </ul>
 </li>
 </ul>

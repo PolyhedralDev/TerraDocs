@@ -18,7 +18,9 @@ SINGLE
 
 :superscript:`*Type requires the 'biome-provider-single' addon to use`
 
-:bdg-primary:`biome` :doc:`/config/documentation/objects/Biome`\ 
+.. _parameter-8771743599722-biome:
+
+:bdg-primary:`biome` :doc:`/config/documentation/objects/Biome` 
 
 ---------
 
@@ -27,11 +29,17 @@ IMAGE
 
 :superscript:`*Type requires the 'biome-provider-image-v2' addon to use`
 
-:bdg-primary:`color-conversion` :doc:`/config/documentation/objects/BiomeColorConverter`\ 
+.. _parameter-8771743710233-color-conversion:
 
-:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
+:bdg-primary:`color-conversion` :doc:`/config/documentation/objects/BiomeColorConverter` 
 
-:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer`\ 
+.. _parameter-8771743710233-color-sampler:
+
+:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
+
+.. _parameter-8771743710233-resolution:
+
+:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``1``
 
@@ -42,19 +50,29 @@ PIPELINE
 
 :superscript:`*Type requires the 'biome-provider-pipeline-v2' addon to use`
 
-:bdg-primary:`pipeline.source` :doc:`/config/documentation/objects/Source`\ 
+.. _parameter-8771743710413-pipeline.source:
+
+:bdg-primary:`pipeline.source` :doc:`/config/documentation/objects/Source` 
+
+.. _parameter-8771743710413-pipeline.stages:
 
 :bdg-primary:`pipeline.stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> 
 
-:bdg-success:`blend.amplitude` :doc:`/config/documentation/objects/Float`\ 
+.. _parameter-8771743710413-blend.amplitude:
+
+:bdg-success:`blend.amplitude` :doc:`/config/documentation/objects/Float` 
 
 Default: ``0.0``
 
-:bdg-success:`blend.sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
+.. _parameter-8771743710413-blend.sampler:
+
+:bdg-success:`blend.sampler` :doc:`/config/documentation/objects/NoiseSampler` 
 
 Default: ``Constant 0``
 
-:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer`\ 
+.. _parameter-8771743710413-resolution:
+
+:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``1``
 
@@ -65,10 +83,29 @@ EXTRUSION
 
 :superscript:`*Type requires the 'biome-provider-extrusion' addon to use`
 
+.. _parameter-8771743710821-extrusions:
+
 :bdg-primary:`extrusions` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 
 
-:bdg-primary:`provider` :doc:`/config/documentation/objects/BiomeProvider`\ 
+.. _parameter-8771743710821-provider:
 
-:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer`\ 
+:bdg-primary:`provider` :doc:`/config/documentation/objects/BiomeProvider` 
+
+.. _parameter-8771743710821-resolution:
+
+:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``4``
+
+Uses
+====
+
+Used by 2 parameters:
+
+- :ref:`In EXTRUSION in BiomeProvider <parameter-8771743710821-provider>`:
+
+  :bdg-primary:`provider` :doc:`/config/documentation/objects/BiomeProvider` 
+
+- :ref:`In pack.yml <parameter-8771743710836-biomes>`:
+
+  :bdg-primary:`biomes` :doc:`/config/documentation/objects/BiomeProvider` 

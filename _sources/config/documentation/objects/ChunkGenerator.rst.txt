@@ -1,3 +1,12 @@
 ==============
 ChunkGenerator
 ==============
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In pack.yml <parameter-8771743710836-generator>`:
+
+  :bdg-primary:`generator` :doc:`/config/documentation/objects/ChunkGenerator` 

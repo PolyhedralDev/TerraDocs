@@ -3,3 +3,28 @@ Set
 ===
 
 A set
+
+Uses
+====
+
+Used by 5 parameters:
+
+- :ref:`In BIOME <parameter-8771743710803-tags>`:
+
+  :bdg-primary:`tags` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Tag`\> 
+
+- :ref:`In POINTS in Distributor <parameter-8771743710851-points>`:
+
+  :bdg-primary:`points` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Point`\> 
+
+- :ref:`In SCATTERED_ORE <parameter-8771743710797-replace>`:
+
+  :bdg-primary:`replace` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In MATCH_SET in Pattern <parameter-8771743599938-blocks>`:
+
+  :bdg-primary:`blocks` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In ORE <parameter-8771743710692-replace>`:
+
+  :bdg-primary:`replace` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 

@@ -22,15 +22,32 @@ IMAGE
 
 :superscript:`*Type requires the 'pipeline-image' addon to use`
 
-:bdg-primary:`color-conversion` :doc:`/config/documentation/objects/PipelineBiomeColorConverter`\ 
+.. _parameter-8771743599692-color-conversion:
 
-:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
+:bdg-primary:`color-conversion` :doc:`/config/documentation/objects/PipelineBiomeColorConverter` 
+
+.. _parameter-8771743599692-color-sampler:
+
+:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
 
 ---------
 
 SAMPLER
 -------
 
+.. _parameter-8771743710425-biomes:
+
 :bdg-primary:`biomes` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
+.. _parameter-8771743710425-sampler:
+
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In PIPELINE in BiomeProvider <parameter-8771743710413-pipeline.source>`:
+
+  :bdg-primary:`pipeline.source` :doc:`/config/documentation/objects/Source` 

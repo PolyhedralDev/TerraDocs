@@ -3,3 +3,21 @@ Palette
 =======
 
 A Terra palette ID. Palettes are added via the :doc:`/config/documentation/configs/PALETTE` config type.
+
+
+Uses
+====
+
+Used by 3 parameters:
+
+- :ref:`In BIOME <parameter-8771743710728-palette>`:
+
+  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+
+- :ref:`In SlantLayer <parameter-8771743600046-palette>`:
+
+  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+
+- :ref:`In BIOME <parameter-8771743710728-ocean.palette>`:
+
+  :bdg-success:`ocean.palette` :doc:`/config/documentation/objects/Palette` 

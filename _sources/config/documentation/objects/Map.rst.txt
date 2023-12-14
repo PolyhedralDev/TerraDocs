@@ -3,3 +3,52 @@ Map
 ===
 
 A map
+
+Uses
+====
+
+Used by 11 parameters:
+
+- :ref:`In SlantLayer <parameter-8771743600046-palette>`:
+
+  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+
+- :ref:`In MathFunction <parameter-8771743700494-functions>`:
+
+  :bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+
+- :ref:`In MAP in BiomeColorMapping <parameter-8771743711001-map>`:
+
+  :bdg-primary:`map` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
+
+- :ref:`In SCATTERED_ORE <parameter-8771743710797-material-overrides>`:
+
+  :bdg-success:`material-overrides` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In BIOME <parameter-8771743710728-palette>`:
+
+  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+
+- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-samplers>`:
+
+  :bdg-success:`samplers` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
+
+- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-variables>`:
+
+  :bdg-success:`variables` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
+
+- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-functions>`:
+
+  :bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+
+- :ref:`In ORE <parameter-8771743710692-material-overrides>`:
+
+  :bdg-success:`material-overrides` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In REPLACE_LIST in Stage <parameter-8771743710845-to>`:
+
+  :bdg-primary:`to` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
+
+- :ref:`In BORDER_LIST in Stage <parameter-8771743710395-replace>`:
+
+  :bdg-primary:`replace` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 

@@ -3,3 +3,12 @@ Feature
 =======
 
 A feature ID
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In BIOME <parameter-8771743600262-features.<stage id>>`:
+
+  :bdg-primary:`features.<stage id>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Feature`\> 

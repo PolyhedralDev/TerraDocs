@@ -3,3 +3,8 @@ NumberPredicate
 ===============
 
 :superscript:`*Config object requires the 'config-number-predicate' addon to use`
+
+Uses
+====
+
+This object is not referenced by any parameters

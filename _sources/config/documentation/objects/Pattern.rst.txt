@@ -18,37 +18,51 @@ A list of available types for ``Pattern`` are listed below:
 MATCH_AIR
 ---------
 
-:bdg-primary:`offset` :doc:`/config/documentation/objects/Range`\ 
+.. _parameter-8771743599662-offset:
+
+:bdg-primary:`offset` :doc:`/config/documentation/objects/Range` 
 
 ---------
 
 MATCH_SOLID
 -----------
 
-:bdg-primary:`offset` :doc:`/config/documentation/objects/Range`\ 
+.. _parameter-8771743600613-offset:
+
+:bdg-primary:`offset` :doc:`/config/documentation/objects/Range` 
 
 ---------
 
 MATCH
 -----
 
-:bdg-primary:`block` :doc:`/config/documentation/objects/Block`\ 
+.. _parameter-8771743600268-block:
 
-:bdg-primary:`offset` :doc:`/config/documentation/objects/Range`\ 
+:bdg-primary:`block` :doc:`/config/documentation/objects/Block` 
+
+.. _parameter-8771743600268-offset:
+
+:bdg-primary:`offset` :doc:`/config/documentation/objects/Range` 
 
 ---------
 
 MATCH_SET
 ---------
 
+.. _parameter-8771743599938-blocks:
+
 :bdg-primary:`blocks` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
 
-:bdg-primary:`offset` :doc:`/config/documentation/objects/Range`\ 
+.. _parameter-8771743599938-offset:
+
+:bdg-primary:`offset` :doc:`/config/documentation/objects/Range` 
 
 ---------
 
 AND
 ---
+
+.. _parameter-8771743599773-patterns:
 
 :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
@@ -57,12 +71,16 @@ AND
 OR
 --
 
+.. _parameter-8771743599635-patterns:
+
 :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
 ---------
 
 XOR
 ---
+
+.. _parameter-8771743599980-patterns:
 
 :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
@@ -71,4 +89,35 @@ XOR
 NOT
 ---
 
-:bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern`\ 
+.. _parameter-8771743710491-pattern:
+
+:bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern` 
+
+Uses
+====
+
+Used by 6 parameters:
+
+- :ref:`In XOR in Pattern <parameter-8771743599980-patterns>`:
+
+  :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+
+- :ref:`In ADJACENT_PATTERN in Locator <parameter-8771743599755-pattern>`:
+
+  :bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern` 
+
+- :ref:`In OR in Pattern <parameter-8771743599635-patterns>`:
+
+  :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+
+- :ref:`In NOT in Pattern <parameter-8771743710491-pattern>`:
+
+  :bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern` 
+
+- :ref:`In AND in Pattern <parameter-8771743599773-patterns>`:
+
+  :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+
+- :ref:`In PATTERN in Locator <parameter-8771743599719-pattern>`:
+
+  :bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern` 

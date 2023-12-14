@@ -29,7 +29,9 @@ COLOR
 Provides the same color for any input.
 
 
-:bdg-primary:`color` :doc:`/config/documentation/objects/ColorString`\ - The color to output.
+.. _parameter-8771743710464-color:
+
+:bdg-primary:`color` :doc:`/config/documentation/objects/ColorString` - The color to output.
 
 ---------
 
@@ -40,11 +42,17 @@ Outputs the pixels of an ``Image``, colors for coordinates outside the bounds of
 are provided by a 'fallback' color sampler, which typically will be the `COLOR`_ type.
 
 
+.. _parameter-8771743710713-align:
+
 :bdg-primary:`align` Alignment 
 
-:bdg-primary:`image` :doc:`/config/documentation/objects/Image`\ - The image to be sampled
+.. _parameter-8771743710713-image:
 
-:bdg-primary:`outside-sampler` :doc:`/config/documentation/objects/ColorSampler`\ - The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
+:bdg-primary:`image` :doc:`/config/documentation/objects/Image` - The image to be sampled
+
+.. _parameter-8771743710713-outside-sampler:
+
+:bdg-primary:`outside-sampler` :doc:`/config/documentation/objects/ColorSampler` - The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
 
 ---------
 
@@ -54,26 +62,69 @@ TILED_IMAGE
 Outputs a repeating grid of pixels sourced from the provided ``Image`` .
 
 
+.. _parameter-8771743710749-align:
+
 :bdg-primary:`align` Alignment 
 
-:bdg-primary:`image` :doc:`/config/documentation/objects/Image`\ - The image to be sampled
+.. _parameter-8771743710749-image:
+
+:bdg-primary:`image` :doc:`/config/documentation/objects/Image` - The image to be sampled
 
 ---------
 
 ROTATE
 ------
 
-:bdg-primary:`angle` :doc:`/config/documentation/objects/Float`\ 
+.. _parameter-8771743710446-angle:
 
-:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
+:bdg-primary:`angle` :doc:`/config/documentation/objects/Float` 
+
+.. _parameter-8771743710446-color-sampler:
+
+:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
 
 ---------
 
 TRANSLATE
 ---------
 
-:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler`\ 
+.. _parameter-8771743710743-color-sampler:
 
-:bdg-primary:`x` :doc:`/config/documentation/objects/Integer`\ 
+:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
 
-:bdg-primary:`z` :doc:`/config/documentation/objects/Integer`\ 
+.. _parameter-8771743710743-x:
+
+:bdg-primary:`x` :doc:`/config/documentation/objects/Integer` 
+
+.. _parameter-8771743710743-z:
+
+:bdg-primary:`z` :doc:`/config/documentation/objects/Integer` 
+
+Uses
+====
+
+Used by 6 parameters:
+
+- :ref:`In CHANNEL in NoiseSampler <parameter-8771743710410-color-sampler>`:
+
+  :bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` - The color sampler to extract channel values from.
+
+- :ref:`In TRANSLATE in ColorSampler <parameter-8771743710743-color-sampler>`:
+
+  :bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
+
+- :ref:`In SINGLE_IMAGE in ColorSampler <parameter-8771743710713-outside-sampler>`:
+
+  :bdg-primary:`outside-sampler` :doc:`/config/documentation/objects/ColorSampler` - The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
+
+- :ref:`In ROTATE in ColorSampler <parameter-8771743710446-color-sampler>`:
+
+  :bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
+
+- :ref:`In IMAGE in Source <parameter-8771743599692-color-sampler>`:
+
+  :bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
+
+- :ref:`In IMAGE in BiomeProvider <parameter-8771743710233-color-sampler>`:
+
+  :bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 

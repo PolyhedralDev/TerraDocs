@@ -5,3 +5,16 @@ ColorString
 :superscript:`*Config object requires the 'library-image' addon to use`
 
 A string representing a color
+
+Uses
+====
+
+Used by 2 parameters:
+
+- :ref:`In COLOR in ColorSampler <parameter-8771743710464-color>`:
+
+  :bdg-primary:`color` :doc:`/config/documentation/objects/ColorString` - The color to output.
+
+- :ref:`In MAP in BiomeColorMapping <parameter-8771743711001-map>`:
+
+  :bdg-primary:`map` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 

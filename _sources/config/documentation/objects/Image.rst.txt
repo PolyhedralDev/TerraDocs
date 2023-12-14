@@ -26,13 +26,21 @@ Loads a singular image. For very large images that you may have issues loading,
 try the `STITCHED_BITMAP`_ type instead.
 
 
-:bdg-primary:`columns` :doc:`/config/documentation/objects/Integer`\ 
+.. _parameter-8771743710776-columns:
 
-:bdg-primary:`path-format` :doc:`/config/documentation/objects/String`\ - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+:bdg-primary:`columns` :doc:`/config/documentation/objects/Integer` 
 
-:bdg-primary:`rows` :doc:`/config/documentation/objects/Integer`\ 
+.. _parameter-8771743710776-path-format:
 
-:bdg-success:`zero-indexed` :doc:`/config/documentation/objects/Boolean`\ 
+:bdg-primary:`path-format` :doc:`/config/documentation/objects/String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+
+.. _parameter-8771743710776-rows:
+
+:bdg-primary:`rows` :doc:`/config/documentation/objects/Integer` 
+
+.. _parameter-8771743710776-zero-indexed:
+
+:bdg-success:`zero-indexed` :doc:`/config/documentation/objects/Boolean` 
 
 Default: ``false``
 
@@ -47,9 +55,13 @@ This type is primarily used when singular images are too large to be
 loaded into memory (a limit imposed Java's ``BufferedImage`` class implementation).
 
 
-:bdg-primary:`columns` :doc:`/config/documentation/objects/Integer`\ - How many columns of images to stitch together.
+.. _parameter-8771743710311-columns:
 
-:bdg-primary:`path` :doc:`/config/documentation/objects/String`\ - The format string for the path to the images relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+:bdg-primary:`columns` :doc:`/config/documentation/objects/Integer` - How many columns of images to stitch together.
+
+.. _parameter-8771743710311-path:
+
+:bdg-primary:`path` :doc:`/config/documentation/objects/String` - The format string for the path to the images relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
 
 The file name section of the path format must contain the text ``{row}`` and ``{column}``
 indicating the sections of the file names that indicate which rows and columns the files belong to.
@@ -74,10 +86,32 @@ The ``path-format`` to stitch together the images would be:
     path-format: images/stitched-image/my-image-{row}-{column}.png
 
 
-:bdg-primary:`rows` :doc:`/config/documentation/objects/Integer`\ - How many rows of images to stitch together.
+.. _parameter-8771743710311-rows:
 
-:bdg-success:`zero-indexed` :doc:`/config/documentation/objects/Boolean`\ 
+:bdg-primary:`rows` :doc:`/config/documentation/objects/Integer` - How many rows of images to stitch together.
+
+.. _parameter-8771743710311-zero-indexed:
+
+:bdg-success:`zero-indexed` :doc:`/config/documentation/objects/Boolean` 
 
 Default: ``false``
 
 Should be set to true if the image row and column indexes begin at 0.
+
+
+Uses
+====
+
+Used by 3 parameters:
+
+- :ref:`In SINGLE_IMAGE in ColorSampler <parameter-8771743710713-image>`:
+
+  :bdg-primary:`image` :doc:`/config/documentation/objects/Image` - The image to be sampled
+
+- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <parameter-8771743710512-image>`:
+
+  :bdg-primary:`image` :doc:`/config/documentation/objects/Image` 
+
+- :ref:`In TILED_IMAGE in ColorSampler <parameter-8771743710749-image>`:
+
+  :bdg-primary:`image` :doc:`/config/documentation/objects/Image` - The image to be sampled

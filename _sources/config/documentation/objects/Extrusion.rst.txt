@@ -18,9 +18,15 @@ A list of available types for ``Extrusion`` are listed below:
 SET
 ---
 
-:bdg-primary:`range` :doc:`/config/documentation/objects/Range`\ 
+.. _parameter-8771743710419-range:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
+:bdg-primary:`range` :doc:`/config/documentation/objects/Range` 
+
+.. _parameter-8771743710419-sampler:
+
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+
+.. _parameter-8771743710419-to:
 
 :bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
 
@@ -29,10 +35,27 @@ SET
 REPLACE
 -------
 
-:bdg-primary:`from` :doc:`/config/documentation/objects/String`\ 
+.. _parameter-8771743711136-from:
 
-:bdg-primary:`range` :doc:`/config/documentation/objects/Range`\ 
+:bdg-primary:`from` :doc:`/config/documentation/objects/String` 
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler`\ 
+.. _parameter-8771743711136-range:
+
+:bdg-primary:`range` :doc:`/config/documentation/objects/Range` 
+
+.. _parameter-8771743711136-sampler:
+
+:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+
+.. _parameter-8771743711136-to:
 
 :bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In EXTRUSION in BiomeProvider <parameter-8771743710821-extrusions>`:
+
+  :bdg-primary:`extrusions` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 

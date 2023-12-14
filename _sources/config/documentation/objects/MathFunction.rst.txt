@@ -6,12 +6,31 @@ MathFunction
 
 A math function
 
-:bdg-primary:`expression` :doc:`/config/documentation/objects/Expression`\ 
+.. _parameter-8771743700494-expression:
+
+:bdg-primary:`expression` :doc:`/config/documentation/objects/Expression` 
+
+.. _parameter-8771743700494-arguments:
 
 :bdg-success:`arguments` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> 
 
 Default: ``[]``
 
+.. _parameter-8771743700494-functions:
+
 :bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
 
 Default: ``{}``
+
+Uses
+====
+
+Used by 2 parameters:
+
+- :ref:`In MathFunction <parameter-8771743700494-functions>`:
+
+  :bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+
+- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-functions>`:
+
+  :bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 

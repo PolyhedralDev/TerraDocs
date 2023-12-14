@@ -4,6 +4,19 @@ DimensionApplicableSampler
 
 :superscript:`*Config object requires the 'config-noise-function' addon to use`
 
-:bdg-primary:`.` :doc:`/config/documentation/objects/NoiseSampler`\ 
+.. _parameter-8771743700611-.:
 
-:bdg-primary:`dimensions` :doc:`/config/documentation/objects/Integer`\ 
+:bdg-primary:`.` :doc:`/config/documentation/objects/NoiseSampler` 
+
+.. _parameter-8771743700611-dimensions:
+
+:bdg-primary:`dimensions` :doc:`/config/documentation/objects/Integer` 
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-samplers>`:
+
+  :bdg-success:`samplers` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.

@@ -158,7 +158,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -334,7 +334,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -343,6 +343,48 @@
           <section id="boolean">
 <h1>Boolean<a class="headerlink" href="#boolean" title="Permalink to this headline">¶</a></h1>
 <p>Either <code class="docutils literal notranslate"><span class="pre">true</span></code> or <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
+<section id="uses">
+<h2>Uses<a class="headerlink" href="#uses" title="Permalink to this headline">¶</a></h2>
+<p>Used by 12 parameters:</p>
+<ul>
+<li><p><a class="reference internal" href="NoiseSampler.html#parameter-8771743600412-isotropic"><span class="std std-ref">In GABOR in NoiseSampler</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">isotropic</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a></p>
+</li>
+<li><p><a class="reference internal" href="Image.html#parameter-8771743710311-zero-indexed"><span class="std std-ref">In STITCHED_BITMAP in Image</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">zero-indexed</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a></p>
+</li>
+<li><p><a class="reference internal" href="BiomeColorConverter.html#parameter-8771743711115-ignore-alpha"><span class="std std-ref">In EXACT in BiomeColorConverter</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">ignore-alpha</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a></p>
+</li>
+<li><p><a class="reference internal" href="../configs/SCATTERED_ORE.html#parameter-8771743710797-physics"><span class="std std-ref">In SCATTERED_ORE</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">physics</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a></p>
+</li>
+<li><p><a class="reference internal" href="../configs/BIOME.html#parameter-8771743710728-carving-update-palette"><span class="std std-ref">In BIOME</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">carving.update-palette</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a></p>
+</li>
+<li><p><a class="reference internal" href="NoiseSampler.html#parameter-8771743710410-premultiply"><span class="std std-ref">In CHANNEL in NoiseSampler</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">premultiply</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a> - Whether to multiply color channels by the alpha channel or not.</p>
+</li>
+<li><p><a class="reference internal" href="Locator.html#parameter-8771743599755-match-all"><span class="std std-ref">In ADJACENT_PATTERN in Locator</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">match-all</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a></p>
+</li>
+<li><p><a class="reference internal" href="NoiseSampler.html#parameter-8771743710410-normalize"><span class="std std-ref">In CHANNEL in NoiseSampler</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">normalize</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a> - If the channel should be normalized to range [-1, 1] or not.</p>
+</li>
+<li><p><a class="reference internal" href="NoiseSampler.html#parameter-8771743710512-clamp-to-max-edge"><span class="std std-ref">In DISTANCE_TRANSFORM in NoiseSampler</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">clamp-to-max-edge</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a></p>
+</li>
+<li><p><a class="reference internal" href="../configs/ORE.html#parameter-8771743710692-physics"><span class="std std-ref">In ORE</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">physics</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a></p>
+</li>
+<li><p><a class="reference internal" href="Image.html#parameter-8771743710776-zero-indexed"><span class="std std-ref">In BITMAP in Image</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">zero-indexed</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a></p>
+</li>
+<li><p><a class="reference internal" href="NoiseSampler.html#parameter-8771743710512-invert-threshold"><span class="std std-ref">In DISTANCE_TRANSFORM in NoiseSampler</span></a>:</p>
+<p><span class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success">invert-threshold</span> <a class="reference internal" href="#"><span class="doc">Boolean</span></a></p>
+</li>
+</ul>
+</section>
 </section>
 
         </article>
@@ -384,8 +426,27 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Boolean</a><ul>
+<li><a class="reference internal" href="#uses">Uses</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

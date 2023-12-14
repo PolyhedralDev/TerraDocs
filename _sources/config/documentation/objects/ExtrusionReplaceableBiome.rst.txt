@@ -3,3 +3,16 @@ ExtrusionReplaceableBiome
 =========================
 
 :superscript:`*Config object requires the 'biome-provider-extrusion' addon to use`
+
+Uses
+====
+
+Used by 2 parameters:
+
+- :ref:`In REPLACE in Extrusion <parameter-8771743711136-to>`:
+
+  :bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
+
+- :ref:`In SET in Extrusion <parameter-8771743710419-to>`:
+
+  :bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 

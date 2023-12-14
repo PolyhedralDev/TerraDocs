@@ -18,8 +18,21 @@ FEATURE
 
 :superscript:`*Type requires the 'generation-stage-feature' addon to use`
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String`\ 
+.. _parameter-8771743600472-id:
 
-:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer`\ 
+:bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+
+.. _parameter-8771743600472-resolution:
+
+:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``4``
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In pack.yml <parameter-8771743710836-stages>`:
+
+  :bdg-primary:`stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> 

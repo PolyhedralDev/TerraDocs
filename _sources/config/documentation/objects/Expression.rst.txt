@@ -3,3 +3,16 @@ Expression
 ==========
 
 An expression
+
+Uses
+====
+
+Used by 2 parameters:
+
+- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-expression>`:
+
+  :bdg-primary:`expression` :doc:`/config/documentation/objects/Expression` 
+
+- :ref:`In MathFunction <parameter-8771743700494-expression>`:
+
+  :bdg-primary:`expression` :doc:`/config/documentation/objects/Expression` 

@@ -5,3 +5,36 @@ PipelineBiome
 :superscript:`*Config object requires the 'biome-provider-pipeline-v2' addon to use`
 
 A pipeline biome
+
+Uses
+====
+
+Used by 7 parameters:
+
+- :ref:`In BORDER in Stage <parameter-8771743710461-to>`:
+
+  :bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+
+- :ref:`In REPLACE in Stage <parameter-8771743710437-to>`:
+
+  :bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+
+- :ref:`In SAMPLER in Source <parameter-8771743710425-biomes>`:
+
+  :bdg-primary:`biomes` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+
+- :ref:`In BORDER_LIST in Stage <parameter-8771743710395-default-to>`:
+
+  :bdg-primary:`default-to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+
+- :ref:`In REPLACE_LIST in Stage <parameter-8771743710845-default-to>`:
+
+  :bdg-primary:`default-to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+
+- :ref:`In REPLACE_LIST in Stage <parameter-8771743710845-to>`:
+
+  :bdg-primary:`to` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
+
+- :ref:`In BORDER_LIST in Stage <parameter-8771743710395-replace>`:
+
+  :bdg-primary:`replace` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
