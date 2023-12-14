@@ -18,13 +18,13 @@ SAMPLER
 
 :superscript:`*Type requires the 'config-distributors' addon to use`
 
-.. _parameter-8771743711130-sampler:
+.. _object-distributor-template-config-distributors-sampler-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-distributor-template-config-distributors-sampler-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743711130-threshold:
+.. _object-distributor-template-config-distributors-sampler-parameter-threshold:
 
-:bdg-success:`threshold` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`threshold <object-distributor-template-config-distributors-sampler-parameter-threshold>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``0.0``
 
@@ -35,9 +35,9 @@ POINTS
 
 :superscript:`*Type requires the 'config-distributors' addon to use`
 
-.. _parameter-8771743710851-points:
+.. _object-distributor-template-config-distributors-points-parameter-points:
 
-:bdg-primary:`points` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Point`\> 
+:bdg-ref-primary:`points <object-distributor-template-config-distributors-points-parameter-points>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Point`\> 
 
 ---------
 
@@ -46,17 +46,17 @@ PADDED_GRID
 
 :superscript:`*Type requires the 'config-distributors' addon to use`
 
-.. _parameter-8771743711022-padding:
+.. _object-distributor-template-config-distributors-padded_grid-parameter-padding:
 
-:bdg-primary:`padding` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`padding <object-distributor-template-config-distributors-padded_grid-parameter-padding>` :doc:`/config/documentation/objects/Integer` 
 
-.. _parameter-8771743711022-salt:
+.. _object-distributor-template-config-distributors-padded_grid-parameter-salt:
 
-:bdg-primary:`salt` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`salt <object-distributor-template-config-distributors-padded_grid-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
 
-.. _parameter-8771743711022-width:
+.. _object-distributor-template-config-distributors-padded_grid-parameter-width:
 
-:bdg-primary:`width` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`width <object-distributor-template-config-distributors-padded_grid-parameter-width>` :doc:`/config/documentation/objects/Integer` 
 
 ---------
 
@@ -65,9 +65,9 @@ AND
 
 :superscript:`*Type requires the 'config-distributors' addon to use`
 
-.. _parameter-8771743710452-distributors:
+.. _object-distributor-template-config-distributors-and-parameter-distributors:
 
-:bdg-primary:`distributors` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+:bdg-ref-primary:`distributors <object-distributor-template-config-distributors-and-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
 
 ---------
 
@@ -76,9 +76,9 @@ OR
 
 :superscript:`*Type requires the 'config-distributors' addon to use`
 
-.. _parameter-8771743710317-distributors:
+.. _object-distributor-template-config-distributors-or-parameter-distributors:
 
-:bdg-primary:`distributors` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+:bdg-ref-primary:`distributors <object-distributor-template-config-distributors-or-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
 
 ---------
 
@@ -87,9 +87,9 @@ XOR
 
 :superscript:`*Type requires the 'config-distributors' addon to use`
 
-.. _parameter-8771743710683-distributors:
+.. _object-distributor-template-config-distributors-xor-parameter-distributors:
 
-:bdg-primary:`distributors` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+:bdg-ref-primary:`distributors <object-distributor-template-config-distributors-xor-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
 
 ---------
 
@@ -110,18 +110,18 @@ Uses
 
 Used by 4 parameters:
 
-- :ref:`In AND in Distributor <parameter-8771743710452-distributors>`:
+- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-distributor>`:
 
-  :bdg-primary:`distributors` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+  :bdg-ref-primary:`distributor <config-feature-template-config-feature-base-parameter-distributor>` :doc:`/config/documentation/objects/Distributor` 
 
-- :ref:`In FEATURE <parameter-8771743710341-distributor>`:
+- :ref:`In XOR in Distributor <object-distributor-template-config-distributors-xor-parameter-distributors>`:
 
-  :bdg-primary:`distributor` :doc:`/config/documentation/objects/Distributor` 
+  :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-xor-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
 
-- :ref:`In OR in Distributor <parameter-8771743710317-distributors>`:
+- :ref:`In OR in Distributor <object-distributor-template-config-distributors-or-parameter-distributors>`:
 
-  :bdg-primary:`distributors` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+  :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-or-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
 
-- :ref:`In XOR in Distributor <parameter-8771743710683-distributors>`:
+- :ref:`In AND in Distributor <object-distributor-template-config-distributors-and-parameter-distributors>`:
 
-  :bdg-primary:`distributors` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+  :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-and-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 

@@ -5,29 +5,29 @@ pack.yml
 The config pack manifest
 
 
-.. _parameter-8771743710836-biomes:
+.. _config-pack.yml-template-base-base-parameter-biomes:
 
-:bdg-primary:`biomes` :doc:`/config/documentation/objects/BiomeProvider` 
+:bdg-ref-primary:`biomes <config-pack.yml-template-base-base-parameter-biomes>` :doc:`/config/documentation/objects/BiomeProvider` 
 
-.. _parameter-8771743710836-generator:
+.. _config-pack.yml-template-base-base-parameter-generator:
 
-:bdg-primary:`generator` :doc:`/config/documentation/objects/ChunkGenerator` 
+:bdg-ref-primary:`generator <config-pack.yml-template-base-base-parameter-generator>` :doc:`/config/documentation/objects/ChunkGenerator` 
 
-.. _parameter-8771743710836-id:
+.. _config-pack.yml-template-base-base-parameter-id:
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+:bdg-ref-primary:`id <config-pack.yml-template-base-base-parameter-id>` :doc:`/config/documentation/objects/String` 
 
-.. _parameter-8771743710836-stages:
+.. _config-pack.yml-template-base-base-parameter-stages:
 
-:bdg-primary:`stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> 
+:bdg-ref-primary:`stages <config-pack.yml-template-base-base-parameter-stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> 
 
-.. _parameter-8771743710836-version:
+.. _config-pack.yml-template-base-base-parameter-version:
 
-:bdg-primary:`version` Version 
+:bdg-ref-primary:`version <config-pack.yml-template-base-base-parameter-version>` Version 
 
-.. _parameter-8771743710836-author:
+.. _config-pack.yml-template-base-base-parameter-author:
 
-:bdg-success:`author` :doc:`/config/documentation/objects/String` 
+:bdg-ref-success:`author <config-pack.yml-template-base-base-parameter-author>` :doc:`/config/documentation/objects/String` 
 
 Default: ``Anon Y. Mous``
 
@@ -37,26 +37,26 @@ Default: ``Anon Y. Mous``
 
 The following parameters are only applicable if :bdg-primary:`generator` is set to ``NOISE_3D``
 
-.. _parameter-8771743710917-blend.terrain.elevation:
+.. _config-pack.yml-template-chunk-generator-noise-3d-base-parameter-blend.terrain.elevation:
 
-:bdg-success:`blend.terrain.elevation` :doc:`/config/documentation/objects/Integer` 
-
-Default: ``4``
-
-.. _parameter-8771743710917-carving.resolution.horizontal:
-
-:bdg-success:`carving.resolution.horizontal` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-success:`blend.terrain.elevation <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-blend.terrain.elevation>` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``4``
 
-.. _parameter-8771743710917-carving.resolution.vertical:
+.. _config-pack.yml-template-chunk-generator-noise-3d-base-parameter-carving.resolution.horizontal:
 
-:bdg-success:`carving.resolution.vertical` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-success:`carving.resolution.horizontal <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-carving.resolution.horizontal>` :doc:`/config/documentation/objects/Integer` 
+
+Default: ``4``
+
+.. _config-pack.yml-template-chunk-generator-noise-3d-base-parameter-carving.resolution.vertical:
+
+:bdg-ref-success:`carving.resolution.vertical <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-carving.resolution.vertical>` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``2``
 
-.. _parameter-8771743710917-slant.calculation-method:
+.. _config-pack.yml-template-chunk-generator-noise-3d-base-parameter-slant.calculation-method:
 
-:bdg-success:`slant.calculation-method` SlantCalculationMethod 
+:bdg-ref-success:`slant.calculation-method <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-slant.calculation-method>` SlantCalculationMethod 
 
 Default: ``Derivative``

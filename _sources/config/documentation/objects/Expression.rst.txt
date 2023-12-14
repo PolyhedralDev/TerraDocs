@@ -7,12 +7,8 @@ An expression
 Uses
 ====
 
-Used by 2 parameters:
+This object is used in one place:
 
-- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-expression>`:
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-expression>`:
 
-  :bdg-primary:`expression` :doc:`/config/documentation/objects/Expression` 
-
-- :ref:`In MathFunction <parameter-8771743700494-expression>`:
-
-  :bdg-primary:`expression` :doc:`/config/documentation/objects/Expression` 
+  :bdg-ref-primary:`expression <object-noisesampler-template-config-noise-function-expression-parameter-expression>` :doc:`/config/documentation/objects/Expression` 

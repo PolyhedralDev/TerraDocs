@@ -4,19 +4,19 @@ DimensionApplicableSampler
 
 :superscript:`*Config object requires the 'config-noise-function' addon to use`
 
-.. _parameter-8771743700611-.:
+.. _object-dimensionapplicablesampler-template-config-noise-function-map-parameter-.:
 
-:bdg-primary:`.` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`. <object-dimensionapplicablesampler-template-config-noise-function-map-parameter-.>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743700611-dimensions:
+.. _object-dimensionapplicablesampler-template-config-noise-function-map-parameter-dimensions:
 
-:bdg-primary:`dimensions` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`dimensions <object-dimensionapplicablesampler-template-config-noise-function-map-parameter-dimensions>` :doc:`/config/documentation/objects/Integer` 
 
 Uses
 ====
 
 This object is used in one place:
 
-- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-samplers>`:
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-samplers>`:
 
-  :bdg-success:`samplers` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
+  :bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.

@@ -18,106 +18,106 @@ A list of available types for ``Pattern`` are listed below:
 MATCH_AIR
 ---------
 
-.. _parameter-8771743599662-offset:
+.. _object-pattern-template-config-locators-match_air-parameter-offset:
 
-:bdg-primary:`offset` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`offset <object-pattern-template-config-locators-match_air-parameter-offset>` :doc:`/config/documentation/objects/Range` 
 
 ---------
 
 MATCH_SOLID
 -----------
 
-.. _parameter-8771743600613-offset:
+.. _object-pattern-template-config-locators-match_solid-parameter-offset:
 
-:bdg-primary:`offset` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`offset <object-pattern-template-config-locators-match_solid-parameter-offset>` :doc:`/config/documentation/objects/Range` 
 
 ---------
 
 MATCH
 -----
 
-.. _parameter-8771743600268-block:
+.. _object-pattern-template-config-locators-match-parameter-block:
 
-:bdg-primary:`block` :doc:`/config/documentation/objects/Block` 
+:bdg-ref-primary:`block <object-pattern-template-config-locators-match-parameter-block>` :doc:`/config/documentation/objects/Block` 
 
-.. _parameter-8771743600268-offset:
+.. _object-pattern-template-config-locators-match-parameter-offset:
 
-:bdg-primary:`offset` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`offset <object-pattern-template-config-locators-match-parameter-offset>` :doc:`/config/documentation/objects/Range` 
 
 ---------
 
 MATCH_SET
 ---------
 
-.. _parameter-8771743599938-blocks:
+.. _object-pattern-template-config-locators-match_set-parameter-blocks:
 
-:bdg-primary:`blocks` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+:bdg-ref-primary:`blocks <object-pattern-template-config-locators-match_set-parameter-blocks>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
 
-.. _parameter-8771743599938-offset:
+.. _object-pattern-template-config-locators-match_set-parameter-offset:
 
-:bdg-primary:`offset` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`offset <object-pattern-template-config-locators-match_set-parameter-offset>` :doc:`/config/documentation/objects/Range` 
 
 ---------
 
 AND
 ---
 
-.. _parameter-8771743599773-patterns:
+.. _object-pattern-template-config-locators-and-parameter-patterns:
 
-:bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+:bdg-ref-primary:`patterns <object-pattern-template-config-locators-and-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
 ---------
 
 OR
 --
 
-.. _parameter-8771743599635-patterns:
+.. _object-pattern-template-config-locators-or-parameter-patterns:
 
-:bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+:bdg-ref-primary:`patterns <object-pattern-template-config-locators-or-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
 ---------
 
 XOR
 ---
 
-.. _parameter-8771743599980-patterns:
+.. _object-pattern-template-config-locators-xor-parameter-patterns:
 
-:bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+:bdg-ref-primary:`patterns <object-pattern-template-config-locators-xor-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
 ---------
 
 NOT
 ---
 
-.. _parameter-8771743710491-pattern:
+.. _object-pattern-template-config-locators-not-parameter-pattern:
 
-:bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern` 
+:bdg-ref-primary:`pattern <object-pattern-template-config-locators-not-parameter-pattern>` :doc:`/config/documentation/objects/Pattern` 
 
 Uses
 ====
 
 Used by 6 parameters:
 
-- :ref:`In XOR in Pattern <parameter-8771743599980-patterns>`:
+- :ref:`In XOR in Pattern <object-pattern-template-config-locators-xor-parameter-patterns>`:
 
-  :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+  :bdg-ref-primary:`patterns <object-pattern-template-config-locators-xor-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
-- :ref:`In ADJACENT_PATTERN in Locator <parameter-8771743599755-pattern>`:
+- :ref:`In PATTERN in Locator <object-locator-template-config-locators-pattern-parameter-pattern>`:
 
-  :bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern` 
+  :bdg-ref-primary:`pattern <object-locator-template-config-locators-pattern-parameter-pattern>` :doc:`/config/documentation/objects/Pattern` 
 
-- :ref:`In OR in Pattern <parameter-8771743599635-patterns>`:
+- :ref:`In ADJACENT_PATTERN in Locator <object-locator-template-config-locators-adjacent_pattern-parameter-pattern>`:
 
-  :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+  :bdg-ref-primary:`pattern <object-locator-template-config-locators-adjacent_pattern-parameter-pattern>` :doc:`/config/documentation/objects/Pattern` 
 
-- :ref:`In NOT in Pattern <parameter-8771743710491-pattern>`:
+- :ref:`In NOT in Pattern <object-pattern-template-config-locators-not-parameter-pattern>`:
 
-  :bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern` 
+  :bdg-ref-primary:`pattern <object-pattern-template-config-locators-not-parameter-pattern>` :doc:`/config/documentation/objects/Pattern` 
 
-- :ref:`In AND in Pattern <parameter-8771743599773-patterns>`:
+- :ref:`In OR in Pattern <object-pattern-template-config-locators-or-parameter-patterns>`:
 
-  :bdg-primary:`patterns` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+  :bdg-ref-primary:`patterns <object-pattern-template-config-locators-or-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
-- :ref:`In PATTERN in Locator <parameter-8771743599719-pattern>`:
+- :ref:`In AND in Pattern <object-pattern-template-config-locators-and-parameter-patterns>`:
 
-  :bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern` 
+  :bdg-ref-primary:`patterns <object-pattern-template-config-locators-and-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 

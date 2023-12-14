@@ -18,17 +18,17 @@ A list of available types for ``BiomeColorConverter`` are listed below:
 EXACT
 -----
 
-.. _parameter-8771743711115-else:
+.. _object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-else:
 
-:bdg-primary:`else` :doc:`/config/documentation/objects/Biome` 
+:bdg-ref-primary:`else <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-else>` :doc:`/config/documentation/objects/Biome` 
 
-.. _parameter-8771743711115-match:
+.. _object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-match:
 
-:bdg-primary:`match` :doc:`/config/documentation/objects/BiomeColorMapping` 
+:bdg-ref-primary:`match <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-match>` :doc:`/config/documentation/objects/BiomeColorMapping` 
 
-.. _parameter-8771743711115-ignore-alpha:
+.. _object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-ignore-alpha:
 
-:bdg-success:`ignore-alpha` :doc:`/config/documentation/objects/Boolean` 
+:bdg-ref-success:`ignore-alpha <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-ignore-alpha>` :doc:`/config/documentation/objects/Boolean` 
 
 Default: ``true``
 
@@ -37,15 +37,15 @@ Default: ``true``
 CLOSEST
 -------
 
-.. _parameter-8771743710752-match:
+.. _object-biomecolorconverter-template-biome-provider-image-v2-closest-parameter-match:
 
-:bdg-primary:`match` :doc:`/config/documentation/objects/BiomeColorMapping` 
+:bdg-ref-primary:`match <object-biomecolorconverter-template-biome-provider-image-v2-closest-parameter-match>` :doc:`/config/documentation/objects/BiomeColorMapping` 
 
 Uses
 ====
 
 This object is used in one place:
 
-- :ref:`In IMAGE in BiomeProvider <parameter-8771743710233-color-conversion>`:
+- :ref:`In IMAGE in BiomeProvider <object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-conversion>`:
 
-  :bdg-primary:`color-conversion` :doc:`/config/documentation/objects/BiomeColorConverter` 
+  :bdg-ref-primary:`color-conversion <object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-conversion>` :doc:`/config/documentation/objects/BiomeColorConverter` 

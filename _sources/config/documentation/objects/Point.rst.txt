@@ -4,19 +4,19 @@ Point
 
 :superscript:`*Config object requires the 'config-distributors' addon to use`
 
-.. _parameter-8771743599803-x:
+.. _object-point-template-config-distributors-map-parameter-x:
 
-:bdg-primary:`x` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`x <object-point-template-config-distributors-map-parameter-x>` :doc:`/config/documentation/objects/Integer` 
 
-.. _parameter-8771743599803-z:
+.. _object-point-template-config-distributors-map-parameter-z:
 
-:bdg-primary:`z` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`z <object-point-template-config-distributors-map-parameter-z>` :doc:`/config/documentation/objects/Integer` 
 
 Uses
 ====
 
 This object is used in one place:
 
-- :ref:`In POINTS in Distributor <parameter-8771743710851-points>`:
+- :ref:`In POINTS in Distributor <object-distributor-template-config-distributors-points-parameter-points>`:
 
-  :bdg-primary:`points` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Point`\> 
+  :bdg-ref-primary:`points <object-distributor-template-config-distributors-points-parameter-points>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Point`\> 

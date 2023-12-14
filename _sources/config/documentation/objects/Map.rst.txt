@@ -7,48 +7,40 @@ A map
 Uses
 ====
 
-Used by 11 parameters:
+Used by 9 parameters:
 
-- :ref:`In SlantLayer <parameter-8771743600046-palette>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>`:
 
-  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+  :bdg-ref-primary:`palette <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
 
-- :ref:`In MathFunction <parameter-8771743700494-functions>`:
+- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>`:
 
-  :bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+  :bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
 
-- :ref:`In MAP in BiomeColorMapping <parameter-8771743711001-map>`:
+- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-material-overrides>`:
 
-  :bdg-primary:`map` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
+  :bdg-ref-success:`material-overrides <config-scattered_ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
 
-- :ref:`In SCATTERED_ORE <parameter-8771743710797-material-overrides>`:
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-functions>`:
 
-  :bdg-success:`material-overrides` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+  :bdg-ref-success:`functions <object-noisesampler-template-config-noise-function-expression-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
 
-- :ref:`In BIOME <parameter-8771743710728-palette>`:
+- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-material-overrides>`:
 
-  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+  :bdg-ref-success:`material-overrides <config-ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
 
-- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-samplers>`:
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-samplers>`:
 
-  :bdg-success:`samplers` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
+  :bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
 
-- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-variables>`:
+- :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>`:
 
-  :bdg-success:`variables` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
+  :bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
 
-- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-functions>`:
+- :ref:`In MAP in BiomeColorMapping <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>`:
 
-  :bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+  :bdg-ref-primary:`map <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
 
-- :ref:`In ORE <parameter-8771743710692-material-overrides>`:
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-variables>`:
 
-  :bdg-success:`material-overrides` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
-
-- :ref:`In REPLACE_LIST in Stage <parameter-8771743710845-to>`:
-
-  :bdg-primary:`to` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
-
-- :ref:`In BORDER_LIST in Stage <parameter-8771743710395-replace>`:
-
-  :bdg-primary:`replace` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
+  :bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 

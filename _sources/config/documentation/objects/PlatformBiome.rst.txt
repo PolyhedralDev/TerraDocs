@@ -9,6 +9,6 @@ Uses
 
 This object is used in one place:
 
-- :ref:`In BIOME <parameter-8771743710803-vanilla>`:
+- :ref:`In base in BIOME <config-biome-template-config-biome-base-parameter-vanilla>`:
 
-  :bdg-primary:`vanilla` :doc:`/config/documentation/objects/PlatformBiome` 
+  :bdg-ref-primary:`vanilla <config-biome-template-config-biome-base-parameter-vanilla>` :doc:`/config/documentation/objects/PlatformBiome` 

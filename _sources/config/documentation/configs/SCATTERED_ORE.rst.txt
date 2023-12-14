@@ -6,46 +6,46 @@ SCATTERED_ORE
 
 This config type creates instances of :doc:`/config/documentation/objects/Structure`.
 
-.. _parameter-8771743711100-extends:
+.. _config-scattered_ore-template-base-global-parameter-extends:
 
-:bdg-primary:`extends` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> - A list of other ``SCATTERED_ORE`` configs to copy parameters from.
+:bdg-ref-primary:`extends <config-scattered_ore-template-base-global-parameter-extends>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> - A list of other ``SCATTERED_ORE`` configs to copy parameters from.
 
 Parameters from extended configs are only used if they have not already been defined in the current config. Configs listed first take precedence. This allows for re-use of parameters across multiple config files.
 
-.. _parameter-8771743711100-id:
+.. _config-scattered_ore-template-base-global-parameter-id:
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String` - An identifier used to reference this config from other configs.
+:bdg-ref-primary:`id <config-scattered_ore-template-base-global-parameter-id>` :doc:`/config/documentation/objects/String` - An identifier used to reference this config from other configs.
 
 The instance of :doc:`/config/documentation/objects/Structure` created by a config using this config type is identified using this parameter.
 
 ---------
 
-.. _parameter-8771743710797-id:
+.. _config-scattered_ore-template-config-ore-base-parameter-id:
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+:bdg-ref-primary:`id <config-scattered_ore-template-config-ore-base-parameter-id>` :doc:`/config/documentation/objects/String` 
 
-.. _parameter-8771743710797-material:
+.. _config-scattered_ore-template-config-ore-base-parameter-material:
 
-:bdg-primary:`material` :doc:`/config/documentation/objects/Block` 
+:bdg-ref-primary:`material <config-scattered_ore-template-config-ore-base-parameter-material>` :doc:`/config/documentation/objects/Block` 
 
-.. _parameter-8771743710797-replace:
+.. _config-scattered_ore-template-config-ore-base-parameter-replace:
 
-:bdg-primary:`replace` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+:bdg-ref-primary:`replace <config-scattered_ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
 
-.. _parameter-8771743710797-material-overrides:
+.. _config-scattered_ore-template-config-ore-base-parameter-material-overrides:
 
-:bdg-success:`material-overrides` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+:bdg-ref-success:`material-overrides <config-scattered_ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
 
 Default: ``{}``
 
-.. _parameter-8771743710797-physics:
+.. _config-scattered_ore-template-config-ore-base-parameter-physics:
 
-:bdg-success:`physics` :doc:`/config/documentation/objects/Boolean` 
+:bdg-ref-success:`physics <config-scattered_ore-template-config-ore-base-parameter-physics>` :doc:`/config/documentation/objects/Boolean` 
 
 Default: ``false``
 
-.. _parameter-8771743710797-size:
+.. _config-scattered_ore-template-config-ore-base-parameter-size:
 
-:bdg-success:`size` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-success:`size <config-scattered_ore-template-config-ore-base-parameter-size>` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``7``

@@ -7,6 +7,6 @@ Uses
 
 This object is used in one place:
 
-- :ref:`In pack.yml <parameter-8771743710836-generator>`:
+- :ref:`In base in pack.yml <config-pack.yml-template-base-base-parameter-generator>`:
 
-  :bdg-primary:`generator` :doc:`/config/documentation/objects/ChunkGenerator` 
+  :bdg-ref-primary:`generator <config-pack.yml-template-base-base-parameter-generator>` :doc:`/config/documentation/objects/ChunkGenerator` 

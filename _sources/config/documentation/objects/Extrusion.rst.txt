@@ -18,44 +18,44 @@ A list of available types for ``Extrusion`` are listed below:
 SET
 ---
 
-.. _parameter-8771743710419-range:
+.. _object-extrusion-template-biome-provider-extrusion-set-parameter-range:
 
-:bdg-primary:`range` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`range <object-extrusion-template-biome-provider-extrusion-set-parameter-range>` :doc:`/config/documentation/objects/Range` 
 
-.. _parameter-8771743710419-sampler:
+.. _object-extrusion-template-biome-provider-extrusion-set-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-extrusion-template-biome-provider-extrusion-set-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743710419-to:
+.. _object-extrusion-template-biome-provider-extrusion-set-parameter-to:
 
-:bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
+:bdg-ref-primary:`to <object-extrusion-template-biome-provider-extrusion-set-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
 
 ---------
 
 REPLACE
 -------
 
-.. _parameter-8771743711136-from:
+.. _object-extrusion-template-biome-provider-extrusion-replace-parameter-from:
 
-:bdg-primary:`from` :doc:`/config/documentation/objects/String` 
+:bdg-ref-primary:`from <object-extrusion-template-biome-provider-extrusion-replace-parameter-from>` :doc:`/config/documentation/objects/String` 
 
-.. _parameter-8771743711136-range:
+.. _object-extrusion-template-biome-provider-extrusion-replace-parameter-range:
 
-:bdg-primary:`range` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`range <object-extrusion-template-biome-provider-extrusion-replace-parameter-range>` :doc:`/config/documentation/objects/Range` 
 
-.. _parameter-8771743711136-sampler:
+.. _object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743711136-to:
+.. _object-extrusion-template-biome-provider-extrusion-replace-parameter-to:
 
-:bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
+:bdg-ref-primary:`to <object-extrusion-template-biome-provider-extrusion-replace-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
 
 Uses
 ====
 
 This object is used in one place:
 
-- :ref:`In EXTRUSION in BiomeProvider <parameter-8771743710821-extrusions>`:
+- :ref:`In EXTRUSION in BiomeProvider <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions>`:
 
-  :bdg-primary:`extrusions` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 
+  :bdg-ref-primary:`extrusions <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 

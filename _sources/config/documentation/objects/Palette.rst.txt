@@ -8,16 +8,12 @@ A Terra palette ID. Palettes are added via the :doc:`/config/documentation/confi
 Uses
 ====
 
-Used by 3 parameters:
+Used by 2 parameters:
 
-- :ref:`In BIOME <parameter-8771743710728-palette>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>`:
 
-  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+  :bdg-ref-primary:`palette <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
 
-- :ref:`In SlantLayer <parameter-8771743600046-palette>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-ocean.palette>`:
 
-  :bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
-
-- :ref:`In BIOME <parameter-8771743710728-ocean.palette>`:
-
-  :bdg-success:`ocean.palette` :doc:`/config/documentation/objects/Palette` 
+  :bdg-ref-success:`ocean.palette <config-biome-template-chunk-generator-noise-3d-base-parameter-ocean.palette>` :doc:`/config/documentation/objects/Palette` 

@@ -22,32 +22,32 @@ IMAGE
 
 :superscript:`*Type requires the 'pipeline-image' addon to use`
 
-.. _parameter-8771743599692-color-conversion:
+.. _object-source-template-pipeline-image-image-parameter-color-conversion:
 
-:bdg-primary:`color-conversion` :doc:`/config/documentation/objects/PipelineBiomeColorConverter` 
+:bdg-ref-primary:`color-conversion <object-source-template-pipeline-image-image-parameter-color-conversion>` :doc:`/config/documentation/objects/PipelineBiomeColorConverter` 
 
-.. _parameter-8771743599692-color-sampler:
+.. _object-source-template-pipeline-image-image-parameter-color-sampler:
 
-:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
+:bdg-ref-primary:`color-sampler <object-source-template-pipeline-image-image-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
 
 ---------
 
 SAMPLER
 -------
 
-.. _parameter-8771743710425-biomes:
+.. _object-source-template-biome-provider-pipeline-v2-sampler-parameter-biomes:
 
-:bdg-primary:`biomes` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+:bdg-ref-primary:`biomes <object-source-template-biome-provider-pipeline-v2-sampler-parameter-biomes>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
-.. _parameter-8771743710425-sampler:
+.. _object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 Uses
 ====
 
 This object is used in one place:
 
-- :ref:`In PIPELINE in BiomeProvider <parameter-8771743710413-pipeline.source>`:
+- :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.source>`:
 
-  :bdg-primary:`pipeline.source` :doc:`/config/documentation/objects/Source` 
+  :bdg-ref-primary:`pipeline.source <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.source>` :doc:`/config/documentation/objects/Source` 

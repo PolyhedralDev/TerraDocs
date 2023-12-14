@@ -4,19 +4,19 @@ SlantLayer
 
 :superscript:`*Config object requires the 'chunk-generator-noise-3d' addon to use`
 
-.. _parameter-8771743600046-palette:
+.. _object-slantlayer-template-chunk-generator-noise-3d-map-parameter-palette:
 
-:bdg-primary:`palette` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+:bdg-ref-primary:`palette <object-slantlayer-template-chunk-generator-noise-3d-map-parameter-palette>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
 
-.. _parameter-8771743600046-threshold:
+.. _object-slantlayer-template-chunk-generator-noise-3d-map-parameter-threshold:
 
-:bdg-primary:`threshold` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-primary:`threshold <object-slantlayer-template-chunk-generator-noise-3d-map-parameter-threshold>` :doc:`/config/documentation/objects/Float` 
 
 Uses
 ====
 
 This object is used in one place:
 
-- :ref:`In BIOME <parameter-8771743710728-slant>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-slant>`:
 
-  :bdg-success:`slant` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/SlantLayer`\> 
+  :bdg-ref-success:`slant <config-biome-template-chunk-generator-noise-3d-base-parameter-slant>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/SlantLayer`\> 

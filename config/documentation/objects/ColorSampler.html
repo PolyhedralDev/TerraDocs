@@ -357,59 +357,59 @@ for example using a heightmap to shape terrain, or an image to draw where biomes
 <section id="color">
 <h3>COLOR<a class="headerlink" href="#color" title="Permalink to this headline">¶</a></h3>
 <p>Provides the same color for any input.</p>
-<p id="parameter-8771743710464-color"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color</span> <a class="reference internal" href="ColorString.html"><span class="doc">ColorString</span></a> - The color to output.</p>
+<p id="object-colorsampler-template-library-image-color-parameter-color"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-color-parameter-color"><span class="std std-ref">color</span></a> <a class="reference internal" href="ColorString.html"><span class="doc">ColorString</span></a> - The color to output.</p>
 </section>
 <hr class="docutils"/>
 <section id="single-image">
 <h3>SINGLE_IMAGE<a class="headerlink" href="#single-image" title="Permalink to this headline">¶</a></h3>
 <p>Outputs the pixels of an <code class="docutils literal notranslate"><span class="pre">Image</span></code>, colors for coordinates outside the bounds of the image
 are provided by a ‘fallback’ color sampler, which typically will be the <a class="reference internal" href="#color">COLOR</a> type.</p>
-<p id="parameter-8771743710713-align"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">align</span> Alignment</p>
-<p id="parameter-8771743710713-image"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <a class="reference internal" href="Image.html"><span class="doc">Image</span></a> - The image to be sampled</p>
-<p id="parameter-8771743710713-outside-sampler"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">outside-sampler</span> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a> - The sampler that provides colors for coordinates outside the bounds of the <code class="docutils literal notranslate"><span class="pre">Image</span></code> .</p>
+<p id="object-colorsampler-template-library-image-single-image-parameter-align"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-single-image-parameter-align"><span class="std std-ref">align</span></a> Alignment</p>
+<p id="object-colorsampler-template-library-image-single-image-parameter-image"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-single-image-parameter-image"><span class="std std-ref">image</span></a> <a class="reference internal" href="Image.html"><span class="doc">Image</span></a> - The image to be sampled</p>
+<p id="object-colorsampler-template-library-image-single-image-parameter-outside-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-single-image-parameter-outside-sampler"><span class="std std-ref">outside-sampler</span></a> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a> - The sampler that provides colors for coordinates outside the bounds of the <code class="docutils literal notranslate"><span class="pre">Image</span></code> .</p>
 </section>
 <hr class="docutils"/>
 <section id="tiled-image">
 <h3>TILED_IMAGE<a class="headerlink" href="#tiled-image" title="Permalink to this headline">¶</a></h3>
 <p>Outputs a repeating grid of pixels sourced from the provided <code class="docutils literal notranslate"><span class="pre">Image</span></code> .</p>
-<p id="parameter-8771743710749-align"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">align</span> Alignment</p>
-<p id="parameter-8771743710749-image"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">image</span> <a class="reference internal" href="Image.html"><span class="doc">Image</span></a> - The image to be sampled</p>
+<p id="object-colorsampler-template-library-image-tiled-image-parameter-align"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-tiled-image-parameter-align"><span class="std std-ref">align</span></a> Alignment</p>
+<p id="object-colorsampler-template-library-image-tiled-image-parameter-image"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-tiled-image-parameter-image"><span class="std std-ref">image</span></a> <a class="reference internal" href="Image.html"><span class="doc">Image</span></a> - The image to be sampled</p>
 </section>
 <hr class="docutils"/>
 <section id="rotate">
 <h3>ROTATE<a class="headerlink" href="#rotate" title="Permalink to this headline">¶</a></h3>
-<p id="parameter-8771743710446-angle"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">angle</span> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
-<p id="parameter-8771743710446-color-sampler"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-sampler</span> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
+<p id="object-colorsampler-template-library-image-rotate-parameter-angle"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-rotate-parameter-angle"><span class="std std-ref">angle</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
+<p id="object-colorsampler-template-library-image-rotate-parameter-color-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-rotate-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
 </section>
 <hr class="docutils"/>
 <section id="translate">
 <h3>TRANSLATE<a class="headerlink" href="#translate" title="Permalink to this headline">¶</a></h3>
-<p id="parameter-8771743710743-color-sampler"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-sampler</span> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
-<p id="parameter-8771743710743-x"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">x</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p id="parameter-8771743710743-z"><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">z</span> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
+<p id="object-colorsampler-template-library-image-translate-parameter-color-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-translate-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
+<p id="object-colorsampler-template-library-image-translate-parameter-x"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-translate-parameter-x"><span class="std std-ref">x</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
+<p id="object-colorsampler-template-library-image-translate-parameter-z"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-translate-parameter-z"><span class="std std-ref">z</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 </section>
 </section>
 <section id="uses">
 <h2>Uses<a class="headerlink" href="#uses" title="Permalink to this headline">¶</a></h2>
 <p>Used by 6 parameters:</p>
 <ul>
-<li><p><a class="reference internal" href="NoiseSampler.html#parameter-8771743710410-color-sampler"><span class="std std-ref">In CHANNEL in NoiseSampler</span></a>:</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-sampler</span> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a> - The color sampler to extract channel values from.</p>
+<li><p><a class="reference internal" href="#object-colorsampler-template-library-image-single-image-parameter-outside-sampler"><span class="std std-ref">In SINGLE_IMAGE in ColorSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-single-image-parameter-outside-sampler"><span class="std std-ref">outside-sampler</span></a> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a> - The sampler that provides colors for coordinates outside the bounds of the <code class="docutils literal notranslate"><span class="pre">Image</span></code> .</p>
 </li>
-<li><p><a class="reference internal" href="#parameter-8771743710743-color-sampler"><span class="std std-ref">In TRANSLATE in ColorSampler</span></a>:</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-sampler</span> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
+<li><p><a class="reference internal" href="BiomeProvider.html#object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler"><span class="std std-ref">In IMAGE in BiomeProvider</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="BiomeProvider.html#object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
 </li>
-<li><p><a class="reference internal" href="#parameter-8771743710713-outside-sampler"><span class="std std-ref">In SINGLE_IMAGE in ColorSampler</span></a>:</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">outside-sampler</span> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a> - The sampler that provides colors for coordinates outside the bounds of the <code class="docutils literal notranslate"><span class="pre">Image</span></code> .</p>
+<li><p><a class="reference internal" href="NoiseSampler.html#object-noisesampler-template-library-image-channel-parameter-color-sampler"><span class="std std-ref">In CHANNEL in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="NoiseSampler.html#object-noisesampler-template-library-image-channel-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a> - The color sampler to extract channel values from.</p>
 </li>
-<li><p><a class="reference internal" href="#parameter-8771743710446-color-sampler"><span class="std std-ref">In ROTATE in ColorSampler</span></a>:</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-sampler</span> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
+<li><p><a class="reference internal" href="#object-colorsampler-template-library-image-rotate-parameter-color-sampler"><span class="std std-ref">In ROTATE in ColorSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-rotate-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
 </li>
-<li><p><a class="reference internal" href="Source.html#parameter-8771743599692-color-sampler"><span class="std std-ref">In IMAGE in Source</span></a>:</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-sampler</span> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
+<li><p><a class="reference internal" href="Source.html#object-source-template-pipeline-image-image-parameter-color-sampler"><span class="std std-ref">In IMAGE in Source</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Source.html#object-source-template-pipeline-image-image-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
 </li>
-<li><p><a class="reference internal" href="BiomeProvider.html#parameter-8771743710233-color-sampler"><span class="std std-ref">In IMAGE in BiomeProvider</span></a>:</p>
-<p><span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">color-sampler</span> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
+<li><p><a class="reference internal" href="#object-colorsampler-template-library-image-translate-parameter-color-sampler"><span class="std std-ref">In TRANSLATE in ColorSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-colorsampler-template-library-image-translate-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="#"><span class="doc">ColorSampler</span></a></p>
 </li>
 </ul>
 </section>

@@ -4,17 +4,17 @@ PaletteLayer
 
 :superscript:`*Config object requires the 'config-palette' addon to use`
 
-.. _parameter-8771743700677-layers:
+.. _object-palettelayer-template-config-palette-map-parameter-layers:
 
-:bdg-primary:`layers` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`layers <object-palettelayer-template-config-palette-map-parameter-layers>` :doc:`/config/documentation/objects/Integer` 
 
-.. _parameter-8771743700677-materials:
+.. _object-palettelayer-template-config-palette-map-parameter-materials:
 
-:bdg-primary:`materials` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Block`\> 
+:bdg-ref-primary:`materials <object-palettelayer-template-config-palette-map-parameter-materials>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Block`\> 
 
-.. _parameter-8771743700677-sampler:
+.. _object-palettelayer-template-config-palette-map-parameter-sampler:
 
-:bdg-success:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-success:`sampler <object-palettelayer-template-config-palette-map-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 Default: ``None``
 
@@ -23,6 +23,6 @@ Uses
 
 This object is used in one place:
 
-- :ref:`In PALETTE <parameter-8771743710557-layers>`:
+- :ref:`In base in PALETTE <config-palette-template-config-palette-base-parameter-layers>`:
 
-  :bdg-primary:`layers` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/PaletteLayer`\> 
+  :bdg-ref-primary:`layers <config-palette-template-config-palette-base-parameter-layers>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/PaletteLayer`\> 

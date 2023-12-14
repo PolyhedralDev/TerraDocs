@@ -18,9 +18,9 @@ SURFACE
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-.. _parameter-8771743599926-range:
+.. _object-locator-template-config-locators-surface-parameter-range:
 
-:bdg-primary:`range` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`range <object-locator-template-config-locators-surface-parameter-range>` :doc:`/config/documentation/objects/Range` 
 
 ---------
 
@@ -29,9 +29,9 @@ TOP
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-.. _parameter-8771743599752-range:
+.. _object-locator-template-config-locators-top-parameter-range:
 
-:bdg-primary:`range` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`range <object-locator-template-config-locators-top-parameter-range>` :doc:`/config/documentation/objects/Range` 
 
 ---------
 
@@ -40,17 +40,17 @@ RANDOM
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-.. _parameter-8771743599836-amount:
+.. _object-locator-template-config-locators-random-parameter-amount:
 
-:bdg-primary:`amount` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`amount <object-locator-template-config-locators-random-parameter-amount>` :doc:`/config/documentation/objects/Range` 
 
-.. _parameter-8771743599836-height:
+.. _object-locator-template-config-locators-random-parameter-height:
 
-:bdg-primary:`height` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`height <object-locator-template-config-locators-random-parameter-height>` :doc:`/config/documentation/objects/Range` 
 
-.. _parameter-8771743599836-salt:
+.. _object-locator-template-config-locators-random-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-success:`salt <object-locator-template-config-locators-random-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``0``
 
@@ -61,21 +61,21 @@ GAUSSIAN_RANDOM
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-.. _parameter-8771743599695-amount:
+.. _object-locator-template-config-locators-gaussian_random-parameter-amount:
 
-:bdg-primary:`amount` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`amount <object-locator-template-config-locators-gaussian_random-parameter-amount>` :doc:`/config/documentation/objects/Range` 
 
-.. _parameter-8771743599695-height:
+.. _object-locator-template-config-locators-gaussian_random-parameter-height:
 
-:bdg-primary:`height` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`height <object-locator-template-config-locators-gaussian_random-parameter-height>` :doc:`/config/documentation/objects/Range` 
 
-.. _parameter-8771743599695-standard-deviation:
+.. _object-locator-template-config-locators-gaussian_random-parameter-standard-deviation:
 
-:bdg-primary:`standard-deviation` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-primary:`standard-deviation <object-locator-template-config-locators-gaussian_random-parameter-standard-deviation>` :doc:`/config/documentation/objects/Float` 
 
-.. _parameter-8771743599695-salt:
+.. _object-locator-template-config-locators-gaussian_random-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-success:`salt <object-locator-template-config-locators-gaussian_random-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``0``
 
@@ -86,13 +86,13 @@ PATTERN
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-.. _parameter-8771743599719-pattern:
+.. _object-locator-template-config-locators-pattern-parameter-pattern:
 
-:bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern` 
+:bdg-ref-primary:`pattern <object-locator-template-config-locators-pattern-parameter-pattern>` :doc:`/config/documentation/objects/Pattern` 
 
-.. _parameter-8771743599719-range:
+.. _object-locator-template-config-locators-pattern-parameter-range:
 
-:bdg-primary:`range` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`range <object-locator-template-config-locators-pattern-parameter-range>` :doc:`/config/documentation/objects/Range` 
 
 ---------
 
@@ -101,17 +101,17 @@ ADJACENT_PATTERN
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-.. _parameter-8771743599755-pattern:
+.. _object-locator-template-config-locators-adjacent_pattern-parameter-pattern:
 
-:bdg-primary:`pattern` :doc:`/config/documentation/objects/Pattern` 
+:bdg-ref-primary:`pattern <object-locator-template-config-locators-adjacent_pattern-parameter-pattern>` :doc:`/config/documentation/objects/Pattern` 
 
-.. _parameter-8771743599755-range:
+.. _object-locator-template-config-locators-adjacent_pattern-parameter-range:
 
-:bdg-primary:`range` :doc:`/config/documentation/objects/Range` 
+:bdg-ref-primary:`range <object-locator-template-config-locators-adjacent_pattern-parameter-range>` :doc:`/config/documentation/objects/Range` 
 
-.. _parameter-8771743599755-match-all:
+.. _object-locator-template-config-locators-adjacent_pattern-parameter-match-all:
 
-:bdg-success:`match-all` :doc:`/config/documentation/objects/Boolean` 
+:bdg-ref-success:`match-all <object-locator-template-config-locators-adjacent_pattern-parameter-match-all>` :doc:`/config/documentation/objects/Boolean` 
 
 Default: ``false``
 
@@ -122,9 +122,9 @@ SAMPLER
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-.. _parameter-8771743599680-samplers:
+.. _object-locator-template-config-locators-sampler-parameter-samplers:
 
-:bdg-primary:`samplers` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/NoiseSampler`\> 
+:bdg-ref-primary:`samplers <object-locator-template-config-locators-sampler-parameter-samplers>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/NoiseSampler`\> 
 
 ---------
 
@@ -133,9 +133,9 @@ SAMPLER_3D
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-.. _parameter-8771743600628-sampler:
+.. _object-locator-template-config-locators-sampler_3d-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-locator-template-config-locators-sampler_3d-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 ---------
 
@@ -144,9 +144,9 @@ AND
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-.. _parameter-8771743599632-locators:
+.. _object-locator-template-config-locators-and-parameter-locators:
 
-:bdg-primary:`locators` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+:bdg-ref-primary:`locators <object-locator-template-config-locators-and-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
 
 ---------
 
@@ -155,9 +155,9 @@ OR
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-.. _parameter-8771743600052-locators:
+.. _object-locator-template-config-locators-or-parameter-locators:
 
-:bdg-primary:`locators` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+:bdg-ref-primary:`locators <object-locator-template-config-locators-or-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
 
 ---------
 
@@ -166,27 +166,27 @@ XOR
 
 :superscript:`*Type requires the 'config-locators' addon to use`
 
-.. _parameter-8771743599626-locators:
+.. _object-locator-template-config-locators-xor-parameter-locators:
 
-:bdg-primary:`locators` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+:bdg-ref-primary:`locators <object-locator-template-config-locators-xor-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
 
 Uses
 ====
 
 Used by 4 parameters:
 
-- :ref:`In FEATURE <parameter-8771743710341-locator>`:
+- :ref:`In XOR in Locator <object-locator-template-config-locators-xor-parameter-locators>`:
 
-  :bdg-primary:`locator` :doc:`/config/documentation/objects/Locator` 
+  :bdg-ref-primary:`locators <object-locator-template-config-locators-xor-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
 
-- :ref:`In OR in Locator <parameter-8771743600052-locators>`:
+- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-locator>`:
 
-  :bdg-primary:`locators` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+  :bdg-ref-primary:`locator <config-feature-template-config-feature-base-parameter-locator>` :doc:`/config/documentation/objects/Locator` 
 
-- :ref:`In AND in Locator <parameter-8771743599632-locators>`:
+- :ref:`In OR in Locator <object-locator-template-config-locators-or-parameter-locators>`:
 
-  :bdg-primary:`locators` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+  :bdg-ref-primary:`locators <object-locator-template-config-locators-or-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
 
-- :ref:`In XOR in Locator <parameter-8771743599626-locators>`:
+- :ref:`In AND in Locator <object-locator-template-config-locators-and-parameter-locators>`:
 
-  :bdg-primary:`locators` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+  :bdg-ref-primary:`locators <object-locator-template-config-locators-and-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 

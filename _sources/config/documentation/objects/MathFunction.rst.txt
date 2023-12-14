@@ -6,31 +6,27 @@ MathFunction
 
 A math function
 
-.. _parameter-8771743700494-expression:
+.. _object-mathfunction-template-config-noise-function-map-parameter-expression:
 
-:bdg-primary:`expression` :doc:`/config/documentation/objects/Expression` 
+:bdg-ref-primary:`expression <object-mathfunction-template-config-noise-function-map-parameter-expression>` :doc:`/config/documentation/objects/Expression` 
 
-.. _parameter-8771743700494-arguments:
+.. _object-mathfunction-template-config-noise-function-map-parameter-arguments:
 
-:bdg-success:`arguments` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> 
+:bdg-ref-success:`arguments <object-mathfunction-template-config-noise-function-map-parameter-arguments>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> 
 
 Default: ``[]``
 
-.. _parameter-8771743700494-functions:
+.. _object-mathfunction-template-config-noise-function-map-parameter-functions:
 
-:bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+:bdg-ref-success:`functions <object-mathfunction-template-config-noise-function-map-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
 
 Default: ``{}``
 
 Uses
 ====
 
-Used by 2 parameters:
+This object is used in one place:
 
-- :ref:`In MathFunction <parameter-8771743700494-functions>`:
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-functions>`:
 
-  :bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
-
-- :ref:`In EXPRESSION in NoiseSampler <parameter-8771743599806-functions>`:
-
-  :bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+  :bdg-ref-success:`functions <object-noisesampler-template-config-noise-function-expression-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 

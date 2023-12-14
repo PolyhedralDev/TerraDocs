@@ -9,6 +9,6 @@ Uses
 
 This object is used in one place:
 
-- :ref:`In FEATURE <parameter-8771743710341-structures.structures>`:
+- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-structures.structures>`:
 
-  :bdg-primary:`structures.structures` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Structure`\> 
+  :bdg-ref-primary:`structures.structures <config-feature-template-config-feature-base-parameter-structures.structures>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Structure`\> 

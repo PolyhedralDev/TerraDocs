@@ -6,30 +6,30 @@ PALETTE
 
 This config type creates instances of :doc:`/config/documentation/objects/Palette`.
 
-.. _parameter-8771743710923-extends:
+.. _config-palette-template-base-global-parameter-extends:
 
-:bdg-primary:`extends` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> - A list of other ``PALETTE`` configs to copy parameters from.
+:bdg-ref-primary:`extends <config-palette-template-base-global-parameter-extends>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> - A list of other ``PALETTE`` configs to copy parameters from.
 
 Parameters from extended configs are only used if they have not already been defined in the current config. Configs listed first take precedence. This allows for re-use of parameters across multiple config files.
 
-.. _parameter-8771743710923-id:
+.. _config-palette-template-base-global-parameter-id:
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String` - An identifier used to reference this config from other configs.
+:bdg-ref-primary:`id <config-palette-template-base-global-parameter-id>` :doc:`/config/documentation/objects/String` - An identifier used to reference this config from other configs.
 
 The instance of :doc:`/config/documentation/objects/Palette` created by a config using this config type is identified using this parameter.
 
 ---------
 
-.. _parameter-8771743710557-id:
+.. _config-palette-template-config-palette-base-parameter-id:
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+:bdg-ref-primary:`id <config-palette-template-config-palette-base-parameter-id>` :doc:`/config/documentation/objects/String` 
 
-.. _parameter-8771743710557-layers:
+.. _config-palette-template-config-palette-base-parameter-layers:
 
-:bdg-primary:`layers` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/PaletteLayer`\> 
+:bdg-ref-primary:`layers <config-palette-template-config-palette-base-parameter-layers>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/PaletteLayer`\> 
 
-.. _parameter-8771743710557-sampler:
+.. _config-palette-template-config-palette-base-parameter-sampler:
 
-:bdg-success:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-success:`sampler <config-palette-template-config-palette-base-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 Default: ``Constant 0``

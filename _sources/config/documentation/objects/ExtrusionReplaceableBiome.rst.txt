@@ -9,10 +9,10 @@ Uses
 
 Used by 2 parameters:
 
-- :ref:`In REPLACE in Extrusion <parameter-8771743711136-to>`:
+- :ref:`In SET in Extrusion <object-extrusion-template-biome-provider-extrusion-set-parameter-to>`:
 
-  :bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
+  :bdg-ref-primary:`to <object-extrusion-template-biome-provider-extrusion-set-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
 
-- :ref:`In SET in Extrusion <parameter-8771743710419-to>`:
+- :ref:`In REPLACE in Extrusion <object-extrusion-template-biome-provider-extrusion-replace-parameter-to>`:
 
-  :bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
+  :bdg-ref-primary:`to <object-extrusion-template-biome-provider-extrusion-replace-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 

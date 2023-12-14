@@ -26,21 +26,21 @@ Loads a singular image. For very large images that you may have issues loading,
 try the `STITCHED_BITMAP`_ type instead.
 
 
-.. _parameter-8771743710776-columns:
+.. _object-image-template-library-image-bitmap-parameter-columns:
 
-:bdg-primary:`columns` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`columns <object-image-template-library-image-bitmap-parameter-columns>` :doc:`/config/documentation/objects/Integer` 
 
-.. _parameter-8771743710776-path-format:
+.. _object-image-template-library-image-bitmap-parameter-path-format:
 
-:bdg-primary:`path-format` :doc:`/config/documentation/objects/String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+:bdg-ref-primary:`path-format <object-image-template-library-image-bitmap-parameter-path-format>` :doc:`/config/documentation/objects/String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
 
-.. _parameter-8771743710776-rows:
+.. _object-image-template-library-image-bitmap-parameter-rows:
 
-:bdg-primary:`rows` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`rows <object-image-template-library-image-bitmap-parameter-rows>` :doc:`/config/documentation/objects/Integer` 
 
-.. _parameter-8771743710776-zero-indexed:
+.. _object-image-template-library-image-bitmap-parameter-zero-indexed:
 
-:bdg-success:`zero-indexed` :doc:`/config/documentation/objects/Boolean` 
+:bdg-ref-success:`zero-indexed <object-image-template-library-image-bitmap-parameter-zero-indexed>` :doc:`/config/documentation/objects/Boolean` 
 
 Default: ``false``
 
@@ -55,13 +55,13 @@ This type is primarily used when singular images are too large to be
 loaded into memory (a limit imposed Java's ``BufferedImage`` class implementation).
 
 
-.. _parameter-8771743710311-columns:
+.. _object-image-template-library-image-stitched_bitmap-parameter-columns:
 
-:bdg-primary:`columns` :doc:`/config/documentation/objects/Integer` - How many columns of images to stitch together.
+:bdg-ref-primary:`columns <object-image-template-library-image-stitched_bitmap-parameter-columns>` :doc:`/config/documentation/objects/Integer` - How many columns of images to stitch together.
 
-.. _parameter-8771743710311-path:
+.. _object-image-template-library-image-stitched_bitmap-parameter-path:
 
-:bdg-primary:`path` :doc:`/config/documentation/objects/String` - The format string for the path to the images relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+:bdg-ref-primary:`path <object-image-template-library-image-stitched_bitmap-parameter-path>` :doc:`/config/documentation/objects/String` - The format string for the path to the images relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
 
 The file name section of the path format must contain the text ``{row}`` and ``{column}``
 indicating the sections of the file names that indicate which rows and columns the files belong to.
@@ -86,13 +86,13 @@ The ``path-format`` to stitch together the images would be:
     path-format: images/stitched-image/my-image-{row}-{column}.png
 
 
-.. _parameter-8771743710311-rows:
+.. _object-image-template-library-image-stitched_bitmap-parameter-rows:
 
-:bdg-primary:`rows` :doc:`/config/documentation/objects/Integer` - How many rows of images to stitch together.
+:bdg-ref-primary:`rows <object-image-template-library-image-stitched_bitmap-parameter-rows>` :doc:`/config/documentation/objects/Integer` - How many rows of images to stitch together.
 
-.. _parameter-8771743710311-zero-indexed:
+.. _object-image-template-library-image-stitched_bitmap-parameter-zero-indexed:
 
-:bdg-success:`zero-indexed` :doc:`/config/documentation/objects/Boolean` 
+:bdg-ref-success:`zero-indexed <object-image-template-library-image-stitched_bitmap-parameter-zero-indexed>` :doc:`/config/documentation/objects/Boolean` 
 
 Default: ``false``
 
@@ -104,14 +104,14 @@ Uses
 
 Used by 3 parameters:
 
-- :ref:`In SINGLE_IMAGE in ColorSampler <parameter-8771743710713-image>`:
+- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <object-noisesampler-template-library-image-distance_transform-parameter-image>`:
 
-  :bdg-primary:`image` :doc:`/config/documentation/objects/Image` - The image to be sampled
+  :bdg-ref-primary:`image <object-noisesampler-template-library-image-distance_transform-parameter-image>` :doc:`/config/documentation/objects/Image` 
 
-- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <parameter-8771743710512-image>`:
+- :ref:`In TILED_IMAGE in ColorSampler <object-colorsampler-template-library-image-tiled_image-parameter-image>`:
 
-  :bdg-primary:`image` :doc:`/config/documentation/objects/Image` 
+  :bdg-ref-primary:`image <object-colorsampler-template-library-image-tiled_image-parameter-image>` :doc:`/config/documentation/objects/Image` - The image to be sampled
 
-- :ref:`In TILED_IMAGE in ColorSampler <parameter-8771743710749-image>`:
+- :ref:`In SINGLE_IMAGE in ColorSampler <object-colorsampler-template-library-image-single_image-parameter-image>`:
 
-  :bdg-primary:`image` :doc:`/config/documentation/objects/Image` - The image to be sampled
+  :bdg-ref-primary:`image <object-colorsampler-template-library-image-single_image-parameter-image>` :doc:`/config/documentation/objects/Image` - The image to be sampled

@@ -25,19 +25,19 @@ Maps to each biome using its declared ``color`` parameter.
 MAP
 ---
 
-.. _parameter-8771743711001-map:
+.. _object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map:
 
-:bdg-primary:`map` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
+:bdg-ref-primary:`map <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
 
 Uses
 ====
 
 Used by 2 parameters:
 
-- :ref:`In CLOSEST in BiomeColorConverter <parameter-8771743710752-match>`:
+- :ref:`In EXACT in BiomeColorConverter <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-match>`:
 
-  :bdg-primary:`match` :doc:`/config/documentation/objects/BiomeColorMapping` 
+  :bdg-ref-primary:`match <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-match>` :doc:`/config/documentation/objects/BiomeColorMapping` 
 
-- :ref:`In EXACT in BiomeColorConverter <parameter-8771743711115-match>`:
+- :ref:`In CLOSEST in BiomeColorConverter <object-biomecolorconverter-template-biome-provider-image-v2-closest-parameter-match>`:
 
-  :bdg-primary:`match` :doc:`/config/documentation/objects/BiomeColorMapping` 
+  :bdg-ref-primary:`match <object-biomecolorconverter-template-biome-provider-image-v2-closest-parameter-match>` :doc:`/config/documentation/objects/BiomeColorMapping` 

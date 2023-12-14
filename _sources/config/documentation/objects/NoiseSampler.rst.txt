@@ -29,6 +29,99 @@ A list of available types for ``NoiseSampler`` are listed below:
 
 ---------
 
+CHANNEL
+-------
+
+:superscript:`*Type requires the 'library-image' addon to use`
+
+Outputs a channel from a color sampler.
+
+
+.. _object-noisesampler-template-library-image-channel-parameter-color-sampler:
+
+:bdg-ref-primary:`color-sampler <object-noisesampler-template-library-image-channel-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` - The color sampler to extract channel values from.
+
+.. _object-noisesampler-template-library-image-channel-parameter-normalize:
+
+:bdg-ref-success:`normalize <object-noisesampler-template-library-image-channel-parameter-normalize>` :doc:`/config/documentation/objects/Boolean` - If the channel should be normalized to range [-1, 1] or not.
+
+Default: ``true``
+
+.. _object-noisesampler-template-library-image-channel-parameter-premultiply:
+
+:bdg-ref-success:`premultiply <object-noisesampler-template-library-image-channel-parameter-premultiply>` :doc:`/config/documentation/objects/Boolean` - Whether to multiply color channels by the alpha channel or not.
+
+Default: ``false``
+
+If you are expecting pixel transparency to reduce the output value then this should be set to true.
+
+
+---------
+
+DISTANCE_TRANSFORM
+------------------
+
+:superscript:`*Type requires the 'library-image' addon to use`
+
+Returns the result of a `distance transform <https://homepages.inf.ed.ac.uk/rbf/HIPR2/distance.htm>`_ on an image.
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-image:
+
+:bdg-ref-primary:`image <object-noisesampler-template-library-image-distance_transform-parameter-image>` :doc:`/config/documentation/objects/Image` 
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-channel:
+
+:bdg-ref-success:`channel <object-noisesampler-template-library-image-distance_transform-parameter-channel>` Channel 
+
+Default: ``GRAYSCALE``
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-clamp-to-max-edge:
+
+:bdg-ref-success:`clamp-to-max-edge <object-noisesampler-template-library-image-distance_transform-parameter-clamp-to-max-edge>` :doc:`/config/documentation/objects/Boolean` 
+
+Default: ``false``
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-cost-function:
+
+:bdg-ref-success:`cost-function <object-noisesampler-template-library-image-distance_transform-parameter-cost-function>` :doc:`/config/documentation/objects/String` 
+
+Default: ``Channel``
+
+Valid values:
+
+- ``Channel``
+- ``Threshold``
+- ``ThresholdEdge``
+- ``ThresholdEdgeSigned``
+
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-invert-threshold:
+
+:bdg-ref-success:`invert-threshold <object-noisesampler-template-library-image-distance_transform-parameter-invert-threshold>` :doc:`/config/documentation/objects/Boolean` 
+
+Default: ``false``
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-normalization:
+
+:bdg-ref-success:`normalization <object-noisesampler-template-library-image-distance_transform-parameter-normalization>` :doc:`/config/documentation/objects/String` 
+
+Default: ``None``
+
+Valid values:
+
+- ``None``
+- ``Linear``
+- ``SmoothPreserveZero``
+
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-threshold:
+
+:bdg-ref-success:`threshold <object-noisesampler-template-library-image-distance_transform-parameter-threshold>` :doc:`/config/documentation/objects/Integer` 
+
+Default: ``127``
+
+---------
+
 WHITE_NOISE
 -----------
 
@@ -41,15 +134,15 @@ Produces `White noise`_.
 .. _White noise: https://en.wikipedia.org/wiki/White_noise
 
 
-.. _parameter-8771743600157-frequency:
+.. _object-noisesampler-template-config-noise-function-white_noise-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-white_noise-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-.. _parameter-8771743600157-salt:
+.. _object-noisesampler-template-config-noise-function-white_noise-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-white_noise-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 Default: ``0``
 
@@ -64,15 +157,15 @@ Identical to `WHITE_NOISE`_, but redistributed to only produce positive
 values for convenience.
 
 
-.. _parameter-8771743600271-frequency:
+.. _object-noisesampler-template-config-noise-function-positive_white_noise-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-positive_white_noise-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-.. _parameter-8771743600271-salt:
+.. _object-noisesampler-template-config-noise-function-positive_white_noise-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-positive_white_noise-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 Default: ``0``
 
@@ -88,15 +181,15 @@ Identical to `WHITE_NOISE`_, but redistributed to follow a `gaussian distributio
 .. _gaussian distribution: https://en.wikipedia.org/wiki/Normal_distribution
 
 
-.. _parameter-8771743600457-frequency:
+.. _object-noisesampler-template-config-noise-function-gaussian-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-gaussian-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-.. _parameter-8771743600457-salt:
+.. _object-noisesampler-template-config-noise-function-gaussian-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-gaussian-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 Default: ``0``
 
@@ -112,15 +205,15 @@ Produces `Perlin noise`_.
 .. _Perlin noise: https://en.wikipedia.org/wiki/Perlin_noise
 
 
-.. _parameter-8771743600382-frequency:
+.. _object-noisesampler-template-config-noise-function-perlin-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-perlin-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-.. _parameter-8771743600382-salt:
+.. _object-noisesampler-template-config-noise-function-perlin-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-perlin-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 Default: ``0``
 
@@ -142,15 +235,15 @@ Produces `Simplex noise`_.
 .. _Simplex noise: https://en.wikipedia.org/wiki/Simplex_noise
 
 
-.. _parameter-8771743600556-frequency:
+.. _object-noisesampler-template-config-noise-function-simplex-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-simplex-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-.. _parameter-8771743600556-salt:
+.. _object-noisesampler-template-config-noise-function-simplex-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-simplex-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 Default: ``0``
 
@@ -169,15 +262,15 @@ Produces `Simplex noise`_ (using the algorithm from OpenSimplex2_).
 .. image:: /img/concepts/noise/opensimplex2_64x64.png
 
 
-.. _parameter-8771743600316-frequency:
+.. _object-noisesampler-template-config-noise-function-open_simplex_2-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-open_simplex_2-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-.. _parameter-8771743600316-salt:
+.. _object-noisesampler-template-config-noise-function-open_simplex_2-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-open_simplex_2-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 Default: ``0``
 
@@ -194,15 +287,15 @@ Produces smoother `Simplex noise`_ (using the algorithm from OpenSimplex2_).
 .. _OpenSimplex2: https://github.com/KdotJPG/OpenSimplex2
 
 
-.. _parameter-8771743600460-frequency:
+.. _object-noisesampler-template-config-noise-function-open_simplex_2s-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-open_simplex_2s-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-.. _parameter-8771743600460-salt:
+.. _object-noisesampler-template-config-noise-function-open_simplex_2s-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-open_simplex_2s-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 Default: ``0``
 
@@ -221,15 +314,15 @@ Produces `Value noise`_ using `linear interpolation`_ (`bilinear`_ for 2D, `tril
 .. _trilinear: https://en.wikipedia.org/wiki/Trilinear_interpolation
 
 
-.. _parameter-8771743600592-frequency:
+.. _object-noisesampler-template-config-noise-function-value-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-value-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-.. _parameter-8771743600592-salt:
+.. _object-noisesampler-template-config-noise-function-value-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-value-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 Default: ``0``
 
@@ -248,15 +341,15 @@ Identical to `VALUE`_ except using `cubic interpolation`_ (`bicubic`_ for 2D, `t
 .. _tricubic: https://en.wikipedia.org/wiki/Tricubic_interpolation
 
 
-.. _parameter-8771743600577-frequency:
+.. _object-noisesampler-template-config-noise-function-value_cubic-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-value_cubic-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-.. _parameter-8771743600577-salt:
+.. _object-noisesampler-template-config-noise-function-value_cubic-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-value_cubic-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 Default: ``0``
 
@@ -277,45 +370,45 @@ Produces `Gabor noise`_.
     The GABOR sampler is significantly slower at producing noise compared to other noise samplers.
 
 
-.. _parameter-8771743600412-deviation:
+.. _object-noisesampler-template-config-noise-function-gabor-parameter-deviation:
 
-:bdg-success:`deviation` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`deviation <object-noisesampler-template-config-noise-function-gabor-parameter-deviation>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``1.0``
 
-.. _parameter-8771743600412-frequency:
+.. _object-noisesampler-template-config-noise-function-gabor-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-gabor-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-.. _parameter-8771743600412-frequency_0:
+.. _object-noisesampler-template-config-noise-function-gabor-parameter-frequency_0:
 
-:bdg-success:`frequency_0` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`frequency_0 <object-noisesampler-template-config-noise-function-gabor-parameter-frequency_0>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``0.625``
 
-.. _parameter-8771743600412-impulses:
+.. _object-noisesampler-template-config-noise-function-gabor-parameter-impulses:
 
-:bdg-success:`impulses` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`impulses <object-noisesampler-template-config-noise-function-gabor-parameter-impulses>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``64.0``
 
-.. _parameter-8771743600412-isotropic:
+.. _object-noisesampler-template-config-noise-function-gabor-parameter-isotropic:
 
-:bdg-success:`isotropic` :doc:`/config/documentation/objects/Boolean` 
+:bdg-ref-success:`isotropic <object-noisesampler-template-config-noise-function-gabor-parameter-isotropic>` :doc:`/config/documentation/objects/Boolean` 
 
 Default: ``true``
 
-.. _parameter-8771743600412-rotation:
+.. _object-noisesampler-template-config-noise-function-gabor-parameter-rotation:
 
-:bdg-success:`rotation` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`rotation <object-noisesampler-template-config-noise-function-gabor-parameter-rotation>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``0.25``
 
-.. _parameter-8771743600412-salt:
+.. _object-noisesampler-template-config-noise-function-gabor-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-gabor-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 Default: ``0``
 
@@ -353,9 +446,9 @@ Produces cellular / `Worley noise`_.
 - :gold:`Gold line` - Distance to the third closest cell origin.
 
 
-.. _parameter-8771743600196-distance:
+.. _object-noisesampler-template-config-noise-function-cellular-parameter-distance:
 
-:bdg-success:`distance` :doc:`/config/documentation/objects/String` - The method used for calculating the distance from the cell origin.
+:bdg-ref-success:`distance <object-noisesampler-template-config-noise-function-cellular-parameter-distance>` :doc:`/config/documentation/objects/String` - The method used for calculating the distance from the cell origin.
 
 Default: ``EuclideanSq``
 
@@ -367,15 +460,15 @@ Default: ``EuclideanSq``
 - ``Hybrid``
 
 
-.. _parameter-8771743600196-frequency:
+.. _object-noisesampler-template-config-noise-function-cellular-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-cellular-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
 
 Default: ``0.02``
 
-.. _parameter-8771743600196-jitter:
+.. _object-noisesampler-template-config-noise-function-cellular-parameter-jitter:
 
-:bdg-success:`jitter` :doc:`/config/documentation/objects/Float` - Determines how far cell origins can randomly spread out from the center of cells.
+:bdg-ref-success:`jitter <object-noisesampler-template-config-noise-function-cellular-parameter-jitter>` :doc:`/config/documentation/objects/Float` - Determines how far cell origins can randomly spread out from the center of cells.
 
 Default: ``1``
 
@@ -383,15 +476,15 @@ A jitter of ``0`` places cell origins exactly in the center of each cell, result
 Values between ``-1`` and ``1`` are recommended, as values outside that range may produce artifacts.
 
 
-.. _parameter-8771743600196-lookup:
+.. _object-noisesampler-template-config-noise-function-cellular-parameter-lookup:
 
-:bdg-success:`lookup` :doc:`/config/documentation/objects/NoiseSampler` - The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
+:bdg-ref-success:`lookup <object-noisesampler-template-config-noise-function-cellular-parameter-lookup>` :doc:`/config/documentation/objects/NoiseSampler` - The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
 
 Default: ```OPEN_SIMPLEX_2`_ sampler``
 
-.. _parameter-8771743600196-return:
+.. _object-noisesampler-template-config-noise-function-cellular-parameter-return:
 
-:bdg-success:`return` :doc:`/config/documentation/objects/String` - The function the sampler will use to calculate the noise.
+:bdg-ref-success:`return <object-noisesampler-template-config-noise-function-cellular-parameter-return>` :doc:`/config/documentation/objects/String` - The function the sampler will use to calculate the noise.
 
 Default: ``Distance``
 
@@ -428,9 +521,9 @@ Types:
 - ``Distance3Div`` - Returns ``d1 / d3``.
 
 
-.. _parameter-8771743600196-salt:
+.. _object-noisesampler-template-config-noise-function-cellular-parameter-salt:
 
-:bdg-success:`salt` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+:bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-cellular-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 Default: ``0``
 
@@ -444,9 +537,9 @@ IMAGE
 Outputs the channel of an image that is tiled, redistributed from the channel range [0-255] to output range [-1, 1].
 
 
-.. _parameter-8771743600160-channel:
+.. _object-noisesampler-template-config-noise-function-image-parameter-channel:
 
-:bdg-primary:`channel` :doc:`/config/documentation/objects/String` - Which channel of the image to output.
+:bdg-ref-primary:`channel <object-noisesampler-template-config-noise-function-image-parameter-channel>` :doc:`/config/documentation/objects/String` - Which channel of the image to output.
 
 Valid channels:
 
@@ -493,9 +586,9 @@ Valid channels:
     \*The alpha channel is all white because there is no transparency in the original image.
 
 
-.. _parameter-8771743600160-frequency:
+.. _object-noisesampler-template-config-noise-function-image-parameter-frequency:
 
-:bdg-primary:`frequency` :doc:`/config/documentation/objects/Float` - :ref:`Frequency <sampler-frequency>` of the image. Determines how the image gets scaled.
+:bdg-ref-primary:`frequency <object-noisesampler-template-config-noise-function-image-parameter-frequency>` :doc:`/config/documentation/objects/Float` - :ref:`Frequency <sampler-frequency>` of the image. Determines how the image gets scaled.
 
 A frequency of ``1.0`` means 1 pixel = 1 block, a frequency of ``2.0`` means 2 pixels = 1 block.
 
@@ -525,9 +618,9 @@ A frequency of ``1.0`` means 1 pixel = 1 block, a frequency of ``2.0`` means 2 p
     ``0.25`` frequency = ``0.25 pixels = 1 block`` or ``1 pixel = 4 blocks`` (as demonstrated above using a block grid).
 
 
-.. _parameter-8771743600160-image:
+.. _object-noisesampler-template-config-noise-function-image-parameter-image:
 
-:bdg-primary:`image` :doc:`/config/documentation/objects/String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+:bdg-ref-primary:`image <object-noisesampler-template-config-noise-function-image-parameter-image>` :doc:`/config/documentation/objects/String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
 
 Example path: `path/to/the/image.png`
 
@@ -587,9 +680,9 @@ Outputs a constant value, regardless of the inputs. Typically used in cases wher
 don't want the sampler to do anything.
 
 
-.. _parameter-8771743600217-value:
+.. _object-noisesampler-template-config-noise-function-constant-parameter-value:
 
-:bdg-success:`value` :doc:`/config/documentation/objects/Float` - The value to be outputted.
+:bdg-ref-success:`value <object-noisesampler-template-config-noise-function-constant-parameter-value>` :doc:`/config/documentation/objects/Float` - The value to be outputted.
 
 Default: ``0.0``
 
@@ -603,17 +696,17 @@ DOMAIN_WARP
 Warps a sampler by another sampler. See :ref:`Domain Warping <domain-warping>` for more information.
 
 
-.. _parameter-8771743600166-sampler:
+.. _object-noisesampler-template-config-noise-function-domain_warp-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be warped.
+:bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-domain_warp-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be warped.
 
-.. _parameter-8771743600166-warp:
+.. _object-noisesampler-template-config-noise-function-domain_warp-parameter-warp:
 
-:bdg-primary:`warp` :doc:`/config/documentation/objects/NoiseSampler` - The sampler that determines warping.
+:bdg-ref-primary:`warp <object-noisesampler-template-config-noise-function-domain_warp-parameter-warp>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler that determines warping.
 
-.. _parameter-8771743600166-amplitude:
+.. _object-noisesampler-template-config-noise-function-domain_warp-parameter-amplitude:
 
-:bdg-success:`amplitude` :doc:`/config/documentation/objects/Float` - How much warping to apply.
+:bdg-ref-success:`amplitude <object-noisesampler-template-config-noise-function-domain_warp-parameter-amplitude>` :doc:`/config/documentation/objects/Float` - How much warping to apply.
 
 Default: ``1.0``
 
@@ -624,23 +717,23 @@ KERNEL
 
 :superscript:`*Type requires the 'config-noise-function' addon to use`
 
-.. _parameter-8771743600502-kernel:
+.. _object-noisesampler-template-config-noise-function-kernel-parameter-kernel:
 
-:bdg-primary:`kernel` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Float`\>> 
+:bdg-ref-primary:`kernel <object-noisesampler-template-config-noise-function-kernel-parameter-kernel>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Float`\>> 
 
-.. _parameter-8771743600502-sampler:
+.. _object-noisesampler-template-config-noise-function-kernel-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-kernel-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743600502-factor:
+.. _object-noisesampler-template-config-noise-function-kernel-parameter-factor:
 
-:bdg-success:`factor` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`factor <object-noisesampler-template-config-noise-function-kernel-parameter-factor>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``1.0``
 
-.. _parameter-8771743600502-frequency:
+.. _object-noisesampler-template-config-noise-function-kernel-parameter-frequency:
 
-:bdg-success:`frequency` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-kernel-parameter-frequency>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``1.0``
 
@@ -657,19 +750,19 @@ for use as a terrain sampler.
 .. _SDF: https://en.wikipedia.org/wiki/Signed_distance_function
 
 
-.. _parameter-8771743600115-base:
+.. _object-noisesampler-template-config-noise-function-linear_heightmap-parameter-base:
 
-:bdg-primary:`base` :doc:`/config/documentation/objects/Float` - The base y level of the terrain.
+:bdg-ref-primary:`base <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-base>` :doc:`/config/documentation/objects/Float` - The base y level of the terrain.
 
-.. _parameter-8771743600115-sampler:
+.. _object-noisesampler-template-config-noise-function-linear_heightmap-parameter-sampler:
 
-:bdg-success:`sampler` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be used as a heightmap.
+:bdg-ref-success:`sampler <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be used as a heightmap.
 
 Default: ```CONSTANT`_ sampler``
 
-.. _parameter-8771743600115-scale:
+.. _object-noisesampler-template-config-noise-function-linear_heightmap-parameter-scale:
 
-:bdg-success:`scale` :doc:`/config/documentation/objects/Float` - Scales the height of the heightmap.
+:bdg-ref-success:`scale <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-scale>` :doc:`/config/documentation/objects/Float` - Scales the height of the heightmap.
 
 Default: ``1.0``
 
@@ -680,31 +773,31 @@ FBM
 
 :superscript:`*Type requires the 'config-noise-function' addon to use`
 
-.. _parameter-8771743600424-sampler:
+.. _object-noisesampler-template-config-noise-function-fbm-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-fbm-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743600424-gain:
+.. _object-noisesampler-template-config-noise-function-fbm-parameter-gain:
 
-:bdg-success:`gain` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`gain <object-noisesampler-template-config-noise-function-fbm-parameter-gain>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``0.5``
 
-.. _parameter-8771743600424-lacunarity:
+.. _object-noisesampler-template-config-noise-function-fbm-parameter-lacunarity:
 
-:bdg-success:`lacunarity` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`lacunarity <object-noisesampler-template-config-noise-function-fbm-parameter-lacunarity>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``2.0``
 
-.. _parameter-8771743600424-octaves:
+.. _object-noisesampler-template-config-noise-function-fbm-parameter-octaves:
 
-:bdg-success:`octaves` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-success:`octaves <object-noisesampler-template-config-noise-function-fbm-parameter-octaves>` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``3``
 
-.. _parameter-8771743600424-weighted-strength:
+.. _object-noisesampler-template-config-noise-function-fbm-parameter-weighted-strength:
 
-:bdg-success:`weighted-strength` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`weighted-strength <object-noisesampler-template-config-noise-function-fbm-parameter-weighted-strength>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``0.0``
 
@@ -715,37 +808,37 @@ PING_PONG
 
 :superscript:`*Type requires the 'config-noise-function' addon to use`
 
-.. _parameter-8771743600175-sampler:
+.. _object-noisesampler-template-config-noise-function-ping_pong-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-ping_pong-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743600175-gain:
+.. _object-noisesampler-template-config-noise-function-ping_pong-parameter-gain:
 
-:bdg-success:`gain` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`gain <object-noisesampler-template-config-noise-function-ping_pong-parameter-gain>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``0.5``
 
-.. _parameter-8771743600175-lacunarity:
+.. _object-noisesampler-template-config-noise-function-ping_pong-parameter-lacunarity:
 
-:bdg-success:`lacunarity` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`lacunarity <object-noisesampler-template-config-noise-function-ping_pong-parameter-lacunarity>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``2.0``
 
-.. _parameter-8771743600175-octaves:
+.. _object-noisesampler-template-config-noise-function-ping_pong-parameter-octaves:
 
-:bdg-success:`octaves` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-success:`octaves <object-noisesampler-template-config-noise-function-ping_pong-parameter-octaves>` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``3``
 
-.. _parameter-8771743600175-ping-pong:
+.. _object-noisesampler-template-config-noise-function-ping_pong-parameter-ping-pong:
 
-:bdg-success:`ping-pong` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`ping-pong <object-noisesampler-template-config-noise-function-ping_pong-parameter-ping-pong>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``2.0``
 
-.. _parameter-8771743600175-weighted-strength:
+.. _object-noisesampler-template-config-noise-function-ping_pong-parameter-weighted-strength:
 
-:bdg-success:`weighted-strength` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`weighted-strength <object-noisesampler-template-config-noise-function-ping_pong-parameter-weighted-strength>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``0.0``
 
@@ -756,31 +849,31 @@ RIDGED
 
 :superscript:`*Type requires the 'config-noise-function' addon to use`
 
-.. _parameter-8771743600100-sampler:
+.. _object-noisesampler-template-config-noise-function-ridged-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-ridged-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743600100-gain:
+.. _object-noisesampler-template-config-noise-function-ridged-parameter-gain:
 
-:bdg-success:`gain` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`gain <object-noisesampler-template-config-noise-function-ridged-parameter-gain>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``0.5``
 
-.. _parameter-8771743600100-lacunarity:
+.. _object-noisesampler-template-config-noise-function-ridged-parameter-lacunarity:
 
-:bdg-success:`lacunarity` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`lacunarity <object-noisesampler-template-config-noise-function-ridged-parameter-lacunarity>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``2.0``
 
-.. _parameter-8771743600100-octaves:
+.. _object-noisesampler-template-config-noise-function-ridged-parameter-octaves:
 
-:bdg-success:`octaves` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-success:`octaves <object-noisesampler-template-config-noise-function-ridged-parameter-octaves>` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``3``
 
-.. _parameter-8771743600100-weighted-strength:
+.. _object-noisesampler-template-config-noise-function-ridged-parameter-weighted-strength:
 
-:bdg-success:`weighted-strength` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`weighted-strength <object-noisesampler-template-config-noise-function-ridged-parameter-weighted-strength>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``0.0``
 
@@ -795,17 +888,17 @@ Redistributes the range ``[min, max]`` to ``[-1, 1]``, typically for use with we
 pools.
 
 
-.. _parameter-8771743600451-max:
+.. _object-noisesampler-template-config-noise-function-linear-parameter-max:
 
-:bdg-primary:`max` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-primary:`max <object-noisesampler-template-config-noise-function-linear-parameter-max>` :doc:`/config/documentation/objects/Float` 
 
-.. _parameter-8771743600451-min:
+.. _object-noisesampler-template-config-noise-function-linear-parameter-min:
 
-:bdg-primary:`min` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-primary:`min <object-noisesampler-template-config-noise-function-linear-parameter-min>` :doc:`/config/documentation/objects/Float` 
 
-.. _parameter-8771743600451-sampler:
+.. _object-noisesampler-template-config-noise-function-linear-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-linear-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 ---------
 
@@ -819,17 +912,17 @@ when the sampler outputs a value less than ``min``, used to constrain sampler ou
 a certain range.
 
 
-.. _parameter-8771743600139-max:
+.. _object-noisesampler-template-config-noise-function-clamp-parameter-max:
 
-:bdg-primary:`max` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-primary:`max <object-noisesampler-template-config-noise-function-clamp-parameter-max>` :doc:`/config/documentation/objects/Float` 
 
-.. _parameter-8771743600139-min:
+.. _object-noisesampler-template-config-noise-function-clamp-parameter-min:
 
-:bdg-primary:`min` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-primary:`min <object-noisesampler-template-config-noise-function-clamp-parameter-min>` :doc:`/config/documentation/objects/Float` 
 
-.. _parameter-8771743600139-sampler:
+.. _object-noisesampler-template-config-noise-function-clamp-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-clamp-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 ---------
 
@@ -841,21 +934,21 @@ NORMAL
 Redistributes normally distributed outputs to be evenly distributed.
 
 
-.. _parameter-8771743600532-mean:
+.. _object-noisesampler-template-config-noise-function-normal-parameter-mean:
 
-:bdg-primary:`mean` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-primary:`mean <object-noisesampler-template-config-noise-function-normal-parameter-mean>` :doc:`/config/documentation/objects/Float` 
 
-.. _parameter-8771743600532-sampler:
+.. _object-noisesampler-template-config-noise-function-normal-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-normal-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743600532-standard-deviation:
+.. _object-noisesampler-template-config-noise-function-normal-parameter-standard-deviation:
 
-:bdg-primary:`standard-deviation` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-primary:`standard-deviation <object-noisesampler-template-config-noise-function-normal-parameter-standard-deviation>` :doc:`/config/documentation/objects/Float` 
 
-.. _parameter-8771743600532-groups:
+.. _object-noisesampler-template-config-noise-function-normal-parameter-groups:
 
-:bdg-success:`groups` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-success:`groups <object-noisesampler-template-config-noise-function-normal-parameter-groups>` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``16384``
 
@@ -870,9 +963,9 @@ Redistributes the range ``[-1, 1]`` to ``[0, 1]``, typically used in cases where
 work with values from ``0`` to ``1``, e.g defining a threshold as a percentage of a noise sampler.
 
 
-.. _parameter-8771743600073-sampler:
+.. _object-noisesampler-template-config-noise-function-probability-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-probability-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 ---------
 
@@ -884,13 +977,13 @@ SCALE
 Evaluates ``sampler() * amplitude``.
 
 
-.. _parameter-8771743599917-amplitude:
+.. _object-noisesampler-template-config-noise-function-scale-parameter-amplitude:
 
-:bdg-primary:`amplitude` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-primary:`amplitude <object-noisesampler-template-config-noise-function-scale-parameter-amplitude>` :doc:`/config/documentation/objects/Float` 
 
-.. _parameter-8771743599917-sampler:
+.. _object-noisesampler-template-config-noise-function-scale-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-scale-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 ---------
 
@@ -903,13 +996,13 @@ Applies a step function to the sampler, where ``steps`` determines how many step
 the range ``[-1, 1]``.
 
 
-.. _parameter-8771743599929-sampler:
+.. _object-noisesampler-template-config-noise-function-posterization-parameter-sampler:
 
-:bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-posterization-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743599929-steps:
+.. _object-noisesampler-template-config-noise-function-posterization-parameter-steps:
 
-:bdg-primary:`steps` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`steps <object-noisesampler-template-config-noise-function-posterization-parameter-steps>` :doc:`/config/documentation/objects/Integer` 
 
 ---------
 
@@ -921,13 +1014,13 @@ ADD
 Evaluates ``left() + right()``.
 
 
-.. _parameter-8771743599953-left:
+.. _object-noisesampler-template-config-noise-function-add-parameter-left:
 
-:bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-add-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743599953-right:
+.. _object-noisesampler-template-config-noise-function-add-parameter-right:
 
-:bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-add-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 ---------
 
@@ -939,13 +1032,13 @@ SUB
 Evaluates ``left() - right()``.
 
 
-.. _parameter-8771743599884-left:
+.. _object-noisesampler-template-config-noise-function-sub-parameter-left:
 
-:bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-sub-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743599884-right:
+.. _object-noisesampler-template-config-noise-function-sub-parameter-right:
 
-:bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-sub-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 ---------
 
@@ -957,13 +1050,13 @@ MUL
 Evaluates ``left() * right()``.
 
 
-.. _parameter-8771743599956-left:
+.. _object-noisesampler-template-config-noise-function-mul-parameter-left:
 
-:bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-mul-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743599956-right:
+.. _object-noisesampler-template-config-noise-function-mul-parameter-right:
 
-:bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-mul-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 ---------
 
@@ -975,13 +1068,13 @@ DIV
 Evaluates ``left() / right()``.
 
 
-.. _parameter-8771743600019-left:
+.. _object-noisesampler-template-config-noise-function-div-parameter-left:
 
-:bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-div-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743600019-right:
+.. _object-noisesampler-template-config-noise-function-div-parameter-right:
 
-:bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-div-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 ---------
 
@@ -993,13 +1086,13 @@ MAX
 Evaluates ``max(left(), right())``.
 
 
-.. _parameter-8771743600094-left:
+.. _object-noisesampler-template-config-noise-function-max-parameter-left:
 
-:bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-max-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743600094-right:
+.. _object-noisesampler-template-config-noise-function-max-parameter-right:
 
-:bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-max-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 ---------
 
@@ -1011,13 +1104,13 @@ MIN
 Evaluates ``min(left(), right())``.
 
 
-.. _parameter-8771743599824-left:
+.. _object-noisesampler-template-config-noise-function-min-parameter-left:
 
-:bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-min-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _parameter-8771743599824-right:
+.. _object-noisesampler-template-config-noise-function-min-parameter-right:
 
-:bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-min-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 ---------
 
@@ -1031,9 +1124,9 @@ samplers additionally allow the use of user defined functions, including other s
 as well as constants defined within the sampler.
 
 
-.. _parameter-8771743599806-expression:
+.. _object-noisesampler-template-config-noise-function-expression-parameter-expression:
 
-:bdg-primary:`expression` :doc:`/config/documentation/objects/Expression` 
+:bdg-ref-primary:`expression <object-noisesampler-template-config-noise-function-expression-parameter-expression>` :doc:`/config/documentation/objects/Expression` 
 
 The expression to be evaluated for each sample. Variables ``x``, ``y`` (3D only), and ``z``
 act as the sampler's coordinate inputs.
@@ -1045,9 +1138,9 @@ act as the sampler's coordinate inputs.
     expression: (x * 3) / z
 
 
-.. _parameter-8771743599806-functions:
+.. _object-noisesampler-template-config-noise-function-expression-parameter-functions:
 
-:bdg-success:`functions` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+:bdg-ref-success:`functions <object-noisesampler-template-config-noise-function-expression-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
 
 Default: ``{}``
 
@@ -1068,9 +1161,9 @@ function name, and where each input coorresponds to the argument list defined by
         expression: (a + b) / c
 
 
-.. _parameter-8771743599806-samplers:
+.. _object-noisesampler-template-config-noise-function-expression-parameter-samplers:
 
-:bdg-success:`samplers` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
+:bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
 
 Default: ``{}``
 
@@ -1093,9 +1186,9 @@ the respective axis coordinates are the coordinate inputs passed to the sampler.
         type: WHITE_NOISE
 
 
-.. _parameter-8771743599806-variables:
+.. _object-noisesampler-template-config-noise-function-expression-parameter-variables:
 
-:bdg-success:`variables` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
+:bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
 
 Default: ``{}``
 
@@ -1231,256 +1324,155 @@ is most useful for providing named constants that can easily be modified if need
             - Outputs the final result.
 
 
----------
-
-CHANNEL
--------
-
-:superscript:`*Type requires the 'library-image' addon to use`
-
-Outputs a channel from a color sampler.
-
-
-.. _parameter-8771743710410-color-sampler:
-
-:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` - The color sampler to extract channel values from.
-
-.. _parameter-8771743710410-normalize:
-
-:bdg-success:`normalize` :doc:`/config/documentation/objects/Boolean` - If the channel should be normalized to range [-1, 1] or not.
-
-Default: ``true``
-
-.. _parameter-8771743710410-premultiply:
-
-:bdg-success:`premultiply` :doc:`/config/documentation/objects/Boolean` - Whether to multiply color channels by the alpha channel or not.
-
-Default: ``false``
-
-If you are expecting pixel transparency to reduce the output value then this should be set to true.
-
-
----------
-
-DISTANCE_TRANSFORM
-------------------
-
-:superscript:`*Type requires the 'library-image' addon to use`
-
-Returns the result of a `distance transform <https://homepages.inf.ed.ac.uk/rbf/HIPR2/distance.htm>`_ on an image.
-
-.. _parameter-8771743710512-image:
-
-:bdg-primary:`image` :doc:`/config/documentation/objects/Image` 
-
-.. _parameter-8771743710512-channel:
-
-:bdg-success:`channel` Channel 
-
-Default: ``GRAYSCALE``
-
-.. _parameter-8771743710512-clamp-to-max-edge:
-
-:bdg-success:`clamp-to-max-edge` :doc:`/config/documentation/objects/Boolean` 
-
-Default: ``false``
-
-.. _parameter-8771743710512-cost-function:
-
-:bdg-success:`cost-function` :doc:`/config/documentation/objects/String` 
-
-Default: ``Channel``
-
-Valid values:
-
-- ``Channel``
-- ``Threshold``
-- ``ThresholdEdge``
-- ``ThresholdEdgeSigned``
-
-
-.. _parameter-8771743710512-invert-threshold:
-
-:bdg-success:`invert-threshold` :doc:`/config/documentation/objects/Boolean` 
-
-Default: ``false``
-
-.. _parameter-8771743710512-normalization:
-
-:bdg-success:`normalization` :doc:`/config/documentation/objects/String` 
-
-Default: ``None``
-
-Valid values:
-
-- ``None``
-- ``Linear``
-- ``SmoothPreserveZero``
-
-
-.. _parameter-8771743710512-threshold:
-
-:bdg-success:`threshold` :doc:`/config/documentation/objects/Integer` 
-
-Default: ``127``
-
 Uses
 ====
 
-Used by 39 parameters:
+Used by 37 parameters:
 
-- :ref:`In SAMPLER in Source <parameter-8771743710425-sampler>`:
+- :ref:`In MUL in NoiseSampler <object-noisesampler-template-config-noise-function-mul-parameter-left>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-mul-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In SCALE in NoiseSampler <parameter-8771743599917-sampler>`:
+- :ref:`In NORMAL in NoiseSampler <object-noisesampler-template-config-noise-function-normal-parameter-sampler>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-normal-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In PING_PONG in NoiseSampler <parameter-8771743600175-sampler>`:
+- :ref:`In MUL in NoiseSampler <object-noisesampler-template-config-noise-function-mul-parameter-right>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-mul-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In MAX in NoiseSampler <parameter-8771743600094-right>`:
+- :ref:`In MIN in NoiseSampler <object-noisesampler-template-config-noise-function-min-parameter-left>`:
 
-  :bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-min-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In DimensionApplicableSampler <parameter-8771743700611-.>`:
+- :ref:`In KERNEL in NoiseSampler <object-noisesampler-template-config-noise-function-kernel-parameter-sampler>`:
 
-  :bdg-primary:`.` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-kernel-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In LINEAR_HEIGHTMAP in NoiseSampler <parameter-8771743600115-sampler>`:
+- :ref:`In SAMPLER in Distributor <object-distributor-template-config-distributors-sampler-parameter-sampler>`:
 
-  :bdg-success:`sampler` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be used as a heightmap.
+  :bdg-ref-primary:`sampler <object-distributor-template-config-distributors-sampler-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In MUL in NoiseSampler <parameter-8771743599956-left>`:
+- :ref:`In PROBABILITY in NoiseSampler <object-noisesampler-template-config-noise-function-probability-parameter-sampler>`:
 
-  :bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-probability-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In BIOME <parameter-8771743710728-terrain.sampler-2d>`:
+- :ref:`In RIDGED in NoiseSampler <object-noisesampler-template-config-noise-function-ridged-parameter-sampler>`:
 
-  :bdg-primary:`terrain.sampler-2d` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-ridged-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In DIV in NoiseSampler <parameter-8771743600019-left>`:
+- :ref:`In MAX in NoiseSampler <object-noisesampler-template-config-noise-function-max-parameter-right>`:
 
-  :bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-max-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In PIPELINE in BiomeProvider <parameter-8771743710413-blend.sampler>`:
+- :ref:`In SUB in NoiseSampler <object-noisesampler-template-config-noise-function-sub-parameter-left>`:
 
-  :bdg-success:`blend.sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-sub-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In LINEAR in NoiseSampler <parameter-8771743600451-sampler>`:
+- :ref:`In SET in Extrusion <object-extrusion-template-biome-provider-extrusion-set-parameter-sampler>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-extrusion-template-biome-provider-extrusion-set-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In CELLULAR in NoiseSampler <parameter-8771743600196-lookup>`:
+- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-structures.distribution>`:
 
-  :bdg-success:`lookup` :doc:`/config/documentation/objects/NoiseSampler` - The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
+  :bdg-ref-primary:`structures.distribution <config-feature-template-config-feature-base-parameter-structures.distribution>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In SUB in NoiseSampler <parameter-8771743599884-left>`:
+- :ref:`In LINEAR in NoiseSampler <object-noisesampler-template-config-noise-function-linear-parameter-sampler>`:
 
-  :bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-linear-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In DOMAIN_WARP in NoiseSampler <parameter-8771743600166-sampler>`:
+- :ref:`In CELLULAR in NoiseSampler <object-noisesampler-template-config-noise-function-cellular-parameter-lookup>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be warped.
+  :bdg-ref-success:`lookup <object-noisesampler-template-config-noise-function-cellular-parameter-lookup>` :doc:`/config/documentation/objects/NoiseSampler` - The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
 
-- :ref:`In CLAMP in NoiseSampler <parameter-8771743600139-sampler>`:
+- :ref:`In SAMPLER_3D in Locator <object-locator-template-config-locators-sampler_3d-parameter-sampler>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-locator-template-config-locators-sampler_3d-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In MUL in NoiseSampler <parameter-8771743599956-right>`:
+- :ref:`In FBM in NoiseSampler <object-noisesampler-template-config-noise-function-fbm-parameter-sampler>`:
 
-  :bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-fbm-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In NORMAL in NoiseSampler <parameter-8771743600532-sampler>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler-2d>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`terrain.sampler-2d <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler-2d>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In SUB in NoiseSampler <parameter-8771743599884-right>`:
+- :ref:`In SAMPLER in Locator <object-locator-template-config-locators-sampler-parameter-samplers>`:
 
-  :bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`samplers <object-locator-template-config-locators-sampler-parameter-samplers>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/NoiseSampler`\> 
 
-- :ref:`In SAMPLER_3D in Locator <parameter-8771743600628-sampler>`:
+- :ref:`In DOMAIN_WARP in NoiseSampler <object-noisesampler-template-config-noise-function-domain_warp-parameter-warp>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`warp <object-noisesampler-template-config-noise-function-domain_warp-parameter-warp>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler that determines warping.
 
-- :ref:`In ADD in NoiseSampler <parameter-8771743599953-left>`:
+- :ref:`In ADD in NoiseSampler <object-noisesampler-template-config-noise-function-add-parameter-left>`:
 
-  :bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-add-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In SET in Extrusion <parameter-8771743710419-sampler>`:
+- :ref:`In base in PALETTE <config-palette-template-config-palette-base-parameter-sampler>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-success:`sampler <config-palette-template-config-palette-base-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In SAMPLER in Distributor <parameter-8771743711130-sampler>`:
+- :ref:`In ADD in NoiseSampler <object-noisesampler-template-config-noise-function-add-parameter-right>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-add-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In BIOME <parameter-8771743710728-terrain.sampler>`:
+- :ref:`In LINEAR_HEIGHTMAP in NoiseSampler <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-sampler>`:
 
-  :bdg-primary:`terrain.sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-success:`sampler <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be used as a heightmap.
 
-- :ref:`In MIN in NoiseSampler <parameter-8771743599824-right>`:
+- :ref:`In POSTERIZATION in NoiseSampler <object-noisesampler-template-config-noise-function-posterization-parameter-sampler>`:
 
-  :bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-posterization-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In DOMAIN_WARP in NoiseSampler <parameter-8771743600166-warp>`:
+- :ref:`In SUB in NoiseSampler <object-noisesampler-template-config-noise-function-sub-parameter-right>`:
 
-  :bdg-primary:`warp` :doc:`/config/documentation/objects/NoiseSampler` - The sampler that determines warping.
+  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-sub-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In KERNEL in NoiseSampler <parameter-8771743600502-sampler>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`terrain.sampler <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In RIDGED in NoiseSampler <parameter-8771743600100-sampler>`:
+- :ref:`In MIN in NoiseSampler <object-noisesampler-template-config-noise-function-min-parameter-right>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-min-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In POSTERIZATION in NoiseSampler <parameter-8771743599929-sampler>`:
+- :ref:`In SAMPLER in Source <object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In MAX in NoiseSampler <parameter-8771743600094-left>`:
+- :ref:`In DIV in NoiseSampler <object-noisesampler-template-config-noise-function-div-parameter-right>`:
 
-  :bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-div-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In ADD in NoiseSampler <parameter-8771743599953-right>`:
+- :ref:`In DOMAIN_WARP in NoiseSampler <object-noisesampler-template-config-noise-function-domain_warp-parameter-sampler>`:
 
-  :bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-domain_warp-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be warped.
 
-- :ref:`In PROBABILITY in NoiseSampler <parameter-8771743600073-sampler>`:
+- :ref:`In CLAMP in NoiseSampler <object-noisesampler-template-config-noise-function-clamp-parameter-sampler>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-clamp-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In DIV in NoiseSampler <parameter-8771743600019-right>`:
+- :ref:`In SCALE in NoiseSampler <object-noisesampler-template-config-noise-function-scale-parameter-sampler>`:
 
-  :bdg-primary:`right` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-scale-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In REPLACE in Extrusion <parameter-8771743711136-sampler>`:
+- :ref:`In DIV in NoiseSampler <object-noisesampler-template-config-noise-function-div-parameter-left>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-div-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In PaletteLayer <parameter-8771743700677-sampler>`:
+- :ref:`In PING_PONG in NoiseSampler <object-noisesampler-template-config-noise-function-ping_pong-parameter-sampler>`:
 
-  :bdg-success:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-ping_pong-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In SAMPLER in Locator <parameter-8771743599680-samplers>`:
+- :ref:`In MAX in NoiseSampler <object-noisesampler-template-config-noise-function-max-parameter-left>`:
 
-  :bdg-primary:`samplers` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/NoiseSampler`\> 
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-max-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In PALETTE <parameter-8771743710557-sampler>`:
+- :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.sampler>`:
 
-  :bdg-success:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-success:`blend.sampler <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In FBM in NoiseSampler <parameter-8771743600424-sampler>`:
+- :ref:`In REPLACE in Extrusion <object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler>`:
 
-  :bdg-primary:`sampler` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In MIN in NoiseSampler <parameter-8771743599824-left>`:
-
-  :bdg-primary:`left` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In FEATURE <parameter-8771743710341-structures.distribution>`:
-
-  :bdg-primary:`structures.distribution` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 

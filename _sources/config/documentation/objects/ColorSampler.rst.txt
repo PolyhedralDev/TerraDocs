@@ -29,9 +29,9 @@ COLOR
 Provides the same color for any input.
 
 
-.. _parameter-8771743710464-color:
+.. _object-colorsampler-template-library-image-color-parameter-color:
 
-:bdg-primary:`color` :doc:`/config/documentation/objects/ColorString` - The color to output.
+:bdg-ref-primary:`color <object-colorsampler-template-library-image-color-parameter-color>` :doc:`/config/documentation/objects/ColorString` - The color to output.
 
 ---------
 
@@ -42,17 +42,17 @@ Outputs the pixels of an ``Image``, colors for coordinates outside the bounds of
 are provided by a 'fallback' color sampler, which typically will be the `COLOR`_ type.
 
 
-.. _parameter-8771743710713-align:
+.. _object-colorsampler-template-library-image-single_image-parameter-align:
 
-:bdg-primary:`align` Alignment 
+:bdg-ref-primary:`align <object-colorsampler-template-library-image-single_image-parameter-align>` Alignment 
 
-.. _parameter-8771743710713-image:
+.. _object-colorsampler-template-library-image-single_image-parameter-image:
 
-:bdg-primary:`image` :doc:`/config/documentation/objects/Image` - The image to be sampled
+:bdg-ref-primary:`image <object-colorsampler-template-library-image-single_image-parameter-image>` :doc:`/config/documentation/objects/Image` - The image to be sampled
 
-.. _parameter-8771743710713-outside-sampler:
+.. _object-colorsampler-template-library-image-single_image-parameter-outside-sampler:
 
-:bdg-primary:`outside-sampler` :doc:`/config/documentation/objects/ColorSampler` - The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
+:bdg-ref-primary:`outside-sampler <object-colorsampler-template-library-image-single_image-parameter-outside-sampler>` :doc:`/config/documentation/objects/ColorSampler` - The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
 
 ---------
 
@@ -62,69 +62,69 @@ TILED_IMAGE
 Outputs a repeating grid of pixels sourced from the provided ``Image`` .
 
 
-.. _parameter-8771743710749-align:
+.. _object-colorsampler-template-library-image-tiled_image-parameter-align:
 
-:bdg-primary:`align` Alignment 
+:bdg-ref-primary:`align <object-colorsampler-template-library-image-tiled_image-parameter-align>` Alignment 
 
-.. _parameter-8771743710749-image:
+.. _object-colorsampler-template-library-image-tiled_image-parameter-image:
 
-:bdg-primary:`image` :doc:`/config/documentation/objects/Image` - The image to be sampled
+:bdg-ref-primary:`image <object-colorsampler-template-library-image-tiled_image-parameter-image>` :doc:`/config/documentation/objects/Image` - The image to be sampled
 
 ---------
 
 ROTATE
 ------
 
-.. _parameter-8771743710446-angle:
+.. _object-colorsampler-template-library-image-rotate-parameter-angle:
 
-:bdg-primary:`angle` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-primary:`angle <object-colorsampler-template-library-image-rotate-parameter-angle>` :doc:`/config/documentation/objects/Float` 
 
-.. _parameter-8771743710446-color-sampler:
+.. _object-colorsampler-template-library-image-rotate-parameter-color-sampler:
 
-:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
+:bdg-ref-primary:`color-sampler <object-colorsampler-template-library-image-rotate-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
 
 ---------
 
 TRANSLATE
 ---------
 
-.. _parameter-8771743710743-color-sampler:
+.. _object-colorsampler-template-library-image-translate-parameter-color-sampler:
 
-:bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
+:bdg-ref-primary:`color-sampler <object-colorsampler-template-library-image-translate-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
 
-.. _parameter-8771743710743-x:
+.. _object-colorsampler-template-library-image-translate-parameter-x:
 
-:bdg-primary:`x` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`x <object-colorsampler-template-library-image-translate-parameter-x>` :doc:`/config/documentation/objects/Integer` 
 
-.. _parameter-8771743710743-z:
+.. _object-colorsampler-template-library-image-translate-parameter-z:
 
-:bdg-primary:`z` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`z <object-colorsampler-template-library-image-translate-parameter-z>` :doc:`/config/documentation/objects/Integer` 
 
 Uses
 ====
 
 Used by 6 parameters:
 
-- :ref:`In CHANNEL in NoiseSampler <parameter-8771743710410-color-sampler>`:
+- :ref:`In SINGLE_IMAGE in ColorSampler <object-colorsampler-template-library-image-single_image-parameter-outside-sampler>`:
 
-  :bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` - The color sampler to extract channel values from.
+  :bdg-ref-primary:`outside-sampler <object-colorsampler-template-library-image-single_image-parameter-outside-sampler>` :doc:`/config/documentation/objects/ColorSampler` - The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
 
-- :ref:`In TRANSLATE in ColorSampler <parameter-8771743710743-color-sampler>`:
+- :ref:`In IMAGE in BiomeProvider <object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler>`:
 
-  :bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
+  :bdg-ref-primary:`color-sampler <object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
 
-- :ref:`In SINGLE_IMAGE in ColorSampler <parameter-8771743710713-outside-sampler>`:
+- :ref:`In CHANNEL in NoiseSampler <object-noisesampler-template-library-image-channel-parameter-color-sampler>`:
 
-  :bdg-primary:`outside-sampler` :doc:`/config/documentation/objects/ColorSampler` - The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
+  :bdg-ref-primary:`color-sampler <object-noisesampler-template-library-image-channel-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` - The color sampler to extract channel values from.
 
-- :ref:`In ROTATE in ColorSampler <parameter-8771743710446-color-sampler>`:
+- :ref:`In ROTATE in ColorSampler <object-colorsampler-template-library-image-rotate-parameter-color-sampler>`:
 
-  :bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
+  :bdg-ref-primary:`color-sampler <object-colorsampler-template-library-image-rotate-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
 
-- :ref:`In IMAGE in Source <parameter-8771743599692-color-sampler>`:
+- :ref:`In IMAGE in Source <object-source-template-pipeline-image-image-parameter-color-sampler>`:
 
-  :bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
+  :bdg-ref-primary:`color-sampler <object-source-template-pipeline-image-image-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
 
-- :ref:`In IMAGE in BiomeProvider <parameter-8771743710233-color-sampler>`:
+- :ref:`In TRANSLATE in ColorSampler <object-colorsampler-template-library-image-translate-parameter-color-sampler>`:
 
-  :bdg-primary:`color-sampler` :doc:`/config/documentation/objects/ColorSampler` 
+  :bdg-ref-primary:`color-sampler <object-colorsampler-template-library-image-translate-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 

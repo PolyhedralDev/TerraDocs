@@ -10,14 +10,14 @@ Uses
 
 Used by 3 parameters:
 
-- :ref:`In SINGLE in BiomeProvider <parameter-8771743599722-biome>`:
+- :ref:`In MAP in BiomeColorMapping <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>`:
 
-  :bdg-primary:`biome` :doc:`/config/documentation/objects/Biome` 
+  :bdg-ref-primary:`map <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
 
-- :ref:`In MAP in BiomeColorMapping <parameter-8771743711001-map>`:
+- :ref:`In SINGLE in BiomeProvider <object-biomeprovider-template-biome-provider-single-single-parameter-biome>`:
 
-  :bdg-primary:`map` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
+  :bdg-ref-primary:`biome <object-biomeprovider-template-biome-provider-single-single-parameter-biome>` :doc:`/config/documentation/objects/Biome` 
 
-- :ref:`In EXACT in BiomeColorConverter <parameter-8771743711115-else>`:
+- :ref:`In EXACT in BiomeColorConverter <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-else>`:
 
-  :bdg-primary:`else` :doc:`/config/documentation/objects/Biome` 
+  :bdg-ref-primary:`else <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-else>` :doc:`/config/documentation/objects/Biome` 

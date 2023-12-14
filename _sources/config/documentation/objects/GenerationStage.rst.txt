@@ -18,13 +18,13 @@ FEATURE
 
 :superscript:`*Type requires the 'generation-stage-feature' addon to use`
 
-.. _parameter-8771743600472-id:
+.. _object-generationstage-template-generation-stage-feature-feature-parameter-id:
 
-:bdg-primary:`id` :doc:`/config/documentation/objects/String` 
+:bdg-ref-primary:`id <object-generationstage-template-generation-stage-feature-feature-parameter-id>` :doc:`/config/documentation/objects/String` 
 
-.. _parameter-8771743600472-resolution:
+.. _object-generationstage-template-generation-stage-feature-feature-parameter-resolution:
 
-:bdg-success:`resolution` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-success:`resolution <object-generationstage-template-generation-stage-feature-feature-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``4``
 
@@ -33,6 +33,6 @@ Uses
 
 This object is used in one place:
 
-- :ref:`In pack.yml <parameter-8771743710836-stages>`:
+- :ref:`In base in pack.yml <config-pack.yml-template-base-base-parameter-stages>`:
 
-  :bdg-primary:`stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> 
+  :bdg-ref-primary:`stages <config-pack.yml-template-base-base-parameter-stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> 

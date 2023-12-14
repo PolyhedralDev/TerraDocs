@@ -32,74 +32,74 @@ Smooths out detail
 REPLACE
 -------
 
-.. _parameter-8771743710437-from:
+.. _object-stage-template-biome-provider-pipeline-v2-replace-parameter-from:
 
-:bdg-primary:`from` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-replace-parameter-from>` :doc:`/config/documentation/objects/Tag` 
 
-.. _parameter-8771743710437-to:
+.. _object-stage-template-biome-provider-pipeline-v2-replace-parameter-to:
 
-:bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+:bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
 ---------
 
 REPLACE_LIST
 ------------
 
-.. _parameter-8771743710845-default-from:
+.. _object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-from:
 
-:bdg-primary:`default-from` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`default-from <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-from>` :doc:`/config/documentation/objects/Tag` 
 
-.. _parameter-8771743710845-default-to:
+.. _object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to:
 
-:bdg-primary:`default-to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+:bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
-.. _parameter-8771743710845-to:
+.. _object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to:
 
-:bdg-primary:`to` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
+:bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
 
 ---------
 
 BORDER
 ------
 
-.. _parameter-8771743710461-from:
+.. _object-stage-template-biome-provider-pipeline-v2-border-parameter-from:
 
-:bdg-primary:`from` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border-parameter-from>` :doc:`/config/documentation/objects/Tag` 
 
-.. _parameter-8771743710461-replace:
+.. _object-stage-template-biome-provider-pipeline-v2-border-parameter-replace:
 
-:bdg-primary:`replace` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border-parameter-replace>` :doc:`/config/documentation/objects/Tag` 
 
-.. _parameter-8771743710461-to:
+.. _object-stage-template-biome-provider-pipeline-v2-border-parameter-to:
 
-:bdg-primary:`to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+:bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-border-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
 ---------
 
 BORDER_LIST
 -----------
 
-.. _parameter-8771743710395-default-replace:
+.. _object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-replace:
 
-:bdg-primary:`default-replace` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`default-replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-replace>` :doc:`/config/documentation/objects/Tag` 
 
-.. _parameter-8771743710395-default-to:
+.. _object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-to:
 
-:bdg-primary:`default-to` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+:bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
-.. _parameter-8771743710395-from:
+.. _object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from:
 
-:bdg-primary:`from` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from>` :doc:`/config/documentation/objects/Tag` 
 
-.. _parameter-8771743710395-replace:
+.. _object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace:
 
-:bdg-primary:`replace` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
+:bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
 
 Uses
 ====
 
 This object is used in one place:
 
-- :ref:`In PIPELINE in BiomeProvider <parameter-8771743710413-pipeline.stages>`:
+- :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages>`:
 
-  :bdg-primary:`pipeline.stages` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> 
+  :bdg-ref-primary:`pipeline.stages <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> 
