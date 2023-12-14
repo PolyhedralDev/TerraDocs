@@ -57,7 +57,7 @@ def map_types(type_expression, objects):
     return re.sub(r'(:doc:`[\w/]+`)(\S)', lambda match: match.group(1) + "\\" + match.group(2), unescaped) # Escape any non whitespace characters following the :doc: role
     
 class Parameter:
-    def __init__(self, name, yaml, template, object_references):
+    def __init__(self, name, yaml, template, objects):
         self.value_type = yaml["type"]
         self.summary = "- " + yaml["summary"] if "summary" in yaml else ""
         self.description = yaml.get("description")
@@ -67,7 +67,8 @@ class Parameter:
         self.template = template
         for match in re.finditer(type_expression_regex, self.value_type):
             type_string = match.group(0)
-            object_references.setdefault(type_string, set()).add(self)
+            if type_string in objects:
+                objects[type_string].add_reference(self)
             
     def ref_name(self) -> str:
         return f"parameter-{str(self.template.__hash__())}-{self.name}"
@@ -109,10 +110,10 @@ def sort_params(params: dict[str, Parameter]) -> dict[str, Parameter]:
     return dict(sorted_params)
 
 class Template:
-    def __init__(self, yaml, addon, parent, object_references, name=None):
+    def __init__(self, yaml, addon, parent, objects, name=None):
         self.name = name
         self.description = yaml.get("description")
-        self.parameters = { param_key: Parameter(param_key, param, self, object_references) for (param_key, param) in ensure_dict(yaml.get("params")).items() }
+        self.parameters = { param_key: Parameter(param_key, param, self, objects) for (param_key, param) in ensure_dict(yaml.get("params")).items() }
         self.footer = yaml.get("footer")
         self.addon = addon
         self.parent = parent
@@ -165,8 +166,8 @@ class ObjectType:
             ])
         return lines
 
-    def set_references(self, references: set[Parameter]):
-        self.references = references
+    def add_reference(self, reference: Parameter):
+        self.references.add(reference)
         
     def to_rst_lines(self, object_name, objects, include_heading: bool=True) -> list[str]:
         lines = self.header_rst_lines(object_name, objects, include_heading)
@@ -174,12 +175,12 @@ class ObjectType:
         return lines
 
 class MultiType(ObjectType):
-    def __init__(self, name, yaml, addon: str, object_references):
+    def __init__(self, name, yaml, addon: str, objects):
         super().__init__(name=name, description=yaml.get("description"), addon=addon)
         documented_types = yaml.get("types", {})
         object_types = {}
         if "map" in documented_types:
-            object_types["map"] = Template(documented_types["map"], addon, self, object_references)
+            object_types["map"] = Template(documented_types["map"], addon, self, objects)
         if "int" in documented_types:
             object_types["int"] = documented_types["int"]["description"] # Unsafe, assumes 'description' is defined
         self.types = object_types
@@ -194,7 +195,7 @@ class MultiType(ObjectType):
         return lines
 
 class Templated(ObjectType):
-    def __init__(self, name, yaml, addon: str, object_references):
+    def __init__(self, name, yaml, addon: str, objects):
         super().__init__(name=name, description=yaml.get("description"), addon=addon)
         self.templates: dict[RegistryKey, Template] = {} 
 
@@ -218,11 +219,11 @@ class Templated(ObjectType):
         return lines
 
 class Primitive(ObjectType):
-    def __init__(self, name, yaml, addon: str, object_references):
+    def __init__(self, name, yaml, addon: str, objects):
         super().__init__(name=name, description=yaml.get("description"), addon=addon)
 
 class RegistryKeyObjectType(ObjectType):
-    def __init__(self, name, yaml, addon: str, object_references):
+    def __init__(self, name, yaml, addon: str, objects):
         super().__init__(name=name, description=yaml.get("description"), addon=addon)
 
 type_keys = {
@@ -233,14 +234,14 @@ type_keys = {
 }
 
 class ConfigType():
-    def __init__(self, name, yaml, addon, object_references):
+    def __init__(self, name, yaml, addon, objects):
         yaml = ensure_dict(yaml)
         self.description = yaml.get("description")
         self.addon = addon
         self.templates = {}
         self.registers = yaml.get("registers")
         self.use_global_template = yaml.get("use-global-template", True)
-        self.object_references = object_references
+        self.objects = objects
         self.name = name
 
     def add_templates(self, templates: dict[RegistryKey, Template]):
@@ -280,7 +281,7 @@ class ConfigType():
                 }
             },
             parent=self,
-            object_references=self.object_references
+            objects=self.objects
             )),
         ]
 

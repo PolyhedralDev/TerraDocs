@@ -37,7 +37,6 @@ def setup(app):
                 addons[addon_name] = ensure_dict(addon)
 
     objects: dict[str, ObjectType] = {}
-    object_references: dict[str, set[Parameter]] = {}
     configs: dict[str, ConfigType] = {}
 
     for addon_name, addon in addons.items():
@@ -46,12 +45,12 @@ def setup(app):
             if object_name in objects:
                 raise ValueError(f"Multiple addons define a description for object {object_name}")
             object_type = object_description.get("type")
-            objects[object_name] = type_keys[object_type](object_name, object_description, addon_name, object_references)
+            objects[object_name] = type_keys[object_type](object_name, object_description, addon_name, objects)
         # Create config files
         for config_name, config_yaml in ensure_dict(addon.get("configs")).items():
             if config_name in configs:
                 raise ValueError(f"Multiple addons define a description for config type {config_name}")
-            configs[config_name] = ConfigType(config_name, config_yaml, addon_name, object_references)
+            configs[config_name] = ConfigType(config_name, config_yaml, addon_name, objects)
 
     for addon_name, addon in addons.items():
         # Add templates to templated objects
@@ -60,7 +59,7 @@ def setup(app):
                 continue
             obj = objects[object_name]
             templates = resolve_abstract_templates(ensure_dict(templates))
-            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name, obj, object_references, name=template_name) for (template_name, template) in templates.items() }
+            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name, obj, objects, name=template_name) for (template_name, template) in templates.items() }
             obj.add_templates(templates)
 
         for config_name, templates in addon.get("config-templates", {}).items(): 
@@ -68,16 +67,10 @@ def setup(app):
                 continue
             config = configs[config_name]
             templates = resolve_abstract_templates(ensure_dict(templates))
-            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name, config, object_references) for (template_name, template) in templates.items() }
+            templates = { RegistryKey(addon_name, template_name): Template(template, addon_name, config, objects) for (template_name, template) in templates.items() }
             for template_name, template in templates.items():
                 config.add_templates(templates)
                 
-    # Add references to each object
-    for object_name, references in object_references.items():
-        if object_name not in objects:
-            continue
-        objects[object_name].set_references(references)
-
     # Write objects into rst files
     objects_dir = clean_dir(os.path.join(doc_dir, 'objects'))
     for object_name, object_description in objects.items():
