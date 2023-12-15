@@ -2,32 +2,69 @@
 Range
 =====
 
-A range
+A range of integer numbers, represented with a minimum and maximum value.
 
-When a range is declared as an int ...
+The defined minimum value is inclusive of the represented values while the **maximum is not included**. For example, given a min of ``2`` and a max of ``5``, the range would represent the values ``2, 3, 4``.
 
-When a range is declared as a map ...
+
+A range can be defined as an integer representing just a singular number. For example a range defined as ``3`` is equivalent
+to a range with a min of ``3`` and a max of ``3+1`` or ``4``.
+
+When defined under a parameter called ``range`` this would look like:
+
+.. code:: yaml
+  
+  range: 3
+
+
+To specify the minimum and maximum values, a range can be defined as a map with the following parameters:
+
 
 .. _object-range-template-base-map-parameter-max:
 
-:bdg-ref-primary:`max <object-range-template-base-map-parameter-max>` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`max <object-range-template-base-map-parameter-max>` :doc:`/config/documentation/objects/Integer` - The maximum value (exclusive) of the range.
 
 .. _object-range-template-base-map-parameter-min:
 
-:bdg-ref-primary:`min <object-range-template-base-map-parameter-min>` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-primary:`min <object-range-template-base-map-parameter-min>` :doc:`/config/documentation/objects/Integer` - The minimum value (inclusive) of the range.
+
+When defined under a parameter called ``range`` this would look like:
+
+.. code:: yaml
+  
+  range:
+    min: 2
+    max: 5
+
 
 Uses
 ====
 
 Used by 14 parameters:
 
+- :ref:`In PATTERN in Locator <object-locator-template-config-locators-pattern-parameter-range>`:
+
+  :bdg-ref-primary:`range <object-locator-template-config-locators-pattern-parameter-range>` :doc:`/config/documentation/objects/Range` 
+
+- :ref:`In GAUSSIAN_RANDOM in Locator <object-locator-template-config-locators-gaussian_random-parameter-height>`:
+
+  :bdg-ref-primary:`height <object-locator-template-config-locators-gaussian_random-parameter-height>` :doc:`/config/documentation/objects/Range` 
+
+- :ref:`In ADJACENT_PATTERN in Locator <object-locator-template-config-locators-adjacent_pattern-parameter-range>`:
+
+  :bdg-ref-primary:`range <object-locator-template-config-locators-adjacent_pattern-parameter-range>` :doc:`/config/documentation/objects/Range` 
+
 - :ref:`In SURFACE in Locator <object-locator-template-config-locators-surface-parameter-range>`:
 
   :bdg-ref-primary:`range <object-locator-template-config-locators-surface-parameter-range>` :doc:`/config/documentation/objects/Range` 
 
-- :ref:`In RANDOM in Locator <object-locator-template-config-locators-random-parameter-height>`:
+- :ref:`In MATCH_SET in Pattern <object-pattern-template-config-locators-match_set-parameter-offset>`:
 
-  :bdg-ref-primary:`height <object-locator-template-config-locators-random-parameter-height>` :doc:`/config/documentation/objects/Range` 
+  :bdg-ref-primary:`offset <object-pattern-template-config-locators-match_set-parameter-offset>` :doc:`/config/documentation/objects/Range` 
+
+- :ref:`In TOP in Locator <object-locator-template-config-locators-top-parameter-range>`:
+
+  :bdg-ref-primary:`range <object-locator-template-config-locators-top-parameter-range>` :doc:`/config/documentation/objects/Range` 
 
 - :ref:`In SET in Extrusion <object-extrusion-template-biome-provider-extrusion-set-parameter-range>`:
 
@@ -37,42 +74,26 @@ Used by 14 parameters:
 
   :bdg-ref-primary:`range <object-extrusion-template-biome-provider-extrusion-replace-parameter-range>` :doc:`/config/documentation/objects/Range` 
 
-- :ref:`In TOP in Locator <object-locator-template-config-locators-top-parameter-range>`:
+- :ref:`In RANDOM in Locator <object-locator-template-config-locators-random-parameter-height>`:
 
-  :bdg-ref-primary:`range <object-locator-template-config-locators-top-parameter-range>` :doc:`/config/documentation/objects/Range` 
-
-- :ref:`In MATCH_AIR in Pattern <object-pattern-template-config-locators-match_air-parameter-offset>`:
-
-  :bdg-ref-primary:`offset <object-pattern-template-config-locators-match_air-parameter-offset>` :doc:`/config/documentation/objects/Range` 
-
-- :ref:`In ADJACENT_PATTERN in Locator <object-locator-template-config-locators-adjacent_pattern-parameter-range>`:
-
-  :bdg-ref-primary:`range <object-locator-template-config-locators-adjacent_pattern-parameter-range>` :doc:`/config/documentation/objects/Range` 
-
-- :ref:`In MATCH_SET in Pattern <object-pattern-template-config-locators-match_set-parameter-offset>`:
-
-  :bdg-ref-primary:`offset <object-pattern-template-config-locators-match_set-parameter-offset>` :doc:`/config/documentation/objects/Range` 
-
-- :ref:`In MATCH in Pattern <object-pattern-template-config-locators-match-parameter-offset>`:
-
-  :bdg-ref-primary:`offset <object-pattern-template-config-locators-match-parameter-offset>` :doc:`/config/documentation/objects/Range` 
-
-- :ref:`In GAUSSIAN_RANDOM in Locator <object-locator-template-config-locators-gaussian_random-parameter-height>`:
-
-  :bdg-ref-primary:`height <object-locator-template-config-locators-gaussian_random-parameter-height>` :doc:`/config/documentation/objects/Range` 
+  :bdg-ref-primary:`height <object-locator-template-config-locators-random-parameter-height>` :doc:`/config/documentation/objects/Range` 
 
 - :ref:`In RANDOM in Locator <object-locator-template-config-locators-random-parameter-amount>`:
 
   :bdg-ref-primary:`amount <object-locator-template-config-locators-random-parameter-amount>` :doc:`/config/documentation/objects/Range` 
 
-- :ref:`In GAUSSIAN_RANDOM in Locator <object-locator-template-config-locators-gaussian_random-parameter-amount>`:
+- :ref:`In MATCH_AIR in Pattern <object-pattern-template-config-locators-match_air-parameter-offset>`:
 
-  :bdg-ref-primary:`amount <object-locator-template-config-locators-gaussian_random-parameter-amount>` :doc:`/config/documentation/objects/Range` 
+  :bdg-ref-primary:`offset <object-pattern-template-config-locators-match_air-parameter-offset>` :doc:`/config/documentation/objects/Range` 
 
-- :ref:`In PATTERN in Locator <object-locator-template-config-locators-pattern-parameter-range>`:
+- :ref:`In MATCH in Pattern <object-pattern-template-config-locators-match-parameter-offset>`:
 
-  :bdg-ref-primary:`range <object-locator-template-config-locators-pattern-parameter-range>` :doc:`/config/documentation/objects/Range` 
+  :bdg-ref-primary:`offset <object-pattern-template-config-locators-match-parameter-offset>` :doc:`/config/documentation/objects/Range` 
 
 - :ref:`In MATCH_SOLID in Pattern <object-pattern-template-config-locators-match_solid-parameter-offset>`:
 
   :bdg-ref-primary:`offset <object-pattern-template-config-locators-match_solid-parameter-offset>` :doc:`/config/documentation/objects/Range` 
+
+- :ref:`In GAUSSIAN_RANDOM in Locator <object-locator-template-config-locators-gaussian_random-parameter-amount>`:
+
+  :bdg-ref-primary:`amount <object-locator-template-config-locators-gaussian_random-parameter-amount>` :doc:`/config/documentation/objects/Range` 

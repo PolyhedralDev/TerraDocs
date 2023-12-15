@@ -2,7 +2,8 @@
 Structure
 =========
 
-A structure ID
+Represents a reference to a structure via its id.
+
 
 Uses
 ====

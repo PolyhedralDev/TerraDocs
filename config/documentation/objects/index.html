@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Extrusion" href="Extrusion.html" /><link rel="prev" title="Stage" href="Stage.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Float" href="Float.html" /><link rel="prev" title="pack.yml" href="../configs/pack.yml.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
-        <title>SlantLayer - Terra Docs</title>
+        <title>Config Objects - Terra Docs</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -158,7 +158,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -249,7 +249,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../configs/pack.yml.html">pack.yml</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current has-children"><a class="reference internal" href="index.html">Config Objects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children current-page"><a class="current reference internal" href="#">Config Objects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="Float.html">Float</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Integer.html">Integer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NoiseSampler.html">NoiseSampler</a></li>
@@ -281,7 +281,7 @@
 <li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Source.html">Source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Stage.html">Stage</a></li>
-<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">SlantLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Expression.html">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Feature.html">Feature</a></li>
@@ -340,26 +340,59 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
         </div>
         <article role="main">
-          <section id="slantlayer">
-<h1>SlantLayer<a class="headerlink" href="#slantlayer" title="Permalink to this headline">¶</a></h1>
-<p><sup>*Config object requires the ‘chunk-generator-noise-3d’ addon to use</sup></p>
-<p id="object-slantlayer-template-chunk-generator-noise-3d-map-parameter-palette"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-slantlayer-template-chunk-generator-noise-3d-map-parameter-palette"><span class="std std-ref">palette</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="Palette.html"><span class="doc">Palette</span></a>, <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>&gt;&gt;</p>
-<p id="object-slantlayer-template-chunk-generator-noise-3d-map-parameter-threshold"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-slantlayer-template-chunk-generator-noise-3d-map-parameter-threshold"><span class="std std-ref">threshold</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
-<section id="uses">
-<h2>Uses<a class="headerlink" href="#uses" title="Permalink to this headline">¶</a></h2>
-<p>This object is used in one place:</p>
+          <section id="config-objects">
+<h1>Config Objects<a class="headerlink" href="#config-objects" title="Permalink to this headline">¶</a></h1>
+<div class="toctree-wrapper compound">
 <ul>
-<li><p><a class="reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-slant"><span class="std std-ref">In base in BIOME</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-slant"><span class="std std-ref">slant</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">SlantLayer</span></a>&gt;</p>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="Float.html">Float</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Integer.html">Integer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NoiseSampler.html">NoiseSampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="String.html">String</a></li>
+<li class="toctree-l1"><a class="reference internal" href="List.html">List</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Range.html">Range</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Boolean.html">Boolean</a></li>
+<li class="toctree-l1"><a class="reference internal" href="WeightedList.html">WeightedList</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Map.html">Map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Block.html">Block</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PipelineBiome.html">PipelineBiome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Tag.html">Tag</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ColorSampler.html">ColorSampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Pattern.html">Pattern</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Set.html">Set</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Distributor.html">Distributor</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Locator.html">Locator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Image.html">Image</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Biome.html">Biome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ColorString.html">ColorString</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BiomeProvider.html">BiomeProvider</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Palette.html">Palette</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Point.html">Point</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Source.html">Source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Stage.html">Stage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Expression.html">Expression</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Feature.html">Feature</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Structure.html">Structure</a></li>
+<li class="toctree-l1"><a class="reference internal" href="GenerationStage.html">GenerationStage</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PlatformBiome.html">PlatformBiome</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ChunkGenerator.html">ChunkGenerator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l1"><a class="reference internal" href="NumberPredicate.html">NumberPredicate</a></li>
 </ul>
-</section>
+</div>
 </section>
 
         </article>
@@ -367,23 +400,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="Extrusion.html">
+          <a class="next-page" href="Float.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Extrusion</div>
+                <div class="title">Float</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="Stage.html">
+          <a class="prev-page" href="../configs/pack.yml.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Stage</div>
+                <div class="title">pack.yml</div>
                 
               </div>
             </a>
@@ -393,7 +426,7 @@
               Copyright &#169; 2021-2023, Terra Contributors |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../../_sources/config/documentation/objects/SlantLayer.rst.txt"
+            | <a class="muted-link" href="../../../_sources/config/documentation/objects/index.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -401,27 +434,8 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer">
+    <aside class="toc-drawer no-toc">
       
-      
-      <div class="toc-sticky toc-scroll">
-        <div class="toc-title-container">
-          <span class="toc-title">
-            Contents
-          </span>
-        </div>
-        <div class="toc-tree-container">
-          <div class="toc-tree">
-            <ul>
-<li><a class="reference internal" href="#">SlantLayer</a><ul>
-<li><a class="reference internal" href="#uses">Uses</a></li>
-</ul>
-</li>
-</ul>
-
-          </div>
-        </div>
-      </div>
       
       
     </aside>

@@ -2,6 +2,14 @@
 Locator
 =======
 
+When defined in a :doc:`/config/documentation/configs/FEATURE` config, distributors determine what Y levels a structure
+can be placed at.
+
+Locators iterate through each block within a column of blocks in the world (typically within a constrained Y level range
+defined by the specific locator), and return either *true* or *false* if structures should generate at
+that position or not. 
+
+
 Types
 =====
 
@@ -175,18 +183,18 @@ Uses
 
 Used by 4 parameters:
 
-- :ref:`In XOR in Locator <object-locator-template-config-locators-xor-parameter-locators>`:
+- :ref:`In AND in Locator <object-locator-template-config-locators-and-parameter-locators>`:
 
-  :bdg-ref-primary:`locators <object-locator-template-config-locators-xor-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+  :bdg-ref-primary:`locators <object-locator-template-config-locators-and-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
 
 - :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-locator>`:
 
   :bdg-ref-primary:`locator <config-feature-template-config-feature-base-parameter-locator>` :doc:`/config/documentation/objects/Locator` 
 
+- :ref:`In XOR in Locator <object-locator-template-config-locators-xor-parameter-locators>`:
+
+  :bdg-ref-primary:`locators <object-locator-template-config-locators-xor-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+
 - :ref:`In OR in Locator <object-locator-template-config-locators-or-parameter-locators>`:
 
   :bdg-ref-primary:`locators <object-locator-template-config-locators-or-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
-
-- :ref:`In AND in Locator <object-locator-template-config-locators-and-parameter-locators>`:
-
-  :bdg-ref-primary:`locators <object-locator-template-config-locators-and-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 

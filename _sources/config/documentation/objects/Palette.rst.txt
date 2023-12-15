@@ -2,7 +2,14 @@
 Palette
 =======
 
-A Terra palette ID. Palettes are added via the :doc:`/config/documentation/configs/PALETTE` config type.
+Represents a reference to a :doc:`/config/documentation/configs/PALETTE` config.
+
+``Palette``\s are defined as the referenced palette's ID. For example a ``PALETTE`` config with
+an id of ``GRASS_MIX`` would be referenced in a ``palette`` parameter like so:
+
+.. code:: yaml
+  
+  palette: GRASS_MIX
 
 
 Uses
@@ -10,10 +17,10 @@ Uses
 
 Used by 2 parameters:
 
-- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>`:
-
-  :bdg-ref-primary:`palette <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
-
 - :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-ocean.palette>`:
 
   :bdg-ref-success:`ocean.palette <config-biome-template-chunk-generator-noise-3d-base-parameter-ocean.palette>` :doc:`/config/documentation/objects/Palette` 
+
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>`:
+
+  :bdg-ref-primary:`palette <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 

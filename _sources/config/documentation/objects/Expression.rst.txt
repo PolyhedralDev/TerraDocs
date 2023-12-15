@@ -2,7 +2,8 @@
 Expression
 ==========
 
-An expression
+A mathematical expression.
+
 
 Uses
 ====

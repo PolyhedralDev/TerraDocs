@@ -2,45 +2,48 @@
 Map
 ===
 
-A map
+A set of values identified by a 'key'.
+
+See :doc:`/config/development/config-data`
+
 
 Uses
 ====
 
 Used by 9 parameters:
 
-- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>`:
+- :ref:`In MAP in BiomeColorMapping <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>`:
 
-  :bdg-ref-primary:`palette <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
-
-- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>`:
-
-  :bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
-
-- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-material-overrides>`:
-
-  :bdg-ref-success:`material-overrides <config-scattered_ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+  :bdg-ref-primary:`map <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
 
 - :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-functions>`:
 
   :bdg-ref-success:`functions <object-noisesampler-template-config-noise-function-expression-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
 
-- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-material-overrides>`:
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-variables>`:
 
-  :bdg-ref-success:`material-overrides <config-ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+  :bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
 
-- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-samplers>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>`:
 
-  :bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
+  :bdg-ref-primary:`palette <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
 
 - :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>`:
 
   :bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
 
-- :ref:`In MAP in BiomeColorMapping <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>`:
+- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>`:
 
-  :bdg-ref-primary:`map <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
+  :bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
 
-- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-variables>`:
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-samplers>`:
 
-  :bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
+  :bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
+
+- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-material-overrides>`:
+
+  :bdg-ref-success:`material-overrides <config-scattered_ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-material-overrides>`:
+
+  :bdg-ref-success:`material-overrides <config-ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 

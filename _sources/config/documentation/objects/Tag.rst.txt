@@ -2,37 +2,45 @@
 Tag
 ===
 
-A tag
+Tags are a way of identifying biomes, and are defined as strings. Tags are primarily used for biome distribution to group
+biomes together to be distributed in a certain way. For example, all biomes tagged with ``USE_DESERT_OASIS`` could be configured 
+to randomly be replaced with a desert oasis biome by the :doc:`/config/documentation/objects/BiomeProvider`\.
+
+All biomes implicitly have the tag ``ALL``. This allows for every biome to be a target by specifying ``ALL``.
+
+All biomes also are implicitly tagged with their own id, meaning to reference a specific biome via tag, you simply use
+its id.
+
 
 Uses
 ====
 
 Used by 7 parameters:
 
-- :ref:`In base in BIOME <config-biome-template-config-biome-base-parameter-tags>`:
+- :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-from>`:
 
-  :bdg-ref-primary:`tags <config-biome-template-config-biome-base-parameter-tags>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Tag`\> 
+  :bdg-ref-primary:`default-from <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-from>` :doc:`/config/documentation/objects/Tag` 
 
 - :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-from>`:
 
   :bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border-parameter-from>` :doc:`/config/documentation/objects/Tag` 
 
-- :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-replace>`:
+- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from>`:
 
-  :bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border-parameter-replace>` :doc:`/config/documentation/objects/Tag` 
+  :bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from>` :doc:`/config/documentation/objects/Tag` 
 
 - :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-replace>`:
 
   :bdg-ref-primary:`default-replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-replace>` :doc:`/config/documentation/objects/Tag` 
 
-- :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-from>`:
-
-  :bdg-ref-primary:`default-from <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-from>` :doc:`/config/documentation/objects/Tag` 
-
 - :ref:`In REPLACE in Stage <object-stage-template-biome-provider-pipeline-v2-replace-parameter-from>`:
 
   :bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-replace-parameter-from>` :doc:`/config/documentation/objects/Tag` 
 
-- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from>`:
+- :ref:`In base in BIOME <config-biome-template-config-biome-base-parameter-tags>`:
 
-  :bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from>` :doc:`/config/documentation/objects/Tag` 
+  :bdg-ref-primary:`tags <config-biome-template-config-biome-base-parameter-tags>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Tag`\> 
+
+- :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-replace>`:
+
+  :bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border-parameter-replace>` :doc:`/config/documentation/objects/Tag` 

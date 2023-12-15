@@ -2,32 +2,43 @@
 pack.yml
 ========
 
-The config pack manifest
+The config pack manifest.
+
+Defines things that are applicable pack-wide.
 
 
 .. _config-pack.yml-template-base-base-parameter-biomes:
 
-:bdg-ref-primary:`biomes <config-pack.yml-template-base-base-parameter-biomes>` :doc:`/config/documentation/objects/BiomeProvider` 
+:bdg-ref-primary:`biomes <config-pack.yml-template-base-base-parameter-biomes>` :doc:`/config/documentation/objects/BiomeProvider` - Determines where biomes should generate in the world.
 
 .. _config-pack.yml-template-base-base-parameter-generator:
 
-:bdg-ref-primary:`generator <config-pack.yml-template-base-base-parameter-generator>` :doc:`/config/documentation/objects/ChunkGenerator` 
+:bdg-ref-primary:`generator <config-pack.yml-template-base-base-parameter-generator>` :doc:`/config/documentation/objects/ChunkGenerator` - Determines which chunk generator to use.
+
+Chunk generators set the initial blocks in a chunk before any generation stages are applied.
+
 
 .. _config-pack.yml-template-base-base-parameter-id:
 
-:bdg-ref-primary:`id <config-pack.yml-template-base-base-parameter-id>` :doc:`/config/documentation/objects/String` 
+:bdg-ref-primary:`id <config-pack.yml-template-base-base-parameter-id>` :doc:`/config/documentation/objects/String` - The id used to identify the config pack.
+
+This will be used to specify the config pack as a world generator by the platform.
+
 
 .. _config-pack.yml-template-base-base-parameter-stages:
 
-:bdg-ref-primary:`stages <config-pack.yml-template-base-base-parameter-stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> 
+:bdg-ref-primary:`stages <config-pack.yml-template-base-base-parameter-stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> - A list of generation stages.
+
+Generation stages are applied sequentially after initial chunk generation done by the defined :doc:`/config/documentation/objects/ChunkGenerator`.
+
 
 .. _config-pack.yml-template-base-base-parameter-version:
 
-:bdg-ref-primary:`version <config-pack.yml-template-base-base-parameter-version>` Version 
+:bdg-ref-primary:`version <config-pack.yml-template-base-base-parameter-version>` Version - The version of the config pack.
 
 .. _config-pack.yml-template-base-base-parameter-author:
 
-:bdg-ref-success:`author <config-pack.yml-template-base-base-parameter-author>` :doc:`/config/documentation/objects/String` 
+:bdg-ref-success:`author <config-pack.yml-template-base-base-parameter-author>` :doc:`/config/documentation/objects/String` - Who developed the config pack.
 
 Default: ``Anon Y. Mous``
 

@@ -9,4 +9,4 @@ This object is used in one place:
 
 - :ref:`In base in pack.yml <config-pack.yml-template-base-base-parameter-generator>`:
 
-  :bdg-ref-primary:`generator <config-pack.yml-template-base-base-parameter-generator>` :doc:`/config/documentation/objects/ChunkGenerator` 
+  :bdg-ref-primary:`generator <config-pack.yml-template-base-base-parameter-generator>` :doc:`/config/documentation/objects/ChunkGenerator` - Determines which chunk generator to use.

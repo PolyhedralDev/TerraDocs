@@ -2,7 +2,10 @@
 PlatformBiome
 =============
 
-A platform biome
+A reference to a platform specific biome defined as a string. For all base Terra platforms, biomes are referenced by Minecraft
+biome ids as you would see them in the f3 debug screen, for example ``minecraft:plains``. This also includes any modded biomes
+that may be available.
+
 
 Uses
 ====

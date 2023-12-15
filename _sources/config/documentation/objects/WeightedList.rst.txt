@@ -2,44 +2,27 @@
 WeightedList
 ============
 
-A weighted list
+A list of values each with an assigned weight.
+
+See :ref:`weighted-list`
+
 
 Uses
 ====
 
 Used by 10 parameters:
 
-- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>`:
+- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-to>`:
 
-  :bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
-
-- :ref:`In SET in Extrusion <object-extrusion-template-biome-provider-extrusion-set-parameter-to>`:
-
-  :bdg-ref-primary:`to <object-extrusion-template-biome-provider-extrusion-set-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
-
-- :ref:`In REPLACE in Extrusion <object-extrusion-template-biome-provider-extrusion-replace-parameter-to>`:
-
-  :bdg-ref-primary:`to <object-extrusion-template-biome-provider-extrusion-replace-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
-
-- :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-to>`:
-
-  :bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-border-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+  :bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
 - :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-structures.structures>`:
 
   :bdg-ref-primary:`structures.structures <config-feature-template-config-feature-base-parameter-structures.structures>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Structure`\> 
 
-- :ref:`In REPLACE in Stage <object-stage-template-biome-provider-pipeline-v2-replace-parameter-to>`:
-
-  :bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
-
 - :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>`:
 
   :bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
-
-- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-to>`:
-
-  :bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
 
 - :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>`:
 
@@ -48,3 +31,23 @@ Used by 10 parameters:
 - :ref:`In SAMPLER in Source <object-source-template-biome-provider-pipeline-v2-sampler-parameter-biomes>`:
 
   :bdg-ref-primary:`biomes <object-source-template-biome-provider-pipeline-v2-sampler-parameter-biomes>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+
+- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>`:
+
+  :bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
+
+- :ref:`In REPLACE in Extrusion <object-extrusion-template-biome-provider-extrusion-replace-parameter-to>`:
+
+  :bdg-ref-primary:`to <object-extrusion-template-biome-provider-extrusion-replace-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 
+
+- :ref:`In REPLACE in Stage <object-stage-template-biome-provider-pipeline-v2-replace-parameter-to>`:
+
+  :bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+
+- :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-to>`:
+
+  :bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-border-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+
+- :ref:`In SET in Extrusion <object-extrusion-template-biome-provider-extrusion-set-parameter-to>`:
+
+  :bdg-ref-primary:`to <object-extrusion-template-biome-provider-extrusion-set-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/ExtrusionReplaceableBiome`\> 

@@ -2,7 +2,13 @@
 Biome
 =====
 
-A Terra biome ID.
+Represents a reference to a Terra biome defined by a :doc:`/config/documentation/configs/BIOME` config.
+
+``Biome``\s are defined as the referenced biome's ID. For example a ``BIOME`` config with an id of ``FOREST`` would be referenced in a ``biome`` parameter like so:
+
+.. code:: yaml
+  
+  biome: FOREST
 
 
 Uses

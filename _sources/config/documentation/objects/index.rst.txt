@@ -1,0 +1,47 @@
+==============
+Config Objects
+==============
+.. toctree::
+    :maxdepth: 1
+
+    Float
+    Integer
+    NoiseSampler
+    String
+    List
+    Range
+    Boolean
+    WeightedList
+    Map
+    Block
+    PipelineBiome
+    Tag
+    ColorSampler
+    Pattern
+    Set
+    Distributor
+    Locator
+    Image
+    Biome
+    ColorString
+    ExtrusionReplaceableBiome
+    BiomeProvider
+    Palette
+    BiomeColorMapping
+    PipelineBiomeColorConverter
+    DimensionApplicableSampler
+    MathFunction
+    PaletteLayer
+    Point
+    Source
+    Stage
+    SlantLayer
+    Extrusion
+    Expression
+    Feature
+    Structure
+    GenerationStage
+    PlatformBiome
+    ChunkGenerator
+    BiomeColorConverter
+    NumberPredicate

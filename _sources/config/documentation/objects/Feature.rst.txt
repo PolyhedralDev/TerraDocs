@@ -2,7 +2,15 @@
 Feature
 =======
 
-A feature ID
+Represents a reference to a :doc:`/config/documentation/configs/FEATURE` config.
+
+``Feature``\s are defined as the referenced feature's ID. For example a ``FEATURE`` config with
+an id of ``OAK_TREES`` would be referenced in a ``feature`` parameter like so:
+
+.. code:: yaml
+  
+  feature: OAK_TREES
+
 
 Uses
 ====
