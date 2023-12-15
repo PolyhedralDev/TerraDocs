@@ -84,6 +84,26 @@ def setup(app):
         output_file = os.path.join(configs_dir, config_name + '.rst')
         with open(output_file, 'w') as file:
             file.write("\n\n".join(config_description.to_rst_lines(objects)))
+    
+    # Generate object toctree
+    object_toc_tree = rst.h1("Config Objects") + """
+.. toctree::
+    :maxdepth: 1
+"""
+    # Objects in toctree are sorted by most to least number of references
+    for object_name, _ in sorted(objects.items(), key=lambda pair: len(pair[1].references), reverse=True):
+        object_toc_tree += "\n" + rst.indent(object_name, 4)
+    with open(os.path.join(objects_dir, "index.rst"), 'w') as file:
+        file.write(object_toc_tree)
+        
+    # Generate config toctree
+    with open(os.path.join(configs_dir, "index.rst"), 'w') as file:
+        file.write(rst.h1("Config Files") + """
+.. toctree::
+    :maxdepth: 1
+    :glob:
+    
+    ./*""")
 
     return {
         'version': '0.1',

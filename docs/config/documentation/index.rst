@@ -12,23 +12,15 @@ Config Documentation
 
     :doc:`/config/development/config-system` :octicon:`chevron-right`
 
-Config Files
-============
+Contents
+========
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
     :glob:
 
-    configs/*
-
-Config Objects
-==============
-
-.. toctree::
-    :maxdepth: 1
-    :glob:
-
-    objects/*
+    configs/index
+    objects/index
 
 .. _config-documentation-format:
 
