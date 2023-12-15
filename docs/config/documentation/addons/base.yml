@@ -2,39 +2,67 @@ base:
   objects:
     String:
       type: PRIMITIVE
-      description: A string
+      description: |
+        A string / sequence of characters.
+        
+        See :doc:`/config/development/config-data`
 
     Integer:
       type: PRIMITIVE
-      description: An integer
+      description: |
+        An integer / whole number.
+
+        See :doc:`/config/development/config-data`
 
     Float:
       type: PRIMITIVE
-      description: A float
+      description: |
+        A number which may contain decimals.
+
+        See :doc:`/config/development/config-data`
 
     Boolean:
       type: PRIMITIVE
-      description: Either ``true`` or ``false``
+      description: |
+        A value that is either ``true`` or ``false``.
+
+        See :doc:`/config/development/config-data`
 
     Map:
       type: PRIMITIVE
-      description: A map
+      description: |
+        A set of values identified by a 'key'.
+
+        See :doc:`/config/development/config-data`
 
     List:
       type: PRIMITIVE
-      description: A list
+      description: |
+        A list of values.
+
+        See :doc:`/config/development/config-data`
 
     Set:
       type: PRIMITIVE
-      description: A set
+      description: |
+        A set of values. Sets are defined similarly to :doc:`/config/documentation/objects/List`\s with the difference being that
+        each value must be unique.
 
     Expression:
-      type: PRIMITIVE
-      description: An expression
+      type: MULTI_TYPE
+      description: |
+        A mathematical expression.
+      types:
+        string:
+          description: |
+            Expressions are defined as a string, for example "3 + 2 / 8"
 
     WeightedList:
       type: MULTI_TYPE
-      description: A weighted list
+      description: |
+        A list of values each with an assigned weight.
+
+        See :ref:`weighted-list`
 
     NoiseSampler:
       type: TEMPLATED
@@ -43,10 +71,7 @@ base:
 
             :doc:`/config/development/noise/index`
 
-            :ref:`Config Documentation Format <config-documentation-format>` :octicon:`chevron-right`
-
-        A sampler is a config defined function that world positions and the world seed to a set
-        of output values.
+        A sampler is a config defined function that provides a value when given a position and seed.
 
         A 'sample' is defined as the value produced by a single calculation provided by a sampler. A collective set of
         samples is regarded as 'noise'.
@@ -56,68 +81,136 @@ base:
 
     Range:
       type: MULTI_TYPE
-      description: A range
+      description: |
+        A range of integer numbers, represented with a minimum and maximum value.
+        
+        The defined minimum value is inclusive of the represented values while the **maximum is not included**. For example, given a min of ``2`` and a max of ``5``, the range would represent the values ``2, 3, 4``.
+
       types:
         int:
-          description: When a range is declared as an int ...
+          description: |
+            A range can be defined as an integer representing just a singular number. For example a range defined as ``3`` is equivalent
+            to a range with a min of ``3`` and a max of ``3+1`` or ``4``.
+            
+            When defined under a parameter called ``range`` this would look like:
+
+            .. code:: yaml
+              
+              range: 3
         map:
-          description: When a range is declared as a map ...
+          description: |
+            To specify the minimum and maximum values, a range can be defined as a map with the following parameters:
+          footer: |
+            When defined under a parameter called ``range`` this would look like:
+
+            .. code:: yaml
+              
+              range:
+                min: 2
+                max: 5
           params:
             min:
               type: Integer
+              summary: The minimum value (inclusive) of the range.
             max:
               type: Integer
+              summary: The maximum value (exclusive) of the range.
 
     BiomeProvider:
       type: TEMPLATED
+      description: |
+        A biome provider provides a :doc:`/config/documentation/objects/Biome` for any given position in the world. Biome providers
+        are the main way to determine and configure *where* biomes will generate.
 
     Biome:
       type: REGISTRY_KEY
       description: |
-        A Terra biome ID.
+        Represents a reference to a Terra biome defined by a :doc:`/config/documentation/configs/BIOME` config.
+        
+        ``Biome``\s are defined as the referenced biome's ID. For example a ``BIOME`` config with an id of ``FOREST`` would be referenced in a ``biome`` parameter like so:
+
+        .. code:: yaml
+          
+          biome: FOREST
 
     Palette:
       type: MULTI_TYPE
       description: |
-        A Terra palette ID. Palettes are added via the :doc:`/config/documentation/configs/PALETTE` config type.
+        Represents a reference to a :doc:`/config/documentation/configs/PALETTE` config.
+        
+        ``Palette``\s are defined as the referenced palette's ID. For example a ``PALETTE`` config with
+        an id of ``GRASS_MIX`` would be referenced in a ``palette`` parameter like so:
+
+        .. code:: yaml
+          
+          palette: GRASS_MIX
 
     Feature:
       type: MULTI_TYPE
-      description: A feature ID
-      types:
-        string:
+      description: |
+        Represents a reference to a :doc:`/config/documentation/configs/FEATURE` config.
+        
+        ``Feature``\s are defined as the referenced feature's ID. For example a ``FEATURE`` config with
+        an id of ``OAK_TREES`` would be referenced in a ``feature`` parameter like so:
+
+        .. code:: yaml
+          
+          feature: OAK_TREES
 
     Structure:
       type: MULTI_TYPE
-      description: A structure ID
-      types:
-        string:
+      description: |
+        Represents a reference to a structure via its id.
 
     Block:
       type: MULTI_TYPE
-      types:
-        string:
+      description: |
+        Defines a block id. What block ids can be used is dependent on the platform. All block ids in
+        the base Terra platforms are Minecraft block ids, for example ``minecraft:grass_block``.
+
+        Block states can additionally be specified by including comma separated pairs with an contained within square brackets
+        after the id, for example: ``minecraft:note_block[instrument=harp, note=9]``.
 
     Distributor:
       type: TEMPLATED
+      description: |
+        When defined in a :doc:`/config/documentation/configs/FEATURE` config, distributors determine which columns in the world
+        structures can be placed in.
+
+        Distributors operate in 2D. For each set of 2D coordinates, a distributor will return either *true* or *false*,
+        where true means a structure may generate within that column.
 
     Locator:
       type: TEMPLATED
+      description: |
+        When defined in a :doc:`/config/documentation/configs/FEATURE` config, distributors determine what Y levels a structure
+        can be placed at.
+        
+        Locators iterate through each block within a column of blocks in the world (typically within a constrained Y level range
+        defined by the specific locator), and return either *true* or *false* if structures should generate at
+        that position or not. 
 
     GenerationStage:
       type: TEMPLATED
 
     Tag:
       type: MULTI_TYPE
-      description: A tag
-      types:
-        string:
+      description: |
+        Tags are a way of identifying biomes, and are defined as strings. Tags are primarily used for biome distribution to group
+        biomes together to be distributed in a certain way. For example, all biomes tagged with ``USE_DESERT_OASIS`` could be configured 
+        to randomly be replaced with a desert oasis biome by the :doc:`/config/documentation/objects/BiomeProvider`\.
+
+        All biomes implicitly have the tag ``ALL``. This allows for every biome to be a target by specifying ``ALL``.
+
+        All biomes also are implicitly tagged with their own id, meaning to reference a specific biome via tag, you simply use
+        its id.
 
     PlatformBiome:
       type: MULTI_TYPE
-      description: A platform biome
-      types:
-        string:
+      description: |
+        A reference to a platform specific biome defined as a string. For all base Terra platforms, biomes are referenced by Minecraft
+        biome ids as you would see them in the f3 debug screen, for example ``minecraft:plains``. This also includes any modded biomes
+        that may be available.
 
     ChunkGenerator:
       type: MULTI_TYPE
@@ -125,7 +218,9 @@ base:
   configs:
     pack.yml:
       description: |
-        The config pack manifest
+        The config pack manifest.
+
+        Defines things that are applicable pack-wide.
       use-global-template: false
 
   config-templates:
@@ -134,14 +229,26 @@ base:
         params:
           id:
             type: String
+            summary: The id used to identify the config pack.
+            description: |
+              This will be used to specify the config pack as a world generator by the platform.
           author:
             type: String
             default: Anon Y. Mous
+            summary: Who developed the config pack.
           stages:
             type: List<GenerationStage>
+            summary: A list of generation stages.
+            description: |
+              Generation stages are applied sequentially after initial chunk generation done by the defined :doc:`/config/documentation/objects/ChunkGenerator`.
           version:
             type: Version
+            summary: The version of the config pack.
           generator:
             type: ChunkGenerator
+            summary: Determines which chunk generator to use.
+            description: |
+              Chunk generators set the initial blocks in a chunk before any generation stages are applied.
           biomes:
             type: BiomeProvider
+            summary: Determines where biomes should generate in the world.
