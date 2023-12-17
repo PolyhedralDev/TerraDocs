@@ -25,6 +25,29 @@ config-noise-function:
               type: Map<String, MathFunction>
               default: "{}"
 
+  config-templates:
+    pack.yml:
+      base:
+        params:
+          samplers:
+            type: Map<String, DimensionApplicableSampler>
+            summary: A set of samplers globally accessible within :doc:`/config/documentation/objects/Expression`\s in ``EXPRESSION`` samplers defined inside other config files.
+            description: |
+              .. note::
+                
+                Samplers defined under this parameter cannot reference each other, and are only
+                able to be used in other config files.
+            default: "{}"
+          functions:
+            type: Map<String, MathFunction>
+            default: "{}"
+            summary: A set of math functions globally accessible within :doc:`/config/documentation/objects/Expression`\s in ``EXPRESSION`` samplers defined inside other config files.
+            description: |
+              .. note::
+                
+                Functions defined under this parameter cannot reference each other, and are only
+                able to be used in other config files.
+
   templates:
     NoiseSampler:
       AbstractNoiseTemplate:
