@@ -5,7 +5,60 @@ biome-provider-pipeline-v2:
       description: A pipeline source
     PipelineBiome:
       type: MULTI_TYPE
-      description: A pipeline biome
+      description: |
+        A representation of a biome to be distributed across the biome pipeline.
+        
+        Pipeline biomes may either represent:
+
+        - Regular :doc:`/config/documentation/objects/Biome`\s
+
+        - Placeholder biomes
+          
+        - Replacement targets
+          
+        Representing Regular Biomes
+        ===========================
+
+        If defined as an existing biome's id, then the pipeline biome will simply represent the biome. The pipeline biome representing
+        a regular biome will use all the regular biome's tags.
+        
+        Placeholder Biomes
+        ==================
+        
+        If a pipeline biome does not correspond to any regular biome id, it will be treated as a placeholder biome instead.
+
+        Placeholder biomes act as regular biomes being passed through the biome pipeline, but can be used as placeholder names representing
+        anything you'd like. Conventionally placeholder biomes should be all lowercase to distinguish them from regular biome ids.
+        
+        For example rather than distributing actual biomes within a :doc:`/config/documentation/objects/Source`\, 
+        more general 'land' and 'ocean' placeholders can be used:
+
+        .. code:: yaml
+
+            source:
+              type: SAMPLER
+              biomes:
+                - land: 1 
+                - ocean: 1
+              sampler:
+                type: OPEN_SIMPLEX_2
+        
+        For a pipeline to be valid, **it must not be possible for a placeholder biome to be found in the final biome distribution**. This
+        means that any placeholder biomes introduced into the pipeline must eventually be replaced by pipeline biomes that represent
+        real biomes.
+
+        A placeholder biome ending up in the final distribution is called a 'pipeline leak'.
+        
+        The above source by itself would not load unless both ``land`` and ``ocean`` are eventually replaced with pipeline
+        biomes representing regular biomes.
+        
+        Self Syntax
+        ===========
+        
+        Pipeline biomes being 'replaced to' may be defined as ``SELF``, which acts as a placeholder for the pipeline biome being replaced.
+        This is useful when you want to replace pipeline biomes containing a :doc:`/config/documentation/objects/Tag` with themselves in
+        addition to other biomes.
+
       types:
         string:
     Stage:
@@ -14,66 +67,277 @@ biome-provider-pipeline-v2:
   templates:
     BiomeProvider:
       PIPELINE:
+        description: |
+          'The pipeline' is a biome provider that distributes biomes procedurally in 2D.
+
+          The name comes from the way it operates, there is a 'source' which produces an
+          initial biome layout, which then flows through successive stages that each modify
+          the layout in some particular way. The final placement of biomes is determined
+          by the result after all stages have been applied.
+
+          .. image:: /img/config/documentation/pipeline-diagram.png
+              :width: 50%
+                
+          Biome layouts can be thought of as images, where there would be biomes instead
+          of colors for each pixel. Each stage can be thought of as some kind of filter
+          or effect that is applied to the image.
+
         params:
           resolution:
             type: Integer
             default: "1"
+            summary: A performance parameter that determines the size of each biome 'pixel' in blocks.
+            description: |
+              Increasing this will make the pipeline perform better, but also makes the biome distribution
+              look more pixelated. A resolution of 1 results in the best quality. Resolutions between 2 and
+              4 don't have very apparent pixelation when used in conjunction with blending.
           blend.sampler:
             type: NoiseSampler
             default: Constant 0
+            summary: A sampler that blends the pixelated effect produced by higher resolutions.
+            description: Blending is done using the process of :ref:`domain-warping`.
           blend.amplitude:
             type: Float
             default: "0.0"
+            summary: The blend strength.
           pipeline.source:
             type: Source
+            summary: The initial biome layout.
           pipeline.stages:
             type: List<Stage>
+            summary: A list of stages that are successively applied.
+
     Source:
       SAMPLER:
+        description: |
+          Distributes a :ref:`weighted list <weighted-list>` of pipeline biomes according to a :doc:`/config/documentation/objects/NoiseSampler`\.
         params:
           sampler:
             type: NoiseSampler
           biomes:
             type: WeightedList<PipelineBiome>
+  
     Stage:
       StageTemplate:
         abstract: true
         params:
           sampler:
             type: NoiseSampler
+            summary: The noise sampler used to distribute pipeline biomes.
       FRACTAL_EXPAND:
-        description: Adds detail
+        description: |
+          Reduces the fidelity of prior stages while also adding extra 'fuzzy-ness'.
+          
+          This is done by spacing out each :doc:`/config/documentation/objects/PipelineBiome` then filling the empty space randomly
+          with a nearby pipeline biome:
+            
+          Given a 2x2 grid of pipeline biomes:
+          
+          === ===
+          `a` `b`
+          `c` `d`
+          === ===
+          
+          Applying an expander would result in a 3x3 grid like so:
+                  
+          ========== ======================== ==========
+          `a`        `a` or `b`               `b`           
+          `a` or `c` `a` or `b` or `c` or `d` `b` or `d`
+          `c`        `c` or `d`               `d`       
+          ========== ======================== ==========
+        params:
+          sampler:
+            type: NoiseSampler
+            summary: Used to randomly determine which pipeline biome should be chosen.
+            description: |
+              The output of the noise sampler is expected to be evenly distributed across [-1, 1].
+              Usually just a basic ``WHITE_NOISE`` noise sampler will suffice for this.
+        footer: |
+          `EXAMPLE`
+        
+          .. code:: yaml
+
+            stages:
+              - type: FRACTAL_EXPAND
+                sampler:
+                  type: WHITE_NOISE
+
       SMOOTH:
-        description: Smooths out detail
+        extends: StageTemplate
+        description: |
+          Smooths out noisy borders between :doc:`/config/documentation/objects/PipelineBiome`\s.
+
+          Given a :doc:`/config/documentation/objects/PipelineBiome` labelled ``x`` and its adjacent pipeline biomes
+          labelled like so:
+            
+          +---+---+---+
+          |   |`a`|   |
+          +---+---+---+
+          |`b`|`x`|`c`|
+          +---+---+---+
+          |   |`d`|   |
+          +---+---+---+
+          
+          - If ``a = d`` and ``b = c``, ``x`` will randomly be replaced with either ``a`` or ``c``.
+          - Otherwise if only ``a = d`` then ``x`` will be replaced with ``a``.
+          - Otherwise if only ``b = c`` then ``x`` will be replaced with ``b``.
+          - Otherwise ``x`` will remain unchanged.
+        params:
+          sampler:
+            type: NoiseSampler
+            summary: Used to randomly determine which pipeline biome should be chosen.
+            description: |
+              The output of the noise sampler is expected to be evenly distributed across [-1, 1].
+              Usually just a basic ``WHITE_NOISE`` noise sampler will suffice for this.
+        footer: |
+          `EXAMPLE`
+        
+          .. code:: yaml
+
+            stages:
+              - type: SMOOTH
+                sampler:
+                  type: WHITE_NOISE
+
       REPLACE:
+        extends: StageTemplate
+        description: |
+          Replaces any :doc:`/config/documentation/objects/PipelineBiome`\s containing the configured :doc:`/config/documentation/objects/Tag`
+          with a :ref:`weighted list <weighted-list>` of pipeline biomes :doc:`distributed according to </config/development/noise/use>`
+          a :doc:`/config/documentation/objects/NoiseSampler`\.
         params:
           from:
             type: Tag
+            summary: Pipeline biomes containing this tag will be replaced.
           to:
             type: WeightedList<PipelineBiome>
+            summary: The pipeline biomes that the ``from`` tag will be replaced with.
+        footer: |
+          `EXAMPLE`
+        
+          .. code:: yaml
+
+            stages:
+              # Replaces plains biomes randomly with forest and plains
+              - type: REPLACE
+                from: PLAINS
+                to:
+                  - FOREST: 1
+                  - PLAINS: 2
+                sampler:
+                  type: WHITE_NOISE
+
       REPLACE_LIST:
+        extends: StageTemplate
+        description: |
+          Same as the `REPLACE`_ stage, but takes an additional mapping of :doc:`/config/documentation/objects/PipelineBiome`\s to
+          :ref:`weighted lists <weighted-list>` of pipeline biomes. This is convenient for combining multiple consecutive ``REPLACE``
+          stages that use the same noise sampler into one stage.
         params:
           default-from:
             type: Tag
+            summary: The default tag a pipeline biome must contain to be replaced.
           default-to:
             type: WeightedList<PipelineBiome>
+            summary: The list of pipeline biomes to replace any matches of the default tag with.
           to:
             type: Map<PipelineBiome, WeightedList<PipelineBiome>>
+            summary: An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.
+            description: |
+              .. note::
+                
+                  Replacement mappings are from pipeline biomes, **not** tags!
+        footer: |
+          `EXAMPLE`
+        
+          .. code:: yaml
+
+            stages:
+              # Replaces biomes tagged with USE_SPECIAL_BIOME to the SPECIAL biome, as well as
+              # FOREST to SPECIAL_FOREST and PLAINS to SPECIAL_PLAINS.
+              - type: REPLACE_LIST
+                default-from: USE_SPECIAL_BIOME
+                default-to:
+                  - SELF: 5 # The 'SELF' pipeline biome replaces the target with itself
+                  - SPECIAL: 1
+                to:
+                  FOREST:
+                    - SELF: 5
+                    - SPECIAL_FOREST: 1
+                  PLAINS:
+                    - SELF: 5
+                    - SPECIAL_PLAINS: 1
+                sampler:
+                  type: WHITE_NOISE
+
       BORDER:
+        extends: StageTemplate
+        description: |
+          Replaces pipeline biomes matching a tag with a :ref:`weighted list <weighted-list>` of
+          pipeline biomes :doc:`distributed according to </config/development/noise/use>` a :doc:`/config/documentation/objects/NoiseSampler` only
+          if they are bordering any pipeline biome matching another tag.
         params:
           from:
             type: Tag
+            summary: The tag bordering pipeline biomes must contain for a pipeline biome to be replaced.
           replace:
             type: Tag
+            summary: The tag a pipeline biome must contain in order to be replaced.
           to:
             type: WeightedList<PipelineBiome>
+            summary: The list of pipeline biomes to replace with.
+        footer: |
+          `EXAMPLE`
+
+          .. code:: yaml
+
+              stages:
+                # Replaces biomes tagged with LAND bordering OCEAN with BEACH
+                - type: BORDER
+                  replace: LAND
+                  from: OCEAN
+                  to: BEACH # Weighted lists of single items can be defined like this
+                  sampler:
+                    type: CONSTANT # Since there's only a single item we can just use CONSTANT
+
       BORDER_LIST:
+        extends: StageTemplate
+        description: |
+          Same as the `BORDER`_ stage, but takes an additional mapping of :doc:`/config/documentation/objects/PipelineBiome`\s to
+          :ref:`weighted lists <weighted-list>` of pipeline biomes. This is convenient for combining multiple consecutive ``BORDER``
+          stages that use the same noise sampler into one stage.
         params:
           from:
             type: Tag
+            summary: The tag bordering pipeline biomes must contain for a pipeline biome to be replaced.
           default-replace:
             type: Tag
+            summary: The default tag a pipeline biome must contain in order to be replaced.
           default-to:
             type: WeightedList<PipelineBiome>
+            summary: The default list of pipeline biomes to replace pipeline biomes containing the default replace tag with.
           replace:
             type: Map<PipelineBiome, WeightedList<PipelineBiome>>
+            summary: An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.
+            description: |
+              .. note::
+                
+                  Replacement mappings are from pipeline biomes, **not** tags!
+        footer: |
+          `EXAMPLE`
+          
+          .. code:: yaml
+              
+              stages:
+                # Replaces biomes tagged with LAND bordering OCEAN with BEACH
+                # With special handling for JUNGLE to be replaced with JUNGLE_BEACH
+                # and MUSHROOM_PLAINS with MUSHROOM_BEACH
+                - type: BORDER
+                  default-replace: LAND
+                  from: OCEAN
+                  default-to: BEACH # Weighted lists of single items can be defined like this
+                  replace:
+                    JUNGLE: JUNGLE_BEACH
+                    MUSHROOM_PLAINS: MUSHROOM_BEACH
+                  sampler:
+                    type: CONSTANT # Since there's only a single item in each mapping we can just use CONSTANT
