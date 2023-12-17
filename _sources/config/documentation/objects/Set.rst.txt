@@ -11,10 +11,6 @@ Uses
 
 Used by 5 parameters:
 
-- :ref:`In POINTS in Distributor <object-distributor-template-config-distributors-points-parameter-points>`:
-
-  :bdg-ref-primary:`points <object-distributor-template-config-distributors-points-parameter-points>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Point`\> 
-
 - :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-replace>`:
 
   :bdg-ref-primary:`replace <config-scattered_ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
@@ -30,3 +26,7 @@ Used by 5 parameters:
 - :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-replace>`:
 
   :bdg-ref-primary:`replace <config-ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In POINTS in Distributor <object-distributor-template-config-distributors-points-parameter-points>`:
+
+  :bdg-ref-primary:`points <object-distributor-template-config-distributors-points-parameter-points>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Point`\> 

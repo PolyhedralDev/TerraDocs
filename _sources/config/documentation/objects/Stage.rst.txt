@@ -18,82 +18,271 @@ A list of available types for ``Stage`` are listed below:
 FRACTAL_EXPAND
 --------------
 
-Adds detail
+Reduces the fidelity of prior stages while also adding extra 'fuzzy-ness'.
+
+This is done by spacing out each :doc:`/config/documentation/objects/PipelineBiome` then filling the empty space randomly
+with a nearby pipeline biome:
+  
+Given a 2x2 grid of pipeline biomes:
+
+=== ===
+`a` `b`
+`c` `d`
+=== ===
+
+Applying an expander would result in a 3x3 grid like so:
+        
+========== ======================== ==========
+`a`        `a` or `b`               `b`           
+`a` or `c` `a` or `b` or `c` or `d` `b` or `d`
+`c`        `c` or `d`               `d`       
+========== ======================== ==========
+
+
+.. _object-stage-template-biome-provider-pipeline-v2-fractal_expand-parameter-sampler:
+
+:bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-fractal_expand-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - Used to randomly determine which pipeline biome should be chosen.
+
+The output of the noise sampler is expected to be evenly distributed across [-1, 1].
+Usually just a basic ``WHITE_NOISE`` noise sampler will suffice for this.
+
+
+`EXAMPLE`
+
+.. code:: yaml
+
+  stages:
+    - type: FRACTAL_EXPAND
+      sampler:
+        type: WHITE_NOISE
+
 
 ---------
 
 SMOOTH
 ------
 
-Smooths out detail
+Smooths out noisy borders between :doc:`/config/documentation/objects/PipelineBiome`\s.
+
+Given a :doc:`/config/documentation/objects/PipelineBiome` labelled ``x`` and its adjacent pipeline biomes
+labelled like so:
+  
++---+---+---+
+|   |`a`|   |
++---+---+---+
+|`b`|`x`|`c`|
++---+---+---+
+|   |`d`|   |
++---+---+---+
+
+- If ``a = d`` and ``b = c``, ``x`` will randomly be replaced with either ``a`` or ``c``.
+- Otherwise if only ``a = d`` then ``x`` will be replaced with ``a``.
+- Otherwise if only ``b = c`` then ``x`` will be replaced with ``b``.
+- Otherwise ``x`` will remain unchanged.
+
+
+.. _object-stage-template-biome-provider-pipeline-v2-smooth-parameter-sampler:
+
+:bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-smooth-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - Used to randomly determine which pipeline biome should be chosen.
+
+The output of the noise sampler is expected to be evenly distributed across [-1, 1].
+Usually just a basic ``WHITE_NOISE`` noise sampler will suffice for this.
+
+
+`EXAMPLE`
+
+.. code:: yaml
+
+  stages:
+    - type: SMOOTH
+      sampler:
+        type: WHITE_NOISE
+
 
 ---------
 
 REPLACE
 -------
 
+Replaces any :doc:`/config/documentation/objects/PipelineBiome`\s containing the configured :doc:`/config/documentation/objects/Tag`
+with a :ref:`weighted list <weighted-list>` of pipeline biomes :doc:`distributed according to </config/development/noise/use>`
+a :doc:`/config/documentation/objects/NoiseSampler`\.
+
+
 .. _object-stage-template-biome-provider-pipeline-v2-replace-parameter-from:
 
-:bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-replace-parameter-from>` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-replace-parameter-from>` :doc:`/config/documentation/objects/Tag` - Pipeline biomes containing this tag will be replaced.
+
+.. _object-stage-template-biome-provider-pipeline-v2-replace-parameter-sampler:
+
+:bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-replace-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
 
 .. _object-stage-template-biome-provider-pipeline-v2-replace-parameter-to:
 
-:bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+:bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> - The pipeline biomes that the ``from`` tag will be replaced with.
+
+`EXAMPLE`
+
+.. code:: yaml
+
+  stages:
+    # Replaces plains biomes randomly with forest and plains
+    - type: REPLACE
+      from: PLAINS
+      to:
+        - FOREST: 1
+        - PLAINS: 2
+      sampler:
+        type: WHITE_NOISE
+
 
 ---------
 
 REPLACE_LIST
 ------------
 
+Same as the `REPLACE`_ stage, but takes an additional mapping of :doc:`/config/documentation/objects/PipelineBiome`\s to
+:ref:`weighted lists <weighted-list>` of pipeline biomes. This is convenient for combining multiple consecutive ``REPLACE``
+stages that use the same noise sampler into one stage.
+
+
 .. _object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-from:
 
-:bdg-ref-primary:`default-from <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-from>` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`default-from <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-from>` :doc:`/config/documentation/objects/Tag` - The default tag a pipeline biome must contain to be replaced.
 
 .. _object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to:
 
-:bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+:bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> - The list of pipeline biomes to replace any matches of the default tag with.
+
+.. _object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-sampler:
+
+:bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
 
 .. _object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to:
 
-:bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
+:bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> - An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.
+
+.. note::
+  
+    Replacement mappings are from pipeline biomes, **not** tags!
+
+
+`EXAMPLE`
+
+.. code:: yaml
+
+  stages:
+    # Replaces biomes tagged with USE_SPECIAL_BIOME to the SPECIAL biome, as well as
+    # FOREST to SPECIAL_FOREST and PLAINS to SPECIAL_PLAINS.
+    - type: REPLACE_LIST
+      default-from: USE_SPECIAL_BIOME
+      default-to:
+        - SELF: 5 # The 'SELF' pipeline biome replaces the target with itself
+        - SPECIAL: 1
+      to:
+        FOREST:
+          - SELF: 5
+          - SPECIAL_FOREST: 1
+        PLAINS:
+          - SELF: 5
+          - SPECIAL_PLAINS: 1
+      sampler:
+        type: WHITE_NOISE
+
 
 ---------
 
 BORDER
 ------
 
+Replaces pipeline biomes matching a tag with a :ref:`weighted list <weighted-list>` of
+pipeline biomes :doc:`distributed according to </config/development/noise/use>` a :doc:`/config/documentation/objects/NoiseSampler` only
+if they are bordering any pipeline biome matching another tag.
+
+
 .. _object-stage-template-biome-provider-pipeline-v2-border-parameter-from:
 
-:bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border-parameter-from>` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border-parameter-from>` :doc:`/config/documentation/objects/Tag` - The tag bordering pipeline biomes must contain for a pipeline biome to be replaced.
 
 .. _object-stage-template-biome-provider-pipeline-v2-border-parameter-replace:
 
-:bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border-parameter-replace>` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border-parameter-replace>` :doc:`/config/documentation/objects/Tag` - The tag a pipeline biome must contain in order to be replaced.
+
+.. _object-stage-template-biome-provider-pipeline-v2-border-parameter-sampler:
+
+:bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-border-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
 
 .. _object-stage-template-biome-provider-pipeline-v2-border-parameter-to:
 
-:bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-border-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+:bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-border-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> - The list of pipeline biomes to replace with.
+
+`EXAMPLE`
+
+.. code:: yaml
+
+    stages:
+      # Replaces biomes tagged with LAND bordering OCEAN with BEACH
+      - type: BORDER
+        replace: LAND
+        from: OCEAN
+        to: BEACH # Weighted lists of single items can be defined like this
+        sampler:
+          type: CONSTANT # Since there's only a single item we can just use CONSTANT
+
 
 ---------
 
 BORDER_LIST
 -----------
 
+Same as the `BORDER`_ stage, but takes an additional mapping of :doc:`/config/documentation/objects/PipelineBiome`\s to
+:ref:`weighted lists <weighted-list>` of pipeline biomes. This is convenient for combining multiple consecutive ``BORDER``
+stages that use the same noise sampler into one stage.
+
+
 .. _object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-replace:
 
-:bdg-ref-primary:`default-replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-replace>` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`default-replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-replace>` :doc:`/config/documentation/objects/Tag` - The default tag a pipeline biome must contain in order to be replaced.
 
 .. _object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-to:
 
-:bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
+:bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> - The default list of pipeline biomes to replace pipeline biomes containing the default replace tag with.
 
 .. _object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from:
 
-:bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from>` :doc:`/config/documentation/objects/Tag` 
+:bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from>` :doc:`/config/documentation/objects/Tag` - The tag bordering pipeline biomes must contain for a pipeline biome to be replaced.
 
 .. _object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace:
 
-:bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> 
+:bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> - An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.
+
+.. note::
+  
+    Replacement mappings are from pipeline biomes, **not** tags!
+
+
+.. _object-stage-template-biome-provider-pipeline-v2-border_list-parameter-sampler:
+
+:bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
+
+`EXAMPLE`
+
+.. code:: yaml
+    
+    stages:
+      # Replaces biomes tagged with LAND bordering OCEAN with BEACH
+      # With special handling for JUNGLE to be replaced with JUNGLE_BEACH
+      # and MUSHROOM_PLAINS with MUSHROOM_BEACH
+      - type: BORDER
+        default-replace: LAND
+        from: OCEAN
+        default-to: BEACH # Weighted lists of single items can be defined like this
+        replace:
+          JUNGLE: JUNGLE_BEACH
+          MUSHROOM_PLAINS: MUSHROOM_BEACH
+        sampler:
+          type: CONSTANT # Since there's only a single item in each mapping we can just use CONSTANT
+
 
 Uses
 ====
@@ -102,4 +291,4 @@ This object is used in one place:
 
 - :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages>`:
 
-  :bdg-ref-primary:`pipeline.stages <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> 
+  :bdg-ref-primary:`pipeline.stages <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> - A list of stages that are successively applied.

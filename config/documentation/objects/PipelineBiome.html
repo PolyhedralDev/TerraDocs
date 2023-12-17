@@ -349,31 +349,71 @@
           <section id="pipelinebiome">
 <h1>PipelineBiome<a class="headerlink" href="#pipelinebiome" title="Permalink to this headline">¶</a></h1>
 <p><sup>*Config object requires the ‘biome-provider-pipeline-v2’ addon to use</sup></p>
-<p>A pipeline biome</p>
+<p>A representation of a biome to be distributed across the biome pipeline.</p>
+<p>Pipeline biomes may either represent:</p>
+<ul class="simple">
+<li><p>Regular <a class="reference internal" href="Biome.html"><span class="doc">Biome</span></a>s</p></li>
+<li><p>Placeholder biomes</p></li>
+<li><p>Replacement targets</p></li>
+</ul>
+<section id="representing-regular-biomes">
+<h2>Representing Regular Biomes<a class="headerlink" href="#representing-regular-biomes" title="Permalink to this headline">¶</a></h2>
+<p>If defined as an existing biome’s id, then the pipeline biome will simply represent the biome. The pipeline biome representing
+a regular biome will use all the regular biome’s tags.</p>
+</section>
+<section id="placeholder-biomes">
+<h2>Placeholder Biomes<a class="headerlink" href="#placeholder-biomes" title="Permalink to this headline">¶</a></h2>
+<p>If a pipeline biome does not correspond to any regular biome id, it will be treated as a placeholder biome instead.</p>
+<p>Placeholder biomes act as regular biomes being passed through the biome pipeline, but can be used as placeholder names representing
+anything you’d like. Conventionally placeholder biomes should be all lowercase to distinguish them from regular biome ids.</p>
+<p>For example rather than distributing actual biomes within a <a class="reference internal" href="Source.html"><span class="doc">Source</span></a>,
+more general ‘land’ and ‘ocean’ placeholders can be used:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">source</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SAMPLER</span><span class="w"></span>
+<span class="w">  </span><span class="nt">biomes</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">land</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">ocean</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<span class="w">  </span><span class="nt">sampler</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OPEN_SIMPLEX_2</span><span class="w"></span>
+</pre></div>
+</div>
+<p>For a pipeline to be valid, <strong>it must not be possible for a placeholder biome to be found in the final biome distribution</strong>. This
+means that any placeholder biomes introduced into the pipeline must eventually be replaced by pipeline biomes that represent
+real biomes.</p>
+<p>A placeholder biome ending up in the final distribution is called a ‘pipeline leak’.</p>
+<p>The above source by itself would not load unless both <code class="docutils literal notranslate"><span class="pre">land</span></code> and <code class="docutils literal notranslate"><span class="pre">ocean</span></code> are eventually replaced with pipeline
+biomes representing regular biomes.</p>
+</section>
+<section id="self-syntax">
+<h2>Self Syntax<a class="headerlink" href="#self-syntax" title="Permalink to this headline">¶</a></h2>
+<p>Pipeline biomes being ‘replaced to’ may be defined as <code class="docutils literal notranslate"><span class="pre">SELF</span></code>, which acts as a placeholder for the pipeline biome being replaced.
+This is useful when you want to replace pipeline biomes containing a <a class="reference internal" href="Tag.html"><span class="doc">Tag</span></a> with themselves in
+addition to other biomes.</p>
+</section>
 <section id="uses">
 <h2>Uses<a class="headerlink" href="#uses" title="Permalink to this headline">¶</a></h2>
 <p>Used by 7 parameters:</p>
 <ul>
 <li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-list-parameter-default-to"><span class="std std-ref">In BORDER_LIST in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-list-parameter-default-to"><span class="std std-ref">default-to</span></a> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt;</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-list-parameter-default-to"><span class="std std-ref">default-to</span></a> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt; - The default list of pipeline biomes to replace pipeline biomes containing the default replace tag with.</p>
 </li>
 <li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-default-to"><span class="std std-ref">In REPLACE_LIST in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-default-to"><span class="std std-ref">default-to</span></a> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt;</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-default-to"><span class="std std-ref">default-to</span></a> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt; - The list of pipeline biomes to replace any matches of the default tag with.</p>
+</li>
+<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-parameter-to"><span class="std std-ref">In BORDER in Stage</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-parameter-to"><span class="std std-ref">to</span></a> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt; - The list of pipeline biomes to replace with.</p>
+</li>
+<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-list-parameter-replace"><span class="std std-ref">In BORDER_LIST in Stage</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-list-parameter-replace"><span class="std std-ref">replace</span></a> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>, <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt;&gt; - An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.</p>
 </li>
 <li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-to"><span class="std std-ref">In REPLACE_LIST in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-to"><span class="std std-ref">to</span></a> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>, <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt;&gt;</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-to"><span class="std std-ref">to</span></a> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>, <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt;&gt; - An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.</p>
 </li>
 <li><p><a class="reference internal" href="Source.html#object-source-template-biome-provider-pipeline-v2-sampler-parameter-biomes"><span class="std std-ref">In SAMPLER in Source</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Source.html#object-source-template-biome-provider-pipeline-v2-sampler-parameter-biomes"><span class="std std-ref">biomes</span></a> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt;</p>
 </li>
-<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-list-parameter-replace"><span class="std std-ref">In BORDER_LIST in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-list-parameter-replace"><span class="std std-ref">replace</span></a> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>, <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt;&gt;</p>
-</li>
 <li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-parameter-to"><span class="std std-ref">In REPLACE in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-parameter-to"><span class="std std-ref">to</span></a> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt;</p>
-</li>
-<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-parameter-to"><span class="std std-ref">In BORDER in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-parameter-to"><span class="std std-ref">to</span></a> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt;</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-parameter-to"><span class="std std-ref">to</span></a> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="#"><span class="doc">PipelineBiome</span></a>&gt; - The pipeline biomes that the <code class="docutils literal notranslate"><span class="pre">from</span></code> tag will be replaced with.</p>
 </li>
 </ul>
 </section>
@@ -431,6 +471,9 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">PipelineBiome</a><ul>
+<li><a class="reference internal" href="#representing-regular-biomes">Representing Regular Biomes</a></li>
+<li><a class="reference internal" href="#placeholder-biomes">Placeholder Biomes</a></li>
+<li><a class="reference internal" href="#self-syntax">Self Syntax</a></li>
 <li><a class="reference internal" href="#uses">Uses</a></li>
 </ul>
 </li>

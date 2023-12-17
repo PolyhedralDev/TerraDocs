@@ -22,31 +22,53 @@ PIPELINE
 
 :superscript:`*Type requires the 'biome-provider-pipeline-v2' addon to use`
 
+'The pipeline' is a biome provider that distributes biomes procedurally in 2D.
+
+The name comes from the way it operates, there is a 'source' which produces an
+initial biome layout, which then flows through successive stages that each modify
+the layout in some particular way. The final placement of biomes is determined
+by the result after all stages have been applied.
+
+.. image:: /img/config/documentation/pipeline-diagram.png
+    :width: 50%
+      
+Biome layouts can be thought of as images, where there would be biomes instead
+of colors for each pixel. Each stage can be thought of as some kind of filter
+or effect that is applied to the image.
+
+
 .. _object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.source:
 
-:bdg-ref-primary:`pipeline.source <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.source>` :doc:`/config/documentation/objects/Source` 
+:bdg-ref-primary:`pipeline.source <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.source>` :doc:`/config/documentation/objects/Source` - The initial biome layout.
 
 .. _object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages:
 
-:bdg-ref-primary:`pipeline.stages <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> 
+:bdg-ref-primary:`pipeline.stages <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> - A list of stages that are successively applied.
 
 .. _object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.amplitude:
 
-:bdg-ref-success:`blend.amplitude <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.amplitude>` :doc:`/config/documentation/objects/Float` 
+:bdg-ref-success:`blend.amplitude <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.amplitude>` :doc:`/config/documentation/objects/Float` - The blend strength.
 
 Default: ``0.0``
 
 .. _object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.sampler:
 
-:bdg-ref-success:`blend.sampler <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+:bdg-ref-success:`blend.sampler <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.sampler>` :doc:`/config/documentation/objects/NoiseSampler` - A sampler that blends the pixelated effect produced by higher resolutions.
 
 Default: ``Constant 0``
 
+Blending is done using the process of :ref:`domain-warping`.
+
 .. _object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-resolution:
 
-:bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
+:bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-resolution>` :doc:`/config/documentation/objects/Integer` - A performance parameter that determines the size of each biome 'pixel' in blocks.
 
 Default: ``1``
+
+Increasing this will make the pipeline perform better, but also makes the biome distribution
+look more pixelated. A resolution of 1 results in the best quality. Resolutions between 2 and
+4 don't have very apparent pixelation when used in conjunction with blending.
+
 
 ---------
 

@@ -35,6 +35,9 @@ IMAGE
 SAMPLER
 -------
 
+Distributes a :ref:`weighted list <weighted-list>` of pipeline biomes according to a :doc:`/config/documentation/objects/NoiseSampler`\.
+
+
 .. _object-source-template-biome-provider-pipeline-v2-sampler-parameter-biomes:
 
 :bdg-ref-primary:`biomes <object-source-template-biome-provider-pipeline-v2-sampler-parameter-biomes>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> 
@@ -50,4 +53,4 @@ This object is used in one place:
 
 - :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.source>`:
 
-  :bdg-ref-primary:`pipeline.source <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.source>` :doc:`/config/documentation/objects/Source` 
+  :bdg-ref-primary:`pipeline.source <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.source>` :doc:`/config/documentation/objects/Source` - The initial biome layout.
