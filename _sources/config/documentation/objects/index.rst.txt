@@ -11,8 +11,8 @@ Config Objects
     List
     Range
     Boolean
-    WeightedList
     Map
+    WeightedList
     Block
     PipelineBiome
     Tag
@@ -24,13 +24,13 @@ Config Objects
     Image
     Biome
     ColorString
+    DimensionApplicableSampler
+    MathFunction
     ExtrusionReplaceableBiome
     BiomeProvider
     Palette
     BiomeColorMapping
     PipelineBiomeColorConverter
-    DimensionApplicableSampler
-    MathFunction
     PaletteLayer
     Point
     Source

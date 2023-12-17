@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Block" href="Block.html" /><link rel="prev" title="WeightedList" href="WeightedList.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="WeightedList" href="WeightedList.html" /><link rel="prev" title="Boolean" href="Boolean.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
         <title>Map - Terra Docs</title>
@@ -257,8 +257,8 @@
 <li class="toctree-l4"><a class="reference internal" href="List.html">List</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Range.html">Range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Boolean.html">Boolean</a></li>
-<li class="toctree-l4"><a class="reference internal" href="WeightedList.html">WeightedList</a></li>
 <li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="WeightedList.html">WeightedList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Block.html">Block</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PipelineBiome.html">PipelineBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Tag.html">Tag</a></li>
@@ -270,13 +270,13 @@
 <li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Biome.html">Biome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ColorString.html">ColorString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeProvider.html">BiomeProvider</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
-<li class="toctree-l4"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Source.html">Source</a></li>
@@ -352,34 +352,40 @@
 <p>See <a class="reference internal" href="../../development/config-data.html"><span class="doc">Defining Data in Configs</span></a></p>
 <section id="uses">
 <h2>Uses<a class="headerlink" href="#uses" title="Permalink to this headline">¶</a></h2>
-<p>Used by 9 parameters:</p>
+<p>Used by 11 parameters:</p>
 <ul>
-<li><p><a class="reference internal" href="BiomeColorMapping.html#object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map"><span class="std std-ref">In MAP in BiomeColorMapping</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="BiomeColorMapping.html#object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map"><span class="std std-ref">map</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="ColorString.html"><span class="doc">ColorString</span></a>, <a class="reference internal" href="Biome.html"><span class="doc">Biome</span></a>&gt;</p>
-</li>
-<li><p><a class="reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-samplers"><span class="std std-ref">In EXPRESSION in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="DimensionApplicableSampler.html"><span class="doc">DimensionApplicableSampler</span></a>&gt; - Defines a mapping of function names to samplers.</p>
-</li>
-<li><p><a class="reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-palette"><span class="std std-ref">In base in BIOME</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-palette"><span class="std std-ref">palette</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="Palette.html"><span class="doc">Palette</span></a>, <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>&gt;&gt;</p>
-</li>
-<li><p><a class="reference internal" href="../configs/SCATTERED_ORE.html#config-scattered-ore-template-config-ore-base-parameter-material-overrides"><span class="std std-ref">In base in SCATTERED_ORE</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/SCATTERED_ORE.html#config-scattered-ore-template-config-ore-base-parameter-material-overrides"><span class="std std-ref">material-overrides</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="Block.html"><span class="doc">Block</span></a>, <a class="reference internal" href="Block.html"><span class="doc">Block</span></a>&gt;</p>
-</li>
-<li><p><a class="reference internal" href="../configs/ORE.html#config-ore-template-config-ore-base-parameter-material-overrides"><span class="std std-ref">In base in ORE</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/ORE.html#config-ore-template-config-ore-base-parameter-material-overrides"><span class="std std-ref">material-overrides</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="Block.html"><span class="doc">Block</span></a>, <a class="reference internal" href="Block.html"><span class="doc">Block</span></a>&gt;</p>
-</li>
 <li><p><a class="reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-variables"><span class="std std-ref">In EXPRESSION in NoiseSampler</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-variables"><span class="std std-ref">variables</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>&gt;</p>
-</li>
-<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-to"><span class="std std-ref">In REPLACE_LIST in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-to"><span class="std std-ref">to</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>, <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;&gt; - An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.</p>
 </li>
 <li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-list-parameter-replace"><span class="std std-ref">In BORDER_LIST in Stage</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-list-parameter-replace"><span class="std std-ref">replace</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>, <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;&gt; - An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.</p>
 </li>
+<li><p><a class="reference internal" href="../configs/SCATTERED_ORE.html#config-scattered-ore-template-config-ore-base-parameter-material-overrides"><span class="std std-ref">In base in SCATTERED_ORE</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/SCATTERED_ORE.html#config-scattered-ore-template-config-ore-base-parameter-material-overrides"><span class="std std-ref">material-overrides</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="Block.html"><span class="doc">Block</span></a>, <a class="reference internal" href="Block.html"><span class="doc">Block</span></a>&gt;</p>
+</li>
+<li><p><a class="reference internal" href="../configs/pack.yml.html#config-pack-yml-template-config-noise-function-base-parameter-samplers"><span class="std std-ref">In base in pack.yml</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/pack.yml.html#config-pack-yml-template-config-noise-function-base-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="DimensionApplicableSampler.html"><span class="doc">DimensionApplicableSampler</span></a>&gt; - A set of samplers globally accessible within <a class="reference internal" href="Expression.html"><span class="doc">Expression</span></a>s in <code class="docutils literal notranslate"><span class="pre">EXPRESSION</span></code> samplers defined inside other config files.</p>
+</li>
+<li><p><a class="reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-palette"><span class="std std-ref">In base in BIOME</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-palette"><span class="std std-ref">palette</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="Palette.html"><span class="doc">Palette</span></a>, <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>&gt;&gt;</p>
+</li>
+<li><p><a class="reference internal" href="BiomeColorMapping.html#object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map"><span class="std std-ref">In MAP in BiomeColorMapping</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="BiomeColorMapping.html#object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map"><span class="std std-ref">map</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="ColorString.html"><span class="doc">ColorString</span></a>, <a class="reference internal" href="Biome.html"><span class="doc">Biome</span></a>&gt;</p>
+</li>
+<li><p><a class="reference internal" href="../configs/ORE.html#config-ore-template-config-ore-base-parameter-material-overrides"><span class="std std-ref">In base in ORE</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/ORE.html#config-ore-template-config-ore-base-parameter-material-overrides"><span class="std std-ref">material-overrides</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="Block.html"><span class="doc">Block</span></a>, <a class="reference internal" href="Block.html"><span class="doc">Block</span></a>&gt;</p>
+</li>
 <li><p><a class="reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-functions"><span class="std std-ref">In EXPRESSION in NoiseSampler</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-functions"><span class="std std-ref">functions</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="MathFunction.html"><span class="doc">MathFunction</span></a>&gt;</p>
+</li>
+<li><p><a class="reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-samplers"><span class="std std-ref">In EXPRESSION in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="DimensionApplicableSampler.html"><span class="doc">DimensionApplicableSampler</span></a>&gt; - Defines a mapping of function names to samplers.</p>
+</li>
+<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-to"><span class="std std-ref">In REPLACE_LIST in Stage</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-to"><span class="std std-ref">to</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>, <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;&gt; - An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.</p>
+</li>
+<li><p><a class="reference internal" href="../configs/pack.yml.html#config-pack-yml-template-config-noise-function-base-parameter-functions"><span class="std std-ref">In base in pack.yml</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/pack.yml.html#config-pack-yml-template-config-noise-function-base-parameter-functions"><span class="std std-ref">functions</span></a> <a class="reference internal" href="#"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="MathFunction.html"><span class="doc">MathFunction</span></a>&gt; - A set of math functions globally accessible within <a class="reference internal" href="Expression.html"><span class="doc">Expression</span></a>s in <code class="docutils literal notranslate"><span class="pre">EXPRESSION</span></code> samplers defined inside other config files.</p>
 </li>
 </ul>
 </section>
@@ -390,23 +396,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="Block.html">
+          <a class="next-page" href="WeightedList.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Block</div>
+                <div class="title">WeightedList</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="WeightedList.html">
+          <a class="prev-page" href="Boolean.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">WeightedList</div>
+                <div class="title">Boolean</div>
                 
               </div>
             </a>

@@ -25,7 +25,11 @@ Default: ``{}``
 Uses
 ====
 
-This object is used in one place:
+Used by 2 parameters:
+
+- :ref:`In base in pack.yml <config-pack.yml-template-config-noise-function-base-parameter-functions>`:
+
+  :bdg-ref-success:`functions <config-pack.yml-template-config-noise-function-base-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> - A set of math functions globally accessible within :doc:`/config/documentation/objects/Expression`\s in ``EXPRESSION`` samplers defined inside other config files.
 
 - :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-functions>`:
 

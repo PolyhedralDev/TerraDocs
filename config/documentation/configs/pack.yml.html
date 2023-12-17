@@ -257,8 +257,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../objects/List.html">List</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/Range.html">Range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/Boolean.html">Boolean</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../objects/WeightedList.html">WeightedList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/Map.html">Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../objects/WeightedList.html">WeightedList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/Block.html">Block</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/PipelineBiome.html">PipelineBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/Tag.html">Tag</a></li>
@@ -270,13 +270,13 @@
 <li class="toctree-l4"><a class="reference internal" href="../objects/Image.html">Image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/Biome.html">Biome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/ColorString.html">ColorString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../objects/DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../objects/MathFunction.html">MathFunction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/BiomeProvider.html">BiomeProvider</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../objects/DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../objects/MathFunction.html">MathFunction</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/Point.html">Point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../objects/Source.html">Source</a></li>
@@ -371,6 +371,22 @@
 <p>Default: <code class="docutils literal notranslate"><span class="pre">2</span></code></p>
 <p id="config-pack-yml-template-chunk-generator-noise-3d-base-parameter-slant-calculation-method"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#config-pack-yml-template-chunk-generator-noise-3d-base-parameter-slant-calculation-method"><span class="std std-ref">slant.calculation-method</span></a> SlantCalculationMethod</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">Derivative</span></code></p>
+<hr class="docutils"/>
+<p><sup>*Parameters require the ‘config-noise-function’ addon to use</sup></p>
+<p id="config-pack-yml-template-config-noise-function-base-parameter-functions"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#config-pack-yml-template-config-noise-function-base-parameter-functions"><span class="std std-ref">functions</span></a> <a class="reference internal" href="../objects/Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="../objects/String.html"><span class="doc">String</span></a>, <a class="reference internal" href="../objects/MathFunction.html"><span class="doc">MathFunction</span></a>&gt; - A set of math functions globally accessible within <a class="reference internal" href="../objects/Expression.html"><span class="doc">Expression</span></a>s in <code class="docutils literal notranslate"><span class="pre">EXPRESSION</span></code> samplers defined inside other config files.</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">{}</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Functions defined under this parameter cannot reference each other, and are only
+able to be used in other config files.</p>
+</div>
+<p id="config-pack-yml-template-config-noise-function-base-parameter-samplers"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#config-pack-yml-template-config-noise-function-base-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="../objects/Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="../objects/String.html"><span class="doc">String</span></a>, <a class="reference internal" href="../objects/DimensionApplicableSampler.html"><span class="doc">DimensionApplicableSampler</span></a>&gt; - A set of samplers globally accessible within <a class="reference internal" href="../objects/Expression.html"><span class="doc">Expression</span></a>s in <code class="docutils literal notranslate"><span class="pre">EXPRESSION</span></code> samplers defined inside other config files.</p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">{}</span></code></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Samplers defined under this parameter cannot reference each other, and are only
+able to be used in other config files.</p>
+</div>
 </section>
 
         </article>
