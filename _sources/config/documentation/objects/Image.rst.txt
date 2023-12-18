@@ -104,10 +104,6 @@ Uses
 
 Used by 3 parameters:
 
-- :ref:`In SINGLE_IMAGE in ColorSampler <object-colorsampler-template-library-image-single_image-parameter-image>`:
-
-  :bdg-ref-primary:`image <object-colorsampler-template-library-image-single_image-parameter-image>` :doc:`/config/documentation/objects/Image` - The image to be sampled
-
 - :ref:`In TILED_IMAGE in ColorSampler <object-colorsampler-template-library-image-tiled_image-parameter-image>`:
 
   :bdg-ref-primary:`image <object-colorsampler-template-library-image-tiled_image-parameter-image>` :doc:`/config/documentation/objects/Image` - The image to be sampled
@@ -115,3 +111,7 @@ Used by 3 parameters:
 - :ref:`In DISTANCE_TRANSFORM in NoiseSampler <object-noisesampler-template-library-image-distance_transform-parameter-image>`:
 
   :bdg-ref-primary:`image <object-noisesampler-template-library-image-distance_transform-parameter-image>` :doc:`/config/documentation/objects/Image` 
+
+- :ref:`In SINGLE_IMAGE in ColorSampler <object-colorsampler-template-library-image-single_image-parameter-image>`:
+
+  :bdg-ref-primary:`image <object-colorsampler-template-library-image-single_image-parameter-image>` :doc:`/config/documentation/objects/Image` - The image to be sampled

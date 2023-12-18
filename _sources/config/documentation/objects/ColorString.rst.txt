@@ -11,10 +11,10 @@ Uses
 
 Used by 2 parameters:
 
-- :ref:`In MAP in BiomeColorMapping <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>`:
-
-  :bdg-ref-primary:`map <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
-
 - :ref:`In COLOR in ColorSampler <object-colorsampler-template-library-image-color-parameter-color>`:
 
   :bdg-ref-primary:`color <object-colorsampler-template-library-image-color-parameter-color>` :doc:`/config/documentation/objects/ColorString` - The color to output.
+
+- :ref:`In MAP in BiomeColorMapping <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>`:
+
+  :bdg-ref-primary:`map <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 

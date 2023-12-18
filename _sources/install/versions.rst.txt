@@ -35,10 +35,18 @@ Fabric
         - Backwards Compatibility [6]_
 
     *
+        - **1.20.4**
+        - 6.4.2 :bdg-warning:`Beta`
+        - :bdg-success:`Yes`
+        - :bdg-success:`Yes`
+        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.2-BETA-fabric>`__
+        - N/A
+
+    *
         - **1.20.2**
         - 6.4.1 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
-        - :bdg-success:`Yes`
+        - :bdg-danger:`No`
         - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.1-BETA-fabric>`__
         - N/A
 
@@ -102,10 +110,18 @@ Bukkit
         - Backwards Compatibility [6]_
 
     *
+        - **1.20.4**
+        - 6.4.2 :bdg-warning:`Beta`
+        - :bdg-success:`Yes`
+        - :bdg-success:`Yes`
+        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.2-BETA-bukkit>`__
+        - N/A
+
+    *
         - **1.20.2**
         - 6.4.1 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
-        - :bdg-success:`Yes`
+        - :bdg-danger:`No`
         - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.1-BETA-bukkit>`__
         - N/A
 
