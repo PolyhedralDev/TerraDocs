@@ -42,13 +42,13 @@ Uses
 
 Used by 14 parameters:
 
-- :ref:`In SURFACE in Locator <object-locator-template-config-locators-surface-parameter-range>`:
-
-  :bdg-ref-primary:`range <object-locator-template-config-locators-surface-parameter-range>` :doc:`/config/documentation/objects/Range` 
-
 - :ref:`In TOP in Locator <object-locator-template-config-locators-top-parameter-range>`:
 
   :bdg-ref-primary:`range <object-locator-template-config-locators-top-parameter-range>` :doc:`/config/documentation/objects/Range` 
+
+- :ref:`In SURFACE in Locator <object-locator-template-config-locators-surface-parameter-range>`:
+
+  :bdg-ref-primary:`range <object-locator-template-config-locators-surface-parameter-range>` :doc:`/config/documentation/objects/Range` 
 
 - :ref:`In PATTERN in Locator <object-locator-template-config-locators-pattern-parameter-range>`:
 

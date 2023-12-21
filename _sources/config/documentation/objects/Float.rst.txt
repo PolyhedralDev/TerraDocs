@@ -100,6 +100,10 @@ Used by 49 parameters:
 
   :bdg-ref-success:`deviation <object-noisesampler-template-config-noise-function-gabor-parameter-deviation>` :doc:`/config/documentation/objects/Float` 
 
+- :ref:`In NORMAL in NoiseSampler <object-noisesampler-template-config-noise-function-normal-parameter-standard-deviation>`:
+
+  :bdg-ref-primary:`standard-deviation <object-noisesampler-template-config-noise-function-normal-parameter-standard-deviation>` :doc:`/config/documentation/objects/Float` 
+
 - :ref:`In SCALE in NoiseSampler <object-noisesampler-template-config-noise-function-scale-parameter-amplitude>`:
 
   :bdg-ref-primary:`amplitude <object-noisesampler-template-config-noise-function-scale-parameter-amplitude>` :doc:`/config/documentation/objects/Float` 
@@ -147,10 +151,6 @@ Used by 49 parameters:
 - :ref:`In LINEAR in NoiseSampler <object-noisesampler-template-config-noise-function-linear-parameter-min>`:
 
   :bdg-ref-primary:`min <object-noisesampler-template-config-noise-function-linear-parameter-min>` :doc:`/config/documentation/objects/Float` 
-
-- :ref:`In NORMAL in NoiseSampler <object-noisesampler-template-config-noise-function-normal-parameter-standard-deviation>`:
-
-  :bdg-ref-primary:`standard-deviation <object-noisesampler-template-config-noise-function-normal-parameter-standard-deviation>` :doc:`/config/documentation/objects/Float` 
 
 - :ref:`In GABOR in NoiseSampler <object-noisesampler-template-config-noise-function-gabor-parameter-frequency>`:
 
