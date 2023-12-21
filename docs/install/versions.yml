@@ -6,7 +6,7 @@ Fabric:
     - mc-ver: "1.20.4"
       terra-ver: "6.4.2"
       stage: BETA
-      link: https://modrinth.com/plugin/terra/version/6.4.2-BETA+da4ab8b71
+      link: https://modrinth.com/plugin/terra/version/6.4.2-BETA-fabric
       supported: true
       maintained: true
     - mc-ver: "1.20.2"
@@ -45,7 +45,7 @@ Bukkit:
     - mc-ver: "1.20.4"
       terra-ver: "6.4.2"
       stage: BETA
-      link: https://modrinth.com/plugin/terra/version/fM95q50t
+      link: https://modrinth.com/plugin/terra/version/6.4.2-BETA-bukkit
       supported: true
       maintained: true
     - mc-ver: "1.20.2"
