@@ -594,7 +594,7 @@ config-noise-function:
         footer: |
           This is a convenience short hand version of the `EXPRESSION`_ sampler which you should refer to for more info.
 
-        For example the following sampler:
+          For example the following sampler:
 
           .. code:: yaml
 
