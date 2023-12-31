@@ -52,30 +52,35 @@ Here is what the above example looks like with the ``salt`` key added:
 All optional parameters have pre-defined default values that are set when they are not specified.
 When the ``salt`` key is not included in a sampler config, it will default to its predefined value ``0``.
 
-.. Commented out because noise tool is not yet up to date
-.. Noise Tool
-.. ----------
+Noise Tool
+----------
 
-.. Now that we know how to write a simple sampler config, we can use a handy program aptly named the **Noise Tool** to
-.. preview what our config looks like.
+Now that we know how to write a simple sampler config, we can use a handy program aptly named the **Noise Tool** to
+preview what our config looks like.
 
-.. .. image:: /img/concepts/noise/noise_tool.png
-..    :width: 100%
-..    :align: center
+.. image:: /img/concepts/noise/noise_tool.png
+   :width: 100%
+   :align: center
 
-.. The Noise Tool was specially designed for creating, previewing, and modifying samplers, and is also what was used
-.. to generate every image of noise used on this page. You can find the Noise Tool on GitHub -
-.. `Source <https://github.com/PolyhedralDev/NoiseTool>`_ / `Download <https://github.com/PolyhedralDev/NoiseTool/releases>`_
+The Noise Tool was specially designed for creating, previewing, and modifying samplers, and is also what was used
+to generate every image of noise used on this page. You can find the Noise Tool on GitHub -
+`Source <https://github.com/PolyhedralDev/NoiseTool>`_ / `Download <https://github.com/PolyhedralDev/NoiseTool/releases>`_
 
-.. .. tip::
+.. warning:: 
+   
+   The NoiseTool does not include any addons by default. When running the Noise Tool, the folder you run it from
+   will require an ``addons`` folder. (This will be created when starting the tool if you do not create it yourself.)
+   You should copy the ``bootstrap`` folder and the ``config-noise-function`` addon from your Terra installation to the Noise Tool's
+   ``addon`` folder, those of which can be found in ``Terra/addons``.
 
-..    We suggest that you follow along the rest of this section with the Noise Tool, so you can try out parameters get the
-..    hang of writing your own sampler configs. Playing around and experimenting on your own is a great way of learning what
-..    each parameter does, and will give you an intuition on how you can fine tune them to your advantage.
+.. tip::
 
+   We suggest that you follow along the rest of this section with the Noise Tool, so you can try out parameters get the
+   hang of writing your own sampler configs. Playing around and experimenting on your own is a great way of learning what
+   each parameter does, and will give you an intuition on how you can fine tune them to your advantage.
 
-.. For a complete list of sampler types and their parameters available in Terra, please refer to the
-.. :doc:`/config/documentation/objects/NoiseSampler` page.
+For a complete list of sampler types and their parameters available in Terra, please refer to the
+:doc:`/config/documentation/objects/NoiseSampler` page.
 
 .. _sampler-frequency:
 
@@ -254,8 +259,8 @@ parameters already defined:
    lacunarity: 2
    gain: 0.75
 
-.. Feel free to preview this config in the `Noise Tool <#noise-tool>`_, and have an experiment with each parameter to see
-.. what they all do.
+Feel free to preview this config in the `Noise Tool <#noise-tool>`_, and have an experiment with each parameter to see
+what they all do.
 
 To see all available fractalizers and their parameters, please refer to the
 :doc:`/config/documentation/objects/NoiseSampler` page.
@@ -325,8 +330,8 @@ sampler:
      type: OPEN_SIMPLEX_2
    amplitude: 20
 
-.. Again it's recommended that you try out this sampler config in the `Noise Tool <#noise-tool>`_ and see what changing each
-.. parameter does - What happens if you use ``WHITE_NOISE`` as a warp sampler instead?
+Again it's recommended that you try out this sampler config in the `Noise Tool <#noise-tool>`_ and see what changing each
+parameter does - What happens if you use ``WHITE_NOISE`` as a warp sampler instead?
 
 .. dropdown:: Under The Hood - The Math Behind Domain Warping
 
