@@ -21,6 +21,7 @@ Contents
 
     configs/index
     objects/index
+    terrascript/index
 
 .. _config-documentation-format:
 
