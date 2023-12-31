@@ -1,0 +1,26 @@
+================
+CubicSplinePoint
+================
+
+:superscript:`*Config object requires the 'config-noise-function' addon to use`
+
+.. _object-cubicsplinepoint-template-config-noise-function-map-parameter-from:
+
+:bdg-ref-primary:`from <object-cubicsplinepoint-template-config-noise-function-map-parameter-from>` :doc:`/config/documentation/objects/Float` - The value input noise will be mapped from.
+
+.. _object-cubicsplinepoint-template-config-noise-function-map-parameter-gradient:
+
+:bdg-ref-primary:`gradient <object-cubicsplinepoint-template-config-noise-function-map-parameter-gradient>` :doc:`/config/documentation/objects/Float` - The gradient / slope the cubic spline should follow at the point.
+
+.. _object-cubicsplinepoint-template-config-noise-function-map-parameter-to:
+
+:bdg-ref-primary:`to <object-cubicsplinepoint-template-config-noise-function-map-parameter-to>` :doc:`/config/documentation/objects/Float` - Output value when input noise = ``from``.
+
+Uses
+====
+
+This object is used in one place:
+
+- :ref:`In CUBIC_SPLINE in NoiseSampler <object-noisesampler-template-config-noise-function-cubic_spline-parameter-points>`:
+
+  :bdg-ref-primary:`points <object-noisesampler-template-config-noise-function-cubic_spline-parameter-points>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/CubicSplinePoint`\> 

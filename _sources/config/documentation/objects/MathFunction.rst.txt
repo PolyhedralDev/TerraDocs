@@ -25,7 +25,11 @@ Default: ``{}``
 Uses
 ====
 
-Used by 2 parameters:
+Used by 3 parameters:
+
+- :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-functions>`:
+
+  :bdg-ref-success:`functions <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> - An additional mappping of named math functions that can be used in the ``expression``.
 
 - :ref:`In base in pack.yml <config-pack.yml-template-config-noise-function-base-parameter-functions>`:
 

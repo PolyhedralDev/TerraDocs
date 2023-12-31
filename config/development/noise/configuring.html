@@ -251,13 +251,13 @@
 </li>
 <li class="toctree-l3 has-children"><a class="reference internal" href="../../documentation/objects/index.html">Config Objects</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Float.html">Float</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Integer.html">Integer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Integer.html">Integer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/String.html">String</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/List.html">List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Map.html">Map</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Range.html">Range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Boolean.html">Boolean</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Map.html">Map</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/WeightedList.html">WeightedList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Block.html">Block</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
@@ -268,22 +268,23 @@
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Distributor.html">Distributor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Locator.html">Locator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Image.html">Image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Biome.html">Biome</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/ColorString.html">ColorString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/MathFunction.html">MathFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Biome.html">Biome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/ColorString.html">ColorString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Expression.html">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/BiomeProvider.html">BiomeProvider</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/CubicSplinePoint.html">CubicSplinePoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Point.html">Point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Source.html">Source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Stage.html">Stage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Extrusion.html">Extrusion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Expression.html">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Feature.html">Feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Structure.html">Structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/GenerationStage.html">GenerationStage</a></li>
@@ -293,6 +294,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/NumberPredicate.html">NumberPredicate</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../../documentation/terrascript/index.html">TerraScript</a></li>
 </ul>
 </li>
 </ul>
@@ -379,6 +381,30 @@ covered <a class="reference internal" href="theory.html#noise-sampler-salt-theor
 <p>All optional parameters have pre-defined default values that are set when they are not specified.
 When the <code class="docutils literal notranslate"><span class="pre">salt</span></code> key is not included in a sampler config, it will default to its predefined value <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
 </section>
+</section>
+<section id="noise-tool">
+<h3>Noise Tool<a class="headerlink" href="#noise-tool" title="Permalink to this headline">¶</a></h3>
+<p>Now that we know how to write a simple sampler config, we can use a handy program aptly named the <strong>Noise Tool</strong> to
+preview what our config looks like.</p>
+<a class="reference internal image-reference" href="../../../_images/noise_tool.png"><img alt="../../../_images/noise_tool.png" class="align-center" src="../../../_images/noise_tool.png" style="width: 100%;"/></a>
+<p>The Noise Tool was specially designed for creating, previewing, and modifying samplers, and is also what was used
+to generate every image of noise used on this page. You can find the Noise Tool on GitHub -
+<a class="reference external" href="https://github.com/PolyhedralDev/NoiseTool">Source</a> / <a class="reference external" href="https://github.com/PolyhedralDev/NoiseTool/releases">Download</a></p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The NoiseTool does not include any addons by default. When running the Noise Tool, the folder you run it from
+will require an <code class="docutils literal notranslate"><span class="pre">addons</span></code> folder. (This will be created when starting the tool if you do not create it yourself.)
+You should copy the <code class="docutils literal notranslate"><span class="pre">bootstrap</span></code> folder and the <code class="docutils literal notranslate"><span class="pre">config-noise-function</span></code> addon from your Terra installation to the Noise Tool’s
+<code class="docutils literal notranslate"><span class="pre">addon</span></code> folder, those of which can be found in <code class="docutils literal notranslate"><span class="pre">Terra/addons</span></code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We suggest that you follow along the rest of this section with the Noise Tool, so you can try out parameters get the
+hang of writing your own sampler configs. Playing around and experimenting on your own is a great way of learning what
+each parameter does, and will give you an intuition on how you can fine tune them to your advantage.</p>
+</div>
+<p>For a complete list of sampler types and their parameters available in Terra, please refer to the
+<a class="reference internal" href="../../documentation/objects/NoiseSampler.html"><span class="doc">NoiseSampler</span></a> page.</p>
 <section id="frequency">
 <span id="sampler-frequency"></span><h4>Frequency<a class="headerlink" href="#frequency" title="Permalink to this headline">¶</a></h4>
 <p><strong>Frequency</strong> is a number that modifies the ‘scale’ of sampler outputs, where higher
@@ -555,11 +581,13 @@ parameters already defined:</p>
 <span class="nt">gain</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.75</span><span class="w"></span>
 </pre></div>
 </div>
+<p>Feel free to preview this config in the <a class="reference external" href="#noise-tool">Noise Tool</a>, and have an experiment with each parameter to see
+what they all do.</p>
 <p>To see all available fractalizers and their parameters, please refer to the
 <a class="reference internal" href="../../documentation/objects/NoiseSampler.html"><span class="doc">NoiseSampler</span></a> page.</p>
 </section>
 <section id="domain-warping">
-<span id="id2"></span><h3>Domain Warping<a class="headerlink" href="#domain-warping" title="Permalink to this headline">¶</a></h3>
+<span id="id3"></span><h3>Domain Warping<a class="headerlink" href="#domain-warping" title="Permalink to this headline">¶</a></h3>
 <a class="reference internal image-reference" href="../../../_images/overwarped.png"><img alt="../../../_images/overwarped.png" class="align-center" src="../../../_images/overwarped.png" style="width: 100%;"/></a>
 <p>Similar to <a class="reference internal" href="#fractalization">fractalization</a>, domain warping involves taking a sampler and modifying it in some way.
 More specifically, domain warping allows you to warp the output of one sampler with another ‘warping sampler’.</p>
@@ -602,6 +630,8 @@ sampler:</p>
 <span class="nt">amplitude</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">20</span><span class="w"></span>
 </pre></div>
 </div>
+<p>Again it’s recommended that you try out this sampler config in the <a class="reference external" href="#noise-tool">Noise Tool</a> and see what changing each
+parameter does - What happens if you use <code class="docutils literal notranslate"><span class="pre">WHITE_NOISE</span></code> as a warp sampler instead?</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Under The Hood - The Math Behind Domain Warping<div class="sd-summary-down docutils">
@@ -727,6 +757,9 @@ fractalized simplex!):</p>
 <li><a class="reference internal" href="#parameters">Parameters</a><ul>
 <li><a class="reference internal" href="#common-noise-sampler-parameters">Common Noise Sampler Parameters</a><ul>
 <li><a class="reference internal" href="#salt">Salt</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#noise-tool">Noise Tool</a><ul>
 <li><a class="reference internal" href="#frequency">Frequency</a></li>
 </ul>
 </li>

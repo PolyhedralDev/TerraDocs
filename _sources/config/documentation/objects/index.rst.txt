@@ -5,13 +5,13 @@ Config Objects
     :maxdepth: 1
 
     Float
-    Integer
     NoiseSampler
+    Integer
     String
     List
+    Map
     Range
     Boolean
-    Map
     WeightedList
     Block
     PipelineBiome
@@ -22,22 +22,23 @@ Config Objects
     Distributor
     Locator
     Image
-    Biome
-    ColorString
     DimensionApplicableSampler
     MathFunction
+    Biome
+    ColorString
     ExtrusionReplaceableBiome
+    Expression
     BiomeProvider
     Palette
     BiomeColorMapping
     PipelineBiomeColorConverter
+    CubicSplinePoint
     PaletteLayer
     Point
     Source
     Stage
     SlantLayer
     Extrusion
-    Expression
     Feature
     Structure
     GenerationStage

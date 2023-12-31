@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Image" href="Image.html" /><link rel="prev" title="Distributor" href="Distributor.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="PaletteLayer" href="PaletteLayer.html" /><link rel="prev" title="PipelineBiomeColorConverter" href="PipelineBiomeColorConverter.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
-        <title>Locator - Terra Docs</title>
+        <title>CubicSplinePoint - Terra Docs</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
     <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
@@ -266,7 +266,7 @@
 <li class="toctree-l4"><a class="reference internal" href="Pattern.html">Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Set.html">Set</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Distributor.html">Distributor</a></li>
-<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Locator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Locator.html">Locator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
@@ -278,7 +278,7 @@
 <li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="CubicSplinePoint.html">CubicSplinePoint</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">CubicSplinePoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Source.html">Source</a></li>
@@ -348,111 +348,18 @@
           </label>
         </div>
         <article role="main">
-          <section id="locator">
-<h1>Locator<a class="headerlink" href="#locator" title="Permalink to this headline">¶</a></h1>
-<p>When defined in a <a class="reference internal" href="../configs/FEATURE.html"><span class="doc">FEATURE</span></a> config, distributors determine what Y levels a structure
-can be placed at.</p>
-<p>Locators iterate through each block within a column of blocks in the world (typically within a constrained Y level range
-defined by the specific locator), and return either <em>true</em> or <em>false</em> if structures should generate at
-that position or not.</p>
-<section id="types">
-<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
-<p>Different types of <code class="docutils literal notranslate"><span class="pre">Locator</span></code> provide different behaviours and may have additional parameters for configuring that behavior.</p>
-<p>The type is specified by setting the <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">type</span> parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with <code class="docutils literal notranslate"><span class="pre">ADDON_NAME:</span></code> to specify which one to use.</p>
-<p>A list of available types for <code class="docutils literal notranslate"><span class="pre">Locator</span></code> are listed below:</p>
-<hr class="docutils"/>
-<section id="surface">
-<h3>SURFACE<a class="headerlink" href="#surface" title="Permalink to this headline">¶</a></h3>
-<p><sup>*Type requires the ‘config-locators’ addon to use</sup></p>
-<p id="object-locator-template-config-locators-surface-parameter-range"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-surface-parameter-range"><span class="std std-ref">range</span></a> <a class="reference internal" href="Range.html"><span class="doc">Range</span></a></p>
-</section>
-<hr class="docutils"/>
-<section id="top">
-<h3>TOP<a class="headerlink" href="#top" title="Permalink to this headline">¶</a></h3>
-<p><sup>*Type requires the ‘config-locators’ addon to use</sup></p>
-<p id="object-locator-template-config-locators-top-parameter-range"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-top-parameter-range"><span class="std std-ref">range</span></a> <a class="reference internal" href="Range.html"><span class="doc">Range</span></a></p>
-</section>
-<hr class="docutils"/>
-<section id="random">
-<h3>RANDOM<a class="headerlink" href="#random" title="Permalink to this headline">¶</a></h3>
-<p><sup>*Type requires the ‘config-locators’ addon to use</sup></p>
-<p id="object-locator-template-config-locators-random-parameter-amount"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-random-parameter-amount"><span class="std std-ref">amount</span></a> <a class="reference internal" href="Range.html"><span class="doc">Range</span></a></p>
-<p id="object-locator-template-config-locators-random-parameter-height"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-random-parameter-height"><span class="std std-ref">height</span></a> <a class="reference internal" href="Range.html"><span class="doc">Range</span></a></p>
-<p id="object-locator-template-config-locators-random-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-locator-template-config-locators-random-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
-</section>
-<hr class="docutils"/>
-<section id="gaussian-random">
-<h3>GAUSSIAN_RANDOM<a class="headerlink" href="#gaussian-random" title="Permalink to this headline">¶</a></h3>
-<p><sup>*Type requires the ‘config-locators’ addon to use</sup></p>
-<p id="object-locator-template-config-locators-gaussian-random-parameter-amount"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-gaussian-random-parameter-amount"><span class="std std-ref">amount</span></a> <a class="reference internal" href="Range.html"><span class="doc">Range</span></a></p>
-<p id="object-locator-template-config-locators-gaussian-random-parameter-height"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-gaussian-random-parameter-height"><span class="std std-ref">height</span></a> <a class="reference internal" href="Range.html"><span class="doc">Range</span></a></p>
-<p id="object-locator-template-config-locators-gaussian-random-parameter-standard-deviation"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-gaussian-random-parameter-standard-deviation"><span class="std std-ref">standard-deviation</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
-<p id="object-locator-template-config-locators-gaussian-random-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-locator-template-config-locators-gaussian-random-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
-</section>
-<hr class="docutils"/>
-<section id="pattern">
-<h3>PATTERN<a class="headerlink" href="#pattern" title="Permalink to this headline">¶</a></h3>
-<p><sup>*Type requires the ‘config-locators’ addon to use</sup></p>
-<p id="object-locator-template-config-locators-pattern-parameter-pattern"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-pattern-parameter-pattern"><span class="std std-ref">pattern</span></a> <a class="reference internal" href="Pattern.html"><span class="doc">Pattern</span></a></p>
-<p id="object-locator-template-config-locators-pattern-parameter-range"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-pattern-parameter-range"><span class="std std-ref">range</span></a> <a class="reference internal" href="Range.html"><span class="doc">Range</span></a></p>
-</section>
-<hr class="docutils"/>
-<section id="adjacent-pattern">
-<h3>ADJACENT_PATTERN<a class="headerlink" href="#adjacent-pattern" title="Permalink to this headline">¶</a></h3>
-<p><sup>*Type requires the ‘config-locators’ addon to use</sup></p>
-<p id="object-locator-template-config-locators-adjacent-pattern-parameter-pattern"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-adjacent-pattern-parameter-pattern"><span class="std std-ref">pattern</span></a> <a class="reference internal" href="Pattern.html"><span class="doc">Pattern</span></a></p>
-<p id="object-locator-template-config-locators-adjacent-pattern-parameter-range"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-adjacent-pattern-parameter-range"><span class="std std-ref">range</span></a> <a class="reference internal" href="Range.html"><span class="doc">Range</span></a></p>
-<p id="object-locator-template-config-locators-adjacent-pattern-parameter-match-all"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-locator-template-config-locators-adjacent-pattern-parameter-match-all"><span class="std std-ref">match-all</span></a> <a class="reference internal" href="Boolean.html"><span class="doc">Boolean</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
-</section>
-<hr class="docutils"/>
-<section id="sampler">
-<h3>SAMPLER<a class="headerlink" href="#sampler" title="Permalink to this headline">¶</a></h3>
-<p><sup>*Type requires the ‘config-locators’ addon to use</sup></p>
-<p id="object-locator-template-config-locators-sampler-parameter-samplers"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-sampler-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="NoiseSampler.html"><span class="doc">NoiseSampler</span></a>&gt;</p>
-</section>
-<hr class="docutils"/>
-<section id="sampler-3d">
-<h3>SAMPLER_3D<a class="headerlink" href="#sampler-3d" title="Permalink to this headline">¶</a></h3>
-<p><sup>*Type requires the ‘config-locators’ addon to use</sup></p>
-<p id="object-locator-template-config-locators-sampler-3d-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-sampler-3d-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="NoiseSampler.html"><span class="doc">NoiseSampler</span></a></p>
-</section>
-<hr class="docutils"/>
-<section id="and">
-<h3>AND<a class="headerlink" href="#and" title="Permalink to this headline">¶</a></h3>
-<p><sup>*Type requires the ‘config-locators’ addon to use</sup></p>
-<p id="object-locator-template-config-locators-and-parameter-locators"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-and-parameter-locators"><span class="std std-ref">locators</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">Locator</span></a>&gt;</p>
-</section>
-<hr class="docutils"/>
-<section id="or">
-<h3>OR<a class="headerlink" href="#or" title="Permalink to this headline">¶</a></h3>
-<p><sup>*Type requires the ‘config-locators’ addon to use</sup></p>
-<p id="object-locator-template-config-locators-or-parameter-locators"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-or-parameter-locators"><span class="std std-ref">locators</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">Locator</span></a>&gt;</p>
-</section>
-<hr class="docutils"/>
-<section id="xor">
-<h3>XOR<a class="headerlink" href="#xor" title="Permalink to this headline">¶</a></h3>
-<p><sup>*Type requires the ‘config-locators’ addon to use</sup></p>
-<p id="object-locator-template-config-locators-xor-parameter-locators"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-xor-parameter-locators"><span class="std std-ref">locators</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">Locator</span></a>&gt;</p>
-</section>
-</section>
+          <section id="cubicsplinepoint">
+<h1>CubicSplinePoint<a class="headerlink" href="#cubicsplinepoint" title="Permalink to this headline">¶</a></h1>
+<p><sup>*Config object requires the ‘config-noise-function’ addon to use</sup></p>
+<p id="object-cubicsplinepoint-template-config-noise-function-map-parameter-from"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-cubicsplinepoint-template-config-noise-function-map-parameter-from"><span class="std std-ref">from</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - The value input noise will be mapped from.</p>
+<p id="object-cubicsplinepoint-template-config-noise-function-map-parameter-gradient"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-cubicsplinepoint-template-config-noise-function-map-parameter-gradient"><span class="std std-ref">gradient</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - The gradient / slope the cubic spline should follow at the point.</p>
+<p id="object-cubicsplinepoint-template-config-noise-function-map-parameter-to"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-cubicsplinepoint-template-config-noise-function-map-parameter-to"><span class="std std-ref">to</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Output value when input noise = <code class="docutils literal notranslate"><span class="pre">from</span></code>.</p>
 <section id="uses">
 <h2>Uses<a class="headerlink" href="#uses" title="Permalink to this headline">¶</a></h2>
-<p>Used by 4 parameters:</p>
+<p>This object is used in one place:</p>
 <ul>
-<li><p><a class="reference internal" href="#object-locator-template-config-locators-and-parameter-locators"><span class="std std-ref">In AND in Locator</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-and-parameter-locators"><span class="std std-ref">locators</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">Locator</span></a>&gt;</p>
-</li>
-<li><p><a class="reference internal" href="#object-locator-template-config-locators-or-parameter-locators"><span class="std std-ref">In OR in Locator</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-or-parameter-locators"><span class="std std-ref">locators</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">Locator</span></a>&gt;</p>
-</li>
-<li><p><a class="reference internal" href="#object-locator-template-config-locators-xor-parameter-locators"><span class="std std-ref">In XOR in Locator</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-locator-template-config-locators-xor-parameter-locators"><span class="std std-ref">locators</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">Locator</span></a>&gt;</p>
-</li>
-<li><p><a class="reference internal" href="../configs/FEATURE.html#config-feature-template-config-feature-base-parameter-locator"><span class="std std-ref">In base in FEATURE</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/FEATURE.html#config-feature-template-config-feature-base-parameter-locator"><span class="std std-ref">locator</span></a> <a class="reference internal" href="#"><span class="doc">Locator</span></a></p>
+<li><p><a class="reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-cubic-spline-parameter-points"><span class="std std-ref">In CUBIC_SPLINE in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-cubic-spline-parameter-points"><span class="std std-ref">points</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">CubicSplinePoint</span></a>&gt;</p>
 </li>
 </ul>
 </section>
@@ -463,23 +370,23 @@ that position or not.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="Image.html">
+          <a class="next-page" href="PaletteLayer.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Image</div>
+                <div class="title">PaletteLayer</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="Distributor.html">
+          <a class="prev-page" href="PipelineBiomeColorConverter.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Distributor</div>
+                <div class="title">PipelineBiomeColorConverter</div>
                 
               </div>
             </a>
@@ -489,7 +396,7 @@ that position or not.</p>
               Copyright &#169; 2021-2023, Terra Contributors |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../../_sources/config/documentation/objects/Locator.rst.txt"
+            | <a class="muted-link" href="../../../_sources/config/documentation/objects/CubicSplinePoint.rst.txt"
                rel="nofollow">
               Show Source
             </a>
@@ -509,21 +416,7 @@ that position or not.</p>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
-<li><a class="reference internal" href="#">Locator</a><ul>
-<li><a class="reference internal" href="#types">Types</a><ul>
-<li><a class="reference internal" href="#surface">SURFACE</a></li>
-<li><a class="reference internal" href="#top">TOP</a></li>
-<li><a class="reference internal" href="#random">RANDOM</a></li>
-<li><a class="reference internal" href="#gaussian-random">GAUSSIAN_RANDOM</a></li>
-<li><a class="reference internal" href="#pattern">PATTERN</a></li>
-<li><a class="reference internal" href="#adjacent-pattern">ADJACENT_PATTERN</a></li>
-<li><a class="reference internal" href="#sampler">SAMPLER</a></li>
-<li><a class="reference internal" href="#sampler-3d">SAMPLER_3D</a></li>
-<li><a class="reference internal" href="#and">AND</a></li>
-<li><a class="reference internal" href="#or">OR</a></li>
-<li><a class="reference internal" href="#xor">XOR</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#">CubicSplinePoint</a><ul>
 <li><a class="reference internal" href="#uses">Uses</a></li>
 </ul>
 </li>

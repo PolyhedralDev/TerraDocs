@@ -5,6 +5,10 @@ BiomeProvider
 A biome provider provides a :doc:`/config/documentation/objects/Biome` for any given position in the world. Biome providers
 are the main way to determine and configure *where* biomes will generate.
 
+You can use the aptly named `Biome Tool <https://github.com/PolyhedralDev/BiomeTool>` to preview biome distribution defined by your
+pack's BiomeProvider. It is recommended to run the Biome Tool from your ``Terra`` directory so that all the addons
+and packs you are developing with are loaded by the Biome Tool.
+
 
 Types
 =====

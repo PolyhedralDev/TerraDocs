@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Feature" href="Feature.html" /><link rel="prev" title="Extrusion" href="Extrusion.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="BiomeProvider" href="BiomeProvider.html" /><link rel="prev" title="ExtrusionReplaceableBiome" href="ExtrusionReplaceableBiome.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
         <title>Expression - Terra Docs</title>
@@ -251,13 +251,13 @@
 </li>
 <li class="toctree-l3 current has-children"><a class="reference internal" href="index.html">Config Objects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="Float.html">Float</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Integer.html">Integer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NoiseSampler.html">NoiseSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Integer.html">Integer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="String.html">String</a></li>
 <li class="toctree-l4"><a class="reference internal" href="List.html">List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Map.html">Map</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Range.html">Range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Boolean.html">Boolean</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Map.html">Map</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WeightedList.html">WeightedList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Block.html">Block</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PipelineBiome.html">PipelineBiome</a></li>
@@ -268,22 +268,23 @@
 <li class="toctree-l4"><a class="reference internal" href="Distributor.html">Distributor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Locator.html">Locator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Biome.html">Biome</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ColorString.html">ColorString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Biome.html">Biome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ColorString.html">ColorString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeProvider.html">BiomeProvider</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CubicSplinePoint.html">CubicSplinePoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Source.html">Source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Stage.html">Stage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
-<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Feature.html">Feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Structure.html">Structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GenerationStage.html">GenerationStage</a></li>
@@ -293,6 +294,7 @@
 <li class="toctree-l4"><a class="reference internal" href="NumberPredicate.html">NumberPredicate</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="../terrascript/index.html">TerraScript</a></li>
 </ul>
 </li>
 </ul>
@@ -348,13 +350,398 @@
         <article role="main">
           <section id="expression">
 <h1>Expression<a class="headerlink" href="#expression" title="Permalink to this headline">¶</a></h1>
-<p>A mathematical expression.</p>
+<p>A mathematical expression that may use various mathematical operators, variables / constants, and functions, and returns a floating point number when evaluated.</p>
+<p>Expressions are defined as strings and evaluated by <a class="reference external" href="https://github.com/PolyhedralDev/Paralithic">Paralithic</a>.</p>
+<p>Expressions are written using simple mathematical syntax, for example the expression <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">/</span> <span class="pre">8</span></code>, which would represent <code class="docutils literal notranslate"><span class="pre">3</span></code> plus the division of
+<code class="docutils literal notranslate"><span class="pre">2</span></code> by <code class="docutils literal notranslate"><span class="pre">8</span></code>.</p>
+<section id="number-syntax">
+<h2>Number Syntax<a class="headerlink" href="#number-syntax" title="Permalink to this headline">¶</a></h2>
+<p>Numbers are always handled as <a class="reference external" href="https://en.wikipedia.org/wiki/Floating-point_arithmetic">floating point</a> numbers.</p>
+<p>A number by itself is a valid expression.</p>
+<ul class="simple">
+<li><p>Numbers can be defined simply like <code class="docutils literal notranslate"><span class="pre">5832</span></code>.</p></li>
+<li><p>Decimals are written as a whole number, a <code class="docutils literal notranslate"><span class="pre">.</span></code>, then the decimal fraction. For example <code class="docutils literal notranslate"><span class="pre">64.34</span></code>.</p></li>
+<li><p>Trailing zeroes after the decimal point are permitted: <code class="docutils literal notranslate"><span class="pre">64.00</span></code>.</p></li>
+<li><p>Underscores can be used to create a visual separator (and are ignored in numbers), for example to separate each hundreds place: <code class="docutils literal notranslate"><span class="pre">1_000_000</span></code>.</p></li>
+<li><p>A quantifier letter can be added after a number to specify its quanity, for example <code class="docutils literal notranslate"><span class="pre">2m</span></code> is equivalent
+to <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">1000</span></code> or <code class="docutils literal notranslate"><span class="pre">2000</span></code>, where <code class="docutils literal notranslate"><span class="pre">m</span></code> refers to the metric prefix ‘mega’.</p></li>
+</ul>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 14%"/>
+<col style="width: 19%"/>
+<col style="width: 67%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Quantifier</p></td>
+<td><p>Value</p></td>
+<td><p>Name</p></td>
+</tr>
+<tr class="row-even"><td><p>n</p></td>
+<td><p>0.000 000 001</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Nano-">Nano</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>u</p></td>
+<td><p>0.000 001</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Micro-">Micro</a></p></td>
+</tr>
+<tr class="row-even"><td><p>m</p></td>
+<td><p>0.001</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Milli-">Milli</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>K</p></td>
+<td><p>1_000</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Kilo-">Kilo</a></p></td>
+</tr>
+<tr class="row-even"><td><p>M</p></td>
+<td><p>1_000_000</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Mega-">Mega</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>G</p></td>
+<td><p>1_000_000_000</p></td>
+<td><p><a class="reference external" href="https://en.wikipedia.org/wiki/Giga-">Giga</a></p></td>
+</tr>
+</tbody>
+</table></div>
+<ul class="simple">
+<li><p>Numbers can be prefixed with a <code class="docutils literal notranslate"><span class="pre">+</span></code> or <code class="docutils literal notranslate"><span class="pre">-</span></code> to indicate whether they’re positive or negative. For example <code class="docutils literal notranslate"><span class="pre">-1337</span></code> and <code class="docutils literal notranslate"><span class="pre">+1337</span></code>.</p></li>
+<li><p>Numbers can use <a class="reference external" href="https://en.wikipedia.org/wiki/Scientific_notation">scientific notation</a>, where the character <code class="docutils literal notranslate"><span class="pre">e</span></code> (or <code class="docutils literal notranslate"><span class="pre">E</span></code>)
+separates the significand from the exponent. For example <code class="docutils literal notranslate"><span class="pre">6.72e9</span></code> is equivalent to <code class="docutils literal notranslate"><span class="pre">6.72</span> <span class="pre">*</span> <span class="pre">10^9</span></code> or <code class="docutils literal notranslate"><span class="pre">6_720_000_000</span></code>.</p></li>
+</ul>
+</section>
+<section id="variables">
+<h2>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h2>
+<p>Named constants / variables are numbers that are identified by a name. They can be referenced by simply stating their name, for
+example to reference <code class="docutils literal notranslate"><span class="pre">myVariable</span></code> in an expression: <code class="docutils literal notranslate"><span class="pre">myVariable</span> <span class="pre">*</span> <span class="pre">20</span></code>.</p>
+<p><em>There is no way to define new variables within an expression</em>. Variables are made available external from the expression.
+What variables are available will depend on the context of the expression, some config
+objects have certain variables like <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> that change based on world position, some allow you to define your own named constants for use
+inside the expression.</p>
+<section id="built-in-constants">
+<h3>Built-in constants<a class="headerlink" href="#built-in-constants" title="Permalink to this headline">¶</a></h3>
+<p>The following constants are available to use in all expressions:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">pi</span></code> - Approximately <code class="docutils literal notranslate"><span class="pre">3.14159</span></code>. <a class="reference external" href="https://en.wikipedia.org/wiki/Pi">Wikipedia</a></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">euler</span></code> - Approximately <code class="docutils literal notranslate"><span class="pre">2.71828</span></code>. <a class="reference external" href="https://en.wikipedia.org/wiki/E_(mathematical_constant)">Wikipedia</a></p></li>
+</ul>
+</section>
+</section>
+<section id="operators">
+<h2>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
+<section id="boolean-representation">
+<span id="expression-boolean-representation"></span><h3>Boolean Representation<a class="headerlink" href="#boolean-representation" title="Permalink to this headline">¶</a></h3>
+<p>Expressions only work with floating point numbers, but they also support various operators that involve
+boolean math. To support such operators, ‘false’ is represented as the value <code class="docutils literal notranslate"><span class="pre">0</span></code>, and ‘true’
+is represented as <em>any value that is not</em> <code class="docutils literal notranslate"><span class="pre">0</span></code>. If an operator returns ‘true’ then that means
+it will return the value <code class="docutils literal notranslate"><span class="pre">1</span></code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Boolean values are almost always used with the <code class="docutils literal notranslate"><span class="pre">if</span></code> <a class="reference external" href="#BuiltinFunctions">builtin function</a>, so
+in many cases the numerical boolean representation will be invisible. For example the expression
+<code class="docutils literal notranslate"><span class="pre">if(1</span> <span class="pre">&gt;</span> <span class="pre">2,</span> <span class="pre">5,</span> <span class="pre">8)</span></code> has no explicit reference to exact values <code class="docutils literal notranslate"><span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">0</span></code> (i.e. true and false).</p>
+</div>
+</section>
+<section id="available-operators">
+<h3>Available Operators<a class="headerlink" href="#available-operators" title="Permalink to this headline">¶</a></h3>
+<p>The following is a list of operations available in expressions, grouped from highest precedence to lowest, where higher precedence
+operators are evaluated first. Words <code class="docutils literal notranslate"><span class="pre">expr</span></code>, <code class="docutils literal notranslate"><span class="pre">left</span></code>, and <code class="docutils literal notranslate"><span class="pre">right</span></code> are used to indicate a subexpression (which could be a
+number, a variable, another operator, etc..):</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 11%"/>
+<col style="width: 20%"/>
+<col style="width: 69%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Precedence</p></td>
+<td><p>Syntax</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">(expr)</span></code></p></td>
+<td><p>Grouping of expr, allows for controlling precedence</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">|expr|</span></code></p></td>
+<td><p>Absolute value of expr</p></td>
+</tr>
+<tr class="row-even"><td><p>-</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">-expr</span></code></p></td>
+<td><p>Negate expr / make expr negative</p></td>
+</tr>
+<tr class="row-even"><td><p>-</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">^</span> <span class="pre">right</span></code></p></td>
+<td><p>Exponentiation, left to the power of right</p></td>
+</tr>
+<tr class="row-even"><td><p>-</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">*</span> <span class="pre">right</span></code></p></td>
+<td><p>Multiply left and right</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">/</span> <span class="pre">right</span></code></p></td>
+<td><p>Divide left by right</p></td>
+</tr>
+<tr class="row-odd"><td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">%</span> <span class="pre">right</span></code></p></td>
+<td><p>Left modulo right</p></td>
+</tr>
+<tr class="row-even"><td><p>-</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">+</span> <span class="pre">right</span></code></p></td>
+<td><p>Add left and right</p></td>
+</tr>
+<tr class="row-even"><td><p>5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">-</span> <span class="pre">right</span></code></p></td>
+<td><p>Subtract right from left</p></td>
+</tr>
+<tr class="row-odd"><td><p>-</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">&lt;</span> <span class="pre">right</span></code></p></td>
+<td><p>True if left is greater than right, otherwise false</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">&lt;=</span> <span class="pre">right</span></code></p></td>
+<td><p>True if left is less than or equal right, otherwise false</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">&gt;</span> <span class="pre">right</span></code></p></td>
+<td><p>True left is greater than right, otherwise false</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">&gt;=</span> <span class="pre">right</span></code></p></td>
+<td><p>True left is greater than or equal to right, otherwise false</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">=</span> <span class="pre">right</span></code></p></td>
+<td><p>True left is equal to right, otherwise false</p></td>
+</tr>
+<tr class="row-odd"><td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">!=</span> <span class="pre">right</span></code></p></td>
+<td><p>True left is not not equal to right, otherwise false</p></td>
+</tr>
+<tr class="row-even"><td><p>-</p></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">&amp;&amp;</span> <span class="pre">right</span></code></p></td>
+<td><p>True if left and right are true, otherwise false</p></td>
+</tr>
+<tr class="row-even"><td><p>7</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">left</span> <span class="pre">||</span> <span class="pre">right</span></code></p></td>
+<td><p>True if left or right are true, otherwise false</p></td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section id="associativity">
+<h3>Associativity<a class="headerlink" href="#associativity" title="Permalink to this headline">¶</a></h3>
+<p>Binary operators (i.e. operators that take two arguments) are left associative, meaning given
+a sequence of operators with the same precedence like so <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">+</span> <span class="pre">1</span> <span class="pre">+</span> <span class="pre">3</span></code>, they will be evaluated
+from left to right like so: <code class="docutils literal notranslate"><span class="pre">(((3</span> <span class="pre">-</span> <span class="pre">2)</span> <span class="pre">+</span> <span class="pre">1)</span> <span class="pre">+</span> <span class="pre">3)</span></code>.</p>
+</section>
+</section>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
+<p>Functions are called by writing the function name, proceeded by a pair of parenthesis which
+contain any arguments. Successive arguments are separated by a comma <code class="docutils literal notranslate"><span class="pre">,</span></code>.</p>
+<ul class="simple">
+<li><p>No arguments: <code class="docutils literal notranslate"><span class="pre">exampleFunction()</span></code></p></li>
+<li><p>One argument: <code class="docutils literal notranslate"><span class="pre">exampleFunction(3)</span></code></p></li>
+<li><p>Several arguments: <code class="docutils literal notranslate"><span class="pre">exampleFunction(3,</span> <span class="pre">2)</span></code></p></li>
+</ul>
+<p>Function arguments are expressions, for example:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">exampleFunction(3</span> <span class="pre">+</span> <span class="pre">2</span> <span class="pre">/</span> <span class="pre">exampleFunction(9</span> <span class="pre">*</span> <span class="pre">5))</span></code></p></li>
+</ul>
+</section>
+<section id="builtin-functions">
+<h2>Builtin Functions<a class="headerlink" href="#builtin-functions" title="Permalink to this headline">¶</a></h2>
+<p>The following is a list of built-in functions available in all expressions:</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 8%"/>
+<col style="width: 5%"/>
+<col style="width: 87%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>Function Name</p></td>
+<td><p>Arguments</p></td>
+<td><p>Description</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">floor</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Rounds the argument up to the nearest integer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ceil</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Rounds the argument down to the nearest integer.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">round</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Rounds the argument to the nearest integer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">pow</span></code></p></td>
+<td><p>2</p></td>
+<td><p>Returns the value of the first argument raised to the power of the second argument.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">min</span></code></p></td>
+<td><p>2</p></td>
+<td><p>Returns the smallest of the two arguments.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">max</span></code></p></td>
+<td><p>2</p></td>
+<td><p>Returns the largest of the two arguments.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sqrt</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Square root of the argument.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sin</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Trigonometric sine of the argument.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">cos</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Trigonometric cosine of the argument.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tan</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Trigonometric tangent of the argument.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sinh</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Hyperbolic sine of the argument.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">cosh</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Hyperbolic cosine of the argument.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">tanh</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Hyperbolic tangent of the argument.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">asin</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Arc sine of the argument.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">acos</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Arc cosine of the argument.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">atan</span></code></p></td>
+<td><p>2</p></td>
+<td><p>Arc tangent of the argument.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">atan2</span></code></p></td>
+<td><p>2</p></td>
+<td><p>See the <a class="reference external" href="https://en.wikipedia.org/wiki/Atan2">Wikipedia page</a>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">rad</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Converts the argument (interpreted as degrees) to radians.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">deg</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Converts the argument (interpreted as radians) to degrees.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">abs</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Returns the absolute value of the argument. (Makes any negative numbers positive.)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">log</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Returns the base 10 logarithm of the argument.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">ln</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Returns the natural logarithm (log base <em>e</em>) of the argument.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">exp</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Returns <em>e</em> raised to the power of the argument.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">sign</span></code></p></td>
+<td><p>1</p></td>
+<td><p>Returns <code class="docutils literal notranslate"><span class="pre">-1.0</span></code> if <code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">&lt;</span> <span class="pre">0.0</span></code>, <code class="docutils literal notranslate"><span class="pre">0.0</span></code> if <code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">=</span> <span class="pre">0.0</span></code>, and <code class="docutils literal notranslate"><span class="pre">1.0</span></code> if <code class="docutils literal notranslate"><span class="pre">argument</span> <span class="pre">&gt;</span> <span class="pre">0.0</span></code>.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">sigmoid</span></code></p></td>
+<td><p>2</p></td>
+<td><p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Sigmoid_function">sigmoid function</a>. Equivalent to <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">/</span> <span class="pre">exp(-1</span> <span class="pre">*</span> <span class="pre">a</span> <span class="pre">*</span> <span class="pre">b)</span></code>.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">if</span></code></p></td>
+<td><p>3</p></td>
+<td><p>Ternary - If the first argument is true(<a class="reference internal" href="#expression-boolean-representation"><span class="std std-ref">?</span></a>), then return the second argument, otherwise return the third.</p></td>
+</tr>
+</tbody>
+</table></div>
+</section>
+<section id="white-space">
+<h2>White Space<a class="headerlink" href="#white-space" title="Permalink to this headline">¶</a></h2>
+<p>White space characters (spaces, newlines, tabs) are permitted in expressions. Whitespace can be used to separate parts of an expression,
+for example to split it into multiple lines, and or add space between operators to aid readability. Any sequence of white space is equivalent.</p>
+<p>For example splitting a function’s arguments into multiple lines:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">atan2</span><span class="p">(</span>
+  <span class="mi">1</span> <span class="o">+</span> <span class="mi">45</span><span class="p">,</span>
+  <span class="mi">4</span> <span class="o">/</span> <span class="mi">8</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>When defining multi-line expressions in YAML, it is recommended to use the <a class="reference external" href="https://yaml.org/spec/1.2.2/#812-literal-style">block style</a> syntax
+indicated by the <code class="docutils literal notranslate"><span class="pre">|</span></code> character after the <code class="docutils literal notranslate"><span class="pre">:</span></code> to indicate the string is mutli-line, for example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
+<span class="w">  </span><span class="no">atan2(</span><span class="w"></span>
+<span class="w">    </span><span class="no">1 + 45,</span><span class="w"></span>
+<span class="w">    </span><span class="no">4 / 8</span><span class="w"></span>
+<span class="w">  </span><span class="no">)</span><span class="w"></span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="comments">
+<h2>Comments<a class="headerlink" href="#comments" title="Permalink to this headline">¶</a></h2>
+<p>Any text after and including the sequence <code class="docutils literal notranslate"><span class="pre">//</span></code> on the same line is a comment. Comments are ignored.</p>
+<p>For example: <code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">*</span> <span class="pre">2</span> <span class="pre">//</span> <span class="pre">This</span> <span class="pre">is</span> <span class="pre">a</span> <span class="pre">comment</span></code></p>
+<p>Multiline comments are also supported, text between the <code class="docutils literal notranslate"><span class="pre">/*</span></code> and <code class="docutils literal notranslate"><span class="pre">*/</span></code> delimiters is treated as a comment and is ignored.</p>
+<p>For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">atan2</span><span class="p">(</span>
+  <span class="mi">1</span> <span class="o">+</span> <span class="mi">45</span><span class="p">,</span>
+  <span class="mi">4</span> <span class="o">/</span> <span class="mi">8</span>
+  <span class="o">/*</span> <span class="n">Here</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">multi</span> <span class="n">line</span> <span class="n">comment</span>
+     <span class="nb">all</span> <span class="n">this</span> <span class="n">extra</span> <span class="n">text</span> <span class="ow">is</span> <span class="n">ignored</span> <span class="o">*/</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</section>
 <section id="uses">
 <h2>Uses<a class="headerlink" href="#uses" title="Permalink to this headline">¶</a></h2>
-<p>This object is used in one place:</p>
+<p>Used by 2 parameters:</p>
 <ul>
 <li><p><a class="reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-expression"><span class="std std-ref">In EXPRESSION in NoiseSampler</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-expression"><span class="std std-ref">expression</span></a> <a class="reference internal" href="#"><span class="doc">Expression</span></a></p>
+</li>
+<li><p><a class="reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-normalizer-parameter-expression"><span class="std std-ref">In EXPRESSION_NORMALIZER in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-normalizer-parameter-expression"><span class="std std-ref">expression</span></a> <a class="reference internal" href="#"><span class="doc">Expression</span></a> - An expression utilizes the <code class="docutils literal notranslate"><span class="pre">in</span></code> variable (short for ‘input’).</p>
 </li>
 </ul>
 </section>
@@ -365,23 +752,23 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="Feature.html">
+          <a class="next-page" href="BiomeProvider.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Feature</div>
+                <div class="title">BiomeProvider</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="Extrusion.html">
+          <a class="prev-page" href="ExtrusionReplaceableBiome.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Extrusion</div>
+                <div class="title">ExtrusionReplaceableBiome</div>
                 
               </div>
             </a>
@@ -412,6 +799,21 @@
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Expression</a><ul>
+<li><a class="reference internal" href="#number-syntax">Number Syntax</a></li>
+<li><a class="reference internal" href="#variables">Variables</a><ul>
+<li><a class="reference internal" href="#built-in-constants">Built-in constants</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#operators">Operators</a><ul>
+<li><a class="reference internal" href="#boolean-representation">Boolean Representation</a></li>
+<li><a class="reference internal" href="#available-operators">Available Operators</a></li>
+<li><a class="reference internal" href="#associativity">Associativity</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#functions">Functions</a></li>
+<li><a class="reference internal" href="#builtin-functions">Builtin Functions</a></li>
+<li><a class="reference internal" href="#white-space">White Space</a></li>
+<li><a class="reference internal" href="#comments">Comments</a></li>
 <li><a class="reference internal" href="#uses">Uses</a></li>
 </ul>
 </li>
