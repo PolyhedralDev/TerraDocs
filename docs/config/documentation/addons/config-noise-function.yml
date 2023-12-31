@@ -25,6 +25,21 @@ config-noise-function:
               type: Map<String, MathFunction>
               default: "{}"
 
+    CubicSplinePoint:
+      type: MULTI_TYPE
+      types:
+        map:
+          params:
+            from:
+              type: Float
+              summary: The value input noise will be mapped from.
+            to:
+              type: Float
+              summary: Output value when input noise = ``from``.
+            gradient:
+              type: Float
+              summary: The gradient / slope the cubic spline should follow at the point.
+
   config-templates:
     pack.yml:
       base:
@@ -94,6 +109,41 @@ config-noise-function:
           sampler:
             type: NoiseSampler
 
+      DISTANCE:
+        description: |
+          Returns the distance from a point.
+        params:
+          distance-function:
+            type: String
+            default: Euclidean
+            summary: The function used to calculate distance between sample positions and the configured point.
+            description: |
+              Valid values:
+
+              - ``Euclidean`` - Regular distance calculated using the Pythagorean theorem. See the `Wikipedia page <https://en.wikipedia.org/wiki/Euclidean_distance>`__ for more info.
+              - ``EuclideanSq`` - Same as ``Euclidean`` but the result is squared. (This is included if exact distance is not needed, and is slightly faster than ``Euclidean`` as it avoids a slow ``sqrt`` call.)
+              - ``Manhattan`` - See the `Wikipedia page <https://en.wikipedia.org/wiki/Taxicab_geometry>`__ for more info.
+          point.x:
+            type: Float
+            default: "0"
+          point.y:
+            type: Float
+            description: Only relevant if the sampler is sampling in 3D.
+            default: "0"
+          point.z:
+            type: Float
+            default: "0"
+          normalize:
+            type: Boolean
+            summary: If set to true, the returned distance will be normalized to be within the range ``[-1, 1]``, otherwise the raw distance is returned.
+            description: "``-1`` corresponds to the distance = ``0``, and ``1`` to distance = radius as configured by the ``radius`` parameter. Any distances above ``radius`` will clamped to ``1``."
+            default: "false"
+          radius:
+            type: Float
+            summary: The radius from the configured point corresponding to an output of ``1``.
+            description: Only relevant if ``normalize`` is set to ``true``.
+            default: "100"
+          
       WHITE_NOISE:
         extends: AbstractNoiseTemplate
         description: |
@@ -507,6 +557,62 @@ config-noise-function:
             type: Float
           min:
             type: Float
+
+      CUBIC_SPLINE:
+        extends: AbstractNormalizerTemplate
+        description: |
+          Remaps values using a cubic spline defined according to a set of points and gradients.
+        params:
+          points:
+            type: List<CubicSplinePoint>
+
+      EXPRESSION_NORMALIZER:
+        extends: AbstractNormalizerTemplate
+        description: |
+          Returns the result of evaluating an expression that uses samples provided by the input sampler.
+        params:
+          expression:
+            type: Expression
+            summary: An expression utilizes the ``in`` variable (short for 'input').
+            description: |
+              The ``in`` variable is calculated by the result of passing the coordinates of the current sampler to the provided input ``sampler``.
+          variables:
+            type: Map<String, Float>
+            summary: An additional mapping of named constant variables that can be used by the ``expression``.
+            default: "{}"
+          samplers:
+            type: Map<String, DimensionApplicableSampler>
+            summary: An additional mappping of named noise samplers that can be used in the ``expression``.
+            description: |
+              This probably won't be too useful as ``expression`` does not expose access to ``x``, ``y``, or ``z`` variables.
+              This behaviour may be changed in the future.
+            default: "{}"
+          functions:
+            type: Map<String, MathFunction>
+            summary: An additional mappping of named math functions that can be used in the ``expression``.
+            default: "{}"
+        footer: |
+          This is a convenience short hand version of the `EXPRESSION`_ sampler which you should refer to for more info.
+
+        For example the following sampler:
+
+          .. code:: yaml
+
+            type: EXPRESSION
+            expression: (noise(x, z) + 3) / 2
+            samplers:
+              noise:
+                dimensions: 2
+                type: WHITE_NOISE
+
+          Can be simplified to:
+
+          .. code:: yaml
+
+            type: EXPRESSION_NORMALIZER
+            expression: (in + 3) / 2
+            sampler:
+              type: WHITE_NOISE
 
       CLAMP:
         extends: AbstractNormalizerTemplate
