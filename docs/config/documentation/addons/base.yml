@@ -51,11 +51,220 @@ base:
     Expression:
       type: MULTI_TYPE
       description: |
-        A mathematical expression.
-      types:
-        string:
-          description: |
-            Expressions are defined as a string, for example "3 + 2 / 8"
+        A mathematical expression that may use various mathematical operators, variables / constants, and functions, and returns a floating point number when evaluated.
+
+        Expressions are defined as strings and evaluated by `Paralithic <https://github.com/PolyhedralDev/Paralithic>`_. 
+
+        Expressions are written using simple mathematical syntax, for example the expression ``3 + 2 / 8``, which would represent ``3`` plus the division of
+        ``2`` by ``8``.
+
+        Number Syntax
+        =============
+
+        Numbers are always handled as `floating point <https://en.wikipedia.org/wiki/Floating-point_arithmetic>`_ numbers.
+
+        A number by itself is a valid expression.
+
+        - Numbers can be defined simply like ``5832``.
+
+        - Decimals are written as a whole number, a ``.``, then the decimal fraction. For example ``64.34``.
+
+        - Trailing zeroes after the decimal point are permitted: ``64.00``.
+
+        - Underscores can be used to create a visual separator (and are ignored in numbers), for example to separate each hundreds place: ``1_000_000``.
+
+        - A quantifier letter can be added after a number to specify its quanity, for example ``2m`` is equivalent
+          to ``2 * 1000`` or ``2000``, where ``m`` refers to the metric prefix 'mega'.
+
+        ========== ============= ===============================================
+        Quantifier Value         Name
+        n          0.000 000 001 `Nano <https://en.wikipedia.org/wiki/Nano->`_
+        u          0.000 001     `Micro <https://en.wikipedia.org/wiki/Micro->`_
+        m          0.001         `Milli <https://en.wikipedia.org/wiki/Milli->`_
+        K          1_000         `Kilo <https://en.wikipedia.org/wiki/Kilo->`_
+        M          1_000_000     `Mega <https://en.wikipedia.org/wiki/Mega->`_
+        G          1_000_000_000 `Giga <https://en.wikipedia.org/wiki/Giga->`_
+        ========== ============= ===============================================
+
+        - Numbers can be prefixed with a ``+`` or ``-`` to indicate whether they're positive or negative. For example ``-1337`` and ``+1337``.
+
+        - Numbers can use `scientific notation <https://en.wikipedia.org/wiki/Scientific_notation>`_, where the character ``e`` (or ``E``)
+          separates the significand from the exponent. For example ``6.72e9`` is equivalent to ``6.72 * 10^9`` or ``6_720_000_000``.
+
+        Variables
+        =========
+
+        Named constants / variables are numbers that are identified by a name. They can be referenced by simply stating their name, for
+        example to reference ``myVariable`` in an expression: ``myVariable * 20``.
+
+        *There is no way to define new variables within an expression*. Variables are made available external from the expression.
+        What variables are available will depend on the context of the expression, some config
+        objects have certain variables like ``x`` and ``y`` that change based on world position, some allow you to define your own named constants for use
+        inside the expression.
+        
+        Built-in constants
+        ------------------
+
+        The following constants are available to use in all expressions:
+
+        - ``pi`` - Approximately ``3.14159``. `Wikipedia <https://en.wikipedia.org/wiki/Pi>`__
+        - ``euler`` - Approximately ``2.71828``. `Wikipedia <https://en.wikipedia.org/wiki/E_(mathematical_constant)>`__
+
+        Operators
+        =========
+
+        .. _expression-boolean-representation:
+
+        Boolean Representation
+        ----------------------
+
+        Expressions only work with floating point numbers, but they also support various operators that involve
+        boolean math. To support such operators, 'false' is represented as the value ``0``, and 'true'
+        is represented as *any value that is not* ``0``. If an operator returns 'true' then that means 
+        it will return the value ``1``. 
+
+        .. note::
+
+            Boolean values are almost always used with the ``if`` `builtin function <#Builtin Functions>`_, so
+            in many cases the numerical boolean representation will be invisible. For example the expression
+            ``if(1 > 2, 5, 8)`` has no explicit reference to exact values ``1`` and ``0`` (i.e. true and false).
+
+        Available Operators
+        -------------------
+
+        The following is a list of operations available in expressions, grouped from highest precedence to lowest, where higher precedence
+        operators are evaluated first. Words ``expr``, ``left``, and ``right`` are used to indicate a subexpression (which could be a
+        number, a variable, another operator, etc..):
+
+        ========== ================= ========================================================
+        Precedence Syntax            Description
+
+        1          ``(expr)``        Grouping of expr, allows for controlling precedence
+        1          ``|expr|``        Absolute value of expr
+        \-
+        2          ``-expr``         Negate expr / make expr negative
+        \-
+        3          ``left ^ right``  Exponentiation, left to the power of right
+        \-
+        4          ``left * right``  Multiply left and right
+        4          ``left / right``  Divide left by right
+        4          ``left % right``  Left modulo right
+        \-
+        5          ``left + right``  Add left and right
+        5          ``left - right``  Subtract right from left
+        \-
+        6          ``left < right``  True if left is greater than right, otherwise false
+        6          ``left <= right`` True if left is less than or equal right, otherwise false
+        6          ``left > right``  True left is greater than right, otherwise false
+        6          ``left >= right`` True left is greater than or equal to right, otherwise false
+        6          ``left = right``  True left is equal to right, otherwise false
+        6          ``left != right`` True left is not not equal to right, otherwise false
+        \-
+        7          ``left && right`` True if left and right are true, otherwise false
+        7          ``left || right`` True if left or right are true, otherwise false
+        ========== ================= ========================================================
+
+        Associativity
+        -------------
+
+        Binary operators (i.e. operators that take two arguments) are left associative, meaning given
+        a sequence of operators with the same precedence like so ``3 - 2 + 1 + 3``, they will be evaluated
+        from left to right like so: ``(((3 - 2) + 1) + 3)``.
+
+        Functions
+        =========
+
+        Functions are called by writing the function name, proceeded by a pair of parenthesis which
+        contain any arguments. Successive arguments are separated by a comma ``,``.
+
+        - No arguments: ``exampleFunction()``
+        - One argument: ``exampleFunction(3)``
+        - Several arguments: ``exampleFunction(3, 2)``
+
+        Function arguments are expressions, for example:
+
+        - ``exampleFunction(3 + 2 / exampleFunction(9 * 5))``
+
+        Builtin Functions
+        =================
+
+        The following is a list of built-in functions available in all expressions:
+
+        ============= ========= =====================================================================================================================================
+        Function Name Arguments Description
+        ``floor``     1         Rounds the argument up to the nearest integer.
+        ``ceil``      1         Rounds the argument down to the nearest integer.
+        ``round``     1         Rounds the argument to the nearest integer.
+        ``pow``       2         Returns the value of the first argument raised to the power of the second argument.
+        ``min``       2         Returns the smallest of the two arguments.
+        ``max``       2         Returns the largest of the two arguments.
+        ``sqrt``      1         Square root of the argument.
+        ``sin``       1         Trigonometric sine of the argument.
+        ``cos``       1         Trigonometric cosine of the argument.
+        ``tan``       1         Trigonometric tangent of the argument.
+        ``sinh``      1         Hyperbolic sine of the argument.
+        ``cosh``      1         Hyperbolic cosine of the argument.
+        ``tanh``      1         Hyperbolic tangent of the argument.
+        ``asin``      1         Arc sine of the argument.
+        ``acos``      1         Arc cosine of the argument.
+        ``atan``      2         Arc tangent of the argument.
+        ``atan2``     2         See the `Wikipedia page <https://en.wikipedia.org/wiki/Atan2>`_.
+        ``rad``       1         Converts the argument (interpreted as degrees) to radians.
+        ``deg``       1         Converts the argument (interpreted as radians) to degrees.
+        ``abs``       1         Returns the absolute value of the argument. (Makes any negative numbers positive.)
+        ``log``       1         Returns the base 10 logarithm of the argument.
+        ``ln``        1         Returns the natural logarithm (log base *e*) of the argument.
+        ``exp``       1         Returns *e* raised to the power of the argument.
+        ``sign``      1         Returns ``-1.0`` if ``argument < 0.0``, ``0.0`` if ``argument = 0.0``, and ``1.0`` if ``argument > 0.0``.
+        ``sigmoid``   2         A `sigmoid function <https://en.wikipedia.org/wiki/Sigmoid_function>`_. Equivalent to ``1 / exp(-1 * a * b)``.
+        ``if``        3         Ternary - If the first argument is true(:ref:`?<expression-boolean-representation>`), then return the second argument, otherwise return the third.
+        ============= ========= =====================================================================================================================================
+
+        White Space
+        ===========
+
+        White space characters (spaces, newlines, tabs) are permitted in expressions. Whitespace can be used to separate parts of an expression,
+        for example to split it into multiple lines, and or add space between operators to aid readability. Any sequence of white space is equivalent.
+
+        For example splitting a function's arguments into multiple lines::
+
+            atan2(
+              1 + 45,
+              4 / 8
+            )
+
+        .. note:: 
+
+            When defining multi-line expressions in YAML, it is recommended to use the `block style <https://yaml.org/spec/1.2.2/#812-literal-style>`_ syntax
+            indicated by the ``|`` character after the ``:`` to indicate the string is mutli-line, for example:
+  
+            .. code:: yaml
+              
+                expression: |
+                  atan2(
+                    1 + 45,
+                    4 / 8
+                  )
+
+        Comments
+        ========
+
+        Any text after and including the sequence ``//`` on the same line is a comment. Comments are ignored.
+
+        For example: ``4 * 2 // This is a comment``
+
+        Multiline comments are also supported, text between the ``/*`` and ``*/`` delimiters is treated as a comment and is ignored.
+
+        For example:
+
+        .. code::
+
+          atan2(
+            1 + 45,
+            4 / 8
+            /* Here is a multi line comment
+               all this extra text is ignored */
+          )
 
     WeightedList:
       type: MULTI_TYPE
