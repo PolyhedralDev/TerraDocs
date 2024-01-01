@@ -43,14 +43,6 @@ Fabric
         - N/A
 
     *
-        - **1.20.2**
-        - 6.4.1 :bdg-warning:`Beta`
-        - :bdg-success:`Yes`
-        - :bdg-danger:`No`
-        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.1-BETA-fabric>`__
-        - N/A
-
-    *
         - **1.20**
         - 6.3.1 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
@@ -115,14 +107,6 @@ Bukkit
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
         - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.3-BETA-bukkit>`__
-        - N/A
-
-    *
-        - **1.20.2**
-        - 6.4.1 :bdg-warning:`Beta`
-        - :bdg-success:`Yes`
-        - :bdg-danger:`No`
-        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.1-BETA-bukkit>`__
         - N/A
 
     *

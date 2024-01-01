@@ -56,6 +56,10 @@ Used by 44 parameters:
 
   :bdg-ref-success:`terrain.blend.distance <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.distance>` :doc:`/config/documentation/objects/Integer` 
 
+- :ref:`In RANDOM in Locator <object-locator-template-config-locators-random-parameter-salt>`:
+
+  :bdg-ref-success:`salt <object-locator-template-config-locators-random-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
+
 - :ref:`In POSITIVE_WHITE_NOISE in NoiseSampler <object-noisesampler-template-config-noise-function-positive_white_noise-parameter-salt>`:
 
   :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-positive_white_noise-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
@@ -155,10 +159,6 @@ Used by 44 parameters:
 - :ref:`In CELLULAR in NoiseSampler <object-noisesampler-template-config-noise-function-cellular-parameter-salt>`:
 
   :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-cellular-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
-
-- :ref:`In RANDOM in Locator <object-locator-template-config-locators-random-parameter-salt>`:
-
-  :bdg-ref-success:`salt <object-locator-template-config-locators-random-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
 
 - :ref:`In PADDED_GRID in Distributor <object-distributor-template-config-distributors-padded_grid-parameter-width>`:
 

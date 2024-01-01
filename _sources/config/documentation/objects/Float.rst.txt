@@ -116,10 +116,6 @@ Used by 54 parameters:
 
   :bdg-ref-success:`point.z <object-noisesampler-template-config-noise-function-distance-parameter-point.z>` :doc:`/config/documentation/objects/Float` 
 
-- :ref:`In LINEAR_HEIGHTMAP in NoiseSampler <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-scale>`:
-
-  :bdg-ref-success:`scale <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-scale>` :doc:`/config/documentation/objects/Float` - Scales the height of the heightmap.
-
 - :ref:`In NORMAL in NoiseSampler <object-noisesampler-template-config-noise-function-normal-parameter-mean>`:
 
   :bdg-ref-primary:`mean <object-noisesampler-template-config-noise-function-normal-parameter-mean>` :doc:`/config/documentation/objects/Float` 
@@ -171,6 +167,10 @@ Used by 54 parameters:
 - :ref:`In RIDGED in NoiseSampler <object-noisesampler-template-config-noise-function-ridged-parameter-lacunarity>`:
 
   :bdg-ref-success:`lacunarity <object-noisesampler-template-config-noise-function-ridged-parameter-lacunarity>` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In LINEAR_HEIGHTMAP in NoiseSampler <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-scale>`:
+
+  :bdg-ref-success:`scale <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-scale>` :doc:`/config/documentation/objects/Float` - Scales the height of the heightmap.
 
 - :ref:`In FBM in NoiseSampler <object-noisesampler-template-config-noise-function-fbm-parameter-gain>`:
 
