@@ -12,13 +12,13 @@ Uses
 
 Used by 10 parameters:
 
-- :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>`:
-
-  :bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> - The list of pipeline biomes to replace any matches of the default tag with.
-
 - :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-structures.structures>`:
 
   :bdg-ref-primary:`structures.structures <config-feature-template-config-feature-base-parameter-structures.structures>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/Structure`\> 
+
+- :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>`:
+
+  :bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> - The list of pipeline biomes to replace any matches of the default tag with.
 
 - :ref:`In SAMPLER in Source <object-source-template-biome-provider-pipeline-v2-sampler-parameter-biomes>`:
 

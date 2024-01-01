@@ -198,11 +198,11 @@ Quilt
         - Backwards Compatibility [6]_
 
     *
-        - **1.20.2**
-        - 6.4.1 :bdg-warning:`Beta`
+        - **1.20.4**
+        - 6.4.3 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
-        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.1-BETA-fabric>`__
+        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.3-BETA-fabric>`__
         - N/A
 
     *

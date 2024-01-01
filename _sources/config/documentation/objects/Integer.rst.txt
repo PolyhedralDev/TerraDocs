@@ -24,6 +24,10 @@ Used by 44 parameters:
 
   :bdg-ref-primary:`salt <object-distributor-template-config-distributors-padded_grid-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
 
+- :ref:`In RANDOM in Locator <object-locator-template-config-locators-random-parameter-salt>`:
+
+  :bdg-ref-success:`salt <object-locator-template-config-locators-random-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
+
 - :ref:`In STITCHED_BITMAP in Image <object-image-template-library-image-stitched_bitmap-parameter-columns>`:
 
   :bdg-ref-primary:`columns <object-image-template-library-image-stitched_bitmap-parameter-columns>` :doc:`/config/documentation/objects/Integer` - How many columns of images to stitch together.
@@ -55,10 +59,6 @@ Used by 44 parameters:
 - :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.distance>`:
 
   :bdg-ref-success:`terrain.blend.distance <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.distance>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In RANDOM in Locator <object-locator-template-config-locators-random-parameter-salt>`:
-
-  :bdg-ref-success:`salt <object-locator-template-config-locators-random-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
 
 - :ref:`In POSITIVE_WHITE_NOISE in NoiseSampler <object-noisesampler-template-config-noise-function-positive_white_noise-parameter-salt>`:
 
