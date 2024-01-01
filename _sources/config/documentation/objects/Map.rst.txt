@@ -12,58 +12,58 @@ Uses
 
 Used by 14 parameters:
 
-- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-material-overrides>`:
+- :ref:`In base in pack.yml <config-pack.yml-template-config-noise-function-base-parameter-functions>`:
 
-  :bdg-ref-success:`material-overrides <config-ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
-
-- :ref:`In base in pack.yml <config-pack.yml-template-config-noise-function-base-parameter-samplers>`:
-
-  :bdg-ref-success:`samplers <config-pack.yml-template-config-noise-function-base-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - A set of samplers globally accessible within :doc:`/config/documentation/objects/Expression`\s in ``EXPRESSION`` samplers defined inside other config files.
-
-- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-variables>`:
-
-  :bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
-
-- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>`:
-
-  :bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> - An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.
-
-- :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-variables>`:
-
-  :bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> - An additional mapping of named constant variables that can be used by the ``expression``.
-
-- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-material-overrides>`:
-
-  :bdg-ref-success:`material-overrides <config-scattered_ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+  :bdg-ref-success:`functions <config-pack.yml-template-config-noise-function-base-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> - A set of math functions globally accessible within :doc:`/config/documentation/objects/Expression`\s in ``EXPRESSION`` samplers defined inside other config files.
 
 - :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-functions>`:
 
   :bdg-ref-success:`functions <object-noisesampler-template-config-noise-function-expression-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
 
-- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-samplers>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>`:
 
-  :bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
+  :bdg-ref-primary:`palette <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
 
-- :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-samplers>`:
+- :ref:`In base in pack.yml <config-pack.yml-template-config-noise-function-base-parameter-samplers>`:
 
-  :bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - An additional mappping of named noise samplers that can be used in the ``expression``.
-
-- :ref:`In MAP in BiomeColorMapping <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>`:
-
-  :bdg-ref-primary:`map <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
-
-- :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>`:
-
-  :bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> - An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.
+  :bdg-ref-success:`samplers <config-pack.yml-template-config-noise-function-base-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - A set of samplers globally accessible within :doc:`/config/documentation/objects/Expression`\s in ``EXPRESSION`` samplers defined inside other config files.
 
 - :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-functions>`:
 
   :bdg-ref-success:`functions <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> - An additional mappping of named math functions that can be used in the ``expression``.
 
-- :ref:`In base in pack.yml <config-pack.yml-template-config-noise-function-base-parameter-functions>`:
+- :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>`:
 
-  :bdg-ref-success:`functions <config-pack.yml-template-config-noise-function-base-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> - A set of math functions globally accessible within :doc:`/config/documentation/objects/Expression`\s in ``EXPRESSION`` samplers defined inside other config files.
+  :bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-to>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> - An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.
 
-- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>`:
+- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>`:
 
-  :bdg-ref-primary:`palette <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+  :bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/PipelineBiome`\, :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\>> - An additional set of mappings from pipeline biomes to weighted lists of pipeline biomes.
+
+- :ref:`In MAP in BiomeColorMapping <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>`:
+
+  :bdg-ref-primary:`map <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
+
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-samplers>`:
+
+  :bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
+
+- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-material-overrides>`:
+
+  :bdg-ref-success:`material-overrides <config-ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-samplers>`:
+
+  :bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - An additional mappping of named noise samplers that can be used in the ``expression``.
+
+- :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-variables>`:
+
+  :bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> - An additional mapping of named constant variables that can be used by the ``expression``.
+
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-variables>`:
+
+  :bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
+
+- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-material-overrides>`:
+
+  :bdg-ref-success:`material-overrides <config-scattered_ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
