@@ -350,18 +350,78 @@
         <article role="main">
           <section id="pack-installation">
 <h1>Pack Installation<a class="headerlink" href="#pack-installation" title="Permalink to this headline">¶</a></h1>
-<p>Config packs are installed similarly to resource packs, which is a fairly straight forward process:</p>
+<p>Config packs are installed similarly to resource packs:</p>
 <section id="download-your-config-pack">
 <h2>1. Download your config pack.<a class="headerlink" href="#download-your-config-pack" title="Permalink to this headline">¶</a></h2>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Typically packs are distributed as <code class="docutils literal notranslate"><span class="pre">.zip</span></code> files, however they can be loaded from folders too.
-You can find a list of available packs on the <a class="reference internal" href="community-packs.html"><span class="doc">Community Packs</span></a> page.</p>
+<p class="sd-card-text">You can find a list of available packs on the <a class="reference internal" href="community-packs.html"><span class="doc">Community Packs</span></a> page.</p>
 <p class="sd-card-text">Before proceeding, make sure to:</p>
 <ul class="simple">
 <li><p class="sd-card-text">Check if the pack has specific installation instructions, and follow them if so.</p></li>
 <li><p class="sd-card-text">Check that the pack you wish to install is compatible with your version of Terra.</p></li>
 </ul>
+<p class="sd-card-text">Typically packs are distributed as <code class="docutils literal notranslate"><span class="pre">.zip</span></code> files, however they can be loaded from folders too.</p>
+<div class="nested-cards docutils container">
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+Downloading From GitHub</div>
+<p class="sd-card-text">If you are downloading a config pack from GitHub, first check out the <strong>README</strong> section
+which can be found by scrolling down below the source files. This may contain additional
+important information and or instructions for the config pack.</p>
+<p class="sd-card-text">If the README does not contain explicit instructions on how to download and install
+the config pack then look for the <strong>Releases</strong> section:</p>
+<img alt="../_images/github-releases-section.png" src="../_images/github-releases-section.png"/>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+If the GitHub repository has a releases section</div>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Navigate to it</p></li>
+<li><p class="sd-card-text">Once you’re on the releases page, find the release you want to use</p></li>
+<li><p class="sd-card-text">Expand the ‘Assets’ drop down if it is not already expanded:</p></li>
+</ol>
+<img alt="../_images/github-release-assets.png" src="../_images/github-release-assets.png"/>
+<p class="sd-card-text">4. Download the relevant <code class="docutils literal notranslate"><span class="pre">.zip</span></code> corresponding to the config pack.
+<strong>Do not download</strong> files labelled as ‘Source code’, the name of the file
+may be different and depends on what the config pack maintainer has uploaded it as.</p>
+<img alt="../_images/github-release-asset-config-pack.png" src="../_images/github-release-asset-config-pack.png"/>
+</div>
+</div>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<div class="sd-card-title sd-font-weight-bold docutils">
+If there is no releases section</div>
+<ol class="arabic simple">
+<li><p class="sd-card-text">Find the <strong>Code</strong> drop down:</p></li>
+</ol>
+<img alt="../_images/github-code-download.png" src="../_images/github-code-download.png"/>
+<ol class="arabic simple" start="2">
+<li><p class="sd-card-text">Click <strong>Download ZIP</strong>:</p></li>
+</ol>
+<img alt="../_images/github-source-download.png" src="../_images/github-source-download.png"/>
+<p class="sd-card-text">This should download a <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file, containing a folder.</p>
+<ol class="arabic simple" start="3">
+<li><p class="sd-card-text">Unzip or open the <code class="docutils literal notranslate"><span class="pre">.zip</span></code> file using a graphical tool like 7zip or WinRAR.</p></li>
+</ol>
+<p class="sd-card-text">4. From the zip contents, find the folder containing <code class="docutils literal notranslate"><span class="pre">pack.yml</span></code>. This
+will typically be the first folder directly inside the zip, but might not necessarily
+be the case.</p>
+<p class="sd-card-text">For example, the pack is highlighted inside the zip file:</p>
+<img alt="../_images/pack-zip-file.png" src="../_images/pack-zip-file.png"/>
+<p class="sd-card-text">This folder is the config pack you install.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">If you wish to re-zip this folder to upload to a server, make sure the contents of
+the config pack are directly inside the zip at the top level and not nested within
+a folder like how GitHub packages source code.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
 </div>
 </div>
 </section>
