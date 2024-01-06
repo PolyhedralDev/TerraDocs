@@ -357,37 +357,64 @@ Nesting Objects
 Because values in maps and items in lists can be of any type, It's
 possible to nest maps in maps, lists in lists, lists in maps, and so on.
 
-Here is an example of a ``Map`` contained within the value of another
-``Map`` (which is the top level object):
+.. tip::
+
+    Defining something inside something else is commonly referred to as 'nesting'.
 
 .. tab-set::
 
    .. tab-item:: YAML
 
-      .. admonition:: Info
-         :class: tip
-
-         For simple data types like integers and strings it is clear which key
-         corresponds to which value, as they are typically contained on the same
-         line, but maps and lists may span multiple lines, so we need a way of
-         defining which objects are defined under which keys and items. In YAML,
-         we can specify this kind of relationship via *indentation* - which is
-         simply how many spaces come before the key one a line. We conventionally
-         use two spaces to indicate 'one level' of indentation in YAML configs.
+      When setting the value of a map, typically it will just fit on the
+      same line as the key, for example the ``Float`` 42 can just be written
+      in-line with the key, after the colon like so:
 
       .. code-block:: yaml
-         :caption: config.yml
-         :linenos:
 
-         parent-key:
-           child-key: value
-           sibling-key: another value
+          key: 42
 
-      You can see that the map containing ``child-key`` and ``sibling-key`` is
-      indented by two spaces, and is defined under the ``parent-key`` key,
-      signifying that it belongs to that key.
+      Types that can span multiple lines, such as maps and lists won't fit
+      on a single line. For example you man want the following map which spans
+      multiple lines to be a value within another map:
+
+      .. code-block:: yaml
+
+          foo: a
+          bar: b
+
+      To nest this map as a value of a key, say ``baz``, in another map, it can be
+      defined under the key with additional indentation like so:
+
+      .. code-block:: yaml
+
+          baz:
+            foo: a
+            bar: b
+
+      Indentation / indenting text refers to having some consistent number of spaces before
+      each line in text. In YAML, the recommended number of spaces to indent is 2 as shown above.
+
+      Lists can be nested similarly like so:
+
+      .. code-block:: yaml
+
+          my-list:
+            - item 1
+            - item 2
+
+      Multiple 'levels of indentation' can be used, for example here is the prior map further
+      nested under (as the value for the key) ``qux``:
+
+      .. code-block:: yaml
+
+          qux:
+            baz:
+              foo: a
+              bar: b
 
    .. tab-item:: JSON
+
+      Example of a ``Map`` defined in a ``Map``:
 
       .. code-block:: json
          :caption: config.json
@@ -400,35 +427,65 @@ Here is an example of a ``Map`` contained within the value of another
             }
          }
 
-And here is a ``Map`` (the top level object) containing a ``List`` of
-``String``\ s:
-
-.. tab-set::
-
-   .. tab-item:: YAML
-
-      .. code-block:: yaml
-         :caption: config.yml
-         :linenos:
-
-         list of strings:
-           - item 1
-           - item 2
-           - item 3
-
-   .. tab-item:: JSON
+      Example of a ``List`` defined in a ``Map``: 
 
       .. code-block:: json
          :caption: config.json
          :linenos:
-         
+
          {
-            "list of strings": [
-               "item 1",
-               "item 2",
-               "item 3"
+            "my-list": [
+              "item 1",
+              "item 2"
             ]
          }
+
+Illegally defining two values for one key
+-----------------------------------------
+
+A common mistake in YAML is to accidentally assign two different
+values to the same key.
+
+For example the following is invalid:
+
+.. code-block:: yaml
+
+   key: foo
+     baz: bar
+
+The reason this is invalid is because there are two competing values being
+assigned to ``key``, which are ``foo`` and the map containing ``baz: bar``.
+
+Deleting one of the values would make this valid YAML:
+
+.. code-block:: yaml
+
+    key:
+      baz: bar
+
+Or
+
+.. code-block:: yaml
+
+    key: foo
+
+A config might end up in this invalid state for many reasons.
+
+A key may have been deleted or omitted which could be remedied by re-adding it like so:
+
+.. code-block:: yaml
+    
+    key: foo
+    missing:
+      baz: bar
+
+Indentation may have been changed by accident, for example removing indentation 
+would make it valid like so:
+
+.. code-block:: yaml
+    
+    key: foo
+    baz: bar
 
 Combining Everything
 ====================

@@ -14,13 +14,29 @@ Uses
 
 Used by 8 parameters:
 
-- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-material-overrides>`:
+- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-replace>`:
 
-  :bdg-ref-success:`material-overrides <config-ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
+  :bdg-ref-primary:`replace <config-scattered_ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
 
 - :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-material>`:
 
   :bdg-ref-primary:`material <config-scattered_ore-template-config-ore-base-parameter-material>` :doc:`/config/documentation/objects/Block` 
+
+- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-material>`:
+
+  :bdg-ref-primary:`material <config-ore-template-config-ore-base-parameter-material>` :doc:`/config/documentation/objects/Block` 
+
+- :ref:`In MATCH_SET in Pattern <object-pattern-template-config-locators-match_set-parameter-blocks>`:
+
+  :bdg-ref-primary:`blocks <object-pattern-template-config-locators-match_set-parameter-blocks>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-replace>`:
+
+  :bdg-ref-primary:`replace <config-ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-material-overrides>`:
+
+  :bdg-ref-success:`material-overrides <config-ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
 
 - :ref:`In MATCH in Pattern <object-pattern-template-config-locators-match-parameter-block>`:
 
@@ -29,19 +45,3 @@ Used by 8 parameters:
 - :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-material-overrides>`:
 
   :bdg-ref-success:`material-overrides <config-scattered_ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
-
-- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-replace>`:
-
-  :bdg-ref-primary:`replace <config-scattered_ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
-
-- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-replace>`:
-
-  :bdg-ref-primary:`replace <config-ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
-
-- :ref:`In MATCH_SET in Pattern <object-pattern-template-config-locators-match_set-parameter-blocks>`:
-
-  :bdg-ref-primary:`blocks <object-pattern-template-config-locators-match_set-parameter-blocks>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
-
-- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-material>`:
-
-  :bdg-ref-primary:`material <config-ore-template-config-ore-base-parameter-material>` :doc:`/config/documentation/objects/Block` 
