@@ -31,15 +31,13 @@ many cases you need to explicitly tell Terra what type you want to use.
 A piece of data defined in a config is something we will call an
 **object**. All objects can be categorized by having a type, which is
 determined by how it is defined in the config. Config files always
-define a single object, which is what we will call the **top level
-object**.
+define a single object.
 
 Integers
 --------
 
 To put this information to use, let's create create a new config file in
-YAML and define our top level object. For our type let's use something
-called an ``Integer``.
+YAML. For our type let's use the ``Integer`` type.
 
 Integers represent whole numbers and as such, are
 written as whole numbers like so:
@@ -62,8 +60,7 @@ written as whole numbers like so:
 
          42
 
-We have now created a config that defines an ``Integer`` as the top
-level object, which represents the number ``42``, simple right?
+We have now created a config that defines an ``Integer``, which represents the number ``42``.
 
 Floats
 ------
@@ -194,15 +191,12 @@ By themselves, integers, floats, and strings aren't too useful, until we
 start assigning labels to them. We can do that using a type called a
 ``Map``.
 
-.. _key-value-pair:
+- A map is a *collection of objects*.
+- Each object in the collection is called a **value**.
+- Each **value** is identified by another object called a **key**.
 
-A map is a *collection of objects*, referred to individually as
-**values**, where each **value** in the collection is identified by
-another unique object called a **key**. A key and a value together are
-called a **key-value pair**.
-
-Here we will make a new config where the *top level object* is of type
-``Map``, and both the *key* and *value* are of type ``String``:
+Here we will make a new config with type ``Map``, and both the
+key and value are of type ``String``:
 
 .. tab-set::
 
@@ -224,7 +218,7 @@ Here we will make a new config where the *top level object* is of type
             "this is a key": "this is a value"
          } 
 
-Since maps are *collections* of objects, we can list multiple key value
+Since maps are collections of objects, we can list multiple key value
 pairs within the map like so:
 
 .. tab-set::
@@ -251,10 +245,33 @@ pairs within the map like so:
             "meaning-of-life": 42
          }
 
-This is useful because as explained above, configs only contain *one*
-top level object. By using maps, we are capable of defining more than
-one object within a config, as well as being able to identify what each
-of those objects are using keys.
+This is useful because as explained above, configs only contain one main object.
+By using maps, we are capable of defining multiple objects within a map,
+as well as being able to identify each of those objects with keys.
+
+Each key within the same map must be unique, the following is invalid:
+
+.. tab-set::
+
+   .. tab-item:: YAML
+
+      .. code-block:: yaml
+         :caption: config.yml
+         :linenos:
+
+         duplicated key: value A
+         duplicated key: value B
+
+   .. tab-item:: JSON
+
+      .. code-block:: json
+         :caption: config.json
+         :linenos:
+
+         {
+            "duplicated key": "value A",
+            "duplicated key": "value B"
+         } 
 
 .. _map-ordering:
 
@@ -316,16 +333,12 @@ Lists
 -----
 
 In addition to maps, we can also use a type called a ``List`` to
-indicate a collection of data. Lists differ from maps in that each
-object (called an **item**) in a list is not assigned a unique key, but
-is instead identified by It's position in the list. Because of this,
+define a collection of objects. Lists differ from maps in that each
+**item** (the term for an object in a list) is not assigned a unique key, but
+is instead identified by its position in the list. Because of this,
 *the order in which you define each object is significant*, unlike maps.
 
-Another thing to note is generally, every item contained within a list
-will be of the same type.
-
-Here is a config where the *top level object* is a ``List``, which
-contains multiple ``String``\ s:
+Here is a config with type ``List``, which contains multiple ``String``\ s:
 
 .. tab-set::
 
@@ -354,7 +367,7 @@ contains multiple ``String``\ s:
 Nesting Objects
 ===============
 
-Because values in maps and items in lists can be of any type, It's
+Because values in maps and items in lists can be of any type, it's
 possible to nest maps in maps, lists in lists, lists in maps, and so on.
 
 .. tip::
@@ -374,7 +387,7 @@ possible to nest maps in maps, lists in lists, lists in maps, and so on.
           key: 42
 
       Types that can span multiple lines, such as maps and lists won't fit
-      on a single line. For example you man want the following map which spans
+      on a single line. For example you may want the following map which spans
       multiple lines to be a value within another map:
 
       .. code-block:: yaml
@@ -402,7 +415,7 @@ possible to nest maps in maps, lists in lists, lists in maps, and so on.
             - item 1
             - item 2
 
-      Multiple 'levels of indentation' can be used, for example here is the prior map further
+      Multiple levels of indentation can be used, for example here is the prior map further
       nested under (as the value for the key) ``qux``:
 
       .. code-block:: yaml
@@ -411,6 +424,10 @@ possible to nest maps in maps, lists in lists, lists in maps, and so on.
             baz:
               foo: a
               bar: b
+
+      Each map can be visualized by drawing boxes like so:
+
+      .. image:: /img/config/development/nested-maps.png
 
    .. tab-item:: JSON
 
@@ -453,7 +470,7 @@ For example the following is invalid:
    key: foo
      baz: bar
 
-The reason this is invalid is because there are two competing values being
+This is invalid is because there are two competing values being
 assigned to ``key``, which are ``foo`` and the map containing ``baz: bar``.
 
 Deleting one of the values would make this valid YAML:
@@ -555,7 +572,7 @@ appointments using everything we have covered thus far:
             ]
          }
 
-In this example, our top level object is of type ``Map``, which contains
+In this example, the config is of type ``Map``, which contains
 two keys ``shopping-list`` and ``appointments``. The value of both keys
 are of type ``List``, where each *item* in each list contains a ``Map``.
 
