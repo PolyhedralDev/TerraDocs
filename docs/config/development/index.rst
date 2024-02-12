@@ -10,6 +10,7 @@ Config Development
     config-files
     config-data
     config-system
+    meta-configuration
 
     pack-from-scratch/index
 
