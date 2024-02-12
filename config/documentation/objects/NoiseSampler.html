@@ -1,29 +1,29 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en" data-content_root="../../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Integer" href="Integer.html" /><link rel="prev" title="Float" href="Float.html" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="String" href="String.html" /><link rel="prev" title="Integer" href="Integer.html" />
 
-    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
+    <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>NoiseSampler - Terra Docs</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/rounded-borders.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/cards.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/code-blocks.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/interpreted-text.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/padding.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/headings.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/logo.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/content.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/lists.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/css/text-colors.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=9ecc9bae" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/rounded-borders.css?v=d57c157a" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/cards.css?v=69c2168b" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/code-blocks.css?v=fb5505f9" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/interpreted-text.css?v=f0e69e92" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/padding.css?v=745c9c39" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/headings.css?v=894f975c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/admonitions.css?v=853f82cc" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/tabs.css?v=3ff15964" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/logo.css?v=8310c722" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/content.css?v=f7472798" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/lists.css?v=30b35dc8" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/text-colors.css?v=5a6fd354" />
     
     
 
@@ -40,42 +40,42 @@
   --admonition-font-size: 1rem;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  --color-foreground-primary: #ffffff;
-  --color-foreground-secondary: #dbdbdb;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   --color-foreground-primary: #ffffff;
   --color-foreground-secondary: #dbdbdb;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -84,14 +84,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -106,7 +106,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -114,7 +114,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -167,7 +167,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../../_static/terra-logo.png" alt="Logo"/>
@@ -176,34 +176,34 @@
   <span class="sidebar-brand-text">Terra Docs</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../install/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/fabric.html">Fabric Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../install/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/fabric.html">Fabric Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Fabric Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/forge.html">Forge Installation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/forge.html">Forge Installation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Forge Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/quilt.html">Quilt Installation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/quilt.html">Quilt Installation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Quilt Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/bukkit.html">Bukkit Installation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/bukkit.html">Bukkit Installation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Bukkit Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../install/bukkit-server-world-creation.html">Bukkit World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../install/worldmanager-bukkit-world-creation.html">Worldmanager World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/versions.html">Versions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../install/versions.html">Versions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Versions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Bukkit/5.3.3.html">Bukkit Legacy 5.3.3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Bukkit/5.4.1.html">Bukkit Legacy 5.4.1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../install/versions/platforms/Bukkit/6.1.2.html">Bukkit 6.1.2</a></li>
@@ -220,17 +220,18 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contact.html">Contact &amp; Support</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../../index.html">Config Packs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../../index.html">Config Packs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Config Packs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../community-packs.html">Community Packs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../pack-installation.html">Pack Installation</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../development/index.html">Config Development</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../development/index.html">Config Development</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Config Development</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../development/introduction.html">Config Development Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development/config-files.html">Config Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development/config-data.html">Defining Data in Configs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development/config-system.html">The Config System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../development/meta-configuration.html">Meta configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development/pack-from-scratch/index.html">Creating a Pack from Scratch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../development/modifying-existing-pack.html">Modifying an Existing Pack</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../development/noise/index.html">Noise</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../development/noise/index.html">Noise</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Noise</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../development/noise/configuring.html">Configuring Noise Samplers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../development/noise/use.html">How Noise Distributes Things</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../development/noise/theory.html">How Noise Samplers Work</a></li>
@@ -239,8 +240,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../development/image/index.html">Image Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Config Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l3 has-children"><a class="reference internal" href="../configs/index.html">Config Files</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="../index.html">Config Documentation</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Config Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 has-children"><a class="reference internal" href="../configs/index.html">Config Files</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Config Files</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../configs/BIOME.html">BIOME</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../configs/FEATURE.html">FEATURE</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../configs/ORE.html">ORE</a></li>
@@ -249,10 +250,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../configs/pack.yml.html">pack.yml</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current has-children"><a class="reference internal" href="index.html">Config Objects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3 current has-children"><a class="reference internal" href="index.html">Config Objects</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Config Objects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="Float.html">Float</a></li>
-<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">NoiseSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Integer.html">Integer</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">NoiseSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="String.html">String</a></li>
 <li class="toctree-l4"><a class="reference internal" href="List.html">List</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Map.html">Map</a></li>
@@ -260,37 +261,37 @@
 <li class="toctree-l4"><a class="reference internal" href="Boolean.html">Boolean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WeightedList.html">WeightedList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Block.html">Block</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PipelineBiome.html">PipelineBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Tag.html">Tag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PipelineBiome.html">PipelineBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ColorSampler.html">ColorSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Pattern.html">Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Set.html">Set</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Distributor.html">Distributor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Locator.html">Locator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Expression.html">Expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Biome.html">Biome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Biome.html">Biome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ColorString.html">ColorString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Expression.html">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeProvider.html">BiomeProvider</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="CubicSplinePoint.html">CubicSplinePoint</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Source.html">Source</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Stage.html">Stage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Feature.html">Feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Structure.html">Structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ChunkGenerator.html">ChunkGenerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Source.html">Source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Stage.html">Stage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CubicSplinePoint.html">CubicSplinePoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NumberPredicate.html">NumberPredicate</a></li>
 </ul>
 </li>
@@ -299,8 +300,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Introduction to the Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/development-environment.html">Setting up a Development Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
@@ -309,7 +310,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/registering-config-type.html">Registering a Config Type</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of API Concepts</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/logging.html">Logging With SLF4J</a></li>
@@ -326,6 +327,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -333,8 +335,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -349,7 +358,7 @@
         </div>
         <article role="main">
           <section id="noisesampler">
-<h1>NoiseSampler<a class="headerlink" href="#noisesampler" title="Permalink to this headline">¶</a></h1>
+<h1>NoiseSampler<a class="headerlink" href="#noisesampler" title="Link to this heading">#</a></h1>
 <div class="admonition seealso">
 <p class="admonition-title">See also</p>
 <p><a class="reference internal" href="../../development/noise/index.html"><span class="doc">Noise</span></a></p>
@@ -360,13 +369,13 @@ samples is regarded as ‘noise’.</p>
 <p>Noise produced by noise samplers <a class="reference internal" href="../../development/noise/use.html"><span class="doc">determine some kind of behaviour</span></a> for each block or column. This behaviour
 is dependent on the context of the sampler definition.</p>
 <section id="types">
-<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<h2>Types<a class="headerlink" href="#types" title="Link to this heading">#</a></h2>
 <p>Different types of <code class="docutils literal notranslate"><span class="pre">NoiseSampler</span></code> provide different behaviours and may have additional parameters for configuring that behavior.</p>
 <p>The type is specified by setting the <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">type</span> parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with <code class="docutils literal notranslate"><span class="pre">ADDON_NAME:</span></code> to specify which one to use.</p>
 <p>A list of available types for <code class="docutils literal notranslate"><span class="pre">NoiseSampler</span></code> are listed below:</p>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="channel">
-<h3>CHANNEL<a class="headerlink" href="#channel" title="Permalink to this headline">¶</a></h3>
+<h3>CHANNEL<a class="headerlink" href="#channel" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘library-image’ addon to use</sup></p>
 <p>Outputs a channel from a color sampler.</p>
 <p id="object-noisesampler-template-library-image-channel-parameter-color-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-library-image-channel-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="ColorSampler.html"><span class="doc">ColorSampler</span></a> - The color sampler to extract channel values from.</p>
@@ -376,9 +385,9 @@ is dependent on the context of the sampler definition.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">false</span></code></p>
 <p>If you are expecting pixel transparency to reduce the output value then this should be set to true.</p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="distance-transform">
-<h3>DISTANCE_TRANSFORM<a class="headerlink" href="#distance-transform" title="Permalink to this headline">¶</a></h3>
+<h3>DISTANCE_TRANSFORM<a class="headerlink" href="#distance-transform" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘library-image’ addon to use</sup></p>
 <p>Returns the result of a <a class="reference external" href="https://homepages.inf.ed.ac.uk/rbf/HIPR2/distance.htm">distance transform</a> on an image.</p>
 <p id="object-noisesampler-template-library-image-distance-transform-parameter-image"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-library-image-distance-transform-parameter-image"><span class="std std-ref">image</span></a> <a class="reference internal" href="Image.html"><span class="doc">Image</span></a></p>
@@ -408,9 +417,9 @@ is dependent on the context of the sampler definition.</p>
 <p id="object-noisesampler-template-library-image-distance-transform-parameter-threshold"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-library-image-distance-transform-parameter-threshold"><span class="std std-ref">threshold</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">127</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="distance">
-<h3>DISTANCE<a class="headerlink" href="#distance" title="Permalink to this headline">¶</a></h3>
+<h3>DISTANCE<a class="headerlink" href="#distance" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Returns the distance from a point.</p>
 <p id="object-noisesampler-template-config-noise-function-distance-parameter-distance-function"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-distance-parameter-distance-function"><span class="std std-ref">distance-function</span></a> <a class="reference internal" href="String.html"><span class="doc">String</span></a> - The function used to calculate distance between sample positions and the configured point.</p>
@@ -435,20 +444,20 @@ is dependent on the context of the sampler definition.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">100</span></code></p>
 <p>Only relevant if <code class="docutils literal notranslate"><span class="pre">normalize</span></code> is set to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="white-noise">
-<h3>WHITE_NOISE<a class="headerlink" href="#white-noise" title="Permalink to this headline">¶</a></h3>
+<h3>WHITE_NOISE<a class="headerlink" href="#white-noise" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://en.wikipedia.org/wiki/White_noise">White noise</a>.</p>
-<img alt="../../../_images/whitenoise64x64.png" src="../../../_images/whitenoise64x64.png"/>
+<img alt="../../../_images/whitenoise64x64.png" src="../../../_images/whitenoise64x64.png" />
 <p id="object-noisesampler-template-config-noise-function-white-noise-parameter-frequency"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-white-noise-parameter-frequency"><span class="std std-ref">frequency</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
 <p id="object-noisesampler-template-config-noise-function-white-noise-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-white-noise-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="positive-white-noise">
-<h3>POSITIVE_WHITE_NOISE<a class="headerlink" href="#positive-white-noise" title="Permalink to this headline">¶</a></h3>
+<h3>POSITIVE_WHITE_NOISE<a class="headerlink" href="#positive-white-noise" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Identical to <a class="reference internal" href="#white-noise">WHITE_NOISE</a>, but redistributed to only produce positive
 values for convenience.</p>
@@ -457,9 +466,9 @@ values for convenience.</p>
 <p id="object-noisesampler-template-config-noise-function-positive-white-noise-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-positive-white-noise-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="gaussian">
-<h3>GAUSSIAN<a class="headerlink" href="#gaussian" title="Permalink to this headline">¶</a></h3>
+<h3>GAUSSIAN<a class="headerlink" href="#gaussian" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Identical to <a class="reference internal" href="#white-noise">WHITE_NOISE</a>, but redistributed to follow a <a class="reference external" href="https://en.wikipedia.org/wiki/Normal_distribution">gaussian distribution</a>.</p>
 <p id="object-noisesampler-template-config-noise-function-gaussian-parameter-frequency"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-gaussian-parameter-frequency"><span class="std std-ref">frequency</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
@@ -467,9 +476,9 @@ values for convenience.</p>
 <p id="object-noisesampler-template-config-noise-function-gaussian-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-gaussian-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="perlin">
-<h3>PERLIN<a class="headerlink" href="#perlin" title="Permalink to this headline">¶</a></h3>
+<h3>PERLIN<a class="headerlink" href="#perlin" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://en.wikipedia.org/wiki/Perlin_noise">Perlin noise</a>.</p>
 <p id="object-noisesampler-template-config-noise-function-perlin-parameter-frequency"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-perlin-parameter-frequency"><span class="std std-ref">frequency</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
@@ -482,9 +491,9 @@ values for convenience.</p>
 Perlin noise produces signficant directional artifacts, which may be undesired.</p>
 </div>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="simplex">
-<h3>SIMPLEX<a class="headerlink" href="#simplex" title="Permalink to this headline">¶</a></h3>
+<h3>SIMPLEX<a class="headerlink" href="#simplex" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://en.wikipedia.org/wiki/Simplex_noise">Simplex noise</a>.</p>
 <p id="object-noisesampler-template-config-noise-function-simplex-parameter-frequency"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-simplex-parameter-frequency"><span class="std std-ref">frequency</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
@@ -492,20 +501,20 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <p id="object-noisesampler-template-config-noise-function-simplex-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-simplex-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="open-simplex-2">
-<h3>OPEN_SIMPLEX_2<a class="headerlink" href="#open-simplex-2" title="Permalink to this headline">¶</a></h3>
+<h3>OPEN_SIMPLEX_2<a class="headerlink" href="#open-simplex-2" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://en.wikipedia.org/wiki/Simplex_noise">Simplex noise</a> (using the algorithm from <a class="reference external" href="https://github.com/KdotJPG/OpenSimplex2">OpenSimplex2</a>).</p>
-<img alt="../../../_images/opensimplex2_64x64.png" src="../../../_images/opensimplex2_64x64.png"/>
+<img alt="../../../_images/opensimplex2_64x64.png" src="../../../_images/opensimplex2_64x64.png" />
 <p id="object-noisesampler-template-config-noise-function-open-simplex-2-parameter-frequency"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-open-simplex-2-parameter-frequency"><span class="std std-ref">frequency</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.02</span></code></p>
 <p id="object-noisesampler-template-config-noise-function-open-simplex-2-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-open-simplex-2-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="open-simplex-2s">
-<h3>OPEN_SIMPLEX_2S<a class="headerlink" href="#open-simplex-2s" title="Permalink to this headline">¶</a></h3>
+<h3>OPEN_SIMPLEX_2S<a class="headerlink" href="#open-simplex-2s" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces smoother <a class="reference external" href="https://en.wikipedia.org/wiki/Simplex_noise">Simplex noise</a> (using the algorithm from <a class="reference external" href="https://github.com/KdotJPG/OpenSimplex2">OpenSimplex2</a>).</p>
 <p id="object-noisesampler-template-config-noise-function-open-simplex-2s-parameter-frequency"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-open-simplex-2s-parameter-frequency"><span class="std std-ref">frequency</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
@@ -513,9 +522,9 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <p id="object-noisesampler-template-config-noise-function-open-simplex-2s-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-open-simplex-2s-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="value">
-<h3>VALUE<a class="headerlink" href="#value" title="Permalink to this headline">¶</a></h3>
+<h3>VALUE<a class="headerlink" href="#value" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://en.wikipedia.org/wiki/Value_noise">Value noise</a> using <a class="reference external" href="https://en.wikipedia.org/wiki/Linear_interpolation">linear interpolation</a> (<a class="reference external" href="https://en.wikipedia.org/wiki/Bilinear_interpolation">bilinear</a> for 2D, <a class="reference external" href="https://en.wikipedia.org/wiki/Trilinear_interpolation">trilinear</a> for 3D).</p>
 <p id="object-noisesampler-template-config-noise-function-value-parameter-frequency"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-value-parameter-frequency"><span class="std std-ref">frequency</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
@@ -523,9 +532,9 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <p id="object-noisesampler-template-config-noise-function-value-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-value-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="value-cubic">
-<h3>VALUE_CUBIC<a class="headerlink" href="#value-cubic" title="Permalink to this headline">¶</a></h3>
+<h3>VALUE_CUBIC<a class="headerlink" href="#value-cubic" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Identical to <a class="reference internal" href="#value">VALUE</a> except using <a class="reference external" href="https://en.wikipedia.org/wiki/Cubic_Hermite_spline#Interpolation_on_a_single_interval">cubic interpolation</a> (<a class="reference external" href="https://en.wikipedia.org/wiki/Bicubic_interpolation">bicubic</a> for 2D, <a class="reference external" href="https://en.wikipedia.org/wiki/Tricubic_interpolation">tricubic</a> for 3D).</p>
 <p id="object-noisesampler-template-config-noise-function-value-cubic-parameter-frequency"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-value-cubic-parameter-frequency"><span class="std std-ref">frequency</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Controls the <a class="reference internal" href="../../development/noise/configuring.html#sampler-frequency"><span class="std std-ref">frequency</span></a> of noise.</p>
@@ -533,9 +542,9 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <p id="object-noisesampler-template-config-noise-function-value-cubic-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-value-cubic-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="gabor">
-<h3>GABOR<a class="headerlink" href="#gabor" title="Permalink to this headline">¶</a></h3>
+<h3>GABOR<a class="headerlink" href="#gabor" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces <a class="reference external" href="https://graphics.cs.kuleuven.be/publications/GLLD12GNBE/">Gabor noise</a>.</p>
 <div class="admonition warning">
@@ -557,14 +566,14 @@ Perlin noise produces signficant directional artifacts, which may be undesired.<
 <p id="object-noisesampler-template-config-noise-function-gabor-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-gabor-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="cellular">
-<h3>CELLULAR<a class="headerlink" href="#cellular" title="Permalink to this headline">¶</a></h3>
+<h3>CELLULAR<a class="headerlink" href="#cellular" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Produces cellular / <a class="reference external" href="https://en.wikipedia.org/wiki/Worley_noise">Worley noise</a>.</p>
-<img alt="../../../_images/cellular_256x256.png" src="../../../_images/cellular_256x256.png"/>
+<img alt="../../../_images/cellular_256x256.png" src="../../../_images/cellular_256x256.png" />
 <p><strong>DIAGRAM</strong></p>
-<img alt="../../../_images/cellular_diagram.svg" src="../../../_images/cellular_diagram.svg"/><ul class="simple">
+<img alt="../../../_images/cellular_diagram.svg" src="../../../_images/cellular_diagram.svg" /><ul class="simple">
 <li><p><span class="black">Black dots</span> - The center of each cell.</p></li>
 <li><p><span class="red">Red lines</span> - A random direction and distance from the cell center, called ‘jitter’.</p></li>
 <li><p><span class="blue">Blue dots</span> - The cell origin, determined by jitter from the cell center.</p></li>
@@ -620,9 +629,9 @@ Values between <code class="docutils literal notranslate"><span class="pre">-1</
 <p id="object-noisesampler-template-config-noise-function-cellular-parameter-salt"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-cellular-parameter-salt"><span class="std std-ref">salt</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a> - Determines the <a class="reference internal" href="../../development/noise/configuring.html#sampler-salt"><span class="std std-ref">seed</span></a> for the sampler.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="image">
-<h3>IMAGE<a class="headerlink" href="#image" title="Permalink to this headline">¶</a></h3>
+<h3>IMAGE<a class="headerlink" href="#image" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Outputs the channel of an image that is tiled, redistributed from the channel range [0-255] to output range [-1, 1].</p>
 <p id="object-noisesampler-template-config-noise-function-image-parameter-channel"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-image-parameter-channel"><span class="std std-ref">channel</span></a> <a class="reference internal" href="String.html"><span class="doc">String</span></a> - Which channel of the image to output.</p>
@@ -642,27 +651,27 @@ Channel Examples</div>
 <div class="sd-row sd-row-cols-6 sd-row-cols-xs-6 sd-row-cols-sm-6 sd-row-cols-md-6 sd-row-cols-lg-6 docutils">
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
 <p class="sd-card-text">Original Image</p>
-<img alt="../../../_images/pacman_ghosts.png" src="../../../_images/pacman_ghosts.png"/>
+<img alt="../../../_images/pacman_ghosts.png" src="../../../_images/pacman_ghosts.png" />
 </div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
 <p class="sd-card-text">Grayscale</p>
-<img alt="../../../_images/pacman_ghosts_grayscale.png" src="../../../_images/pacman_ghosts_grayscale.png"/>
+<img alt="../../../_images/pacman_ghosts_grayscale.png" src="../../../_images/pacman_ghosts_grayscale.png" />
 </div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
 <p class="sd-card-text">Alpha Channel*</p>
-<img alt="../../../_images/pacman_ghosts_alpha_channel.png" src="../../../_images/pacman_ghosts_alpha_channel.png"/>
+<img alt="../../../_images/pacman_ghosts_alpha_channel.png" src="../../../_images/pacman_ghosts_alpha_channel.png" />
 </div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
 <p class="sd-card-text">Red Channel</p>
-<img alt="../../../_images/pacman_ghosts_red_channel.png" src="../../../_images/pacman_ghosts_red_channel.png"/>
+<img alt="../../../_images/pacman_ghosts_red_channel.png" src="../../../_images/pacman_ghosts_red_channel.png" />
 </div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
 <p class="sd-card-text">Green Channel</p>
-<img alt="../../../_images/pacman_ghosts_green_channel.png" src="../../../_images/pacman_ghosts_green_channel.png"/>
+<img alt="../../../_images/pacman_ghosts_green_channel.png" src="../../../_images/pacman_ghosts_green_channel.png" />
 </div>
 <div class="sd-col sd-d-flex-column sd-col-4 sd-col-xs-4 sd-col-sm-4 sd-col-md-4 sd-col-lg-4 docutils">
 <p class="sd-card-text">Blue Channel</p>
-<img alt="../../../_images/pacman_ghosts_blue_channel.png" src="../../../_images/pacman_ghosts_blue_channel.png"/>
+<img alt="../../../_images/pacman_ghosts_blue_channel.png" src="../../../_images/pacman_ghosts_blue_channel.png" />
 </div>
 </div>
 </div>
@@ -679,15 +688,15 @@ results may look pixelated depending on use.</p>
 <div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
 <div class="sd-col sd-d-flex-column sd-p-0 docutils">
 <p><strong>grayscale_circles.png</strong></p>
-<a class="reference internal image-reference" href="../../../_images/grayscale_circles.png"><img alt="../../../_images/grayscale_circles.png" src="../../../_images/grayscale_circles.png" style="width: 200px;"/></a>
+<a class="reference internal image-reference" href="../../../_images/grayscale_circles.png"><img alt="../../../_images/grayscale_circles.png" src="../../../_images/grayscale_circles.png" style="width: 200px;" /></a>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
 <p><strong>1.0 Frequency</strong></p>
-<a class="reference internal image-reference" href="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png"><img alt="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png" src="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png" style="width: 200px;"/></a>
+<a class="reference internal image-reference" href="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png"><img alt="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png" src="../../../_images/image_sampler_circles_frequency_1.0_zoomed.png" style="width: 200px;" /></a>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
 <p><strong>0.25 Frequency</strong></p>
-<a class="reference internal image-reference" href="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png"><img alt="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png" src="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png" style="width: 200px;"/></a>
+<a class="reference internal image-reference" href="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png"><img alt="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png" src="../../../_images/image_sampler_circles_frequency_0.25_zoomed.png" style="width: 200px;" /></a>
 </div>
 </div>
 </div>
@@ -698,57 +707,57 @@ results may look pixelated depending on use.</p>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
 Example Image Samplers<div class="sd-summary-down docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
 <div class="sd-row sd-row-cols-3 sd-row-cols-xs-3 sd-row-cols-sm-3 sd-row-cols-md-3 sd-row-cols-lg-3 docutils">
 <div class="sd-col sd-d-flex-column sd-p-0 docutils">
 <p class="sd-card-text"><strong>grayscale_circles.png</strong></p>
-<a class="reference internal image-reference" href="../../../_images/grayscale_circles.png"><img alt="../../../_images/grayscale_circles.png" src="../../../_images/grayscale_circles.png" style="width: 200px;"/></a>
+<a class="reference internal image-reference" href="../../../_images/grayscale_circles.png"><img alt="../../../_images/grayscale_circles.png" src="../../../_images/grayscale_circles.png" style="width: 200px;" /></a>
 </div>
 <div class="sd-col sd-d-flex-column docutils">
 <p class="sd-card-text"><strong>mountain_heightmap.png</strong></p>
-<a class="reference internal image-reference" href="../../../_images/mountain_heightmap.png"><img alt="../../../_images/mountain_heightmap.png" src="../../../_images/mountain_heightmap.png" style="width: 200px;"/></a>
+<a class="reference internal image-reference" href="../../../_images/mountain_heightmap.png"><img alt="../../../_images/mountain_heightmap.png" src="../../../_images/mountain_heightmap.png" style="width: 200px;" /></a>
 </div>
 </div>
 </div>
 <p class="sd-card-text">World generated using the mountain heightmap to shape the terrain, and the circles
 to determine biome temperature:</p>
-<a class="reference internal image-reference" href="../../../_images/image_distributed_biomes.png"><img alt="../../../_images/image_distributed_biomes.png" src="../../../_images/image_distributed_biomes.png" style="width: 50%;"/></a>
+<a class="reference internal image-reference" href="../../../_images/image_distributed_biomes.png"><img alt="../../../_images/image_distributed_biomes.png" src="../../../_images/image_distributed_biomes.png" style="width: 50%;" /></a>
 <p class="sd-card-text"><strong>Terrain Sampler</strong> (Using <a class="reference internal" href="#linear-heightmap">LINEAR_HEIGHTMAP</a> to work as a terrain sampler)</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LINEAR_HEIGHTMAP</span><span class="w"></span>
-<span class="nt">base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128</span><span class="w"></span>
-<span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64</span><span class="w"></span>
-<span class="nt">sampler</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMAGE</span><span class="w"></span>
-<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mountain_heightmap.png</span><span class="w"></span>
-<span class="w">  </span><span class="nt">channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRAYSCALE</span><span class="w"></span>
-<span class="w">  </span><span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LINEAR_HEIGHTMAP</span>
+<span class="nt">base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">128</span>
+<span class="nt">scale</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64</span>
+<span class="nt">sampler</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMAGE</span>
+<span class="w">  </span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">mountain_heightmap.png</span>
+<span class="w">  </span><span class="nt">channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRAYSCALE</span>
+<span class="w">  </span><span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </pre></div>
 </div>
 <p class="sd-card-text"><strong>Temperature Sampler</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMAGE</span><span class="w"></span>
-<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grayscale_circles.png</span><span class="w"></span>
-<span class="nt">channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRAYSCALE</span><span class="w"></span>
-<span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">IMAGE</span>
+<span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">grayscale_circles.png</span>
+<span class="nt">channel</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRAYSCALE</span>
+<span class="nt">frequency</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </pre></div>
 </div>
 </div>
 </details></section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="constant">
-<h3>CONSTANT<a class="headerlink" href="#constant" title="Permalink to this headline">¶</a></h3>
+<h3>CONSTANT<a class="headerlink" href="#constant" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Outputs a constant value, regardless of the inputs. Typically used in cases where you
 don’t want the sampler to do anything.</p>
 <p id="object-noisesampler-template-config-noise-function-constant-parameter-value"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-constant-parameter-value"><span class="std std-ref">value</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - The value to be outputted.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="domain-warp">
-<h3>DOMAIN_WARP<a class="headerlink" href="#domain-warp" title="Permalink to this headline">¶</a></h3>
+<h3>DOMAIN_WARP<a class="headerlink" href="#domain-warp" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Warps a sampler by another sampler. See <a class="reference internal" href="../../development/noise/configuring.html#domain-warping"><span class="std std-ref">Domain Warping</span></a> for more information.</p>
 <p id="object-noisesampler-template-config-noise-function-domain-warp-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-domain-warp-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The sampler to be warped.</p>
@@ -756,9 +765,9 @@ don’t want the sampler to do anything.</p>
 <p id="object-noisesampler-template-config-noise-function-domain-warp-parameter-amplitude"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-domain-warp-parameter-amplitude"><span class="std std-ref">amplitude</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - How much warping to apply.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="kernel">
-<h3>KERNEL<a class="headerlink" href="#kernel" title="Permalink to this headline">¶</a></h3>
+<h3>KERNEL<a class="headerlink" href="#kernel" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p id="object-noisesampler-template-config-noise-function-kernel-parameter-kernel"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-kernel-parameter-kernel"><span class="std std-ref">kernel</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="Float.html"><span class="doc">Float</span></a>&gt;&gt;</p>
 <p id="object-noisesampler-template-config-noise-function-kernel-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-kernel-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
@@ -767,9 +776,9 @@ don’t want the sampler to do anything.</p>
 <p id="object-noisesampler-template-config-noise-function-kernel-parameter-frequency"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-kernel-parameter-frequency"><span class="std std-ref">frequency</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="linear-heightmap">
-<h3>LINEAR_HEIGHTMAP<a class="headerlink" href="#linear-heightmap" title="Permalink to this headline">¶</a></h3>
+<h3>LINEAR_HEIGHTMAP<a class="headerlink" href="#linear-heightmap" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Treats a 2D sampler as a heightmap, converting it to a 3D <a class="reference external" href="https://en.wikipedia.org/wiki/Signed_distance_function">SDF</a>
 for use as a terrain sampler.</p>
@@ -779,9 +788,9 @@ for use as a terrain sampler.</p>
 <p id="object-noisesampler-template-config-noise-function-linear-heightmap-parameter-scale"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-linear-heightmap-parameter-scale"><span class="std std-ref">scale</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a> - Scales the height of the heightmap.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">1.0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="fbm">
-<h3>FBM<a class="headerlink" href="#fbm" title="Permalink to this headline">¶</a></h3>
+<h3>FBM<a class="headerlink" href="#fbm" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p id="object-noisesampler-template-config-noise-function-fbm-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-fbm-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-fbm-parameter-gain"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-fbm-parameter-gain"><span class="std std-ref">gain</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
@@ -793,9 +802,9 @@ for use as a terrain sampler.</p>
 <p id="object-noisesampler-template-config-noise-function-fbm-parameter-weighted-strength"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-fbm-parameter-weighted-strength"><span class="std std-ref">weighted-strength</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="ping-pong">
-<h3>PING_PONG<a class="headerlink" href="#ping-pong" title="Permalink to this headline">¶</a></h3>
+<h3>PING_PONG<a class="headerlink" href="#ping-pong" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p id="object-noisesampler-template-config-noise-function-ping-pong-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-ping-pong-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-ping-pong-parameter-gain"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-ping-pong-parameter-gain"><span class="std std-ref">gain</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
@@ -809,9 +818,9 @@ for use as a terrain sampler.</p>
 <p id="object-noisesampler-template-config-noise-function-ping-pong-parameter-weighted-strength"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-ping-pong-parameter-weighted-strength"><span class="std std-ref">weighted-strength</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="ridged">
-<h3>RIDGED<a class="headerlink" href="#ridged" title="Permalink to this headline">¶</a></h3>
+<h3>RIDGED<a class="headerlink" href="#ridged" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p id="object-noisesampler-template-config-noise-function-ridged-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-ridged-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-ridged-parameter-gain"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-ridged-parameter-gain"><span class="std std-ref">gain</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
@@ -823,9 +832,9 @@ for use as a terrain sampler.</p>
 <p id="object-noisesampler-template-config-noise-function-ridged-parameter-weighted-strength"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-ridged-parameter-weighted-strength"><span class="std std-ref">weighted-strength</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">0.0</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="linear">
-<h3>LINEAR<a class="headerlink" href="#linear" title="Permalink to this headline">¶</a></h3>
+<h3>LINEAR<a class="headerlink" href="#linear" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Redistributes the range <code class="docutils literal notranslate"><span class="pre">[min,</span> <span class="pre">max]</span></code> to <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code>, typically for use with weighted
 pools.</p>
@@ -833,17 +842,17 @@ pools.</p>
 <p id="object-noisesampler-template-config-noise-function-linear-parameter-min"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-linear-parameter-min"><span class="std std-ref">min</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-linear-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-linear-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="cubic-spline">
-<h3>CUBIC_SPLINE<a class="headerlink" href="#cubic-spline" title="Permalink to this headline">¶</a></h3>
+<h3>CUBIC_SPLINE<a class="headerlink" href="#cubic-spline" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Remaps values using a cubic spline defined according to a set of points and gradients.</p>
 <p id="object-noisesampler-template-config-noise-function-cubic-spline-parameter-points"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-cubic-spline-parameter-points"><span class="std std-ref">points</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="CubicSplinePoint.html"><span class="doc">CubicSplinePoint</span></a>&gt;</p>
 <p id="object-noisesampler-template-config-noise-function-cubic-spline-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-cubic-spline-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="expression-normalizer">
-<h3>EXPRESSION_NORMALIZER<a class="headerlink" href="#expression-normalizer" title="Permalink to this headline">¶</a></h3>
+<h3>EXPRESSION_NORMALIZER<a class="headerlink" href="#expression-normalizer" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Returns the result of evaluating an expression that uses samples provided by the input sampler.</p>
 <p id="object-noisesampler-template-config-noise-function-expression-normalizer-parameter-expression"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-expression-normalizer-parameter-expression"><span class="std std-ref">expression</span></a> <a class="reference internal" href="Expression.html"><span class="doc">Expression</span></a> - An expression utilizes the <code class="docutils literal notranslate"><span class="pre">in</span></code> variable (short for ‘input’).</p>
@@ -859,25 +868,25 @@ This behaviour may be changed in the future.</p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">{}</span></code></p>
 <p>This is a convenience short hand version of the <a class="reference internal" href="#expression">EXPRESSION</a> sampler which you should refer to for more info.</p>
 <p>For example the following sampler:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
-<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(noise(x, z) + 3) / 2</span><span class="w"></span>
-<span class="nt">samplers</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">noise</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span>
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(noise(x, z) + 3) / 2</span>
+<span class="nt">samplers</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">noise</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span>
 </pre></div>
 </div>
 <p>Can be simplified to:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION_NORMALIZER</span><span class="w"></span>
-<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(in + 3) / 2</span><span class="w"></span>
-<span class="nt">sampler</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION_NORMALIZER</span>
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(in + 3) / 2</span>
+<span class="nt">sampler</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span>
 </pre></div>
 </div>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="clamp">
-<h3>CLAMP<a class="headerlink" href="#clamp" title="Permalink to this headline">¶</a></h3>
+<h3>CLAMP<a class="headerlink" href="#clamp" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Outputs <code class="docutils literal notranslate"><span class="pre">max</span></code> when the sampler outputs a value greater than <code class="docutils literal notranslate"><span class="pre">max</span></code>, and returns <code class="docutils literal notranslate"><span class="pre">min</span></code>
 when the sampler outputs a value less than <code class="docutils literal notranslate"><span class="pre">min</span></code>, used to constrain sampler outputs to
@@ -886,9 +895,9 @@ a certain range.</p>
 <p id="object-noisesampler-template-config-noise-function-clamp-parameter-min"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-clamp-parameter-min"><span class="std std-ref">min</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-clamp-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-clamp-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="normal">
-<h3>NORMAL<a class="headerlink" href="#normal" title="Permalink to this headline">¶</a></h3>
+<h3>NORMAL<a class="headerlink" href="#normal" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Redistributes normally distributed outputs to be evenly distributed.</p>
 <p id="object-noisesampler-template-config-noise-function-normal-parameter-mean"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-normal-parameter-mean"><span class="std std-ref">mean</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
@@ -897,82 +906,82 @@ a certain range.</p>
 <p id="object-noisesampler-template-config-noise-function-normal-parameter-groups"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-normal-parameter-groups"><span class="std std-ref">groups</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 <p>Default: <code class="docutils literal notranslate"><span class="pre">16384</span></code></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="probability">
-<h3>PROBABILITY<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h3>
+<h3>PROBABILITY<a class="headerlink" href="#probability" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Redistributes the range <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code> to <code class="docutils literal notranslate"><span class="pre">[0,</span> <span class="pre">1]</span></code>, typically used in cases where it’s easier to
 work with values from <code class="docutils literal notranslate"><span class="pre">0</span></code> to <code class="docutils literal notranslate"><span class="pre">1</span></code>, e.g defining a threshold as a percentage of a noise sampler.</p>
 <p id="object-noisesampler-template-config-noise-function-probability-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-probability-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="scale">
-<h3>SCALE<a class="headerlink" href="#scale" title="Permalink to this headline">¶</a></h3>
+<h3>SCALE<a class="headerlink" href="#scale" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">sampler()</span> <span class="pre">*</span> <span class="pre">amplitude</span></code>.</p>
 <p id="object-noisesampler-template-config-noise-function-scale-parameter-amplitude"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-scale-parameter-amplitude"><span class="std std-ref">amplitude</span></a> <a class="reference internal" href="Float.html"><span class="doc">Float</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-scale-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-scale-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="posterization">
-<h3>POSTERIZATION<a class="headerlink" href="#posterization" title="Permalink to this headline">¶</a></h3>
+<h3>POSTERIZATION<a class="headerlink" href="#posterization" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Applies a step function to the sampler, where <code class="docutils literal notranslate"><span class="pre">steps</span></code> determines how many steps will be within
 the range <code class="docutils literal notranslate"><span class="pre">[-1,</span> <span class="pre">1]</span></code>.</p>
 <p id="object-noisesampler-template-config-noise-function-posterization-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-posterization-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-posterization-parameter-steps"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-posterization-parameter-steps"><span class="std std-ref">steps</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="add">
-<h3>ADD<a class="headerlink" href="#add" title="Permalink to this headline">¶</a></h3>
+<h3>ADD<a class="headerlink" href="#add" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">+</span> <span class="pre">right()</span></code>.</p>
 <p id="object-noisesampler-template-config-noise-function-add-parameter-left"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-add-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-add-parameter-right"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-add-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="sub">
-<h3>SUB<a class="headerlink" href="#sub" title="Permalink to this headline">¶</a></h3>
+<h3>SUB<a class="headerlink" href="#sub" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">-</span> <span class="pre">right()</span></code>.</p>
 <p id="object-noisesampler-template-config-noise-function-sub-parameter-left"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-sub-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-sub-parameter-right"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-sub-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="mul">
-<h3>MUL<a class="headerlink" href="#mul" title="Permalink to this headline">¶</a></h3>
+<h3>MUL<a class="headerlink" href="#mul" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">*</span> <span class="pre">right()</span></code>.</p>
 <p id="object-noisesampler-template-config-noise-function-mul-parameter-left"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-mul-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-mul-parameter-right"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-mul-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="div">
-<h3>DIV<a class="headerlink" href="#div" title="Permalink to this headline">¶</a></h3>
+<h3>DIV<a class="headerlink" href="#div" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">left()</span> <span class="pre">/</span> <span class="pre">right()</span></code>.</p>
 <p id="object-noisesampler-template-config-noise-function-div-parameter-left"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-div-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-div-parameter-right"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-div-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="max">
-<h3>MAX<a class="headerlink" href="#max" title="Permalink to this headline">¶</a></h3>
+<h3>MAX<a class="headerlink" href="#max" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">max(left(),</span> <span class="pre">right())</span></code>.</p>
 <p id="object-noisesampler-template-config-noise-function-max-parameter-left"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-max-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-max-parameter-right"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-max-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="min">
-<h3>MIN<a class="headerlink" href="#min" title="Permalink to this headline">¶</a></h3>
+<h3>MIN<a class="headerlink" href="#min" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates <code class="docutils literal notranslate"><span class="pre">min(left(),</span> <span class="pre">right())</span></code>.</p>
 <p id="object-noisesampler-template-config-noise-function-min-parameter-left"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-min-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 <p id="object-noisesampler-template-config-noise-function-min-parameter-right"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-min-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </section>
-<hr class="docutils"/>
+<hr class="docutils" />
 <section id="expression">
-<h3>EXPRESSION<a class="headerlink" href="#expression" title="Permalink to this headline">¶</a></h3>
+<h3>EXPRESSION<a class="headerlink" href="#expression" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘config-noise-function’ addon to use</sup></p>
 <p>Evaluates an arbitrary user defined expression as the sampler output. Expression
 samplers additionally allow the use of user defined functions, including other samplers,
@@ -981,7 +990,7 @@ as well as constants defined within the sampler.</p>
 <p>The expression to be evaluated for each sample. Variables <code class="docutils literal notranslate"><span class="pre">x</span></code>, <code class="docutils literal notranslate"><span class="pre">y</span></code> (3D only), and <code class="docutils literal notranslate"><span class="pre">z</span></code>
 act as the sampler’s coordinate inputs.</p>
 <p><strong>Expression example</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(x * 3) / z</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(x * 3) / z</span>
 </pre></div>
 </div>
 <p id="object-noisesampler-template-config-noise-function-expression-parameter-functions"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-expression-parameter-functions"><span class="std std-ref">functions</span></a> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="MathFunction.html"><span class="doc">MathFunction</span></a>&gt;</p>
@@ -990,13 +999,13 @@ act as the sampler’s coordinate inputs.</p>
 called within the expression like so <code class="docutils literal notranslate"><span class="pre">&lt;name&gt;(&lt;arg</span> <span class="pre">1&gt;,</span> <span class="pre">&lt;arg</span> <span class="pre">2&gt;,</span> <span class="pre">...)</span></code>, where &lt;name&gt; is the declared
 function name, and where each input coorresponds to the argument list defined by the function.</p>
 <p><strong>Example defining functions</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">functions</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">addThenDivide</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
-<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c</span><span class="w"></span>
-<span class="w">    </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(a + b) / c</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">functions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">addThenDivide</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span>
+<span class="w">        </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c</span>
+<span class="w">    </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(a + b) / c</span>
 </pre></div>
 </div>
 <p id="object-noisesampler-template-config-noise-function-expression-parameter-samplers"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-expression-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="DimensionApplicableSampler.html"><span class="doc">DimensionApplicableSampler</span></a>&gt; - Defines a mapping of function names to samplers.</p>
@@ -1010,10 +1019,10 @@ the respective axis coordinates are the coordinate inputs passed to the sampler.
 see the <a class="reference internal" href="DimensionApplicableSampler.html"><span class="doc">DimensionApplicableSampler</span></a> section for details.</p>
 </div>
 <p><strong>Example defining samplers</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">samplers</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">whiteNoise</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">samplers</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">whiteNoise</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span>
 </pre></div>
 </div>
 <p id="object-noisesampler-template-config-noise-function-expression-parameter-variables"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-expression-parameter-variables"><span class="std std-ref">variables</span></a> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="Float.html"><span class="doc">Float</span></a>&gt;</p>
@@ -1021,25 +1030,25 @@ see the <a class="reference internal" href="DimensionApplicableSampler.html"><sp
 <p>Defines a mapping of variable names to values for use in the scope of the expression. This
 is most useful for providing named constants that can easily be modified if needed.</p>
 <p><strong>Example defining variables</strong></p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="w">  </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">variables</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 </pre></div>
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3 nested-cards">
 <summary class="sd-summary-title sd-card-header">
 Example Expression Samplers<div class="sd-summary-down docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-down" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z" fill-rule="evenodd"></path></svg></div>
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
-<svg aria-hidden="true" class="sd-octicon sd-octicon-chevron-up" height="1.5em" version="1.1" viewbox="0 0 24 24" width="1.5em"><path d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z" fill-rule="evenodd"></path></svg></div>
+<svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 <strong>Simple addition</strong></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span>
 
-<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1 + 1</span><span class="w"></span>
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1 + 1</span>
 </pre></div>
 </div>
 <p class="sd-card-text">The sampler above outputs the result of <code class="docutils literal notranslate"><span class="pre">1</span></code> plus <code class="docutils literal notranslate"><span class="pre">1</span></code>, therefore the sampler will always
@@ -1050,13 +1059,13 @@ output <code class="docutils literal notranslate"><span class="pre">2</span></co
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 <strong>Using variables</strong></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span>
 
-<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="w">  </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="w">  </span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
 
-<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a - b</span><span class="w"></span>
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a - b</span>
 </pre></div>
 </div>
 <p class="sd-card-text">The sampler above outputs the result of <code class="docutils literal notranslate"><span class="pre">a</span></code> minus <code class="docutils literal notranslate"><span class="pre">b</span></code>, which is evaluated as
@@ -1067,17 +1076,17 @@ output <code class="docutils literal notranslate"><span class="pre">2</span></co
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 <strong>Using functions</strong></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span>
 
-<span class="nt">functions</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">addThenDivide</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c</span><span class="w"></span>
-<span class="w">    </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(a + b) / c</span><span class="w"></span>
+<span class="nt">functions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">addThenDivide</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">c</span>
+<span class="w">    </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">(a + b) / c</span>
 
-<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">addThenDivide(3, 2, 10)</span><span class="w"></span>
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">addThenDivide(3, 2, 10)</span>
 </pre></div>
 </div>
 <p class="sd-card-text">The sampler above outputs the results of passing <code class="docutils literal notranslate"><span class="pre">3</span></code>, <code class="docutils literal notranslate"><span class="pre">2</span></code>, and <code class="docutils literal notranslate"><span class="pre">10</span></code> into
@@ -1090,9 +1099,9 @@ output <code class="docutils literal notranslate"><span class="pre">0.5</span></
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 <strong>Using coordinates</strong></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span>
 
-<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x + z</span><span class="w"></span>
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">x + z</span>
 </pre></div>
 </div>
 <p class="sd-card-text">The sampler above will output the result of adding the <code class="docutils literal notranslate"><span class="pre">x</span></code> coordinate and the <code class="docutils literal notranslate"><span class="pre">z</span></code>
@@ -1104,14 +1113,14 @@ that sample would return <code class="docutils literal notranslate"><span class=
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 <strong>Using samplers</strong></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span>
 
-<span class="nt">samplers</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">whiteNoise</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
+<span class="nt">samplers</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">whiteNoise</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span>
 
-<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">whiteNoise(2, 5)</span><span class="w"></span>
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">whiteNoise(2, 5)</span>
 </pre></div>
 </div>
 <p class="sd-card-text">The sampler above will output the result of a 2D <a class="reference internal" href="#white-noise">WHITE_NOISE</a> sampler when passed
@@ -1122,27 +1131,27 @@ the coordinates <code class="docutils literal notranslate"><span class="pre">X</
 <div class="sd-card-body docutils">
 <div class="sd-card-title sd-font-weight-bold docutils">
 <strong>Combining everything</strong></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">EXPRESSION</span>
 
-<span class="nt">variables</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">someConstant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span><span class="w"></span>
-<span class="w">  </span><span class="nt">anotherConstant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.5</span><span class="w"></span>
+<span class="nt">variables</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">someConstant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3</span>
+<span class="w">  </span><span class="nt">anotherConstant</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.5</span>
 
-<span class="nt">functions</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">add</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
-<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
-<span class="w">    </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a + b</span><span class="w"></span>
+<span class="nt">functions</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">add</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">arguments</span><span class="p">:</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span>
+<span class="w">    </span><span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a + b</span>
 
-<span class="nt">samplers</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">exampleSampler</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
-<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span><span class="w"></span>
+<span class="nt">samplers</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">exampleSampler</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">dimensions</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span>
 
-<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span><span class="w"></span>
-<span class="w">  </span><span class="no">exampleSampler(x * 2, z * 2) +</span><span class="w"></span>
-<span class="w">  </span><span class="no">add(someConstant, anotherConstant)</span><span class="w"></span>
+<span class="nt">expression</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">|</span>
+<span class="w">  </span><span class="no">exampleSampler(x * 2, z * 2) +</span>
+<span class="w">  </span><span class="no">add(someConstant, anotherConstant)</span>
 </pre></div>
 </div>
 <p class="sd-card-text">The expression sampler above defines:</p>
@@ -1181,143 +1190,149 @@ the coordinates <code class="docutils literal notranslate"><span class="pre">X</
 </details></section>
 </section>
 <section id="uses">
-<h2>Uses<a class="headerlink" href="#uses" title="Permalink to this headline">¶</a></h2>
-<p>Used by 45 parameters:</p>
+<h2>Uses<a class="headerlink" href="#uses" title="Link to this heading">#</a></h2>
+<p>Used by 47 parameters:</p>
 <ul>
-<li><p><a class="reference internal" href="Extrusion.html#object-extrusion-template-biome-provider-extrusion-set-parameter-sampler"><span class="std std-ref">In SET in Extrusion</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Extrusion.html#object-extrusion-template-biome-provider-extrusion-set-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-sub-parameter-left"><span class="std std-ref">In SUB in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-sub-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-cellular-parameter-lookup"><span class="std std-ref">In CELLULAR in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-cellular-parameter-lookup"><span class="std std-ref">lookup</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The lookup sampler used when the <code class="docutils literal notranslate"><span class="pre">distance</span></code> parameter is set to <code class="docutils literal notranslate"><span class="pre">NoiseLookup</span></code></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-probability-parameter-sampler"><span class="std std-ref">In PROBABILITY in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-probability-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-fractal-expand-parameter-sampler"><span class="std std-ref">In FRACTAL_EXPAND in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-fractal-expand-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - Used to randomly determine which pipeline biome should be chosen.</p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-div-parameter-left"><span class="std std-ref">In DIV in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-div-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-linear-heightmap-parameter-sampler"><span class="std std-ref">In LINEAR_HEIGHTMAP in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-linear-heightmap-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The sampler to be used as a heightmap.</p>
-</li>
-<li><p><a class="reference internal" href="Extrusion.html#object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler"><span class="std std-ref">In REPLACE in Extrusion</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Extrusion.html#object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="Locator.html#object-locator-template-config-locators-sampler-parameter-samplers"><span class="std std-ref">In SAMPLER in Locator</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Locator.html#object-locator-template-config-locators-sampler-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a>&gt;</p>
-</li>
-<li><p><a class="reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-terrain-sampler-2d"><span class="std std-ref">In base in BIOME</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-terrain-sampler-2d"><span class="std std-ref">terrain.sampler-2d</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-scale-parameter-sampler"><span class="std std-ref">In SCALE in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-scale-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="Distributor.html#object-distributor-template-config-distributors-sampler-parameter-sampler"><span class="std std-ref">In SAMPLER in Distributor</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Distributor.html#object-distributor-template-config-distributors-sampler-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-domain-warp-parameter-warp"><span class="std std-ref">In DOMAIN_WARP in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-domain-warp-parameter-warp"><span class="std std-ref">warp</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The sampler that determines warping.</p>
-</li>
-<li><p><a class="reference internal" href="../configs/FEATURE.html#config-feature-template-config-feature-base-parameter-structures-distribution"><span class="std std-ref">In base in FEATURE</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/FEATURE.html#config-feature-template-config-feature-base-parameter-structures-distribution"><span class="std std-ref">structures.distribution</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-clamp-parameter-sampler"><span class="std std-ref">In CLAMP in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-clamp-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-mul-parameter-right"><span class="std std-ref">In MUL in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-mul-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-smooth-parameter-sampler"><span class="std std-ref">In SMOOTH in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-smooth-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - Used to randomly determine which pipeline biome should be chosen.</p>
-</li>
-<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-parameter-sampler"><span class="std std-ref">In REPLACE in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The noise sampler used to distribute pipeline biomes.</p>
-</li>
-<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-parameter-sampler"><span class="std std-ref">In BORDER in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The noise sampler used to distribute pipeline biomes.</p>
-</li>
-<li><p><a class="reference internal" href="Source.html#object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler"><span class="std std-ref">In SAMPLER in Source</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Source.html#object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-min-parameter-left"><span class="std std-ref">In MIN in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-min-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-min-parameter-right"><span class="std std-ref">In MIN in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-min-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-normal-parameter-sampler"><span class="std std-ref">In NORMAL in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-normal-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-terrain-sampler"><span class="std std-ref">In base in BIOME</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-terrain-sampler"><span class="std std-ref">terrain.sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-add-parameter-left"><span class="std std-ref">In ADD in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-add-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-mul-parameter-left"><span class="std std-ref">In MUL in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-mul-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-sampler"><span class="std std-ref">In REPLACE_LIST in Stage</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The noise sampler used to distribute pipeline biomes.</p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-kernel-parameter-sampler"><span class="std std-ref">In KERNEL in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-kernel-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-posterization-parameter-sampler"><span class="std std-ref">In POSTERIZATION in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-posterization-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-sub-parameter-right"><span class="std std-ref">In SUB in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-sub-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-fbm-parameter-sampler"><span class="std std-ref">In FBM in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-fbm-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-add-parameter-right"><span class="std std-ref">In ADD in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-add-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-linear-parameter-sampler"><span class="std std-ref">In LINEAR in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-linear-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-max-parameter-left"><span class="std std-ref">In MAX in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-max-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-div-parameter-right"><span class="std std-ref">In DIV in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-div-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-cubic-spline-parameter-sampler"><span class="std std-ref">In CUBIC_SPLINE in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-cubic-spline-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-expression-normalizer-parameter-sampler"><span class="std std-ref">In EXPRESSION_NORMALIZER in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-expression-normalizer-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="BiomeProvider.html#object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend-sampler"><span class="std std-ref">In PIPELINE in BiomeProvider</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="BiomeProvider.html#object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend-sampler"><span class="std std-ref">blend.sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - A sampler that blends the pixelated effect produced by higher resolutions.</p>
-</li>
 <li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-ping-pong-parameter-sampler"><span class="std std-ref">In PING_PONG in NoiseSampler</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-ping-pong-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
-</li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-ridged-parameter-sampler"><span class="std std-ref">In RIDGED in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-ridged-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </li>
 <li><p><a class="reference internal" href="Locator.html#object-locator-template-config-locators-sampler-3d-parameter-sampler"><span class="std std-ref">In SAMPLER_3D in Locator</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Locator.html#object-locator-template-config-locators-sampler-3d-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
 </li>
-<li><p><a class="reference internal" href="../configs/PALETTE.html#config-palette-template-config-palette-base-parameter-sampler"><span class="std std-ref">In base in PALETTE</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/PALETTE.html#config-palette-template-config-palette-base-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+<li><p><a class="reference internal" href="DimensionApplicableSampler.html#object-dimensionapplicablesampler-template-config-noise-function-map-parameter"><span class="std std-ref">In map in DimensionApplicableSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="DimensionApplicableSampler.html#object-dimensionapplicablesampler-template-config-noise-function-map-parameter"><span class="std std-ref">.</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-linear-parameter-sampler"><span class="std std-ref">In LINEAR in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-linear-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-max-parameter-right"><span class="std std-ref">In MAX in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-max-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-max-parameter-left"><span class="std std-ref">In MAX in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-max-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-sampler"><span class="std std-ref">In REPLACE_LIST in Stage</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-list-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The noise sampler used to distribute pipeline biomes.</p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-div-parameter-right"><span class="std std-ref">In DIV in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-div-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-posterization-parameter-sampler"><span class="std std-ref">In POSTERIZATION in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-posterization-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="Source.html#object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler"><span class="std std-ref">In SAMPLER in Source</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Source.html#object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-clamp-parameter-sampler"><span class="std std-ref">In CLAMP in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-clamp-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="PaletteLayer.html#object-palettelayer-template-config-palette-map-parameter-sampler"><span class="std std-ref">In map in PaletteLayer</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="PaletteLayer.html#object-palettelayer-template-config-palette-map-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-fbm-parameter-sampler"><span class="std std-ref">In FBM in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-fbm-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-fractal-expand-parameter-sampler"><span class="std std-ref">In FRACTAL_EXPAND in Stage</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-fractal-expand-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - Used to randomly determine which pipeline biome should be chosen.</p>
 </li>
 <li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-list-parameter-sampler"><span class="std std-ref">In BORDER_LIST in Stage</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-list-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The noise sampler used to distribute pipeline biomes.</p>
 </li>
+<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-parameter-sampler"><span class="std std-ref">In BORDER in Stage</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-border-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The noise sampler used to distribute pipeline biomes.</p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-normal-parameter-sampler"><span class="std std-ref">In NORMAL in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-normal-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-min-parameter-right"><span class="std std-ref">In MIN in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-min-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="Extrusion.html#object-extrusion-template-biome-provider-extrusion-set-parameter-sampler"><span class="std std-ref">In SET in Extrusion</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Extrusion.html#object-extrusion-template-biome-provider-extrusion-set-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-mul-parameter-left"><span class="std std-ref">In MUL in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-mul-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-expression-normalizer-parameter-sampler"><span class="std std-ref">In EXPRESSION_NORMALIZER in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-expression-normalizer-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-linear-heightmap-parameter-sampler"><span class="std std-ref">In LINEAR_HEIGHTMAP in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-linear-heightmap-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The sampler to be used as a heightmap.</p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-sub-parameter-left"><span class="std std-ref">In SUB in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-sub-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-smooth-parameter-sampler"><span class="std std-ref">In SMOOTH in Stage</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-smooth-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - Used to randomly determine which pipeline biome should be chosen.</p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-div-parameter-left"><span class="std std-ref">In DIV in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-div-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-kernel-parameter-sampler"><span class="std std-ref">In KERNEL in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-kernel-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-sub-parameter-right"><span class="std std-ref">In SUB in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-sub-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="Distributor.html#object-distributor-template-config-distributors-sampler-parameter-sampler"><span class="std std-ref">In SAMPLER in Distributor</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Distributor.html#object-distributor-template-config-distributors-sampler-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-mul-parameter-right"><span class="std std-ref">In MUL in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-mul-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-add-parameter-right"><span class="std std-ref">In ADD in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-add-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-add-parameter-left"><span class="std std-ref">In ADD in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-add-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="BiomeProvider.html#object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend-sampler"><span class="std std-ref">In PIPELINE in BiomeProvider</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="BiomeProvider.html#object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend-sampler"><span class="std std-ref">blend.sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - A sampler that blends the pixelated effect produced by higher resolutions.</p>
+</li>
+<li><p><a class="reference internal" href="../configs/FEATURE.html#config-feature-template-config-feature-base-parameter-structures-distribution"><span class="std std-ref">In base in FEATURE</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/FEATURE.html#config-feature-template-config-feature-base-parameter-structures-distribution"><span class="std std-ref">structures.distribution</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-domain-warp-parameter-warp"><span class="std std-ref">In DOMAIN_WARP in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-domain-warp-parameter-warp"><span class="std std-ref">warp</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The sampler that determines warping.</p>
+</li>
+<li><p><a class="reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-terrain-sampler-2d"><span class="std std-ref">In base in BIOME</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-terrain-sampler-2d"><span class="std std-ref">terrain.sampler-2d</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="../configs/PALETTE.html#config-palette-template-config-palette-base-parameter-sampler"><span class="std std-ref">In base in PALETTE</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/PALETTE.html#config-palette-template-config-palette-base-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-parameter-sampler"><span class="std std-ref">In REPLACE in Stage</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Stage.html#object-stage-template-biome-provider-pipeline-v2-replace-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The noise sampler used to distribute pipeline biomes.</p>
+</li>
 <li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-domain-warp-parameter-sampler"><span class="std std-ref">In DOMAIN_WARP in NoiseSampler</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-domain-warp-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The sampler to be warped.</p>
 </li>
-<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-max-parameter-right"><span class="std std-ref">In MAX in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-max-parameter-right"><span class="std std-ref">right</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-cubic-spline-parameter-sampler"><span class="std std-ref">In CUBIC_SPLINE in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-cubic-spline-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="Extrusion.html#object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler"><span class="std std-ref">In REPLACE in Extrusion</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Extrusion.html#object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-terrain-sampler"><span class="std std-ref">In base in BIOME</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-terrain-sampler"><span class="std std-ref">terrain.sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-probability-parameter-sampler"><span class="std std-ref">In PROBABILITY in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-probability-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="Locator.html#object-locator-template-config-locators-sampler-parameter-samplers"><span class="std std-ref">In SAMPLER in Locator</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="Locator.html#object-locator-template-config-locators-sampler-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a>&gt;</p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-ridged-parameter-sampler"><span class="std std-ref">In RIDGED in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-ridged-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-min-parameter-left"><span class="std std-ref">In MIN in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-min-parameter-left"><span class="std std-ref">left</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-scale-parameter-sampler"><span class="std std-ref">In SCALE in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-noisesampler-template-config-noise-function-scale-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a></p>
+</li>
+<li><p><a class="reference internal" href="#object-noisesampler-template-config-noise-function-cellular-parameter-lookup"><span class="std std-ref">In CELLULAR in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-noisesampler-template-config-noise-function-cellular-parameter-lookup"><span class="std std-ref">lookup</span></a> <a class="reference internal" href="#"><span class="doc">NoiseSampler</span></a> - The lookup sampler used when the <code class="docutils literal notranslate"><span class="pre">distance</span></code> parameter is set to <code class="docutils literal notranslate"><span class="pre">NoiseLookup</span></code></p>
 </li>
 </ul>
 </section>
@@ -1328,36 +1343,40 @@ the coordinates <code class="docutils literal notranslate"><span class="pre">X</
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="Integer.html">
+          <a class="next-page" href="String.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Integer</div>
+                <div class="title">String</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="Float.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+          <a class="prev-page" href="Integer.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Float</div>
+                <div class="title">Integer</div>
                 
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2021-2023, Terra Contributors |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../../_sources/config/documentation/objects/NoiseSampler.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021-2023, Terra Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -1368,7 +1387,7 @@ the coordinates <code class="docutils literal notranslate"><span class="pre">X</
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1427,11 +1446,10 @@ the coordinates <code class="docutils literal notranslate"><span class="pre">X</
       
     </aside>
   </div>
-</div><script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/scripts/furo.js"></script>
-    <script src="../../../_static/design-tabs.js"></script>
+</div><script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
     </body>
 </html>

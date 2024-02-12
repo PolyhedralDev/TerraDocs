@@ -145,7 +145,7 @@ Setting up a New Pack
         addons:
           language-yaml: 1.+
 
-    Addons defined under the ``addons`` parameter are specified as :ref:`key-value pairs <key-value-pair>` where the key
+    Addons defined under the ``addons`` parameter are specified as key-value pairs where the key
     specifies the addon name, and the value specifies the required addon version(s).
 
     The string ``1.+`` means that the pack can use any version of the addon where the major version (the first number)

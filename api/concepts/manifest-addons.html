@@ -1,29 +1,29 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en" data-content_root="../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Dependency Injection" href="dependency-injection.html" /><link rel="prev" title="API Concepts" href="index.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>Manifest Addons - Terra Docs</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/rounded-borders.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/cards.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/code-blocks.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/interpreted-text.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/padding.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/headings.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/logo.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/content.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/lists.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/text-colors.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=9ecc9bae" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/rounded-borders.css?v=d57c157a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/cards.css?v=69c2168b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/code-blocks.css?v=fb5505f9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/interpreted-text.css?v=f0e69e92" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/padding.css?v=745c9c39" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/headings.css?v=894f975c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css?v=853f82cc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tabs.css?v=3ff15964" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/logo.css?v=8310c722" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/content.css?v=f7472798" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/lists.css?v=30b35dc8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/text-colors.css?v=5a6fd354" />
     
     
 
@@ -40,42 +40,42 @@
   --admonition-font-size: 1rem;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  --color-foreground-primary: #ffffff;
-  --color-foreground-secondary: #dbdbdb;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   --color-foreground-primary: #ffffff;
   --color-foreground-secondary: #dbdbdb;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -84,14 +84,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -106,7 +106,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -114,7 +114,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -167,7 +167,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../_static/terra-logo.png" alt="Logo"/>
@@ -176,34 +176,34 @@
   <span class="sidebar-brand-text">Terra Docs</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../install/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/fabric.html">Fabric Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../install/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/fabric.html">Fabric Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Fabric Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/forge.html">Forge Installation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/forge.html">Forge Installation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Forge Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/quilt.html">Quilt Installation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/quilt.html">Quilt Installation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Quilt Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/bukkit.html">Bukkit Installation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/bukkit.html">Bukkit Installation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Bukkit Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../install/bukkit-server-world-creation.html">Bukkit World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/worldmanager-bukkit-world-creation.html">Worldmanager World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/versions.html">Versions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/versions.html">Versions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Versions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Bukkit/5.3.3.html">Bukkit Legacy 5.3.3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Bukkit/5.4.1.html">Bukkit Legacy 5.4.1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Bukkit/6.1.2.html">Bukkit 6.1.2</a></li>
@@ -220,17 +220,18 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact &amp; Support</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../config/index.html">Config Packs</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../config/index.html">Config Packs</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Config Packs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../config/community-packs.html">Community Packs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../config/pack-installation.html">Pack Installation</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../config/development/index.html">Config Development</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../config/development/index.html">Config Development</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Config Development</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../config/development/introduction.html">Config Development Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/development/config-files.html">Config Files</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/development/config-data.html">Defining Data in Configs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/development/config-system.html">The Config System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../config/development/meta-configuration.html">Meta configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/development/pack-from-scratch/index.html">Creating a Pack from Scratch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../config/development/modifying-existing-pack.html">Modifying an Existing Pack</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../config/development/noise/index.html">Noise</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../config/development/noise/index.html">Noise</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Noise</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../config/development/noise/configuring.html">Configuring Noise Samplers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/development/noise/use.html">How Noise Distributes Things</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/development/noise/theory.html">How Noise Samplers Work</a></li>
@@ -239,8 +240,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../../config/development/image/index.html">Image Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../config/documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../config/documentation/configs/index.html">Config Files</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../config/documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Config Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../config/documentation/configs/index.html">Config Files</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Config Files</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/configs/BIOME.html">BIOME</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/configs/FEATURE.html">FEATURE</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/configs/ORE.html">ORE</a></li>
@@ -249,10 +250,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/configs/pack.yml.html">pack.yml</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../config/documentation/objects/index.html">Config Objects</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../config/documentation/objects/index.html">Config Objects</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Config Objects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Float.html">Float</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Integer.html">Integer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/String.html">String</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/List.html">List</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Map.html">Map</a></li>
@@ -260,37 +261,37 @@
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Boolean.html">Boolean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/WeightedList.html">WeightedList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Block.html">Block</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Tag.html">Tag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/ColorSampler.html">ColorSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Pattern.html">Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Set.html">Set</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Distributor.html">Distributor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Locator.html">Locator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Expression.html">Expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Biome.html">Biome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/MathFunction.html">MathFunction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Biome.html">Biome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/ColorString.html">ColorString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Expression.html">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/BiomeProvider.html">BiomeProvider</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/CubicSplinePoint.html">CubicSplinePoint</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/PaletteLayer.html">PaletteLayer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Point.html">Point</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Source.html">Source</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Stage.html">Stage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Extrusion.html">Extrusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Feature.html">Feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Structure.html">Structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/ChunkGenerator.html">ChunkGenerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Point.html">Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/SlantLayer.html">SlantLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Source.html">Source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/Stage.html">Stage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/CubicSplinePoint.html">CubicSplinePoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../config/documentation/objects/NumberPredicate.html">NumberPredicate</a></li>
 </ul>
 </li>
@@ -299,8 +300,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 has-children"><a class="reference internal" href="../intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Terra API</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 has-children"><a class="reference internal" href="../intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Introduction to the Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../intro/loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../intro/development-environment.html">Setting up a Development Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
@@ -309,7 +310,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../intro/registering-config-type.html">Registering a Config Type</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">API Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">API Concepts</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of API Concepts</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="logging.html">Logging With SLF4J</a></li>
@@ -326,6 +327,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -333,8 +335,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -349,33 +358,33 @@
         </div>
         <article role="main">
           <section id="manifest-addons">
-<h1>Manifest Addons<a class="headerlink" href="#manifest-addons" title="Permalink to this headline">¶</a></h1>
+<h1>Manifest Addons<a class="headerlink" href="#manifest-addons" title="Link to this heading">#</a></h1>
 <p>The Manifest Addon Loader is one of the two default bootstrap addons in Terra. The other is the bootstrap addon
 loader itself. Any addon that is not itself a bootstrap addon should not use the bootstrap addon loader, so most
 addons will want to use the Manifest Addon Loader, as it is included by default.</p>
 <section id="the-addon-manifest">
-<span id="addon-manifest"></span><h2>The Addon Manifest<a class="headerlink" href="#the-addon-manifest" title="Permalink to this headline">¶</a></h2>
+<span id="addon-manifest"></span><h2>The Addon Manifest<a class="headerlink" href="#the-addon-manifest" title="Link to this heading">#</a></h2>
 <p>The addon manifest contains data that the Manifest Addon Loader requires to load the addon. The manifest is a YAML
 file at the root of the JAR called <code class="docutils literal notranslate"><span class="pre">terra.addon.yml</span></code>.</p>
 <p>Here is an example addon manifest:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">schema-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="nt">contributors</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra contributors</span><span class="w"></span>
-<span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">super-cool-addon</span><span class="w"></span>
-<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.3</span><span class="w"></span>
-<span class="nt">entrypoints</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">"com.example.cool.MySuperCoolEntryPoint"</span><span class="w"></span>
-<span class="nt">depends</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">cool-addon</span><span class="p">:</span><span class="w"> </span><span class="s">"1.2.+"</span><span class="w"></span>
-<span class="nt">website</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">issues</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/issues</span><span class="w"></span>
-<span class="w">  </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/</span><span class="w"></span>
-<span class="w">  </span><span class="nt">docs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/wiki</span><span class="w"></span>
-<span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MIT License</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">schema-version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="nt">contributors</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Terra contributors</span>
+<span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">super-cool-addon</span>
+<span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1.0.3</span>
+<span class="nt">entrypoints</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;com.example.cool.MySuperCoolEntryPoint&quot;</span>
+<span class="nt">depends</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">cool-addon</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.2.+&quot;</span>
+<span class="nt">website</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">issues</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/issues</span>
+<span class="w">  </span><span class="nt">source</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/</span>
+<span class="w">  </span><span class="nt">docs</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">https://example.com/wiki</span>
+<span class="nt">license</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MIT License</span>
 </pre></div>
 </div>
 <section id="schema-version">
-<h3>Schema Version<a class="headerlink" href="#schema-version" title="Permalink to this headline">¶</a></h3>
+<h3>Schema Version<a class="headerlink" href="#schema-version" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">schema-version</span></code> key tells the loader which schema to load this manifest with. The current latest schema
 version is <code class="docutils literal notranslate"><span class="pre">1</span></code>. We try our best to never change the schema version, so your addon manifest should always work,
 but the schema-version is there in case we ever need to.</p>
@@ -386,28 +395,28 @@ versions before being removed.</p>
 </div>
 </section>
 <section id="contributors">
-<h3>Contributors<a class="headerlink" href="#contributors" title="Permalink to this headline">¶</a></h3>
+<h3>Contributors<a class="headerlink" href="#contributors" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">contributors</span></code> key is a list of people who have contributed to the addon. For now, just put your name!</p>
 </section>
 <section id="id">
-<h3>ID<a class="headerlink" href="#id" title="Permalink to this headline">¶</a></h3>
+<h3>ID<a class="headerlink" href="#id" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">id</span></code> key is your addon’s ID. This ID is used internally to identify your addon, and as your addon’s registry
 namespace. Make this something concise, but unlikely to conflict with other addons, as <strong>multiple addons cannot have
 the same ID!</strong></p>
 </section>
 <section id="version">
-<h3>Version<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
+<h3>Version<a class="headerlink" href="#version" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">version</span></code> key lets the loader know the version of your addon. Versioning is important, because if someone
 depends on your addon, they want to be able to guarantee compatibility by specifying the version to depend on!
 Terra, like most software, uses <a class="reference external" href="https://semver.org">Semantic Versioning</a> for its versioning.</p>
 </section>
 <section id="entry-points">
-<h3>Entry Points<a class="headerlink" href="#entry-points" title="Permalink to this headline">¶</a></h3>
+<h3>Entry Points<a class="headerlink" href="#entry-points" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">entrypoints</span></code> key defines one or more <em>entry points</em> to your addon. Entry points are classes which implement
 <code class="docutils literal notranslate"><span class="pre">AddonInitializer</span></code>. TODO</p>
 </section>
 <section id="dependencies">
-<h3>Dependencies<a class="headerlink" href="#dependencies" title="Permalink to this headline">¶</a></h3>
+<h3>Dependencies<a class="headerlink" href="#dependencies" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">depends</span></code> key specifies which other addons you <em>depend on</em>. If you depend on an addon:</p>
 <ul class="simple">
 <li><p>That addon initializes before yours.</p></li>
@@ -416,11 +425,12 @@ Terra, like most software, uses <a class="reference external" href="https://semv
 </ul>
 <p>The <code class="docutils literal notranslate"><span class="pre">depends</span></code> key is a map of addon IDs to version ranges. Version ranges are a way to determine exactly which
 versions of the dependency your addons support.</p>
-<div class="table-wrapper"><table class="colwidths-given docutils align-default" id="id1">
-<caption><span class="caption-text">Example Version Ranges</span><a class="headerlink" href="#id1" title="Permalink to this table">¶</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id1">
+<table class="docutils align-default" id="id1">
+<caption><span class="caption-text">Example Version Ranges</span><a class="headerlink" href="#id1" title="Link to this table">#</a></caption>
 <colgroup>
-<col style="width: 25%"/>
-<col style="width: 75%"/>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Version Range</p></th>
@@ -438,18 +448,20 @@ versions of the dependency your addons support.</p>
 <td><p>Match all versions from <code class="docutils literal notranslate"><span class="pre">0.1.0</span></code> (inclusive) to <code class="docutils literal notranslate"><span class="pre">0.2.0</span></code> (exclusive)</p></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+</div>
 </section>
 <section id="website">
-<h3>Website<a class="headerlink" href="#website" title="Permalink to this headline">¶</a></h3>
+<h3>Website<a class="headerlink" href="#website" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">website</span></code> key contains a website configuration. This tells users where to find information about the addon
 online, where to file bugs, where the source code is, etc. The website key is optional.</p>
 <p>There are three sub-keys in the website config:</p>
-<div class="table-wrapper"><table class="colwidths-given docutils align-default" id="id2">
-<caption><span class="caption-text">Website Keys</span><a class="headerlink" href="#id2" title="Permalink to this table">¶</a></caption>
+<div class="table-wrapper colwidths-given docutils container" id="id2">
+<table class="docutils align-default" id="id2">
+<caption><span class="caption-text">Website Keys</span><a class="headerlink" href="#id2" title="Link to this table">#</a></caption>
 <colgroup>
-<col style="width: 25%"/>
-<col style="width: 75%"/>
+<col style="width: 25.0%" />
+<col style="width: 75.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Key</p></th>
@@ -467,10 +479,11 @@ online, where to file bugs, where the source code is, etc. The website key is op
 <td><p>Where to find documentation about the addon.</p></td>
 </tr>
 </tbody>
-</table></div>
+</table>
+</div>
 </section>
 <section id="license">
-<h3>License<a class="headerlink" href="#license" title="Permalink to this headline">¶</a></h3>
+<h3>License<a class="headerlink" href="#license" title="Link to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">license</span></code> key tells users the license under which the addon is available. We strongly recommend choosing
 an <a class="reference external" href="https://opensource.org/licenses">Open-Source License</a> to keep with the free and open-source spirit of Terra.</p>
 <p>If your license is OSI-approved (MIT, GPLv3, BSD-3, etc.), you can just put the OSI ID in this parameter. Otherwise,
@@ -485,12 +498,12 @@ releasing your addon!</p>
 </section>
 </section>
 <section id="working-with-entry-points">
-<h2>Working with Entry Points<a class="headerlink" href="#working-with-entry-points" title="Permalink to this headline">¶</a></h2>
+<h2>Working with Entry Points<a class="headerlink" href="#working-with-entry-points" title="Link to this heading">#</a></h2>
 <p>The addon manifest’s <a class="reference internal" href="#entry-points">Entry Points</a> key defines a list of entry points of the addon. These entry points
 are references to classes which implement <code class="docutils literal notranslate"><span class="pre">AddonInitializer</span></code>. These entry points are initialized sequentially
 when the addon initializes.</p>
 <section id="dependency-injection-in-entry-points">
-<span id="di-in-entry-points"></span><h3>Dependency Injection in Entry Points<a class="headerlink" href="#dependency-injection-in-entry-points" title="Permalink to this headline">¶</a></h3>
+<span id="di-in-entry-points"></span><h3>Dependency Injection in Entry Points<a class="headerlink" href="#dependency-injection-in-entry-points" title="Link to this heading">#</a></h3>
 <p>The Manifest Addon Loader injects the following types into entry points:</p>
 <ul class="simple">
 <li><p>The <a class="reference external" href="https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/com/dfsek/terra/api/Platform.html">Platform</a> instance</p></li>
@@ -516,10 +529,10 @@ multiple entry points, hence the ability to inject the addon instance into entry
                 </div>
                 <div class="title">Dependency Injection</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="index.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -530,15 +543,19 @@ multiple entry points, hence the ability to inject the addon instance into entry
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2021-2023, Terra Contributors |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/api/concepts/manifest-addons.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021-2023, Terra Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -549,7 +566,7 @@ multiple entry points, hence the ability to inject the addon instance into entry
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -582,11 +599,10 @@ multiple entry points, hence the ability to inject the addon instance into entry
       
     </aside>
   </div>
-</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/scripts/furo.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     </body>
 </html>

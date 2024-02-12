@@ -221,11 +221,15 @@ For example:
 Uses
 ====
 
-Used by 2 parameters:
+Used by 3 parameters:
 
 - :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-expression>`:
 
   :bdg-ref-primary:`expression <object-noisesampler-template-config-noise-function-expression-parameter-expression>` :doc:`/config/documentation/objects/Expression` 
+
+- :ref:`In map in MathFunction <object-mathfunction-template-config-noise-function-map-parameter-expression>`:
+
+  :bdg-ref-primary:`expression <object-mathfunction-template-config-noise-function-map-parameter-expression>` :doc:`/config/documentation/objects/Expression` 
 
 - :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-expression>`:
 

@@ -5,8 +5,8 @@ Config Objects
     :maxdepth: 1
 
     Float
-    NoiseSampler
     Integer
+    NoiseSampler
     String
     List
     Map
@@ -14,35 +14,35 @@ Config Objects
     Boolean
     WeightedList
     Block
-    PipelineBiome
     Tag
+    PipelineBiome
     ColorSampler
     Pattern
     Set
     Distributor
     Locator
     Image
+    Expression
+    Biome
+    Palette
     DimensionApplicableSampler
     MathFunction
-    Biome
     ColorString
     ExtrusionReplaceableBiome
-    Expression
     BiomeProvider
-    Palette
     BiomeColorMapping
     PipelineBiomeColorConverter
-    CubicSplinePoint
-    PaletteLayer
-    Point
-    Source
-    Stage
-    SlantLayer
     Extrusion
     Feature
     Structure
     GenerationStage
     PlatformBiome
     ChunkGenerator
+    Point
+    SlantLayer
+    Source
+    Stage
+    PaletteLayer
     BiomeColorConverter
+    CubicSplinePoint
     NumberPredicate

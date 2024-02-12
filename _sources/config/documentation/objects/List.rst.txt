@@ -10,51 +10,7 @@ See :doc:`/config/development/config-data`
 Uses
 ====
 
-Used by 19 parameters:
-
-- :ref:`In OR in Locator <object-locator-template-config-locators-or-parameter-locators>`:
-
-  :bdg-ref-primary:`locators <object-locator-template-config-locators-or-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
-
-- :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages>`:
-
-  :bdg-ref-primary:`pipeline.stages <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> - A list of stages that are successively applied.
-
-- :ref:`In CUBIC_SPLINE in NoiseSampler <object-noisesampler-template-config-noise-function-cubic_spline-parameter-points>`:
-
-  :bdg-ref-primary:`points <object-noisesampler-template-config-noise-function-cubic_spline-parameter-points>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/CubicSplinePoint`\> 
-
-- :ref:`In OR in Distributor <object-distributor-template-config-distributors-or-parameter-distributors>`:
-
-  :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-or-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
-
-- :ref:`In SAMPLER in Locator <object-locator-template-config-locators-sampler-parameter-samplers>`:
-
-  :bdg-ref-primary:`samplers <object-locator-template-config-locators-sampler-parameter-samplers>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/NoiseSampler`\> 
-
-- :ref:`In XOR in Pattern <object-pattern-template-config-locators-xor-parameter-patterns>`:
-
-  :bdg-ref-primary:`patterns <object-pattern-template-config-locators-xor-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
-
-- :ref:`In AND in Locator <object-locator-template-config-locators-and-parameter-locators>`:
-
-  :bdg-ref-primary:`locators <object-locator-template-config-locators-and-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
-
-- :ref:`In base in PALETTE <config-palette-template-config-palette-base-parameter-layers>`:
-
-  :bdg-ref-primary:`layers <config-palette-template-config-palette-base-parameter-layers>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/PaletteLayer`\> 
-
-- :ref:`In XOR in Locator <object-locator-template-config-locators-xor-parameter-locators>`:
-
-  :bdg-ref-primary:`locators <object-locator-template-config-locators-xor-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
-
-- :ref:`In AND in Distributor <object-distributor-template-config-distributors-and-parameter-distributors>`:
-
-  :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-and-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
-
-- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-slant>`:
-
-  :bdg-ref-success:`slant <config-biome-template-chunk-generator-noise-3d-base-parameter-slant>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/SlantLayer`\> 
+Used by 21 parameters:
 
 - :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>`:
 
@@ -64,26 +20,78 @@ Used by 19 parameters:
 
   :bdg-ref-primary:`patterns <object-pattern-template-config-locators-or-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
 
-- :ref:`In base in pack.yml <config-pack.yml-template-base-base-parameter-stages>`:
+- :ref:`In OR in Locator <object-locator-template-config-locators-or-parameter-locators>`:
 
-  :bdg-ref-primary:`stages <config-pack.yml-template-base-base-parameter-stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> - A list of generation stages.
+  :bdg-ref-primary:`locators <object-locator-template-config-locators-or-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+
+- :ref:`In XOR in Pattern <object-pattern-template-config-locators-xor-parameter-patterns>`:
+
+  :bdg-ref-primary:`patterns <object-pattern-template-config-locators-xor-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+
+- :ref:`In XOR in Locator <object-locator-template-config-locators-xor-parameter-locators>`:
+
+  :bdg-ref-primary:`locators <object-locator-template-config-locators-xor-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+
+- :ref:`In map in MathFunction <object-mathfunction-template-config-noise-function-map-parameter-arguments>`:
+
+  :bdg-ref-success:`arguments <object-mathfunction-template-config-noise-function-map-parameter-arguments>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> 
 
 - :ref:`In base in BIOME <config-biome-template-generation-stage-feature-base-parameter-features.stageid>`:
 
   :bdg-ref-primary:`features.\<stage id\> <config-biome-template-generation-stage-feature-base-parameter-features.stageid>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Feature`\> 
 
-- :ref:`In AND in Pattern <object-pattern-template-config-locators-and-parameter-patterns>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-slant>`:
 
-  :bdg-ref-primary:`patterns <object-pattern-template-config-locators-and-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+  :bdg-ref-success:`slant <config-biome-template-chunk-generator-noise-3d-base-parameter-slant>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/SlantLayer`\> 
 
-- :ref:`In XOR in Distributor <object-distributor-template-config-distributors-xor-parameter-distributors>`:
+- :ref:`In map in SlantLayer <object-slantlayer-template-chunk-generator-noise-3d-map-parameter-palette>`:
 
-  :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-xor-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+  :bdg-ref-primary:`palette <object-slantlayer-template-chunk-generator-noise-3d-map-parameter-palette>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
+
+- :ref:`In CUBIC_SPLINE in NoiseSampler <object-noisesampler-template-config-noise-function-cubic_spline-parameter-points>`:
+
+  :bdg-ref-primary:`points <object-noisesampler-template-config-noise-function-cubic_spline-parameter-points>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/CubicSplinePoint`\> 
 
 - :ref:`In KERNEL in NoiseSampler <object-noisesampler-template-config-noise-function-kernel-parameter-kernel>`:
 
   :bdg-ref-primary:`kernel <object-noisesampler-template-config-noise-function-kernel-parameter-kernel>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Float`\>> 
 
+- :ref:`In base in pack.yml <config-pack.yml-template-base-base-parameter-stages>`:
+
+  :bdg-ref-primary:`stages <config-pack.yml-template-base-base-parameter-stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/GenerationStage`\> - A list of generation stages.
+
+- :ref:`In AND in Locator <object-locator-template-config-locators-and-parameter-locators>`:
+
+  :bdg-ref-primary:`locators <object-locator-template-config-locators-and-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
+
+- :ref:`In AND in Distributor <object-distributor-template-config-distributors-and-parameter-distributors>`:
+
+  :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-and-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+
+- :ref:`In base in PALETTE <config-palette-template-config-palette-base-parameter-layers>`:
+
+  :bdg-ref-primary:`layers <config-palette-template-config-palette-base-parameter-layers>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/PaletteLayer`\> 
+
+- :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages>`:
+
+  :bdg-ref-primary:`pipeline.stages <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-pipeline.stages>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Stage`\> - A list of stages that are successively applied.
+
+- :ref:`In OR in Distributor <object-distributor-template-config-distributors-or-parameter-distributors>`:
+
+  :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-or-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+
+- :ref:`In SAMPLER in Locator <object-locator-template-config-locators-sampler-parameter-samplers>`:
+
+  :bdg-ref-primary:`samplers <object-locator-template-config-locators-sampler-parameter-samplers>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/NoiseSampler`\> 
+
 - :ref:`In EXTRUSION in BiomeProvider <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions>`:
 
   :bdg-ref-primary:`extrusions <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 
+
+- :ref:`In XOR in Distributor <object-distributor-template-config-distributors-xor-parameter-distributors>`:
+
+  :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-xor-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+
+- :ref:`In AND in Pattern <object-pattern-template-config-locators-and-parameter-patterns>`:
+
+  :bdg-ref-primary:`patterns <object-pattern-template-config-locators-and-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 

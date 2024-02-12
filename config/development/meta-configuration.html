@@ -1,0 +1,693 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../../">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="Creating a Pack from Scratch" href="pack-from-scratch/index.html" /><link rel="prev" title="The Config System" href="config-system.html" />
+
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
+        <title>Meta configuration - Terra Docs</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=9ecc9bae" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/rounded-borders.css?v=d57c157a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/cards.css?v=69c2168b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/code-blocks.css?v=fb5505f9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/interpreted-text.css?v=f0e69e92" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/padding.css?v=745c9c39" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/headings.css?v=894f975c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css?v=853f82cc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tabs.css?v=3ff15964" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/logo.css?v=8310c722" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/content.css?v=f7472798" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/lists.css?v=30b35dc8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/text-colors.css?v=5a6fd354" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-admonition-title--important: #ff9100;
+  --color-admonition-title-background--important: rgba(255,145,0,.1);
+  --color-foreground-primary: #000000;
+  --color-foreground-secondary: #333333;
+  --font-stack: -apple-system, BlinkMacSystemFont, Segoe UI, Cantarell, Roboto, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  --admonition-font-size: 1rem;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-half" viewBox="0 0 24 24">
+    <title>Auto light/dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M13 12h5" />
+      <path d="M13 15h4" />
+      <path d="M13 18h1" />
+      <path d="M13 9h4" />
+      <path d="M13 6h1" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../../index.html"><div class="brand">Terra Docs</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
+  
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../../_static/terra-logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">Terra Docs</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../install/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/fabric.html">Fabric Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Fabric Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/forge.html">Forge Installation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Forge Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/quilt.html">Quilt Installation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Quilt Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/bukkit.html">Bukkit Installation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Bukkit Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install/bukkit-server-world-creation.html">Bukkit World Creation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/worldmanager-bukkit-world-creation.html">Worldmanager World Creation</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/versions.html">Versions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Versions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Bukkit/5.3.3.html">Bukkit Legacy 5.3.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Bukkit/5.4.1.html">Bukkit Legacy 5.4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Bukkit/6.1.2.html">Bukkit 6.1.2</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Bukkit/6.3.0.html">Bukkit 6.3.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Fabric/5.3.3.html">Fabric Legacy 5.3.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Fabric/5.4.1.html">Fabric Legacy 5.4.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Fabric/6.1.1.html">Fabric 6.1.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Fabric/6.3.0.html">Fabric 6.3.0</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Forge/5.3.3.html">Forge Legacy 5.3.3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Forge/6.2.1.html">Forge 6.2.1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Quilt/6.2.1.html">Quilt 6.2.1</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact &amp; Support</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Config Packs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Config Packs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../community-packs.html">Community Packs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../pack-installation.html">Pack Installation</a></li>
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Config Development</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Config Development</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="introduction.html">Config Development Introduction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-files.html">Config Files</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-data.html">Defining Data in Configs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="config-system.html">The Config System</a></li>
+<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Meta configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pack-from-scratch/index.html">Creating a Pack from Scratch</a></li>
+<li class="toctree-l3"><a class="reference internal" href="modifying-existing-pack.html">Modifying an Existing Pack</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="noise/index.html">Noise</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Noise</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="noise/configuring.html">Configuring Noise Samplers</a></li>
+<li class="toctree-l4"><a class="reference internal" href="noise/use.html">How Noise Distributes Things</a></li>
+<li class="toctree-l4"><a class="reference internal" href="noise/theory.html">How Noise Samplers Work</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="image/index.html">Image Configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Config Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../documentation/configs/index.html">Config Files</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Config Files</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/configs/BIOME.html">BIOME</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/configs/FEATURE.html">FEATURE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/configs/ORE.html">ORE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/configs/PALETTE.html">PALETTE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/configs/SCATTERED_ORE.html">SCATTERED_ORE</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/configs/pack.yml.html">pack.yml</a></li>
+</ul>
+</li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../documentation/objects/index.html">Config Objects</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Config Objects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Float.html">Float</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Integer.html">Integer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/String.html">String</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/List.html">List</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Map.html">Map</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Range.html">Range</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Boolean.html">Boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/WeightedList.html">WeightedList</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Block.html">Block</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Tag.html">Tag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/ColorSampler.html">ColorSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Pattern.html">Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Set.html">Set</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Distributor.html">Distributor</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Locator.html">Locator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Expression.html">Expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Biome.html">Biome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Palette.html">Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/MathFunction.html">MathFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/ColorString.html">ColorString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/BiomeProvider.html">BiomeProvider</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/BiomeColorMapping.html">BiomeColorMapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Extrusion.html">Extrusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Feature.html">Feature</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Structure.html">Structure</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/GenerationStage.html">GenerationStage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/PlatformBiome.html">PlatformBiome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/ChunkGenerator.html">ChunkGenerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Point.html">Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/SlantLayer.html">SlantLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Source.html">Source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Stage.html">Stage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/PaletteLayer.html">PaletteLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/CubicSplinePoint.html">CubicSplinePoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/NumberPredicate.html">NumberPredicate</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../documentation/terrascript/index.html">TerraScript</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Introduction to the Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/loading.html">Terra Addon Loading</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/development-environment.html">Setting up a Development Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/listening-for-an-event.html">Listening for an Event</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/adding-structure.html">Adding a Structure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/intro/registering-config-type.html">Registering a Config Type</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of API Concepts</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/manifest-addons.html">Manifest Addons</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/dependency-injection.html">Dependency Injection</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/logging.html">Logging With SLF4J</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/events.html">Events</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/type-key.html">Type Keys</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/registries.html">Registries</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/tectonic.html">Tectonic</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../api/concepts/cloud.html">Registering Commands with Cloud</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main">
+          <section id="meta-configuration">
+<h1>Meta configuration<a class="headerlink" href="#meta-configuration" title="Link to this heading">#</a></h1>
+<p>Meta configuration is an optional part of Terra’s config system that allows for
+setting parameters based on configuration defined elsewhere in a config pack. This
+is akin to having variables in a programming language.</p>
+<p>Meta configuration is handy for being able to set a value in one place to be re-used in multiple places,
+for creating your own parameters for ease of modification, and for organization.</p>
+<section id="referencing">
+<h2>Referencing<a class="headerlink" href="#referencing" title="Link to this heading">#</a></h2>
+<p>A value can be referenced by the path to the file it’s defined in, then a colon, then
+the parent keys the value is defined under separated by a dot <code class="docutils literal notranslate"><span class="pre">.</span></code>. File paths are relative
+to the pack directory.</p>
+<p><cite>&lt;file path&gt;:&lt;parent keys&gt;</cite></p>
+<p>For example to reference the string <code class="docutils literal notranslate"><span class="pre">example</span></code> in the file <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id1">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">path</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">to</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">config</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">example</span>
+</pre></div>
+</div>
+</div>
+<p>You would use <code class="docutils literal notranslate"><span class="pre">config.yml:path.to.config.value</span></code>.</p>
+<p>References by themselves will just be treated as plain strings, so there is additional
+syntax required for meta configuration convered in the rest of this page:</p>
+</section>
+<section id="metavalue">
+<h2>MetaValue<a class="headerlink" href="#metavalue" title="Link to this heading">#</a></h2>
+<p>The most basic form of meta configuration is simply setting a parameter to a referenced value. To
+do so, prefix a reference with a <code class="docutils literal notranslate"><span class="pre">$</span></code> to indicate it is a MetaValue and not a regular string.</p>
+<p>For example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">thing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">$config.yml:my.value</span>
+</pre></div>
+</div>
+<p>Sets <code class="docutils literal notranslate"><span class="pre">thing</span></code> to whatever <code class="docutils literal notranslate"><span class="pre">my.value</span></code> is defined as in the file <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id2">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">value</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">something</span>
+</pre></div>
+</div>
+</div>
+<p>This means that <code class="docutils literal notranslate"><span class="pre">thing</span></code> in the first config will be set to <code class="docutils literal notranslate"><span class="pre">something</span></code> which is defined
+in a different file.</p>
+<p>This works for most parameters, as long as they’re meta configurable (most should be).</p>
+</section>
+<section id="metalist">
+<h2>MetaList<a class="headerlink" href="#metalist" title="Link to this heading">#</a></h2>
+<p>You can merge list items from one list into another via the MetaList syntax. To do so,
+include an item in the list which is a string starting with <code class="docutils literal notranslate"><span class="pre">&lt;&lt;</span></code> then a space, then
+a reference to another list.</p>
+<p>For example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">things</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ONE</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; config.yml:another.list</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FOUR</span>
+</pre></div>
+</div>
+<p>This will merge the items from a list defined in <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">another</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">list</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TWO</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">THREE</span>
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">things</span></code> will contain items <code class="docutils literal notranslate"><span class="pre">ONE</span></code>, <code class="docutils literal notranslate"><span class="pre">TWO</span></code>, <code class="docutils literal notranslate"><span class="pre">THREE</span></code>, <code class="docutils literal notranslate"><span class="pre">FOUR</span></code> in that specific order.
+Since order matters in lists, the referenced list’s items will be merged in at the position of the reference.
+The same syntax works for sets, though order is not preserved.</p>
+<p>Multiple lists can be merged into the same list in any order:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">things</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ONE</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; config.yml:lists.first</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FOUR</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; config.yml:lists.second</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">&lt;&lt; config.yml:lists.third</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NINE</span>
+</pre></div>
+</div>
+</section>
+<section id="metamap">
+<h2>MetaMap<a class="headerlink" href="#metamap" title="Link to this heading">#</a></h2>
+<p>The MetaMap syntax allows for merging in / overriding key value pairs. This based on the
+<a class="reference external" href="https://yaml.org/type/merge.html">proposed ‘merge keys’ YAML feature</a>(which is
+supported by the YAML parser Terra uses).</p>
+<p>A special <code class="docutils literal notranslate"><span class="pre">&quot;&lt;&lt;&quot;</span></code> key defined in a map is used to indicate other maps to merge in, and
+should be set to a list of references to other maps.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This key must be quoted as to not be interpreted as a regular YAML merge key.</p>
+</div>
+<p>For example:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">things</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">one</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ONE</span>
+<span class="w">  </span><span class="s">&quot;&lt;&lt;&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config.yml:another.map</span>
+</pre></div>
+</div>
+<p>Merges <code class="docutils literal notranslate"><span class="pre">two</span></code> and <code class="docutils literal notranslate"><span class="pre">three</span></code> from <code class="docutils literal notranslate"><span class="pre">another.map</span></code> defined in <code class="docutils literal notranslate"><span class="pre">config.yml</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">another</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">map</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">two</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TWO</span>
+<span class="w">    </span><span class="nt">three</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">THREE</span>
+</pre></div>
+</div>
+</div>
+<p>The first config would be equivalent to:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">things</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">one</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ONE</span>
+<span class="w">  </span><span class="nt">two</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TWO</span>
+<span class="w">  </span><span class="nt">three</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">THREE</span>
+</pre></div>
+</div>
+<section id="metamap-priority">
+<h3>MetaMap Priority<a class="headerlink" href="#metamap-priority" title="Link to this heading">#</a></h3>
+<p>If two or more values are assigned to the same key across the relevant maps, the value from the
+last referenced map containing the key will be used, with the key (if any) from the map being merged into
+(containing <code class="docutils literal notranslate"><span class="pre">&quot;&lt;&lt;&quot;</span></code>) having the lowest priority.</p>
+<p>For example given the two configs:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">map</span><span class="p">:</span>
+<span class="w">  </span><span class="s">&quot;&lt;&lt;&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config.yml:first</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config.yml:second</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">config.yml:third</span>
+<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Base</span>
+</pre></div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">first</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">First</span>
+<span class="nt">second</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Second</span>
+<span class="w">  </span><span class="nt">extra</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Extra value</span>
+<span class="nt">third</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Third</span>
+</pre></div>
+</div>
+</div>
+<p>The value assigned to <code class="docutils literal notranslate"><span class="pre">map</span></code> would be equivalent to:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">map</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Third</span>
+<span class="w">  </span><span class="nt">extra</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Extra value</span>
+</pre></div>
+</div>
+<dl class="simple">
+<dt>Because:</dt><dd><ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">key</span></code> is defined in all maps, since <code class="docutils literal notranslate"><span class="pre">config.yml:third</span></code> is the last reference that contains <code class="docutils literal notranslate"><span class="pre">key</span></code>, its value takes priority and is used.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">extra</span></code> is defined in <code class="docutils literal notranslate"><span class="pre">config.yml:second</span></code> and no other map defines it, so it is merged in.</p></li>
+</ul>
+</dd>
+</dl>
+</section>
+</section>
+<section id="metastring">
+<h2>MetaString<a class="headerlink" href="#metastring" title="Link to this heading">#</a></h2>
+<p>The MetaString syntax allows for inserting referenced values into a string.
+Parts of a string with the following format will be replaced with the value they reference:</p>
+<p><cite>${&lt;reference&gt;}</cite></p>
+<p>For example:</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">thing</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${config.yml:thing1},</span><span class="nv"> </span><span class="s">${config.yml:thing2}!&quot;</span>
+</pre></div>
+</div>
+</div>
+<p>Inserts the strings from config.yml into <code class="docutils literal notranslate"><span class="pre">thing</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">thing1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hello</span>
+<span class="nt">thing2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">World</span>
+</pre></div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">thing</span></code> is now equivalent to the string <code class="docutils literal notranslate"><span class="pre">Hello,</span> <span class="pre">World!</span></code>.</p>
+<p>The referenced values must be strings, integers, floats, booleans, or meta configured to
+evaluate to the former.</p>
+</section>
+<section id="metanumber">
+<h2>MetaNumber<a class="headerlink" href="#metanumber" title="Link to this heading">#</a></h2>
+<p>If a parameter expects some kind of number (a float or integer), an <a class="reference internal" href="../documentation/objects/Expression.html"><span class="doc">Expression</span></a>
+can be provided instead.</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3 * 2</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">number</span></code> would be evaluated as the number <code class="docutils literal notranslate"><span class="pre">6</span></code>.</p>
+<p>The MetaString syntax is first applied to the expression, meaning you can reference
+values like so:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">number</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2 * ${config.yml:multiplier}</span>
+</pre></div>
+</div>
+<p>Once the MetaString syntax is applied, the resulting string will then be parsed as an
+expression then evaluated to produce the number the parameter is set to.</p>
+</section>
+<section id="parsing-order">
+<h2>Parsing Order<a class="headerlink" href="#parsing-order" title="Link to this heading">#</a></h2>
+<p>When meta configuration is used in conjunction with YAML syntax, YAML parsing is applied first, then any meta preprocessing, where
+parameters are set to the resuling evaluation.</p>
+<p>Given the following configs:</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">foo.yml</span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">to-merge</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;anchor</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar.yml:map-a</span>
+<span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar.yml:map-b</span>
+
+<span class="w"> </span><span class="nt">parameter</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">key-a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpha</span>
+<span class="w">   </span><span class="s">&quot;&lt;&lt;&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">*anchor</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">bar.yml</span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">map-a</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">key-b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bravo</span>
+
+<span class="w"> </span><span class="nt">map-b</span><span class="p">:</span>
+<span class="w">   </span><span class="nt">key-c</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">charlie</span>
+</pre></div>
+</div>
+</div>
+<p>First the YAML anchor will be applied to <code class="docutils literal notranslate"><span class="pre">parameter.&lt;&lt;</span></code>, resulting in:</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">foo.yml</span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parameter</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">key-a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpha</span>
+<span class="w">  </span><span class="s">&quot;&lt;&lt;&quot;</span><span class="p p-Indicator">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar.yml:map-a</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar.yml:map-b</span>
+</pre></div>
+</div>
+</div>
+<p>Then the MetaMap syntax will be applied for <code class="docutils literal notranslate"><span class="pre">parameter</span></code>:</p>
+<div class="literal-block-wrapper docutils container" id="id11">
+<div class="code-block-caption"><span class="caption-text">foo.yml</span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parameter</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">key-a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpha</span>
+<span class="w">  </span><span class="nt">key-b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bravo</span>
+<span class="w">  </span><span class="nt">key-c</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">charlie</span>
+</pre></div>
+</div>
+</div>
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="pack-from-scratch/index.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Creating a Pack from Scratch</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="config-system.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">The Config System</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021-2023, Terra Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Meta configuration</a><ul>
+<li><a class="reference internal" href="#referencing">Referencing</a></li>
+<li><a class="reference internal" href="#metavalue">MetaValue</a></li>
+<li><a class="reference internal" href="#metalist">MetaList</a></li>
+<li><a class="reference internal" href="#metamap">MetaMap</a><ul>
+<li><a class="reference internal" href="#metamap-priority">MetaMap Priority</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#metastring">MetaString</a></li>
+<li><a class="reference internal" href="#metanumber">MetaNumber</a></li>
+<li><a class="reference internal" href="#parsing-order">Parsing Order</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    </body>
+</html>

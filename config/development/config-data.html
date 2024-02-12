@@ -1,29 +1,29 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" lang="en" data-content_root="../../">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="../../genindex.html" /><link rel="search" title="Search" href="../../search.html" /><link rel="next" title="The Config System" href="config-system.html" /><link rel="prev" title="Config Files" href="config-files.html" />
 
-    <link rel="shortcut icon" href="../../_static/favicon.ico"/><meta name="generator" content="sphinx-4.3.2, furo 2021.11.23"/>
+    <link rel="shortcut icon" href="../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>Defining Data in Configs - Terra Docs</title>
-      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?digest=7f0192ddeb2adecfbaa87ffbcf67d16358b30bc1" />
-    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.59c74d8c95b765a7fd995ac71d459ebe.min.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?digest=0af69da206d614734f649b27d4cdc2dd6c31f41d" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/rounded-borders.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/cards.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/code-blocks.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/interpreted-text.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/padding.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/headings.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/tabs.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/logo.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/content.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/lists.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/css/text-colors.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=9ecc9bae" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=eafc0fe6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/rounded-borders.css?v=d57c157a" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/cards.css?v=69c2168b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/code-blocks.css?v=fb5505f9" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/interpreted-text.css?v=f0e69e92" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/padding.css?v=745c9c39" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/headings.css?v=894f975c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/admonitions.css?v=853f82cc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/tabs.css?v=3ff15964" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/logo.css?v=8310c722" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/content.css?v=f7472798" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/lists.css?v=30b35dc8" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css/text-colors.css?v=5a6fd354" />
     
     
 
@@ -40,42 +40,42 @@
   --admonition-font-size: 1rem;
   
   }
-  body[data-theme="dark"] {
-    --color-code-background: #232629;
-  --color-code-foreground: #cccccc;
-  --color-foreground-primary: #ffffff;
-  --color-foreground-secondary: #dbdbdb;
-  
-  }
-  @media (prefers-color-scheme: dark) {
-    body:not([data-theme="light"]) {
+  @media not print {
+    body[data-theme="dark"] {
       --color-code-background: #232629;
   --color-code-foreground: #cccccc;
   --color-foreground-primary: #ffffff;
   --color-foreground-secondary: #dbdbdb;
   
     }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #232629;
+  --color-code-foreground: #cccccc;
+  --color-foreground-primary: #ffffff;
+  --color-foreground-secondary: #dbdbdb;
+  
+      }
+    }
   }
 </style></head>
   <body>
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
     
+
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
     <title>Contents</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-      stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path stroke="none" d="M0 0h24v24H0z" />
-      <line x1="4" y1="6" x2="20" y2="6" />
-      <line x1="10" y1="12" x2="20" y2="12" />
-      <line x1="6" y1="18" x2="20" y2="18" />
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
     </svg>
   </symbol>
   <symbol id="svg-menu" viewBox="0 0 24 24">
     <title>Menu</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
       <line x1="3" y1="12" x2="21" y2="12"></line>
       <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -84,14 +84,14 @@
   </symbol>
   <symbol id="svg-arrow-right" viewBox="0 0 24 24">
     <title>Expand</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
       <polyline points="9 18 15 12 9 6"></polyline>
     </svg>
   </symbol>
   <symbol id="svg-sun" viewBox="0 0 24 24">
     <title>Light mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
       <circle cx="12" cy="12" r="5"></circle>
       <line x1="12" y1="1" x2="12" y2="3"></line>
@@ -106,7 +106,7 @@
   </symbol>
   <symbol id="svg-moon" viewBox="0 0 24 24">
     <title>Dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
       <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
@@ -114,7 +114,7 @@
   </symbol>
   <symbol id="svg-sun-half" viewBox="0 0 24 24">
     <title>Auto light/dark mode</title>
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
       stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-shadow">
       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
       <circle cx="12" cy="12" r="9" />
@@ -167,7 +167,7 @@
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
       
-      <div class="sidebar-sticky"><a class="sidebar-brand centered" href="../../index.html">
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../../index.html">
   
   <div class="sidebar-logo-container">
     <img class="sidebar-logo" src="../../_static/terra-logo.png" alt="Logo"/>
@@ -176,34 +176,34 @@
   <span class="sidebar-brand-text">Terra Docs</span>
   
 </a><form class="sidebar-search-container" method="get" action="../../search.html" role="search">
-  <input class="sidebar-search" placeholder=Search name="q" aria-label="Search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
   <input type="hidden" name="area" value="default">
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <ul class="current">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../install/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/fabric.html">Fabric Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../install/index.html">Getting Started</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Getting Started</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/fabric.html">Fabric Installation</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of Fabric Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/forge.html">Forge Installation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/forge.html">Forge Installation</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Forge Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/quilt.html">Quilt Installation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/quilt.html">Quilt Installation</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Quilt Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-client-world-creation.html">Fabric, Forge and Quilt Client World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/mod-server-world-creation.html">Fabric, Forge and Quilt Server World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/bukkit.html">Bukkit Installation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/bukkit.html">Bukkit Installation</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Bukkit Installation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../install/bukkit-server-world-creation.html">Bukkit World Creation</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/worldmanager-bukkit-world-creation.html">Worldmanager World Creation</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/versions.html">Versions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../install/versions.html">Versions</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of Versions</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Bukkit/5.3.3.html">Bukkit Legacy 5.3.3</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Bukkit/5.4.1.html">Bukkit Legacy 5.4.1</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../install/versions/platforms/Bukkit/6.1.2.html">Bukkit 6.1.2</a></li>
@@ -220,17 +220,18 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../contact.html">Contact &amp; Support</a></li>
-<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Config Packs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../index.html">Config Packs</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Config Packs</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../community-packs.html">Community Packs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../pack-installation.html">Pack Installation</a></li>
-<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Config Development</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current has-children"><a class="reference internal" href="index.html">Config Development</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Config Development</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="introduction.html">Config Development Introduction</a></li>
 <li class="toctree-l3"><a class="reference internal" href="config-files.html">Config Files</a></li>
 <li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Defining Data in Configs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="config-system.html">The Config System</a></li>
+<li class="toctree-l3"><a class="reference internal" href="meta-configuration.html">Meta configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="pack-from-scratch/index.html">Creating a Pack from Scratch</a></li>
 <li class="toctree-l3"><a class="reference internal" href="modifying-existing-pack.html">Modifying an Existing Pack</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="noise/index.html">Noise</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="noise/index.html">Noise</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Noise</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="noise/configuring.html">Configuring Noise Samplers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="noise/use.html">How Noise Distributes Things</a></li>
 <li class="toctree-l4"><a class="reference internal" href="noise/theory.html">How Noise Samplers Work</a></li>
@@ -239,8 +240,8 @@
 <li class="toctree-l3"><a class="reference internal" href="image/index.html">Image Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../documentation/configs/index.html">Config Files</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Config Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../documentation/configs/index.html">Config Files</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Config Files</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/configs/BIOME.html">BIOME</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/configs/FEATURE.html">FEATURE</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/configs/ORE.html">ORE</a></li>
@@ -249,10 +250,10 @@
 <li class="toctree-l4"><a class="reference internal" href="../documentation/configs/pack.yml.html">pack.yml</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../documentation/objects/index.html">Config Objects</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../documentation/objects/index.html">Config Objects</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Config Objects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Float.html">Float</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Integer.html">Integer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/String.html">String</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/List.html">List</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Map.html">Map</a></li>
@@ -260,37 +261,37 @@
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Boolean.html">Boolean</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/WeightedList.html">WeightedList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Block.html">Block</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Tag.html">Tag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/ColorSampler.html">ColorSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Pattern.html">Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Set.html">Set</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Distributor.html">Distributor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Locator.html">Locator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Image.html">Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Expression.html">Expression</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Biome.html">Biome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/MathFunction.html">MathFunction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Biome.html">Biome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/ColorString.html">ColorString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Expression.html">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/BiomeProvider.html">BiomeProvider</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/CubicSplinePoint.html">CubicSplinePoint</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/PaletteLayer.html">PaletteLayer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Point.html">Point</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Source.html">Source</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Stage.html">Stage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Extrusion.html">Extrusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Feature.html">Feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Structure.html">Structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/ChunkGenerator.html">ChunkGenerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Point.html">Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/SlantLayer.html">SlantLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Source.html">Source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/Stage.html">Stage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../documentation/objects/CubicSplinePoint.html">CubicSplinePoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../documentation/objects/NumberPredicate.html">NumberPredicate</a></li>
 </ul>
 </li>
@@ -299,8 +300,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Introduction to the Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../api/intro/loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/intro/development-environment.html">Setting up a Development Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
@@ -309,7 +310,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../api/intro/registering-config-type.html">Registering a Config Type</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of API Concepts</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../api/concepts/manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../api/concepts/logging.html">Logging With SLF4J</a></li>
@@ -326,6 +327,7 @@
 
 </div>
 </div>
+
       </div>
       
     </div>
@@ -333,8 +335,15 @@
   <div class="main">
     <div class="content">
       <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -349,7 +358,7 @@
         </div>
         <article role="main">
           <section id="defining-data-in-configs">
-<h1>Defining Data in Configs<a class="headerlink" href="#defining-data-in-configs" title="Permalink to this headline">¶</a></h1>
+<h1>Defining Data in Configs<a class="headerlink" href="#defining-data-in-configs" title="Link to this heading">#</a></h1>
 <p>In this section, we will cover the basic ways data is stored and written
 inside config files. Because Terra configs are able to be written in
 multiple languages, we use our own standardized set of terms to
@@ -361,7 +370,7 @@ data-serialization languages, feel free to skim over this section and
 skip forward to the next section.</p>
 </div>
 <section id="types">
-<h2>Types<a class="headerlink" href="#types" title="Permalink to this headline">¶</a></h2>
+<h2>Types<a class="headerlink" href="#types" title="Link to this heading">#</a></h2>
 <p>The main concept to understand is that of <strong>data types</strong> or simply
 <strong>types</strong>. Types tell us:</p>
 <ul class="simple">
@@ -374,62 +383,59 @@ many cases you need to explicitly tell Terra what type you want to use.</p>
 <p>A piece of data defined in a config is something we will call an
 <strong>object</strong>. All objects can be categorized by having a type, which is
 determined by how it is defined in the config. Config files always
-define a single object, which is what we will call the <strong>top level
-object</strong>.</p>
+define a single object.</p>
 <section id="integers">
-<h3>Integers<a class="headerlink" href="#integers" title="Permalink to this headline">¶</a></h3>
+<h3>Integers<a class="headerlink" href="#integers" title="Link to this heading">#</a></h3>
 <p>To put this information to use, let’s create create a new config file in
-YAML and define our top level object. For our type let’s use something
-called an <code class="docutils literal notranslate"><span class="pre">Integer</span></code>.</p>
+YAML. For our type let’s use the <code class="docutils literal notranslate"><span class="pre">Integer</span></code> type.</p>
 <p>Integers represent whole numbers and as such, are
 written as whole numbers like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a59397ce-fbb0-4922-a9cb-54fdbe00a9e9" name="c411b3ce-9418-48da-a18b-3bdfea49f28c" type="radio"/>
-<label class="sd-tab-label" for="a59397ce-fbb0-4922-a9cb-54fdbe00a9e9">
+<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-0">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id1">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id1" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">42</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id1" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">42</span>
 </pre></div>
 </div>
 </div>
 </div>
-<input id="5d270275-29fc-417c-8b29-db09b33848ea" name="c411b3ce-9418-48da-a18b-3bdfea49f28c" type="radio"/>
-<label class="sd-tab-label" for="5d270275-29fc-417c-8b29-db09b33848ea">
+<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-1">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id2">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id2" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="mi">42</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id2" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="mi">42</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<p>We have now created a config that defines an <code class="docutils literal notranslate"><span class="pre">Integer</span></code> as the top
-level object, which represents the number <code class="docutils literal notranslate"><span class="pre">42</span></code>, simple right?</p>
+<p>We have now created a config that defines an <code class="docutils literal notranslate"><span class="pre">Integer</span></code>, which represents the number <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p>
 </section>
 <section id="floats">
-<h3>Floats<a class="headerlink" href="#floats" title="Permalink to this headline">¶</a></h3>
+<h3>Floats<a class="headerlink" href="#floats" title="Link to this heading">#</a></h3>
 <p>Another numerical type that is slightly different from integers is a
 <code class="docutils literal notranslate"><span class="pre">Float</span></code>. The difference between integers and floats is that floats can
 represent numbers that contain decimals:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="f77415f2-23d9-4bcc-8075-a85f0ea0d795" name="ea6c37ac-6f24-493a-9ade-cf14a0115ec0" type="radio"/>
-<label class="sd-tab-label" for="f77415f2-23d9-4bcc-8075-a85f0ea0d795">
+<input checked="checked" id="sd-tab-item-2" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-2">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id3" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">3.14159</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id3" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">3.14159</span>
 </pre></div>
 </div>
 </div>
 </div>
-<input id="87b22af8-6ae5-4f5c-8583-cd0d79035a66" name="ea6c37ac-6f24-493a-9ade-cf14a0115ec0" type="radio"/>
-<label class="sd-tab-label" for="87b22af8-6ae5-4f5c-8583-cd0d79035a66">
+<input id="sd-tab-item-3" name="sd-tab-set-1" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-3">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id4" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="mf">3.14159</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id4" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="mf">3.14159</span>
 </pre></div>
 </div>
 </div>
@@ -443,39 +449,39 @@ accept a float, but parameters that require a float will accept
 integers.</p>
 </section>
 <section id="booleans">
-<h3>Booleans<a class="headerlink" href="#booleans" title="Permalink to this headline">¶</a></h3>
+<h3>Booleans<a class="headerlink" href="#booleans" title="Link to this heading">#</a></h3>
 <p>The type <code class="docutils literal notranslate"><span class="pre">Boolean</span></code> defines data that can be in one of two states. This
 is almost always used for cases were you want something to be either
 <em>true</em> or <em>false</em> and is written as such:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="13edf147-9bc6-4a06-8729-52ce549b53c1" name="b7f11f87-abb4-4acf-b5e0-37f53f2eee8d" type="radio"/>
-<label class="sd-tab-label" for="13edf147-9bc6-4a06-8729-52ce549b53c1">
+<input checked="checked" id="sd-tab-item-4" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-4">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id5" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id5" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id6" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">false</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">false</span>
 </pre></div>
 </div>
 </div>
 </div>
-<input id="69fc4c78-8355-47fd-b364-02764c150eb9" name="b7f11f87-abb4-4acf-b5e0-37f53f2eee8d" type="radio"/>
-<label class="sd-tab-label" for="69fc4c78-8355-47fd-b364-02764c150eb9">
+<input id="sd-tab-item-5" name="sd-tab-set-2" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-5">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id7" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kc">true</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kc">true</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id8" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kc">false</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="kc">false</span>
 </pre></div>
 </div>
 </div>
@@ -483,25 +489,25 @@ JSON</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="strings">
-<h3>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h3>
+<h3>Strings<a class="headerlink" href="#strings" title="Link to this heading">#</a></h3>
 <p>We can also represent data like text using a type called <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2ee0575c-233e-4d57-8b53-f5632472ec65" name="d37dccf4-4ac5-4ed4-96ea-0b868bf01a96" type="radio"/>
-<label class="sd-tab-label" for="2ee0575c-233e-4d57-8b53-f5632472ec65">
+<input checked="checked" id="sd-tab-item-6" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-6">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id9" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">This is a config of type string.</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="l l-Scalar l-Scalar-Plain">This is a config of type string.</span>
 </pre></div>
 </div>
 </div>
 </div>
-<input id="0d9415e2-d8b1-46e5-8952-c310088d726e" name="d37dccf4-4ac5-4ed4-96ea-0b868bf01a96" type="radio"/>
-<label class="sd-tab-label" for="0d9415e2-d8b1-46e5-8952-c310088d726e">
+<input id="sd-tab-item-7" name="sd-tab-set-3" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-7">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id10" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="s2">"This is a config of type string."</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="s2">&quot;This is a config of type string.&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -514,22 +520,22 @@ what block IDs we want to use for the blocks in a biome.</p>
 interpreted as another type like <code class="docutils literal notranslate"><span class="pre">Boolean</span></code>. To explicitly specify an
 object is a <code class="docutils literal notranslate"><span class="pre">String</span></code>, you can wrap it quotes like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="72c28371-3bf9-4269-a3d8-2e6d398657f2" name="7b5bd76c-c336-46f4-bc79-64eb3a3d2df1" type="radio"/>
-<label class="sd-tab-label" for="72c28371-3bf9-4269-a3d8-2e6d398657f2">
+<input checked="checked" id="sd-tab-item-8" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-8">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id11" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="s">"true"</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="s">&quot;true&quot;</span>
 </pre></div>
 </div>
 </div>
 </div>
-<input id="d8980373-5ada-4bbb-a369-ea872d376371" name="7b5bd76c-c336-46f4-bc79-64eb3a3d2df1" type="radio"/>
-<label class="sd-tab-label" for="d8980373-5ada-4bbb-a369-ea872d376371">
+<input id="sd-tab-item-9" name="sd-tab-set-4" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-9">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id12">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id12" title="Permalink to this code">¶</a></div>
-<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="s2">"true"</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id12" title="Link to this code">#</a></div>
+<div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="s2">&quot;true&quot;</span>
 </pre></div>
 </div>
 </div>
@@ -541,124 +547,151 @@ JSON</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="maps">
-<h3>Maps<a class="headerlink" href="#maps" title="Permalink to this headline">¶</a></h3>
+<h3>Maps<a class="headerlink" href="#maps" title="Link to this heading">#</a></h3>
 <p>By themselves, integers, floats, and strings aren’t too useful, until we
 start assigning labels to them. We can do that using a type called a
 <code class="docutils literal notranslate"><span class="pre">Map</span></code>.</p>
-<p id="key-value-pair">A map is a <em>collection of objects</em>, referred to individually as
-<strong>values</strong>, where each <strong>value</strong> in the collection is identified by
-another unique object called a <strong>key</strong>. A key and a value together are
-called a <strong>key-value pair</strong>.</p>
-<p>Here we will make a new config where the <em>top level object</em> is of type
-<code class="docutils literal notranslate"><span class="pre">Map</span></code>, and both the <em>key</em> and <em>value</em> are of type <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
+<ul class="simple">
+<li><p>A map is a <em>collection of objects</em>.</p></li>
+<li><p>Each object in the collection is called a <strong>value</strong>.</p></li>
+<li><p>Each <strong>value</strong> is identified by another object called a <strong>key</strong>.</p></li>
+</ul>
+<p>Here we will make a new config with type <code class="docutils literal notranslate"><span class="pre">Map</span></code>, and both the
+key and value are of type <code class="docutils literal notranslate"><span class="pre">String</span></code>:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="10df86db-342f-4d19-87f8-d7fb9970d4f0" name="cf669592-81c1-4128-88d5-5fb11f5074f1" type="radio"/>
-<label class="sd-tab-label" for="10df86db-342f-4d19-87f8-d7fb9970d4f0">
+<input checked="checked" id="sd-tab-item-10" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-10">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id13">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id13" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">this is a key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">this is a value</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id13" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">this is a key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">this is a value</span>
 </pre></div>
 </div>
 </div>
 </div>
-<input id="57dfbbbe-6eb7-4bdd-bac9-ef815892ae5f" name="cf669592-81c1-4128-88d5-5fb11f5074f1" type="radio"/>
-<label class="sd-tab-label" for="57dfbbbe-6eb7-4bdd-bac9-ef815892ae5f">
+<input id="sd-tab-item-11" name="sd-tab-set-5" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-11">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id14">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id14" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">2</span><span class="w">   </span><span class="nt">"this is a key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"this is a value"</span><span class="w"></span>
-<span class="linenos">3</span><span class="p">}</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id14" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">   </span><span class="nt">&quot;this is a key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;this is a value&quot;</span>
+<span class="linenos">3</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<p>Since maps are <em>collections</em> of objects, we can list multiple key value
+<p>Since maps are collections of objects, we can list multiple key value
 pairs within the map like so:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="8da4ceb3-abad-4586-868b-8a63d174aba5" name="92fac814-94a4-4c21-a3d5-fb971dc4b755" type="radio"/>
-<label class="sd-tab-label" for="8da4ceb3-abad-4586-868b-8a63d174aba5">
+<input checked="checked" id="sd-tab-item-12" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-12">
 YAML</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id15">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id15" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">string</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Here is some text.</span><span class="w"></span>
-<span class="linenos">2</span><span class="nt">pi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.14159</span><span class="w"></span>
-<span class="linenos">3</span><span class="nt">meaning-of-life</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id15" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">string</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Here is some text.</span>
+<span class="linenos">2</span><span class="nt">pi</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3.14159</span>
+<span class="linenos">3</span><span class="nt">meaning-of-life</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42</span>
 </pre></div>
 </div>
 </div>
 </div>
-<input id="cc8677f1-9bae-4944-8d78-15865900ca11" name="92fac814-94a4-4c21-a3d5-fb971dc4b755" type="radio"/>
-<label class="sd-tab-label" for="cc8677f1-9bae-4944-8d78-15865900ca11">
+<input id="sd-tab-item-13" name="sd-tab-set-6" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-13">
 JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id16">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id16" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">2</span><span class="w">   </span><span class="nt">"string"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Here is some text."</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">3</span><span class="w">   </span><span class="nt">"pi"</span><span class="p">:</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">4</span><span class="w">   </span><span class="nt">"meaning-of-life"</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span><span class="w"></span>
-<span class="linenos">5</span><span class="p">}</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id16" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">   </span><span class="nt">&quot;string&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Here is some text.&quot;</span><span class="p">,</span>
+<span class="linenos">3</span><span class="w">   </span><span class="nt">&quot;pi&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">3.14159</span><span class="p">,</span>
+<span class="linenos">4</span><span class="w">   </span><span class="nt">&quot;meaning-of-life&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">42</span>
+<span class="linenos">5</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<p>This is useful because as explained above, configs only contain <em>one</em>
-top level object. By using maps, we are capable of defining more than
-one object within a config, as well as being able to identify what each
-of those objects are using keys.</p>
+<p>This is useful because as explained above, configs only contain one main object.
+By using maps, we are capable of defining multiple objects within a map,
+as well as being able to identify each of those objects with keys.</p>
+<p>Each key within the same map must be unique, the following is invalid:</p>
+<div class="sd-tab-set docutils">
+<input checked="checked" id="sd-tab-item-14" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-14">
+YAML</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id17">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id17" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">duplicated key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value A</span>
+<span class="linenos">2</span><span class="nt">duplicated key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">value B</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-15" name="sd-tab-set-7" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-15">
+JSON</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id18">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id18" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">   </span><span class="nt">&quot;duplicated key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value A&quot;</span><span class="p">,</span>
+<span class="linenos">3</span><span class="w">   </span><span class="nt">&quot;duplicated key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value B&quot;</span>
+<span class="linenos">4</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
 <section id="ordering">
-<span id="map-ordering"></span><h4>Ordering<a class="headerlink" href="#ordering" title="Permalink to this headline">¶</a></h4>
+<span id="map-ordering"></span><h4>Ordering<a class="headerlink" href="#ordering" title="Link to this heading">#</a></h4>
 <p>The ordering of key-value pairs inside a map is not significant, and as
 such you are free to order them however you’d like.</p>
 <p>These two configs are both equivalent:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2e8b4cc1-6712-49fd-bbc4-03ef2786b0d8" name="8f56c1af-2933-4669-8242-bb71410b11ca" type="radio"/>
-<label class="sd-tab-label" for="2e8b4cc1-6712-49fd-bbc4-03ef2786b0d8">
+<input checked="checked" id="sd-tab-item-16" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-16">
 YAML</label><div class="sd-tab-content docutils">
-<div class="literal-block-wrapper docutils container" id="id17">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id17" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1234</span><span class="w"></span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Some text</span><span class="w"></span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nt">c</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-<div class="literal-block-wrapper docutils container" id="id18">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id18" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Some text</span><span class="w"></span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="nt">c</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"></span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1234</span><span class="w"></span>
-</pre></div>
-</div>
-</div>
-</div>
-<input id="422ec246-d323-4097-92d8-e228585f01d3" name="8f56c1af-2933-4669-8242-bb71410b11ca" type="radio"/>
-<label class="sd-tab-label" for="422ec246-d323-4097-92d8-e228585f01d3">
-JSON</label><div class="sd-tab-content docutils">
 <div class="literal-block-wrapper docutils container" id="id19">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id19" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">2</span><span class="w">   </span><span class="nt">"a"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">3</span><span class="w">   </span><span class="nt">"b"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Some text"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">4</span><span class="w">   </span><span class="nt">"c"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w"></span>
-<span class="linenos">5</span><span class="p">}</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id19" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1234</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Some text</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nt">c</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
 </pre></div>
 </div>
 </div>
 <div class="literal-block-wrapper docutils container" id="id20">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id20" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">2</span><span class="w">   </span><span class="nt">"b"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Some text"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">3</span><span class="w">   </span><span class="nt">"c"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">4</span><span class="w">   </span><span class="nt">"a"</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="w"></span>
-<span class="linenos">5</span><span class="p">}</span><span class="w"></span>
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id20" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Some text</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nt">c</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span>
+<span class="linenos">4</span>
+<span class="linenos">5</span><span class="nt">a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1234</span>
+</pre></div>
+</div>
+</div>
+</div>
+<input id="sd-tab-item-17" name="sd-tab-set-8" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-17">
+JSON</label><div class="sd-tab-content docutils">
+<div class="literal-block-wrapper docutils container" id="id21">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id21" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">   </span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span><span class="p">,</span>
+<span class="linenos">3</span><span class="w">   </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Some text&quot;</span><span class="p">,</span>
+<span class="linenos">4</span><span class="w">   </span><span class="nt">&quot;c&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="linenos">5</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="literal-block-wrapper docutils container" id="id22">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id22" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">   </span><span class="nt">&quot;b&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Some text&quot;</span><span class="p">,</span>
+<span class="linenos">3</span><span class="w">   </span><span class="nt">&quot;c&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
+<span class="linenos">4</span><span class="w">   </span><span class="nt">&quot;a&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1234</span>
+<span class="linenos">5</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
@@ -667,39 +700,36 @@ JSON</label><div class="sd-tab-content docutils">
 </section>
 </section>
 <section id="lists">
-<h3>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h3>
+<h3>Lists<a class="headerlink" href="#lists" title="Link to this heading">#</a></h3>
 <p>In addition to maps, we can also use a type called a <code class="docutils literal notranslate"><span class="pre">List</span></code> to
-indicate a collection of data. Lists differ from maps in that each
-object (called an <strong>item</strong>) in a list is not assigned a unique key, but
-is instead identified by It’s position in the list. Because of this,
+define a collection of objects. Lists differ from maps in that each
+<strong>item</strong> (the term for an object in a list) is not assigned a unique key, but
+is instead identified by its position in the list. Because of this,
 <em>the order in which you define each object is significant</em>, unlike maps.</p>
-<p>Another thing to note is generally, every item contained within a list
-will be of the same type.</p>
-<p>Here is a config where the <em>top level object</em> is a <code class="docutils literal notranslate"><span class="pre">List</span></code>, which
-contains multiple <code class="docutils literal notranslate"><span class="pre">String</span></code>s:</p>
+<p>Here is a config with type <code class="docutils literal notranslate"><span class="pre">List</span></code>, which contains multiple <code class="docutils literal notranslate"><span class="pre">String</span></code>s:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="a65101d6-b3f9-4b65-8c8a-c6ce0c94d4f5" name="b98732bb-c6eb-495e-a2e7-8a8ddef16598" type="radio"/>
-<label class="sd-tab-label" for="a65101d6-b3f9-4b65-8c8a-c6ce0c94d4f5">
+<input checked="checked" id="sd-tab-item-18" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-18">
 YAML</label><div class="sd-tab-content docutils">
-<div class="literal-block-wrapper docutils container" id="id21">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id21" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A string</span><span class="w"></span>
-<span class="linenos">2</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Another string</span><span class="w"></span>
-<span class="linenos">3</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The final string</span><span class="w"></span>
+<div class="literal-block-wrapper docutils container" id="id23">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id23" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A string</span>
+<span class="linenos">2</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Another string</span>
+<span class="linenos">3</span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">The final string</span>
 </pre></div>
 </div>
 </div>
 </div>
-<input id="4944e52c-3509-4a61-a7a0-1d7e4a3efc85" name="b98732bb-c6eb-495e-a2e7-8a8ddef16598" type="radio"/>
-<label class="sd-tab-label" for="4944e52c-3509-4a61-a7a0-1d7e4a3efc85">
+<input id="sd-tab-item-19" name="sd-tab-set-9" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-19">
 JSON</label><div class="sd-tab-content docutils">
-<div class="literal-block-wrapper docutils container" id="id22">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id22" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">[</span><span class="w"></span>
-<span class="linenos">2</span><span class="w">   </span><span class="s2">"A string"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">3</span><span class="w">   </span><span class="s2">"Another string"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">4</span><span class="w">   </span><span class="s2">"The final string"</span><span class="w"></span>
-<span class="linenos">5</span><span class="p">]</span><span class="w"></span>
+<div class="literal-block-wrapper docutils container" id="id24">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id24" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">[</span>
+<span class="linenos">2</span><span class="w">   </span><span class="s2">&quot;A string&quot;</span><span class="p">,</span>
+<span class="linenos">3</span><span class="w">   </span><span class="s2">&quot;Another string&quot;</span><span class="p">,</span>
+<span class="linenos">4</span><span class="w">   </span><span class="s2">&quot;The final string&quot;</span>
+<span class="linenos">5</span><span class="p">]</span>
 </pre></div>
 </div>
 </div>
@@ -708,235 +738,237 @@ JSON</label><div class="sd-tab-content docutils">
 </section>
 </section>
 <section id="nesting-objects">
-<h2>Nesting Objects<a class="headerlink" href="#nesting-objects" title="Permalink to this headline">¶</a></h2>
-<p>Because values in maps and items in lists can be of any type, It’s
+<h2>Nesting Objects<a class="headerlink" href="#nesting-objects" title="Link to this heading">#</a></h2>
+<p>Because values in maps and items in lists can be of any type, it’s
 possible to nest maps in maps, lists in lists, lists in maps, and so on.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>Defining something inside something else is commonly referred to as ‘nesting’.</p>
 </div>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="2ed6a81f-7a38-4337-8c81-e8c4ecfe4a81" name="9b69dfe3-7981-4398-8edf-3574f9de5cd6" type="radio"/>
-<label class="sd-tab-label" for="2ed6a81f-7a38-4337-8c81-e8c4ecfe4a81">
+<input checked="checked" id="sd-tab-item-20" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-20">
 YAML</label><div class="sd-tab-content docutils">
 <p>When setting the value of a map, typically it will just fit on the
 same line as the key, for example the <code class="docutils literal notranslate"><span class="pre">Float</span></code> 42 can just be written
 in-line with the key, after the colon like so:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">42</span>
 </pre></div>
 </div>
 <p>Types that can span multiple lines, such as maps and lists won’t fit
-on a single line. For example you man want the following map which spans
+on a single line. For example you may want the following map which spans
 multiple lines to be a value within another map:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
-<span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span>
+<span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span>
 </pre></div>
 </div>
 <p>To nest this map as a value of a key, say <code class="docutils literal notranslate"><span class="pre">baz</span></code>, in another map, it can be
 defined under the key with additional indentation like so:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">baz</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
-<span class="w">  </span><span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">baz</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span>
+<span class="w">  </span><span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span>
 </pre></div>
 </div>
 <p>Indentation / indenting text refers to having some consistent number of spaces before
 each line in text. In YAML, the recommended number of spaces to indent is 2 as shown above.</p>
 <p>Lists can be nested similarly like so:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my-list</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">item 1</span><span class="w"></span>
-<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">item 2</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">my-list</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">item 1</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">item 2</span>
 </pre></div>
 </div>
-<p>Multiple ‘levels of indentation’ can be used, for example here is the prior map further
+<p>Multiple levels of indentation can be used, for example here is the prior map further
 nested under (as the value for the key) <code class="docutils literal notranslate"><span class="pre">qux</span></code>:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">qux</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">baz</span><span class="p">:</span><span class="w"></span>
-<span class="w">    </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span><span class="w"></span>
-<span class="w">    </span><span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">qux</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">baz</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">foo</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">a</span>
+<span class="w">    </span><span class="nt">bar</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">b</span>
 </pre></div>
 </div>
+<p>Each map can be visualized by drawing boxes like so:</p>
+<img alt="../../_images/nested-maps.png" src="../../_images/nested-maps.png" />
 </div>
-<input id="37e2f131-b201-482b-8004-24dcdb43f024" name="9b69dfe3-7981-4398-8edf-3574f9de5cd6" type="radio"/>
-<label class="sd-tab-label" for="37e2f131-b201-482b-8004-24dcdb43f024">
+<input id="sd-tab-item-21" name="sd-tab-set-10" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-21">
 JSON</label><div class="sd-tab-content docutils">
 <p>Example of a <code class="docutils literal notranslate"><span class="pre">Map</span></code> defined in a <code class="docutils literal notranslate"><span class="pre">Map</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id23">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id23" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">2</span><span class="w">   </span><span class="nt">"parent-key"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">3</span><span class="w">      </span><span class="nt">"child-key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"value"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">4</span><span class="w">      </span><span class="nt">"sibling-key"</span><span class="p">:</span><span class="w"> </span><span class="s2">"another value"</span><span class="w"></span>
-<span class="linenos">5</span><span class="w">   </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">6</span><span class="p">}</span><span class="w"></span>
+<div class="literal-block-wrapper docutils container" id="id25">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id25" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">   </span><span class="nt">&quot;parent-key&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos">3</span><span class="w">      </span><span class="nt">&quot;child-key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;value&quot;</span><span class="p">,</span>
+<span class="linenos">4</span><span class="w">      </span><span class="nt">&quot;sibling-key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;another value&quot;</span>
+<span class="linenos">5</span><span class="w">   </span><span class="p">}</span>
+<span class="linenos">6</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 <p>Example of a <code class="docutils literal notranslate"><span class="pre">List</span></code> defined in a <code class="docutils literal notranslate"><span class="pre">Map</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id24">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id24" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span><span class="w"></span>
-<span class="linenos">2</span><span class="w">   </span><span class="nt">"my-list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="linenos">3</span><span class="w">     </span><span class="s2">"item 1"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">4</span><span class="w">     </span><span class="s2">"item 2"</span><span class="w"></span>
-<span class="linenos">5</span><span class="w">   </span><span class="p">]</span><span class="w"></span>
-<span class="linenos">6</span><span class="p">}</span><span class="w"></span>
+<div class="literal-block-wrapper docutils container" id="id26">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id26" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="p">{</span>
+<span class="linenos">2</span><span class="w">   </span><span class="nt">&quot;my-list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">3</span><span class="w">     </span><span class="s2">&quot;item 1&quot;</span><span class="p">,</span>
+<span class="linenos">4</span><span class="w">     </span><span class="s2">&quot;item 2&quot;</span>
+<span class="linenos">5</span><span class="w">   </span><span class="p">]</span>
+<span class="linenos">6</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
 <section id="illegally-defining-two-values-for-one-key">
-<h3>Illegally defining two values for one key<a class="headerlink" href="#illegally-defining-two-values-for-one-key" title="Permalink to this headline">¶</a></h3>
+<h3>Illegally defining two values for one key<a class="headerlink" href="#illegally-defining-two-values-for-one-key" title="Link to this heading">#</a></h3>
 <p>A common mistake in YAML is to accidentally assign two different
 values to the same key.</p>
 <p>For example the following is invalid:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span><span class="w"></span>
-<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">baz</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
+<span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">baz</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span>
 </pre></div>
 </div>
-<p>The reason this is invalid is because there are two competing values being
+<p>This is invalid is because there are two competing values being
 assigned to <code class="docutils literal notranslate"><span class="pre">key</span></code>, which are <code class="docutils literal notranslate"><span class="pre">foo</span></code> and the map containing <code class="docutils literal notranslate"><span class="pre">baz:</span> <span class="pre">bar</span></code>.</p>
 <p>Deleting one of the values would make this valid YAML:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span>
 </pre></div>
 </div>
 <p>Or</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
 </pre></div>
 </div>
 <p>A config might end up in this invalid state for many reasons.</p>
 <p>A key may have been deleted or omitted which could be remedied by re-adding it like so:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span><span class="w"></span>
-<span class="nt">missing</span><span class="p">:</span><span class="w"></span>
-<span class="w">  </span><span class="nt">baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
+<span class="nt">missing</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span>
 </pre></div>
 </div>
 <p>Indentation may have been changed by accident, for example removing indentation
 would make it valid like so:</p>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span><span class="w"></span>
-<span class="nt">baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span><span class="w"></span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">key</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">foo</span>
+<span class="nt">baz</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar</span>
 </pre></div>
 </div>
 </section>
 </section>
 <section id="combining-everything">
-<h2>Combining Everything<a class="headerlink" href="#combining-everything" title="Permalink to this headline">¶</a></h2>
+<h2>Combining Everything<a class="headerlink" href="#combining-everything" title="Link to this heading">#</a></h2>
 <p>We can combine these different types to represent complex data
 structures, here is an example representing a shopping list, and some
 appointments using everything we have covered thus far:</p>
 <div class="sd-tab-set docutils">
-<input checked="checked" id="227044bf-2f28-43b9-a403-153f4f4b06b6" name="74b32e27-dd1a-4108-952e-dee5819e2aef" type="radio"/>
-<label class="sd-tab-label" for="227044bf-2f28-43b9-a403-153f4f4b06b6">
+<input checked="checked" id="sd-tab-item-22" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-22">
 YAML</label><div class="sd-tab-content docutils">
-<div class="literal-block-wrapper docutils container" id="id25">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id25" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">shopping-list</span><span class="p">:</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">item</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1L Milk</span><span class="w"></span>
-<span class="linenos"> 3</span><span class="w">    </span><span class="nt">amount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="w">    </span><span class="nt">cost-per-item</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.0</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">item</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Carton of Eggs</span><span class="w"></span>
-<span class="linenos"> 6</span><span class="w">    </span><span class="nt">amount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span><span class="w"></span>
-<span class="linenos"> 7</span><span class="w">    </span><span class="nt">cost-per-item</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.5</span><span class="w"></span>
+<div class="literal-block-wrapper docutils container" id="id27">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id27" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">shopping-list</span><span class="p">:</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">item</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1L Milk</span>
+<span class="linenos"> 3</span><span class="w">    </span><span class="nt">amount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2</span>
+<span class="linenos"> 4</span><span class="w">    </span><span class="nt">cost-per-item</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2.0</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">item</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Carton of Eggs</span>
+<span class="linenos"> 6</span><span class="w">    </span><span class="nt">amount</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos"> 7</span><span class="w">    </span><span class="nt">cost-per-item</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4.5</span>
 <span class="linenos"> 8</span>
-<span class="linenos"> 9</span><span class="nt">appointments</span><span class="p">:</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Haircut Appointment</span><span class="w"></span>
-<span class="linenos">11</span><span class="w">    </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24.04.22</span><span class="w"></span>
-<span class="linenos">12</span><span class="w">    </span><span class="nt">start-time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9:45</span><span class="w"></span>
-<span class="linenos">13</span><span class="w">    </span><span class="nt">end-time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10:15</span><span class="w"></span>
-<span class="linenos">14</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Doctor Appointment</span><span class="w"></span>
-<span class="linenos">15</span><span class="w">    </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">13.05.22</span><span class="w"></span>
-<span class="linenos">16</span><span class="w">    </span><span class="nt">start-time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3:15</span><span class="w"></span>
-<span class="linenos">17</span><span class="w">    </span><span class="nt">end-time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4:15</span><span class="w"></span>
+<span class="linenos"> 9</span><span class="nt">appointments</span><span class="p">:</span>
+<span class="linenos">10</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Haircut Appointment</span>
+<span class="linenos">11</span><span class="w">    </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">24.04.22</span>
+<span class="linenos">12</span><span class="w">    </span><span class="nt">start-time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9:45</span>
+<span class="linenos">13</span><span class="w">    </span><span class="nt">end-time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">10:15</span>
+<span class="linenos">14</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Doctor Appointment</span>
+<span class="linenos">15</span><span class="w">    </span><span class="nt">date</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">13.05.22</span>
+<span class="linenos">16</span><span class="w">    </span><span class="nt">start-time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3:15</span>
+<span class="linenos">17</span><span class="w">    </span><span class="nt">end-time</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4:15</span>
 </pre></div>
 </div>
 </div>
 </div>
-<input id="a8efc1ea-3a2d-405e-b788-c8618b8c29b3" name="74b32e27-dd1a-4108-952e-dee5819e2aef" type="radio"/>
-<label class="sd-tab-label" for="a8efc1ea-3a2d-405e-b788-c8618b8c29b3">
+<input id="sd-tab-item-23" name="sd-tab-set-11" type="radio">
+</input><label class="sd-tab-label" for="sd-tab-item-23">
 JSON</label><div class="sd-tab-content docutils">
-<div class="literal-block-wrapper docutils container" id="id26">
-<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id26" title="Permalink to this code">¶</a></div>
-<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="w">   </span><span class="nt">"shopping-list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="linenos"> 3</span><span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="w">         </span><span class="nt">"item"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1L Milk"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos"> 5</span><span class="w">         </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"></span>
-<span class="linenos"> 6</span><span class="w">         </span><span class="nt">"cost-per-item"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
-<span class="linenos"> 7</span><span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="linenos"> 8</span><span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="linenos"> 9</span><span class="w">         </span><span class="nt">"item"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Carton of Eggs"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">10</span><span class="w">         </span><span class="nt">"amount"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">11</span><span class="w">         </span><span class="nt">"cost-per-item"</span><span class="p">:</span><span class="w"> </span><span class="mf">4.5</span><span class="w"></span>
-<span class="linenos">12</span><span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">13</span><span class="w">   </span><span class="p">],</span><span class="w"></span>
-<span class="linenos">14</span><span class="w">   </span><span class="nt">"appointments"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
-<span class="linenos">15</span><span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">16</span><span class="w">         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Haircut Appointment"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">17</span><span class="w">         </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"24.04.22"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">18</span><span class="w">         </span><span class="nt">"start-time"</span><span class="p">:</span><span class="w"> </span><span class="mi">585</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">19</span><span class="w">         </span><span class="nt">"end-time"</span><span class="p">:</span><span class="w"> </span><span class="mi">615</span><span class="w"></span>
-<span class="linenos">20</span><span class="w">      </span><span class="p">},</span><span class="w"></span>
-<span class="linenos">21</span><span class="w">      </span><span class="p">{</span><span class="w"></span>
-<span class="linenos">22</span><span class="w">         </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Doctor Appointment"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">23</span><span class="w">         </span><span class="nt">"date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"13.05.22"</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">24</span><span class="w">         </span><span class="nt">"start-time"</span><span class="p">:</span><span class="w"> </span><span class="mi">195</span><span class="p">,</span><span class="w"></span>
-<span class="linenos">25</span><span class="w">         </span><span class="nt">"end-time"</span><span class="p">:</span><span class="w"> </span><span class="mi">255</span><span class="w"></span>
-<span class="linenos">26</span><span class="w">      </span><span class="p">}</span><span class="w"></span>
-<span class="linenos">27</span><span class="w">   </span><span class="p">]</span><span class="w"></span>
-<span class="linenos">28</span><span class="p">}</span><span class="w"></span>
+<div class="literal-block-wrapper docutils container" id="id28">
+<div class="code-block-caption"><span class="caption-text">config.json</span><a class="headerlink" href="#id28" title="Link to this code">#</a></div>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="p">{</span>
+<span class="linenos"> 2</span><span class="w">   </span><span class="nt">&quot;shopping-list&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos"> 3</span><span class="w">      </span><span class="p">{</span>
+<span class="linenos"> 4</span><span class="w">         </span><span class="nt">&quot;item&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1L Milk&quot;</span><span class="p">,</span>
+<span class="linenos"> 5</span><span class="w">         </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos"> 6</span><span class="w">         </span><span class="nt">&quot;cost-per-item&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span>
+<span class="linenos"> 7</span><span class="w">      </span><span class="p">},</span>
+<span class="linenos"> 8</span><span class="w">      </span><span class="p">{</span>
+<span class="linenos"> 9</span><span class="w">         </span><span class="nt">&quot;item&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Carton of Eggs&quot;</span><span class="p">,</span>
+<span class="linenos">10</span><span class="w">         </span><span class="nt">&quot;amount&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos">11</span><span class="w">         </span><span class="nt">&quot;cost-per-item&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">4.5</span>
+<span class="linenos">12</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">13</span><span class="w">   </span><span class="p">],</span>
+<span class="linenos">14</span><span class="w">   </span><span class="nt">&quot;appointments&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos">15</span><span class="w">      </span><span class="p">{</span>
+<span class="linenos">16</span><span class="w">         </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Haircut Appointment&quot;</span><span class="p">,</span>
+<span class="linenos">17</span><span class="w">         </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24.04.22&quot;</span><span class="p">,</span>
+<span class="linenos">18</span><span class="w">         </span><span class="nt">&quot;start-time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">585</span><span class="p">,</span>
+<span class="linenos">19</span><span class="w">         </span><span class="nt">&quot;end-time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">615</span>
+<span class="linenos">20</span><span class="w">      </span><span class="p">},</span>
+<span class="linenos">21</span><span class="w">      </span><span class="p">{</span>
+<span class="linenos">22</span><span class="w">         </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Doctor Appointment&quot;</span><span class="p">,</span>
+<span class="linenos">23</span><span class="w">         </span><span class="nt">&quot;date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13.05.22&quot;</span><span class="p">,</span>
+<span class="linenos">24</span><span class="w">         </span><span class="nt">&quot;start-time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">195</span><span class="p">,</span>
+<span class="linenos">25</span><span class="w">         </span><span class="nt">&quot;end-time&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">255</span>
+<span class="linenos">26</span><span class="w">      </span><span class="p">}</span>
+<span class="linenos">27</span><span class="w">   </span><span class="p">]</span>
+<span class="linenos">28</span><span class="p">}</span>
 </pre></div>
 </div>
 </div>
 </div>
 </div>
-<p>In this example, our top level object is of type <code class="docutils literal notranslate"><span class="pre">Map</span></code>, which contains
+<p>In this example, the config is of type <code class="docutils literal notranslate"><span class="pre">Map</span></code>, which contains
 two keys <code class="docutils literal notranslate"><span class="pre">shopping-list</span></code> and <code class="docutils literal notranslate"><span class="pre">appointments</span></code>. The value of both keys
 are of type <code class="docutils literal notranslate"><span class="pre">List</span></code>, where each <em>item</em> in each list contains a <code class="docutils literal notranslate"><span class="pre">Map</span></code>.</p>
 </section>
 <section id="language-specific-syntax">
-<h2>Language Specific Syntax<a class="headerlink" href="#language-specific-syntax" title="Permalink to this headline">¶</a></h2>
+<h2>Language Specific Syntax<a class="headerlink" href="#language-specific-syntax" title="Link to this heading">#</a></h2>
 <p>Some data-serialization languages support alternative syntax for
 representing the same thing, for example in YAML you can represent maps
 and lists using curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> and square brackets <code class="docutils literal notranslate"><span class="pre">[]</span></code>
 respectively, where objects are separated by commas <code class="docutils literal notranslate"><span class="pre">,</span></code> instead. This
 can be useful for when you don’t necessarily want to separate objects by
 lines and indentation:</p>
-<div class="literal-block-wrapper docutils container" id="id27">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id27" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">curly-brace-map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"></span>
-<span class="linenos"> 2</span><span class="w">  </span><span class="s">"key-1"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"value-1"</span><span class="p p-Indicator">,</span><span class="w"></span>
-<span class="linenos"> 3</span><span class="w">  </span><span class="s">"key-2"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"value-2"</span><span class="w"></span>
-<span class="linenos"> 4</span><span class="p p-Indicator">}</span><span class="w"></span>
+<div class="literal-block-wrapper docutils container" id="id29">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id29" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">curly-brace-map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span>
+<span class="linenos"> 2</span><span class="w">  </span><span class="s">&quot;key-1&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;value-1&quot;</span><span class="p p-Indicator">,</span>
+<span class="linenos"> 3</span><span class="w">  </span><span class="s">&quot;key-2&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;value-2&quot;</span>
+<span class="linenos"> 4</span><span class="p p-Indicator">}</span>
 <span class="linenos"> 5</span>
-<span class="linenos"> 6</span><span class="nt">square-bracket-list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"></span>
-<span class="linenos"> 7</span><span class="w">  </span><span class="nv">item-1</span><span class="p p-Indicator">,</span><span class="w"></span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="nv">item-2</span><span class="p p-Indicator">,</span><span class="w"></span>
-<span class="linenos"> 9</span><span class="w">  </span><span class="nv">item-3</span><span class="w"></span>
-<span class="linenos">10</span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="linenos"> 6</span><span class="nt">square-bracket-list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span>
+<span class="linenos"> 7</span><span class="w">  </span><span class="nv">item-1</span><span class="p p-Indicator">,</span>
+<span class="linenos"> 8</span><span class="w">  </span><span class="nv">item-2</span><span class="p p-Indicator">,</span>
+<span class="linenos"> 9</span><span class="w">  </span><span class="nv">item-3</span>
+<span class="linenos">10</span><span class="p p-Indicator">]</span>
 <span class="linenos">11</span>
-<span class="linenos">12</span><span class="nt">single-line-map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="s">"key-1"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"value-1"</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">"key-2"</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">"value-2"</span><span class="w"> </span><span class="p p-Indicator">}</span><span class="w"></span>
+<span class="linenos">12</span><span class="nt">single-line-map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{</span><span class="w"> </span><span class="s">&quot;key-1&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;value-1&quot;</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="s">&quot;key-2&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;value-2&quot;</span><span class="w"> </span><span class="p p-Indicator">}</span>
 <span class="linenos">13</span>
-<span class="linenos">14</span><span class="nt">single-line-list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">item-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">item-2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">item-3</span><span class="w"> </span><span class="p p-Indicator">]</span><span class="w"></span>
+<span class="linenos">14</span><span class="nt">single-line-list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[</span><span class="w"> </span><span class="nv">item-1</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">item-2</span><span class="p p-Indicator">,</span><span class="w"> </span><span class="nv">item-3</span><span class="w"> </span><span class="p p-Indicator">]</span>
 <span class="linenos">15</span>
-<span class="linenos">16</span><span class="nt">empty-map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span><span class="w"></span>
+<span class="linenos">16</span><span class="nt">empty-map</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">{}</span>
 <span class="linenos">17</span>
-<span class="linenos">18</span><span class="nt">empty-list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span><span class="w"></span>
+<span class="linenos">18</span><span class="nt">empty-list</span><span class="p">:</span><span class="w"> </span><span class="p p-Indicator">[]</span>
 </pre></div>
 </div>
 </div>
 <section id="yaml-anchors">
-<h3>YAML Anchors<a class="headerlink" href="#yaml-anchors" title="Permalink to this headline">¶</a></h3>
+<h3>YAML Anchors<a class="headerlink" href="#yaml-anchors" title="Link to this heading">#</a></h3>
 <p>YAML also provides additional systems like <strong>anchors</strong>, which allow for
 easily re-using data within a config and is useful for when you might
 want to write the same thing multiple times in a config:</p>
-<div class="literal-block-wrapper docutils container" id="id28">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id28" title="Permalink to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">some-list-of-data</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;the-data-anchor</span><span class="w"></span>
-<span class="linenos">2</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">item-1</span><span class="w"></span>
-<span class="linenos">3</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">item-2</span><span class="w"></span>
+<div class="literal-block-wrapper docutils container" id="id30">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id30" title="Link to this code">#</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">some-list-of-data</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;the-data-anchor</span>
+<span class="linenos">2</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">item-1</span>
+<span class="linenos">3</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">item-2</span>
 <span class="linenos">4</span>
-<span class="linenos">5</span><span class="nt">somewhere-where-data-is-reused</span><span class="p">:</span><span class="w"> </span><span class="nv">*the-data-anchor</span><span class="w"></span>
+<span class="linenos">5</span><span class="nt">somewhere-where-data-is-reused</span><span class="p">:</span><span class="w"> </span><span class="nv">*the-data-anchor</span>
 </pre></div>
 </div>
 </div>
@@ -959,10 +991,10 @@ defined under <code class="docutils literal notranslate"><span class="pre">some-
                 </div>
                 <div class="title">The Config System</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="config-files.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -973,15 +1005,19 @@ defined under <code class="docutils literal notranslate"><span class="pre">some-
               </div>
             </a>
         </div>
-
-        <div class="related-information">
-              Copyright &#169; 2021-2023, Terra Contributors |
-          Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-          <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../../_sources/config/development/config-data.rst.txt"
-               rel="nofollow">
-              Show Source
-            </a>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2021-2023, Terra Contributors
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
         </div>
         
       </footer>
@@ -992,7 +1028,7 @@ defined under <code class="docutils literal notranslate"><span class="pre">some-
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -1031,11 +1067,10 @@ defined under <code class="docutils literal notranslate"><span class="pre">some-
       
     </aside>
   </div>
-</div><script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/scripts/furo.js"></script>
-    <script src="../../_static/design-tabs.js"></script>
+</div><script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     </body>
 </html>
