@@ -522,15 +522,12 @@ last referenced map containing the key will be used, with the key (if any) from 
 Parts of a string with the following format will be replaced with the value they reference:</p>
 <p><cite>${&lt;reference&gt;}</cite></p>
 <p>For example:</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">thing</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${config.yml:thing1},</span><span class="nv"> </span><span class="s">${config.yml:thing2}!&quot;</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">thing</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${config.yml:thing1}, ${config.yml:thing2}!</span>
 </pre></div>
 </div>
-</div>
 <p>Inserts the strings from config.yml into <code class="docutils literal notranslate"><span class="pre">thing</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">config.yml</span><a class="headerlink" href="#id6" title="Link to this code">#</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">thing1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Hello</span>
 <span class="nt">thing2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">World</span>
 </pre></div>
@@ -561,8 +558,8 @@ expression then evaluated to produce the number the parameter is set to.</p>
 <p>When meta configuration is used in conjunction with YAML syntax, YAML parsing is applied first, then any meta preprocessing, where
 parameters are set to the resuling evaluation.</p>
 <p>Given the following configs:</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">foo.yml</span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">foo.yml</span><a class="headerlink" href="#id7" title="Link to this code">#</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">to-merge</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;anchor</span>
 <span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar.yml:map-a</span>
 <span class="w">   </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bar.yml:map-b</span>
@@ -573,8 +570,8 @@ parameters are set to the resuling evaluation.</p>
 </pre></div>
 </div>
 </div>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">bar.yml</span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">bar.yml</span><a class="headerlink" href="#id8" title="Link to this code">#</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="w"> </span><span class="nt">map-a</span><span class="p">:</span>
 <span class="w">   </span><span class="nt">key-b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bravo</span>
 
@@ -584,8 +581,8 @@ parameters are set to the resuling evaluation.</p>
 </div>
 </div>
 <p>First the YAML anchor will be applied to <code class="docutils literal notranslate"><span class="pre">parameter.&lt;&lt;</span></code>, resulting in:</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">foo.yml</span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">foo.yml</span><a class="headerlink" href="#id9" title="Link to this code">#</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parameter</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">key-a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpha</span>
 <span class="w">  </span><span class="s">&quot;&lt;&lt;&quot;</span><span class="p p-Indicator">:</span>
@@ -595,8 +592,8 @@ parameters are set to the resuling evaluation.</p>
 </div>
 </div>
 <p>Then the MetaMap syntax will be applied for <code class="docutils literal notranslate"><span class="pre">parameter</span></code>:</p>
-<div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">foo.yml</span><a class="headerlink" href="#id11" title="Link to this code">#</a></div>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">foo.yml</span><a class="headerlink" href="#id10" title="Link to this code">#</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">parameter</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">key-a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">alpha</span>
 <span class="w">  </span><span class="nt">key-b</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">bravo</span>

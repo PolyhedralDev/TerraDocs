@@ -104,6 +104,10 @@ Used by 58 parameters:
 
   :bdg-ref-primary:`kernel <object-noisesampler-template-config-noise-function-kernel-parameter-kernel>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Float`\>> 
 
+- :ref:`In ROTATE in ColorSampler <object-colorsampler-template-library-image-rotate-parameter-angle>`:
+
+  :bdg-ref-primary:`angle <object-colorsampler-template-library-image-rotate-parameter-angle>` :doc:`/config/documentation/objects/Float` 
+
 - :ref:`In GABOR in NoiseSampler <object-noisesampler-template-config-noise-function-gabor-parameter-rotation>`:
 
   :bdg-ref-success:`rotation <object-noisesampler-template-config-noise-function-gabor-parameter-rotation>` :doc:`/config/documentation/objects/Float` 
@@ -163,10 +167,6 @@ Used by 58 parameters:
 - :ref:`In OPEN_SIMPLEX_2 in NoiseSampler <object-noisesampler-template-config-noise-function-open_simplex_2-parameter-frequency>`:
 
   :bdg-ref-success:`frequency <object-noisesampler-template-config-noise-function-open_simplex_2-parameter-frequency>` :doc:`/config/documentation/objects/Float` - Controls the :ref:`frequency <sampler-frequency>` of noise.
-
-- :ref:`In ROTATE in ColorSampler <object-colorsampler-template-library-image-rotate-parameter-angle>`:
-
-  :bdg-ref-primary:`angle <object-colorsampler-template-library-image-rotate-parameter-angle>` :doc:`/config/documentation/objects/Float` 
 
 - :ref:`In RIDGED in NoiseSampler <object-noisesampler-template-config-noise-function-ridged-parameter-gain>`:
 

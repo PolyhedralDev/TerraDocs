@@ -194,9 +194,8 @@ Parts of a string with the following format will be replaced with the value they
 For example:
 
 .. code-block:: yaml
-    :caption: config.yml
 
-    thing: "${config.yml:thing1}, ${config.yml:thing2}!"
+    thing: ${config.yml:thing1}, ${config.yml:thing2}!
 
 Inserts the strings from config.yml into ``thing``:
 
