@@ -10,51 +10,23 @@ See :doc:`/config/development/config-data`
 Uses
 ====
 
-Used by 27 parameters:
-
-- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-id>`:
-
-  :bdg-ref-primary:`id <config-ore-template-config-ore-base-parameter-id>` :doc:`/config/documentation/objects/String` 
-
-- :ref:`In BITMAP in Image <object-image-template-library-image-bitmap-parameter-path-format>`:
-
-  :bdg-ref-primary:`path-format <object-image-template-library-image-bitmap-parameter-path-format>` :doc:`/config/documentation/objects/String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
-
-- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-samplers>`:
-
-  :bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
-
-- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <object-noisesampler-template-library-image-distance_transform-parameter-normalization>`:
-
-  :bdg-ref-success:`normalization <object-noisesampler-template-library-image-distance_transform-parameter-normalization>` :doc:`/config/documentation/objects/String` 
-
-- :ref:`In CELLULAR in NoiseSampler <object-noisesampler-template-config-noise-function-cellular-parameter-distance>`:
-
-  :bdg-ref-success:`distance <object-noisesampler-template-config-noise-function-cellular-parameter-distance>` :doc:`/config/documentation/objects/String` - The method used for calculating the distance from the cell origin.
-
-- :ref:`In map in MathFunction <object-mathfunction-template-config-noise-function-map-parameter-arguments>`:
-
-  :bdg-ref-success:`arguments <object-mathfunction-template-config-noise-function-map-parameter-arguments>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/String`\> 
-
-- :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-functions>`:
-
-  :bdg-ref-success:`functions <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> - An additional mappping of named math functions that can be used in the ``expression``.
-
-- :ref:`In DISTANCE in NoiseSampler <object-noisesampler-template-config-noise-function-distance-parameter-distance-function>`:
-
-  :bdg-ref-success:`distance-function <object-noisesampler-template-config-noise-function-distance-parameter-distance-function>` :doc:`/config/documentation/objects/String` - The function used to calculate distance between sample positions and the configured point.
-
-- :ref:`In CELLULAR in NoiseSampler <object-noisesampler-template-config-noise-function-cellular-parameter-return>`:
-
-  :bdg-ref-success:`return <object-noisesampler-template-config-noise-function-cellular-parameter-return>` :doc:`/config/documentation/objects/String` - The function the sampler will use to calculate the noise.
+Used by 25 parameters:
 
 - :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-samplers>`:
 
   :bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - An additional mappping of named noise samplers that can be used in the ``expression``.
 
-- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <object-noisesampler-template-library-image-distance_transform-parameter-cost-function>`:
+- :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-functions>`:
 
-  :bdg-ref-success:`cost-function <object-noisesampler-template-library-image-distance_transform-parameter-cost-function>` :doc:`/config/documentation/objects/String` 
+  :bdg-ref-success:`functions <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> - An additional mappping of named math functions that can be used in the ``expression``.
+
+- :ref:`In base in PALETTE <config-palette-template-config-palette-base-parameter-id>`:
+
+  :bdg-ref-primary:`id <config-palette-template-config-palette-base-parameter-id>` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-id>`:
+
+  :bdg-ref-primary:`id <config-ore-template-config-ore-base-parameter-id>` :doc:`/config/documentation/objects/String` 
 
 - :ref:`In base in pack.yml <config-pack.yml-template-base-base-parameter-id>`:
 
@@ -68,6 +40,18 @@ Used by 27 parameters:
 
   :bdg-ref-primary:`channel <object-noisesampler-template-config-noise-function-image-parameter-channel>` :doc:`/config/documentation/objects/String` - Which channel of the image to output.
 
+- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <object-noisesampler-template-library-image-distance_transform-parameter-normalization>`:
+
+  :bdg-ref-success:`normalization <object-noisesampler-template-library-image-distance_transform-parameter-normalization>` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-id>`:
+
+  :bdg-ref-primary:`id <config-feature-template-config-feature-base-parameter-id>` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In BITMAP in Image <object-image-template-library-image-bitmap-parameter-path-format>`:
+
+  :bdg-ref-primary:`path-format <object-image-template-library-image-bitmap-parameter-path-format>` :doc:`/config/documentation/objects/String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+
 - :ref:`In REPLACE in Extrusion <object-extrusion-template-biome-provider-extrusion-replace-parameter-from>`:
 
   :bdg-ref-primary:`from <object-extrusion-template-biome-provider-extrusion-replace-parameter-from>` :doc:`/config/documentation/objects/String` 
@@ -76,17 +60,17 @@ Used by 27 parameters:
 
   :bdg-ref-success:`author <config-pack.yml-template-base-base-parameter-author>` :doc:`/config/documentation/objects/String` - Who developed the config pack.
 
-- :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-variables>`:
-
-  :bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> - An additional mapping of named constant variables that can be used by the ``expression``.
-
-- :ref:`In FEATURE in GenerationStage <object-generationstage-template-generation-stage-feature-feature-parameter-id>`:
-
-  :bdg-ref-primary:`id <object-generationstage-template-generation-stage-feature-feature-parameter-id>` :doc:`/config/documentation/objects/String` 
-
 - :ref:`In STITCHED_BITMAP in Image <object-image-template-library-image-stitched_bitmap-parameter-path>`:
 
   :bdg-ref-primary:`path <object-image-template-library-image-stitched_bitmap-parameter-path>` :doc:`/config/documentation/objects/String` - The format string for the path to the images relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
+
+- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <object-noisesampler-template-library-image-distance_transform-parameter-cost-function>`:
+
+  :bdg-ref-success:`cost-function <object-noisesampler-template-library-image-distance_transform-parameter-cost-function>` :doc:`/config/documentation/objects/String` 
+
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-samplers>`:
+
+  :bdg-ref-success:`samplers <object-noisesampler-template-config-noise-function-expression-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - Defines a mapping of function names to samplers.
 
 - :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-functions>`:
 
@@ -96,26 +80,34 @@ Used by 27 parameters:
 
   :bdg-ref-success:`samplers <config-pack.yml-template-config-noise-function-base-parameter-samplers>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/DimensionApplicableSampler`\> - A set of samplers globally accessible within :doc:`/config/documentation/objects/Expression`\s in ``EXPRESSION`` samplers defined inside other config files.
 
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-variables>`:
+
+  :bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
+
+- :ref:`In DISTANCE in NoiseSampler <object-noisesampler-template-config-noise-function-distance-parameter-distance-function>`:
+
+  :bdg-ref-success:`distance-function <object-noisesampler-template-config-noise-function-distance-parameter-distance-function>` :doc:`/config/documentation/objects/String` - The function used to calculate distance between sample positions and the configured point.
+
 - :ref:`In base in pack.yml <config-pack.yml-template-config-noise-function-base-parameter-functions>`:
 
   :bdg-ref-success:`functions <config-pack.yml-template-config-noise-function-base-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> - A set of math functions globally accessible within :doc:`/config/documentation/objects/Expression`\s in ``EXPRESSION`` samplers defined inside other config files.
 
-- :ref:`In base in PALETTE <config-palette-template-config-palette-base-parameter-id>`:
+- :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-variables>`:
 
-  :bdg-ref-primary:`id <config-palette-template-config-palette-base-parameter-id>` :doc:`/config/documentation/objects/String` 
+  :bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> - An additional mapping of named constant variables that can be used by the ``expression``.
 
-- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-id>`:
+- :ref:`In CELLULAR in NoiseSampler <object-noisesampler-template-config-noise-function-cellular-parameter-return>`:
 
-  :bdg-ref-primary:`id <config-feature-template-config-feature-base-parameter-id>` :doc:`/config/documentation/objects/String` 
-
-- :ref:`In map in MathFunction <object-mathfunction-template-config-noise-function-map-parameter-functions>`:
-
-  :bdg-ref-success:`functions <object-mathfunction-template-config-noise-function-map-parameter-functions>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/MathFunction`\> 
+  :bdg-ref-success:`return <object-noisesampler-template-config-noise-function-cellular-parameter-return>` :doc:`/config/documentation/objects/String` - The function the sampler will use to calculate the noise.
 
 - :ref:`In IMAGE in NoiseSampler <object-noisesampler-template-config-noise-function-image-parameter-image>`:
 
   :bdg-ref-primary:`image <object-noisesampler-template-config-noise-function-image-parameter-image>` :doc:`/config/documentation/objects/String` - Path to the image relative to the config pack directory. (For Windows users: Use the ``/`` directory separator instead of ``\``)
 
-- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-variables>`:
+- :ref:`In CELLULAR in NoiseSampler <object-noisesampler-template-config-noise-function-cellular-parameter-distance>`:
 
-  :bdg-ref-success:`variables <object-noisesampler-template-config-noise-function-expression-parameter-variables>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/String`\, :doc:`/config/documentation/objects/Float`\> 
+  :bdg-ref-success:`distance <object-noisesampler-template-config-noise-function-cellular-parameter-distance>` :doc:`/config/documentation/objects/String` - The method used for calculating the distance from the cell origin.
+
+- :ref:`In FEATURE in GenerationStage <object-generationstage-template-generation-stage-feature-feature-parameter-id>`:
+
+  :bdg-ref-primary:`id <object-generationstage-template-generation-stage-feature-feature-parameter-id>` :doc:`/config/documentation/objects/String` 

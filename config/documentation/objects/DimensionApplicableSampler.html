@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="MathFunction" href="MathFunction.html" /><link rel="prev" title="Palette" href="Palette.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="MathFunction" href="MathFunction.html" /><link rel="prev" title="Image" href="Image.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>DimensionApplicableSampler - Terra Docs</title>
@@ -257,8 +257,8 @@
 <li class="toctree-l4"><a class="reference internal" href="String.html">String</a></li>
 <li class="toctree-l4"><a class="reference internal" href="List.html">List</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Map.html">Map</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Range.html">Range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Boolean.html">Boolean</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Range.html">Range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WeightedList.html">WeightedList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Block.html">Block</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Tag.html">Tag</a></li>
@@ -269,29 +269,29 @@
 <li class="toctree-l4"><a class="reference internal" href="Distributor.html">Distributor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Locator.html">Locator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Expression.html">Expression</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Biome.html">Biome</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
 <li class="toctree-l4 current current-page"><a class="current reference internal" href="#">DimensionApplicableSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Biome.html">Biome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ColorString.html">ColorString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Expression.html">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeProvider.html">BiomeProvider</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CubicSplinePoint.html">CubicSplinePoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Feature.html">Feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Structure.html">Structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ChunkGenerator.html">ChunkGenerator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Source.html">Source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Stage.html">Stage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="CubicSplinePoint.html">CubicSplinePoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NumberPredicate.html">NumberPredicate</a></li>
 </ul>
 </li>
@@ -366,14 +366,14 @@
 <h2>Uses<a class="headerlink" href="#uses" title="Link to this heading">#</a></h2>
 <p>Used by 3 parameters:</p>
 <ul>
+<li><p><a class="reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-normalizer-parameter-samplers"><span class="std std-ref">In EXPRESSION_NORMALIZER in NoiseSampler</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-normalizer-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="#"><span class="doc">DimensionApplicableSampler</span></a>&gt; - An additional mappping of named noise samplers that can be used in the <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
+</li>
 <li><p><a class="reference internal" href="../configs/pack.yml.html#config-pack-yml-template-config-noise-function-base-parameter-samplers"><span class="std std-ref">In base in pack.yml</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/pack.yml.html#config-pack-yml-template-config-noise-function-base-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="#"><span class="doc">DimensionApplicableSampler</span></a>&gt; - A set of samplers globally accessible within <a class="reference internal" href="Expression.html"><span class="doc">Expression</span></a>s in <code class="docutils literal notranslate"><span class="pre">EXPRESSION</span></code> samplers defined inside other config files.</p>
 </li>
 <li><p><a class="reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-samplers"><span class="std std-ref">In EXPRESSION in NoiseSampler</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="#"><span class="doc">DimensionApplicableSampler</span></a>&gt; - Defines a mapping of function names to samplers.</p>
-</li>
-<li><p><a class="reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-normalizer-parameter-samplers"><span class="std std-ref">In EXPRESSION_NORMALIZER in NoiseSampler</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="NoiseSampler.html#object-noisesampler-template-config-noise-function-expression-normalizer-parameter-samplers"><span class="std std-ref">samplers</span></a> <a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="String.html"><span class="doc">String</span></a>, <a class="reference internal" href="#"><span class="doc">DimensionApplicableSampler</span></a>&gt; - An additional mappping of named noise samplers that can be used in the <code class="docutils literal notranslate"><span class="pre">expression</span></code>.</p>
 </li>
 </ul>
 </section>
@@ -393,14 +393,14 @@
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="Palette.html">
+          <a class="prev-page" href="Image.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Palette</div>
+                <div class="title">Image</div>
                 
               </div>
             </a>

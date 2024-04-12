@@ -187,6 +187,10 @@ Used by 4 parameters:
 
   :bdg-ref-primary:`locators <object-locator-template-config-locators-xor-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
 
+- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-locator>`:
+
+  :bdg-ref-primary:`locator <config-feature-template-config-feature-base-parameter-locator>` :doc:`/config/documentation/objects/Locator` 
+
 - :ref:`In AND in Locator <object-locator-template-config-locators-and-parameter-locators>`:
 
   :bdg-ref-primary:`locators <object-locator-template-config-locators-and-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
@@ -194,7 +198,3 @@ Used by 4 parameters:
 - :ref:`In OR in Locator <object-locator-template-config-locators-or-parameter-locators>`:
 
   :bdg-ref-primary:`locators <object-locator-template-config-locators-or-parameter-locators>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Locator`\> 
-
-- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-locator>`:
-
-  :bdg-ref-primary:`locator <config-feature-template-config-feature-base-parameter-locator>` :doc:`/config/documentation/objects/Locator` 

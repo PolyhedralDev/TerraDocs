@@ -10,8 +10,8 @@ Config Objects
     String
     List
     Map
-    Range
     Boolean
+    Range
     WeightedList
     Block
     Tag
@@ -22,27 +22,27 @@ Config Objects
     Distributor
     Locator
     Image
-    Expression
-    Biome
-    Palette
     DimensionApplicableSampler
     MathFunction
+    Biome
+    Palette
     ColorString
     ExtrusionReplaceableBiome
+    Expression
     BiomeProvider
     BiomeColorMapping
-    PipelineBiomeColorConverter
+    PaletteLayer
+    CubicSplinePoint
     Extrusion
+    Point
     Feature
     Structure
     GenerationStage
     PlatformBiome
     ChunkGenerator
-    Point
-    SlantLayer
+    PipelineBiomeColorConverter
+    BiomeColorConverter
     Source
     Stage
-    PaletteLayer
-    BiomeColorConverter
-    CubicSplinePoint
+    SlantLayer
     NumberPredicate

@@ -98,9 +98,9 @@ Uses
 
 Used by 6 parameters:
 
-- :ref:`In PATTERN in Locator <object-locator-template-config-locators-pattern-parameter-pattern>`:
+- :ref:`In NOT in Pattern <object-pattern-template-config-locators-not-parameter-pattern>`:
 
-  :bdg-ref-primary:`pattern <object-locator-template-config-locators-pattern-parameter-pattern>` :doc:`/config/documentation/objects/Pattern` 
+  :bdg-ref-primary:`pattern <object-pattern-template-config-locators-not-parameter-pattern>` :doc:`/config/documentation/objects/Pattern` 
 
 - :ref:`In OR in Pattern <object-pattern-template-config-locators-or-parameter-patterns>`:
 
@@ -110,14 +110,14 @@ Used by 6 parameters:
 
   :bdg-ref-primary:`pattern <object-locator-template-config-locators-adjacent_pattern-parameter-pattern>` :doc:`/config/documentation/objects/Pattern` 
 
-- :ref:`In XOR in Pattern <object-pattern-template-config-locators-xor-parameter-patterns>`:
+- :ref:`In PATTERN in Locator <object-locator-template-config-locators-pattern-parameter-pattern>`:
 
-  :bdg-ref-primary:`patterns <object-pattern-template-config-locators-xor-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
-
-- :ref:`In NOT in Pattern <object-pattern-template-config-locators-not-parameter-pattern>`:
-
-  :bdg-ref-primary:`pattern <object-pattern-template-config-locators-not-parameter-pattern>` :doc:`/config/documentation/objects/Pattern` 
+  :bdg-ref-primary:`pattern <object-locator-template-config-locators-pattern-parameter-pattern>` :doc:`/config/documentation/objects/Pattern` 
 
 - :ref:`In AND in Pattern <object-pattern-template-config-locators-and-parameter-patterns>`:
 
   :bdg-ref-primary:`patterns <object-pattern-template-config-locators-and-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 
+
+- :ref:`In XOR in Pattern <object-pattern-template-config-locators-xor-parameter-patterns>`:
+
+  :bdg-ref-primary:`patterns <object-pattern-template-config-locators-xor-parameter-patterns>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Pattern`\> 

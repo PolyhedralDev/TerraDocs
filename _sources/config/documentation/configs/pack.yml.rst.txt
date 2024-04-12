@@ -98,3 +98,27 @@ Default: ``{}``
   
   Samplers defined under this parameter cannot reference each other, and are only
   able to be used in other config files.
+
+
+---------
+
+:superscript:`*Parameters require the 'library-image' addon to use`
+
+.. _config-pack.yml-template-library-image-base-parameter-images.cache.load-on-use:
+
+:bdg-ref-success:`images.cache.load-on-use <config-pack.yml-template-library-image-base-parameter-images.cache.load-on-use>` :doc:`/config/documentation/objects/Boolean` 
+
+Default: ``False``
+
+If set to true, images will load into memory upon use rather than on pack load.
+
+
+.. _config-pack.yml-template-library-image-base-parameter-images.cache.timeout:
+
+:bdg-ref-success:`images.cache.timeout <config-pack.yml-template-library-image-base-parameter-images.cache.timeout>` :doc:`/config/documentation/objects/Integer` - How many seconds to keep images loaded in the image cache for.
+
+Default: ``0``
+
+If set to a number greater than 0, images will be removed from memory if not used after the timeout, otherwise images
+will stay loaded in memory. Setting the timeout to greater than 0 will trade decreased memory consumption when not
+performing any image reads for a period of time for extra processing time required to perform cache lookups.
