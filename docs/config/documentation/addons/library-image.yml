@@ -20,6 +20,24 @@ library-image:
       type: MULTI_TYPE
       description: A string representing a color
 
+  config-templates:
+    pack.yml:
+      base:
+        params:
+          images.cache.load-on-use:
+            type: Boolean
+            description: |
+              If set to true, images will load into memory upon use rather than on pack load.
+            default: "False"
+          images.cache.timeout:
+            type: Integer
+            default: "0"
+            summary: How many seconds to keep images loaded in the image cache for.
+            description: |
+              If set to a number greater than 0, images will be removed from memory if not used after the timeout, otherwise images
+              will stay loaded in memory. Setting the timeout to greater than 0 will trade decreased memory consumption when not
+              performing any image reads for a period of time for extra processing time required to perform cache lookups.
+
   templates:
     ColorSampler:
       ImageColorSamplerTemplate:
