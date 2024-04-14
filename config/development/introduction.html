@@ -510,8 +510,38 @@ this page.</p>
 </div>
 </section>
 </section>
+<section id="development-workflow">
+<h2>3. Development Workflow<a class="headerlink" href="#development-workflow" title="Link to this heading">#</a></h2>
+<section id="loading-from-a-folder">
+<h3>Loading From a Folder<a class="headerlink" href="#loading-from-a-folder" title="Link to this heading">#</a></h3>
+<p>Config packs within <code class="docutils literal notranslate"><span class="pre">Terra/packs</span></code> can be loaded directly from folders. You do not
+have to zip a config pack every time you want to make a change, you can simply save
+config files directly to your pack folder, which will be loaded by Terra.</p>
+</section>
+<section id="reloading">
+<h3>Reloading<a class="headerlink" href="#reloading" title="Link to this heading">#</a></h3>
+<p>You do not have to create a new world every time you make a change to your config pack,
+any changes you make can be reloaded live via the <code class="docutils literal notranslate"><span class="pre">/packs</span> <span class="pre">reload</span></code> command. If there
+are no pack load errors, changes you’ve made to your pack will be reflected in newly
+generated chunks in the current world (assuming it is set to generate using your pack).</p>
+<section id="seeing-changes">
+<h4>Seeing Changes<a class="headerlink" href="#seeing-changes" title="Link to this heading">#</a></h4>
+<p>After reloading, you will have to generate new chunks to see any changes you’ve made.
+A quick way to do so is by running <code class="docutils literal notranslate"><span class="pre">/tp</span> <span class="pre">~</span> <span class="pre">~</span> <span class="pre">~1000</span></code> which will teleport you 1000
+blocks in the positive Z axis, enough to be surrounded by fresh chunks. Note that
+you should only run this <em>after</em> packs have successfully loaded, not during a reload.</p>
+<p>Maintaining the same direction for flying is also recommended if you decide to do so
+rather than teleporting, so you don’t accidentally end up in old chunks (which may
+be confusing if you’re expecting to see new changes).</p>
+<p>If you are developing on a Fabric client, then you can also utilize WorldEdit’s <code class="docutils literal notranslate"><span class="pre">//regen</span></code>
+command to see how changes are reflected in a particular area (however this may be slower
+than the teleport method if you don’t require seeing before / after). <code class="docutils literal notranslate"><span class="pre">//regen</span></code> is
+currently not working on Bukkit as of Terra 6.4.3 (the current latest version as of writing).</p>
+</section>
+</section>
+</section>
 <section id="beginning-config-development">
-<h2>3. Beginning Config Development<a class="headerlink" href="#beginning-config-development" title="Link to this heading">#</a></h2>
+<h2>4. Beginning Config Development<a class="headerlink" href="#beginning-config-development" title="Link to this heading">#</a></h2>
 <p>From this point on, you have the option of either beginning a new pack from scratch, or
 modifying an existing pack.</p>
 <div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
@@ -615,7 +645,15 @@ recommend following that in addition to this guide.</p>
 <li><a class="reference internal" href="#subdirectories">Subdirectories</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#beginning-config-development">3. Beginning Config Development</a></li>
+<li><a class="reference internal" href="#development-workflow">3. Development Workflow</a><ul>
+<li><a class="reference internal" href="#loading-from-a-folder">Loading From a Folder</a></li>
+<li><a class="reference internal" href="#reloading">Reloading</a><ul>
+<li><a class="reference internal" href="#seeing-changes">Seeing Changes</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#beginning-config-development">4. Beginning Config Development</a></li>
 </ul>
 </li>
 </ul>

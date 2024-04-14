@@ -1597,13 +1597,13 @@ Used by 45 parameters:
 
   :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-sub-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In ADD in NoiseSampler <object-noisesampler-template-config-noise-function-add-parameter-right>`:
-
-  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-add-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
-
 - :ref:`In CELLULAR in NoiseSampler <object-noisesampler-template-config-noise-function-cellular-parameter-lookup>`:
 
   :bdg-ref-success:`lookup <object-noisesampler-template-config-noise-function-cellular-parameter-lookup>` :doc:`/config/documentation/objects/NoiseSampler` - The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
+
+- :ref:`In ADD in NoiseSampler <object-noisesampler-template-config-noise-function-add-parameter-right>`:
+
+  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-add-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 - :ref:`In MUL in NoiseSampler <object-noisesampler-template-config-noise-function-mul-parameter-right>`:
 

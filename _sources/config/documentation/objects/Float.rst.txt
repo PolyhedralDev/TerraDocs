@@ -32,6 +32,10 @@ Used by 55 parameters:
 
   :bdg-ref-success:`point.z <object-noisesampler-template-config-noise-function-distance-parameter-point.z>` :doc:`/config/documentation/objects/Float` 
 
+- :ref:`In LINEAR in NoiseSampler <object-noisesampler-template-config-noise-function-linear-parameter-min>`:
+
+  :bdg-ref-primary:`min <object-noisesampler-template-config-noise-function-linear-parameter-min>` :doc:`/config/documentation/objects/Float` 
+
 - :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.weight-2d>`:
 
   :bdg-ref-success:`terrain.blend.weight-2d <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.weight-2d>` :doc:`/config/documentation/objects/Float` 
@@ -47,6 +51,10 @@ Used by 55 parameters:
 - :ref:`In PING_PONG in NoiseSampler <object-noisesampler-template-config-noise-function-ping_pong-parameter-weighted-strength>`:
 
   :bdg-ref-success:`weighted-strength <object-noisesampler-template-config-noise-function-ping_pong-parameter-weighted-strength>` :doc:`/config/documentation/objects/Float` 
+
+- :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.amplitude>`:
+
+  :bdg-ref-success:`blend.amplitude <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.amplitude>` :doc:`/config/documentation/objects/Float` - The blend strength.
 
 - :ref:`In DISTANCE in NoiseSampler <object-noisesampler-template-config-noise-function-distance-parameter-point.y>`:
 
@@ -151,14 +159,6 @@ Used by 55 parameters:
 - :ref:`In CLAMP in NoiseSampler <object-noisesampler-template-config-noise-function-clamp-parameter-max>`:
 
   :bdg-ref-primary:`max <object-noisesampler-template-config-noise-function-clamp-parameter-max>` :doc:`/config/documentation/objects/Float` 
-
-- :ref:`In LINEAR in NoiseSampler <object-noisesampler-template-config-noise-function-linear-parameter-min>`:
-
-  :bdg-ref-primary:`min <object-noisesampler-template-config-noise-function-linear-parameter-min>` :doc:`/config/documentation/objects/Float` 
-
-- :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.amplitude>`:
-
-  :bdg-ref-success:`blend.amplitude <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.amplitude>` :doc:`/config/documentation/objects/Float` - The blend strength.
 
 - :ref:`In PING_PONG in NoiseSampler <object-noisesampler-template-config-noise-function-ping_pong-parameter-gain>`:
 
