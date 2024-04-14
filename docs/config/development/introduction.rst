@@ -173,7 +173,42 @@ Within this directory are two subdirectories that you should know about:
     come pre-installed with a set of *Core Addons* as explained at the beginning of
     this page.
 
-3. Beginning Config Development
+3. Development Workflow
+=======================
+
+Loading From a Folder
+---------------------
+
+Config packs within ``Terra/packs`` can be loaded directly from folders. You do not
+have to zip a config pack every time you want to make a change, you can simply save
+config files directly to your pack folder, which will be loaded by Terra.
+
+Reloading
+---------
+
+You do not have to create a new world every time you make a change to your config pack,
+any changes you make can be reloaded live via the ``/packs reload`` command. If there
+are no pack load errors, changes you've made to your pack will be reflected in newly
+generated chunks in the current world (assuming it is set to generate using your pack).
+
+Seeing Changes
+..............
+
+After reloading, you will have to generate new chunks to see any changes you've made.
+A quick way to do so is by running ``/tp ~ ~ ~1000`` which will teleport you 1000
+blocks in the positive Z axis, enough to be surrounded by fresh chunks. Note that
+you should only run this *after* packs have successfully loaded, not during a reload.
+
+Maintaining the same direction for flying is also recommended if you decide to do so
+rather than teleporting, so you don't accidentally end up in old chunks (which may
+be confusing if you're expecting to see new changes).
+
+If you are developing on a Fabric client, then you can also utilize WorldEdit's ``//regen``
+command to see how changes are reflected in a particular area (however this may be slower
+than the teleport method if you don't require seeing before / after). ``//regen`` is
+currently not working on Bukkit as of Terra 6.4.3 (the current latest version as of writing).
+
+4. Beginning Config Development
 ===============================
 
 From this point on, you have the option of either beginning a new pack from scratch, or
