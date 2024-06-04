@@ -117,14 +117,6 @@ Uses
 
 Used by 4 parameters:
 
-- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-distributor>`:
-
-  :bdg-ref-primary:`distributor <config-feature-template-config-feature-base-parameter-distributor>` :doc:`/config/documentation/objects/Distributor` 
-
-- :ref:`In AND in Distributor <object-distributor-template-config-distributors-and-parameter-distributors>`:
-
-  :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-and-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
-
 - :ref:`In XOR in Distributor <object-distributor-template-config-distributors-xor-parameter-distributors>`:
 
   :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-xor-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
@@ -132,3 +124,11 @@ Used by 4 parameters:
 - :ref:`In OR in Distributor <object-distributor-template-config-distributors-or-parameter-distributors>`:
 
   :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-or-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+
+- :ref:`In AND in Distributor <object-distributor-template-config-distributors-and-parameter-distributors>`:
+
+  :bdg-ref-primary:`distributors <object-distributor-template-config-distributors-and-parameter-distributors>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Distributor`\> 
+
+- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-distributor>`:
+
+  :bdg-ref-primary:`distributor <config-feature-template-config-feature-base-parameter-distributor>` :doc:`/config/documentation/objects/Distributor` 

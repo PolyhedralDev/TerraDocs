@@ -34,10 +34,10 @@ Uses
 
 Used by 2 parameters:
 
-- :ref:`In EXACT in BiomeColorConverter <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-match>`:
-
-  :bdg-ref-primary:`match <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-match>` :doc:`/config/documentation/objects/BiomeColorMapping` 
-
 - :ref:`In CLOSEST in BiomeColorConverter <object-biomecolorconverter-template-biome-provider-image-v2-closest-parameter-match>`:
 
   :bdg-ref-primary:`match <object-biomecolorconverter-template-biome-provider-image-v2-closest-parameter-match>` :doc:`/config/documentation/objects/BiomeColorMapping` 
+
+- :ref:`In EXACT in BiomeColorConverter <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-match>`:
+
+  :bdg-ref-primary:`match <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-match>` :doc:`/config/documentation/objects/BiomeColorMapping` 

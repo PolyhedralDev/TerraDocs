@@ -46,10 +46,6 @@ The following parameters are only applicable if :bdg-primary:`generator` in :doc
 
 :bdg-ref-primary:`terrain.sampler <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-.. _config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler-2d:
-
-:bdg-ref-primary:`terrain.sampler-2d <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler-2d>` :doc:`/config/documentation/objects/NoiseSampler` 
-
 .. _config-biome-template-chunk-generator-noise-3d-base-parameter-carving.update-palette:
 
 :bdg-ref-success:`carving.update-palette <config-biome-template-chunk-generator-noise-3d-base-parameter-carving.update-palette>` :doc:`/config/documentation/objects/Boolean` 
@@ -103,6 +99,12 @@ Default: ``1.0``
 :bdg-ref-success:`terrain.blend.weight-2d <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.weight-2d>` :doc:`/config/documentation/objects/Float` 
 
 Default: ``1.0``
+
+.. _config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler-2d:
+
+:bdg-ref-success:`terrain.sampler-2d <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler-2d>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+Default: ```CONSTANT` noise sampler outputting `0```
 
 ---------
 
