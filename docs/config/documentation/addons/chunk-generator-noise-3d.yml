@@ -52,6 +52,7 @@ chunk-generator-noise-3d:
             type: NoiseSampler
           terrain.sampler-2d:
             type: NoiseSampler
+            default: "`CONSTANT` noise sampler outputting `0`"
           terrain.blend.distance:
             type: Integer
             default: "3"
