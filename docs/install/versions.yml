@@ -3,17 +3,21 @@ Fabric:
     :doc:`Fabric Installation </install/fabric>` :octicon:`chevron-right`
 
   versions:
+    - mc-ver: "1.21.1"
+      terra-ver: "6.5.0"
+      stage: BETA
+      link: https://modrinth.com/plugin/terra/version/6.5.0-BETA-fabric
+      supported: true
+      maintained: true
     - mc-ver: "1.20.4"
       terra-ver: "6.4.3"
       stage: BETA
       link: https://modrinth.com/plugin/terra/version/6.4.3-BETA-fabric
       supported: true
-      maintained: true
     - mc-ver: "1.20"
       terra-ver: "6.3.1"
       stage: BETA
       link: https://modrinth.com/plugin/terra/version/6.3.1-BETA-fabric/
-      supported: true
     - mc-ver: "1.19"
       terra-ver: "6.3.0"
       stage: BETA
@@ -37,17 +41,21 @@ Bukkit:
   description: |
     :doc:`Bukkit Installation </install/bukkit>` :octicon:`chevron-right`
   versions:
+    - mc-ver: "1.21.1"
+      terra-ver: "6.5.0"
+      stage: BETA
+      link: https://modrinth.com/plugin/terra/version/6.4.3-BETA-bukkit
+      supported: true
+      maintained: true
     - mc-ver: "1.20.4"
       terra-ver: "6.4.3"
       stage: BETA
       link: https://modrinth.com/plugin/terra/version/6.4.3-BETA-bukkit
       supported: true
-      maintained: true
     - mc-ver: "1.20"
       terra-ver: "6.3.1"
       stage: BETA
       link: https://modrinth.com/mod/terra/version/6.3.1-BETA-bukkit
-      supported: true
     - mc-ver: "1.19"
       terra-ver: "6.3.0"
       stage: BETA
@@ -86,7 +94,7 @@ Bukkit:
         We refer to the entire Bukkit ecosystem (Bukkit API, Spigot, Paper and friends..) as *Bukkit*
         simply because Bukkit is the name of the API. **However** - Terra develops against and tests on
         Paper. We do this because Bukkit and Spigot simply do not expose the required API for Terra to
-        be fully functional. Paper's extended API does. This means that while Terra will still *work*
+        be fully functional. Paper's extended API does. This means that while Terra may still *work*
         on Spigot, there will be (important) features missing.
 
         **TL;DR - Use Paper, or a fork of Paper.**
@@ -105,12 +113,17 @@ Forge:
 
 Quilt:
   versions:
+    - mc-ver: "1.21.1"
+      terra-ver: "6.5.0"
+      stage: BETA
+      link: https://modrinth.com/plugin/terra/version/6.5.0-BETA-fabric
+      supported: true
+      maintained: true
     - mc-ver: "1.20.4"
       terra-ver: "6.4.3"
       stage: BETA
       link: https://modrinth.com/plugin/terra/version/6.4.3-BETA-fabric
       supported: true
-      maintained: true
     - mc-ver: "1.19"
       terra-ver: "6.2.1"
       stage: ALPHA
