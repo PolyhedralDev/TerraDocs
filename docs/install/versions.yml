@@ -23,9 +23,9 @@ Fabric:
       stage: BETA
       link: https://modrinth.com/plugin/terra/version/6.3.0-BETA-fabric/
     - mc-ver: "1.18"
-      terra-ver: "6.1.1"
+      terra-ver: "6.0.0"
       stage: BETA
-      link: https://modrinth.com/mod/terra/version/6.1.1-BETA/
+      link: https://modrinth.com/plugin/terra/version/6.0.0-BETA
     - mc-ver: "1.17"
       terra-ver: "5.4.1"
       stage: BETA
@@ -61,9 +61,9 @@ Bukkit:
       stage: BETA
       link: https://modrinth.com/mod/terra/version/6.3.0-BETA-bukkit
     - mc-ver: "1.18"
-      terra-ver: "6.1.2"
+      terra-ver: "6.0.0"
       stage: BETA
-      link: https://www.spigotmc.org/resources/terra.85151/download?version=456104/
+      link: https://www.spigotmc.org/resources/terra.85151/download?version=454311
     - mc-ver: "1.17"
       terra-ver: "5.4.1"
       stage: BETA
