@@ -1,9 +1,0 @@
-============
-Bukkit 6.1.2
-============
-
-.. include:: ../../unsupported.rst
-
-:bdg-primary:`Download` - https://www.spigotmc.org/resources/terra.85151/download?version=456104/
-
-:ref:`Other Bukkit versions <Bukkit-versions>` :octicon:`chevron-right`
