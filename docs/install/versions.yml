@@ -44,7 +44,7 @@ Bukkit:
     - mc-ver: "1.21.1"
       terra-ver: "6.5.0"
       stage: BETA
-      link: https://modrinth.com/plugin/terra/version/6.4.3-BETA-bukkit
+      link: https://modrinth.com/plugin/terra/version/6.5.0-BETA-bukkit
       supported: true
       maintained: true
     - mc-ver: "1.20.4"
