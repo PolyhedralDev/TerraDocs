@@ -270,9 +270,9 @@
 <li class="toctree-l4"><a class="reference internal" href="Set.html">Set</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Distributor.html">Distributor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Locator.html">Locator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Biome.html">Biome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ColorString.html">ColorString</a></li>
@@ -280,14 +280,14 @@
 <li class="toctree-l4"><a class="reference internal" href="Expression.html">Expression</a></li>
 <li class="toctree-l4 current current-page"><a class="current reference internal" href="#">BiomeProvider</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="CubicSplinePoint.html">CubicSplinePoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Source.html">Source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Stage.html">Stage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="CubicSplinePoint.html">CubicSplinePoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Feature.html">Feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Structure.html">Structure</a></li>
@@ -372,12 +372,6 @@ and packs you are developing with are loaded by the Biome Tool.</p>
 <p>The type is specified by setting the <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">type</span> parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with <code class="docutils literal notranslate"><span class="pre">ADDON_NAME:</span></code> to specify which one to use.</p>
 <p>A list of available types for <code class="docutils literal notranslate"><span class="pre">BiomeProvider</span></code> are listed below:</p>
 <hr class="docutils" />
-<section id="single">
-<h3>SINGLE<a class="headerlink" href="#single" title="Link to this heading">#</a></h3>
-<p><sup>*Type requires the ‘biome-provider-single’ addon to use</sup></p>
-<p id="object-biomeprovider-template-biome-provider-single-single-parameter-biome"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-single-single-parameter-biome"><span class="std std-ref">biome</span></a> <a class="reference internal" href="Biome.html"><span class="doc">Biome</span></a></p>
-</section>
-<hr class="docutils" />
 <section id="image">
 <h3>IMAGE<a class="headerlink" href="#image" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘biome-provider-image-v2’ addon to use</sup></p>
@@ -413,6 +407,12 @@ look more pixelated. A resolution of 1 results in the best quality. Resolutions 
 4 don’t have very apparent pixelation when used in conjunction with blending.</p>
 </section>
 <hr class="docutils" />
+<section id="single">
+<h3>SINGLE<a class="headerlink" href="#single" title="Link to this heading">#</a></h3>
+<p><sup>*Type requires the ‘biome-provider-single’ addon to use</sup></p>
+<p id="object-biomeprovider-template-biome-provider-single-single-parameter-biome"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-single-single-parameter-biome"><span class="std std-ref">biome</span></a> <a class="reference internal" href="Biome.html"><span class="doc">Biome</span></a></p>
+</section>
+<hr class="docutils" />
 <section id="extrusion">
 <h3>EXTRUSION<a class="headerlink" href="#extrusion" title="Link to this heading">#</a></h3>
 <p><sup>*Type requires the ‘biome-provider-extrusion’ addon to use</sup></p>
@@ -426,11 +426,11 @@ look more pixelated. A resolution of 1 results in the best quality. Resolutions 
 <h2>Uses<a class="headerlink" href="#uses" title="Link to this heading">#</a></h2>
 <p>Used by 2 parameters:</p>
 <ul>
-<li><p><a class="reference internal" href="../configs/pack.yml.html#config-pack-yml-template-base-base-parameter-biomes"><span class="std std-ref">In base in pack.yml</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/pack.yml.html#config-pack-yml-template-base-base-parameter-biomes"><span class="std std-ref">biomes</span></a> <a class="reference internal" href="#"><span class="doc">BiomeProvider</span></a> - Determines where biomes should generate in the world.</p>
-</li>
 <li><p><a class="reference internal" href="#object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider"><span class="std std-ref">In EXTRUSION in BiomeProvider</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider"><span class="std std-ref">provider</span></a> <a class="reference internal" href="#"><span class="doc">BiomeProvider</span></a></p>
+</li>
+<li><p><a class="reference internal" href="../configs/pack.yml.html#config-pack-yml-template-base-base-parameter-biomes"><span class="std std-ref">In base in pack.yml</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/pack.yml.html#config-pack-yml-template-base-base-parameter-biomes"><span class="std std-ref">biomes</span></a> <a class="reference internal" href="#"><span class="doc">BiomeProvider</span></a> - Determines where biomes should generate in the world.</p>
 </li>
 </ul>
 </section>
@@ -493,9 +493,9 @@ look more pixelated. A resolution of 1 results in the best quality. Resolutions 
             <ul>
 <li><a class="reference internal" href="#">BiomeProvider</a><ul>
 <li><a class="reference internal" href="#types">Types</a><ul>
-<li><a class="reference internal" href="#single">SINGLE</a></li>
 <li><a class="reference internal" href="#image">IMAGE</a></li>
 <li><a class="reference internal" href="#pipeline">PIPELINE</a></li>
+<li><a class="reference internal" href="#single">SINGLE</a></li>
 <li><a class="reference internal" href="#extrusion">EXTRUSION</a></li>
 </ul>
 </li>

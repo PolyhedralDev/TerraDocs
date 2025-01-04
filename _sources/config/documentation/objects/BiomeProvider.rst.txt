@@ -21,17 +21,6 @@ A list of available types for ``BiomeProvider`` are listed below:
 
 ---------
 
-SINGLE
-------
-
-:superscript:`*Type requires the 'biome-provider-single' addon to use`
-
-.. _object-biomeprovider-template-biome-provider-single-single-parameter-biome:
-
-:bdg-ref-primary:`biome <object-biomeprovider-template-biome-provider-single-single-parameter-biome>` :doc:`/config/documentation/objects/Biome` 
-
----------
-
 IMAGE
 -----
 
@@ -108,6 +97,17 @@ look more pixelated. A resolution of 1 results in the best quality. Resolutions 
 
 ---------
 
+SINGLE
+------
+
+:superscript:`*Type requires the 'biome-provider-single' addon to use`
+
+.. _object-biomeprovider-template-biome-provider-single-single-parameter-biome:
+
+:bdg-ref-primary:`biome <object-biomeprovider-template-biome-provider-single-single-parameter-biome>` :doc:`/config/documentation/objects/Biome` 
+
+---------
+
 EXTRUSION
 ---------
 
@@ -132,10 +132,10 @@ Uses
 
 Used by 2 parameters:
 
-- :ref:`In base in pack.yml <config-pack.yml-template-base-base-parameter-biomes>`:
-
-  :bdg-ref-primary:`biomes <config-pack.yml-template-base-base-parameter-biomes>` :doc:`/config/documentation/objects/BiomeProvider` - Determines where biomes should generate in the world.
-
 - :ref:`In EXTRUSION in BiomeProvider <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider>`:
 
   :bdg-ref-primary:`provider <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider>` :doc:`/config/documentation/objects/BiomeProvider` 
+
+- :ref:`In base in pack.yml <config-pack.yml-template-base-base-parameter-biomes>`:
+
+  :bdg-ref-primary:`biomes <config-pack.yml-template-base-base-parameter-biomes>` :doc:`/config/documentation/objects/BiomeProvider` - Determines where biomes should generate in the world.

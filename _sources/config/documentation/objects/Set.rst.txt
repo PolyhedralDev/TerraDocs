@@ -15,13 +15,13 @@ Used by 5 parameters:
 
   :bdg-ref-primary:`replace <config-scattered_ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
 
-- :ref:`In POINTS in Distributor <object-distributor-template-config-distributors-points-parameter-points>`:
-
-  :bdg-ref-primary:`points <object-distributor-template-config-distributors-points-parameter-points>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Point`\> 
-
 - :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-replace>`:
 
   :bdg-ref-primary:`replace <config-ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In POINTS in Distributor <object-distributor-template-config-distributors-points-parameter-points>`:
+
+  :bdg-ref-primary:`points <object-distributor-template-config-distributors-points-parameter-points>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Point`\> 
 
 - :ref:`In MATCH_SET in Pattern <object-pattern-template-config-locators-match_set-parameter-blocks>`:
 

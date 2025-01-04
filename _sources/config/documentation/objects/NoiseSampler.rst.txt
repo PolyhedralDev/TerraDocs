@@ -26,99 +26,6 @@ A list of available types for ``NoiseSampler`` are listed below:
 
 ---------
 
-CHANNEL
--------
-
-:superscript:`*Type requires the 'library-image' addon to use`
-
-Outputs a channel from a color sampler.
-
-
-.. _object-noisesampler-template-library-image-channel-parameter-color-sampler:
-
-:bdg-ref-primary:`color-sampler <object-noisesampler-template-library-image-channel-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` - The color sampler to extract channel values from.
-
-.. _object-noisesampler-template-library-image-channel-parameter-normalize:
-
-:bdg-ref-success:`normalize <object-noisesampler-template-library-image-channel-parameter-normalize>` :doc:`/config/documentation/objects/Boolean` - If the channel should be normalized to range [-1, 1] or not.
-
-Default: ``true``
-
-.. _object-noisesampler-template-library-image-channel-parameter-premultiply:
-
-:bdg-ref-success:`premultiply <object-noisesampler-template-library-image-channel-parameter-premultiply>` :doc:`/config/documentation/objects/Boolean` - Whether to multiply color channels by the alpha channel or not.
-
-Default: ``false``
-
-If you are expecting pixel transparency to reduce the output value then this should be set to true.
-
-
----------
-
-DISTANCE_TRANSFORM
-------------------
-
-:superscript:`*Type requires the 'library-image' addon to use`
-
-Returns the result of a `distance transform <https://homepages.inf.ed.ac.uk/rbf/HIPR2/distance.htm>`_ on an image.
-
-.. _object-noisesampler-template-library-image-distance_transform-parameter-image:
-
-:bdg-ref-primary:`image <object-noisesampler-template-library-image-distance_transform-parameter-image>` :doc:`/config/documentation/objects/Image` 
-
-.. _object-noisesampler-template-library-image-distance_transform-parameter-channel:
-
-:bdg-ref-success:`channel <object-noisesampler-template-library-image-distance_transform-parameter-channel>` Channel 
-
-Default: ``GRAYSCALE``
-
-.. _object-noisesampler-template-library-image-distance_transform-parameter-clamp-to-max-edge:
-
-:bdg-ref-success:`clamp-to-max-edge <object-noisesampler-template-library-image-distance_transform-parameter-clamp-to-max-edge>` :doc:`/config/documentation/objects/Boolean` 
-
-Default: ``false``
-
-.. _object-noisesampler-template-library-image-distance_transform-parameter-cost-function:
-
-:bdg-ref-success:`cost-function <object-noisesampler-template-library-image-distance_transform-parameter-cost-function>` :doc:`/config/documentation/objects/String` 
-
-Default: ``Channel``
-
-Valid values:
-
-- ``Channel``
-- ``Threshold``
-- ``ThresholdEdge``
-- ``ThresholdEdgeSigned``
-
-
-.. _object-noisesampler-template-library-image-distance_transform-parameter-invert-threshold:
-
-:bdg-ref-success:`invert-threshold <object-noisesampler-template-library-image-distance_transform-parameter-invert-threshold>` :doc:`/config/documentation/objects/Boolean` 
-
-Default: ``false``
-
-.. _object-noisesampler-template-library-image-distance_transform-parameter-normalization:
-
-:bdg-ref-success:`normalization <object-noisesampler-template-library-image-distance_transform-parameter-normalization>` :doc:`/config/documentation/objects/String` 
-
-Default: ``None``
-
-Valid values:
-
-- ``None``
-- ``Linear``
-- ``SmoothPreserveZero``
-
-
-.. _object-noisesampler-template-library-image-distance_transform-parameter-threshold:
-
-:bdg-ref-success:`threshold <object-noisesampler-template-library-image-distance_transform-parameter-threshold>` :doc:`/config/documentation/objects/Integer` 
-
-Default: ``127``
-
----------
-
 DISTANCE
 --------
 
@@ -1464,187 +1371,280 @@ is most useful for providing named constants that can easily be modified if need
             - Outputs the final result.
 
 
+---------
+
+CHANNEL
+-------
+
+:superscript:`*Type requires the 'library-image' addon to use`
+
+Outputs a channel from a color sampler.
+
+
+.. _object-noisesampler-template-library-image-channel-parameter-color-sampler:
+
+:bdg-ref-primary:`color-sampler <object-noisesampler-template-library-image-channel-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` - The color sampler to extract channel values from.
+
+.. _object-noisesampler-template-library-image-channel-parameter-normalize:
+
+:bdg-ref-success:`normalize <object-noisesampler-template-library-image-channel-parameter-normalize>` :doc:`/config/documentation/objects/Boolean` - If the channel should be normalized to range [-1, 1] or not.
+
+Default: ``true``
+
+.. _object-noisesampler-template-library-image-channel-parameter-premultiply:
+
+:bdg-ref-success:`premultiply <object-noisesampler-template-library-image-channel-parameter-premultiply>` :doc:`/config/documentation/objects/Boolean` - Whether to multiply color channels by the alpha channel or not.
+
+Default: ``false``
+
+If you are expecting pixel transparency to reduce the output value then this should be set to true.
+
+
+---------
+
+DISTANCE_TRANSFORM
+------------------
+
+:superscript:`*Type requires the 'library-image' addon to use`
+
+Returns the result of a `distance transform <https://homepages.inf.ed.ac.uk/rbf/HIPR2/distance.htm>`_ on an image.
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-image:
+
+:bdg-ref-primary:`image <object-noisesampler-template-library-image-distance_transform-parameter-image>` :doc:`/config/documentation/objects/Image` 
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-channel:
+
+:bdg-ref-success:`channel <object-noisesampler-template-library-image-distance_transform-parameter-channel>` Channel 
+
+Default: ``GRAYSCALE``
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-clamp-to-max-edge:
+
+:bdg-ref-success:`clamp-to-max-edge <object-noisesampler-template-library-image-distance_transform-parameter-clamp-to-max-edge>` :doc:`/config/documentation/objects/Boolean` 
+
+Default: ``false``
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-cost-function:
+
+:bdg-ref-success:`cost-function <object-noisesampler-template-library-image-distance_transform-parameter-cost-function>` :doc:`/config/documentation/objects/String` 
+
+Default: ``Channel``
+
+Valid values:
+
+- ``Channel``
+- ``Threshold``
+- ``ThresholdEdge``
+- ``ThresholdEdgeSigned``
+
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-invert-threshold:
+
+:bdg-ref-success:`invert-threshold <object-noisesampler-template-library-image-distance_transform-parameter-invert-threshold>` :doc:`/config/documentation/objects/Boolean` 
+
+Default: ``false``
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-normalization:
+
+:bdg-ref-success:`normalization <object-noisesampler-template-library-image-distance_transform-parameter-normalization>` :doc:`/config/documentation/objects/String` 
+
+Default: ``None``
+
+Valid values:
+
+- ``None``
+- ``Linear``
+- ``SmoothPreserveZero``
+
+
+.. _object-noisesampler-template-library-image-distance_transform-parameter-threshold:
+
+:bdg-ref-success:`threshold <object-noisesampler-template-library-image-distance_transform-parameter-threshold>` :doc:`/config/documentation/objects/Integer` 
+
+Default: ``127``
+
 Uses
 ====
 
 Used by 45 parameters:
 
-- :ref:`In SAMPLER in Source <object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler>`:
+- :ref:`In LINEAR_HEIGHTMAP in NoiseSampler <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-sampler>`:
 
-  :bdg-ref-primary:`sampler <object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In MUL in NoiseSampler <object-noisesampler-template-config-noise-function-mul-parameter-right>`:
-
-  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-mul-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-success:`sampler <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be used as a heightmap.
 
 - :ref:`In SUB in NoiseSampler <object-noisesampler-template-config-noise-function-sub-parameter-right>`:
 
   :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-sub-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In SAMPLER in Distributor <object-distributor-template-config-distributors-sampler-parameter-sampler>`:
+- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-sampler>`:
 
-  :bdg-ref-primary:`sampler <object-distributor-template-config-distributors-sampler-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
 
-- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler-2d>`:
+- :ref:`In MUL in NoiseSampler <object-noisesampler-template-config-noise-function-mul-parameter-right>`:
 
-  :bdg-ref-success:`terrain.sampler-2d <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler-2d>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-structures.distribution>`:
-
-  :bdg-ref-primary:`structures.distribution <config-feature-template-config-feature-base-parameter-structures.distribution>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-border-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
-
-- :ref:`In SET in Extrusion <object-extrusion-template-biome-provider-extrusion-set-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-extrusion-template-biome-provider-extrusion-set-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In MIN in NoiseSampler <object-noisesampler-template-config-noise-function-min-parameter-left>`:
-
-  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-min-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In LINEAR in NoiseSampler <object-noisesampler-template-config-noise-function-linear-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-linear-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In base in PALETTE <config-palette-template-config-palette-base-parameter-sampler>`:
-
-  :bdg-ref-success:`sampler <config-palette-template-config-palette-base-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In PING_PONG in NoiseSampler <object-noisesampler-template-config-noise-function-ping_pong-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-ping_pong-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler>`:
-
-  :bdg-ref-primary:`terrain.sampler <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-mul-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 - :ref:`In DIV in NoiseSampler <object-noisesampler-template-config-noise-function-div-parameter-right>`:
 
   :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-div-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In NORMAL in NoiseSampler <object-noisesampler-template-config-noise-function-normal-parameter-sampler>`:
+- :ref:`In base in FEATURE <config-feature-template-config-feature-base-parameter-structures.distribution>`:
 
-  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-normal-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`structures.distribution <config-feature-template-config-feature-base-parameter-structures.distribution>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In PROBABILITY in NoiseSampler <object-noisesampler-template-config-noise-function-probability-parameter-sampler>`:
+- :ref:`In SET in Extrusion <object-extrusion-template-biome-provider-extrusion-set-parameter-sampler>`:
 
-  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-probability-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In REPLACE in Stage <object-stage-template-biome-provider-pipeline-v2-replace-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-replace-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
-
-- :ref:`In MUL in NoiseSampler <object-noisesampler-template-config-noise-function-mul-parameter-left>`:
-
-  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-mul-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In DIV in NoiseSampler <object-noisesampler-template-config-noise-function-div-parameter-left>`:
-
-  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-div-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In FBM in NoiseSampler <object-noisesampler-template-config-noise-function-fbm-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-fbm-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In SCALE in NoiseSampler <object-noisesampler-template-config-noise-function-scale-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-scale-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.sampler>`:
-
-  :bdg-ref-success:`blend.sampler <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.sampler>` :doc:`/config/documentation/objects/NoiseSampler` - A sampler that blends the pixelated effect produced by higher resolutions.
-
-- :ref:`In SAMPLER in Locator <object-locator-template-config-locators-sampler-parameter-samplers>`:
-
-  :bdg-ref-primary:`samplers <object-locator-template-config-locators-sampler-parameter-samplers>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/NoiseSampler`\> 
-
-- :ref:`In KERNEL in NoiseSampler <object-noisesampler-template-config-noise-function-kernel-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-kernel-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In RIDGED in NoiseSampler <object-noisesampler-template-config-noise-function-ridged-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-ridged-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In MAX in NoiseSampler <object-noisesampler-template-config-noise-function-max-parameter-right>`:
-
-  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-max-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In SAMPLER_3D in Locator <object-locator-template-config-locators-sampler_3d-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-locator-template-config-locators-sampler_3d-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In MAX in NoiseSampler <object-noisesampler-template-config-noise-function-max-parameter-left>`:
-
-  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-max-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In POSTERIZATION in NoiseSampler <object-noisesampler-template-config-noise-function-posterization-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-posterization-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In MIN in NoiseSampler <object-noisesampler-template-config-noise-function-min-parameter-right>`:
-
-  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-min-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In DOMAIN_WARP in NoiseSampler <object-noisesampler-template-config-noise-function-domain_warp-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-domain_warp-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be warped.
-
-- :ref:`In DOMAIN_WARP in NoiseSampler <object-noisesampler-template-config-noise-function-domain_warp-parameter-warp>`:
-
-  :bdg-ref-primary:`warp <object-noisesampler-template-config-noise-function-domain_warp-parameter-warp>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler that determines warping.
-
-- :ref:`In ADD in NoiseSampler <object-noisesampler-template-config-noise-function-add-parameter-left>`:
-
-  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-add-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In REPLACE in Extrusion <object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
-
-- :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-sampler>`:
-
-  :bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
+  :bdg-ref-primary:`sampler <object-extrusion-template-biome-provider-extrusion-set-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 - :ref:`In CUBIC_SPLINE in NoiseSampler <object-noisesampler-template-config-noise-function-cubic_spline-parameter-sampler>`:
 
   :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-cubic_spline-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
+- :ref:`In KERNEL in NoiseSampler <object-noisesampler-template-config-noise-function-kernel-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-kernel-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In MIN in NoiseSampler <object-noisesampler-template-config-noise-function-min-parameter-right>`:
+
+  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-min-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In SAMPLER in Source <object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In MUL in NoiseSampler <object-noisesampler-template-config-noise-function-mul-parameter-left>`:
+
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-mul-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
+
 - :ref:`In SMOOTH in Stage <object-stage-template-biome-provider-pipeline-v2-smooth-parameter-sampler>`:
 
   :bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-smooth-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - Used to randomly determine which pipeline biome should be chosen.
 
-- :ref:`In LINEAR_HEIGHTMAP in NoiseSampler <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-sampler>`:
+- :ref:`In FBM in NoiseSampler <object-noisesampler-template-config-noise-function-fbm-parameter-sampler>`:
 
-  :bdg-ref-success:`sampler <object-noisesampler-template-config-noise-function-linear_heightmap-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be used as a heightmap.
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-fbm-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In SUB in NoiseSampler <object-noisesampler-template-config-noise-function-sub-parameter-left>`:
+- :ref:`In SAMPLER in Distributor <object-distributor-template-config-distributors-sampler-parameter-sampler>`:
 
-  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-sub-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`sampler <object-distributor-template-config-distributors-sampler-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In FRACTAL_EXPAND in Stage <object-stage-template-biome-provider-pipeline-v2-fractal_expand-parameter-sampler>`:
+- :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-sampler>`:
 
-  :bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-fractal_expand-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - Used to randomly determine which pipeline biome should be chosen.
+  :bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-border-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
+
+- :ref:`In DOMAIN_WARP in NoiseSampler <object-noisesampler-template-config-noise-function-domain_warp-parameter-warp>`:
+
+  :bdg-ref-primary:`warp <object-noisesampler-template-config-noise-function-domain_warp-parameter-warp>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler that determines warping.
+
+- :ref:`In MAX in NoiseSampler <object-noisesampler-template-config-noise-function-max-parameter-right>`:
+
+  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-max-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
+
+- :ref:`In REPLACE in Extrusion <object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-extrusion-template-biome-provider-extrusion-replace-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In ADD in NoiseSampler <object-noisesampler-template-config-noise-function-add-parameter-left>`:
+
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-add-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler>`:
+
+  :bdg-ref-primary:`terrain.sampler <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In REPLACE in Stage <object-stage-template-biome-provider-pipeline-v2-replace-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-replace-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
+
+- :ref:`In SAMPLER_3D in Locator <object-locator-template-config-locators-sampler_3d-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-locator-template-config-locators-sampler_3d-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In base in PALETTE <config-palette-template-config-palette-base-parameter-sampler>`:
+
+  :bdg-ref-success:`sampler <config-palette-template-config-palette-base-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In LINEAR in NoiseSampler <object-noisesampler-template-config-noise-function-linear-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-linear-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In SCALE in NoiseSampler <object-noisesampler-template-config-noise-function-scale-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-scale-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
 - :ref:`In CLAMP in NoiseSampler <object-noisesampler-template-config-noise-function-clamp-parameter-sampler>`:
 
   :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-clamp-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
 
-- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-sampler>`:
+- :ref:`In ADD in NoiseSampler <object-noisesampler-template-config-noise-function-add-parameter-right>`:
 
-  :bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The noise sampler used to distribute pipeline biomes.
+  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-add-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In POSTERIZATION in NoiseSampler <object-noisesampler-template-config-noise-function-posterization-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-posterization-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In NORMAL in NoiseSampler <object-noisesampler-template-config-noise-function-normal-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-normal-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.sampler>`:
+
+  :bdg-ref-success:`blend.sampler <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-blend.sampler>` :doc:`/config/documentation/objects/NoiseSampler` - A sampler that blends the pixelated effect produced by higher resolutions.
+
+- :ref:`In PING_PONG in NoiseSampler <object-noisesampler-template-config-noise-function-ping_pong-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-ping_pong-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In MIN in NoiseSampler <object-noisesampler-template-config-noise-function-min-parameter-left>`:
+
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-min-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In SUB in NoiseSampler <object-noisesampler-template-config-noise-function-sub-parameter-left>`:
+
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-sub-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In PROBABILITY in NoiseSampler <object-noisesampler-template-config-noise-function-probability-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-probability-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler-2d>`:
+
+  :bdg-ref-success:`terrain.sampler-2d <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.sampler-2d>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In DOMAIN_WARP in NoiseSampler <object-noisesampler-template-config-noise-function-domain_warp-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-domain_warp-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - The sampler to be warped.
 
 - :ref:`In CELLULAR in NoiseSampler <object-noisesampler-template-config-noise-function-cellular-parameter-lookup>`:
 
   :bdg-ref-success:`lookup <object-noisesampler-template-config-noise-function-cellular-parameter-lookup>` :doc:`/config/documentation/objects/NoiseSampler` - The lookup sampler used when the ``distance`` parameter is set to ``NoiseLookup``
 
-- :ref:`In ADD in NoiseSampler <object-noisesampler-template-config-noise-function-add-parameter-right>`:
+- :ref:`In DIV in NoiseSampler <object-noisesampler-template-config-noise-function-div-parameter-left>`:
 
-  :bdg-ref-primary:`right <object-noisesampler-template-config-noise-function-add-parameter-right>` :doc:`/config/documentation/objects/NoiseSampler` 
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-div-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In RIDGED in NoiseSampler <object-noisesampler-template-config-noise-function-ridged-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-ridged-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In SAMPLER in Locator <object-locator-template-config-locators-sampler-parameter-samplers>`:
+
+  :bdg-ref-primary:`samplers <object-locator-template-config-locators-sampler-parameter-samplers>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/NoiseSampler`\> 
+
+- :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In MAX in NoiseSampler <object-noisesampler-template-config-noise-function-max-parameter-left>`:
+
+  :bdg-ref-primary:`left <object-noisesampler-template-config-noise-function-max-parameter-left>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+- :ref:`In FRACTAL_EXPAND in Stage <object-stage-template-biome-provider-pipeline-v2-fractal_expand-parameter-sampler>`:
+
+  :bdg-ref-primary:`sampler <object-stage-template-biome-provider-pipeline-v2-fractal_expand-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` - Used to randomly determine which pipeline biome should be chosen.

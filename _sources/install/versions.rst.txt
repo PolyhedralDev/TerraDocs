@@ -114,7 +114,7 @@ Bukkit
         - 6.5.0 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
-        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.3-BETA-bukkit>`__
+        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.5.0-BETA-bukkit>`__
         - N/A
 
     *

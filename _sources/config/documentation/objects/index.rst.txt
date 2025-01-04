@@ -21,9 +21,9 @@ Config Objects
     Set
     Distributor
     Locator
-    Image
     DimensionApplicableSampler
     MathFunction
+    Image
     Biome
     BiomeColorMapping
     ColorString
@@ -31,14 +31,14 @@ Config Objects
     Expression
     BiomeProvider
     Palette
+    CubicSplinePoint
     BiomeColorConverter
-    SlantLayer
+    PaletteLayer
     Source
     Stage
-    PipelineBiomeColorConverter
-    PaletteLayer
-    CubicSplinePoint
+    SlantLayer
     Point
+    PipelineBiomeColorConverter
     Extrusion
     Feature
     Structure
