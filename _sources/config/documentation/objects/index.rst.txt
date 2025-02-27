@@ -16,30 +16,30 @@ Config Objects
     Block
     PipelineBiome
     Tag
-    ColorSampler
     Pattern
+    ColorSampler
     Set
     Distributor
     Locator
     DimensionApplicableSampler
     MathFunction
-    Image
     Biome
-    BiomeColorMapping
-    ColorString
+    Image
     ExtrusionReplaceableBiome
+    BiomeColorMapping
     Expression
     BiomeProvider
     Palette
-    CubicSplinePoint
-    BiomeColorConverter
-    PaletteLayer
+    ColorString
+    Extrusion
+    Point
     Source
     Stage
+    CubicSplinePoint
+    PaletteLayer
     SlantLayer
-    Point
     PipelineBiomeColorConverter
-    Extrusion
+    BiomeColorConverter
     Feature
     Structure
     GenerationStage
