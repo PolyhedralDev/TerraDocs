@@ -237,7 +237,7 @@ Setting up a New Feature
         :width: 75%
 
     .. note::
-        Documentation of the various distributor types available can be found :doc:`here </config/documentation/objects/Distributor>`.
+        Documentation of ``PADDED_GRID`` and other distributor types can be found :doc:`here </config/documentation/objects/Distributor>`.
 
 5. Add the feature locator
 --------------------------
