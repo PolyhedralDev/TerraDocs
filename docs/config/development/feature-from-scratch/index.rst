@@ -9,8 +9,8 @@ If you haven't already, please read the
 :doc:`Creating A Pack From Scratch </config/development/pack-from-scratch/index>`
 for more information before continuing.
 
-For a more detailed and in-depth guide about creating a new feature from scratch, please read this unofficial
-development guide, `Feature Config <https://terra.atr.sh/#/page/feature%20config>`__.
+For a more detailed and in-depth guide about creating a new feature from scratch, please read
+this unofficial development guide, `Feature Config <https://terra.atr.sh/#/page/feature%20config>`__.
 
 Setting up a New Feature
 ========================
@@ -22,13 +22,14 @@ Setting up a New Feature
 
 .. card::
 
-    Your pack will need feature stages in order to generate features.
+    Feature generation is divided up into generation stages. Your pack will need
+    to define at least one generation stage in order to generate any features.
 
     Open your pack manifest in your :ref:`editor of choice <editor>`.
 
     Add the ``generation-stage-feature`` addon as a dependency, using versions ``1.+``.
 
-    This addon will allow us to create new feature stages for features within the pack manifest.
+    This addon will allow us to create new generation stages for features within the pack manifest.
 
     .. code-block:: yaml
         :caption: pack.yml
@@ -45,7 +46,7 @@ Setting up a New Feature
           ...
           generation-stage-feature: "1.+"
 
-    Add the highlighted lines below to your pack manifest to create these feature stages.
+    Add the highlighted lines below to your pack manifest to create these generation stages.
 
     .. code-block:: yaml
         :caption: pack.yml
@@ -67,46 +68,87 @@ Setting up a New Feature
 
     .. tip::
 
-        The feature stage ids can be named to your liking and feature stages will generate in order from top to bottom.
+        The generation stage ids can be named to your liking and generation stages will generate in order from top to bottom.
 
 2. Create your structure file
 -----------------------------
 
 .. card::
 
-    Structure files can either be dynamic TerraScript ``.tesf`` or static schematics ``.schem`` files.
+    :doc:`Structure </config/documentation/objects/Structure>` files can
+    either be dynamic TerraScript ``.tesf`` or static schematic ``.schem`` files.
 
     .. tab-set::
 
             .. tab-item:: TerraScript
 
-                TerraScript files consist of :doc:`TerraScript </config/documentation/terrascript/index>` language
-                that typically generate structures procedurally and can create unique complex structure layouts.
+                TerraScript files are written in the :doc:`TerraScript Language </config/documentation/terrascript/index>`.
+                TerraScript allows for procedurally generated structures and unique complex structure layouts.
 
                 1. Add the ``structure-terrascript-loader`` addon to the pack manifest, using versions ``1.+``
 
                 2. Create a blank ``.tesf`` file.
 
-                3. Add TerraScript within the .tesf file to generate the structure.
+                3. Add TerraScript within the ``.tesf`` file to generate the structure.
 
-                ``oak_tree.tesf`` will be used for this guide.
+                ``oak_tree.tesf`` will be the example file name used for this guide.
+
+                A sample ``oak_tree.tesf`` file has been provided below if you need it.
+
+                .. code-block:: yaml
+                    :caption: oak_tree.tesf
+                    :linenos:
+
+                    num height = 5+randomInt(3);
+
+                    num randPrecision = 100;
+                    num radius = 2.5+randomInt(randPrecision)/randPrecision*2;
+                    num warp = 1;
+                    num warpFreq = 1;
+                    num squish = 1.5+randomInt(randPrecision)/randPrecision;
+                    num radiusSquared = pow(radius,2);
+
+                    for (num h = 0; h < height; h = h + 1) block(0,h,0,"minecraft:oak_log");
+
+                    for (num x = -radius-warp; x < radius+warp; x = x + 1) {
+                        for (num y = (-radius-warp)/squish; y < (radius+warp)/squish; y = y + 1) {
+                            for (num z = -radius-warp; z < radius+warp; z = z + 1) {
+                                num warpX = warp * sampler("simplex3",
+                                                    warpFreq*(x+originX()),
+                                                    warpFreq*(y+originY()+1000),
+                                                    warpFreq*(z+originZ()));
+                                num warpY = warp * sampler("simplex3",
+                                                    warpFreq*(x+originX()),
+                                                    warpFreq*(y+originY()+2000),
+                                                    warpFreq*(z+originZ()));
+                                num warpZ = warp * sampler("simplex3",
+                                                    warpFreq*(x+originX()),
+                                                    warpFreq*(y+originY()+3000),
+                                                    warpFreq*(z+originZ()));
+                                if (pow(x+warpX,2)+pow((y+warpY)*squish,2)+pow(z+warpZ,2) < radiusSquared) {
+                                    block(x, y+height, z,"minecraft:oak_leaves", false);
+                                }
+                            }
+                        }
+                    }
+
 
             .. tab-item:: Schematic
 
                 Schematic files consist of an arrangement of blocks that make up a structure that can be saved through
-                `WorldEdit <https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__.
+                `WorldEdit <https://https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__.
 
                 1. Add the ``structure-sponge-loader`` addon to the pack manifest, using versions ``1.+``
 
-                2. Save your structure using `WorldEdit <https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__.
+                2. Save your structure using `WorldEdit <https://https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__.
 
                 3. Add the ``.schem`` file to your pack.
 
-                ``oak_tree.schem`` will be used for this guide.
+                ``oak_tree.schem`` will be the example file name used for this guide.
 
 
 3. Create your feature config
------------------------------
+----------------------------------
 
 .. card::
 
@@ -130,7 +172,9 @@ Setting up a New Feature
     :ref:`Create a blank config file <create-config-file>` and open it your editor.
 
     Set the :ref:`config type <config-types>` via the ``type``
-    parameter, and config ``id`` as shown below. ``oak_trees.yml`` will be used for this guide.
+    :ref:`parameter <parameters>`, and config ``id`` as shown below.
+
+    ``oak_trees.yml`` will be example file name used for the feature config in this guide.
 
     .. code-block:: yaml
         :caption: oak_trees.yml
@@ -139,16 +183,16 @@ Setting up a New Feature
         id: OAK_TREES
         type: FEATURE
 
-4. Create the feature distributor
----------------------------------
+4. Add the feature distributor
+------------------------------
 
 .. card::
 
-    Distributors determine the x-axis and z-axis placement of a feature in the world.
+    :doc:`Distributors </config/documentation/objects/Distributor>` determine the x-axis and z-axis placement of a feature in the world.
 
     Add the ``config-distributors`` addon to the pack manifest, using versions ``1.+``.
 
-    This addon will allow us to create distributors within feature config files.
+    This addon provides a set of :doc:`distributors </config/documentation/objects/Distributor>` to use within feature config files.
 
     .. code-block:: yaml
         :caption: pack.yml
@@ -163,7 +207,7 @@ Setting up a New Feature
           ...
           config-distributors: "1.+"
 
-    Configure the ``oak_trees.yml`` config to utilize ``PADDED_GRID`` distributor type as shown below.
+    Configure the ``oak_trees.yml`` config to utilize the ``PADDED_GRID`` distributor type as shown below.
 
     .. code-block:: yaml
         :caption: oak_trees.yml
@@ -183,22 +227,28 @@ Setting up a New Feature
     the feature placed within each cell with padding between each cell
     to ensure that features don't generate too close to one another.
 
-    ``PADDED_GRID`` utilizes the parameters ``width``, ``padding``, and ``salt``.
+    ``PADDED_GRID`` utilizes the nested :ref:`parameters <parameters>` ``width``, ``padding``, and ``salt``.
 
     * ``Width`` - Determines the size of each cell that will contain your feature
     * ``Padding`` - Determines the gap between each cell
-    * ``Salt`` - Offsets the results of the distributor to prevent overlap
+    * ``Salt`` - Typically a random number that offsets the distributor results to prevent feature placement overlap with the same distributor type. Salt function covered in detail :ref:`here <noise-sampler-salt-theory>`.
 
-5. Create the feature locator
------------------------------
+    .. image:: /img/config/development/feature-from-scratch/paddedgrid.png
+        :width: 75%
+
+    .. note::
+        Documentation of the various distributor types available can be found :doc:`here </config/documentation/objects/Distributor>`.
+
+5. Add the feature locator
+--------------------------
 
 .. card::
 
-    Locators determine the y-axis placement of a feature in the world.
+    :doc:`Locators </config/documentation/objects/Locator>` determine the y-axis placement of a feature in the world.
 
     Add the ``config-locators`` addon to the pack manifest, using versions ``1.+``.
 
-    This addon will allow us to create locators within feature config files.
+    This addon provides a set of :doc:`locators </config/documentation/objects/Locator>` to use within feature config files.
 
     .. code-block:: yaml
         :caption: pack.yml
@@ -232,11 +282,14 @@ Setting up a New Feature
             min: 0
             max: 319
 
-    The ``TOP`` locator type will place the feature on the block located at the highest possible y-level.
+    The ``TOP`` locator type will place the feature on the block located at the highest y-level.
+
+    .. note::
+        Documentation of the various locator types available can be found :doc:`here </config/documentation/objects/Locator>`.
 
 .. tip::
 
-    You can utilize multiple locators for stricter criteria as shown below with the ``AND`` locator.
+    You can utilize multiple :doc:`locators </config/documentation/objects/Locator>` for stricter criteria as shown below with the ``AND`` locator.
 
     .. code-block:: yaml
         :caption: feature.yml
@@ -259,12 +312,12 @@ Setting up a New Feature
                   - minecraft:dirt
                 offset: -1
 
-6. Apply the structure
-----------------------
+6. Add the structure
+---------------------
 
 .. card::
 
-    You can now add your structure to the ``oak_trees.yml`` config with the highlighted lines below.
+    You can now add your :doc:`structure </config/documentation/objects/Structure>` to the ``oak_trees.yml`` config with the highlighted lines below.
 
     .. code-block:: yaml
         :caption: oak_trees.yml
@@ -285,15 +338,20 @@ Setting up a New Feature
             type: CONSTANT
           structures: oak_tree
 
-    The ``structures`` sub-configuration consists of a structure or list of structures for
-    the feature config to select from to generate in the world.
+    The ``structures`` parent key consists of the nested :ref:`parameters <parameters>`
+    ``structures.structures`` and  ``structures.distribution``.
 
-    It also consists of a distributor type to influence the structure selection.
+    ``structures.structures`` determines the structure or :doc:`weighted list </config/documentation/objects/WeightedList>`
+    of structures to select from upon feature generation in the world.
+
+    ``structures.distribution`` determines the :doc:`distributor </config/documentation/objects/Distributor>`
+    type that influences the structure selection results.
 
 .. tip::
 
-    Features can select from a list of structures with a distribution type to guide the structure selection
-    as shown below:
+    Features can select from a :doc:`weighted list </config/documentation/objects/WeightedList>` of structures with a
+    :doc:`noise sampler </config/documentation/objects/NoiseSampler>`
+    to guide the structure selection as shown below.
 
     .. code-block:: yaml
         :caption: feature.yml
@@ -308,8 +366,10 @@ Setting up a New Feature
             - oak_tree_2: 1
             - oak_tree_3: 1
 
-7. Apply feature to biomes
---------------------------
+    Weighted lists covered in detail :ref:`here <weighted-list>`.
+
+7. Apply features to biomes
+-------------------------------
 
 .. card::
 
@@ -347,7 +407,7 @@ Setting up a New Feature
 
 .. tip::
 
-    Multiple feature stages in biome configs will be done as shown below:
+    Multiple generation stages in biome configs will be done as shown below:
 
     .. code-block:: yaml
         :caption: first_biome.yml
@@ -367,7 +427,7 @@ Setting up a New Feature
             - ROCKS
 
 8. Load your pack
------------------
+-------------------
 At this stage, your pack should now be capable of generating oak trees! You can load up your pack by starting your
 development client / server which contains the pack you have just defined. You can confirm that your pack has loaded
 if the pack id (as specified in the pack manifest) appears when using the ``/packs`` command, or in your console
