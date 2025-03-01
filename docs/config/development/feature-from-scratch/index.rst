@@ -148,7 +148,7 @@ Setting up a New Feature
 
 
 3. Create your feature config
-----------------------------------
+-----------------------------
 
 .. card::
 
@@ -313,7 +313,7 @@ Setting up a New Feature
                 offset: -1
 
 6. Add the structure
----------------------
+--------------------
 
 .. card::
 
@@ -344,8 +344,8 @@ Setting up a New Feature
     ``structures.structures`` determines the structure or :doc:`weighted list </config/documentation/objects/WeightedList>`
     of structures to select from upon feature generation in the world.
 
-    ``structures.distribution`` determines the :doc:`distributor </config/documentation/objects/Distributor>`
-    type that influences the structure selection results.
+    ``structures.distribution`` determines the :doc:`noise sampler </config/documentation/objects/NoiseSampler>`
+    that influences the structure selection results.
 
 .. tip::
 
@@ -369,7 +369,7 @@ Setting up a New Feature
     Weighted lists covered in detail :ref:`here <weighted-list>`.
 
 7. Apply features to biomes
--------------------------------
+---------------------------
 
 .. card::
 
@@ -427,7 +427,7 @@ Setting up a New Feature
             - ROCKS
 
 8. Load your pack
--------------------
+-----------------
 At this stage, your pack should now be capable of generating oak trees! You can load up your pack by starting your
 development client / server which contains the pack you have just defined. You can confirm that your pack has loaded
 if the pack id (as specified in the pack manifest) appears when using the ``/packs`` command, or in your console
