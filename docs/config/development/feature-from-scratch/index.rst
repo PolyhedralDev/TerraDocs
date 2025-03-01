@@ -140,7 +140,7 @@ Setting up a New Feature
 
                 1. Add the ``structure-sponge-loader`` addon to the pack manifest, using versions ``1.+``
 
-                2. Save your structure using `WorldEdit <https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__.
+                2. Source a ``.schem`` file, these can be created using `WorldEdit <https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__ if you wish to create your own.
 
                 3. Add the ``.schem`` file to your pack.
 
