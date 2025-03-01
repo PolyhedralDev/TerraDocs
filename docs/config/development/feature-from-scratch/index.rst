@@ -136,11 +136,11 @@ Setting up a New Feature
             .. tab-item:: Schematic
 
                 Schematic files consist of an arrangement of blocks that make up a structure that can be saved through
-                `WorldEdit <https://https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__.
+                `WorldEdit <https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__.
 
                 1. Add the ``structure-sponge-loader`` addon to the pack manifest, using versions ``1.+``
 
-                2. Save your structure using `WorldEdit <https://https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__.
+                2. Save your structure using `WorldEdit <https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__.
 
                 3. Add the ``.schem`` file to your pack.
 
