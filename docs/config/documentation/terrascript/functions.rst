@@ -14,41 +14,41 @@ The block function sets a block at a location.
 
 Arguments:
 
-+------------------------+---------------+-----------------------------+
-| Parameter              | Type          | Description                 |
-+========================+===============+=============================+
-| ``x``                  | ``num``       | X coordinate (relative to   |
-|                        |               | origin) to place block      |
-+------------------------+---------------+-----------------------------+
-| ``y``                  | ``num``       | Y coordinate (relative to   |
-|                        |               | origin) to place block      |
-+------------------------+---------------+-----------------------------+
-| ``z``                  | ``num``       | Z coordinate (relative to   |
-|                        |               | origin) to place block      |
-+------------------------+---------------+-----------------------------+
-| ``data``               | ``str``       | Block Data string to place  |
-|                        |               | (must be constant           |
-|                        |               | expression)                 |
-+------------------------+---------------+-----------------------------+
-| ``replace``            | ``bool``      | Optional and defaults true. |
-|                        |               | Whether to replace an       |
-|                        |               | existing block. This is     |
-|                        |               | true.When true, any block   |
-|                        |               | will be overwritten (this   |
-|                        |               | is the default behavior     |
-|                        |               | when this parameter is      |
-|                        |               | unspecified) When false,    |
-|                        |               | only air will be            |
-|                        |               | overwritten.                |
-+------------------------+---------------+-----------------------------+
-| ``physics``            | ``bool``      | Optional and defaults false.|
-|                        |               | Whether to tick update the  |
-|                        |               | block after the initial     |
-|                        |               | chunk generation. Allows    |
-|                        |               | blocks like water to        |
-|                        |               | flow or sand to fall        |
-|                        |               | when placed.                |
-+------------------------+---------------+-----------------------------+
++------------------------+---------------+-------------------------------+
+| Parameter              | Type          | Description                   |
++========================+===============+===============================+
+| ``x``                  | ``num``       | X coordinate (relative to     |
+|                        |               | origin) to place block        |
++------------------------+---------------+-------------------------------+
+| ``y``                  | ``num``       | Y coordinate (relative to     |
+|                        |               | origin) to place block        |
++------------------------+---------------+-------------------------------+
+| ``z``                  | ``num``       | Z coordinate (relative to     |
+|                        |               | origin) to place block        |
++------------------------+---------------+-------------------------------+
+| ``data``               | ``str``       | Block Data string to place    |
+|                        |               | (must be constant             |
+|                        |               | expression)                   |
++------------------------+---------------+-------------------------------+
+| ``replace``            | ``bool``      | (Optional; Default: ``true``) |
+|                        |               | Whether to replace an         |
+|                        |               | existing block. This is       |
+|                        |               | true. When true, any block    |
+|                        |               | will be overwritten (this     |
+|                        |               | is the default behavior       |
+|                        |               | when this parameter is        |
+|                        |               | unspecified) When false,      |
+|                        |               | only air will be              |
+|                        |               | overwritten.                  |
++------------------------+---------------+-------------------------------+
+| ``physics``            | ``bool``      | (Optional; Default: ``false``)|
+|                        |               | Whether to tick update the    |
+|                        |               | block after the initial       |
+|                        |               | chunk generation. Allows      |
+|                        |               | blocks like water to          |
+|                        |               | flow or sand to fall          |
+|                        |               | when placed.                  |
++------------------------+---------------+-------------------------------+
 
 Returns: ``VOID``
 
@@ -427,17 +427,18 @@ Arguments:
 +------------------------+------------+-----------------------------------------+
 | Parameter              | Type       | Description                             |
 +========================+============+=========================================+
-| ``x``                  | ``num``    | X coordinate (relative to origin)       |
-|                        |            | for noise input                         |
+| ``sampler``            | ``str``    | ID of noise sampler                     |
+|                        |            |                                         |
 +------------------------+------------+-----------------------------------------+
-| ``y``                  | ``num``    | Y coordinate (relative to origin)       |
+| ``x``                  | ``num``    | X coordinate (relative to origin)       |
 |                        |            | for noise input                         |
 +------------------------+------------+-----------------------------------------+
 | ``z``                  | ``num``    | Z coordinate (relative to origin)       |
 |                        |            | for noise input                         |
 +------------------------+------------+-----------------------------------------+
-| ``sampler``            | ``str``    | ID of noise sampler                     |
-|                        |            |                                         |
+| ``y``                  | ``num``    | (Optional)                              |
+|                        |            | Y coordinate (relative to origin)       |
+|                        |            | for noise input                         |
 +------------------------+------------+-----------------------------------------+
 
 Returns: ``num`` - value output of :doc:`noise sampler </config/documentation/objects/NoiseSampler>`.
