@@ -144,7 +144,7 @@ Arguments:
 +------------------------+---------------+-----------------------------+
 | Parameter              | Type          | Description                 |
 +========================+===============+=============================+
-| ``range``              | ``num``       | Maximum value (exclusive    |
+| ``range``              | ``num``       | Maximum value (exclusive)   |
 +------------------------+---------------+-----------------------------+
 
 Returns: ``NUMBER`` - A random integer (whole number) between ``0``
