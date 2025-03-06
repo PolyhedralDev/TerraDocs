@@ -1,10 +1,10 @@
 'use strict';
 
-const gulp = require('gulp');
-const pluginerror = require('plugin-error');
-const browsersync = require('browser-sync').create();
-const del = require('del');
-const spawn = require('child_process').spawn;
+import gulp from 'gulp';
+import pluginerror from 'plugin-error';
+import browsersync from 'browser-sync';
+import {deleteAsync} from 'del';
+import { spawn } from 'child_process';
 
 const docsDir = "docs";
 const ignoredPaths = [
@@ -12,37 +12,43 @@ const ignoredPaths = [
     "config/documentation/configs",
     "install/versions.rst",
     "install/versions/platforms",
-]
+];
 
 function shell(plugin, command, args) {
-    return (done) =>
-        spawn(command, args, {stdio: 'inherit'})
-            .on('error', (err) => {
-                done(new pluginerror(plugin, err))
-            })
-            .on('exit', (code) => {
-                if (code === 0) {
-                    // Process completed successfully
-                    done()
-                } else {
-                    done(new pluginerror(plugin, `Process failed with exit code ${code}`));
-                }
-            })
+    return (done) => {
+        const child = spawn(command, args, { stdio: 'inherit' });
+
+        child.on('error', (err) => {
+            done(new pluginerror(plugin, err));
+        });
+
+        child.on('exit', (code) => {
+            if (code === 0) {
+                // Process completed successfully
+                done();
+            } else {
+                done(new pluginerror(plugin, `Process failed with exit code ${code}`));
+            }
+        });
+    };
 }
 
 function webserver(done) {
-    browsersync.init({
+    const server = browsersync.create();
+
+    server.init({
         watch: true,
         server: "./build/dev/html/"
-    }, function () { this.server.on('close', done) })
+    }, function () {
+        this.server.on('close', done);
+    });
 }
-
 
 function watch() {
     gulp.watch([`./${docsDir}/**`, ...ignoredPaths.map(dir => `!./${docsDir}/${dir}`)], gulp.series('sphinx:dev'));
 }
 
-gulp.task('clean', () => del(['build']));
+gulp.task('clean', () => deleteAsync(['build']));
 
 gulp.task('sphinx', shell(
     'sphinx', 'sphinx-build', ['-W', '-d', 'build/doctrees', docsDir, 'build/html']
