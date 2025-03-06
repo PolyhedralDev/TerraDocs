@@ -18,7 +18,7 @@ sys.path.append(os.path.abspath("./ext"))
 # -- Project information -----------------------------------------------------
 
 project = 'Terra'
-copyright = '2021-2023, Terra Contributors'
+copyright = '2021-2025, Terra Contributors'
 author = 'Terra Contributors'
 
 
