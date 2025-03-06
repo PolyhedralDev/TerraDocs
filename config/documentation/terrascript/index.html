@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Terra API" href="../../../api/index.html" /><link rel="prev" title="NumberPredicate" href="../objects/NumberPredicate.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="What TerraScript Can Do" href="introduction.html" /><link rel="prev" title="NumberPredicate" href="../objects/NumberPredicate.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 7.2.6 and Furo 2024.01.29 -->
         <title>TerraScript - Terra Docs</title>
@@ -158,7 +158,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -297,13 +297,18 @@
 <li class="toctree-l4"><a class="reference internal" href="../objects/NumberPredicate.html">NumberPredicate</a></li>
 </ul>
 </li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">TerraScript</a></li>
+<li class="toctree-l3 current has-children current-page"><a class="current reference internal" href="#">TerraScript</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of TerraScript</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l4"><a class="reference internal" href="introduction.html">What TerraScript Can Do</a></li>
+<li class="toctree-l4"><a class="reference internal" href="syntax.html">TerraScript Syntax</a></li>
+<li class="toctree-l4"><a class="reference internal" href="functions.html">TerraScript Functions</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Introduction to the Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Introduction to the Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/development-environment.html">Setting up a Development Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
@@ -312,7 +317,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/registering-config-type.html">Registering a Config Type</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of API Concepts</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of API Concepts</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/logging.html">Logging With SLF4J</a></li>
@@ -353,7 +358,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -361,15 +366,55 @@
         <article role="main">
           <section id="terrascript">
 <h1>TerraScript<a class="headerlink" href="#terrascript" title="Link to this heading">#</a></h1>
-<p>TerraScript documentation has not been migrated from the old Wiki yet.</p>
-<p>You can find the old Wiki TerraScript documentation here:</p>
-<p><a class="reference external" href="https://github.com/PolyhedralDev/TerraWiki/wiki/TerraScript-Syntax">https://github.com/PolyhedralDev/TerraWiki/wiki/TerraScript-Syntax</a></p>
-<p><a class="reference external" href="https://github.com/PolyhedralDev/TerraWiki/wiki/TerraScript-Functions">https://github.com/PolyhedralDev/TerraWiki/wiki/TerraScript-Functions</a></p>
-<p>Some information is outdated or undocumented in the old Wiki,
-such as the <code class="docutils literal notranslate"><span class="pre">id</span></code> at the start of scripts being removed, (where <code class="docutils literal notranslate"><span class="pre">.tesf</span></code> files
-are now identified by their file name), or some of the changes made in Terra v6
-such as the introduction of new functions. Aside from those things the language
-has largely remained the same.</p>
+<section id="what-is-terrascript">
+<h2>What is TerraScript?<a class="headerlink" href="#what-is-terrascript" title="Link to this heading">#</a></h2>
+<p>TerraScript is a custom scripting language with JavaScript-like syntax that is
+designed for writing custom <a class="reference internal" href="../objects/Structure.html"><span class="doc">structures</span></a>.
+It is simple to learn and easy to use, and incredibly powerful at the same time.</p>
+<p>You can use TerraScript for anything from creating procedurally generated structures such as
+unique variations of trees and rocks to large complex structure layouts such as mineshafts and dungeons.</p>
+</section>
+<section id="contents">
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">What TerraScript Can Do</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#world-manipulation">World Manipulation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#world-data-reading">World Data Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#recursive-scripting">Recursive Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#essential-language-features">Essential Language Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#example-use-cases">Example Use Cases</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="syntax.html">TerraScript Syntax</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="syntax.html#functions">Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax.html#expressions">Expressions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax.html#variables">Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax.html#conditional-statements">Conditional Statements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax.html#loops">Loops</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="functions.html">TerraScript Functions</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#block">block</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#check">check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#structure">structure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#randomint">randomInt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#recursions">recursions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#setmark">setMark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#getmark">getMark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#pull">pull</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#loot">loot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#entity">entity</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#getbiome">getBiome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#getblock">getBlock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#state">state</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#print">print</a></li>
+<li class="toctree-l2"><a class="reference internal" href="functions.html#sampler">sampler</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
 </section>
 
         </article>
@@ -377,12 +422,12 @@ has largely remained the same.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../../../api/index.html">
+          <a class="next-page" href="introduction.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Terra API</div>
+                <div class="title">What TerraScript Can Do</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -415,8 +460,28 @@ has largely remained the same.</p>
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">TerraScript</a><ul>
+<li><a class="reference internal" href="#what-is-terrascript">What is TerraScript?</a></li>
+<li><a class="reference internal" href="#contents">Contents</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>

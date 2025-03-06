@@ -2,17 +2,22 @@
 TerraScript
 ===========
 
-TerraScript documentation has not been migrated from the old Wiki yet.
+What is TerraScript?
+====================
 
-You can find the old Wiki TerraScript documentation here:
+TerraScript is a custom scripting language with JavaScript-like syntax that is
+designed for writing custom :doc:`structures </config/documentation/objects/Structure>`.
+It is simple to learn and easy to use, and incredibly powerful at the same time.
 
-https://github.com/PolyhedralDev/TerraWiki/wiki/TerraScript-Syntax
+You can use TerraScript for anything from creating procedurally generated structures such as
+unique variations of trees and rocks to large complex structure layouts such as mineshafts and dungeons.
 
-https://github.com/PolyhedralDev/TerraWiki/wiki/TerraScript-Functions
+Contents
+========
 
-Some information is outdated or undocumented in the old Wiki,
-such as the ``id`` at the start of scripts being removed, (where ``.tesf`` files
-are now identified by their file name), or some of the changes made in Terra v6
-such as the introduction of new functions. Aside from those things the language
-has largely remained the same.
+.. toctree::
+    :maxdepth: 2
 
+    introduction
+    syntax
+    functions
