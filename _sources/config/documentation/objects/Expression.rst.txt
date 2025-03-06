@@ -223,10 +223,10 @@ Uses
 
 Used by 2 parameters:
 
-- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-expression>`:
-
-  :bdg-ref-primary:`expression <object-noisesampler-template-config-noise-function-expression-parameter-expression>` :doc:`/config/documentation/objects/Expression` 
-
 - :ref:`In EXPRESSION_NORMALIZER in NoiseSampler <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-expression>`:
 
   :bdg-ref-primary:`expression <object-noisesampler-template-config-noise-function-expression_normalizer-parameter-expression>` :doc:`/config/documentation/objects/Expression` - An expression utilizes the ``in`` variable (short for 'input').
+
+- :ref:`In EXPRESSION in NoiseSampler <object-noisesampler-template-config-noise-function-expression-parameter-expression>`:
+
+  :bdg-ref-primary:`expression <object-noisesampler-template-config-noise-function-expression-parameter-expression>` :doc:`/config/documentation/objects/Expression` 

@@ -66,13 +66,18 @@ recommended to avoid ``getBlock`` in regular structures, and use
 
 Arguments:
 
-========= ======= ==========================================
-Parameter Type    Description
-========= ======= ==========================================
-``x``     ``num`` X coordinate (relative to origin) to check
-``y``     ``num`` Y coordinate (relative to origin) to check
-``z``     ``num`` Z coordinate (relative to origin) to check
-========= ======= ==========================================
++------------------------+---------------+-------------------------------+
+| Parameter              | Type          | Description                   |
++========================+===============+===============================+
+| ``x``                  | ``num``       | X coordinate (relative to     |
+|                        |               | origin) to check              |
++------------------------+---------------+-------------------------------+
+| ``y``                  | ``num``       | Y coordinate (relative to     |
+|                        |               | origin) to check              |
++------------------------+---------------+-------------------------------+
+| ``z``                  | ``num``       | Z coordinate (relative to     |
+|                        |               | origin) to check              |
++------------------------+---------------+-------------------------------+
 
 Returns: ``STRING`` - The type of the location at the parameter
 coordinates, added to the structure origin. **Must** be one of the following:
@@ -136,11 +141,11 @@ The randomInt function returns a random value within a range.
 
 Arguments:
 
-========= ======= =========================
-Parameter Type    Description
-========= ======= =========================
-``range`` ``num`` Maximum value (exclusive)
-========= ======= =========================
++------------------------+---------------+-----------------------------+
+| Parameter              | Type          | Description                 |
++========================+===============+=============================+
+| ``range``              | ``num``       | Maximum value (exclusive)   |
++------------------------+---------------+-----------------------------+
 
 Returns: ``NUMBER`` - A random integer (whole number) between ``0``
 (inclusive) and ``range`` (exclusive).
@@ -189,14 +194,21 @@ Setting a mark that already exists will overwrite it with a new value.
 
 Arguments:
 
-=========== ======= =============================================
-Parameter   Type    Description
-=========== ======= =============================================
-``x``       ``num`` X coordinate (relative to origin) to set mark
-``y``       ``num`` Y coordinate (relative to origin) to set mark
-``z``       ``num`` Z coordinate (relative to origin) to set mark
-``content`` ``str`` Content of the mark to place
-=========== ======= =============================================
++------------------------+---------------+-----------------------------+
+| Parameter              | Type          | Description                 |
++========================+===============+=============================+
+| ``x``                  | ``num``       | X coordinate (relative to   |
+|                        |               | origin) to set mark         |
++------------------------+---------------+-----------------------------+
+| ``y``                  | ``num``       | Y coordinate (relative to   |
+|                        |               | origin) to set mark         |
++------------------------+---------------+-----------------------------+
+| ``z``                  | ``num``       | Z coordinate (relative to   |
+|                        |               | origin) to set mark         |
++------------------------+---------------+-----------------------------+
+| ``content``            | ``str``       | Content of the mark         |
+|                        |               | to place                    |
++------------------------+---------------+-----------------------------+
 
 Returns: ``VOID``
 
@@ -221,13 +233,18 @@ recursions.
 
 Arguments:
 
-========= ======= ===============================================
-Parameter Type    Description
-========= ======= ===============================================
-``x``     ``num`` X coordinate (relative to origin) to check mark
-``y``     ``num`` Y coordinate (relative to origin) to check mark
-``z``     ``num`` Z coordinate (relative to origin) to check mark
-========= ======= ===============================================
++------------------------+---------------+-----------------------------+
+| Parameter              | Type          | Description                 |
++========================+===============+=============================+
+| ``x``                  | ``num``       | X coordinate (relative to   |
+|                        |               | origin) to check mark       |
++------------------------+---------------+-----------------------------+
+| ``y``                  | ``num``       | Y coordinate (relative to   |
+|                        |               | origin) to check mark       |
++------------------------+---------------+-----------------------------+
+| ``z``                  | ``num``       | Z coordinate (relative to   |
+|                        |               | origin) to check mark       |
++------------------------+---------------+-----------------------------+
 
 Returns: ``STRING`` - The content of the mark at the location. Returns
 ``""`` (empty string) if the mark is empty or not present.
@@ -330,13 +347,18 @@ The getBiome function gets the Terra biome at a location.
 
 Arguments:
 
-========= ======= ================================================
-Parameter Type    Description
-========= ======= ================================================
-``x``     ``num`` X coordinate (relative to origin) to check biome
-``y``     ``num`` Y coordinate (relative to origin) to check biome
-``z``     ``num`` Z coordinate (relative to origin) to check biome
-========= ======= ================================================
++------------------------+---------------+-----------------------------+
+| Parameter              | Type          | Description                 |
++========================+===============+=============================+
+| ``x``                  | ``num``       | X coordinate (relative to   |
+|                        |               | origin) to check biome      |
++------------------------+---------------+-----------------------------+
+| ``y``                  | ``num``       | Y coordinate (relative to   |
+|                        |               | origin) to check biome      |
++------------------------+---------------+-----------------------------+
+| ``z``                  | ``num``       | Z coordinate (relative to   |
+|                        |               | origin) to check biome      |
++------------------------+---------------+-----------------------------+
 
 Returns: ``STRING`` - The ID of the biome, E.G. ``"ARID_MOUNTAINS"``.
 
@@ -355,13 +377,18 @@ cause cascading chunk loading whenever a structure generates. **Use the
 
 Arguments:
 
-========= ======= ================================================
-Parameter Type    Description
-========= ======= ================================================
-``x``     ``num`` X coordinate (relative to origin) to check block
-``y``     ``num`` Y coordinate (relative to origin) to check block
-``z``     ``num`` Z coordinate (relative to origin) to check block
-========= ======= ================================================
++------------------------+---------------+-----------------------------+
+| Parameter              | Type          | Description                 |
++========================+===============+=============================+
+| ``x``                  | ``num``       | X coordinate (relative to   |
+|                        |               | origin) to check block      |
++------------------------+---------------+-----------------------------+
+| ``y``                  | ``num``       | Y coordinate (relative to   |
+|                        |               | origin) to check block      |
++------------------------+---------------+-----------------------------+
+| ``z``                  | ``num``       | Z coordinate (relative to   |
+|                        |               | origin) to check block      |
++------------------------+---------------+-----------------------------+
 
 Returns: ``STRING`` - The ID of the block, without properties, E.G.
 ``"minecraft:stone"``.
@@ -385,14 +412,20 @@ read:
 
 Arguments:
 
-========= ======= ==========================================
-Parameter Type    Description
-========= ======= ==========================================
-``x``     ``num`` X coordinate (relative to origin) of block
-``y``     ``num`` Y coordinate (relative to origin) of block
-``z``     ``num`` Z coordinate (relative to origin) of block
-``data``  ``str`` Data to apply to block
-========= ======= ==========================================
++------------------------+---------------+-----------------------------+
+| Parameter              | Type          | Description                 |
++========================+===============+=============================+
+| ``x``                  | ``num``       | X coordinate (relative to   |
+|                        |               | origin) of block            |
++------------------------+---------------+-----------------------------+
+| ``y``                  | ``num``       | Y coordinate (relative to   |
+|                        |               | origin) of block            |
++------------------------+---------------+-----------------------------+
+| ``z``                  | ``num``       | Z coordinate (relative to   |
+|                        |               | origin) of block            |
++------------------------+---------------+-----------------------------+
+| ``data``               | ``str``       | Data to apply to block      |
++------------------------+---------------+-----------------------------+
 
 Returns: ``VOID``
 
@@ -406,11 +439,11 @@ function, and as such will only work with debug mode enabled.
 
 Arguments:
 
-=========== ======= ===========================
-Parameter   Type    Description
-=========== ======= ===========================
-``message`` ``str`` Message to print to console
-=========== ======= ===========================
++------------------------+---------------+-----------------------------+
+| Parameter              | Type          | Description                 |
++========================+===============+=============================+
+| ``message``            | ``str``       | Message to print to console |
++------------------------+---------------+-----------------------------+
 
 Returns: ``VOID``
 
