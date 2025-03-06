@@ -103,9 +103,12 @@ html_css_files = [
 
 # JDLinker config
 javadoc_links = {
-    'https://docs.oracle.com/en/java/javase/17/docs/api/java.base/': ['java'],
+    'https://docs.oracle.com/en/java/javase/21/docs/api/java.base/': ['java'],
     'https://ci.codemc.io/job/PolyhedralDev/job/Terra/javadoc/': ['com.dfsek.terra'],
     'https://ci.codemc.io/job/PolyhedralDev/job/Tectonic/javadoc/': ['com.dfsek.tectonic'],
+    'https://ci.codemc.io/job/PolyhedralDev/job/Paralithic/javadoc/': ['com.dfsek.paralithic'],
+    'https://ci.solo-studios.ca/job/solo-studios/job/Strata/job/master/javadoc/': ['ca.solostudios.strata'],
+    'https://www.javadoc.io/doc/com.github.ben-manes.caffeine/caffeine/latest/': ['com.github.benmanes.caffeine.cache'],
     'https://www.slf4j.org/apidocs/': ['org.slf4j'],
 }
 

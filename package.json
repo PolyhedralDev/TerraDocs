@@ -2,22 +2,22 @@
   "name": "terradocs",
   "version": "0.1.0",
   "description": "Terra documentation",
-  "scripts": {
-  },
+  "scripts": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/PolyhedralDev/TerraWiki.git"
+    "url": "git+https://github.com/PolyhedralDev/TerraDocs.git"
   },
   "author": "Terra Contributors",
   "license": "CC-BY-SA-4.0",
   "bugs": {
-    "url": "https://github.com/PolyhedralDev/TerraWiki/issues"
+    "url": "https://github.com/PolyhedralDev/TerraDocs/issues"
   },
-  "homepage": "https://github.com/PolyhedralDev/TerraWiki#readme",
+  "homepage": "https://github.com/PolyhedralDev/TerraDocs#readme",
   "dependencies": {
-    "browser-sync": "^2.27.7",
-    "del": "^6.0.0",
-    "gulp": "^4.0.2",
-    "plugin-error": "^1.0.1"
-  }
+    "browser-sync": "^3.0.3",
+    "del": "^8.0.0",
+    "gulp": "^5.0.0",
+    "plugin-error": "^2.0.1"
+  },
+  "type": "module"
 }
