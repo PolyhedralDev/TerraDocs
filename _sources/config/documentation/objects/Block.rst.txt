@@ -18,10 +18,6 @@ Used by 8 parameters:
 
   :bdg-ref-success:`material-overrides <config-ore-template-config-ore-base-parameter-material-overrides>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Block`\, :doc:`/config/documentation/objects/Block`\> 
 
-- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-material>`:
-
-  :bdg-ref-primary:`material <config-scattered_ore-template-config-ore-base-parameter-material>` :doc:`/config/documentation/objects/Block` 
-
 - :ref:`In MATCH in Pattern <object-pattern-template-config-locators-match-parameter-block>`:
 
   :bdg-ref-primary:`block <object-pattern-template-config-locators-match-parameter-block>` :doc:`/config/documentation/objects/Block` 
@@ -45,3 +41,7 @@ Used by 8 parameters:
 - :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-replace>`:
 
   :bdg-ref-primary:`replace <config-scattered_ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+
+- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-material>`:
+
+  :bdg-ref-primary:`material <config-scattered_ore-template-config-ore-base-parameter-material>` :doc:`/config/documentation/objects/Block` 
