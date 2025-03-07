@@ -89,6 +89,26 @@ Config packs are installed similarly to resource packs:
 
     - Bukkit - ``/plugins/Terra/packs``
 
+    .. tip::
+
+        For ``Allay`` you need to edit ``world-settings.yml``
+
+        .. code-block:: yaml
+            :caption: world-settings.yml
+            :linenos:
+
+            worlds:
+              world:
+                enable: true
+                runtime-only: false
+                storage-type: LEVELDB
+                overworld:
+                  generator-type: TERRA
+                  generator-preset: pack=<your pack id>;seed=<a number>
+                nether: null
+                the-end: null
+            default-world: world
+
 3. Ensure the correct directory structure.
 ------------------------------------------
 
