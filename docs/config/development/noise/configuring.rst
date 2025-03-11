@@ -52,6 +52,8 @@ Here is what the above example looks like with the ``salt`` key added:
 All optional parameters have pre-defined default values that are set when they are not specified.
 When the ``salt`` key is not included in a sampler config, it will default to its predefined value ``0``.
 
+.. _noise-tool:
+
 Noise Tool
 ----------
 
