@@ -266,8 +266,25 @@ Setting up a New Feature
 
 .. card::
 
-    We will now utilize the ``structure-block-shortcut`` addon that was added in
-    :doc:`Setting up a New Pack </config/development/pack-from-scratch/introduction>` that allows us to
+    The ``structure-block-shortcut`` addon will provide the capability to use a shortcut within structure distribution
+    to directly place a block rather than having to create an entire structure file for just a single block.
+
+    Add the ``structure-block-shortcut`` addon to the pack manifest, using versions ``1.+``.
+
+    .. code-block:: yaml
+        :caption: pack.yml
+        :linenos:
+        :emphasize-lines: 7
+
+        id: YOUR_PACK_ID
+
+        version: 0.1.0
+
+        addons:
+          ...
+          structure-block-shortcut: "1.+"
+
+    We will now utilize the ``structure-block-shortcut`` addon that was added above to
     easily define single blocks rather than a :doc:`structure </config/documentation/objects/Structure>`.
 
     .. note::
