@@ -266,7 +266,7 @@ Setting up a New Feature
 
 .. card::
 
-    We will now utilize the ``palette-block-shortcut`` addon that was added in
+    We will now utilize the ``structure-block-shortcut`` addon that was added in
     :doc:`Setting up a New Pack </config/development/pack-from-scratch/introduction>` that allows us to
     easily define single blocks rather than a :doc:`structure </config/documentation/objects/Structure>`.
 
