@@ -50,39 +50,8 @@ Setting up a New Structure
                     :caption: oak_tree.tesf
                     :linenos:
 
-                    num height = 5+randomInt(3);
-
-                    num randPrecision = 100;
-                    num radius = 2.5+randomInt(randPrecision)/randPrecision*2;
-                    num warp = 1;
-                    num warpFreq = 1;
-                    num squish = 1.5+randomInt(randPrecision)/randPrecision;
-                    num radiusSquared = pow(radius,2);
-
-                    for (num h = 0; h < height; h = h + 1) block(0,h,0,"minecraft:oak_log");
-
-                    for (num x = -radius-warp; x < radius+warp; x = x + 1) {
-                        for (num y = (-radius-warp)/squish; y < (radius+warp)/squish; y = y + 1) {
-                            for (num z = -radius-warp; z < radius+warp; z = z + 1) {
-                                num warpX = warp * sampler("simplex3",
-                                                    warpFreq*(x+originX()),
-                                                    warpFreq*(y+originY()+1000),
-                                                    warpFreq*(z+originZ()));
-                                num warpY = warp * sampler("simplex3",
-                                                    warpFreq*(x+originX()),
-                                                    warpFreq*(y+originY()+2000),
-                                                    warpFreq*(z+originZ()));
-                                num warpZ = warp * sampler("simplex3",
-                                                    warpFreq*(x+originX()),
-                                                    warpFreq*(y+originY()+3000),
-                                                    warpFreq*(z+originZ()));
-                                if (pow(x+warpX,2)+pow((y+warpY)*squish,2)+pow(z+warpZ,2) < radiusSquared) {
-                                    block(x, y+height, z,"minecraft:oak_leaves", false);
-                                }
-                            }
-                        }
-                    }
-
+                    block(0, 0, 0, "minecraft:oak_log", true);
+                    block(0, 1, 0, "minecraft:oak_leaves", false);
 
             .. tab-item:: Schematic
 
