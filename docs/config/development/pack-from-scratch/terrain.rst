@@ -315,8 +315,6 @@ Setting up New Terrain
 
     .. image:: /img/config/development/pack-from-scratch/hill-terrain.png
 
-
-
 Conclusion
 ==========
 
