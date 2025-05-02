@@ -79,6 +79,8 @@ Setting up a New Pipeline
 2. Add pipeline blending
 ------------------------
 
+.. card::
+
     The biome pipeline will require blending that will warp the edges between biomes
     in order to lessen the blocky edges created from the pipeline resolution increase.
 
@@ -115,6 +117,8 @@ Setting up a New Pipeline
 
 3. Add the pipeline source
 --------------------------
+
+.. card::
 
     The biome pipeline will require a source that will serve as the initial biome layout.
 
@@ -162,6 +166,8 @@ Setting up a New Pipeline
 
 4. Add the pipeline stage
 -------------------------
+
+.. card::
 
     The biome pipeline will require a stage to replace the placeholder biome that the source initially laid out.
 
