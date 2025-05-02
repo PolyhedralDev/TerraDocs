@@ -351,7 +351,7 @@ Setting up a New Feature
     .. code-block:: yaml
         :caption: first_biome.yml
         :linenos:
-        :emphasize-lines: 15-17
+        :emphasize-lines: 9-11
 
         id: FIRST_BIOME
 

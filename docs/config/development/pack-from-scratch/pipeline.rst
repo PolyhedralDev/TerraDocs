@@ -174,7 +174,7 @@ Setting up a New Pipeline
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 21-30
+        :emphasize-lines: 21-29
 
         id: YOUR_PACK_ID
 
