@@ -44,15 +44,12 @@ Setting up a New Pipeline
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 9
+        :emphasize-lines: 6
 
         id: YOUR_PACK_ID
-
-        version: 0.1.0
+        version: 0.6.0
 
         addons:
-          language-yaml: "1.+"
-          chunk-generator-noise-3d: "1.+"
           ...
           biome-provider-pipeline-v2: "1.+"
 

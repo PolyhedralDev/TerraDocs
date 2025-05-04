@@ -38,6 +38,18 @@ Setting up a New Structure
 
                 1. Add the ``structure-terrascript-loader`` addon to the pack manifest, using versions ``1.+``
 
+                .. code-block:: yaml
+                    :caption: pack.yml
+                    :linenos:
+                    :emphasize-lines: 6
+
+                    id: YOUR_PACK_ID
+                    version: 0.5.0
+
+                    addons:
+                      ...
+                      structure-terrascript-loader: "1.+"
+
                 2. Create a blank ``.tesf`` file.
 
                 3. Add TerraScript within the ``.tesf`` file to generate the structure.
@@ -59,6 +71,18 @@ Setting up a New Structure
                 `WorldEdit <https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__.
 
                 1. Add the ``structure-sponge-loader`` addon to the pack manifest, using versions ``1.+``
+
+                .. code-block:: yaml
+                    :caption: pack.yml
+                    :linenos:
+                    :emphasize-lines: 6
+
+                    id: YOUR_PACK_ID
+                    version: 0.5.0
+
+                    addons:
+                      ...
+                      structure-sponge-loader: "1.+"
 
                 2. Source a ``.schem`` file, these can be created using `WorldEdit <https://worldedit.enginehub.org/en/latest/usage/clipboard/>`__ if you wish to create your own.
 
@@ -263,10 +287,9 @@ Setting up a New Structure
     .. code-block:: yaml
         :caption: first_biome.yml
         :linenos:
-        :emphasize-lines: 18-19
+        :emphasize-lines: 11-12
 
         id: FIRST_BIOME
-
         type: BIOME
 
         vanilla: minecraft:plains

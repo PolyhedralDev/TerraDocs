@@ -37,11 +37,10 @@ Setting up a New Feature
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 9
+        :emphasize-lines: 8
 
         id: YOUR_PACK_ID
-
-        version: 0.1.0
+        version: 0.4.0
 
         addons:
           language-yaml: "1.+"
@@ -85,11 +84,10 @@ Setting up a New Feature
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 7
+        :emphasize-lines: 6
 
         id: YOUR_PACK_ID
-
-        version: 0.1.0
+        version: 0.4.0
 
         addons:
           ...
@@ -123,11 +121,10 @@ Setting up a New Feature
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 7
+        :emphasize-lines: 6
 
         id: YOUR_PACK_ID
-
-        version: 0.1.0
+        version: 0.4.0
 
         addons:
           ...
@@ -168,11 +165,10 @@ Setting up a New Feature
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 7
+        :emphasize-lines: 6
 
         id: YOUR_PACK_ID
-
-        version: 0.1.0
+        version: 0.4.0
 
         addons:
           ...
@@ -274,11 +270,10 @@ Setting up a New Feature
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 7
+        :emphasize-lines: 6
 
         id: YOUR_PACK_ID
-
-        version: 0.1.0
+        version: 0.4.0
 
         addons:
           ...
@@ -351,10 +346,9 @@ Setting up a New Feature
     .. code-block:: yaml
         :caption: first_biome.yml
         :linenos:
-        :emphasize-lines: 9-11
+        :emphasize-lines: 8-10
 
         id: FIRST_BIOME
-
         type: BIOME
 
         vanilla: minecraft:plains
@@ -374,10 +368,9 @@ Setting up a New Feature
     .. code-block:: yaml
         :caption: first_biome.yml
         :linenos:
-        :emphasize-lines: 7-11
+        :emphasize-lines: 6-10
 
         id: FIRST_BIOME
-
         type: BIOME
 
         ...
