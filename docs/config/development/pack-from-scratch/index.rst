@@ -24,5 +24,6 @@ Contents
     pipeline
     ocean
     carving
+    ores
 
 
