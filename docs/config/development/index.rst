@@ -16,5 +16,7 @@ Config Development
 
     modifying-existing-pack
 
+    terrain-list
+
     noise/index
     image/index
