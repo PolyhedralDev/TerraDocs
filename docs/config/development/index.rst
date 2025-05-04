@@ -17,6 +17,7 @@ Config Development
     modifying-existing-pack
 
     terrain-list
+    multi-layered-terrain
 
     noise/index
     image/index
