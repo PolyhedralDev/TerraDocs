@@ -187,6 +187,8 @@ configuration:
 Other Noise Sampler Techniques
 ==============================
 
+.. _sampler-fractalization:
+
 Fractalization
 --------------
 
