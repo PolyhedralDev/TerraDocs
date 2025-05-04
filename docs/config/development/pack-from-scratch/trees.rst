@@ -1,6 +1,6 @@
-===================================
-Creating a Feature with a Structure
-===================================
+================================================
+Creating a Feature with a Structure From Scratch
+================================================
 
 This guide will outline the process of creating a new feature from the beginning
 with adding tree structures.
