@@ -22,7 +22,7 @@ Contents
     grass
     trees
     pipeline
-    ocean
+    oceans
     carving
     ores
 

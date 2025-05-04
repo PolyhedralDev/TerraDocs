@@ -1,9 +1,9 @@
-==============================
-Creating an Ocean From Scratch
-==============================
+============================
+Creating Oceans From Scratch
+============================
 
 This guide will continue the process of creating a new Terra config
-pack from the beginning with creating an ocean.
+pack from the beginning with creating oceans.
 
 If you haven't already, please read the
 :doc:`Config Development Introduction </config/development/introduction>` &
@@ -13,8 +13,8 @@ for more information before continuing.
 If you're stuck or need an example, you can find reference config packs for this guide on the
 `GitHub repo <https://github.com/PolyhedralDev/TerraPackFromScratch/>`_\.
 
-Setting up an Ocean
-===================
+Setting up Oceans
+=================
 
 `PROCEDURE`
 
