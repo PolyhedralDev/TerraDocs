@@ -174,7 +174,7 @@ Setting up Oceans
     depending on the number of biomes that will require this ocean palette along with updating each
     biome if this shared :ref:`parameter <parameters>` changes.
 
-3. Add abstract config
+4. Add abstract config
 ----------------------
 
 .. card::
@@ -209,7 +209,7 @@ Setting up Oceans
 
     Any :ref:`parameters <parameters>` configured in this ``BASE`` config can be easily extended to any ``BIOME`` config file.
 
-4. Extend abstract config
+5. Extend abstract config
 -------------------------
 
 .. card::
@@ -263,7 +263,7 @@ Setting up Oceans
 
         ...
 
-5. Load up your pack
+6. Load up your pack
 --------------------
 
 At this stage, your pack should now be capable of generating oceans.
