@@ -144,7 +144,7 @@ Setting up a New Pack
         version: 0.1.0
 
         addons:
-          language-yaml: 1.+
+          language-yaml: "1.+"
 
     Addons defined under the ``addons`` parameter are specified as key-value pairs where the key
     specifies the addon name, and the value specifies the required addon version(s).
@@ -174,8 +174,8 @@ Setting up a New Pack
         :emphasize-lines: 3
 
         addons:
-          language-yaml: 1.+
-          chunk-generator-noise-3d: 1.+
+          language-yaml: "1.+"
+          chunk-generator-noise-3d: "1.+"
 
     .. note::
 
@@ -193,8 +193,8 @@ Setting up a New Pack
         version: 0.1.0
 
         addons:
-          language-yaml: 1.+
-          chunk-generator-noise-3d: 1.+
+          language-yaml: "1.+"
+          chunk-generator-noise-3d: "1.+"
 
         generator: NOISE_3D
 
@@ -206,10 +206,10 @@ Setting up a New Pack
         :emphasize-lines: 4,5
 
         addons:
-          language-yaml: 1.+
-          chunk-generator-noise-3d: 1.+
-          config-noise-function: 1.+
-          palette-block-shortcut: 1.+
+          language-yaml: "1.+"
+          chunk-generator-noise-3d: "1.+"
+          config-noise-function: "1.+"
+          palette-block-shortcut: "1.+"
 
 6. Create your first biome
 --------------------------
@@ -339,12 +339,12 @@ After you have added ``biome-provider-single``, you can add the ``biomes`` param
     version: 0.1.0
 
     addons:
-      language-yaml: 1.+
-      chunk-generator-noise-3d: 1.+
-      config-noise-function: 1.+
-      palette-block-shortcut: 1.+
-      config-biome: 1.+
-      biome-provider-single: 1.+
+      language-yaml: "1.+"
+      chunk-generator-noise-3d: "1.+"
+      config-noise-function: "1.+"
+      palette-block-shortcut: "1.+"
+      config-biome: "1.+"
+      biome-provider-single: "1.+"
 
     generator: NOISE_3D
 
