@@ -3,7 +3,9 @@ Creating a Palette From Scratch
 ===============================
 
 This guide will continue the process of creating a new Terra config
-pack from the beginning with creating a new palette. If you haven't already, please read the
+pack from the beginning with creating a new palette.
+
+If you haven't already, please read the
 :doc:`Config Development Introduction </config/development/introduction>` &
 :doc:`Creating A Pack From Scratch </config/development/pack-from-scratch/introduction>`
 for more information before continuing.

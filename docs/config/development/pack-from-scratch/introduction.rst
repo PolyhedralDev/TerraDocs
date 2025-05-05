@@ -4,6 +4,7 @@ Creating a Pack from Scratch
 
 This guide will outline the process of creating a new Terra config
 pack from the beginning with creating the pack manifest and the first biome.
+
 If you haven't already, please read the
 :doc:`Config Development Introduction </config/development/introduction>`
 for more information before continuing.
