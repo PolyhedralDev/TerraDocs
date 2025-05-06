@@ -28,7 +28,7 @@ Setting up Carving
 
     Cached samplers allow a sampler to be used anywhere in the pack for
     :doc:`noise sampler </config/documentation/objects/NoiseSampler>` expressions and
-    the :ref:`TerraScript Sampler Function <function-recursions>`.
+    the :ref:`TerraScript Sampler Function <function-sampler>`.
 
     Cached samplers are extremely convenient especially when you have various expressions that utilize the same
     :doc:`noise sampler </config/documentation/objects/NoiseSampler>`.
@@ -71,11 +71,11 @@ Setting up Carving
     The fractalizer type ``FBM`` combines multiple layers (or octaves) of the :doc:`noise sampler </config/documentation/objects/NoiseSampler>`
     in order to add more detail to the sampler.
 
-    The newly cached ``simplex`` sampler will be generally used for terrain samplers as terrain typically
-    utilizes 2 dimensions.
+    The newly cached ``simplex`` sampler will be generally used for terrain samplers as they typically
+    utilize 2 dimensions.
 
     The newly cached ``simplex3`` sampler will be used for the carving that will implemented in this guide as
-    it works with 3 dimensions.
+    they work with 3 dimensions.
 
 2. Add carving abstract config
 ------------------------------
@@ -84,17 +84,26 @@ Setting up Carving
 
     An abstract carving config will be utilized for biomes to easily extend and inherit the carving.
 
-    :ref:`Create a blank config file <create-config-file>` and open it your editor.
+    :ref:`Create a blank config file <create-config-file>` with the file name ``carving_land.yml``.
 
     Set the :ref:`config type <config-types>` via the ``type``
-    :ref:`parameter <parameters>`, and config ``id`` as shown below.
-
-    ``carving_land.yml`` will be example file name used in this guide.
+    :ref:`parameter <parameters>`, config ``id``, and ``abstract`` as shown below.
 
     .. code-block:: yaml
         :caption: carving_land.yml
         :linenos:
     
+        id: CARVING_LAND
+        type: BIOME
+        abstract: true
+
+    Add the following lines to add the carving sampler.
+
+    .. code-block:: yaml
+        :caption: carving_land.yml
+        :linenos:
+        :emphasize-lines: 5-29
+
         id: CARVING_LAND
         type: BIOME
         abstract: true
@@ -125,12 +134,33 @@ Setting up Carving
                 )
               )
 
-    This carving sampler carves out non-air blocks between the set maximum y-level of ``140`` and
+    .. tip::
+
+        It is recommended to have read the :doc:`Creating Terrain From Scratch </config/development/pack-from-scratch/terrain>`
+        and the :doc:`TerraScript Syntax </config/documentation/terrascript/syntax>` to have a better
+        understanding.
+
+
+    This carving sampler will carve out non-air blocks between the set maximum y-level of ``140`` and
     minimum y-level ``-63``.
 
     The sampler expression will produce results that resemble that of spaghetti caves.
 
-    This guide as of the current moment will not go into the full detail of how this carving expression works.
+    This guide will not go into the full depth of how this carving sampler works, but at least
+    give a brief limited explanation.
+
+    Starting with the expression is with the ``carvingThreshold`` value set to negative, which
+    gets added to by the rest of the expression.
+
+    The rest of the expression states that if ``y`` is less than ``carvingMinHeight`` or ``y`` is
+    greater than ``carvingMaxHeight``, then output ``0``.
+
+    This results in no block placement at that coordinate.
+
+    The argument after ``0`` can be seen as the else statement. It contains ``min()``
+    , which takes the lowest value between ``carvingCap`` and the ``max()`` that takes the
+    highest value between two sets of simplex3 samplers with each sampler slightly offset from
+    the other and added together.
 
     .. note::
 
@@ -146,11 +176,12 @@ Setting up Carving
 
     Open ``FIRST_BIOME`` and ``SECOND_BIOME`` in your :ref:`editor of choice <editor>`.
 
-    Add the ``CARVING_LAND`` to the ``extends`` parameter list within ``FIRST_BIOME`` and ``SECOND_BIOME`` configs.
+    Add the ``CARVING_LAND`` to the ``extends`` parameter list of ``FIRST_BIOME`` and ``SECOND_BIOME``.
 
     .. code-block:: yaml
         :caption: first_biome.yml
         :linenos:
+        :emphasize-lines: 3-5
 
         id: FIRST_BIOME
         type: BIOME
@@ -163,6 +194,7 @@ Setting up Carving
     .. code-block:: yaml
         :caption: second_biome.yml
         :linenos:
+        :emphasize-lines: 3-5
 
         id: SECOND_BIOME
         type: BIOME
@@ -172,10 +204,14 @@ Setting up Carving
 
         ...
 
-    It is not recommended to add ``CARVING_LAND`` to ``OCEAN_BIOME`` as the carving is set with a max range value
-    that results in carved pockets of air with floating water in the ocean.
+    .. warning::
 
-    Another abstract carving config with a reduced max carving height is recommended to avoid this issue.
+        It is not recommended to add ``CARVING_LAND`` to ``OCEAN_BIOME`` as the carving is set with a max range value
+        that will result in carved pockets of air with floating water in the ocean.
+
+        Another abstract carving config with a reduced max carving height is recommended to avoid this issue.
+
+.. image:: /img/config/development/pack-from-scratch/carving/carving.png
 
 4. Load up your pack
 --------------------
@@ -193,10 +229,14 @@ Setting up Carving
 
   If you still are unable to load the pack, feel free to :doc:`contact us </contact>` with any relevant errors.
 
-  If you have loaded the pack and have done the :doc:`Creating an Ocean from Scratch</config/development/pack-from-scratch/introduction>`,
-  you'll notice instances of floating water that had adjacent solid blocks carved out by ``CARVING_LAND``.
+  .. attention::
+      If you have loaded the pack and did the :doc:`Creating an Ocean from Scratch</config/development/pack-from-scratch/introduction>`,
+      previosuly, you'll see cases of floating water, which had their adjacent solid
+      blocks carved out by ``CARVING_LAND``.
 
-  This issue will be addressed in the next step.
+      This issue will be addressed in the next step.
+
+.. image:: /img/config/development/pack-from-scratch/carving/carving-issue.png
 
 5. Floating Water Issue
 -----------------------
@@ -208,16 +248,24 @@ Setting up Carving
   The simpler method that will be used in this guide is a feature that will place stone blocks in order to contain
   floating water blocks.
 
-  :ref:`Create a blank config file <create-config-file>` and open it your editor.
+  :ref:`Create a blank config file <create-config-file>` with the file name ``contain_floating_water.yml``.
 
   Set the :ref:`config type <config-types>` via the ``type``
   :ref:`parameter <parameters>`, and config ``id`` as shown below.
 
-  ``contain_floating_water.yml`` will be example file name used in this guide.
+  .. code-block:: yaml
+      :caption: contain_floating_water.yml
+      :linenos:
+
+      id: CONTAIN_FLOATING_WATER
+      type: FEATURE
+
+  Add the highlighted lines to create this specific feature.
 
   .. code-block:: yaml
       :caption: contain_floating_water.yml
       :linenos:
+      :emphasize-lines: 4-35
 
       id: CONTAIN_FLOATING_WATER
       type: FEATURE
@@ -262,12 +310,13 @@ Setting up Carving
 
   Open your pack manifest in your :ref:`editor of choice <editor>`.
 
-  Add a generation stage to your ``pack.yml`` for this feature to generate separately from other features.
+  Add a generation stage to your pack manifest to allow this feature to generate
+  separately from other features.
 
   The generation stage will be called ``preprocessors`` for this guide.
 
   .. code-block:: yaml
-      :caption: contain_floating_water.yml
+      :caption: pack.yml
       :linenos:
       :emphasize-lines: 5-7
 
@@ -287,9 +336,15 @@ Setting up Carving
 
 .. card::
 
+  The ``CONTAIN_FLOATING_WATER`` feature could be added individually to every biome config, but that can be tedious
+  depending on the number of biomes your config pack has.
+
+  Like in :doc:`Creating an Ocean from Scratch</config/development/pack-from-scratch/introduction>` with an ocean
+  palette, an abstract config can be used to extend features for biomes to inherit and generate.
+
   Open your ``BASE`` config in your :ref:`editor of choice <editor>`.
 
-  Add the following lines in order for biomes that extend ``BASE`` to inherit the ``preprocessors``
+  Add the following lines for biomes that extend ``BASE`` to inherit the ``preprocessors``
   feature generation from ``BASE``.
 
   .. code-block:: yaml
@@ -319,3 +374,5 @@ now generate a world with caves!
 
 Reference configurations for this guide can be found on GitHub
 `here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/8-adding-carving>`_.
+
+.. image:: /img/config/development/pack-from-scratch/carving/carving-fixed.png
