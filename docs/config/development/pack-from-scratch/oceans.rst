@@ -23,14 +23,14 @@ Setting up Oceans
 
 .. card::
 
-    An ocean biome config will be necessary to generate oceans and customize the features within them.
+    An ocean biome config is necessary to generate oceans and customize the features within them.
 
-    :ref:`Create a blank config file <create-config-file>` and open it your editor.
+    :ref:`Create a blank config file <create-config-file>` with the file name ``ocean_biome.yml``.
 
     Set the :ref:`config type <config-types>` via the ``type``
     :ref:`parameter <parameters>`, and config ``id`` as shown below.
 
-    ``ocean_biome.yml`` will be example file name used for the config in this guide.
+    Set the rest of ``OCEAN_BIOME`` parameters as the sample below.
 
     .. code-block:: yaml
         :caption: ocean_biome.yml
@@ -60,6 +60,8 @@ Setting up Oceans
         palette:
           - SAND_PALETTE: 319
 
+    ``OCEAN_BIOME`` generates terrain at a lower y-level for water to eventually fill up above.
+
 2. Add ocean biome to pipeline
 ------------------------------
 
@@ -76,7 +78,7 @@ Setting up Oceans
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 22,32-38
+        :emphasize-lines: 18-19,22,32-38
 
         id: YOUR_PACK_ID
 
@@ -104,7 +106,7 @@ Setting up Oceans
               - type: REPLACE
                 sampler:
                   type: OPEN_SIMPLEX_2
-                  frequency: 0.04
+                  frequency: 0.01
                 from: land
                 to:
                   - FIRST_BIOME: 1
@@ -112,27 +114,30 @@ Setting up Oceans
               - type: REPLACE
                 sampler:
                   type: OPEN_SIMPLEX_2
-                  frequency: 0.04
+                  frequency: 0.01
                 from: ocean
                 to:
                   - OCEAN_BIOME: 1
 
-    An ephemeral ``ocean`` biome will generate alongside the ephemeral ``land`` biome.
+    An ephemeral ``ocean`` biome will generate with the ephemeral ``land`` biome.
 
-    The ephemeral ``ocean`` biome is replaced by the ``OCEAN_BIONE`` in a ``REPLACE`` stage later on.
+    The ephemeral ``ocean`` biome is replaced by the ``OCEAN_BIOME`` in a ``REPLACE`` stage later on.
 
-    Don't forget to replace the ``CONSTANT`` sampler for the source ephemeral biomes, or only ``OCEAN_BIOME``
-    will generate in the world.
+    Don't forget to replace the ``CONSTANT`` sampler for the source ephemeral
+    :doc:`pipeline biomes </config/documentation/objects/PipelineBiome>`
+    ,or only ``OCEAN_BIOME`` will generate in the world.
 
     Loading up the world with the newly added ``OCEAN_BIOME`` will present empty oceans
     without any water currently.
+
+    .. image:: /img/config/development/pack-from-scratch/oceans/oceans-empty.png
 
 3. Add ocean palette
 --------------------
 
 .. card::
 
-    Now that you've sourced your ocean biome, water will be needed to fill your ``OCEAN_BIOME``.
+    Water will be needed to fill your oceans.
 
     This can be done through an ocean palette.
 
@@ -166,13 +171,18 @@ Setting up Oceans
     In this case, ocean palette will place water blocks to fill any air blocks
     from y-level 62 down to the bottom of the world.
 
-    An issue that should be noted with ``OCEAN_BIOME`` as the only biome config
-    with this ocean palette is how biome blending will show obvious air gaps
-    when blending with other biomes without this ocean palette.
+    .. important::
 
-    You could add this ocean palette to every biome as well, but that can get tedious
-    depending on the number of biomes that will require this ocean palette along with updating each
-    biome if this shared :ref:`parameter <parameters>` changes.
+        An issue that should be noted with ``OCEAN_BIOME`` as the only biome config
+        with this ocean palette is how biome blending will show obvious air gaps
+        when blending with other biomes without this ocean palette.
+
+        You could add this ocean palette to every biome, but that can get tedious
+        depending on the number of biomes that will require this ocean palette
+        and a ocean palette change requiring an update to each biome config.
+
+
+.. image:: /img/config/development/pack-from-scratch/oceans/oceans-issue.png
 
 4. Add abstract config
 ----------------------
@@ -185,16 +195,24 @@ Setting up Oceans
     An abstract config file is very useful for :ref:`parameters <parameters>` that are shared and repeated across several biome configs
     without having to configure the :ref:`parameter <parameters>` in each config individually.
 
-    :ref:`Create a blank config file <create-config-file>` and open it your editor.
+    :ref:`Create a blank config file <create-config-file>`  with the file name ``base.yml``.
 
     Set the :ref:`config type <config-types>` via the ``type``
     :ref:`parameter <parameters>`, and config ``id`` as shown below.
 
-    ``base.yml`` will be example file name used in this guide.
+    .. code-block:: yaml
+        :caption: base.yml
+        :linenos:
+
+        id: BASE
+        type: BIOME
+
+    Add the following lines to make the config abstract and configure an ocean palette.
 
     .. code-block:: yaml
         :caption: base.yml
         :linenos:
+        :emphasize-lines: 3,5-7
 
         id: BASE
         type: BIOME
@@ -285,7 +303,7 @@ Once you have verified your pack has loaded correctly, you can now generate a wo
 Reference configurations for this guide can be found on GitHub
 `here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/7-adding-ocean>`_.
 
-
+.. image:: /img/config/development/pack-from-scratch/oceans/oceans-working.png
 
 
 
