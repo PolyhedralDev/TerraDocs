@@ -37,14 +37,12 @@ Setting up a New Feature
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 8
+        :emphasize-lines: 6
 
         id: YOUR_PACK_ID
         version: 0.4.0
 
         addons:
-          language-yaml: "1.+"
-          chunk-generator-noise-3d: "1.+"
           ...
           generation-stage-feature: "1.+"
 
@@ -93,12 +91,10 @@ Setting up a New Feature
           ...
           config-feature: "1.+"
 
-    :ref:`Create a blank config file <create-config-file>` and open it your editor.
+    :ref:`Create a blank config file <create-config-file>` with the file name ``grass_feature.yml``.
 
     Set the :ref:`config type <config-types>` via the ``type``
     :ref:`parameter <parameters>`, and config ``id`` as shown below.
-
-    ``grass_feature.yml`` will be example file name used for the feature config in this guide.
 
     .. code-block:: yaml
         :caption: grass_feature.yml
@@ -401,3 +397,5 @@ Once you have verified your pack has loaded correctly, you can now generate a wo
 
 Reference configurations for this guide can be found on GitHub
 `here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/4-adding-grass>`_.
+
+.. image:: /img/config/development/pack-from-scratch/first-biome-grass.png
