@@ -220,11 +220,61 @@ Setting up a New Pipeline
 
     .. note::
 
-        You'll need to source your own biomes other than ``FIRST_BIOME`` to have other biomes to distribute
+        Biomes other than ``FIRST_BIOME`` will need to be sourced to have another biome to distribute
         through the pipeline.
 
-        If needed, there is a ``SECOND_BIOME`` sample with a palette located on
-        `GitHub <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/6-adding-pipeline>`_.
+        There is a ``SECOND_BIOME`` sample with a palette located on
+        `GitHub <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/6-adding-pipeline>`_,
+        which is also shown below.
+
+        .. tab-set::
+
+            .. tab-item:: Second Biome
+
+                .. code-block:: yaml
+                    :caption: second_biome.yml
+                    :linenos:
+
+                    id: SECOND_BIOME
+                    type: BIOME
+                    vanilla: minecraft:desert
+
+                    terrain:
+                      sampler:
+                        type: EXPRESSION
+                        dimensions: 3
+                        expression: -y + 64
+
+                      sampler-2d:
+                        type: EXPRESSION
+                        dimensions: 2
+                        expression: (simplex(x, z)+1) * 2
+                        samplers:
+                          simplex:
+                            type: OPEN_SIMPLEX_2
+                            dimensions: 2
+                            frequency: 0.04
+
+                    palette:
+                      - SAND_PALETTE: 319
+
+            .. tab-item:: Palette
+
+                .. code-block:: yaml
+                    :caption: sand_palette.yml
+                    :linenos:
+
+                    id: SAND_PALETTE
+                    type: PALETTE
+
+                    layers:
+                      - materials: minecraft:sand
+                        layers: 3
+                      - materials: minecraft:sandstone
+                        layers: 2
+                      - materials: minecraft:stone
+                        layers: 1
+
 
 .. tip::
 
