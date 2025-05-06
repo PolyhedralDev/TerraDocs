@@ -51,7 +51,7 @@ Setting up a New Feature
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 5-10
+        :emphasize-lines: 5-7
 
         id: YOUR_PACK_ID
 

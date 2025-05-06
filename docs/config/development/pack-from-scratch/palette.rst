@@ -34,7 +34,7 @@ Setting up a New Palette
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 9
+        :emphasize-lines: 8
 
         id: YOUR_PACK_ID
         version: 0.2.0
