@@ -92,7 +92,7 @@ Setting up a New Structure
 
                 A sample ``oak_tree.schem`` can be found on `GitHub <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/4-adding-trees>`_ if needed.
 
-.. note::
+.. warning::
 
     If you decide to try out both structure file types, be sure to name them differently as you can't have
     structure files with the same name.
@@ -128,7 +128,7 @@ Setting up a New Structure
           - id: flora
             type: FEATURE
 
-.. tip::
+.. important::
 
     The generation stage ids can be named to your liking and generation stages will generate in order from top to bottom.
 

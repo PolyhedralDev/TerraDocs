@@ -61,7 +61,7 @@ Setting up a New Feature
           - id: flora
             type: FEATURE
 
-    .. tip::
+    .. important::
 
         The generation stage ids can be named to your liking and generation stages will generate in order from top to bottom.
 

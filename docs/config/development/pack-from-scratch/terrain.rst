@@ -316,7 +316,7 @@ Setting up New Terrain
                 dimensions: 2
                 frequency: 0.04
 
-    .. tip::
+    .. attention::
         Make sure you put the addition operation within parentheses to make sure it happens before the
         multiplication operation
 
