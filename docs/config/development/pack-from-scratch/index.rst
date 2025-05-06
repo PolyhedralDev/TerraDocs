@@ -3,7 +3,9 @@ Creating a Pack from Scratch
 ============================
 
 This guide will outline the process of creating a new Terra config
-pack from the beginning. If you haven't already, please read the
+pack from the beginning.
+
+If you haven't already, please read the
 :doc:`Config Development Introduction </config/development/introduction>`
 for more information before continuing.
 
