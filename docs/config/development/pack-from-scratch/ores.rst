@@ -43,18 +43,27 @@ Setting up Ores
           ...
           config-ore: "1.+"
 
-    :ref:`Create a blank config file <create-config-file>` and open it your editor.
-
-    Set the :ref:`config type <config-types>` via the ``type``
-    :ref:`parameter <parameters>`, and config ``id`` as shown below.
-
     An abstract ore config file will be necessary for ore configs to inherit from and easily configure.
 
-    ``abstract_ore.yml`` will be example file name used for this abstract ore file in this guide.
+    :ref:`Create a blank config file <create-config-file>` with the file name ``abstract_ore.yml``.
+
+    Set the :ref:`config type <config-types>` via the ``type``
+    :ref:`parameter <parameters>`, config ``id``, and ``abstract``` as shown below.
+
+    .. code-block:: yaml
+            :caption: abstract_ore.yml
+            :linenos:
+
+            id: ABSTRACT_ORE
+            type: ORE
+            abstract: true
+
+    Add the highlighted lines to add the ``replace`` parameter.
 
     .. code-block:: yaml
         :caption: abstract_ore.yml
         :linenos:
+        :emphasize-lines: 5-7
 
         id: ABSTRACT_ORE
         type: ORE
@@ -77,16 +86,25 @@ Setting up Ores
 
     With an abstract ore config prepared, an ore config can now be created to inherit those abstract parameters.
 
-    :ref:`Create a blank config file <create-config-file>` and open it your editor.
+    :ref:`Create a blank config file <create-config-file>` with the file name ``coal_ore.yml``.
 
     Set the :ref:`config type <config-types>` via the ``type``
-    :ref:`parameter <parameters>`, and config ``id`` as shown below.
-
-    ``coal_ore.yml`` will be example file name used for this ore file in this guide.
+    :ref:`parameter <parameters>`, config ``id``, and ``extends`` as shown below.
 
     .. code-block:: yaml
         :caption: coal_ore.yml
         :linenos:
+
+        id: COAL_ORE
+        type: ORE
+        extends: ABSTRACT_ORE
+
+    Add the highlighted lines to set the ``material``, ``material-overrides``, and ``size``.
+
+    .. code-block:: yaml
+        :caption: coal_ore.yml
+        :linenos:
+        :emphasize-lines: 5-10
 
         id: COAL_ORE
         type: ORE
@@ -105,9 +123,10 @@ Setting up Ores
 
     ``material-overrides`` determines different blocks to be placed if specified blocks are replaced by the ore.
 
-    If a deepslate block is replaced, then deepslate coal ore will be placed instead of regular coal ore for this case.
+    In this case, a deepslate block getting replaced results in deepslate coal ore being placed
+    instead of regular coal ore.
 
-    ``size`` determines the size of the ore vein that will generate
+    ``size`` determines the size of the ore vein that will generate.
 
 3. Add ore feature config file
 ------------------------------
@@ -117,16 +136,25 @@ Setting up Ores
     With an ore config file created, a feature config file will be needed in order to place that ore as a feature in
     a generation stage.
 
-    :ref:`Create a blank config file <create-config-file>` and open it your editor.
+    :ref:`Create a blank config file <create-config-file>` with the file name ``coal_ore_feature.yml``.
 
     Set the :ref:`config type <config-types>` via the ``type``
     :ref:`parameter <parameters>`, and config ``id`` as shown below.
 
-    ``coal_ore_feature.yml`` will be example file name used for this ore feature config file in this guide.
+    .. code-block:: yaml
+        :caption: coal_ore_feature.yml
+        :linenos:
+
+        id: COAL_ORE_FEATURE
+        type: FEATURE
+
+    Add the highlighted lines to set the :doc:`distributor </config/documentation/objects/Distributor>`,
+    :doc:`locator </config/documentation/objects/Locator>`, and structure.
 
     .. code-block:: yaml
         :caption: coal_ore_feature.yml
         :linenos:
+        :emphasize-lines: 4-24
 
         id: COAL_ORE_FEATURE
         type: FEATURE
@@ -146,40 +174,43 @@ Setting up Ores
             min: -64
             max: 192
           standard-deviation: (192-(-64))/6
-        # Divide distance from min to max by 6 to fit 3 standard deviations (~99.7% of results) within the range.
+        # Divide distance from min to max by 6 to fit 3 standard deviations
 
         structures:
           distribution:
             type: CONSTANT
           structures: COAL_ORE
 
-  The feature config for this ore is set up and configurable to best resemble ore generation.
+    The feature config for this ore is set up and configurable to best resemble ore generation.
 
-  The :doc:`distributor </config/documentation/objects/Distributor>` threshold utilizes a number that represents the average ore count per chunk, which proceeds
-  to get divided by 256.
+    The :doc:`distributor </config/documentation/objects/Distributor>` threshold utilizes a number that represents the average ore count per chunk, which proceeds
+    to get divided by 256.
 
-  The :doc:`locator </config/documentation/objects/Locator>` utilizes ``GAUSSIAN_RANDOM`` with a standard deviation that adds the max and min range values, which get
-  get divided by 6 in order to fit 3 standard deviations (~99.7% of results) within the range. Furthermore, ore
-  generation results are higher towards the middle of the range.
+    The :doc:`locator </config/documentation/objects/Locator>` utilizes ``GAUSSIAN_RANDOM`` with a standard deviation that adds the max and min range values, which get
+    get divided by 6 in order to fit 3 standard deviations (~99.7% of results) within the range. Furthermore, ore
+    generation results are higher towards the middle of the range.
 
-    .. note::
+    The ``structures.structures`` is set to use the ``COAL_ORE`` :doc:`ORE </config/documentation/configs/ORE>` config that was created
+    a step prior.
 
-      A uniform ore distribution generates ore with equal chance across the entire range rather than more towards the
-      middle of the range with a normal distribution.
+.. note::
 
-      A uniform ore distribution will use the locator shown below.
+    A uniform ore distribution generates ore with equal chance across the entire range rather than more towards the
+    middle of the range with a normal distribution.
 
-      .. code-block:: yaml
-          :caption: coal_ore_uniform.yml
-          :linenos:
+    A uniform ore distribution will use the locator shown below.
 
-          locator:
-            type: RANDOM
-            amount: 1
-            height:
-              min: -64
-              max: 192
-            salt: 1234
+    .. code-block:: yaml
+        :caption: coal_ore_uniform.yml
+        :linenos:
+
+        locator:
+          type: RANDOM
+          amount: 1
+          height:
+            min: -64
+            max: 192
+          salt: 1234
 
 4. Add ores feature stage
 -------------------------
@@ -196,7 +227,7 @@ Setting up Ores
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 15-16
+        :emphasize-lines: 9-10
 
         id: YOUR_PACK_ID
 
@@ -206,16 +237,16 @@ Setting up Ores
           - id: preprocessors
             type: FEATURE
 
+          - id: ores
+            type: FEATURE
+
           - id: flora
             type: FEATURE
 
           - id: trees
             type: FEATURE
 
-          - id: ores
-            type: FEATURE
-
-    The ores generation stage can now generate ores as features and kept separate from other generation stages.
+    The ``ores`` generation stage can now generate ores as features and be kept separate from other features.
 
 5. Create an abstract ore biome config
 --------------------------------------
@@ -228,16 +259,25 @@ Setting up Ores
     This eases the config development process down the line especially as more biomes and ores get added to
     the config pack without having to individually update every config file.
 
-    :ref:`Create a blank config file <create-config-file>` and open it your editor.
+    :ref:`Create a blank config file <create-config-file>` with the file name ``ores_default.yml``.
 
     Set the :ref:`config type <config-types>` via the ``type``
-    :ref:`parameter <parameters>`, and config ``id`` as shown below.
-
-    ``ores_default.yml`` will be example file name used for this abstract ore file in this guide.
+    :ref:`parameter <parameters>`, config ``id``, and abstract as shown below.
 
     .. code-block:: yaml
         :caption: ores_default.yml
         :linenos:
+
+        id: ORES_DEFAULT
+        type: BIOME
+        abstract: true
+
+    Add the highlighted lines to add ore feature generation to ``ORES_DEFAULT``.
+
+    .. code-block:: yaml
+        :caption: ores_default.yml
+        :linenos:
+        :emphasize-lines: 5-7
 
         id: ORES_DEFAULT
         type: BIOME
@@ -255,7 +295,7 @@ Setting up Ores
 
 .. card::
 
-    The biome configs can now be configured to extend ``ORES_DEFAULT`` in order to inherit and generate ore features.
+    Biome configs can now extend ``ORES_DEFAULT`` in order to inherit and generate ore features.
 
     While you could extend ``ORES_DEFAULT`` to each biome individually, you already have an abstract ``BASE`` config
     that is extended to each biome.
@@ -285,7 +325,7 @@ Setting up Ores
           preprocessors:
             - CONTAIN_FLOATING_WATER
 
-    ``ORES_DEFAULT`` should now be extended to all biome config that extend ``BASE`` and generate ``COAL_ORE_FEATURE``.
+    ``ORES_DEFAULT`` should now be extended to all biome configs that extend ``BASE`` and generate ``COAL_ORE_FEATURE``.
 
 7. Load your pack
 -----------------
@@ -309,7 +349,7 @@ now generate a world with ores!
 Reference configurations for this guide can be found on GitHub
 `here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/9-adding-ores>`_.
 
-
+.. image:: /img/config/development/pack-from-scratch/ores.png
 
 
 
