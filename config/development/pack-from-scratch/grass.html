@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Modifying an Existing Pack" href="../modifying-existing-pack.html" /><link rel="prev" title="Creating a Pack from Scratch" href="../pack-from-scratch/index.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Creating a Feature with a Structure From Scratch" href="trees.html" /><link rel="prev" title="Creating Terrain From Scratch" href="terrain.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>Creating a Feature from Scratch - Terra Docs</title>
@@ -275,10 +275,22 @@
 <li class="toctree-l3"><a class="reference internal" href="../config-data.html">Defining Data in Configs</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../config-system.html">The Config System</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../meta-configuration.html">Meta configuration</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../pack-from-scratch/index.html">Creating a Pack from Scratch</a></li>
-<li class="toctree-l3 current current-page"><a class="current reference internal" href="#">Creating a Feature from Scratch</a></li>
+<li class="toctree-l3 current has-children"><a class="reference internal" href="index.html">Creating a Pack from Scratch</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Creating a Pack from Scratch</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="introduction.html">Creating a Pack from Scratch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="palette.html">Creating a Palette From Scratch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="terrain.html">Creating Terrain From Scratch</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Creating a Feature from Scratch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="trees.html">Creating a Feature with a Structure From Scratch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="pipeline.html">Creating a Biome Provider from Scratch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="oceans.html">Creating Oceans From Scratch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="carving.html">Creating Carving From Scratch</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ores.html">Creating Ores From Scratch</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="../modifying-existing-pack.html">Modifying an Existing Pack</a></li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../noise/index.html">Noise</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Noise</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../terrain-list.html">List of Terrain Expressions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../multi-layered-terrain.html">Multi-Layered Terrain</a></li>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../noise/index.html">Noise</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Noise</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../noise/configuring.html">Configuring Noise Samplers</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../noise/use.html">How Noise Distributes Things</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../noise/theory.html">How Noise Samplers Work</a></li>
@@ -287,8 +299,8 @@
 <li class="toctree-l3"><a class="reference internal" href="../image/index.html">Image Configuration</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Config Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../documentation/configs/index.html">Config Files</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Config Files</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../documentation/index.html">Config Documentation</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" role="switch" type="checkbox"/><label for="toctree-checkbox-11"><div class="visually-hidden">Toggle navigation of Config Documentation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../documentation/configs/index.html">Config Files</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Config Files</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/configs/BIOME.html">BIOME</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/configs/FEATURE.html">FEATURE</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/configs/ORE.html">ORE</a></li>
@@ -297,7 +309,7 @@
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/configs/pack.yml.html">pack.yml</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../documentation/objects/index.html">Config Objects</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" role="switch" type="checkbox"/><label for="toctree-checkbox-12"><div class="visually-hidden">Toggle navigation of Config Objects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../documentation/objects/index.html">Config Objects</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of Config Objects</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Float.html">Float</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Integer.html">Integer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/NoiseSampler.html">NoiseSampler</a></li>
@@ -310,8 +322,8 @@
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Block.html">Block</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/PipelineBiome.html">PipelineBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Tag.html">Tag</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Pattern.html">Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/ColorSampler.html">ColorSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Pattern.html">Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Set.html">Set</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Distributor.html">Distributor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Locator.html">Locator</a></li>
@@ -326,23 +338,23 @@
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/ColorString.html">ColorString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Extrusion.html">Extrusion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Point.html">Point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Source.html">Source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Stage.html">Stage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Point.html">Point</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/CubicSplinePoint.html">CubicSplinePoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/SlantLayer.html">SlantLayer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/BiomeColorConverter.html">BiomeColorConverter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Feature.html">Feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/Structure.html">Structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/ChunkGenerator.html">ChunkGenerator</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/objects/NumberPredicate.html">NumberPredicate</a></li>
 </ul>
 </li>
-<li class="toctree-l3 has-children"><a class="reference internal" href="../../documentation/terrascript/index.html">TerraScript</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" role="switch" type="checkbox"/><label for="toctree-checkbox-13"><div class="visually-hidden">Toggle navigation of TerraScript</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3 has-children"><a class="reference internal" href="../../documentation/terrascript/index.html">TerraScript</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of TerraScript</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/terrascript/introduction.html">What TerraScript Can Do</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/terrascript/syntax.html">TerraScript Syntax</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../documentation/terrascript/functions.html">TerraScript Functions</a></li>
@@ -352,8 +364,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" role="switch" type="checkbox"/><label for="toctree-checkbox-14"><div class="visually-hidden">Toggle navigation of Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Introduction to the Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../api/index.html">Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" role="switch" type="checkbox"/><label for="toctree-checkbox-15"><div class="visually-hidden">Toggle navigation of Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/intro/index.html">Introduction to the Terra API</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of Introduction to the Terra API</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/loading.html">Terra Addon Loading</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/development-environment.html">Setting up a Development Environment</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/creating-simple-addon.html">Creating a Simple Addon</a></li>
@@ -362,7 +374,7 @@
 <li class="toctree-l3"><a class="reference internal" href="../../../api/intro/registering-config-type.html">Registering a Config Type</a></li>
 </ul>
 </li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" role="switch" type="checkbox"/><label for="toctree-checkbox-16"><div class="visually-hidden">Toggle navigation of API Concepts</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../api/concepts/index.html">API Concepts</a><input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" role="switch" type="checkbox"/><label for="toctree-checkbox-17"><div class="visually-hidden">Toggle navigation of API Concepts</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/manifest-addons.html">Manifest Addons</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/dependency-injection.html">Dependency Injection</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../api/concepts/logging.html">Logging With SLF4J</a></li>
@@ -395,7 +407,7 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="../../../_sources/config/development/feature-from-scratch/index.rst.txt" title="View this page">
+  <a class="muted-link" href="../../../_sources/config/development/pack-from-scratch/grass.rst.txt" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
@@ -417,13 +429,15 @@
         <article role="main" id="furo-main-content">
           <section id="creating-a-feature-from-scratch">
 <h1>Creating a Feature from Scratch<a class="headerlink" href="#creating-a-feature-from-scratch" title="Link to this heading">¶</a></h1>
-<p>This guide will outline the process of creating a new feature from the beginning.</p>
+<p>This guide will outline the process of creating a new feature from the beginning with adding grass.</p>
 <p>If you haven’t already, please read the
 <a class="reference internal" href="../introduction.html"><span class="doc">Config Development Introduction</span></a> &amp;
-<a class="reference internal" href="../pack-from-scratch/index.html"><span class="doc">Creating A Pack From Scratch</span></a>
+<a class="reference internal" href="index.html"><span class="doc">Creating A Pack From Scratch</span></a>
 for more information before continuing.</p>
 <p>For a more detailed and in-depth guide about creating a new feature from scratch, please read
 this unofficial development guide, <a class="reference external" href="https://terra.atr.sh/#/page/feature%20config">Feature Config</a>.</p>
+<p>If you’re stuck or need an example, you can find reference config packs for this guide on the
+<a class="reference external" href="https://github.com/PolyhedralDev/TerraPackFromScratch/">GitHub repo</a>.</p>
 <section id="setting-up-a-new-feature">
 <h2>Setting up a New Feature<a class="headerlink" href="#setting-up-a-new-feature" title="Link to this heading">¶</a></h2>
 <p><cite>PROCEDURE</cite></p>
@@ -439,139 +453,57 @@ to define at least one generation stage in order to generate any features.</p>
 <div class="literal-block-wrapper docutils container" id="id1">
 <div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id1" title="Link to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nt">addons</span><span class="p">:</span>
-<span class="linenos">6</span><span class="w">  </span><span class="nt">language-yaml</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.+&quot;</span>
-<span class="linenos">7</span><span class="w">  </span><span class="nt">chunk-generator-noise-3d</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.+&quot;</span>
-<span class="linenos">8</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-<span class="hll"><span class="linenos">9</span><span class="w">  </span><span class="nt">generation-stage-feature</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;1.+&quot;</span>
+<span class="linenos">2</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.4.0</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="nt">addons</span><span class="p">:</span>
+<span class="linenos">5</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="hll"><span class="linenos">6</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">generation-stage-feature</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;1.+&quot;</span>
 </span></pre></div>
 </div>
 </div>
-<p class="sd-card-text">Add the highlighted lines below to your pack manifest to create these generation stages.</p>
+<p class="sd-card-text">Add the highlighted lines below to your pack manifest to create the generation stage.</p>
 <div class="literal-block-wrapper docutils container" id="id2">
 <div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id2" title="Link to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="nn">...</span>
-<span class="linenos"> 4</span>
-<span class="hll"><span class="linenos"> 5</span><span class="nt">stages</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos"> 6</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">trees</span>
-</span><span class="hll"><span class="linenos"> 7</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FEATURE</span>
-</span><span class="hll"><span class="linenos"> 8</span>
-</span><span class="hll"><span class="linenos"> 9</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">landforms</span>
-</span><span class="hll"><span class="linenos">10</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FEATURE</span>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span>
+<span class="linenos">2</span>
+<span class="linenos">3</span><span class="nn">...</span>
+<span class="linenos">4</span>
+<span class="hll"><span class="linenos">5</span><span class="nt">stages</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">6</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">flora</span>
+</span><span class="hll"><span class="linenos">7</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FEATURE</span>
 </span></pre></div>
 </div>
 </div>
-<p class="sd-card-text">We’ll only be using the <code class="docutils literal notranslate"><span class="pre">trees</span></code> stage for this guide.</p>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
+<div class="admonition important">
+<p class="admonition-title">Important</p>
 <p class="sd-card-text">The generation stage ids can be named to your liking and generation stages will generate in order from top to bottom.</p>
 </div>
 </div>
 </div>
 </section>
-<section id="create-your-structure-file">
-<h3>2. Create your structure file<a class="headerlink" href="#create-your-structure-file" title="Link to this heading">¶</a></h3>
-<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
-<div class="sd-card-body docutils">
-<p class="sd-card-text"><a class="reference internal" href="../../documentation/objects/Structure.html"><span class="doc">Structure</span></a> files can
-either be dynamic TerraScript <code class="docutils literal notranslate"><span class="pre">.tesf</span></code> or static schematic <code class="docutils literal notranslate"><span class="pre">.schem</span></code> files.</p>
-<div class="sd-tab-set docutils">
-<input checked="checked" id="sd-tab-item-0" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-0">
-TerraScript</label><div class="sd-tab-content docutils">
-<p class="sd-card-text">TerraScript files are written in the <a class="reference internal" href="../../documentation/terrascript/index.html"><span class="doc">TerraScript Language</span></a>.
-TerraScript allows for procedurally generated structures and unique complex structure layouts.</p>
-<ol class="arabic simple">
-<li><p class="sd-card-text">Add the <code class="docutils literal notranslate"><span class="pre">structure-terrascript-loader</span></code> addon to the pack manifest, using versions <code class="docutils literal notranslate"><span class="pre">1.+</span></code></p></li>
-<li><p class="sd-card-text">Create a blank <code class="docutils literal notranslate"><span class="pre">.tesf</span></code> file.</p></li>
-<li><p class="sd-card-text">Add TerraScript within the <code class="docutils literal notranslate"><span class="pre">.tesf</span></code> file to generate the structure.</p></li>
-</ol>
-<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">oak_tree.tesf</span></code> will be the example file name used for this guide.</p>
-<p class="sd-card-text">A sample <code class="docutils literal notranslate"><span class="pre">oak_tree.tesf</span></code> file has been provided below if you need it.</p>
-<div class="literal-block-wrapper docutils container" id="id3">
-<div class="code-block-caption"><span class="caption-text">oak_tree.tesf</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="l l-Scalar l-Scalar-Plain">num height = 5+randomInt(3);</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="l l-Scalar l-Scalar-Plain">num randPrecision = 100;</span>
-<span class="linenos"> 4</span><span class="l l-Scalar l-Scalar-Plain">num radius = 2.5+randomInt(randPrecision)/randPrecision*2;</span>
-<span class="linenos"> 5</span><span class="l l-Scalar l-Scalar-Plain">num warp = 1;</span>
-<span class="linenos"> 6</span><span class="l l-Scalar l-Scalar-Plain">num warpFreq = 1;</span>
-<span class="linenos"> 7</span><span class="l l-Scalar l-Scalar-Plain">num squish = 1.5+randomInt(randPrecision)/randPrecision;</span>
-<span class="linenos"> 8</span><span class="l l-Scalar l-Scalar-Plain">num radiusSquared = pow(radius,2);</span>
-<span class="linenos"> 9</span>
-<span class="linenos">10</span><span class="l l-Scalar l-Scalar-Plain">for (num h = 0; h &lt; height; h = h + 1) block(0,h,0,&quot;minecraft:oak_log&quot;);</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="l l-Scalar l-Scalar-Plain">for (num x = -radius-warp; x &lt; radius+warp; x = x + 1) {</span>
-<span class="linenos">13</span><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">for (num y = (-radius-warp)/squish; y &lt; (radius+warp)/squish; y = y + 1) {</span>
-<span class="linenos">14</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">for (num z = -radius-warp; z &lt; radius+warp; z = z + 1) {</span>
-<span class="linenos">15</span><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">num warpX = warp * sampler(&quot;simplex3&quot;,</span>
-<span class="linenos">16</span><span class="w">                                </span><span class="l l-Scalar l-Scalar-Plain">warpFreq*(x+originX()),</span>
-<span class="linenos">17</span><span class="w">                                </span><span class="l l-Scalar l-Scalar-Plain">warpFreq*(y+originY()+1000),</span>
-<span class="linenos">18</span><span class="w">                                </span><span class="l l-Scalar l-Scalar-Plain">warpFreq*(z+originZ()));</span>
-<span class="linenos">19</span><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">num warpY = warp * sampler(&quot;simplex3&quot;,</span>
-<span class="linenos">20</span><span class="w">                                </span><span class="l l-Scalar l-Scalar-Plain">warpFreq*(x+originX()),</span>
-<span class="linenos">21</span><span class="w">                                </span><span class="l l-Scalar l-Scalar-Plain">warpFreq*(y+originY()+2000),</span>
-<span class="linenos">22</span><span class="w">                                </span><span class="l l-Scalar l-Scalar-Plain">warpFreq*(z+originZ()));</span>
-<span class="linenos">23</span><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">num warpZ = warp * sampler(&quot;simplex3&quot;,</span>
-<span class="linenos">24</span><span class="w">                                </span><span class="l l-Scalar l-Scalar-Plain">warpFreq*(x+originX()),</span>
-<span class="linenos">25</span><span class="w">                                </span><span class="l l-Scalar l-Scalar-Plain">warpFreq*(y+originY()+3000),</span>
-<span class="linenos">26</span><span class="w">                                </span><span class="l l-Scalar l-Scalar-Plain">warpFreq*(z+originZ()));</span>
-<span class="linenos">27</span><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">if (pow(x+warpX,2)+pow((y+warpY)*squish,2)+pow(z+warpZ,2) &lt; radiusSquared) {</span>
-<span class="linenos">28</span><span class="w">                </span><span class="l l-Scalar l-Scalar-Plain">block(x, y+height, z,&quot;minecraft:oak_leaves&quot;, false);</span>
-<span class="linenos">29</span><span class="w">            </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="linenos">30</span><span class="w">        </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="linenos">31</span><span class="w">    </span><span class="l l-Scalar l-Scalar-Plain">}</span>
-<span class="linenos">32</span><span class="l l-Scalar l-Scalar-Plain">}</span>
-</pre></div>
-</div>
-</div>
-</div>
-<input id="sd-tab-item-1" name="sd-tab-set-0" type="radio">
-<label class="sd-tab-label" for="sd-tab-item-1">
-Schematic</label><div class="sd-tab-content docutils">
-<p class="sd-card-text">Schematic files consist of an arrangement of blocks that make up a structure that can be saved through
-<a class="reference external" href="https://worldedit.enginehub.org/en/latest/usage/clipboard/">WorldEdit</a>.</p>
-<ol class="arabic simple">
-<li><p class="sd-card-text">Add the <code class="docutils literal notranslate"><span class="pre">structure-sponge-loader</span></code> addon to the pack manifest, using versions <code class="docutils literal notranslate"><span class="pre">1.+</span></code></p></li>
-<li><p class="sd-card-text">Source a <code class="docutils literal notranslate"><span class="pre">.schem</span></code> file, these can be created using <a class="reference external" href="https://worldedit.enginehub.org/en/latest/usage/clipboard/">WorldEdit</a> if you wish to create your own.</p></li>
-<li><p class="sd-card-text">Add the <code class="docutils literal notranslate"><span class="pre">.schem</span></code> file to your pack.</p></li>
-</ol>
-<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">oak_tree.schem</span></code> will be the example file name used for this guide.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
 <section id="create-your-feature-config">
-<h3>3. Create your feature config<a class="headerlink" href="#create-your-feature-config" title="Link to this heading">¶</a></h3>
+<h3>2. Create your feature config<a class="headerlink" href="#create-your-feature-config" title="Link to this heading">¶</a></h3>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text">Add the <code class="docutils literal notranslate"><span class="pre">config-feature</span></code> addon to the pack manifest, using versions <code class="docutils literal notranslate"><span class="pre">1.+</span></code>.</p>
 <p class="sd-card-text">This addon will allow us to create feature config files.</p>
-<div class="literal-block-wrapper docutils container" id="id4">
-<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id4" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id3">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id3" title="Link to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nt">addons</span><span class="p">:</span>
-<span class="linenos">6</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-<span class="hll"><span class="linenos">7</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config-feature</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;1.+&quot;</span>
+<span class="linenos">2</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.4.0</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="nt">addons</span><span class="p">:</span>
+<span class="linenos">5</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="hll"><span class="linenos">6</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config-feature</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;1.+&quot;</span>
 </span></pre></div>
 </div>
 </div>
-<p class="sd-card-text"><a class="reference internal" href="../config-files.html#create-config-file"><span class="std std-ref">Create a blank config file</span></a> and open it your editor.</p>
+<p class="sd-card-text"><a class="reference internal" href="../config-files.html#create-config-file"><span class="std std-ref">Create a blank config file</span></a> with the file name <code class="docutils literal notranslate"><span class="pre">grass_feature.yml</span></code>.</p>
 <p class="sd-card-text">Set the <a class="reference internal" href="../config-system.html#config-types"><span class="std std-ref">config type</span></a> via the <code class="docutils literal notranslate"><span class="pre">type</span></code>
 <a class="reference internal" href="../config-system.html#parameters"><span class="std std-ref">parameter</span></a>, and config <code class="docutils literal notranslate"><span class="pre">id</span></code> as shown below.</p>
-<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">oak_trees.yml</span></code> will be example file name used for the feature config in this guide.</p>
-<div class="literal-block-wrapper docutils container" id="id5">
-<div class="code-block-caption"><span class="caption-text">oak_trees.yml</span><a class="headerlink" href="#id5" title="Link to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OAK_TREES</span>
+<div class="literal-block-wrapper docutils container" id="id4">
+<div class="code-block-caption"><span class="caption-text">grass_feature.yml</span><a class="headerlink" href="#id4" title="Link to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRASS_FEATURE</span>
 <span class="linenos">2</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FEATURE</span>
 </pre></div>
 </div>
@@ -580,121 +512,137 @@ Schematic</label><div class="sd-tab-content docutils">
 </div>
 </section>
 <section id="add-the-feature-distributor">
-<h3>4. Add the feature distributor<a class="headerlink" href="#add-the-feature-distributor" title="Link to this heading">¶</a></h3>
+<h3>3. Add the feature distributor<a class="headerlink" href="#add-the-feature-distributor" title="Link to this heading">¶</a></h3>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><a class="reference internal" href="../../documentation/objects/Distributor.html"><span class="doc">Distributors</span></a> determine the x-axis and z-axis placement of a feature in the world.</p>
 <p class="sd-card-text">Add the <code class="docutils literal notranslate"><span class="pre">config-distributors</span></code> addon to the pack manifest, using versions <code class="docutils literal notranslate"><span class="pre">1.+</span></code>.</p>
 <p class="sd-card-text">This addon provides a set of <a class="reference internal" href="../../documentation/objects/Distributor.html"><span class="doc">distributors</span></a> to use within feature config files.</p>
-<div class="literal-block-wrapper docutils container" id="id6">
-<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id6" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id5">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id5" title="Link to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nt">addons</span><span class="p">:</span>
-<span class="linenos">6</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-<span class="hll"><span class="linenos">7</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config-distributors</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;1.+&quot;</span>
+<span class="linenos">2</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.4.0</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="nt">addons</span><span class="p">:</span>
+<span class="linenos">5</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="hll"><span class="linenos">6</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config-distributors</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;1.+&quot;</span>
 </span></pre></div>
 </div>
 </div>
-<p class="sd-card-text">Configure the <code class="docutils literal notranslate"><span class="pre">oak_trees.yml</span></code> config to utilize the <code class="docutils literal notranslate"><span class="pre">PADDED_GRID</span></code> distributor type as shown below.</p>
-<div class="literal-block-wrapper docutils container" id="id7">
-<div class="code-block-caption"><span class="caption-text">oak_trees.yml</span><a class="headerlink" href="#id7" title="Link to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OAK_TREES</span>
+<p class="sd-card-text">Configure the <code class="docutils literal notranslate"><span class="pre">grass_feature.yml</span></code> config to utilize the <code class="docutils literal notranslate"><span class="pre">POSITIVE_WHITE_NOISE</span></code> distributor type as shown below.</p>
+<div class="literal-block-wrapper docutils container" id="id6">
+<div class="code-block-caption"><span class="caption-text">grass_feature.yml</span><a class="headerlink" href="#id6" title="Link to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRASS_FEATURE</span>
 <span class="linenos">2</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FEATURE</span>
 <span class="linenos">3</span>
 <span class="hll"><span class="linenos">4</span><span class="nt">distributor</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos">5</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PADDED_GRID</span>
-</span><span class="hll"><span class="linenos">6</span><span class="w">  </span><span class="nt">width</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12</span>
-</span><span class="hll"><span class="linenos">7</span><span class="w">  </span><span class="nt">padding</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4</span>
-</span><span class="hll"><span class="linenos">8</span><span class="w">  </span><span class="nt">salt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">5864</span>
+</span><span class="hll"><span class="linenos">5</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SAMPLER</span>
+</span><span class="hll"><span class="linenos">6</span><span class="w">  </span><span class="nt">sampler</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">7</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">POSITIVE_WHITE_NOISE</span>
+</span><span class="hll"><span class="linenos">8</span><span class="w">  </span><span class="nt">threshold</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.25</span>
 </span></pre></div>
 </div>
 </div>
-<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">PADDED_GRID</span></code> distributor type utilizes cells in a grid with
-the feature placed within each cell with padding between each cell
-to ensure that features don’t generate too close to one another.</p>
-<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">PADDED_GRID</span></code> utilizes the nested <a class="reference internal" href="../config-system.html#parameters"><span class="std std-ref">parameters</span></a> <code class="docutils literal notranslate"><span class="pre">width</span></code>, <code class="docutils literal notranslate"><span class="pre">padding</span></code>, and <code class="docutils literal notranslate"><span class="pre">salt</span></code>.</p>
-<ul class="simple">
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Width</span></code> - Determines the size of each cell that will contain your feature</p></li>
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Padding</span></code> - Determines the gap between each cell</p></li>
-<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Salt</span></code> - Typically a random number that offsets the distributor results to prevent feature placement overlap with the same distributor type. Salt function covered in detail <a class="reference internal" href="../noise/theory.html#noise-sampler-salt-theory"><span class="std std-ref">here</span></a>.</p></li>
-</ul>
-<a class="reference internal image-reference" href="../../../_images/paddedgrid.png"><img alt="../../../_images/paddedgrid.png" src="../../../_images/paddedgrid.png" style="width: 75%;" />
-</a>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p class="sd-card-text">Documentation of <code class="docutils literal notranslate"><span class="pre">PADDED_GRID</span></code> and other distributor types can be found <a class="reference internal" href="../../documentation/objects/Distributor.html"><span class="doc">here</span></a>.</p>
+<p class="sd-card-text">Documentation of distributor types can be found <a class="reference internal" href="../../documentation/objects/Distributor.html"><span class="doc">here</span></a>.</p>
+<p class="sd-card-text">Documentation of <code class="docutils literal notranslate"><span class="pre">POSITIVE_WHITE_NOISE</span></code> and other noise samplers can be found <a class="reference internal" href="../../documentation/objects/NoiseSampler.html"><span class="doc">here</span></a>.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="add-the-feature-locator">
-<h3>5. Add the feature locator<a class="headerlink" href="#add-the-feature-locator" title="Link to this heading">¶</a></h3>
+<h3>4. Add the feature locator<a class="headerlink" href="#add-the-feature-locator" title="Link to this heading">¶</a></h3>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
 <p class="sd-card-text"><a class="reference internal" href="../../documentation/objects/Locator.html"><span class="doc">Locators</span></a> determine the y-axis placement of a feature in the world.</p>
 <p class="sd-card-text">Add the <code class="docutils literal notranslate"><span class="pre">config-locators</span></code> addon to the pack manifest, using versions <code class="docutils literal notranslate"><span class="pre">1.+</span></code>.</p>
 <p class="sd-card-text">This addon provides a set of <a class="reference internal" href="../../documentation/objects/Locator.html"><span class="doc">locators</span></a> to use within feature config files.</p>
-<div class="literal-block-wrapper docutils container" id="id8">
-<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id8" title="Link to this code">¶</a></div>
+<div class="literal-block-wrapper docutils container" id="id7">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id7" title="Link to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span>
-<span class="linenos">2</span>
-<span class="linenos">3</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.1.0</span>
-<span class="linenos">4</span>
-<span class="linenos">5</span><span class="nt">addons</span><span class="p">:</span>
-<span class="linenos">6</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
-<span class="hll"><span class="linenos">7</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config-locators</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;1.+&quot;</span>
+<span class="linenos">2</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.4.0</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="nt">addons</span><span class="p">:</span>
+<span class="linenos">5</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="hll"><span class="linenos">6</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">config-locators</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;1.+&quot;</span>
 </span></pre></div>
 </div>
 </div>
-<p class="sd-card-text">Configure the <code class="docutils literal notranslate"><span class="pre">oak_trees.yml</span></code> config to utilize the <code class="docutils literal notranslate"><span class="pre">TOP</span></code> locator type as shown below.</p>
-<div class="literal-block-wrapper docutils container" id="id9">
-<div class="code-block-caption"><span class="caption-text">oak_trees.yml</span><a class="headerlink" href="#id9" title="Link to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OAK_TREES</span>
+<p class="sd-card-text">Configure the <code class="docutils literal notranslate"><span class="pre">grass_feature.yml</span></code> config to utilize the <code class="docutils literal notranslate"><span class="pre">SURFACE</span></code> locator type as shown below.</p>
+<div class="literal-block-wrapper docutils container" id="id8">
+<div class="code-block-caption"><span class="caption-text">grass_feature.yml</span><a class="headerlink" href="#id8" title="Link to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRASS_FEATURE</span>
 <span class="linenos"> 2</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FEATURE</span>
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span><span class="nt">distributor</span><span class="p">:</span>
 <span class="linenos"> 5</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
 <span class="linenos"> 6</span>
 <span class="hll"><span class="linenos"> 7</span><span class="nt">locator</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos"> 8</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TOP</span>
+</span><span class="hll"><span class="linenos"> 8</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SURFACE</span>
 </span><span class="hll"><span class="linenos"> 9</span><span class="w">  </span><span class="nt">range</span><span class="p">:</span>
 </span><span class="hll"><span class="linenos">10</span><span class="w">    </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
 </span><span class="hll"><span class="linenos">11</span><span class="w">    </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">319</span>
 </span></pre></div>
 </div>
 </div>
-<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">TOP</span></code> locator type will place the feature on the block located at the highest y-level.</p>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">SURFACE</span></code> locator type will place the feature above any block with air above it.</p>
+<p class="sd-card-text">Each locator will typically require the <code class="docutils literal notranslate"><span class="pre">range</span></code> that it can check.</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">range</span></code> has <code class="docutils literal notranslate"><span class="pre">min</span></code> (minimum) and a <code class="docutils literal notranslate"><span class="pre">max</span></code> (maximum) <a class="reference internal" href="../config-system.html#parameters"><span class="std std-ref">parameters</span></a>.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p class="sd-card-text">Documentation of the various locator types available can be found <a class="reference internal" href="../../documentation/objects/Locator.html"><span class="doc">here</span></a>.</p>
 </div>
 </div>
 </div>
-<div class="admonition tip">
-<p class="admonition-title">Tip</p>
-<p>You can utilize multiple <a class="reference internal" href="../../documentation/objects/Locator.html"><span class="doc">locators</span></a> for stricter criteria as shown below with the <code class="docutils literal notranslate"><span class="pre">AND</span></code> locator.</p>
-<div class="literal-block-wrapper docutils container" id="id10">
-<div class="code-block-caption"><span class="caption-text">feature.yml</span><a class="headerlink" href="#id10" title="Link to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">locator</span><span class="p">:</span>
-<span class="hll"><span class="linenos"> 2</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AND</span>
-</span><span class="linenos"> 3</span><span class="w">  </span><span class="nt">locators</span><span class="p">:</span>
-<span class="linenos"> 4</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">TOP</span>
-<span class="linenos"> 5</span><span class="w">      </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;range</span><span class="w">  </span><span class="c1">#range values anchored for other locators to use</span>
-<span class="linenos"> 6</span><span class="w">        </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
-<span class="linenos"> 7</span><span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">319</span>
-<span class="linenos"> 8</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PATTERN</span>
-<span class="linenos"> 9</span><span class="w">      </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="nv">*range</span><span class="w">  </span><span class="c1">#references previously anchored range values</span>
-<span class="linenos">10</span><span class="w">      </span><span class="nt">pattern</span><span class="p">:</span>
-<span class="linenos">11</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MATCH_SET</span>
-<span class="linenos">12</span><span class="w">        </span><span class="nt">blocks</span><span class="p">:</span>
-<span class="linenos">13</span><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minecraft:grass_block</span>
-<span class="linenos">14</span><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minecraft:dirt</span>
-<span class="linenos">15</span><span class="w">        </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
-</pre></div>
+</section>
+<section id="improve-feature-locator">
+<h3>5. Improve feature locator<a class="headerlink" href="#improve-feature-locator" title="Link to this heading">¶</a></h3>
+<div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">SURFACE</span></code> locator is handy for placing features on top of blocks, but it doesn’t check the block it places
+the feature upon.</p>
+<p class="sd-card-text">Utilizing the <code class="docutils literal notranslate"><span class="pre">AND</span></code> locator, we can use multiple <a class="reference internal" href="../../documentation/objects/Locator.html"><span class="doc">locators</span></a> for
+stricter criteria for where the feature can generate.</p>
+<p class="sd-card-text">Using the <code class="docutils literal notranslate"><span class="pre">PATTERN</span></code> locator with the <code class="docutils literal notranslate"><span class="pre">type</span></code> specified to use <code class="docutils literal notranslate"><span class="pre">MATCH_SET</span></code> will allow us to specify the blocks
+that must match in order to generate the feature.</p>
+<p class="sd-card-text">Add the highlighted lines below to add the additional locator.</p>
+<div class="literal-block-wrapper docutils container" id="id9">
+<div class="code-block-caption"><span class="caption-text">feature.yml</span><a class="headerlink" href="#id9" title="Link to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRASS_FEATURE</span>
+<span class="linenos"> 2</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FEATURE</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="nt">distributor</span><span class="p">:</span>
+<span class="linenos"> 5</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="linenos"> 6</span>
+<span class="linenos"> 7</span><span class="nt">locator</span><span class="p">:</span>
+<span class="hll"><span class="linenos"> 8</span><span class="w">  </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">AND</span>
+</span><span class="hll"><span class="linenos"> 9</span><span class="w">  </span><span class="nt">locators</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">10</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">SURFACE</span>
+</span><span class="hll"><span class="linenos">11</span><span class="w">      </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="nl">&amp;range</span><span class="w">  </span><span class="c1">#range values anchored for other locators to use</span>
+</span><span class="hll"><span class="linenos">12</span><span class="w">        </span><span class="nt">min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0</span>
+</span><span class="hll"><span class="linenos">13</span><span class="w">        </span><span class="nt">max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">319</span>
+</span><span class="hll"><span class="linenos">14</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">PATTERN</span>
+</span><span class="hll"><span class="linenos">15</span><span class="w">      </span><span class="nt">range</span><span class="p">:</span><span class="w"> </span><span class="nv">*range</span><span class="w">  </span><span class="c1">#references previously anchored range values</span>
+</span><span class="hll"><span class="linenos">16</span><span class="w">      </span><span class="nt">pattern</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">17</span><span class="w">        </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">MATCH_SET</span>
+</span><span class="hll"><span class="linenos">18</span><span class="w">        </span><span class="nt">blocks</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">19</span><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minecraft:grass_block</span>
+</span><span class="hll"><span class="linenos">20</span><span class="w">          </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minecraft:dirt</span>
+</span><span class="hll"><span class="linenos">21</span><span class="w">        </span><span class="nt">offset</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">-1</span>
+</span></pre></div>
 </div>
+</div>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">AND</span></code> locator list contains both the <code class="docutils literal notranslate"><span class="pre">SURFACE</span></code> and <code class="docutils literal notranslate"><span class="pre">PATTERN</span></code> locators with the range anchored in <code class="docutils literal notranslate"><span class="pre">SURFACE</span></code>
+being referenced by the range in <code class="docutils literal notranslate"><span class="pre">PATTERN</span></code>.</p>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">PATTERN</span></code> locator with the <code class="docutils literal notranslate"><span class="pre">MATCH_SET</span></code> <code class="docutils literal notranslate"><span class="pre">type</span></code> consists of the <a class="reference internal" href="../config-system.html#parameters"><span class="std std-ref">parameters</span></a> <code class="docutils literal notranslate"><span class="pre">blocks</span></code>
+and <code class="docutils literal notranslate"><span class="pre">offset</span></code>.</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">blocks</span></code> - List of blocks that must match in order to generate the feature</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">offset</span></code> - The y-level offset of the checked block</p></li>
+</ul>
+<p class="sd-card-text">The blocks <code class="docutils literal notranslate"><span class="pre">minecraft:grass_block</span></code> and <code class="docutils literal notranslate"><span class="pre">minecraft:dirt</span></code> will suffice with an offset of -1 to check the block that
+is specifically right underneath the feature.</p>
 </div>
 </div>
 </section>
@@ -702,10 +650,29 @@ to ensure that features don’t generate too close to one another.</p>
 <h3>6. Add the structure<a class="headerlink" href="#add-the-structure" title="Link to this heading">¶</a></h3>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">You can now add your <a class="reference internal" href="../../documentation/objects/Structure.html"><span class="doc">structure</span></a> to the <code class="docutils literal notranslate"><span class="pre">oak_trees.yml</span></code> config with the highlighted lines below.</p>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">structure-block-shortcut</span></code> addon will provide the capability to use a shortcut within structure distribution
+to directly place a block rather than having to create an entire structure file for just a single block.</p>
+<p class="sd-card-text">Add the <code class="docutils literal notranslate"><span class="pre">structure-block-shortcut</span></code> addon to the pack manifest, using versions <code class="docutils literal notranslate"><span class="pre">1.+</span></code>.</p>
+<div class="literal-block-wrapper docutils container" id="id10">
+<div class="code-block-caption"><span class="caption-text">pack.yml</span><a class="headerlink" href="#id10" title="Link to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">YOUR_PACK_ID</span>
+<span class="linenos">2</span><span class="nt">version</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">0.4.0</span>
+<span class="linenos">3</span>
+<span class="linenos">4</span><span class="nt">addons</span><span class="p">:</span>
+<span class="linenos">5</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">...</span>
+<span class="hll"><span class="linenos">6</span><span class="w">  </span><span class="l l-Scalar l-Scalar-Plain">structure-block-shortcut</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="s">&quot;1.+&quot;</span>
+</span></pre></div>
+</div>
+</div>
+<p class="sd-card-text">We will now utilize the <code class="docutils literal notranslate"><span class="pre">structure-block-shortcut</span></code> addon that was added above to
+easily define single blocks rather than a <a class="reference internal" href="../../documentation/objects/Structure.html"><span class="doc">structure</span></a>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p class="sd-card-text">Versions prior to 1.20.3 will need to use <code class="docutils literal notranslate"><span class="pre">minecraft_grass</span></code>.</p>
+</div>
 <div class="literal-block-wrapper docutils container" id="id11">
-<div class="code-block-caption"><span class="caption-text">oak_trees.yml</span><a class="headerlink" href="#id11" title="Link to this code">¶</a></div>
-<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OAK_TREES</span>
+<div class="code-block-caption"><span class="caption-text">grass_feature.yml</span><a class="headerlink" href="#id11" title="Link to this code">¶</a></div>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRASS_FEATURE</span>
 <span class="linenos"> 2</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FEATURE</span>
 <span class="linenos"> 3</span>
 <span class="linenos"> 4</span><span class="nt">distributor</span><span class="p">:</span>
@@ -717,7 +684,7 @@ to ensure that features don’t generate too close to one another.</p>
 <span class="hll"><span class="linenos">10</span><span class="nt">structures</span><span class="p">:</span>
 </span><span class="hll"><span class="linenos">11</span><span class="w">  </span><span class="nt">distribution</span><span class="p">:</span>
 </span><span class="hll"><span class="linenos">12</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">CONSTANT</span>
-</span><span class="hll"><span class="linenos">13</span><span class="w">  </span><span class="nt">structures</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">oak_tree</span>
+</span><span class="hll"><span class="linenos">13</span><span class="w">  </span><span class="nt">structures</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BLOCK:minecraft:short_grass</span>
 </span></pre></div>
 </div>
 </div>
@@ -731,9 +698,9 @@ that influences the structure selection results.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
-<p>Features can select from a <a class="reference internal" href="../../documentation/objects/WeightedList.html"><span class="doc">weighted list</span></a> of structures with a
-<a class="reference internal" href="../../documentation/objects/NoiseSampler.html"><span class="doc">noise sampler</span></a>
-to guide the structure selection as shown below.</p>
+<p>Features can select from a <a class="reference internal" href="../../documentation/objects/WeightedList.html"><span class="doc">weighted list</span></a> of structures or blocks
+in this particular case with a <a class="reference internal" href="../../documentation/objects/NoiseSampler.html"><span class="doc">noise sampler</span></a> to guide
+the structure selection as shown below.</p>
 <div class="literal-block-wrapper docutils container" id="id12">
 <div class="code-block-caption"><span class="caption-text">feature.yml</span><a class="headerlink" href="#id12" title="Link to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span><span class="nt">structures</span><span class="p">:</span>
@@ -741,46 +708,37 @@ to guide the structure selection as shown below.</p>
 <span class="linenos">3</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">WHITE_NOISE</span>
 <span class="linenos">4</span><span class="w">    </span><span class="nt">salt</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">4357</span>
 <span class="linenos">5</span><span class="w">  </span><span class="nt">structures</span><span class="p">:</span>
-<span class="linenos">6</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">oak_tree_1</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="linenos">7</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">oak_tree_2</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
-<span class="linenos">8</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">oak_tree_3</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">6</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">BLOCK:minecraft:poppy</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">7</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">BLOCK:minecraft:blue_orchid</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
+<span class="linenos">8</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">BLOCK:minecraft:dandelion</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1</span>
 </pre></div>
 </div>
 </div>
 <p>Weighted lists covered in detail <a class="reference internal" href="../noise/use.html#weighted-list"><span class="std std-ref">here</span></a>.</p>
 </div>
 </section>
-<section id="apply-features-to-biomes">
-<h3>7. Apply features to biomes<a class="headerlink" href="#apply-features-to-biomes" title="Link to this heading">¶</a></h3>
+<section id="apply-feature-to-biome">
+<h3>6. Apply feature to biome<a class="headerlink" href="#apply-feature-to-biome" title="Link to this heading">¶</a></h3>
 <div class="sd-card sd-sphinx-override sd-mb-3 sd-shadow-sm docutils">
 <div class="sd-card-body docutils">
-<p class="sd-card-text">Open a biome file with your editor.</p>
-<p class="sd-card-text">We’ll use <code class="docutils literal notranslate"><span class="pre">FIRST_BIOME</span></code> from
-<a class="reference internal" href="../pack-from-scratch/index.html"><span class="doc">Creating A Pack From Scratch</span></a> for this guide</p>
+<p class="sd-card-text">We’ll now add the grass feature to <code class="docutils literal notranslate"><span class="pre">FIRST_BIOME</span></code>.</p>
 <p class="sd-card-text">Add the highlighted lines below to the <code class="docutils literal notranslate"><span class="pre">FIRST_BIOME</span></code> config.</p>
 <div class="literal-block-wrapper docutils container" id="id13">
 <div class="code-block-caption"><span class="caption-text">first_biome.yml</span><a class="headerlink" href="#id13" title="Link to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FIRST_BIOME</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BIOME</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="nt">vanilla</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minecraft:plains</span>
-<span class="linenos"> 6</span>
-<span class="linenos"> 7</span><span class="nt">terrain</span><span class="p">:</span>
-<span class="linenos"> 8</span><span class="w">  </span><span class="nt">sampler</span><span class="p">:</span>
-<span class="linenos"> 9</span><span class="w">    </span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">LINEAR_HEIGHTMAP</span>
-<span class="linenos">10</span><span class="w">    </span><span class="nt">base</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">64</span>
-<span class="linenos">11</span>
-<span class="linenos">12</span><span class="nt">palette</span><span class="p">:</span>
-<span class="linenos">13</span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">BLOCK:minecraft:stone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">319</span>
-<span class="linenos">14</span>
-<span class="hll"><span class="linenos">15</span><span class="nt">features</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos">16</span><span class="w">  </span><span class="nt">trees</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos">17</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OAK_TREES</span>
+<span class="linenos"> 2</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BIOME</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="nt">vanilla</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">minecraft:plains</span>
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span><span class="nn">...</span>
+<span class="linenos"> 7</span>
+<span class="hll"><span class="linenos"> 8</span><span class="nt">features</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos"> 9</span><span class="w">  </span><span class="nt">flora</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">10</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRASS_FEATURE</span>
 </span></pre></div>
 </div>
 </div>
-<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">OAK_TREES</span></code> feature should now generate your oak tree structures in <code class="docutils literal notranslate"><span class="pre">FIRST_BIOME</span></code>.</p>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">GRASS_FEATURE</span></code> should now generate grass in <code class="docutils literal notranslate"><span class="pre">FIRST_BIOME</span></code>.</p>
 </div>
 </div>
 <div class="admonition tip">
@@ -789,24 +747,23 @@ to guide the structure selection as shown below.</p>
 <div class="literal-block-wrapper docutils container" id="id14">
 <div class="code-block-caption"><span class="caption-text">first_biome.yml</span><a class="headerlink" href="#id14" title="Link to this code">¶</a></div>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">FIRST_BIOME</span>
-<span class="linenos"> 2</span>
-<span class="linenos"> 3</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BIOME</span>
-<span class="linenos"> 4</span>
-<span class="linenos"> 5</span><span class="nn">...</span>
-<span class="linenos"> 6</span>
-<span class="hll"><span class="linenos"> 7</span><span class="nt">features</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos"> 8</span><span class="w">  </span><span class="nt">trees</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos"> 9</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OAK_TREES</span>
-</span><span class="hll"><span class="linenos">10</span><span class="w">  </span><span class="nt">landforms</span><span class="p">:</span>
-</span><span class="hll"><span class="linenos">11</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ROCKS</span>
+<span class="linenos"> 2</span><span class="nt">type</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">BIOME</span>
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span><span class="nn">...</span>
+<span class="linenos"> 5</span>
+<span class="hll"><span class="linenos"> 6</span><span class="nt">features</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos"> 7</span><span class="w">  </span><span class="nt">flora</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos"> 8</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">GRASS_FEATURE</span>
+</span><span class="hll"><span class="linenos"> 9</span><span class="w">  </span><span class="nt">trees</span><span class="p">:</span>
+</span><span class="hll"><span class="linenos">10</span><span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">OAK_TREES</span>
 </span></pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="load-your-pack">
-<h3>8. Load your pack<a class="headerlink" href="#load-your-pack" title="Link to this heading">¶</a></h3>
-<p>At this stage, your pack should now be capable of generating oak trees! You can load up your pack by starting your
+<h3>7. Load your pack<a class="headerlink" href="#load-your-pack" title="Link to this heading">¶</a></h3>
+<p>At this stage, your pack should now be capable of generating grass! You can load up your pack by starting your
 development client / server which contains the pack you have just defined. You can confirm that your pack has loaded
 if the pack id (as specified in the pack manifest) appears when using the <code class="docutils literal notranslate"><span class="pre">/packs</span></code> command, or in your console
 when starting the server / client up.</p>
@@ -818,7 +775,10 @@ and follow through the previous steps again carefully.</p>
 </section>
 <section id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
-<p>Once you have verified your pack has loaded correctly, you can now generate a world with your new oak trees!</p>
+<p>Once you have verified your pack has loaded correctly, you can now generate a world with grass using features!</p>
+<p>Reference configurations for this guide can be found on GitHub
+<a class="reference external" href="https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/4-adding-grass">here</a>.</p>
+<img alt="../../../_images/first-biome-grass.png" src="../../../_images/first-biome-grass.png" />
 </section>
 </section>
 
@@ -827,23 +787,23 @@ and follow through the previous steps again carefully.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="../modifying-existing-pack.html">
+          <a class="next-page" href="trees.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Modifying an Existing Pack</div>
+                <div class="title">Creating a Feature with a Structure From Scratch</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="../pack-from-scratch/index.html">
+          <a class="prev-page" href="terrain.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Creating a Pack from Scratch</div>
+                <div class="title">Creating Terrain From Scratch</div>
                 
               </div>
             </a>
@@ -880,13 +840,13 @@ and follow through the previous steps again carefully.</p>
 <li><a class="reference internal" href="#">Creating a Feature from Scratch</a><ul>
 <li><a class="reference internal" href="#setting-up-a-new-feature">Setting up a New Feature</a><ul>
 <li><a class="reference internal" href="#add-feature-stage-s">1. Add feature stage(s)</a></li>
-<li><a class="reference internal" href="#create-your-structure-file">2. Create your structure file</a></li>
-<li><a class="reference internal" href="#create-your-feature-config">3. Create your feature config</a></li>
-<li><a class="reference internal" href="#add-the-feature-distributor">4. Add the feature distributor</a></li>
-<li><a class="reference internal" href="#add-the-feature-locator">5. Add the feature locator</a></li>
+<li><a class="reference internal" href="#create-your-feature-config">2. Create your feature config</a></li>
+<li><a class="reference internal" href="#add-the-feature-distributor">3. Add the feature distributor</a></li>
+<li><a class="reference internal" href="#add-the-feature-locator">4. Add the feature locator</a></li>
+<li><a class="reference internal" href="#improve-feature-locator">5. Improve feature locator</a></li>
 <li><a class="reference internal" href="#add-the-structure">6. Add the structure</a></li>
-<li><a class="reference internal" href="#apply-features-to-biomes">7. Apply features to biomes</a></li>
-<li><a class="reference internal" href="#load-your-pack">8. Load your pack</a></li>
+<li><a class="reference internal" href="#apply-feature-to-biome">6. Apply feature to biome</a></li>
+<li><a class="reference internal" href="#load-your-pack">7. Load your pack</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#conclusion">Conclusion</a></li>

@@ -12,45 +12,57 @@ Uses
 
 Used by 45 parameters:
 
-- :ref:`In WHITE_NOISE in NoiseSampler <object-noisesampler-template-config-noise-function-white_noise-parameter-salt>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-ocean.level>`:
 
-  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-white_noise-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+  :bdg-ref-success:`ocean.level <config-biome-template-chunk-generator-noise-3d-base-parameter-ocean.level>` :doc:`/config/documentation/objects/Integer` 
 
-- :ref:`In base in pack.yml <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-blend.terrain.elevation>`:
+- :ref:`In map in Range <object-range-template-base-map-parameter-max>`:
 
-  :bdg-ref-success:`blend.terrain.elevation <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-blend.terrain.elevation>` :doc:`/config/documentation/objects/Integer` 
+  :bdg-ref-primary:`max <object-range-template-base-map-parameter-max>` :doc:`/config/documentation/objects/Integer` - The maximum value (exclusive) of the range.
 
-- :ref:`In RANDOM in Locator <object-locator-template-config-locators-random-parameter-salt>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.distance>`:
 
-  :bdg-ref-success:`salt <object-locator-template-config-locators-random-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
+  :bdg-ref-success:`terrain.blend.distance <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.distance>` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-resolution>`:
+
+  :bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-resolution>` :doc:`/config/documentation/objects/Integer` - A performance parameter that determines the size of each biome 'pixel' in blocks.
+
+- :ref:`In SIMPLEX in NoiseSampler <object-noisesampler-template-config-noise-function-simplex-parameter-salt>`:
+
+  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-simplex-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 - :ref:`In base in pack.yml <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-carving.resolution.vertical>`:
 
   :bdg-ref-success:`carving.resolution.vertical <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-carving.resolution.vertical>` :doc:`/config/documentation/objects/Integer` 
 
-- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-size>`:
+- :ref:`In STITCHED_BITMAP in Image <object-image-template-library-image-stitched_bitmap-parameter-rows>`:
 
-  :bdg-ref-success:`size <config-scattered_ore-template-config-ore-base-parameter-size>` :doc:`/config/documentation/objects/Integer` 
+  :bdg-ref-primary:`rows <object-image-template-library-image-stitched_bitmap-parameter-rows>` :doc:`/config/documentation/objects/Integer` - How many rows of images to stitch together.
 
-- :ref:`In GAUSSIAN in NoiseSampler <object-noisesampler-template-config-noise-function-gaussian-parameter-salt>`:
+- :ref:`In base in pack.yml <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-blend.terrain.elevation>`:
 
-  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-gaussian-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+  :bdg-ref-success:`blend.terrain.elevation <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-blend.terrain.elevation>` :doc:`/config/documentation/objects/Integer` 
 
-- :ref:`In BITMAP in Image <object-image-template-library-image-bitmap-parameter-rows>`:
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-slant-depth>`:
 
-  :bdg-ref-primary:`rows <object-image-template-library-image-bitmap-parameter-rows>` :doc:`/config/documentation/objects/Integer` 
+  :bdg-ref-success:`slant-depth <config-biome-template-chunk-generator-noise-3d-base-parameter-slant-depth>` :doc:`/config/documentation/objects/Integer` 
 
-- :ref:`In BITMAP in Image <object-image-template-library-image-bitmap-parameter-columns>`:
+- :ref:`In VALUE in NoiseSampler <object-noisesampler-template-config-noise-function-value-parameter-salt>`:
 
-  :bdg-ref-primary:`columns <object-image-template-library-image-bitmap-parameter-columns>` :doc:`/config/documentation/objects/Integer` 
+  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-value-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 - :ref:`In RIDGED in NoiseSampler <object-noisesampler-template-config-noise-function-ridged-parameter-octaves>`:
 
   :bdg-ref-success:`octaves <object-noisesampler-template-config-noise-function-ridged-parameter-octaves>` :doc:`/config/documentation/objects/Integer` 
 
-- :ref:`In STITCHED_BITMAP in Image <object-image-template-library-image-stitched_bitmap-parameter-columns>`:
+- :ref:`In WHITE_NOISE in NoiseSampler <object-noisesampler-template-config-noise-function-white_noise-parameter-salt>`:
 
-  :bdg-ref-primary:`columns <object-image-template-library-image-stitched_bitmap-parameter-columns>` :doc:`/config/documentation/objects/Integer` - How many columns of images to stitch together.
+  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-white_noise-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In RANDOM in Locator <object-locator-template-config-locators-random-parameter-salt>`:
+
+  :bdg-ref-success:`salt <object-locator-template-config-locators-random-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
 
 - :ref:`In PERLIN in NoiseSampler <object-noisesampler-template-config-noise-function-perlin-parameter-salt>`:
 
@@ -60,134 +72,122 @@ Used by 45 parameters:
 
   :bdg-ref-primary:`min <object-range-template-base-map-parameter-min>` :doc:`/config/documentation/objects/Integer` - The minimum value (inclusive) of the range.
 
-- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-slant-depth>`:
+- :ref:`In base in pack.yml <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-carving.resolution.horizontal>`:
 
-  :bdg-ref-success:`slant-depth <config-biome-template-chunk-generator-noise-3d-base-parameter-slant-depth>` :doc:`/config/documentation/objects/Integer` 
+  :bdg-ref-success:`carving.resolution.horizontal <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-carving.resolution.horizontal>` :doc:`/config/documentation/objects/Integer` 
 
-- :ref:`In EXTRUSION in BiomeProvider <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution>`:
+- :ref:`In BITMAP in Image <object-image-template-library-image-bitmap-parameter-rows>`:
 
-  :bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In PADDED_GRID in Distributor <object-distributor-template-config-distributors-padded_grid-parameter-padding>`:
-
-  :bdg-ref-primary:`padding <object-distributor-template-config-distributors-padded_grid-parameter-padding>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In NORMAL in NoiseSampler <object-noisesampler-template-config-noise-function-normal-parameter-groups>`:
-
-  :bdg-ref-success:`groups <object-noisesampler-template-config-noise-function-normal-parameter-groups>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In GABOR in NoiseSampler <object-noisesampler-template-config-noise-function-gabor-parameter-salt>`:
-
-  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-gabor-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
-
-- :ref:`In STITCHED_BITMAP in Image <object-image-template-library-image-stitched_bitmap-parameter-rows>`:
-
-  :bdg-ref-primary:`rows <object-image-template-library-image-stitched_bitmap-parameter-rows>` :doc:`/config/documentation/objects/Integer` - How many rows of images to stitch together.
-
-- :ref:`In base in pack.yml <config-pack.yml-template-library-image-base-parameter-images.cache.timeout>`:
-
-  :bdg-ref-success:`images.cache.timeout <config-pack.yml-template-library-image-base-parameter-images.cache.timeout>` :doc:`/config/documentation/objects/Integer` - How many seconds to keep images loaded in the image cache for.
-
-- :ref:`In IMAGE in BiomeProvider <object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution>`:
-
-  :bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In PADDED_GRID in Distributor <object-distributor-template-config-distributors-padded_grid-parameter-width>`:
-
-  :bdg-ref-primary:`width <object-distributor-template-config-distributors-padded_grid-parameter-width>` :doc:`/config/documentation/objects/Integer` 
+  :bdg-ref-primary:`rows <object-image-template-library-image-bitmap-parameter-rows>` :doc:`/config/documentation/objects/Integer` 
 
 - :ref:`In POSTERIZATION in NoiseSampler <object-noisesampler-template-config-noise-function-posterization-parameter-steps>`:
 
   :bdg-ref-primary:`steps <object-noisesampler-template-config-noise-function-posterization-parameter-steps>` :doc:`/config/documentation/objects/Integer` 
 
-- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <object-noisesampler-template-library-image-distance_transform-parameter-threshold>`:
+- :ref:`In PADDED_GRID in Distributor <object-distributor-template-config-distributors-padded_grid-parameter-padding>`:
 
-  :bdg-ref-success:`threshold <object-noisesampler-template-library-image-distance_transform-parameter-threshold>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In VALUE in NoiseSampler <object-noisesampler-template-config-noise-function-value-parameter-salt>`:
-
-  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-value-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
-
-- :ref:`In POSITIVE_WHITE_NOISE in NoiseSampler <object-noisesampler-template-config-noise-function-positive_white_noise-parameter-salt>`:
-
-  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-positive_white_noise-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
-
-- :ref:`In OPEN_SIMPLEX_2 in NoiseSampler <object-noisesampler-template-config-noise-function-open_simplex_2-parameter-salt>`:
-
-  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-open_simplex_2-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
-
-- :ref:`In FBM in NoiseSampler <object-noisesampler-template-config-noise-function-fbm-parameter-octaves>`:
-
-  :bdg-ref-success:`octaves <object-noisesampler-template-config-noise-function-fbm-parameter-octaves>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In CELLULAR in NoiseSampler <object-noisesampler-template-config-noise-function-cellular-parameter-salt>`:
-
-  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-cellular-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+  :bdg-ref-primary:`padding <object-distributor-template-config-distributors-padded_grid-parameter-padding>` :doc:`/config/documentation/objects/Integer` 
 
 - :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>`:
 
   :bdg-ref-primary:`palette <config-biome-template-chunk-generator-noise-3d-base-parameter-palette>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/Palette`\, :doc:`/config/documentation/objects/Integer`\>> 
 
-- :ref:`In TRANSLATE in ColorSampler <object-colorsampler-template-library-image-translate-parameter-x>`:
+- :ref:`In IMAGE in BiomeProvider <object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution>`:
 
-  :bdg-ref-primary:`x <object-colorsampler-template-library-image-translate-parameter-x>` :doc:`/config/documentation/objects/Integer` 
+  :bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
 
-- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-ocean.level>`:
+- :ref:`In GABOR in NoiseSampler <object-noisesampler-template-config-noise-function-gabor-parameter-salt>`:
 
-  :bdg-ref-success:`ocean.level <config-biome-template-chunk-generator-noise-3d-base-parameter-ocean.level>` :doc:`/config/documentation/objects/Integer` 
+  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-gabor-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
-- :ref:`In PING_PONG in NoiseSampler <object-noisesampler-template-config-noise-function-ping_pong-parameter-octaves>`:
+- :ref:`In CELLULAR in NoiseSampler <object-noisesampler-template-config-noise-function-cellular-parameter-salt>`:
 
-  :bdg-ref-success:`octaves <object-noisesampler-template-config-noise-function-ping_pong-parameter-octaves>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In FEATURE in GenerationStage <object-generationstage-template-generation-stage-feature-feature-parameter-resolution>`:
-
-  :bdg-ref-success:`resolution <object-generationstage-template-generation-stage-feature-feature-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In GAUSSIAN_RANDOM in Locator <object-locator-template-config-locators-gaussian_random-parameter-salt>`:
-
-  :bdg-ref-success:`salt <object-locator-template-config-locators-gaussian_random-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In base in BIOME <config-biome-template-config-biome-base-parameter-color>`:
-
-  :bdg-ref-primary:`color <config-biome-template-config-biome-base-parameter-color>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In PIPELINE in BiomeProvider <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-resolution>`:
-
-  :bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-pipeline-v2-pipeline-parameter-resolution>` :doc:`/config/documentation/objects/Integer` - A performance parameter that determines the size of each biome 'pixel' in blocks.
-
-- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.distance>`:
-
-  :bdg-ref-success:`terrain.blend.distance <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.distance>` :doc:`/config/documentation/objects/Integer` 
+  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-cellular-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
 - :ref:`In PADDED_GRID in Distributor <object-distributor-template-config-distributors-padded_grid-parameter-salt>`:
 
   :bdg-ref-primary:`salt <object-distributor-template-config-distributors-padded_grid-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
 
-- :ref:`In base in pack.yml <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-carving.resolution.horizontal>`:
+- :ref:`In GAUSSIAN_RANDOM in Locator <object-locator-template-config-locators-gaussian_random-parameter-salt>`:
 
-  :bdg-ref-success:`carving.resolution.horizontal <config-pack.yml-template-chunk-generator-noise-3d-base-parameter-carving.resolution.horizontal>` :doc:`/config/documentation/objects/Integer` 
+  :bdg-ref-success:`salt <object-locator-template-config-locators-gaussian_random-parameter-salt>` :doc:`/config/documentation/objects/Integer` 
 
-- :ref:`In OPEN_SIMPLEX_2S in NoiseSampler <object-noisesampler-template-config-noise-function-open_simplex_2s-parameter-salt>`:
+- :ref:`In PING_PONG in NoiseSampler <object-noisesampler-template-config-noise-function-ping_pong-parameter-octaves>`:
 
-  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-open_simplex_2s-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+  :bdg-ref-success:`octaves <object-noisesampler-template-config-noise-function-ping_pong-parameter-octaves>` :doc:`/config/documentation/objects/Integer` 
 
-- :ref:`In map in Range <object-range-template-base-map-parameter-max>`:
+- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-size>`:
 
-  :bdg-ref-primary:`max <object-range-template-base-map-parameter-max>` :doc:`/config/documentation/objects/Integer` - The maximum value (exclusive) of the range.
-
-- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.step>`:
-
-  :bdg-ref-success:`terrain.blend.step <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.step>` :doc:`/config/documentation/objects/Integer` 
-
-- :ref:`In SIMPLEX in NoiseSampler <object-noisesampler-template-config-noise-function-simplex-parameter-salt>`:
-
-  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-simplex-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+  :bdg-ref-success:`size <config-scattered_ore-template-config-ore-base-parameter-size>` :doc:`/config/documentation/objects/Integer` 
 
 - :ref:`In VALUE_CUBIC in NoiseSampler <object-noisesampler-template-config-noise-function-value_cubic-parameter-salt>`:
 
   :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-value_cubic-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
 
+- :ref:`In FBM in NoiseSampler <object-noisesampler-template-config-noise-function-fbm-parameter-octaves>`:
+
+  :bdg-ref-success:`octaves <object-noisesampler-template-config-noise-function-fbm-parameter-octaves>` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In BITMAP in Image <object-image-template-library-image-bitmap-parameter-columns>`:
+
+  :bdg-ref-primary:`columns <object-image-template-library-image-bitmap-parameter-columns>` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In PADDED_GRID in Distributor <object-distributor-template-config-distributors-padded_grid-parameter-width>`:
+
+  :bdg-ref-primary:`width <object-distributor-template-config-distributors-padded_grid-parameter-width>` :doc:`/config/documentation/objects/Integer` 
+
 - :ref:`In TRANSLATE in ColorSampler <object-colorsampler-template-library-image-translate-parameter-z>`:
 
   :bdg-ref-primary:`z <object-colorsampler-template-library-image-translate-parameter-z>` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <object-noisesampler-template-library-image-distance_transform-parameter-threshold>`:
+
+  :bdg-ref-success:`threshold <object-noisesampler-template-library-image-distance_transform-parameter-threshold>` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In NORMAL in NoiseSampler <object-noisesampler-template-config-noise-function-normal-parameter-groups>`:
+
+  :bdg-ref-success:`groups <object-noisesampler-template-config-noise-function-normal-parameter-groups>` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In base in BIOME <config-biome-template-config-biome-base-parameter-color>`:
+
+  :bdg-ref-primary:`color <config-biome-template-config-biome-base-parameter-color>` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In base in pack.yml <config-pack.yml-template-library-image-base-parameter-images.cache.timeout>`:
+
+  :bdg-ref-success:`images.cache.timeout <config-pack.yml-template-library-image-base-parameter-images.cache.timeout>` :doc:`/config/documentation/objects/Integer` - How many seconds to keep images loaded in the image cache for.
+
+- :ref:`In FEATURE in GenerationStage <object-generationstage-template-generation-stage-feature-feature-parameter-resolution>`:
+
+  :bdg-ref-success:`resolution <object-generationstage-template-generation-stage-feature-feature-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In EXTRUSION in BiomeProvider <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution>`:
+
+  :bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In POSITIVE_WHITE_NOISE in NoiseSampler <object-noisesampler-template-config-noise-function-positive_white_noise-parameter-salt>`:
+
+  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-positive_white_noise-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In GAUSSIAN in NoiseSampler <object-noisesampler-template-config-noise-function-gaussian-parameter-salt>`:
+
+  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-gaussian-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In STITCHED_BITMAP in Image <object-image-template-library-image-stitched_bitmap-parameter-columns>`:
+
+  :bdg-ref-primary:`columns <object-image-template-library-image-stitched_bitmap-parameter-columns>` :doc:`/config/documentation/objects/Integer` - How many columns of images to stitch together.
+
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.step>`:
+
+  :bdg-ref-success:`terrain.blend.step <config-biome-template-chunk-generator-noise-3d-base-parameter-terrain.blend.step>` :doc:`/config/documentation/objects/Integer` 
+
+- :ref:`In OPEN_SIMPLEX_2S in NoiseSampler <object-noisesampler-template-config-noise-function-open_simplex_2s-parameter-salt>`:
+
+  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-open_simplex_2s-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In OPEN_SIMPLEX_2 in NoiseSampler <object-noisesampler-template-config-noise-function-open_simplex_2-parameter-salt>`:
+
+  :bdg-ref-success:`salt <object-noisesampler-template-config-noise-function-open_simplex_2-parameter-salt>` :doc:`/config/documentation/objects/Integer` - Determines the :ref:`seed <sampler-salt>` for the sampler.
+
+- :ref:`In TRANSLATE in ColorSampler <object-colorsampler-template-library-image-translate-parameter-x>`:
+
+  :bdg-ref-primary:`x <object-colorsampler-template-library-image-translate-parameter-x>` :doc:`/config/documentation/objects/Integer` 

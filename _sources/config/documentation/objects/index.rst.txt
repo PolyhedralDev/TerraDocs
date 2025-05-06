@@ -16,8 +16,8 @@ Config Objects
     Block
     PipelineBiome
     Tag
-    Pattern
     ColorSampler
+    Pattern
     Set
     Distributor
     Locator
@@ -32,17 +32,17 @@ Config Objects
     Palette
     ColorString
     Extrusion
-    Point
     Source
     Stage
+    BiomeColorConverter
+    Point
     CubicSplinePoint
     PaletteLayer
     SlantLayer
-    PipelineBiomeColorConverter
-    BiomeColorConverter
     Feature
     Structure
     GenerationStage
     PlatformBiome
     ChunkGenerator
+    PipelineBiomeColorConverter
     NumberPredicate

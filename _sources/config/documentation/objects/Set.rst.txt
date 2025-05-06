@@ -11,13 +11,9 @@ Uses
 
 Used by 5 parameters:
 
-- :ref:`In base in BIOME <config-biome-template-config-biome-base-parameter-tags>`:
+- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-replace>`:
 
-  :bdg-ref-primary:`tags <config-biome-template-config-biome-base-parameter-tags>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Tag`\> 
-
-- :ref:`In MATCH_SET in Pattern <object-pattern-template-config-locators-match_set-parameter-blocks>`:
-
-  :bdg-ref-primary:`blocks <object-pattern-template-config-locators-match_set-parameter-blocks>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+  :bdg-ref-primary:`replace <config-scattered_ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
 
 - :ref:`In POINTS in Distributor <object-distributor-template-config-distributors-points-parameter-points>`:
 
@@ -27,6 +23,10 @@ Used by 5 parameters:
 
   :bdg-ref-primary:`replace <config-ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
 
-- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-replace>`:
+- :ref:`In base in BIOME <config-biome-template-config-biome-base-parameter-tags>`:
 
-  :bdg-ref-primary:`replace <config-scattered_ore-template-config-ore-base-parameter-replace>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
+  :bdg-ref-primary:`tags <config-biome-template-config-biome-base-parameter-tags>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Tag`\> 
+
+- :ref:`In MATCH_SET in Pattern <object-pattern-template-config-locators-match_set-parameter-blocks>`:
+
+  :bdg-ref-primary:`blocks <object-pattern-template-config-locators-match_set-parameter-blocks>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Block`\> 
