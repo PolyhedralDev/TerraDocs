@@ -13,9 +13,11 @@ Config Development
     meta-configuration
 
     pack-from-scratch/index
-    feature-from-scratch/index
 
     modifying-existing-pack
+
+    terrain-list
+    multi-layered-terrain
 
     noise/index
     image/index
