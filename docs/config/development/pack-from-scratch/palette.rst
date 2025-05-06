@@ -37,7 +37,6 @@ Setting up a New Palette
         :emphasize-lines: 9
 
         id: YOUR_PACK_ID
-
         version: 0.2.0
 
         addons:
@@ -46,12 +45,10 @@ Setting up a New Palette
           ...
           config-palette: "1.+"
 
-    :ref:`Create a blank config file <create-config-file>` and open it your editor.
+    :ref:`Create a blank config file <create-config-file>` with the file name ``grass_palette.yml``.
 
     Set the :ref:`config type <config-types>` via the ``type``
     :ref:`parameter <parameters>`, and config ``id`` as shown below.
-
-    ``grass_palette.yml`` will be example file name used for the palette config in this guide.
 
     .. code-block:: yaml
         :caption: grass_palette.yml
@@ -177,3 +174,5 @@ Once you have verified your pack has loaded correctly, you can now generate a wo
 
 Reference configurations for this guide can be found on GitHub
 `here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/2-adding-palette>`_.
+
+.. image:: /img/config/development/pack-from-scratch/terrain/flat-terrain.png
