@@ -56,7 +56,7 @@ Setting up a New Structure
 
                 ``oak_tree.tesf`` will be the example file name used for this guide.
 
-                A sample ``oak_tree.tesf`` file has been provided below if you need it.
+                A barebones sample ``oak_tree.tesf`` file has been provided below if you need it.
 
                 .. code-block:: yaml
                     :caption: oak_tree.tesf
@@ -90,10 +90,49 @@ Setting up a New Structure
 
                 ``oak_tree.schem`` will be the example file name used for this guide.
 
-                A sample ``oak_tree.schem`` can be found `here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/4-adding-trees>`_ if needed.
+                A sample ``oak_tree.schem`` can be found on `GitHub <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/4-adding-trees>`_ if needed.
 
+.. note::
 
-2. Create your feature config
+    If you decide to try out both structure file types, be sure to name them differently as you can't have
+    structure files with the same name.
+
+2. Create new generation stage
+------------------------------
+
+.. card::
+
+    It's best to categorize feature into different stages to not only keep feature
+    organization tidy, but to allow particular features to generate before others.
+
+    For example, you may want to generate trees before grass, so trees aren't blocked from
+    generating by the grass.
+
+    We will now utilize the ``generation-stage-feature`` addon that was added in
+    :doc:`Setting up a New Feature </config/development/pack-from-scratch/grass>` to
+    create a new generation stage.
+
+    .. code-block:: yaml
+        :caption: pack.yml
+        :linenos:
+        :emphasize-lines: 6-7
+
+        id: YOUR_PACK_ID
+
+        ...
+
+        stages:
+          - id: trees
+            type: FEATURE
+          # The trees generation stage will come before flora, making it generate first.
+          - id: flora
+            type: FEATURE
+
+.. tip::
+
+    The generation stage ids can be named to your liking and generation stages will generate in order from top to bottom.
+
+3. Create your feature config
 -----------------------------
 
 .. card::
@@ -102,7 +141,10 @@ Setting up a New Structure
     :doc:`Setting up a New Feature </config/development/pack-from-scratch/grass>` to
     create a new feature config file.
 
-    ``oak_tree_feature`` will be example file name used for the feature config in this guide.
+    :ref:`Create a blank config file <create-config-file>` with the file name ``oak_tree_feature.yml``.
+
+    Set the :ref:`config type <config-types>` via the ``type``
+    :ref:`parameter <parameters>`, and config ``id`` as shown below.
 
     .. code-block:: yaml
         :caption: oak_tree_feature.yml
@@ -111,7 +153,7 @@ Setting up a New Structure
         id: OAK_TREE_FEATURE
         type: FEATURE
 
-3. Add the feature distributor
+4. Add the feature distributor
 ------------------------------
 
 .. card::
@@ -119,7 +161,7 @@ Setting up a New Structure
     We will now utilize the ``config-distributors`` addon that was added in
     :doc:`Setting up a New Feature </config/development/pack-from-scratch/grass>` to add the distributor.
 
-    Configure the ``oak_tree_feature`` config to utilize the ``PADDED_GRID`` distributor type as shown below.
+    Configure ``oak_tree_feature.yml`` to utilize the ``PADDED_GRID`` distributor type as shown below.
 
     .. code-block:: yaml
         :caption: oak_tree_feature.yml
@@ -151,7 +193,7 @@ Setting up a New Structure
     .. note::
         Documentation of ``PADDED_GRID`` and other distributor types can be found :doc:`here </config/documentation/objects/Distributor>`.
 
-4. Add the feature locator
+5. Add the feature locator
 --------------------------
 
 .. card::
@@ -159,7 +201,7 @@ Setting up a New Structure
     We will now utilize the ``config-locators`` addon that was added in
     :doc:`Setting up a New Feature </config/development/pack-from-scratch/grass>` to add the locator.
 
-    Configure the ``oak_tree_feature`` config to utilize the ``TOP`` locator type as shown below.
+    Configure ``oak_tree_feature.yml`` to utilize the ``TOP`` locator type as shown below.
 
     .. code-block:: yaml
         :caption: oak_tree_feature.yml
@@ -185,7 +227,7 @@ Setting up a New Structure
         Documentation of the various locator types available can be found :doc:`here </config/documentation/objects/Locator>`.
 
 
-5. Improve feature locator
+6. Improve feature locator
 --------------------------
 
 .. card::
@@ -228,7 +270,7 @@ Setting up a New Structure
                   - minecraft:dirt
                 offset: -1
 
-5. Add the structure
+7. Add the structure
 --------------------
 
 .. card::
@@ -275,7 +317,7 @@ Setting up a New Structure
 
     Weighted lists covered in detail :ref:`here <weighted-list>`.
 
-6. Apply feature to biome
+8. Apply feature to biome
 -------------------------
 
 .. card::
@@ -297,14 +339,14 @@ Setting up a New Structure
         ...
 
         features:
-          flora:
-            - GRASS_FEATURE
           trees:
             - OAK_TREE_FEATURE
+          flora:
+            - GRASS_FEATURE
 
     The ``OAK_TREE_FEATURE`` feature should now generate your oak tree structures in ``FIRST_BIOME``.
 
-8. Load your pack
+9. Load your pack
 -----------------
 At this stage, your pack should now be capable of generating oak trees! You can load up your pack by starting your
 development client / server which contains the pack you have just defined. You can confirm that your pack has loaded
@@ -325,3 +367,7 @@ using features!
 
 Reference configurations for this guide can be found on GitHub
 `here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/5-adding-trees>`_.
+
+.. image:: /img/config/development/pack-from-scratch/trees/trees-tesf.png
+
+.. image:: /img/config/development/pack-from-scratch/trees/trees-schem.png
