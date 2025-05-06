@@ -138,10 +138,9 @@ Setting up a New Pack
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 5,6
+        :emphasize-lines: 4,5
 
         id: YOUR_PACK_ID
-
         version: 0.1.0
 
         addons:
@@ -187,10 +186,9 @@ Setting up a New Pack
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 9
+        :emphasize-lines: 8
 
         id: YOUR_PACK_ID
-
         version: 0.1.0
 
         addons:
@@ -235,17 +233,16 @@ Setting up a New Pack
         type: BIOME
         
 
-    4. Set the ``vanilla`` parameter to a vanilla biome ID. We will use ``minecraft:plains`` in the example but you 
+    4. Set the ``vanilla`` parameter to a vanilla biome ID. We will use ``minecraft:plains`` in the example but you
     could use any valid vanilla biome ID you want.
     
 
     .. code-block:: yaml
         :caption: first_biome.yml
         :linenos:
-        :emphasize-lines: 5
+        :emphasize-lines: 4
 
         id: FIRST_BIOME
-
         type: BIOME
 
         vanilla: minecraft:plains
@@ -265,10 +262,9 @@ These parameters will determine how the ``NOISE_3D`` generator generates terrain
     .. code-block:: yaml
         :caption: first_biome.yml
         :linenos:
-        :emphasize-lines: 7-10
+        :emphasize-lines: 6-9
 
         id: FIRST_BIOME
-
         type: BIOME
 
         vanilla: minecraft:plains
@@ -302,10 +298,9 @@ These parameters will determine how the ``NOISE_3D`` generator generates terrain
     .. code-block:: yaml
         :caption: first_biome.yml
         :linenos:
-        :emphasize-lines: 12-13
+        :emphasize-lines: 11-12
 
         id: FIRST_BIOME
-
         type: BIOME
 
         vanilla: minecraft:plains
@@ -333,10 +328,9 @@ After you have added ``biome-provider-single``, you can add the ``biomes`` param
 .. code-block:: yaml
     :caption: pack.yml
     :linenos:
-    :emphasize-lines: 15-17
+    :emphasize-lines: 10,14-16
 
     id: YOUR_PACK_ID
-
     version: 0.1.0
 
     addons:
