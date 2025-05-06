@@ -68,10 +68,10 @@ Setting up a New Pipeline
           type: PIPELINE
           resolution: 4
 
-  ``resolution`` determines the size of each biome ‘pixel’ in blocks.
+    ``resolution`` determines the size of each biome ‘pixel’ in blocks.
 
-  Increasing ``resolution`` will improve performance at the cost of blocky edges in biome placement
-  with a resolution of 4 being the best balance between performance and obvious blocky edges.
+    Increasing ``resolution`` will improve performance at the cost of blocky edges in biome placement
+    with a resolution of 4 being the best balance between performance and obvious blocky edges.
 
 2. Add pipeline blending
 ------------------------
@@ -170,10 +170,6 @@ Setting up a New Pipeline
 
     Add the highlighted lines below to add a ``REPLACE`` stage to the biome pipeline.
 
-    You'll need to source your own biomes other than ``FIRST_BIOME`` to have other biomes to distribute
-    through the pipeline or use the ``SECOND_BIOME`` sample located
-    `here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/6-adding-pipeline>`_.
-
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
@@ -203,7 +199,7 @@ Setting up a New Pipeline
               - type: REPLACE
                 sampler:
                   type: OPEN_SIMPLEX_2
-                  frequency: 0.04
+                  frequency: 0.01
                 from: land
                 to:
                   - FIRST_BIOME: 1
@@ -222,6 +218,14 @@ Setting up a New Pipeline
 
     Weighted lists covered in detail :ref:`here <weighted-list>`.
 
+    .. note::
+
+        You'll need to source your own biomes other than ``FIRST_BIOME`` to have other biomes to distribute
+        through the pipeline.
+
+        If needed, there is a ``SECOND_BIOME`` sample with a palette located on
+        `GitHub <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/6-adding-pipeline>`_.
+
 .. tip::
 
     You can utilize multiple stages consecutively to further distribute the biome placement with ``SELF`` representing
@@ -230,13 +234,13 @@ Setting up a New Pipeline
     .. code-block:: yaml
         :caption: pack.yml
         :linenos:
-        :emphasize-lines: 12-19
+        :emphasize-lines: 17-20
 
         stages:
           - type: REPLACE
             sampler:
               type: OPEN_SIMPLEX_2
-              frequency: 0.04
+              frequency: 0.01
             from: land
             to:
               - FIRST_BIOME: 1
@@ -246,7 +250,7 @@ Setting up a New Pipeline
           - type: REPLACE
             sampler:
               type: OPEN_SIMPLEX_2
-              frequency: 0.04
+              frequency: 0.01
               salt: 3423
             from: FIRST_BIOME
             to:
@@ -256,7 +260,6 @@ Setting up a New Pipeline
     For the case above, the ``land`` placeholder biome will be distributed into the ``FIRST_BIOME``, ``SECOND_BIOME``,
     and ``THIRD_BIOME`` by the first ``REPLACE`` stage then the following ``REPLACE`` stage will distribute the
     ``FIRST_BIOME`` into ``FIRST_BIOME`` represented by ``SELF`` and ``FOURTH_BIOME`` as well.
-
 
 5. Load your pack
 -----------------
@@ -272,6 +275,16 @@ and follow through the previous steps again carefully.
 If you still are unable to load the pack, feel free to :doc:`contact us </contact>` with any relevant errors.
 
 .. note::
+    The ``/packs reload`` command cannot be used when new biome config files are added to a
+    config pack since the biome registry gets frozen upon world generation.
+
+    Using the command will result with a ``An internal error occured while
+    attemping to perform this command`` message.
+
+    Clients might only need to create a new world while servers may need to
+    completely restart in order to load new biomes when the biome registry isn't frozen.
+
+.. tip::
     A useful tool for visually previewing the biome distribution defined by your biome provider is the Biome Tool that
     can be found `here <https://github.com/PolyhedralDev/BiomeTool>`__.
 
@@ -283,3 +296,5 @@ through the biome provider pipeline!
 
 Reference configurations for this guide can be found on GitHub
 `here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/6-adding-pipeline>`_.
+
+.. image:: /img/config/development/pack-from-scratch/pipeline.png
