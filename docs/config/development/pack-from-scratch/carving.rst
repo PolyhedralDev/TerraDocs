@@ -230,8 +230,8 @@ Setting up Carving
   If you still are unable to load the pack, feel free to :doc:`contact us </contact>` with any relevant errors.
 
   .. attention::
-      If you have loaded the pack and did the :doc:`Creating an Ocean from Scratch</config/development/pack-from-scratch/introduction>`,
-      previosuly, you'll see cases of floating water, which had their adjacent solid
+      If you have loaded the pack and did :doc:`Creating an Ocean from Scratch</config/development/pack-from-scratch/oceans>`
+      previously, you'll see cases of floating water, which had their adjacent solid
       blocks carved out by ``CARVING_LAND``.
 
       This issue will be addressed in the next step.
