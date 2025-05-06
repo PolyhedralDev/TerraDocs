@@ -216,7 +216,19 @@ Setting up a New Pack
 .. card::
 
     1. Add the ``config-biome`` addon as a dependency, using versions ``1.+``. This will allow us to create new
-    biomes via the ``BIOME`` :ref:`config type <config-types>` which is provided by the addon. 
+    biomes via the ``BIOME`` :ref:`config type <config-types>` which is provided by the addon.
+
+    .. code-block:: yaml
+        :caption: pack.yml
+        :linenos:
+        :emphasize-lines: 6
+
+        addons:
+          language-yaml: "1.+"
+          chunk-generator-noise-3d: "1.+"
+          config-noise-function: "1.+"
+          palette-block-shortcut: "1.+"
+          config-biome: "1.+"
 
     2. :ref:`Create a new config file <create-config-file>`, this can be named anything but for this guide we will
     use the name ``first_biome.yml``.
