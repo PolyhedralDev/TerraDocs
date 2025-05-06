@@ -72,7 +72,7 @@ Setting up New Terrain
 
     The expression ``-y +64`` results in perfectly flat terrain.
 
-    .. image:: /img/config/development/pack-from-scratch/flat-terrain.png
+    .. image:: /img/config/development/pack-from-scratch/terrain/flat-terrain.png
 
 .. note::
     Documentation of ``EXPRESSION`` and other noise samplers can be found :doc:`here </config/documentation/objects/NoiseSampler>`.
@@ -247,7 +247,7 @@ Setting up New Terrain
 
     The terrain generates with 1 block elevation differences in response with ``simplex`` output.
 
-    .. image:: /img/config/development/pack-from-scratch/bumpy-terrain.png
+    .. image:: /img/config/development/pack-from-scratch/terrain/bumpy-terrain.png
 
 5. Adjust sampler-2d expression
 -------------------------------
@@ -315,7 +315,7 @@ Setting up New Terrain
     The terrain elevation has some variety to it now. You can adjust the multiply value by increasing it to have bigger
     hills and decreasing it for smaller hills.
 
-    .. image:: /img/config/development/pack-from-scratch/hill-terrain.png
+    .. image:: /img/config/development/pack-from-scratch/terrain/hill-terrain.png
 
 Conclusion
 ==========
