@@ -46,7 +46,7 @@ Setting up a New Feature
           ...
           generation-stage-feature: "1.+"
 
-    Add the highlighted lines below to your pack manifest to create these generation stages.
+    Add the highlighted lines below to your pack manifest to create the generation stage.
 
     .. code-block:: yaml
         :caption: pack.yml
@@ -60,11 +60,6 @@ Setting up a New Feature
         stages:
           - id: flora
             type: FEATURE
-
-          - id: trees
-            type: FEATURE
-
-    We'll only be using the ``flora`` stage for this guide.
 
     .. tip::
 
