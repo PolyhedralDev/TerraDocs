@@ -378,10 +378,11 @@ If you still are unable to load the pack, feel free to :doc:`contact us </contac
 
 Conclusion
 ==========
-
 Once you have verified your pack has loaded correctly, you can now generate a world with your new pack!
 
 Reference configurations for this guide can be found on GitHub
 `here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/1-setting-up>`_.
+
+.. image:: /img/config/development/pack-from-scratch/first-biome-stone.png
 
 
