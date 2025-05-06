@@ -18,6 +18,14 @@ Setting up New Terrain
 
 `PROCEDURE`
 
+.. tip::
+
+    Throughout this guide, the ``/packs reload`` command can be utilized to reload config packs and observe
+    changes live while in the world.
+
+    If Terra fails to reload after using ``/packs reload``, then check the logs to troubleshoot the issue.
+
+
 1. Add EXPRESSION sampler
 -------------------------
 
