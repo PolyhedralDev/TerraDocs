@@ -135,7 +135,7 @@ Setting up New Terrain
     ``terrain.sampler-2d`` may be less performant, but results in more detailed terrain with being full resolution rather
     than interpolated.
 
-    Add the highlighted lines below to add the ``terrain.sampler-2d``
+    Add the highlighted lines below to add the ``terrain.sampler-2d``.
 
     .. code-block:: yaml
         :caption: first_biome.yml
@@ -318,7 +318,7 @@ Setting up New Terrain
 
     .. attention::
         Make sure you put the addition operation within parentheses to make sure it happens before the
-        multiplication operation
+        multiplication operation.
 
     The terrain elevation has some variety to it now. You can adjust the multiply value by increasing it to have bigger
     hills and decreasing it for smaller hills.

@@ -183,8 +183,8 @@ Setting up a New Structure
 
     ``PADDED_GRID`` utilizes the nested :ref:`parameters <parameters>` ``width``, ``padding``, and ``salt``.
 
-    * ``Width`` - Determines the size of each cell that will contain your feature
-    * ``Padding`` - Determines the gap between each cell
+    * ``Width`` - Determines the size of each cell that will contain your feature.
+    * ``Padding`` - Determines the gap between each cell.
     * ``Salt`` - Typically a random number that offsets the distributor results to prevent feature placement overlap with the same distributor type. Salt function covered in detail :ref:`here <noise-sampler-salt-theory>`.
 
     .. image:: /img/config/development/pack-from-scratch/paddedgrid.png

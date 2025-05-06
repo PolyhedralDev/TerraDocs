@@ -242,8 +242,8 @@ Setting up a New Feature
     The ``PATTERN`` locator with the ``MATCH_SET`` ``type`` consists of the :ref:`parameters <parameters>` ``blocks``
     and ``offset``.
 
-    * ``blocks`` - List of blocks that must match in order to generate the feature
-    * ``offset`` - The y-level offset of the checked block
+    * ``blocks`` - List of blocks that must match in order to generate the feature.
+    * ``offset`` - Y-level offset of the checked block.
 
     The blocks ``minecraft:grass_block`` and ``minecraft:dirt`` will suffice with an offset of -1 to check the block that
     is specifically right underneath the feature.
