@@ -4,9 +4,9 @@ Fabric:
 
   versions:
     - mc-ver: "1.21.5"
-      terra-ver: "6.6.2"
+      terra-ver: "6.6.3"
       stage: BETA
-      link: https://modrinth.com/plugin/terra/version/6.6.2-BETA-fabric
+      link: https://modrinth.com/plugin/terra/version/6.6.3-BETA-fabric
       supported: true
       maintained: true
     - mc-ver: "1.21.4"
@@ -50,9 +50,9 @@ Bukkit:
     :doc:`Bukkit Installation </install/bukkit>` :octicon:`chevron-right`
   versions:
     - mc-ver: "1.21.5"
-      terra-ver: "6.6.2"
+      terra-ver: "6.6.3"
       stage: BETA
-      link: https://modrinth.com/plugin/terra/version/6.6.2-BETA-bukkit
+      link: https://modrinth.com/plugin/terra/version/6.6.3-BETA-bukkit
       supported: true
       maintained: true
     - mc-ver: "1.21.4"
