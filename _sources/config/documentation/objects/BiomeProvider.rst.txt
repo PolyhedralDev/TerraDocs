@@ -21,27 +21,6 @@ A list of available types for ``BiomeProvider`` are listed below:
 
 ---------
 
-EXTRUSION
----------
-
-:superscript:`*Type requires the 'biome-provider-extrusion' addon to use`
-
-.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions:
-
-:bdg-ref-primary:`extrusions <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 
-
-.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider:
-
-:bdg-ref-primary:`provider <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider>` :doc:`/config/documentation/objects/BiomeProvider` 
-
-.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution:
-
-:bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
-
-Default: ``4``
-
----------
-
 PIPELINE
 --------
 
@@ -126,6 +105,27 @@ IMAGE
 :bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
 
 Default: ``1``
+
+---------
+
+EXTRUSION
+---------
+
+:superscript:`*Type requires the 'biome-provider-extrusion' addon to use`
+
+.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions:
+
+:bdg-ref-primary:`extrusions <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 
+
+.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider:
+
+:bdg-ref-primary:`provider <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider>` :doc:`/config/documentation/objects/BiomeProvider` 
+
+.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution:
+
+:bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
+
+Default: ``4``
 
 Uses
 ====

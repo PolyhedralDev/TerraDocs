@@ -35,6 +35,22 @@ Fabric
         - Backwards Compatibility [6]_
 
     *
+        - **1.21.5**
+        - 6.6.2 :bdg-warning:`Beta`
+        - :bdg-danger:`No`
+        - :bdg-danger:`No`
+        - :doc:`modrinth.com <versions/platforms/Fabric/6.6.2>`
+        - N/A
+
+    *
+        - **1.21.4**
+        - 6.6.0 :bdg-warning:`Beta`
+        - :bdg-danger:`No`
+        - :bdg-danger:`No`
+        - :doc:`modrinth.com <versions/platforms/Fabric/6.6.0>`
+        - N/A
+
+    *
         - **1.21.1**
         - 6.5.0 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
@@ -110,11 +126,27 @@ Bukkit
         - Backwards Compatibility [6]_
 
     *
+        - **1.21.5**
+        - 6.6.2 :bdg-warning:`Beta`
+        - :bdg-danger:`No`
+        - :bdg-danger:`No`
+        - :doc:`modrinth.com <versions/platforms/Bukkit/6.6.2>`
+        - N/A
+
+    *
+        - **1.21.4**
+        - 6.6.1 :bdg-warning:`Beta`
+        - :bdg-danger:`No`
+        - :bdg-danger:`No`
+        - :doc:`modrinth.com <versions/platforms/Bukkit/6.6.1>`
+        - N/A
+
+    *
         - **1.21.1**
-        - 6.5.0 :bdg-warning:`Beta`
+        - 6.5.1 :bdg-warning:`Beta`
         - :bdg-success:`Yes`
         - :bdg-success:`Yes`
-        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.5.0-BETA-bukkit>`__
+        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.5.1-BETA-bukkit>`__
         - N/A
 
     *

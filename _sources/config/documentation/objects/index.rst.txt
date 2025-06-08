@@ -9,40 +9,40 @@ Config Objects
     NoiseSampler
     String
     List
-    Boolean
     Map
+    Boolean
     Range
     WeightedList
     Block
     PipelineBiome
     Tag
-    ColorSampler
     Pattern
+    ColorSampler
     Set
     Distributor
     Locator
+    Image
+    Expression
+    Biome
+    Palette
     DimensionApplicableSampler
     MathFunction
-    Biome
-    Image
-    ExtrusionReplaceableBiome
-    BiomeColorMapping
-    Expression
-    BiomeProvider
-    Palette
     ColorString
-    Extrusion
+    BiomeProvider
+    BiomeColorMapping
+    ExtrusionReplaceableBiome
     Source
     Stage
-    BiomeColorConverter
     Point
-    CubicSplinePoint
-    PaletteLayer
-    SlantLayer
     Feature
     Structure
     GenerationStage
     PlatformBiome
     ChunkGenerator
     PipelineBiomeColorConverter
+    PaletteLayer
+    BiomeColorConverter
+    Extrusion
+    SlantLayer
+    CubicSplinePoint
     NumberPredicate
