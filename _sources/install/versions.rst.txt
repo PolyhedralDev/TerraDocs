@@ -37,33 +37,33 @@ Fabric
     *
         - **1.21.5**
         - 6.6.2 :bdg-warning:`Beta`
-        - :bdg-danger:`No`
-        - :bdg-danger:`No`
-        - :doc:`modrinth.com <versions/platforms/Fabric/6.6.2>`
+        - :bdg-success:`Yes`
+        - :bdg-success:`Yes`
+        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.6.2-BETA-fabric>`__
         - N/A
 
     *
         - **1.21.4**
         - 6.6.0 :bdg-warning:`Beta`
+        - :bdg-success:`Yes`
         - :bdg-danger:`No`
-        - :bdg-danger:`No`
-        - :doc:`modrinth.com <versions/platforms/Fabric/6.6.0>`
+        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.6.0-BETA-fabric>`__
         - N/A
 
     *
         - **1.21.1**
         - 6.5.0 :bdg-warning:`Beta`
-        - :bdg-success:`Yes`
-        - :bdg-success:`Yes`
-        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.5.0-BETA-fabric>`__
+        - :bdg-danger:`No`
+        - :bdg-danger:`No`
+        - :doc:`modrinth.com <versions/platforms/Fabric/6.5.0>`
         - N/A
 
     *
         - **1.20.4**
         - 6.4.3 :bdg-warning:`Beta`
-        - :bdg-success:`Yes`
         - :bdg-danger:`No`
-        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.3-BETA-fabric>`__
+        - :bdg-danger:`No`
+        - :doc:`modrinth.com <versions/platforms/Fabric/6.4.3>`
         - N/A
 
     *
@@ -128,33 +128,33 @@ Bukkit
     *
         - **1.21.5**
         - 6.6.2 :bdg-warning:`Beta`
-        - :bdg-danger:`No`
-        - :bdg-danger:`No`
-        - :doc:`modrinth.com <versions/platforms/Bukkit/6.6.2>`
+        - :bdg-success:`Yes`
+        - :bdg-success:`Yes`
+        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.6.2-BETA-bukkit>`__
         - N/A
 
     *
         - **1.21.4**
         - 6.6.1 :bdg-warning:`Beta`
+        - :bdg-success:`Yes`
         - :bdg-danger:`No`
-        - :bdg-danger:`No`
-        - :doc:`modrinth.com <versions/platforms/Bukkit/6.6.1>`
+        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.6.1-BETA-bukkit>`__
         - N/A
 
     *
         - **1.21.1**
         - 6.5.1 :bdg-warning:`Beta`
-        - :bdg-success:`Yes`
-        - :bdg-success:`Yes`
-        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.5.1-BETA-bukkit>`__
+        - :bdg-danger:`No`
+        - :bdg-danger:`No`
+        - :doc:`modrinth.com <versions/platforms/Bukkit/6.5.1>`
         - N/A
 
     *
         - **1.20.4**
         - 6.4.3 :bdg-warning:`Beta`
-        - :bdg-success:`Yes`
         - :bdg-danger:`No`
-        - `modrinth.com <https://modrinth.com/plugin/terra/version/6.4.3-BETA-bukkit>`__
+        - :bdg-danger:`No`
+        - :doc:`modrinth.com <versions/platforms/Bukkit/6.4.3>`
         - N/A
 
     *
