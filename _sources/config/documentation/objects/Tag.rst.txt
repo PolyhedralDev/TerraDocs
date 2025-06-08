@@ -21,26 +21,26 @@ Used by 7 parameters:
 
   :bdg-ref-primary:`tags <config-biome-template-config-biome-base-parameter-tags>` :doc:`/config/documentation/objects/Set`\<:doc:`/config/documentation/objects/Tag`\> 
 
-- :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-from>`:
+- :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-replace>`:
 
-  :bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border-parameter-from>` :doc:`/config/documentation/objects/Tag` - The tag bordering pipeline biomes must contain for a pipeline biome to be replaced.
+  :bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border-parameter-replace>` :doc:`/config/documentation/objects/Tag` - The tag a pipeline biome must contain in order to be replaced.
 
-- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-replace>`:
+- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from>`:
 
-  :bdg-ref-primary:`default-replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-replace>` :doc:`/config/documentation/objects/Tag` - The default tag a pipeline biome must contain in order to be replaced.
+  :bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from>` :doc:`/config/documentation/objects/Tag` - The tag bordering pipeline biomes must contain for a pipeline biome to be replaced.
 
 - :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-from>`:
 
   :bdg-ref-primary:`default-from <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-from>` :doc:`/config/documentation/objects/Tag` - The default tag a pipeline biome must contain to be replaced.
 
-- :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-replace>`:
+- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-replace>`:
 
-  :bdg-ref-primary:`replace <object-stage-template-biome-provider-pipeline-v2-border-parameter-replace>` :doc:`/config/documentation/objects/Tag` - The tag a pipeline biome must contain in order to be replaced.
+  :bdg-ref-primary:`default-replace <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-replace>` :doc:`/config/documentation/objects/Tag` - The default tag a pipeline biome must contain in order to be replaced.
 
 - :ref:`In REPLACE in Stage <object-stage-template-biome-provider-pipeline-v2-replace-parameter-from>`:
 
   :bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-replace-parameter-from>` :doc:`/config/documentation/objects/Tag` - Pipeline biomes containing this tag will be replaced.
 
-- :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from>`:
+- :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-from>`:
 
-  :bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-from>` :doc:`/config/documentation/objects/Tag` - The tag bordering pipeline biomes must contain for a pipeline biome to be replaced.
+  :bdg-ref-primary:`from <object-stage-template-biome-provider-pipeline-v2-border-parameter-from>` :doc:`/config/documentation/objects/Tag` - The tag bordering pipeline biomes must contain for a pipeline biome to be replaced.
