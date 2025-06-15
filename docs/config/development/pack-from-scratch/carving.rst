@@ -115,7 +115,7 @@ Setting up Carving
             variables:
 
               carvingThreshold: 0.55 # Higher = less carving
-              carvingMinHeight: -63
+              carvingMinHeight: -60
               carvingMaxHeight: 140
               carvingCap: 1 # Caps the amount of base carving
 
@@ -142,7 +142,7 @@ Setting up Carving
 
 
     This carving sampler will carve out non-air blocks between the set maximum y-level of ``140`` and
-    minimum y-level ``-63``.
+    minimum y-level ``-60``.
 
     The sampler expression will produce results that resemble that of spaghetti caves.
 
