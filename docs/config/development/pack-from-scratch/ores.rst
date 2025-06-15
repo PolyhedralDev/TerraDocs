@@ -48,7 +48,7 @@ Setting up Ores
     :ref:`Create a blank config file <create-config-file>` with the file name ``abstract_ore.yml``.
 
     Set the :ref:`config type <config-types>` via the ``type``
-    :ref:`parameter <parameters>`, config ``id``, and ``abstract``` as shown below.
+    :ref:`parameter <parameters>`, config ``id``, and ``abstract`` as shown below.
 
     .. code-block:: yaml
             :caption: abstract_ore.yml
