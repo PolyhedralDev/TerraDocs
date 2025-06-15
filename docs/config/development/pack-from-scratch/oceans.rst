@@ -301,7 +301,7 @@ Conclusion
 Once you have verified your pack has loaded correctly, you can now generate a world with oceans!
 
 Reference configurations for this guide can be found on GitHub
-`here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/7-adding-ocean>`_.
+`here <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/7-adding-oceans>`_.
 
 .. image:: /img/config/development/pack-from-scratch/oceans/oceans-working.png
 
