@@ -257,6 +257,7 @@ Setting up a New Pipeline
 
                     palette:
                       - SAND_PALETTE: 319
+                      - BLOCK:minecraft:bedrock: -61
 
             .. tab-item:: Palette
 

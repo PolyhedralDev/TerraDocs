@@ -59,6 +59,7 @@ Setting up Oceans
 
         palette:
           - SAND_PALETTE: 319
+          - BLOCK:minecraft:bedrock: -61
 
     ``OCEAN_BIOME`` generates terrain at a lower y-level for water to eventually fill up above.
 
@@ -159,6 +160,7 @@ Setting up Oceans
 
         palette:
           - SAND_PALETTE: 319
+          - BLOCK:minecraft:bedrock: -61
 
         ocean:
           palette: BLOCK:minecraft:water
@@ -253,6 +255,7 @@ Setting up Oceans
 
         palette:
           - SAND_PALETTE: 319
+          - BLOCK:minecraft:bedrock: -61
 
     ``OCEAN_BIOME`` will now inherit any :ref:`parameters <parameters>` configured in ``BASE`` as it has
     been listed in ``extends`` :ref:`parameter <parameters>` of the ``OCEAN_BIOME`` config file.
