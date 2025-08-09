@@ -42,7 +42,7 @@ A Terra pack designed to reimagine the End with new biomes, features, and terrai
    :width: 75%
 
 Terra Backrooms
-==========
+===============
 
 | **Author:** Giuca002
 | **Source:** https://github.com/Giuca002/terra-backrooms
