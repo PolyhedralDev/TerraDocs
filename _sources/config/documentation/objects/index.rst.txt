@@ -14,35 +14,35 @@ Config Objects
     Range
     WeightedList
     Block
-    PipelineBiome
     Tag
-    Pattern
+    PipelineBiome
     ColorSampler
+    Pattern
     Set
     Distributor
     Locator
     Image
     Expression
     Biome
-    Palette
     DimensionApplicableSampler
     MathFunction
+    ExtrusionReplaceableBiome
+    BiomeColorMapping
     ColorString
     BiomeProvider
-    BiomeColorMapping
-    ExtrusionReplaceableBiome
-    Source
-    Stage
+    Palette
+    SlantLayer
     Point
+    Extrusion
+    BiomeColorConverter
+    PaletteLayer
     Feature
     Structure
     GenerationStage
     PlatformBiome
     ChunkGenerator
     PipelineBiomeColorConverter
-    PaletteLayer
-    BiomeColorConverter
-    Extrusion
-    SlantLayer
+    Source
+    Stage
     CubicSplinePoint
     NumberPredicate

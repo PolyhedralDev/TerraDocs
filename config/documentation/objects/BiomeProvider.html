@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="BiomeColorMapping" href="BiomeColorMapping.html" /><link rel="prev" title="ColorString" href="ColorString.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Palette" href="Palette.html" /><link rel="prev" title="ColorString" href="ColorString.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>BiomeProvider - Terra Docs</title>
@@ -324,36 +324,36 @@
 <li class="toctree-l4"><a class="reference internal" href="Range.html">Range</a></li>
 <li class="toctree-l4"><a class="reference internal" href="WeightedList.html">WeightedList</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Block.html">Block</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PipelineBiome.html">PipelineBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Tag.html">Tag</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Pattern.html">Pattern</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PipelineBiome.html">PipelineBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ColorSampler.html">ColorSampler</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Pattern.html">Pattern</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Set.html">Set</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Distributor.html">Distributor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Locator.html">Locator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Expression.html">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Biome.html">Biome</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ColorString.html">ColorString</a></li>
 <li class="toctree-l4 current current-page"><a class="current reference internal" href="#">BiomeProvider</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Source.html">Source</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Stage.html">Stage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Feature.html">Feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Structure.html">Structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ChunkGenerator.html">ChunkGenerator</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Source.html">Source</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Stage.html">Stage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CubicSplinePoint.html">CubicSplinePoint</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NumberPredicate.html">NumberPredicate</a></li>
 </ul>
@@ -444,6 +444,30 @@ and packs you are developing with are loaded by the Biome Tool.</p>
 <p>The type is specified by setting the <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">type</span> parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with <code class="docutils literal notranslate"><span class="pre">ADDON_NAME:</span></code> to specify which one to use.</p>
 <p>A list of available types for <code class="docutils literal notranslate"><span class="pre">BiomeProvider</span></code> are listed below:</p>
 <hr class="docutils" />
+<section id="extrusion">
+<h3>EXTRUSION<a class="headerlink" href="#extrusion" title="Link to this heading">¶</a></h3>
+<p><sup>*Type requires the ‘biome-provider-extrusion’ addon to use</sup></p>
+<p id="object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions"><span class="std std-ref">extrusions</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="Extrusion.html"><span class="doc">Extrusion</span></a>&gt;</p>
+<p id="object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider"><span class="std std-ref">provider</span></a> <a class="reference internal" href="#"><span class="doc">BiomeProvider</span></a></p>
+<p id="object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution"><span class="std std-ref">resolution</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">4</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="image">
+<h3>IMAGE<a class="headerlink" href="#image" title="Link to this heading">¶</a></h3>
+<p><sup>*Type requires the ‘biome-provider-image-v2’ addon to use</sup></p>
+<p id="object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-conversion"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-conversion"><span class="std std-ref">color-conversion</span></a> <a class="reference internal" href="BiomeColorConverter.html"><span class="doc">BiomeColorConverter</span></a></p>
+<p id="object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="ColorSampler.html"><span class="doc">ColorSampler</span></a></p>
+<p id="object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution"><span class="std std-ref">resolution</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
+<p>Default: <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
+</section>
+<hr class="docutils" />
+<section id="single">
+<h3>SINGLE<a class="headerlink" href="#single" title="Link to this heading">¶</a></h3>
+<p><sup>*Type requires the ‘biome-provider-single’ addon to use</sup></p>
+<p id="object-biomeprovider-template-biome-provider-single-single-parameter-biome"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-single-single-parameter-biome"><span class="std std-ref">biome</span></a> <a class="reference internal" href="Biome.html"><span class="doc">Biome</span></a></p>
+</section>
+<hr class="docutils" />
 <section id="pipeline">
 <h3>PIPELINE<a class="headerlink" href="#pipeline" title="Link to this heading">¶</a></h3>
 <p><sup>*Type requires the ‘biome-provider-pipeline-v2’ addon to use</sup></p>
@@ -470,30 +494,6 @@ or effect that is applied to the image.</p>
 look more pixelated. A resolution of 1 results in the best quality. Resolutions between 2 and
 4 don’t have very apparent pixelation when used in conjunction with blending.</p>
 </section>
-<hr class="docutils" />
-<section id="single">
-<h3>SINGLE<a class="headerlink" href="#single" title="Link to this heading">¶</a></h3>
-<p><sup>*Type requires the ‘biome-provider-single’ addon to use</sup></p>
-<p id="object-biomeprovider-template-biome-provider-single-single-parameter-biome"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-single-single-parameter-biome"><span class="std std-ref">biome</span></a> <a class="reference internal" href="Biome.html"><span class="doc">Biome</span></a></p>
-</section>
-<hr class="docutils" />
-<section id="image">
-<h3>IMAGE<a class="headerlink" href="#image" title="Link to this heading">¶</a></h3>
-<p><sup>*Type requires the ‘biome-provider-image-v2’ addon to use</sup></p>
-<p id="object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-conversion"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-conversion"><span class="std std-ref">color-conversion</span></a> <a class="reference internal" href="BiomeColorConverter.html"><span class="doc">BiomeColorConverter</span></a></p>
-<p id="object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="ColorSampler.html"><span class="doc">ColorSampler</span></a></p>
-<p id="object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution"><span class="std std-ref">resolution</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">1</span></code></p>
-</section>
-<hr class="docutils" />
-<section id="extrusion">
-<h3>EXTRUSION<a class="headerlink" href="#extrusion" title="Link to this heading">¶</a></h3>
-<p><sup>*Type requires the ‘biome-provider-extrusion’ addon to use</sup></p>
-<p id="object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions"><span class="std std-ref">extrusions</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="Extrusion.html"><span class="doc">Extrusion</span></a>&gt;</p>
-<p id="object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider"><span class="std std-ref">provider</span></a> <a class="reference internal" href="#"><span class="doc">BiomeProvider</span></a></p>
-<p id="object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution"><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="#object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution"><span class="std std-ref">resolution</span></a> <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a></p>
-<p>Default: <code class="docutils literal notranslate"><span class="pre">4</span></code></p>
-</section>
 </section>
 <section id="uses">
 <h2>Uses<a class="headerlink" href="#uses" title="Link to this heading">¶</a></h2>
@@ -514,12 +514,12 @@ look more pixelated. A resolution of 1 results in the best quality. Resolutions 
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="BiomeColorMapping.html">
+          <a class="next-page" href="Palette.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">BiomeColorMapping</div>
+                <div class="title">Palette</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -566,10 +566,10 @@ look more pixelated. A resolution of 1 results in the best quality. Resolutions 
             <ul>
 <li><a class="reference internal" href="#">BiomeProvider</a><ul>
 <li><a class="reference internal" href="#types">Types</a><ul>
-<li><a class="reference internal" href="#pipeline">PIPELINE</a></li>
-<li><a class="reference internal" href="#single">SINGLE</a></li>
-<li><a class="reference internal" href="#image">IMAGE</a></li>
 <li><a class="reference internal" href="#extrusion">EXTRUSION</a></li>
+<li><a class="reference internal" href="#image">IMAGE</a></li>
+<li><a class="reference internal" href="#single">SINGLE</a></li>
+<li><a class="reference internal" href="#pipeline">PIPELINE</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#uses">Uses</a></li>

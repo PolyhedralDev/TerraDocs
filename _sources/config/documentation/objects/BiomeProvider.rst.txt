@@ -21,6 +21,59 @@ A list of available types for ``BiomeProvider`` are listed below:
 
 ---------
 
+EXTRUSION
+---------
+
+:superscript:`*Type requires the 'biome-provider-extrusion' addon to use`
+
+.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions:
+
+:bdg-ref-primary:`extrusions <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 
+
+.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider:
+
+:bdg-ref-primary:`provider <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider>` :doc:`/config/documentation/objects/BiomeProvider` 
+
+.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution:
+
+:bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
+
+Default: ``4``
+
+---------
+
+IMAGE
+-----
+
+:superscript:`*Type requires the 'biome-provider-image-v2' addon to use`
+
+.. _object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-conversion:
+
+:bdg-ref-primary:`color-conversion <object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-conversion>` :doc:`/config/documentation/objects/BiomeColorConverter` 
+
+.. _object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler:
+
+:bdg-ref-primary:`color-sampler <object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
+
+.. _object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution:
+
+:bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
+
+Default: ``1``
+
+---------
+
+SINGLE
+------
+
+:superscript:`*Type requires the 'biome-provider-single' addon to use`
+
+.. _object-biomeprovider-template-biome-provider-single-single-parameter-biome:
+
+:bdg-ref-primary:`biome <object-biomeprovider-template-biome-provider-single-single-parameter-biome>` :doc:`/config/documentation/objects/Biome` 
+
+---------
+
 PIPELINE
 --------
 
@@ -73,59 +126,6 @@ Increasing this will make the pipeline perform better, but also makes the biome 
 look more pixelated. A resolution of 1 results in the best quality. Resolutions between 2 and
 4 don't have very apparent pixelation when used in conjunction with blending.
 
-
----------
-
-SINGLE
-------
-
-:superscript:`*Type requires the 'biome-provider-single' addon to use`
-
-.. _object-biomeprovider-template-biome-provider-single-single-parameter-biome:
-
-:bdg-ref-primary:`biome <object-biomeprovider-template-biome-provider-single-single-parameter-biome>` :doc:`/config/documentation/objects/Biome` 
-
----------
-
-IMAGE
------
-
-:superscript:`*Type requires the 'biome-provider-image-v2' addon to use`
-
-.. _object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-conversion:
-
-:bdg-ref-primary:`color-conversion <object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-conversion>` :doc:`/config/documentation/objects/BiomeColorConverter` 
-
-.. _object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler:
-
-:bdg-ref-primary:`color-sampler <object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
-
-.. _object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution:
-
-:bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-image-v2-image-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
-
-Default: ``1``
-
----------
-
-EXTRUSION
----------
-
-:superscript:`*Type requires the 'biome-provider-extrusion' addon to use`
-
-.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions:
-
-:bdg-ref-primary:`extrusions <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-extrusions>` :doc:`/config/documentation/objects/List`\<:doc:`/config/documentation/objects/Extrusion`\> 
-
-.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider:
-
-:bdg-ref-primary:`provider <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-provider>` :doc:`/config/documentation/objects/BiomeProvider` 
-
-.. _object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution:
-
-:bdg-ref-success:`resolution <object-biomeprovider-template-biome-provider-extrusion-extrusion-parameter-resolution>` :doc:`/config/documentation/objects/Integer` 
-
-Default: ``4``
 
 Uses
 ====
