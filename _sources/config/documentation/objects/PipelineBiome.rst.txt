@@ -67,13 +67,13 @@ Used by 7 parameters:
 
   :bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> - The default list of pipeline biomes to replace pipeline biomes containing the default replace tag with.
 
-- :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>`:
-
-  :bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> - The list of pipeline biomes to replace any matches of the default tag with.
-
 - :ref:`In BORDER in Stage <object-stage-template-biome-provider-pipeline-v2-border-parameter-to>`:
 
   :bdg-ref-primary:`to <object-stage-template-biome-provider-pipeline-v2-border-parameter-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> - The list of pipeline biomes to replace with.
+
+- :ref:`In REPLACE_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>`:
+
+  :bdg-ref-primary:`default-to <object-stage-template-biome-provider-pipeline-v2-replace_list-parameter-default-to>` :doc:`/config/documentation/objects/WeightedList`\<:doc:`/config/documentation/objects/PipelineBiome`\> - The list of pipeline biomes to replace any matches of the default tag with.
 
 - :ref:`In BORDER_LIST in Stage <object-stage-template-biome-provider-pipeline-v2-border_list-parameter-replace>`:
 

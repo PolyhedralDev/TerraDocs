@@ -152,6 +152,7 @@ Setting up a New Palette
 
         palette:
           - GRASS_PALETTE: 319
+          - BLOCK:minecraft:bedrock: -61
 
 4. Load up your pack
 --------------------
@@ -166,6 +167,9 @@ has failed to load, please read through any of these errors and try to interpret
 and follow through the previous steps again carefully.
 
 If you still are unable to load the pack, feel free to :doc:`contact us </contact>` with any relevant errors.
+
+5. Additional Palette of bedrock
+--------------------------------
 
 Conclusion
 ==========

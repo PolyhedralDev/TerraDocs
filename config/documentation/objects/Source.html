@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Stage" href="Stage.html" /><link rel="prev" title="PipelineBiomeColorConverter" href="PipelineBiomeColorConverter.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Stage" href="Stage.html" /><link rel="prev" title="PaletteLayer" href="PaletteLayer.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>Source - Terra Docs</title>
@@ -331,30 +331,30 @@
 <li class="toctree-l4"><a class="reference internal" href="Set.html">Set</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Distributor.html">Distributor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Locator.html">Locator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Expression.html">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Biome.html">Biome</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ColorString.html">ColorString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeProvider.html">BiomeProvider</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Palette.html">Palette</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ColorString.html">ColorString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Feature.html">Feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Structure.html">Structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ChunkGenerator.html">ChunkGenerator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Stage.html">Stage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CubicSplinePoint.html">CubicSplinePoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NumberPredicate.html">NumberPredicate</a></li>
 </ul>
 </li>
@@ -441,18 +441,18 @@
 <p>The type is specified by setting the <span class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary">type</span> parameter to the name of the type. If the same name is used by two different addons, you can prefix the name with <code class="docutils literal notranslate"><span class="pre">ADDON_NAME:</span></code> to specify which one to use.</p>
 <p>A list of available types for <code class="docutils literal notranslate"><span class="pre">Source</span></code> are listed below:</p>
 <hr class="docutils" />
-<section id="image">
-<h3>IMAGE<a class="headerlink" href="#image" title="Link to this heading">¶</a></h3>
-<p><sup>*Type requires the ‘pipeline-image’ addon to use</sup></p>
-<p id="object-source-template-pipeline-image-image-parameter-color-conversion"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-source-template-pipeline-image-image-parameter-color-conversion"><span class="std std-ref">color-conversion</span></a> <a class="reference internal" href="PipelineBiomeColorConverter.html"><span class="doc">PipelineBiomeColorConverter</span></a></p>
-<p id="object-source-template-pipeline-image-image-parameter-color-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-source-template-pipeline-image-image-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="ColorSampler.html"><span class="doc">ColorSampler</span></a></p>
-</section>
-<hr class="docutils" />
 <section id="sampler">
 <h3>SAMPLER<a class="headerlink" href="#sampler" title="Link to this heading">¶</a></h3>
 <p>Distributes a <a class="reference internal" href="../../development/noise/use.html#weighted-list"><span class="std std-ref">weighted list</span></a> of pipeline biomes according to a <a class="reference internal" href="NoiseSampler.html"><span class="doc">NoiseSampler</span></a>.</p>
 <p id="object-source-template-biome-provider-pipeline-v2-sampler-parameter-biomes"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-source-template-biome-provider-pipeline-v2-sampler-parameter-biomes"><span class="std std-ref">biomes</span></a> <a class="reference internal" href="WeightedList.html"><span class="doc">WeightedList</span></a>&lt;<a class="reference internal" href="PipelineBiome.html"><span class="doc">PipelineBiome</span></a>&gt;</p>
 <p id="object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler"><span class="std std-ref">sampler</span></a> <a class="reference internal" href="NoiseSampler.html"><span class="doc">NoiseSampler</span></a></p>
+</section>
+<hr class="docutils" />
+<section id="image">
+<h3>IMAGE<a class="headerlink" href="#image" title="Link to this heading">¶</a></h3>
+<p><sup>*Type requires the ‘pipeline-image’ addon to use</sup></p>
+<p id="object-source-template-pipeline-image-image-parameter-color-conversion"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-source-template-pipeline-image-image-parameter-color-conversion"><span class="std std-ref">color-conversion</span></a> <a class="reference internal" href="PipelineBiomeColorConverter.html"><span class="doc">PipelineBiomeColorConverter</span></a></p>
+<p id="object-source-template-pipeline-image-image-parameter-color-sampler"><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="#object-source-template-pipeline-image-image-parameter-color-sampler"><span class="std std-ref">color-sampler</span></a> <a class="reference internal" href="ColorSampler.html"><span class="doc">ColorSampler</span></a></p>
 </section>
 </section>
 <section id="uses">
@@ -480,14 +480,14 @@
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="PipelineBiomeColorConverter.html">
+          <a class="prev-page" href="PaletteLayer.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">PipelineBiomeColorConverter</div>
+                <div class="title">PaletteLayer</div>
                 
               </div>
             </a>
@@ -523,8 +523,8 @@
             <ul>
 <li><a class="reference internal" href="#">Source</a><ul>
 <li><a class="reference internal" href="#types">Types</a><ul>
-<li><a class="reference internal" href="#image">IMAGE</a></li>
 <li><a class="reference internal" href="#sampler">SAMPLER</a></li>
+<li><a class="reference internal" href="#image">IMAGE</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#uses">Uses</a></li>

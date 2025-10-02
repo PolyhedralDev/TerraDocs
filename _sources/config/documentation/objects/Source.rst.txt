@@ -17,21 +17,6 @@ A list of available types for ``Source`` are listed below:
 
 ---------
 
-IMAGE
------
-
-:superscript:`*Type requires the 'pipeline-image' addon to use`
-
-.. _object-source-template-pipeline-image-image-parameter-color-conversion:
-
-:bdg-ref-primary:`color-conversion <object-source-template-pipeline-image-image-parameter-color-conversion>` :doc:`/config/documentation/objects/PipelineBiomeColorConverter` 
-
-.. _object-source-template-pipeline-image-image-parameter-color-sampler:
-
-:bdg-ref-primary:`color-sampler <object-source-template-pipeline-image-image-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
-
----------
-
 SAMPLER
 -------
 
@@ -45,6 +30,21 @@ Distributes a :ref:`weighted list <weighted-list>` of pipeline biomes according 
 .. _object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler:
 
 :bdg-ref-primary:`sampler <object-source-template-biome-provider-pipeline-v2-sampler-parameter-sampler>` :doc:`/config/documentation/objects/NoiseSampler` 
+
+---------
+
+IMAGE
+-----
+
+:superscript:`*Type requires the 'pipeline-image' addon to use`
+
+.. _object-source-template-pipeline-image-image-parameter-color-conversion:
+
+:bdg-ref-primary:`color-conversion <object-source-template-pipeline-image-image-parameter-color-conversion>` :doc:`/config/documentation/objects/PipelineBiomeColorConverter` 
+
+.. _object-source-template-pipeline-image-image-parameter-color-sampler:
+
+:bdg-ref-primary:`color-sampler <object-source-template-pipeline-image-image-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
 
 Uses
 ====

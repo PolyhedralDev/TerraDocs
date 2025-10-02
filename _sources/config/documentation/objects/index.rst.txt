@@ -21,28 +21,28 @@ Config Objects
     Set
     Distributor
     Locator
-    Image
     Expression
     Biome
+    Palette
+    Image
     DimensionApplicableSampler
     MathFunction
-    ExtrusionReplaceableBiome
-    BiomeColorMapping
-    ColorString
     BiomeProvider
-    Palette
-    SlantLayer
-    Point
-    Extrusion
-    BiomeColorConverter
-    PaletteLayer
+    ColorString
+    BiomeColorMapping
+    ExtrusionReplaceableBiome
     Feature
     Structure
     GenerationStage
     PlatformBiome
     ChunkGenerator
-    PipelineBiomeColorConverter
+    PaletteLayer
     Source
     Stage
     CubicSplinePoint
+    PipelineBiomeColorConverter
+    BiomeColorConverter
+    Point
+    Extrusion
+    SlantLayer
     NumberPredicate

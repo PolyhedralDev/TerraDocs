@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="SlantLayer" href="SlantLayer.html" /><link rel="prev" title="BiomeProvider" href="BiomeProvider.html" />
+<link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" /><link rel="next" title="Image" href="Image.html" /><link rel="prev" title="Biome" href="Biome.html" />
 
     <link rel="shortcut icon" href="../../../_static/favicon.ico"/><!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
         <title>Palette - Terra Docs</title>
@@ -331,30 +331,30 @@
 <li class="toctree-l4"><a class="reference internal" href="Set.html">Set</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Distributor.html">Distributor</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Locator.html">Locator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Expression.html">Expression</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Biome.html">Biome</a></li>
+<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Palette</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Image.html">Image</a></li>
 <li class="toctree-l4"><a class="reference internal" href="DimensionApplicableSampler.html">DimensionApplicableSampler</a></li>
 <li class="toctree-l4"><a class="reference internal" href="MathFunction.html">MathFunction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
-<li class="toctree-l4"><a class="reference internal" href="ColorString.html">ColorString</a></li>
 <li class="toctree-l4"><a class="reference internal" href="BiomeProvider.html">BiomeProvider</a></li>
-<li class="toctree-l4 current current-page"><a class="current reference internal" href="#">Palette</a></li>
-<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
-<li class="toctree-l4"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
-<li class="toctree-l4"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ColorString.html">ColorString</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BiomeColorMapping.html">BiomeColorMapping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ExtrusionReplaceableBiome.html">ExtrusionReplaceableBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Feature.html">Feature</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Structure.html">Structure</a></li>
 <li class="toctree-l4"><a class="reference internal" href="GenerationStage.html">GenerationStage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="PlatformBiome.html">PlatformBiome</a></li>
 <li class="toctree-l4"><a class="reference internal" href="ChunkGenerator.html">ChunkGenerator</a></li>
-<li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PaletteLayer.html">PaletteLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Source.html">Source</a></li>
 <li class="toctree-l4"><a class="reference internal" href="Stage.html">Stage</a></li>
 <li class="toctree-l4"><a class="reference internal" href="CubicSplinePoint.html">CubicSplinePoint</a></li>
+<li class="toctree-l4"><a class="reference internal" href="PipelineBiomeColorConverter.html">PipelineBiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="BiomeColorConverter.html">BiomeColorConverter</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Point.html">Point</a></li>
+<li class="toctree-l4"><a class="reference internal" href="Extrusion.html">Extrusion</a></li>
+<li class="toctree-l4"><a class="reference internal" href="SlantLayer.html">SlantLayer</a></li>
 <li class="toctree-l4"><a class="reference internal" href="NumberPredicate.html">NumberPredicate</a></li>
 </ul>
 </li>
@@ -441,13 +441,16 @@ an id of <code class="docutils literal notranslate"><span class="pre">GRASS_MIX<
 </div>
 <section id="uses">
 <h2>Uses<a class="headerlink" href="#uses" title="Link to this heading">¶</a></h2>
-<p>Used by 2 parameters:</p>
+<p>Used by 3 parameters:</p>
 <ul>
-<li><p><a class="reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-ocean-palette"><span class="std std-ref">In base in BIOME</span></a>:</p>
-<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-ocean-palette"><span class="std std-ref">ocean.palette</span></a> <a class="reference internal" href="#"><span class="doc">Palette</span></a></p>
+<li><p><a class="reference internal" href="SlantLayer.html#object-slantlayer-template-chunk-generator-noise-3d-map-parameter-palette"><span class="std std-ref">In map in SlantLayer</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="SlantLayer.html#object-slantlayer-template-chunk-generator-noise-3d-map-parameter-palette"><span class="std std-ref">palette</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="#"><span class="doc">Palette</span></a>, <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>&gt;&gt;</p>
 </li>
 <li><p><a class="reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-palette"><span class="std std-ref">In base in BIOME</span></a>:</p>
 <p><a class="sd-sphinx-override sd-badge sd-bg-primary sd-bg-text-primary reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-palette"><span class="std std-ref">palette</span></a> <a class="reference internal" href="List.html"><span class="doc">List</span></a>&lt;<a class="reference internal" href="Map.html"><span class="doc">Map</span></a>&lt;<a class="reference internal" href="#"><span class="doc">Palette</span></a>, <a class="reference internal" href="Integer.html"><span class="doc">Integer</span></a>&gt;&gt;</p>
+</li>
+<li><p><a class="reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-ocean-palette"><span class="std std-ref">In base in BIOME</span></a>:</p>
+<p><a class="sd-sphinx-override sd-badge sd-bg-success sd-bg-text-success reference internal" href="../configs/BIOME.html#config-biome-template-chunk-generator-noise-3d-base-parameter-ocean-palette"><span class="std std-ref">ocean.palette</span></a> <a class="reference internal" href="#"><span class="doc">Palette</span></a></p>
 </li>
 </ul>
 </section>
@@ -458,23 +461,23 @@ an id of <code class="docutils literal notranslate"><span class="pre">GRASS_MIX<
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="SlantLayer.html">
+          <a class="next-page" href="Image.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">SlantLayer</div>
+                <div class="title">Image</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="BiomeProvider.html">
+          <a class="prev-page" href="Biome.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">BiomeProvider</div>
+                <div class="title">Biome</div>
                 
               </div>
             </a>

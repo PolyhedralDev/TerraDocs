@@ -307,10 +307,12 @@ These parameters will determine how the ``NOISE_3D`` generator generates terrain
     The ``palette-block-shortcut`` addon allows us to easily define single block palettes using the format ``BLOCK:<block id>``.
     For our biome config, we will use ``minecraft:stone``, and use ``319`` to specify that terrain from y319 downwards will consist of ``minecraft:stone``.
 
+    We will also add a bedrock layer by using ``minecraft:bedrock``, and use ``-61``.
+
     .. code-block:: yaml
         :caption: first_biome.yml
         :linenos:
-        :emphasize-lines: 11-12
+        :emphasize-lines: 11-13
 
         id: FIRST_BIOME
         type: BIOME
@@ -323,7 +325,8 @@ These parameters will determine how the ``NOISE_3D`` generator generates terrain
             base: 64
         
         palette:
-          - BLOCK:minecraft:stone: 319    
+          - BLOCK:minecraft:stone: 319
+          - BLOCK:minecraft:bedrock: -61
         
 8. Define a biome provider 
 --------------------------
