@@ -41,6 +41,18 @@ A Terra pack designed to reimagine the End with new biomes, features, and terrai
 .. image:: /img/communitypacks/ReimagEND.png
    :width: 75%
 
+Terra Backrooms
+===============
+
+| **Author:** Giuca002
+| **Source:** https://github.com/Giuca002/terra-backrooms
+| **Terra Version:** 6.4+.x
+
+A Terra pack designed to generate Backrooms like levels.
+
+.. image:: /img/communitypacks/TerraBackrooms.png
+   :width: 75%
+
 Hydraxia
 ==========
 
