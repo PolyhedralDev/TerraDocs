@@ -1,9 +1,10 @@
 |
 
-.. attention::
+.. important::
 
-    This documentation site is under construction! Some things may not work currently, we're working to get it up
-    and running properly. Want to help? Check out the GitHub Repo for instructions on contributing:
+    This documentation site is partially under construction! Want to help?
+
+    Check out the GitHub Repo for instructions on contributing:
 
     .. button-link:: https://github.com/PolyhedralDev/TerraDocs
         :color: primary
