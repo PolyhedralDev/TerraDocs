@@ -2,7 +2,9 @@
 
 .. important::
 
-    This documentation site is partially under construction! Want to help?
+    This documentation site is partially under construction! 
+
+    Want to help?
 
     Check out the GitHub Repo for instructions on contributing:
 
