@@ -16,6 +16,10 @@ Uses
 
 Used by 3 parameters:
 
+- :ref:`In SINGLE in BiomeProvider <object-biomeprovider-template-biome-provider-single-single-parameter-biome>`:
+
+  :bdg-ref-primary:`biome <object-biomeprovider-template-biome-provider-single-single-parameter-biome>` :doc:`/config/documentation/objects/Biome` 
+
 - :ref:`In EXACT in BiomeColorConverter <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-else>`:
 
   :bdg-ref-primary:`else <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-else>` :doc:`/config/documentation/objects/Biome` 
@@ -23,7 +27,3 @@ Used by 3 parameters:
 - :ref:`In MAP in BiomeColorMapping <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>`:
 
   :bdg-ref-primary:`map <object-biomecolormapping-template-biome-provider-image-v2-map-parameter-map>` :doc:`/config/documentation/objects/Map`\<:doc:`/config/documentation/objects/ColorString`\, :doc:`/config/documentation/objects/Biome`\> 
-
-- :ref:`In SINGLE in BiomeProvider <object-biomeprovider-template-biome-provider-single-single-parameter-biome>`:
-
-  :bdg-ref-primary:`biome <object-biomeprovider-template-biome-provider-single-single-parameter-biome>` :doc:`/config/documentation/objects/Biome` 

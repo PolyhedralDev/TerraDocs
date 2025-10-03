@@ -105,13 +105,17 @@ Uses
 
 Used by 6 parameters:
 
-- :ref:`In TRANSLATE in ColorSampler <object-colorsampler-template-library-image-translate-parameter-color-sampler>`:
-
-  :bdg-ref-primary:`color-sampler <object-colorsampler-template-library-image-translate-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
-
 - :ref:`In IMAGE in Source <object-source-template-pipeline-image-image-parameter-color-sampler>`:
 
   :bdg-ref-primary:`color-sampler <object-source-template-pipeline-image-image-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
+
+- :ref:`In SINGLE_IMAGE in ColorSampler <object-colorsampler-template-library-image-single_image-parameter-outside-sampler>`:
+
+  :bdg-ref-primary:`outside-sampler <object-colorsampler-template-library-image-single_image-parameter-outside-sampler>` :doc:`/config/documentation/objects/ColorSampler` - The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
+
+- :ref:`In CHANNEL in NoiseSampler <object-noisesampler-template-library-image-channel-parameter-color-sampler>`:
+
+  :bdg-ref-primary:`color-sampler <object-noisesampler-template-library-image-channel-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` - The color sampler to extract channel values from.
 
 - :ref:`In ROTATE in ColorSampler <object-colorsampler-template-library-image-rotate-parameter-color-sampler>`:
 
@@ -121,10 +125,6 @@ Used by 6 parameters:
 
   :bdg-ref-primary:`color-sampler <object-biomeprovider-template-biome-provider-image-v2-image-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
 
-- :ref:`In SINGLE_IMAGE in ColorSampler <object-colorsampler-template-library-image-single_image-parameter-outside-sampler>`:
+- :ref:`In TRANSLATE in ColorSampler <object-colorsampler-template-library-image-translate-parameter-color-sampler>`:
 
-  :bdg-ref-primary:`outside-sampler <object-colorsampler-template-library-image-single_image-parameter-outside-sampler>` :doc:`/config/documentation/objects/ColorSampler` - The sampler that provides colors for coordinates outside the bounds of the ``Image`` .
-
-- :ref:`In CHANNEL in NoiseSampler <object-noisesampler-template-library-image-channel-parameter-color-sampler>`:
-
-  :bdg-ref-primary:`color-sampler <object-noisesampler-template-library-image-channel-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` - The color sampler to extract channel values from.
+  :bdg-ref-primary:`color-sampler <object-colorsampler-template-library-image-translate-parameter-color-sampler>` :doc:`/config/documentation/objects/ColorSampler` 
