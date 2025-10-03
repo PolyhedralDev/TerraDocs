@@ -12,58 +12,58 @@ Uses
 
 Used by 14 parameters:
 
-- :ref:`In EXACT in BiomeColorConverter <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-ignore-alpha>`:
+- :ref:`In DISTANCE in NoiseSampler <object-noisesampler-template-config-noise-function-distance-parameter-normalize>`:
 
-  :bdg-ref-success:`ignore-alpha <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-ignore-alpha>` :doc:`/config/documentation/objects/Boolean` 
-
-- :ref:`In base in pack.yml <config-pack.yml-template-library-image-base-parameter-images.cache.load-on-use>`:
-
-  :bdg-ref-success:`images.cache.load-on-use <config-pack.yml-template-library-image-base-parameter-images.cache.load-on-use>` :doc:`/config/documentation/objects/Boolean` 
-
-- :ref:`In CHANNEL in NoiseSampler <object-noisesampler-template-library-image-channel-parameter-normalize>`:
-
-  :bdg-ref-success:`normalize <object-noisesampler-template-library-image-channel-parameter-normalize>` :doc:`/config/documentation/objects/Boolean` - If the channel should be normalized to range [-1, 1] or not.
-
-- :ref:`In CHANNEL in NoiseSampler <object-noisesampler-template-library-image-channel-parameter-premultiply>`:
-
-  :bdg-ref-success:`premultiply <object-noisesampler-template-library-image-channel-parameter-premultiply>` :doc:`/config/documentation/objects/Boolean` - Whether to multiply color channels by the alpha channel or not.
+  :bdg-ref-success:`normalize <object-noisesampler-template-config-noise-function-distance-parameter-normalize>` :doc:`/config/documentation/objects/Boolean` - If set to true, the returned distance will be normalized to be within the range ``[-1, 1]``, otherwise the raw distance is returned.
 
 - :ref:`In DISTANCE_TRANSFORM in NoiseSampler <object-noisesampler-template-library-image-distance_transform-parameter-clamp-to-max-edge>`:
 
   :bdg-ref-success:`clamp-to-max-edge <object-noisesampler-template-library-image-distance_transform-parameter-clamp-to-max-edge>` :doc:`/config/documentation/objects/Boolean` 
 
-- :ref:`In BITMAP in Image <object-image-template-library-image-bitmap-parameter-zero-indexed>`:
+- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-physics>`:
 
-  :bdg-ref-success:`zero-indexed <object-image-template-library-image-bitmap-parameter-zero-indexed>` :doc:`/config/documentation/objects/Boolean` 
+  :bdg-ref-success:`physics <config-scattered_ore-template-config-ore-base-parameter-physics>` :doc:`/config/documentation/objects/Boolean` 
 
-- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <object-noisesampler-template-library-image-distance_transform-parameter-invert-threshold>`:
+- :ref:`In CHANNEL in NoiseSampler <object-noisesampler-template-library-image-channel-parameter-premultiply>`:
 
-  :bdg-ref-success:`invert-threshold <object-noisesampler-template-library-image-distance_transform-parameter-invert-threshold>` :doc:`/config/documentation/objects/Boolean` 
-
-- :ref:`In DISTANCE in NoiseSampler <object-noisesampler-template-config-noise-function-distance-parameter-normalize>`:
-
-  :bdg-ref-success:`normalize <object-noisesampler-template-config-noise-function-distance-parameter-normalize>` :doc:`/config/documentation/objects/Boolean` - If set to true, the returned distance will be normalized to be within the range ``[-1, 1]``, otherwise the raw distance is returned.
+  :bdg-ref-success:`premultiply <object-noisesampler-template-library-image-channel-parameter-premultiply>` :doc:`/config/documentation/objects/Boolean` - Whether to multiply color channels by the alpha channel or not.
 
 - :ref:`In GABOR in NoiseSampler <object-noisesampler-template-config-noise-function-gabor-parameter-isotropic>`:
 
   :bdg-ref-success:`isotropic <object-noisesampler-template-config-noise-function-gabor-parameter-isotropic>` :doc:`/config/documentation/objects/Boolean` 
 
-- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-physics>`:
+- :ref:`In BITMAP in Image <object-image-template-library-image-bitmap-parameter-zero-indexed>`:
 
-  :bdg-ref-success:`physics <config-ore-template-config-ore-base-parameter-physics>` :doc:`/config/documentation/objects/Boolean` 
+  :bdg-ref-success:`zero-indexed <object-image-template-library-image-bitmap-parameter-zero-indexed>` :doc:`/config/documentation/objects/Boolean` 
 
-- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-carving.update-palette>`:
+- :ref:`In EXACT in BiomeColorConverter <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-ignore-alpha>`:
 
-  :bdg-ref-success:`carving.update-palette <config-biome-template-chunk-generator-noise-3d-base-parameter-carving.update-palette>` :doc:`/config/documentation/objects/Boolean` 
+  :bdg-ref-success:`ignore-alpha <object-biomecolorconverter-template-biome-provider-image-v2-exact-parameter-ignore-alpha>` :doc:`/config/documentation/objects/Boolean` 
+
+- :ref:`In DISTANCE_TRANSFORM in NoiseSampler <object-noisesampler-template-library-image-distance_transform-parameter-invert-threshold>`:
+
+  :bdg-ref-success:`invert-threshold <object-noisesampler-template-library-image-distance_transform-parameter-invert-threshold>` :doc:`/config/documentation/objects/Boolean` 
 
 - :ref:`In ADJACENT_PATTERN in Locator <object-locator-template-config-locators-adjacent_pattern-parameter-match-all>`:
 
   :bdg-ref-success:`match-all <object-locator-template-config-locators-adjacent_pattern-parameter-match-all>` :doc:`/config/documentation/objects/Boolean` 
 
+- :ref:`In base in BIOME <config-biome-template-chunk-generator-noise-3d-base-parameter-carving.update-palette>`:
+
+  :bdg-ref-success:`carving.update-palette <config-biome-template-chunk-generator-noise-3d-base-parameter-carving.update-palette>` :doc:`/config/documentation/objects/Boolean` 
+
+- :ref:`In base in pack.yml <config-pack.yml-template-library-image-base-parameter-images.cache.load-on-use>`:
+
+  :bdg-ref-success:`images.cache.load-on-use <config-pack.yml-template-library-image-base-parameter-images.cache.load-on-use>` :doc:`/config/documentation/objects/Boolean` 
+
+- :ref:`In base in ORE <config-ore-template-config-ore-base-parameter-physics>`:
+
+  :bdg-ref-success:`physics <config-ore-template-config-ore-base-parameter-physics>` :doc:`/config/documentation/objects/Boolean` 
+
+- :ref:`In CHANNEL in NoiseSampler <object-noisesampler-template-library-image-channel-parameter-normalize>`:
+
+  :bdg-ref-success:`normalize <object-noisesampler-template-library-image-channel-parameter-normalize>` :doc:`/config/documentation/objects/Boolean` - If the channel should be normalized to range [-1, 1] or not.
+
 - :ref:`In STITCHED_BITMAP in Image <object-image-template-library-image-stitched_bitmap-parameter-zero-indexed>`:
 
   :bdg-ref-success:`zero-indexed <object-image-template-library-image-stitched_bitmap-parameter-zero-indexed>` :doc:`/config/documentation/objects/Boolean` 
-
-- :ref:`In base in SCATTERED_ORE <config-scattered_ore-template-config-ore-base-parameter-physics>`:
-
-  :bdg-ref-success:`physics <config-scattered_ore-template-config-ore-base-parameter-physics>` :doc:`/config/documentation/objects/Boolean` 

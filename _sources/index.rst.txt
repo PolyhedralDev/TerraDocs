@@ -4,9 +4,7 @@
 
     This documentation site is partially under construction! 
 
-    Want to help?
-
-    Check out the GitHub Repo for instructions on contributing:
+    Want to help? Check out the GitHub Repo for instructions on contributing:
 
     .. button-link:: https://github.com/PolyhedralDev/TerraDocs
         :color: primary
