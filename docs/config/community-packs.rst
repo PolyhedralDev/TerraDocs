@@ -69,10 +69,10 @@ SkyLands
 ==========
 
 | **Author:** Falcon
-| **Source:** https://github.com/Gray-Falcon/SkyLands
-| **Terra Version:** 6.2.x
+| **Source:** https://gray-falcon.github.io/skylands_website/#sectionWorldGeneration
+| **Terra Version:** 6.5.0 +
 
-Pack that generates floating islands world with new biomes and structures!
+Premium (paid) pack that generates floating islands world!
 
 .. image:: /img/communitypacks/SkyLands.png
    :width: 75%
