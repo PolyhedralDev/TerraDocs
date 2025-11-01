@@ -6,8 +6,8 @@ The majority of config development involves creating and manipulating
 `configuration
 files <https://en.wikipedia.org/wiki/Configuration_file>`__. *In the
 context of config development*, configuration files (or simply
-*configs*) are files contained within a `config pack <./Config-Packs>`__
-that define data that Terra uses to determine how worlds generate.
+*configs*) are files contained within a config pack that define data
+that Terra uses to determine how worlds generate.
 
 File Formats
 ============
@@ -20,9 +20,9 @@ XML, and YAML.
 In Terra the file formats used in config packs are flexible, as the
 functionality for reading and parsing different formats is provided via
 addons - this allows flexibility for developers to use whatever format
-they're most comfortable in. Files contained inside a `config
-pack <./Config-Packs>`__ will only attempt to load as configuration
-files if a **language addon** is installed that supports the file type.
+they're most comfortable in. Files contained inside a config pack will
+only attempt to load as configuration files if a **language addon** is
+installed that supports the file type.
 
 YAML
 ----

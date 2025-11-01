@@ -29,7 +29,7 @@ Setting up Ores
 
     Add the ``config-ore`` addon as a dependency, using versions ``1.+``.
 
-    This addon will allow us to create palette config files.
+    This addon will allow us to create ore config files.
 
     .. code-block:: yaml
         :caption: pack.yml

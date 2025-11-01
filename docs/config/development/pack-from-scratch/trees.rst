@@ -90,7 +90,7 @@ Setting up a New Structure
 
                 ``oak_tree.schem`` will be the example file name used for this guide.
 
-                A sample ``oak_tree.schem`` can be found on `GitHub <https://github.com/PolyhedralDev/TerraPackFromScratch/tree/master/4-adding-trees>`_ if needed.
+                A sample ``oak_tree.schem`` can be found on `GitHub <https://github.com/PolyhedralDev/TerraPackFromScratch/blob/master/5-adding-trees/oak_tree.schem>`_ if needed.
 
 .. warning::
 
